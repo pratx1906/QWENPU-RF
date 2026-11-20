@@ -21,7 +21,7 @@ The modulation classifier (Amendment 15) uses synthetic signals from
 | `real-iq-selection.json` | The 14 gate captures, frozen before any neural run, with SHA-256 per file |
 | `idlab-iq-manifest.json` | All 190 IDLab files: location, technology, rate, gain, SHA-256 |
 | `manifests/<dataset>.manifest.json` | Per-dataset download manifests: source URL, size, SHA-256 (and publisher checksums where given) |
-| `LARGE_FILES.json` | Files too large for git (the 75–100 MB Stage 2 transcripts and the LoRaIQ archive index): path, size, SHA-256. They go up with the Hugging Face release. Each transcript has a `-summary.json` in git with everything except the raw token list |
+| `LARGE_FILES.json` | Files too large for git (the 75–100 MB Stage 2 transcripts and the LoRaIQ archive index): path, size, SHA-256. They are in the Hugging Face dataset [pratx1/QwenPU-RF-evidence](https://huggingface.co/datasets/pratx1/QwenPU-RF-evidence) at the same paths. Each transcript has a `-summary.json` in git with everything except the raw token list |
 
 The expanded 133-recording selection is [v15/reports/real-iq-selection-expanded.json](../v15/reports/real-iq-selection-expanded.json).
 

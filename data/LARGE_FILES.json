@@ -1,5 +1,5 @@
 {
- "note": "Too large for git; published in the Hugging Face dataset. Paths are as in this repo.",
+ "note": "Too large for git; published at https://huggingface.co/datasets/pratx1/QwenPU-RF-evidence with the same paths.",
  "files": [
   {
    "path": "v15/reports/stage2/fullgpu-chunked-stage2-a14.json",

@@ -12,7 +12,8 @@
 
 Built on [QwenPU](https://github.com/divagr18/QwenPU) and part of the
 [Qwenputer](https://github.com/divagr18/qwenputer) family of computers compiled into Qwen3.5's weights.
-Model weights: Hugging Face upload in progress.
+Model: [pratx1/QwenPU-RF](https://huggingface.co/pratx1/QwenPU-RF) on Hugging Face ·
+large evidence files: [pratx1/QwenPU-RF-evidence](https://huggingface.co/datasets/pratx1/QwenPU-RF-evidence).
 
 **QwenPU-RF is Qwen3.5-4B doing exact radio signal processing inside its own weights.** FIR filters,
 FFTs, CORDIC, detectors, demodulators and a 25-class modulation classifier run as RISC-V programs on
@@ -132,11 +133,12 @@ python v15/scripts/pipeline_run.py --synthetic             # PASS / FAIL
 python v15/scripts/modulation_demo.py neural               # 25-class classifier, 250 captures
 ```
 
-**3. Ask Qwen (24 GB GPU, the 19 GB merged checkpoint).** Build it from the base model, or download it
-once the Hugging Face upload is up:
+**3. Ask Qwen (24 GB GPU, the 19 GB merged checkpoint).** Download it from
+[Hugging Face](https://huggingface.co/pratx1/QwenPU-RF) (SHA-256 per file in `SHA256SUMS`), or rebuild it
+from the base model with `python -m chipformer.rv.merge <Qwen3.5-4B dir> --out <dir>`:
 
 ```bash
-python -m chipformer.rv.merge $RFPU_DATA/checkpoints/qwen3.5-4b --out $RFPU_DATA/checkpoints/rfpu-v15/qwen3.5-4b-rv1
+hf download pratx1/QwenPU-RF --local-dir $RFPU_DATA/checkpoints/rfpu-v15/qwen3.5-4b-rv1
 python v15/scripts/stage2_chat.py --suite robust --full-gpu $RFPU_DATA/checkpoints/rfpu-v15/qwen3.5-4b-rv1 --chunk 1024
 python v15/viz/record.py && python v15/viz/serve.py $RFPU_DATA/viz/levels-q0   # the visualizer above
 ```
