@@ -3,6 +3,11 @@
 </p>
 
 <p align="center">
+  <a href="https://huggingface.co/pratx1/QwenPU-RF"><img alt="Hugging Face model" src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Model%3A%20pratx1%2FQwenPU--RF-ffd21e?labelColor=1b1b1b"></a>
+  <a href="https://huggingface.co/datasets/pratx1/QwenPU-RF-evidence"><img alt="Hugging Face evidence dataset" src="https://img.shields.io/badge/%F0%9F%A4%97%20Dataset-evidence%20(469%20MB)-ffd21e?labelColor=1b1b1b"></a>
+</p>
+
+<p align="center">
   <a href="#quickstart"><img alt="tests" src="https://img.shields.io/badge/tests-218%20passed-0d9488"></a>
   <a href="#results"><img alt="real IQ" src="https://img.shields.io/badge/real%20recordings-133%2F133%20token--exact-0d9488"></a>
   <a href="#results"><img alt="Stage 2" src="https://img.shields.io/badge/Qwen%20calls%20its%20own%20RF%20tool-96%2F96-2060b0"></a>
