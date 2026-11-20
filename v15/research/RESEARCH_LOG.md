@@ -519,3 +519,17 @@ After a system-wide issue, D: is empty (2.9 GB used, no RFPU-data). A copy exist
   scope note, executor speed ratio, CPU block FFT range 74.6–75.2, checker perturbation 1/12 (dev) and 5/14 (A14).
   STAGE2 profile is capture 14, not 1. Not changed: gates.json (append-only ledger; its early scope notes are superseded
   by later entries in the same file).
+
+## 2026-11-20: public release on GitHub (pratx1906/QWENPU-RF, commit a402288)
+
+- Built by `v15/release/export_public.py` into `Desktop/QWENPU-RF` (fresh git history, author = GitHub noreply address,
+  no co-author lines): `v15/` as is, minus `prompt-v15.txt`, the .docx, `paper/supervisor_report`, `reports/supervisor`,
+  `results/raw/*.source.zip`; machine paths rewritten (`<repo>`, `$RFPU_DATA`), private claude.ai links removed.
+  Inputs that lived outside v15 moved to `data/` (gate selection, IDLab manifest, per-dataset manifests).
+- Files > 25 MB (6 Stage 2 transcripts, LoRaIQ archive index; 469 MB) listed in `data/LARGE_FILES.json` with SHA-256,
+  for the Hugging Face release; each transcript has a `-summary.json` (raw token list replaced by length + SHA-256).
+- `upstream/rfpu-vx.patch`: the rfpu-vfir branch as one diff on QwenPU 5af1fc0; checked to apply cleanly and reproduce
+  the branch (CRLF aside). `upstream/setup_upstream.py` fetches and patches.
+- Viewer: new `&poster` theme (dark, bold) used for `docs/demo.gif` (22 real frames of the 2026-11-20 rf_levels run).
+  Figures regenerated from evidence by `docs/make_figures.py`.
+- Checks on the public tree: 218 passed / 21 skipped; 0 broken relative links; 0 leftover local paths.

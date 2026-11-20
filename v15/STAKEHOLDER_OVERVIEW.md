@@ -149,4 +149,3 @@ We also **extended the hidden computer itself**. We designed and added three new
 | Every experiment, including failures, in date order | [research/RESEARCH_LOG.md](research/RESEARCH_LOG.md) |
 | Success criteria written before each test | [research/PROTOCOL.md](research/PROTOCOL.md) |
 | How to reproduce everything | [REPRODUCE.md](REPRODUCE.md) |
-| Comparison with related work | [research/NOVELTY_SEARCH.md](research/NOVELTY_SEARCH.md) |

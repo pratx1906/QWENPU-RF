@@ -90,22 +90,6 @@ Tokens and milliseconds per sample for each: [v15/README.md#capability-matrix](v
 <p align="center"><img src="docs/fig-precision.svg" alt="SQNR per kernel on 133 real recordings." width="100%"></p>
 <p align="center"><img src="docs/fig-modulation.svg" alt="Modulation classifier: 86.4% over 25 classes; per-SNR and per-class accuracy." width="100%"></p>
 
-## What is new, and what is not
-
-> To our knowledge, this is the first demonstration of a language model performing exact,
-> independently verified radio-frequency signal processing and inference on real IQ recordings within
-> its own weights, and the first RF-specific instruction added to a computer compiled into a language
-> model's weights.
-
-- **Not ours:** computers in the weights. Qwenputer, QwenPU, qwenGPU, qwenTPU, transformer-vm and Loom did that.
-  We build on QwenPU's CPU and vector unit unchanged, apart from the three new instructions.
-- **Ours:** the RF DSP and inference programs, the real-IQ evaluation on five public datasets, Qwen calling
-  verified RF tools from conversation, and the VFIR / VPOW / VBFLY instructions.
-- **"Exact"** means bit-exact to a declared 16-bit fixed-point contract with every token checked, not exact
-  against floating point; the float error is measured and reported for every kernel.
-
-The search behind this, with dates: [NOVELTY_SEARCH.md](v15/research/NOVELTY_SEARCH.md).
-
 ## Limits
 
 - **Slow:** about 10⁵–10⁶× slower than a conventional DSP. No real-time claim is made.
@@ -168,7 +152,7 @@ with its script, runtime and evidence file: [v15/REPRODUCE.md](v15/REPRODUCE.md)
 | [v15/rfpu_v15/stage2/](v15/rfpu_v15/stage2) | The in-weights tools Qwen calls, and chunked verification |
 | [v15/scripts/](v15/scripts) | Every experiment; `run.py` is the append-only ledger |
 | [v15/reports/](v15/reports) | Evidence: one JSON per experiment, `gates.json`, Stage 2 transcripts |
-| [v15/research/](v15/research) | Design, pre-declared protocol with 15 amendments, lab notes, novelty search |
+| [v15/research/](v15/research) | Design, pre-declared protocol with 15 amendments, lab notes |
 | [v15/viz/](v15/viz) | The neuron-level visualizer used for the GIF (add `&poster` to the URL for this look) |
 | [v15/paper/](v15/paper) | Paper draft |
 | [upstream/](upstream) | QwenPU pin and `rfpu-vx.patch` (VFIR, VPOW, VBFLY) |

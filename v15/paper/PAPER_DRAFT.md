@@ -324,8 +324,6 @@ Summary of `v15/reports/ABLATIONS.md`:
 
 **Hardware DSP** (Versal, Hexagon, AIR-T) is the performance reference we do not compete with.
 
-See `v15/research/NOVELTY_SEARCH.md` for dates and the claim's qualifiers.
-
 ## 7. Limitations
 
 - **Speed:** 10^5–10^6× slower than conventional DSP. Not a real-time system.

@@ -174,7 +174,7 @@ The drone answer (9.8 dB, −23.4 MHz) matches the earlier QwenPU-published run.
 
 **Throughput.** About 400 chip tokens/s on the saved layers against about 2,000 on the executor.
 
-**Architecture note.** Qwen3.5-0.8B and 2B cannot host *QwenPU's* CPU circuit unchanged: they have 16 value heads per 16 key heads, and the circuit needs 2 value heads per key head (the merge fails with an assertion). Only the 4B has that layout among the small models. qwenGPU shows that a different compiled circuit can target Qwen3.5-2B ([NOVELTY_SEARCH.md](../research/NOVELTY_SEARCH.md)).
+**Architecture note.** Qwen3.5-0.8B and 2B cannot host *QwenPU's* CPU circuit unchanged: they have 16 value heads per 16 key heads, and the circuit needs 2 value heads per key head (the merge fails with an assertion). Only the 4B has that layout among the small models. qwenGPU shows that a different compiled circuit can target Qwen3.5-2B ([qwenGPU](https://github.com/vixhal-baraiya/qwenGPU)).
 
 ## Cheaper firmware re-runs (2026-11-04)
 
