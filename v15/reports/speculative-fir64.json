@@ -1,0 +1,36 @@
+{
+  "program": "fir64 FIR, 48 real IQ samples (scalar RV32)",
+  "trace_tokens": 107023,
+  "flash_linear_attention": false,
+  "rows": [
+    {
+      "chunk": 256,
+      "mismatches": 0,
+      "first_mismatch": null,
+      "seconds": 35.73566639999626,
+      "tokens_per_second": 2994.8511048337746,
+      "speedup_vs_executor_batch1": 0.6864375390514482
+    },
+    {
+      "chunk": 1024,
+      "mismatches": 0,
+      "first_mismatch": null,
+      "seconds": 31.25189019998652,
+      "tokens_per_second": 3424.528862578884,
+      "speedup_vs_executor_batch1": 0.7849222156804948
+    },
+    {
+      "chunk": 4096,
+      "mismatches": 0,
+      "first_mismatch": null,
+      "seconds": 39.17282589999377,
+      "tokens_per_second": 2732.072490078308,
+      "speedup_vs_executor_batch1": 0.6262071304889153
+    }
+  ],
+  "executor_batch1": {
+    "exact": true,
+    "seconds": 24.53030289997696,
+    "tokens_per_second": 4362.889461104067
+  }
+}

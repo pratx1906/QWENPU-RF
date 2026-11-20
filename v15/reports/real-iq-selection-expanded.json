@@ -1,0 +1,2082 @@
+{
+ "protocol": "PROTOCOL.md Amendment 9",
+ "seed": 2026,
+ "count": 133,
+ "by_dataset": {
+  "CAMRAS-Dwingeloo": 2,
+  "EPFL-LoRaIQ": 32,
+  "IDLab": 53,
+  "NTU-RFSR": 27,
+  "Tampere": 19
+ },
+ "captures": [
+  {
+   "dataset": "IDLab",
+   "emitter": "DVB-T",
+   "format": "ci16_le",
+   "metadata": {
+    "name": "dvbt_g30_gentbrugge_f482MHz_r10.bin",
+    "location": "gentbrugge",
+    "technology": "DVB-T",
+    "sample_rate": 1000000.0,
+    "center_frequency_hz": 482000000.0,
+    "split": "held_out"
+   },
+   "path": "$RFPU_DATA\\datasets\\idlab-technology\\gentbrugge\\dvbt_g30_gentbrugge_f482MHz_r10.bin",
+   "sha256": "ca6c1eb5bfed05e2f923862323aca460d48de4cbb423d18b8c4e5e74299af9e6",
+   "ADC_divisor": 32768,
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "IDLab",
+   "emitter": "DVB-T",
+   "format": "ci16_le",
+   "metadata": {
+    "name": "dvbt_g30_gentbrugge_f482MHz_r5.bin",
+    "location": "gentbrugge",
+    "technology": "DVB-T",
+    "sample_rate": 1000000.0,
+    "center_frequency_hz": 482000000.0,
+    "split": "held_out"
+   },
+   "path": "$RFPU_DATA\\datasets\\idlab-technology\\gentbrugge\\dvbt_g30_gentbrugge_f482MHz_r5.bin",
+   "sha256": "8e8aaf15bd675b00ad6f879af23285f547570a6b125e62a66fab4d96e9a98a8a",
+   "ADC_divisor": 32768,
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "IDLab",
+   "emitter": "DVB-T",
+   "format": "ci16_le",
+   "metadata": {
+    "name": "dvbt_g30_igent_f482MHz_r8.bin",
+    "location": "igent",
+    "technology": "DVB-T",
+    "sample_rate": 1000000.0,
+    "center_frequency_hz": 482000000.0,
+    "split": "held_out"
+   },
+   "path": "$RFPU_DATA\\datasets\\idlab-technology\\igent\\dvbt_g30_igent_f482MHz_r8.bin",
+   "sha256": "8d3a590e209c2bb58f4d193b9d6798c5a276193786ea2139be389a9e3b6d22fe",
+   "ADC_divisor": 32768,
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "IDLab",
+   "emitter": "DVB-T",
+   "format": "ci16_le",
+   "metadata": {
+    "name": "dvbt_g30_igent_f482MHz_r9.bin",
+    "location": "igent",
+    "technology": "DVB-T",
+    "sample_rate": 1000000.0,
+    "center_frequency_hz": 482000000.0,
+    "split": "held_out"
+   },
+   "path": "$RFPU_DATA\\datasets\\idlab-technology\\igent\\dvbt_g30_igent_f482MHz_r9.bin",
+   "sha256": "043020fd3621f604d3be309dd0901050af1e5a918b6cb1823007b25ba11e6ad5",
+   "ADC_divisor": 32768,
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "IDLab",
+   "emitter": "DVB-T",
+   "format": "ci16_le",
+   "metadata": {
+    "name": "dvbt_g30_merelbeke_f482MHz_r10.bin",
+    "location": "merelbeke",
+    "technology": "DVB-T",
+    "sample_rate": 1000000.0,
+    "center_frequency_hz": 482000000.0,
+    "split": "calibration"
+   },
+   "path": "$RFPU_DATA\\datasets\\idlab-technology\\merelbeke\\dvbt_g30_merelbeke_f482MHz_r10.bin",
+   "sha256": "cd2c8bf69d8ccd2cc864e198fcde308b8a82d2bd9fd4d9fd19ccafd57f59b048",
+   "ADC_divisor": 32768,
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "IDLab",
+   "emitter": "DVB-T",
+   "format": "ci16_le",
+   "metadata": {
+    "name": "dvbt_g30_merelbeke_f482MHz_r3.bin",
+    "location": "merelbeke",
+    "technology": "DVB-T",
+    "sample_rate": 1000000.0,
+    "center_frequency_hz": 482000000.0,
+    "split": "calibration"
+   },
+   "path": "$RFPU_DATA\\datasets\\idlab-technology\\merelbeke\\dvbt_g30_merelbeke_f482MHz_r3.bin",
+   "sha256": "46bfed026847b5b52df0294507d5d6e2962f7f43962d5f8e3f6e1ca43fe7d8aa",
+   "ADC_divisor": 32768,
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "IDLab",
+   "emitter": "DVB-T",
+   "format": "ci16_le",
+   "metadata": {
+    "name": "dvbt_g30_rabot_f482MHz_r9.bin",
+    "location": "rabot",
+    "technology": "DVB-T",
+    "sample_rate": 1000000.0,
+    "center_frequency_hz": 482000000.0,
+    "split": "calibration"
+   },
+   "path": "$RFPU_DATA\\datasets\\idlab-technology\\rabot\\dvbt_g30_rabot_f482MHz_r9.bin",
+   "sha256": "46de4fd651bac58bf01a457a8bfc4bcfaaf88a1f8e1df6bbccb486bb43ef5d0a",
+   "ADC_divisor": 32768,
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "IDLab",
+   "emitter": "DVB-T",
+   "format": "ci16_le",
+   "metadata": {
+    "name": "dvbt_g30_rabot_f482MHz_r8.bin",
+    "location": "rabot",
+    "technology": "DVB-T",
+    "sample_rate": 1000000.0,
+    "center_frequency_hz": 482000000.0,
+    "split": "calibration"
+   },
+   "path": "$RFPU_DATA\\datasets\\idlab-technology\\rabot\\dvbt_g30_rabot_f482MHz_r8.bin",
+   "sha256": "813c235aad175c34b235f24801d2e6dcd1fe4988575c7cef1e3dad9925d12e51",
+   "ADC_divisor": 32768,
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "IDLab",
+   "emitter": "DVB-T",
+   "format": "ci16_le",
+   "metadata": {
+    "name": "dvbt_g30_reep_f482MHz_r6.bin",
+    "location": "reep",
+    "technology": "DVB-T",
+    "sample_rate": 1000000.0,
+    "center_frequency_hz": 482000000.0,
+    "split": "held_out"
+   },
+   "path": "$RFPU_DATA\\datasets\\idlab-technology\\reep\\dvbt_g30_reep_f482MHz_r6.bin",
+   "sha256": "e7ddaa07e760bb5538ecfbb53509d1c44ab387e092ae46f03f5281ef1d12053b",
+   "ADC_divisor": 32768,
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "IDLab",
+   "emitter": "DVB-T",
+   "format": "ci16_le",
+   "metadata": {
+    "name": "dvbt_g30_reep_f482MHz_r8.bin",
+    "location": "reep",
+    "technology": "DVB-T",
+    "sample_rate": 1000000.0,
+    "center_frequency_hz": 482000000.0,
+    "split": "held_out"
+   },
+   "path": "$RFPU_DATA\\datasets\\idlab-technology\\reep\\dvbt_g30_reep_f482MHz_r8.bin",
+   "sha256": "c9bb6f7a8d52ece8db090f3b9467fdab4494b5d9548874b4d16ac542119b93c0",
+   "ADC_divisor": 32768,
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "IDLab",
+   "emitter": "DVB-T",
+   "format": "ci16_le",
+   "metadata": {
+    "name": "dvbt_g30_uz_f482MHz_r7.bin",
+    "location": "uz",
+    "technology": "DVB-T",
+    "sample_rate": 1000000.0,
+    "center_frequency_hz": 482000000.0,
+    "split": "held_out"
+   },
+   "path": "$RFPU_DATA\\datasets\\idlab-technology\\uz\\dvbt_g30_uz_f482MHz_r7.bin",
+   "sha256": "742098c66296fd8bbeefcddb809a3d17bed8882408de510c6f934c8c0bc26ed1",
+   "ADC_divisor": 32768,
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "IDLab",
+   "emitter": "DVB-T",
+   "format": "ci16_le",
+   "metadata": {
+    "name": "dvbt_g30_uz_f482MHz_r9.bin",
+    "location": "uz",
+    "technology": "DVB-T",
+    "sample_rate": 1000000.0,
+    "center_frequency_hz": 482000000.0,
+    "split": "held_out"
+   },
+   "path": "$RFPU_DATA\\datasets\\idlab-technology\\uz\\dvbt_g30_uz_f482MHz_r9.bin",
+   "sha256": "bb80ae547239892f3e5519fc607a48819bf4f1fc485667d88279e2860d63acd5",
+   "ADC_divisor": 32768,
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "IDLab",
+   "emitter": "DVB-T",
+   "format": "ci16_le",
+   "metadata": {
+    "name": "dvbt10Msps_g30_merelbeke_f482MHz_r1.bin",
+    "location": "merelbeke",
+    "technology": "DVB-T",
+    "sample_rate": 10000000.0,
+    "center_frequency_hz": 482000000.0,
+    "split": "calibration"
+   },
+   "path": "$RFPU_DATA\\datasets\\idlab-technology\\merelbeke\\dvbt10Msps_g30_merelbeke_f482MHz_r1.bin",
+   "sha256": "b6f776f65cf7b4adb1c46fc1d9a71360b655cb2fa42ae6f8da610d24ea07b681",
+   "ADC_divisor": 32768,
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "IDLab",
+   "emitter": "DVB-T",
+   "format": "ci16_le",
+   "metadata": {
+    "name": "dvbt10Msps_g30_merelbeke_f482MHz_r2.bin",
+    "location": "merelbeke",
+    "technology": "DVB-T",
+    "sample_rate": 10000000.0,
+    "center_frequency_hz": 482000000.0,
+    "split": "calibration"
+   },
+   "path": "$RFPU_DATA\\datasets\\idlab-technology\\merelbeke\\dvbt10Msps_g30_merelbeke_f482MHz_r2.bin",
+   "sha256": "b1ba123acf626c898103524f2e771f9a2296980e00458d10191a656e941a3a31",
+   "ADC_divisor": 32768,
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "IDLab",
+   "emitter": "DVB-T",
+   "format": "ci16_le",
+   "metadata": {
+    "name": "dvbt10Msps_g30_rabot_f482MHz_r1.bin",
+    "location": "rabot",
+    "technology": "DVB-T",
+    "sample_rate": 10000000.0,
+    "center_frequency_hz": 482000000.0,
+    "split": "calibration"
+   },
+   "path": "$RFPU_DATA\\datasets\\idlab-technology\\rabot\\dvbt10Msps_g30_rabot_f482MHz_r1.bin",
+   "sha256": "32ae1b74aec5f069d94ac4d4bbc08c3ea6348dbe013738e072fe6d1238fb8fd7",
+   "ADC_divisor": 32768,
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "IDLab",
+   "emitter": "DVB-T",
+   "format": "ci16_le",
+   "metadata": {
+    "name": "dvbt10Msps_g30_reep_f482MHz_r1.bin",
+    "location": "reep",
+    "technology": "DVB-T",
+    "sample_rate": 10000000.0,
+    "center_frequency_hz": 482000000.0,
+    "split": "held_out"
+   },
+   "path": "$RFPU_DATA\\datasets\\idlab-technology\\reep\\dvbt10Msps_g30_reep_f482MHz_r1.bin",
+   "sha256": "f9221fbace351bc0523783cc5123a8f30b5bda3de8ca1510f7451574c44912ea",
+   "ADC_divisor": 32768,
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "IDLab",
+   "emitter": "DVB-T",
+   "format": "ci16_le",
+   "metadata": {
+    "name": "dvbt10Msps_g30_uz_f482MHz_r1.bin",
+    "location": "uz",
+    "technology": "DVB-T",
+    "sample_rate": 10000000.0,
+    "center_frequency_hz": 482000000.0,
+    "split": "held_out"
+   },
+   "path": "$RFPU_DATA\\datasets\\idlab-technology\\uz\\dvbt10Msps_g30_uz_f482MHz_r1.bin",
+   "sha256": "ae36a026f8bb908218a9e51c9ad43535cfaf954a2b0507785220574b24d65731",
+   "ADC_divisor": 32768,
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "IDLab",
+   "emitter": "LTE",
+   "format": "ci16_le",
+   "metadata": {
+    "name": "lte_g30_gentbrugge_f806MHz_r10.bin",
+    "location": "gentbrugge",
+    "technology": "LTE",
+    "sample_rate": 1000000.0,
+    "center_frequency_hz": 806000000.0,
+    "split": "held_out"
+   },
+   "path": "$RFPU_DATA\\datasets\\idlab-technology\\gentbrugge\\lte_g30_gentbrugge_f806MHz_r10.bin",
+   "sha256": "5d65e06e485df1401ba9587acadb799d7596a4f49f6b0aa0b6aef8b41962914a",
+   "ADC_divisor": 32768,
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "IDLab",
+   "emitter": "LTE",
+   "format": "ci16_le",
+   "metadata": {
+    "name": "lte_g30_gentbrugge_f806MHz_r7.bin",
+    "location": "gentbrugge",
+    "technology": "LTE",
+    "sample_rate": 1000000.0,
+    "center_frequency_hz": 806000000.0,
+    "split": "held_out"
+   },
+   "path": "$RFPU_DATA\\datasets\\idlab-technology\\gentbrugge\\lte_g30_gentbrugge_f806MHz_r7.bin",
+   "sha256": "0094a0db3ff13fc0ccce591743faaca1dee47a8370a4fc02c224ca88735fd079",
+   "ADC_divisor": 32768,
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "IDLab",
+   "emitter": "LTE",
+   "format": "ci16_le",
+   "metadata": {
+    "name": "lte_g30_igent_f806MHz_r1.bin",
+    "location": "igent",
+    "technology": "LTE",
+    "sample_rate": 1000000.0,
+    "center_frequency_hz": 806000000.0,
+    "split": "held_out"
+   },
+   "path": "$RFPU_DATA\\datasets\\idlab-technology\\igent\\lte_g30_igent_f806MHz_r1.bin",
+   "sha256": "a251b1539e7e6582aa0955a17b6b92a1525e48b6b1ee328dffdad67273fb67be",
+   "ADC_divisor": 32768,
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "IDLab",
+   "emitter": "LTE",
+   "format": "ci16_le",
+   "metadata": {
+    "name": "lte_g30_igent_f806MHz_r7.bin",
+    "location": "igent",
+    "technology": "LTE",
+    "sample_rate": 1000000.0,
+    "center_frequency_hz": 806000000.0,
+    "split": "held_out"
+   },
+   "path": "$RFPU_DATA\\datasets\\idlab-technology\\igent\\lte_g30_igent_f806MHz_r7.bin",
+   "sha256": "dd2fa95167bd35a830be001681411fb4d222aeaef5287b54165912a99d5ecfe8",
+   "ADC_divisor": 32768,
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "IDLab",
+   "emitter": "LTE",
+   "format": "ci16_le",
+   "metadata": {
+    "name": "lte_g30_merelbeke_f806MHz_r5.bin",
+    "location": "merelbeke",
+    "technology": "LTE",
+    "sample_rate": 1000000.0,
+    "center_frequency_hz": 806000000.0,
+    "split": "calibration"
+   },
+   "path": "$RFPU_DATA\\datasets\\idlab-technology\\merelbeke\\lte_g30_merelbeke_f806MHz_r5.bin",
+   "sha256": "1556888defaeb04080ef924596b74cae4ed8118c1ce81c2343229be71e8ec610",
+   "ADC_divisor": 32768,
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "IDLab",
+   "emitter": "LTE",
+   "format": "ci16_le",
+   "metadata": {
+    "name": "lte_g30_merelbeke_f806MHz_r3.bin",
+    "location": "merelbeke",
+    "technology": "LTE",
+    "sample_rate": 1000000.0,
+    "center_frequency_hz": 806000000.0,
+    "split": "calibration"
+   },
+   "path": "$RFPU_DATA\\datasets\\idlab-technology\\merelbeke\\lte_g30_merelbeke_f806MHz_r3.bin",
+   "sha256": "10a4feb03751f68d8a6a404f0cb7d684e0501ef52b677b718533448eb10e1e8e",
+   "ADC_divisor": 32768,
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "IDLab",
+   "emitter": "LTE",
+   "format": "ci16_le",
+   "metadata": {
+    "name": "lte_g30_rabot_f806MHz_r6.bin",
+    "location": "rabot",
+    "technology": "LTE",
+    "sample_rate": 1000000.0,
+    "center_frequency_hz": 806000000.0,
+    "split": "calibration"
+   },
+   "path": "$RFPU_DATA\\datasets\\idlab-technology\\rabot\\lte_g30_rabot_f806MHz_r6.bin",
+   "sha256": "5bf4bfaf157200a1dbc6e72b7f5b0512d780136d3635ad98057e09157f0b0e07",
+   "ADC_divisor": 32768,
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "IDLab",
+   "emitter": "LTE",
+   "format": "ci16_le",
+   "metadata": {
+    "name": "lte_g30_rabot_f806MHz_r4.bin",
+    "location": "rabot",
+    "technology": "LTE",
+    "sample_rate": 1000000.0,
+    "center_frequency_hz": 806000000.0,
+    "split": "calibration"
+   },
+   "path": "$RFPU_DATA\\datasets\\idlab-technology\\rabot\\lte_g30_rabot_f806MHz_r4.bin",
+   "sha256": "e3c566c1e891db2c0a05c673f239eecfad92ac5b62c1d913703cec7062c1e03b",
+   "ADC_divisor": 32768,
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "IDLab",
+   "emitter": "LTE",
+   "format": "ci16_le",
+   "metadata": {
+    "name": "lte_g30_reep_f806MHz_r5.bin",
+    "location": "reep",
+    "technology": "LTE",
+    "sample_rate": 1000000.0,
+    "center_frequency_hz": 806000000.0,
+    "split": "held_out"
+   },
+   "path": "$RFPU_DATA\\datasets\\idlab-technology\\reep\\lte_g30_reep_f806MHz_r5.bin",
+   "sha256": "da3fea6f70153be56e2184e3769bfebcbdcbd88dca9a071b97b85c3cf9093b73",
+   "ADC_divisor": 32768,
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "IDLab",
+   "emitter": "LTE",
+   "format": "ci16_le",
+   "metadata": {
+    "name": "lte_g30_reep_f806MHz_r9.bin",
+    "location": "reep",
+    "technology": "LTE",
+    "sample_rate": 1000000.0,
+    "center_frequency_hz": 806000000.0,
+    "split": "held_out"
+   },
+   "path": "$RFPU_DATA\\datasets\\idlab-technology\\reep\\lte_g30_reep_f806MHz_r9.bin",
+   "sha256": "40600fd53b4cae49afae52cb7fc946855029da9372d85a6165b8f919e2d761aa",
+   "ADC_divisor": 32768,
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "IDLab",
+   "emitter": "LTE",
+   "format": "ci16_le",
+   "metadata": {
+    "name": "lte_g30_uz_f806MHz_r6.bin",
+    "location": "uz",
+    "technology": "LTE",
+    "sample_rate": 1000000.0,
+    "center_frequency_hz": 806000000.0,
+    "split": "held_out"
+   },
+   "path": "$RFPU_DATA\\datasets\\idlab-technology\\uz\\lte_g30_uz_f806MHz_r6.bin",
+   "sha256": "ddd8399cc11ad359b8e88064572fcfa951a3bf2b975488ed96c7cd97fc0ff6c8",
+   "ADC_divisor": 32768,
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "IDLab",
+   "emitter": "LTE",
+   "format": "ci16_le",
+   "metadata": {
+    "name": "lte_g30_uz_f806MHz_r8.bin",
+    "location": "uz",
+    "technology": "LTE",
+    "sample_rate": 1000000.0,
+    "center_frequency_hz": 806000000.0,
+    "split": "held_out"
+   },
+   "path": "$RFPU_DATA\\datasets\\idlab-technology\\uz\\lte_g30_uz_f806MHz_r8.bin",
+   "sha256": "1ac5f6bc93e33f1f17de8fea8e618c0eaeb75433b3187b9edef3e3dde56f0f7b",
+   "ADC_divisor": 32768,
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "IDLab",
+   "emitter": "LTE",
+   "format": "ci16_le",
+   "metadata": {
+    "name": "lte10Msps_g30_uz_f806MHz_r1.bin",
+    "location": "gentbrugge",
+    "technology": "LTE",
+    "sample_rate": 10000000.0,
+    "center_frequency_hz": 806000000.0,
+    "split": "held_out"
+   },
+   "path": "$RFPU_DATA\\datasets\\idlab-technology\\gentbrugge\\lte10Msps_g30_uz_f806MHz_r1.bin",
+   "sha256": "3766b3289ebc839feff532fd4bd82e838250603baaa71278d55a4bcc7e5b0e5b",
+   "ADC_divisor": 32768,
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "IDLab",
+   "emitter": "LTE",
+   "format": "ci16_le",
+   "metadata": {
+    "name": "lte10Msps_g40_igent_f806MHz_r1.bin",
+    "location": "igent",
+    "technology": "LTE",
+    "sample_rate": 10000000.0,
+    "center_frequency_hz": 806000000.0,
+    "split": "held_out"
+   },
+   "path": "$RFPU_DATA\\datasets\\idlab-technology\\igent\\lte10Msps_g40_igent_f806MHz_r1.bin",
+   "sha256": "81e0ccd638902e4b275aae149d22fa20d3ff46f933ba94deb51b3348c5b06e74",
+   "ADC_divisor": 32768,
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "IDLab",
+   "emitter": "LTE",
+   "format": "ci16_le",
+   "metadata": {
+    "name": "lte10Msps_g20_igent_f806MHz_r1.bin",
+    "location": "igent",
+    "technology": "LTE",
+    "sample_rate": 10000000.0,
+    "center_frequency_hz": 806000000.0,
+    "split": "held_out"
+   },
+   "path": "$RFPU_DATA\\datasets\\idlab-technology\\igent\\lte10Msps_g20_igent_f806MHz_r1.bin",
+   "sha256": "f400c53a57f818e69c5f72e98be89e5a078434aa9dcaa2613eaf4444bc03aaab",
+   "ADC_divisor": 32768,
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "IDLab",
+   "emitter": "LTE",
+   "format": "ci16_le",
+   "metadata": {
+    "name": "lte10Msps_g30_merelbeke_f806MHz_r1.bin",
+    "location": "merelbeke",
+    "technology": "LTE",
+    "sample_rate": 10000000.0,
+    "center_frequency_hz": 806000000.0,
+    "split": "calibration"
+   },
+   "path": "$RFPU_DATA\\datasets\\idlab-technology\\merelbeke\\lte10Msps_g30_merelbeke_f806MHz_r1.bin",
+   "sha256": "1b7901417b3a68643dbd1ec946f2af164a28adda0b2dab07b5ea657b4e13dee9",
+   "ADC_divisor": 32768,
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "IDLab",
+   "emitter": "LTE",
+   "format": "ci16_le",
+   "metadata": {
+    "name": "lte10Msps_g30_merelbeke_f806MHz_r2.bin",
+    "location": "merelbeke",
+    "technology": "LTE",
+    "sample_rate": 10000000.0,
+    "center_frequency_hz": 806000000.0,
+    "split": "calibration"
+   },
+   "path": "$RFPU_DATA\\datasets\\idlab-technology\\merelbeke\\lte10Msps_g30_merelbeke_f806MHz_r2.bin",
+   "sha256": "0f5692baf505901549b43c87013627cdd05f70a12be079203b44ef668858c882",
+   "ADC_divisor": 32768,
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "IDLab",
+   "emitter": "LTE",
+   "format": "ci16_le",
+   "metadata": {
+    "name": "lte10Msps_g30_rabot_f806MHz_r1.bin",
+    "location": "rabot",
+    "technology": "LTE",
+    "sample_rate": 10000000.0,
+    "center_frequency_hz": 806000000.0,
+    "split": "calibration"
+   },
+   "path": "$RFPU_DATA\\datasets\\idlab-technology\\rabot\\lte10Msps_g30_rabot_f806MHz_r1.bin",
+   "sha256": "936329911ba23672aabc880583bdfe448a1e69fb2e17f6982b5a8cff40d6dc13",
+   "ADC_divisor": 32768,
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "IDLab",
+   "emitter": "LTE",
+   "format": "ci16_le",
+   "metadata": {
+    "name": "lte10Msps_g30_reep_f806MHz_r1.bin",
+    "location": "reep",
+    "technology": "LTE",
+    "sample_rate": 10000000.0,
+    "center_frequency_hz": 806000000.0,
+    "split": "held_out"
+   },
+   "path": "$RFPU_DATA\\datasets\\idlab-technology\\reep\\lte10Msps_g30_reep_f806MHz_r1.bin",
+   "sha256": "7ba0843cae88964b9c410fdf6d5cf7c0ea487ff354366c68f10884d5b7e1f87d",
+   "ADC_divisor": 32768,
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "IDLab",
+   "emitter": "LTE",
+   "format": "ci16_le",
+   "metadata": {
+    "name": "lte10Msps_g30_uz_f806MHz_r1.bin",
+    "location": "uz",
+    "technology": "LTE",
+    "sample_rate": 10000000.0,
+    "center_frequency_hz": 806000000.0,
+    "split": "held_out"
+   },
+   "path": "$RFPU_DATA\\datasets\\idlab-technology\\uz\\lte10Msps_g30_uz_f806MHz_r1.bin",
+   "sha256": "654f0a5280d4d6704e225754c288b9576a8a98b0ad3494928528c10eb75c2014",
+   "ADC_divisor": 32768,
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "IDLab",
+   "emitter": "WiFi",
+   "format": "ci16_le",
+   "metadata": {
+    "name": "wf_g76_gentbrugge_f5240MHz_r9.bin",
+    "location": "gentbrugge",
+    "technology": "WiFi",
+    "sample_rate": 1000000.0,
+    "center_frequency_hz": 5240000000.0,
+    "split": "held_out"
+   },
+   "path": "$RFPU_DATA\\datasets\\idlab-technology\\gentbrugge\\wf_g76_gentbrugge_f5240MHz_r9.bin",
+   "sha256": "3c10eb75b88cb3c8f6a75ebeb95a6911f4b5445d99821441bdc0e2c527ac89c8",
+   "ADC_divisor": 32768,
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "IDLab",
+   "emitter": "WiFi",
+   "format": "ci16_le",
+   "metadata": {
+    "name": "wf_g76_gentbrugge_f5240MHz_r4.bin",
+    "location": "gentbrugge",
+    "technology": "WiFi",
+    "sample_rate": 1000000.0,
+    "center_frequency_hz": 5240000000.0,
+    "split": "held_out"
+   },
+   "path": "$RFPU_DATA\\datasets\\idlab-technology\\gentbrugge\\wf_g76_gentbrugge_f5240MHz_r4.bin",
+   "sha256": "17d9ac1772c6f87b41add2c180efae01377baef03e61792a1d0c218df4ec5c85",
+   "ADC_divisor": 32768,
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "IDLab",
+   "emitter": "WiFi",
+   "format": "ci16_le",
+   "metadata": {
+    "name": "wf_g30_igent_f2412MHz_r1.bin",
+    "location": "igent",
+    "technology": "WiFi",
+    "sample_rate": 1000000.0,
+    "center_frequency_hz": 2412000000.0,
+    "split": "held_out"
+   },
+   "path": "$RFPU_DATA\\datasets\\idlab-technology\\igent\\wf_g30_igent_f2412MHz_r1.bin",
+   "sha256": "8902213640047858e335abfc62f504a92bed8a39e9f70372493abe735e3e279f",
+   "ADC_divisor": 32768,
+   "in_14_capture_screen": true
+  },
+  {
+   "dataset": "IDLab",
+   "emitter": "WiFi",
+   "format": "ci16_le",
+   "metadata": {
+    "name": "wf_g30_merelbeke_f5180MHz_r2.bin",
+    "location": "merelbeke",
+    "technology": "WiFi",
+    "sample_rate": 1000000.0,
+    "center_frequency_hz": 5180000000.0,
+    "split": "calibration"
+   },
+   "path": "$RFPU_DATA\\datasets\\idlab-technology\\merelbeke\\wf_g30_merelbeke_f5180MHz_r2.bin",
+   "sha256": "cff380992c1c828bf6ad4de6eb5cc8d059a05769ce3f08b36baedec8038bfd28",
+   "ADC_divisor": 32768,
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "IDLab",
+   "emitter": "WiFi",
+   "format": "ci16_le",
+   "metadata": {
+    "name": "wf_g30_merelbeke_f2412MHz_r5.bin",
+    "location": "merelbeke",
+    "technology": "WiFi",
+    "sample_rate": 1000000.0,
+    "center_frequency_hz": 2412000000.0,
+    "split": "calibration"
+   },
+   "path": "$RFPU_DATA\\datasets\\idlab-technology\\merelbeke\\wf_g30_merelbeke_f2412MHz_r5.bin",
+   "sha256": "71f84a0bf74163341913f4fa39603727c224c33493d00b9f256a068b3131f942",
+   "ADC_divisor": 32768,
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "IDLab",
+   "emitter": "WiFi",
+   "format": "ci16_le",
+   "metadata": {
+    "name": "wf_g76_rabot_f5240MHz_r5.bin",
+    "location": "rabot",
+    "technology": "WiFi",
+    "sample_rate": 1000000.0,
+    "center_frequency_hz": 5240000000.0,
+    "split": "calibration"
+   },
+   "path": "$RFPU_DATA\\datasets\\idlab-technology\\rabot\\wf_g76_rabot_f5240MHz_r5.bin",
+   "sha256": "d0567836ceb266c631501ad77c8627c1564913d6d425087f6c92e14a099b8929",
+   "ADC_divisor": 32768,
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "IDLab",
+   "emitter": "WiFi",
+   "format": "ci16_le",
+   "metadata": {
+    "name": "wf_g76_rabot_f5240MHz_r7.bin",
+    "location": "rabot",
+    "technology": "WiFi",
+    "sample_rate": 1000000.0,
+    "center_frequency_hz": 5240000000.0,
+    "split": "calibration"
+   },
+   "path": "$RFPU_DATA\\datasets\\idlab-technology\\rabot\\wf_g76_rabot_f5240MHz_r7.bin",
+   "sha256": "8d257e4366f4d61cfd90e413ed9ed38e47aa8ede0291679fcb875172fae70e5d",
+   "ADC_divisor": 32768,
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "IDLab",
+   "emitter": "WiFi",
+   "format": "ci16_le",
+   "metadata": {
+    "name": "wf_g76_reep_f5240MHz_r6.bin",
+    "location": "reep",
+    "technology": "WiFi",
+    "sample_rate": 1000000.0,
+    "center_frequency_hz": 5240000000.0,
+    "split": "held_out"
+   },
+   "path": "$RFPU_DATA\\datasets\\idlab-technology\\reep\\wf_g76_reep_f5240MHz_r6.bin",
+   "sha256": "a77dc09114abdbeca775a4854667a592748261906c6abe7b6e74e3f5c963f336",
+   "ADC_divisor": 32768,
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "IDLab",
+   "emitter": "WiFi",
+   "format": "ci16_le",
+   "metadata": {
+    "name": "wf_g76_reep_f5240MHz_r10.bin",
+    "location": "reep",
+    "technology": "WiFi",
+    "sample_rate": 1000000.0,
+    "center_frequency_hz": 5240000000.0,
+    "split": "held_out"
+   },
+   "path": "$RFPU_DATA\\datasets\\idlab-technology\\reep\\wf_g76_reep_f5240MHz_r10.bin",
+   "sha256": "f4c567f6fde4b1daaf4a3dbc64ed8d87856d38805839ecf49fb215c5b5806c5b",
+   "ADC_divisor": 32768,
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "IDLab",
+   "emitter": "WiFi",
+   "format": "ci16_le",
+   "metadata": {
+    "name": "wf10Msps_g76_gentbrugge_f5240MHz_r1.bin",
+    "location": "gentbrugge",
+    "technology": "WiFi",
+    "sample_rate": 10000000.0,
+    "center_frequency_hz": 5240000000.0,
+    "split": "held_out"
+   },
+   "path": "$RFPU_DATA\\datasets\\idlab-technology\\gentbrugge\\wf10Msps_g76_gentbrugge_f5240MHz_r1.bin",
+   "sha256": "cba35634e1ede245749c4e622c4c78b0a5ce48c4589a426c76bcc500812e2d3f",
+   "ADC_divisor": 32768,
+   "in_14_capture_screen": true
+  },
+  {
+   "dataset": "IDLab",
+   "emitter": "WiFi",
+   "format": "ci16_le",
+   "metadata": {
+    "name": "wf10Msps_g30_merelbeke_f5180MHz_r1.bin",
+    "location": "merelbeke",
+    "technology": "WiFi",
+    "sample_rate": 10000000.0,
+    "center_frequency_hz": 5180000000.0,
+    "split": "calibration"
+   },
+   "path": "$RFPU_DATA\\datasets\\idlab-technology\\merelbeke\\wf10Msps_g30_merelbeke_f5180MHz_r1.bin",
+   "sha256": "65c800784f702536bffc86c5c780e9cdd5580e4d5ac17463e64a2ba78936a2ed",
+   "ADC_divisor": 32768,
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "IDLab",
+   "emitter": "WiFi",
+   "format": "ci16_le",
+   "metadata": {
+    "name": "wf10Msps_g30_rabot_f5240MHz_r1.bin",
+    "location": "rabot",
+    "technology": "WiFi",
+    "sample_rate": 10000000.0,
+    "center_frequency_hz": 5240000000.0,
+    "split": "calibration"
+   },
+   "path": "$RFPU_DATA\\datasets\\idlab-technology\\rabot\\wf10Msps_g30_rabot_f5240MHz_r1.bin",
+   "sha256": "a84e3c84b97fbb5ebf2170c3576e2e3550261d53c6eb3c844248ecb763bf5e5f",
+   "ADC_divisor": 32768,
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "IDLab",
+   "emitter": "WiFi",
+   "format": "ci16_le",
+   "metadata": {
+    "name": "wf10Msps_g76_rabot_f5240MHz_r1.bin",
+    "location": "rabot",
+    "technology": "WiFi",
+    "sample_rate": 10000000.0,
+    "center_frequency_hz": 5240000000.0,
+    "split": "calibration"
+   },
+   "path": "$RFPU_DATA\\datasets\\idlab-technology\\rabot\\wf10Msps_g76_rabot_f5240MHz_r1.bin",
+   "sha256": "e846fc8d95a3265f5554817eb8407777b8399566b7183bb595b80a0c61b3f970",
+   "ADC_divisor": 32768,
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "IDLab",
+   "emitter": "WiFi",
+   "format": "ci16_le",
+   "metadata": {
+    "name": "wf10Msps_g76_reep_f5240MHz_r1.bin",
+    "location": "reep",
+    "technology": "WiFi",
+    "sample_rate": 10000000.0,
+    "center_frequency_hz": 5240000000.0,
+    "split": "held_out"
+   },
+   "path": "$RFPU_DATA\\datasets\\idlab-technology\\reep\\wf10Msps_g76_reep_f5240MHz_r1.bin",
+   "sha256": "d57b9edb3f8b69b17ce7bb77fc9e5ab8c734da8a7caa4208333c8113ada2ec14",
+   "ADC_divisor": 32768,
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "IDLab",
+   "emitter": "WiFi",
+   "format": "ci16_le",
+   "metadata": {
+    "name": "wf10Msps_g80_uz_f5240MHz_r2.bin",
+    "location": "uz",
+    "technology": "WiFi",
+    "sample_rate": 10000000.0,
+    "center_frequency_hz": 5240000000.0,
+    "split": "held_out"
+   },
+   "path": "$RFPU_DATA\\datasets\\idlab-technology\\uz\\wf10Msps_g80_uz_f5240MHz_r2.bin",
+   "sha256": "6dd254e6c0f5158923b40214e7f9f7f455a614e9c82a9fccc1662e4fe4fce120",
+   "ADC_divisor": 32768,
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "IDLab",
+   "emitter": "WiFi",
+   "format": "ci16_le",
+   "metadata": {
+    "name": "wf10Msps_g76_uz_f5240MHz_r1.bin",
+    "location": "uz",
+    "technology": "WiFi",
+    "sample_rate": 10000000.0,
+    "center_frequency_hz": 5240000000.0,
+    "split": "held_out"
+   },
+   "path": "$RFPU_DATA\\datasets\\idlab-technology\\uz\\wf10Msps_g76_uz_f5240MHz_r1.bin",
+   "sha256": "a950bb8271c7b2915cbbfff235021a4bd19a3ed7d67e6fab4c50530ce5f74e08",
+   "ADC_divisor": 32768,
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "EPFL-LoRaIQ",
+   "emitter": "LoRa",
+   "format": "cf32_le",
+   "metadata": {
+    "session": "25_01_15-10_17",
+    "receiver": "rrh4",
+    "sample_rate": 250000,
+    "center_frequency_mhz": 862.5
+   },
+   "path": "$RFPU_DATA\\datasets\\loraiq-20341802\\sigmfs\\25_01_15-10_17\\rrh4\\858.sigmf-data",
+   "sha256": "cac6e3e6eff73409e675384532363918967c52f40df391e176b0eae2bb534c1f",
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "EPFL-LoRaIQ",
+   "emitter": "LoRa",
+   "format": "cf32_le",
+   "metadata": {
+    "session": "25_01_17-13_40",
+    "receiver": "rrh3",
+    "sample_rate": 250000,
+    "center_frequency_mhz": 862.5
+   },
+   "path": "$RFPU_DATA\\datasets\\loraiq-20341802\\sigmfs\\25_01_17-13_40\\rrh3\\999.sigmf-data",
+   "sha256": "ea5715663247c601f73eb35f7b3d6baf063d02a7fa29b38cb21172e178030ea2",
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "EPFL-LoRaIQ",
+   "emitter": "LoRa",
+   "format": "cf32_le",
+   "metadata": {
+    "session": "25_01_17-13_40",
+    "receiver": "rrh4",
+    "sample_rate": 250000,
+    "center_frequency_mhz": 862.5
+   },
+   "path": "$RFPU_DATA\\datasets\\loraiq-20341802\\sigmfs\\25_01_17-13_40\\rrh4\\530.sigmf-data",
+   "sha256": "11fe44f58fe2b65631cb4c86785cd2ce3373ec82d324a2cbeec0e54b803bc253",
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "EPFL-LoRaIQ",
+   "emitter": "LoRa",
+   "format": "cf32_le",
+   "metadata": {
+    "session": "25_01_17-14_39",
+    "receiver": "rrh2",
+    "sample_rate": 250000,
+    "center_frequency_mhz": 862.5
+   },
+   "path": "$RFPU_DATA\\datasets\\loraiq-20341802\\sigmfs\\25_01_17-14_39\\rrh2\\1.sigmf-data",
+   "sha256": "945cd6dbd9f0cacb7624432291a09ee41641c781e99a4bc451eb3d9962fe24da",
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "EPFL-LoRaIQ",
+   "emitter": "LoRa",
+   "format": "cf32_le",
+   "metadata": {
+    "session": "25_01_24-15_38",
+    "receiver": "rrh2",
+    "sample_rate": 250000,
+    "center_frequency_mhz": 862.5
+   },
+   "path": "$RFPU_DATA\\datasets\\loraiq-20341802\\sigmfs\\25_01_24-15_38\\rrh2\\425.sigmf-data",
+   "sha256": "e44aac048539383447efccef3f02467f6062638ec238e59d7fcb7c9a6a5d09fc",
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "EPFL-LoRaIQ",
+   "emitter": "LoRa",
+   "format": "cf32_le",
+   "metadata": {
+    "session": "25_01_24-15_38",
+    "receiver": "rrh3",
+    "sample_rate": 250000,
+    "center_frequency_mhz": 862.5
+   },
+   "path": "$RFPU_DATA\\datasets\\loraiq-20341802\\sigmfs\\25_01_24-15_38\\rrh3\\363.sigmf-data",
+   "sha256": "960585e466250938e0453613170e55d580ae70a61341472db33b661ae8c8fd76",
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "EPFL-LoRaIQ",
+   "emitter": "LoRa",
+   "format": "cf32_le",
+   "metadata": {
+    "session": "25_01_29-15_53",
+    "receiver": "rrh1",
+    "sample_rate": 250000,
+    "center_frequency_mhz": 862.5
+   },
+   "path": "$RFPU_DATA\\datasets\\loraiq-20341802\\sigmfs\\25_01_29-15_53\\rrh1\\2.sigmf-data",
+   "sha256": "a0383e3c43fbd84e02c55226b17ada464f9075d0844fa13623e7cd29b74ee1cd",
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "EPFL-LoRaIQ",
+   "emitter": "LoRa",
+   "format": "cf32_le",
+   "metadata": {
+    "session": "25_01_29-15_53",
+    "receiver": "rrh4",
+    "sample_rate": 250000,
+    "center_frequency_mhz": 862.5
+   },
+   "path": "$RFPU_DATA\\datasets\\loraiq-20341802\\sigmfs\\25_01_29-15_53\\rrh4\\1.sigmf-data",
+   "sha256": "5ae8f2a12ec8a7a92ce292111a563943035df83617b56837058f9d7ddf0b44e1",
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "EPFL-LoRaIQ",
+   "emitter": "LoRa",
+   "format": "cf32_le",
+   "metadata": {
+    "session": "25_09_10-10_13",
+    "receiver": "rrh2",
+    "sample_rate": 500000,
+    "center_frequency_mhz": 862.5
+   },
+   "path": "$RFPU_DATA\\datasets\\loraiq-20341802\\sigmfs\\25_09_10-10_13\\rrh2\\68.sigmf-data",
+   "sha256": "f4c51417806386a9366daed694577bb9cca85b81010a93d7741cc32c8ac1e6d2",
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "EPFL-LoRaIQ",
+   "emitter": "LoRa",
+   "format": "cf32_le",
+   "metadata": {
+    "session": "25_09_10-15_21",
+    "receiver": "rrh1",
+    "sample_rate": 500000,
+    "center_frequency_mhz": 862.5
+   },
+   "path": "$RFPU_DATA\\datasets\\loraiq-20341802\\sigmfs\\25_09_10-15_21\\rrh1\\509.sigmf-data",
+   "sha256": "e0076f17c8b61b314c6e92c347befa9533c79f80b7338418505b89c57469c3d2",
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "EPFL-LoRaIQ",
+   "emitter": "LoRa",
+   "format": "cf32_le",
+   "metadata": {
+    "session": "25_09_10-15_21",
+    "receiver": "rrh2",
+    "sample_rate": 500000,
+    "center_frequency_mhz": 862.5
+   },
+   "path": "$RFPU_DATA\\datasets\\loraiq-20341802\\sigmfs\\25_09_10-15_21\\rrh2\\507.sigmf-data",
+   "sha256": "2ff362552fcbb4e608d6b54271fa4de8d94c3d27b4f809977af64b0c9d81aad6",
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "EPFL-LoRaIQ",
+   "emitter": "LoRa",
+   "format": "cf32_le",
+   "metadata": {
+    "session": "25_09_10-15_21",
+    "receiver": "rrh3",
+    "sample_rate": 500000,
+    "center_frequency_mhz": 862.5
+   },
+   "path": "$RFPU_DATA\\datasets\\loraiq-20341802\\sigmfs\\25_09_10-15_21\\rrh3\\501.sigmf-data",
+   "sha256": "310f99396e19d9d7b4b0b3c8e1ebe81f7f2133b7cccd24946ea84625e5ffe57c",
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "EPFL-LoRaIQ",
+   "emitter": "LoRa",
+   "format": "cf32_le",
+   "metadata": {
+    "session": "25_09_12-13_53",
+    "receiver": "rrh2",
+    "sample_rate": 500000,
+    "center_frequency_mhz": 862.5
+   },
+   "path": "$RFPU_DATA\\datasets\\loraiq-20341802\\sigmfs\\25_09_12-13_53\\rrh2\\728.sigmf-data",
+   "sha256": "d67c9fa3a9b3d24353ef919163574c5ec0a39ea06607286a5fe9bdef27b6355a",
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "EPFL-LoRaIQ",
+   "emitter": "LoRa",
+   "format": "cf32_le",
+   "metadata": {
+    "session": "25_09_12-13_53",
+    "receiver": "rrh3",
+    "sample_rate": 500000,
+    "center_frequency_mhz": 862.5
+   },
+   "path": "$RFPU_DATA\\datasets\\loraiq-20341802\\sigmfs\\25_09_12-13_53\\rrh3\\728.sigmf-data",
+   "sha256": "4f6d3fc0a28fd6edade7862e5f06e4ecc166044722d136c79ef677196ceec758",
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "EPFL-LoRaIQ",
+   "emitter": "LoRa",
+   "format": "cf32_le",
+   "metadata": {
+    "session": "25_09_12-13_53",
+    "receiver": "rrh4",
+    "sample_rate": 500000,
+    "center_frequency_mhz": 862.5
+   },
+   "path": "$RFPU_DATA\\datasets\\loraiq-20341802\\sigmfs\\25_09_12-13_53\\rrh4\\724.sigmf-data",
+   "sha256": "93979916dff06dc89ef71e185afc3a982f9c9f63389b20ac3ab617916268af25",
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "EPFL-LoRaIQ",
+   "emitter": "LoRa",
+   "format": "cf32_le",
+   "metadata": {
+    "session": "25_09_12-14_48",
+    "receiver": "rrh2",
+    "sample_rate": 500000,
+    "center_frequency_mhz": 862.5
+   },
+   "path": "$RFPU_DATA\\datasets\\loraiq-20341802\\sigmfs\\25_09_12-14_48\\rrh2\\2.sigmf-data",
+   "sha256": "c4fd66f91adce556369f2c6e2b094ce658276e2feb0906a0e189a47a03a5a49c",
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "EPFL-LoRaIQ",
+   "emitter": "LoRa",
+   "format": "cf32_le",
+   "metadata": {
+    "session": "25_09_12-14_48",
+    "receiver": "rrh4",
+    "sample_rate": 500000,
+    "center_frequency_mhz": 862.5
+   },
+   "path": "$RFPU_DATA\\datasets\\loraiq-20341802\\sigmfs\\25_09_12-14_48\\rrh4\\2.sigmf-data",
+   "sha256": "bcfc0be411b1704ccd804372d7a7a9eaa88e566acf3c1126d1ea581bb6b0d11a",
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "EPFL-LoRaIQ",
+   "emitter": "LoRa",
+   "format": "cf32_le",
+   "metadata": {
+    "session": "25_09_12-15_16",
+    "receiver": "rrh1",
+    "sample_rate": 500000,
+    "center_frequency_mhz": 862.5
+   },
+   "path": "$RFPU_DATA\\datasets\\loraiq-20341802\\sigmfs\\25_09_12-15_16\\rrh1\\382.sigmf-data",
+   "sha256": "c9d80397e5c5e4ed116390ef4161516f849d5ccdf63b494af8bc60b2c780c418",
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "EPFL-LoRaIQ",
+   "emitter": "LoRa",
+   "format": "cf32_le",
+   "metadata": {
+    "session": "25_09_12-15_16",
+    "receiver": "rrh2",
+    "sample_rate": 500000,
+    "center_frequency_mhz": 862.5
+   },
+   "path": "$RFPU_DATA\\datasets\\loraiq-20341802\\sigmfs\\25_09_12-15_16\\rrh2\\392.sigmf-data",
+   "sha256": "671582260fb2237d65a22110a70d316a6743cce577d12bfaf435874d392de278",
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "EPFL-LoRaIQ",
+   "emitter": "LoRa",
+   "format": "cf32_le",
+   "metadata": {
+    "session": "25_09_12-15_16",
+    "receiver": "rrh3",
+    "sample_rate": 500000,
+    "center_frequency_mhz": 862.5
+   },
+   "path": "$RFPU_DATA\\datasets\\loraiq-20341802\\sigmfs\\25_09_12-15_16\\rrh3\\378.sigmf-data",
+   "sha256": "737d2641ba6fe272405cdaf53608f1b32799d29bb6b2b97be9483733a7a51799",
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "EPFL-LoRaIQ",
+   "emitter": "LoRa",
+   "format": "cf32_le",
+   "metadata": {
+    "session": "25_09_12-15_16",
+    "receiver": "rrh4",
+    "sample_rate": 500000,
+    "center_frequency_mhz": 862.5
+   },
+   "path": "$RFPU_DATA\\datasets\\loraiq-20341802\\sigmfs\\25_09_12-15_16\\rrh4\\385.sigmf-data",
+   "sha256": "36923e30b5c609edf4914e63ffefb6a0d423b460f3e3da733bb5b8f7f133bed0",
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "EPFL-LoRaIQ",
+   "emitter": "LoRa",
+   "format": "cf32_le",
+   "metadata": {
+    "session": "25_09_12-16_19",
+    "receiver": "rrh3",
+    "sample_rate": 500000,
+    "center_frequency_mhz": 862.5
+   },
+   "path": "$RFPU_DATA\\datasets\\loraiq-20341802\\sigmfs\\25_09_12-16_19\\rrh3\\1143.sigmf-data",
+   "sha256": "59ebe7c11bc7269430d81f2c14b143f2a64a095b82886f1a9f504b2083c86fab",
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "EPFL-LoRaIQ",
+   "emitter": "LoRa",
+   "format": "cf32_le",
+   "metadata": {
+    "session": "25_09_12-16_19",
+    "receiver": "rrh4",
+    "sample_rate": 500000,
+    "center_frequency_mhz": 862.5
+   },
+   "path": "$RFPU_DATA\\datasets\\loraiq-20341802\\sigmfs\\25_09_12-16_19\\rrh4\\1143.sigmf-data",
+   "sha256": "7e3395f1f15fff4a5427a655e3a3e734c88f83d943c9bdaafc528101a4e4878b",
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "EPFL-LoRaIQ",
+   "emitter": "LoRa",
+   "format": "cf32_le",
+   "metadata": {
+    "session": "25_09_16-15_50",
+    "receiver": "rrh2",
+    "sample_rate": 500000,
+    "center_frequency_mhz": 862.5
+   },
+   "path": "$RFPU_DATA\\datasets\\loraiq-20341802\\sigmfs\\25_09_16-15_50\\rrh2\\262.sigmf-data",
+   "sha256": "cce8b0c7e72ef33eb5fd76996c569f97929f8246590e475f8d2baab7a4cce045",
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "EPFL-LoRaIQ",
+   "emitter": "LoRa",
+   "format": "cf32_le",
+   "metadata": {
+    "session": "25_09_17-09_30",
+    "receiver": "rrh1",
+    "sample_rate": 500000,
+    "center_frequency_mhz": 862.5
+   },
+   "path": "$RFPU_DATA\\datasets\\loraiq-20341802\\sigmfs\\25_09_17-09_30\\rrh1\\642.sigmf-data",
+   "sha256": "8e2e9debc0e44b3931ee3f26dc99b28d4951a27f3b47f9e9cfda31fde6d4331c",
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "EPFL-LoRaIQ",
+   "emitter": "LoRa",
+   "format": "cf32_le",
+   "metadata": {
+    "session": "25_09_17-09_30",
+    "receiver": "rrh2",
+    "sample_rate": 500000,
+    "center_frequency_mhz": 862.5
+   },
+   "path": "$RFPU_DATA\\datasets\\loraiq-20341802\\sigmfs\\25_09_17-09_30\\rrh2\\645.sigmf-data",
+   "sha256": "5501a9779a5bc323ec66f5fe7ea9adeb93b773773151a9075fc696fd99e62a5e",
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "EPFL-LoRaIQ",
+   "emitter": "LoRa",
+   "format": "cf32_le",
+   "metadata": {
+    "session": "25_09_17-09_30",
+    "receiver": "rrh3",
+    "sample_rate": 500000,
+    "center_frequency_mhz": 862.5
+   },
+   "path": "$RFPU_DATA\\datasets\\loraiq-20341802\\sigmfs\\25_09_17-09_30\\rrh3\\318.sigmf-data",
+   "sha256": "a1f4e87861548b3db5aef2a305d381cacd6158c1fe5a357cd997f9b6e73c7a99",
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "EPFL-LoRaIQ",
+   "emitter": "LoRa",
+   "format": "cf32_le",
+   "metadata": {
+    "session": "25_09_17-09_30",
+    "receiver": "rrh4",
+    "sample_rate": 500000,
+    "center_frequency_mhz": 862.5
+   },
+   "path": "$RFPU_DATA\\datasets\\loraiq-20341802\\sigmfs\\25_09_17-09_30\\rrh4\\648.sigmf-data",
+   "sha256": "755c9eeab116f241cf8aa151562c61ccb595d4be922b87d5bc3b37f65b075ac5",
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "EPFL-LoRaIQ",
+   "emitter": "LoRa",
+   "format": "cf32_le",
+   "metadata": {
+    "session": "25_09_20-11_26",
+    "receiver": "rrh1",
+    "sample_rate": 500000,
+    "center_frequency_mhz": 862.5
+   },
+   "path": "$RFPU_DATA\\datasets\\loraiq-20341802\\sigmfs\\25_09_20-11_26\\rrh1\\977.sigmf-data",
+   "sha256": "0d5cb43ef27e71c1058db44adbf8e3a9dd93959ecdfb342f9236f70639301c91",
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "EPFL-LoRaIQ",
+   "emitter": "LoRa",
+   "format": "cf32_le",
+   "metadata": {
+    "session": "25_09_20-11_26",
+    "receiver": "rrh3",
+    "sample_rate": 500000,
+    "center_frequency_mhz": 862.5
+   },
+   "path": "$RFPU_DATA\\datasets\\loraiq-20341802\\sigmfs\\25_09_20-11_26\\rrh3\\2.sigmf-data",
+   "sha256": "b0eb22b02b1c67a5f435c8893103b371d096f8b7b0471bddfa0cec093cff2631",
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "EPFL-LoRaIQ",
+   "emitter": "LoRa",
+   "format": "cf32_le",
+   "metadata": {
+    "session": "25_09_20-11_26",
+    "receiver": "rrh4",
+    "sample_rate": 500000,
+    "center_frequency_mhz": 862.5
+   },
+   "path": "$RFPU_DATA\\datasets\\loraiq-20341802\\sigmfs\\25_09_20-11_26\\rrh4\\326.sigmf-data",
+   "sha256": "f506bb8e787de018bc0c939c4e01e3e735141f448c99347f0dfc5fcc30465476",
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "EPFL-LoRaIQ",
+   "emitter": "LoRa",
+   "format": "cf32_le",
+   "metadata": {
+    "session": "25_10_07-16_05",
+    "receiver": "rrh4",
+    "sample_rate": 500000,
+    "center_frequency_mhz": 862.5
+   },
+   "path": "$RFPU_DATA\\datasets\\loraiq-20341802\\sigmfs\\25_10_07-16_05\\rrh4\\6.sigmf-data",
+   "sha256": "0615b0bfc029733c635420f9fef92bf773492c8dcdb9751c40cf1c48638b7ef2",
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "NTU-RFSR",
+   "emitter": "LoRa",
+   "format": "cf32_le",
+   "metadata": {
+    "experiment": "exp0",
+    "rx_gain_db": 0,
+    "sample_rate": 2000000.0
+   },
+   "path": "$RFPU_DATA\\datasets\\rfsr-ota-multicondition\\exp0_000000_rxg0_0_fulltrim.cfile",
+   "sha256": "c32742477c3299a565fa33c2606fef9d5e719d96894b2644045d59c76dd5e56e",
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "NTU-RFSR",
+   "emitter": "LoRa",
+   "format": "cf32_le",
+   "metadata": {
+    "experiment": "exp0",
+    "rx_gain_db": 15,
+    "sample_rate": 2000000.0
+   },
+   "path": "$RFPU_DATA\\datasets\\rfsr-ota-multicondition\\exp0_000065_rxg15_0_fulltrim.cfile",
+   "sha256": "f4d499ad4360d2ebf43411ec47f0a8a2d9958ff5b39f0ad4ba920e49541b76b1",
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "NTU-RFSR",
+   "emitter": "LoRa",
+   "format": "cf32_le",
+   "metadata": {
+    "experiment": "exp0",
+    "rx_gain_db": 30,
+    "sample_rate": 2000000.0
+   },
+   "path": "$RFPU_DATA\\datasets\\rfsr-ota-multicondition\\exp0_000098_rxg30_0_fulltrim.cfile",
+   "sha256": "0035e06a58d69b1bd4b5e87483f5a122ab39d354029faceba1283560840794e9",
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "NTU-RFSR",
+   "emitter": "LoRa",
+   "format": "cf32_le",
+   "metadata": {
+    "experiment": "exp1",
+    "rx_gain_db": 0,
+    "sample_rate": 2000000.0
+   },
+   "path": "$RFPU_DATA\\datasets\\rfsr-ota-multicondition\\exp1_000000_rxg0_0_fulltrim.cfile",
+   "sha256": "18171f4eae0705789afd18828469a97b14c0f24424c89958344535b44615fa1b",
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "NTU-RFSR",
+   "emitter": "LoRa",
+   "format": "cf32_le",
+   "metadata": {
+    "experiment": "exp1",
+    "rx_gain_db": 18,
+    "sample_rate": 2000000.0
+   },
+   "path": "$RFPU_DATA\\datasets\\rfsr-ota-multicondition\\exp1_000068_rxg18_0_fulltrim.cfile",
+   "sha256": "518ca820f28ee7013e26828ae3131f182ce9da97d34ac4cee2a5517124155cd3",
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "NTU-RFSR",
+   "emitter": "LoRa",
+   "format": "cf32_le",
+   "metadata": {
+    "experiment": "exp1",
+    "rx_gain_db": 30,
+    "sample_rate": 2000000.0
+   },
+   "path": "$RFPU_DATA\\datasets\\rfsr-ota-multicondition\\exp1_000098_rxg30_0_fulltrim.cfile",
+   "sha256": "2e658d0a5b6c3283f99090c106f86739ef6155682fbaf3892dbc39e393d50779",
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "NTU-RFSR",
+   "emitter": "LoRa",
+   "format": "cf32_le",
+   "metadata": {
+    "experiment": "exp10",
+    "rx_gain_db": 0,
+    "sample_rate": 2000000.0
+   },
+   "path": "$RFPU_DATA\\datasets\\rfsr-ota-multicondition\\exp10_000000_rxg0_0_fulltrim.cfile",
+   "sha256": "433415ffc9c10464578381c0e429a75561752d318ff6c845ee2ab14c29b8f23a",
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "NTU-RFSR",
+   "emitter": "LoRa",
+   "format": "cf32_le",
+   "metadata": {
+    "experiment": "exp10",
+    "rx_gain_db": 15,
+    "sample_rate": 2000000.0
+   },
+   "path": "$RFPU_DATA\\datasets\\rfsr-ota-multicondition\\exp10_000067_rxg15_0_fulltrim.cfile",
+   "sha256": "fc10bf2d5915690064ada6cb718dcbf784cdb84909180b65c900cf260cffd426",
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "NTU-RFSR",
+   "emitter": "LoRa",
+   "format": "cf32_le",
+   "metadata": {
+    "experiment": "exp10",
+    "rx_gain_db": 30,
+    "sample_rate": 2000000.0
+   },
+   "path": "$RFPU_DATA\\datasets\\rfsr-ota-multicondition\\exp10_000099_rxg30_0_fulltrim.cfile",
+   "sha256": "701abd58a3dfaa7f029ca1c4af9ce10c7c89571837b4e8c7764dde71e36b9bf8",
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "NTU-RFSR",
+   "emitter": "LoRa",
+   "format": "cf32_le",
+   "metadata": {
+    "experiment": "exp11",
+    "rx_gain_db": 0,
+    "sample_rate": 2000000.0
+   },
+   "path": "$RFPU_DATA\\datasets\\rfsr-ota-multicondition\\exp11_000000_rxg0_0_fulltrim.cfile",
+   "sha256": "050ca725767116d4be3a1920dadbb4277924f8ddc9e18bcdf3e1d8cbbc698c2c",
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "NTU-RFSR",
+   "emitter": "LoRa",
+   "format": "cf32_le",
+   "metadata": {
+    "experiment": "exp11",
+    "rx_gain_db": 12,
+    "sample_rate": 2000000.0
+   },
+   "path": "$RFPU_DATA\\datasets\\rfsr-ota-multicondition\\exp11_000064_rxg12_0_fulltrim.cfile",
+   "sha256": "a79ac75292f0846d95585159a13d697c5f767019eafeb80b1fd9b6ec6ee264fb",
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "NTU-RFSR",
+   "emitter": "LoRa",
+   "format": "cf32_le",
+   "metadata": {
+    "experiment": "exp11",
+    "rx_gain_db": 21,
+    "sample_rate": 2000000.0
+   },
+   "path": "$RFPU_DATA\\datasets\\rfsr-ota-multicondition\\exp11_000099_rxg21_0_fulltrim.cfile",
+   "sha256": "b11bdc7aeb3f1566d75a8cd093624d855fd6acbc0f140bc8660e5e764407f776",
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "NTU-RFSR",
+   "emitter": "LoRa",
+   "format": "cf32_le",
+   "metadata": {
+    "experiment": "exp12",
+    "rx_gain_db": 0,
+    "sample_rate": 2000000.0
+   },
+   "path": "$RFPU_DATA\\datasets\\rfsr-ota-multicondition\\exp12_000000_rxg0_0_fulltrim.cfile",
+   "sha256": "401bad853680feb4921de913e8bbdda4c206d70ff94ebdc6c2fdb5123c3d1c91",
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "NTU-RFSR",
+   "emitter": "LoRa",
+   "format": "cf32_le",
+   "metadata": {
+    "experiment": "exp12",
+    "rx_gain_db": 0,
+    "sample_rate": 2000000.0
+   },
+   "path": "$RFPU_DATA\\datasets\\rfsr-ota-multicondition\\exp12_001089_rxg0_0_fulltrim.cfile",
+   "sha256": "0adbd4cee088cdf3ef8df59c0decfc58615844fa467800696c0a5d4d7f93a04d",
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "NTU-RFSR",
+   "emitter": "LoRa",
+   "format": "cf32_le",
+   "metadata": {
+    "experiment": "exp12",
+    "rx_gain_db": 0,
+    "sample_rate": 2000000.0
+   },
+   "path": "$RFPU_DATA\\datasets\\rfsr-ota-multicondition\\exp12_002099_rxg0_0_fulltrim.cfile",
+   "sha256": "67da5698a9d6a7b0fa8f3ebeae5eb3b3f31c6122554f44be5dbc6a7630a6b018",
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "NTU-RFSR",
+   "emitter": "LoRa",
+   "format": "cf32_le",
+   "metadata": {
+    "experiment": "exp6",
+    "rx_gain_db": 40,
+    "sample_rate": 2000000.0
+   },
+   "path": "$RFPU_DATA\\datasets\\rfsr-ota-multicondition\\exp6_000000_rxg40_0_fulltrim.cfile",
+   "sha256": "34a551d7dbdf820c31c749049cfe5f2f9b89e7a8032ff5ec771beefe8e4bca5c",
+   "in_14_capture_screen": true
+  },
+  {
+   "dataset": "NTU-RFSR",
+   "emitter": "LoRa",
+   "format": "cf32_le",
+   "metadata": {
+    "experiment": "exp6",
+    "rx_gain_db": 55,
+    "sample_rate": 2000000.0
+   },
+   "path": "$RFPU_DATA\\datasets\\rfsr-ota-multicondition\\exp6_000062_rxg55_0_fulltrim.cfile",
+   "sha256": "8954272b26f0adacec8b31337af1b431c357ced1974c9e641b84154da84aea8f",
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "NTU-RFSR",
+   "emitter": "LoRa",
+   "format": "cf32_le",
+   "metadata": {
+    "experiment": "exp6",
+    "rx_gain_db": 70,
+    "sample_rate": 2000000.0
+   },
+   "path": "$RFPU_DATA\\datasets\\rfsr-ota-multicondition\\exp6_000099_rxg70_0_fulltrim.cfile",
+   "sha256": "477ab639e4ec994274990bfd8a963136da6b3b79f9b007b770d0242134440643",
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "NTU-RFSR",
+   "emitter": "LoRa",
+   "format": "cf32_le",
+   "metadata": {
+    "experiment": "exp7",
+    "rx_gain_db": 40,
+    "sample_rate": 2000000.0
+   },
+   "path": "$RFPU_DATA\\datasets\\rfsr-ota-multicondition\\exp7_000000_rxg40_0_fulltrim.cfile",
+   "sha256": "aa22b71e148b653ba65a10e09fc9d122b9998d38f62bfb220f28bb21f46e1e83",
+   "in_14_capture_screen": true
+  },
+  {
+   "dataset": "NTU-RFSR",
+   "emitter": "LoRa",
+   "format": "cf32_le",
+   "metadata": {
+    "experiment": "exp7",
+    "rx_gain_db": 55,
+    "sample_rate": 2000000.0
+   },
+   "path": "$RFPU_DATA\\datasets\\rfsr-ota-multicondition\\exp7_000061_rxg55_0_fulltrim.cfile",
+   "sha256": "4c84ba913d98ea828ddfd8a910c7ce445f754039cd48b9f0831f5a7d05c5e03b",
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "NTU-RFSR",
+   "emitter": "LoRa",
+   "format": "cf32_le",
+   "metadata": {
+    "experiment": "exp7",
+    "rx_gain_db": 70,
+    "sample_rate": 2000000.0
+   },
+   "path": "$RFPU_DATA\\datasets\\rfsr-ota-multicondition\\exp7_000099_rxg70_0_fulltrim.cfile",
+   "sha256": "282501576bc1510929c05c5aec8f893871fa756c3a7367b98c17420d3435ef5b",
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "NTU-RFSR",
+   "emitter": "LoRa",
+   "format": "cf32_le",
+   "metadata": {
+    "experiment": "exp8",
+    "rx_gain_db": 40,
+    "sample_rate": 2000000.0
+   },
+   "path": "$RFPU_DATA\\datasets\\rfsr-ota-multicondition\\exp8_000001_rxg40_0_fulltrim.cfile",
+   "sha256": "cff44ef27b4fb9b967df91bd1e34ac8430d8bb95911557cdf110acc7cc5bf5cd",
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "NTU-RFSR",
+   "emitter": "LoRa",
+   "format": "cf32_le",
+   "metadata": {
+    "experiment": "exp8",
+    "rx_gain_db": 55,
+    "sample_rate": 2000000.0
+   },
+   "path": "$RFPU_DATA\\datasets\\rfsr-ota-multicondition\\exp8_000069_rxg55_0_fulltrim.cfile",
+   "sha256": "ab4d7c068f9d8011f60081f370221a933739946c61a000ecc7b5b68ad06371e8",
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "NTU-RFSR",
+   "emitter": "LoRa",
+   "format": "cf32_le",
+   "metadata": {
+    "experiment": "exp8",
+    "rx_gain_db": 70,
+    "sample_rate": 2000000.0
+   },
+   "path": "$RFPU_DATA\\datasets\\rfsr-ota-multicondition\\exp8_000099_rxg70_0_fulltrim.cfile",
+   "sha256": "808a55e6d0a8b8d81b5ed4fa567233828b8fd1d43fcc5ee7fcc91369f9cbcc53",
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "NTU-RFSR",
+   "emitter": "LoRa",
+   "format": "cf32_le",
+   "metadata": {
+    "experiment": "exp9",
+    "rx_gain_db": 40,
+    "sample_rate": 2000000.0
+   },
+   "path": "$RFPU_DATA\\datasets\\rfsr-ota-multicondition\\exp9_000000_rxg40_0_fulltrim.cfile",
+   "sha256": "8bc64235cf7229678d70feaec8be5dac1c114276856fcd8ec5f03eda3b4b9210",
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "NTU-RFSR",
+   "emitter": "LoRa",
+   "format": "cf32_le",
+   "metadata": {
+    "experiment": "exp9",
+    "rx_gain_db": 55,
+    "sample_rate": 2000000.0
+   },
+   "path": "$RFPU_DATA\\datasets\\rfsr-ota-multicondition\\exp9_000068_rxg55_0_fulltrim.cfile",
+   "sha256": "a814d9050471b0b075a3f6b1bd61626570a9a846483fc470ab8c14f982ec63fe",
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "NTU-RFSR",
+   "emitter": "LoRa",
+   "format": "cf32_le",
+   "metadata": {
+    "experiment": "exp9",
+    "rx_gain_db": 70,
+    "sample_rate": 2000000.0
+   },
+   "path": "$RFPU_DATA\\datasets\\rfsr-ota-multicondition\\exp9_000099_rxg70_0_fulltrim.cfile",
+   "sha256": "b80a4ea96563b4a574e3ea8175202493a30ef1d86f3735de5c044cbddf0026e9",
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "Tampere",
+   "emitter": "drone-controller",
+   "format": "ci16_le",
+   "metadata": {
+    "name": "DJI_inspire_2_2G.bin",
+    "sample_rate": 120000000.0,
+    "annotations": [
+     {
+      "core:sample_start": 61677843
+     }
+    ]
+   },
+   "path": "$RFPU_DATA\\datasets\\tampere-drone-rf-4264467\\DJI_inspire_2_2G.bin",
+   "sha256": "0d824095f9a821f0832a435bd6e659d5a860578af3fdd8ddeb16e6e3310d5c62",
+   "ADC_divisor": 32768,
+   "in_14_capture_screen": true
+  },
+  {
+   "dataset": "Tampere",
+   "emitter": "drone-controller",
+   "format": "ci16_le",
+   "metadata": {
+    "name": "DJI_inspire_2_5G_1of2.bin",
+    "sample_rate": 200000000.0,
+    "annotations": [
+     {
+      "core:sample_start": 22973827
+     }
+    ]
+   },
+   "path": "$RFPU_DATA\\datasets\\tampere-drone-rf-4264467\\DJI_inspire_2_5G_1of2.bin",
+   "sha256": "4bd20ac4734ac90580462e411d81f588f9e1d4a437b08ba232e593d8f233faa0",
+   "ADC_divisor": 32768,
+   "in_14_capture_screen": true
+  },
+  {
+   "dataset": "Tampere",
+   "emitter": "drone-controller",
+   "format": "ci16_le",
+   "metadata": {
+    "name": "DJI_inspire_2_5G_2of2.bin",
+    "sample_rate": 200000000.0,
+    "annotations": [
+     {
+      "core:sample_start": 36116972
+     }
+    ]
+   },
+   "path": "$RFPU_DATA\\datasets\\tampere-drone-rf-4264467\\DJI_inspire_2_5G_2of2.bin",
+   "sha256": "0694bdb1869495b3072ba5b433172483017f80396b386c340eaf54d3144c7614",
+   "ADC_divisor": 32768,
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "Tampere",
+   "emitter": "drone-controller",
+   "format": "ci16_le",
+   "metadata": {
+    "name": "DJI_matrice_100_2G.bin",
+    "sample_rate": 120000000.0,
+    "annotations": [
+     {
+      "core:sample_start": 67205206
+     }
+    ]
+   },
+   "path": "$RFPU_DATA\\datasets\\tampere-drone-rf-4264467\\DJI_matrice_100_2G.bin",
+   "sha256": "5a821fe296699fb0c03e81257236efca5d0d297fbb0ea73fc2e749d7bbc6f673",
+   "ADC_divisor": 32768,
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "Tampere",
+   "emitter": "drone-controller",
+   "format": "ci16_le",
+   "metadata": {
+    "name": "DJI_matrice_210_2G.bin",
+    "sample_rate": 120000000.0,
+    "annotations": [
+     {
+      "core:sample_start": 31643929
+     }
+    ]
+   },
+   "path": "$RFPU_DATA\\datasets\\tampere-drone-rf-4264467\\DJI_matrice_210_2G.bin",
+   "sha256": "fe0fbf771ea402ce4241d7e8022ff33ea3eb56206c25538739aac9221b7a4124",
+   "ADC_divisor": 32768,
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "Tampere",
+   "emitter": "drone-controller",
+   "format": "ci16_le",
+   "metadata": {
+    "name": "DJI_matrice_210_5G_1of2.bin",
+    "sample_rate": 200000000.0,
+    "annotations": [
+     {
+      "core:sample_start": 70316750
+     }
+    ]
+   },
+   "path": "$RFPU_DATA\\datasets\\tampere-drone-rf-4264467\\DJI_matrice_210_5G_1of2.bin",
+   "sha256": "decd49c9d6b6a26ef29475dc1692e1cc2dca5ee190b1e146b4efbfd6ec0080b0",
+   "ADC_divisor": 32768,
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "Tampere",
+   "emitter": "drone-controller",
+   "format": "ci16_le",
+   "metadata": {
+    "name": "DJI_matrice_210_5G_2of2.bin",
+    "sample_rate": 200000000.0,
+    "annotations": [
+     {
+      "core:sample_start": 11883416
+     }
+    ]
+   },
+   "path": "$RFPU_DATA\\datasets\\tampere-drone-rf-4264467\\DJI_matrice_210_5G_2of2.bin",
+   "sha256": "cf1fda9cf256a9054cd2ff5704b1a626e8bf34033efd11f738e74159002fd9b2",
+   "ADC_divisor": 32768,
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "Tampere",
+   "emitter": "drone-controller",
+   "format": "ci16_le",
+   "metadata": {
+    "name": "DJI_mavic_mini_2G.bin",
+    "sample_rate": 120000000.0,
+    "annotations": [
+     {
+      "core:sample_start": 24370664
+     }
+    ]
+   },
+   "path": "$RFPU_DATA\\datasets\\tampere-drone-rf-4264467\\DJI_mavic_mini_2G.bin",
+   "sha256": "c32a8c575884726c25f403504a9421731836aa216c20b123bcac26149a0fe696",
+   "ADC_divisor": 32768,
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "Tampere",
+   "emitter": "drone-controller",
+   "format": "ci16_le",
+   "metadata": {
+    "name": "DJI_mavic_pro_2G.bin",
+    "sample_rate": 120000000.0,
+    "annotations": [
+     {
+      "core:sample_start": 12028718
+     }
+    ]
+   },
+   "path": "$RFPU_DATA\\datasets\\tampere-drone-rf-4264467\\DJI_mavic_pro_2G.bin",
+   "sha256": "4ce1bf9a27cadbf8ce5d727515df5258d36bdfe37d69d3e734785f3558b359ae",
+   "ADC_divisor": 32768,
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "Tampere",
+   "emitter": "drone-controller",
+   "format": "ci16_le",
+   "metadata": {
+    "name": "DJI_phantom_4_2G.bin",
+    "sample_rate": 120000000.0,
+    "annotations": [
+     {
+      "core:sample_start": 72563108
+     }
+    ]
+   },
+   "path": "$RFPU_DATA\\datasets\\tampere-drone-rf-4264467\\DJI_phantom_4_2G.bin",
+   "sha256": "1fefcb2a1109fc17733092df4a6a566ef0b5c04e4b4fc94fef159c7da2119639",
+   "ADC_divisor": 32768,
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "Tampere",
+   "emitter": "drone-controller",
+   "format": "ci16_le",
+   "metadata": {
+    "name": "DJI_phantom_4_pro_plus_2G.bin",
+    "sample_rate": 120000000.0,
+    "annotations": [
+     {
+      "core:sample_start": 89932180
+     }
+    ]
+   },
+   "path": "$RFPU_DATA\\datasets\\tampere-drone-rf-4264467\\DJI_phantom_4_pro_plus_2G.bin",
+   "sha256": "e4efbe61fd832254a805a7ca0a14a5ef4c3f29e8d69a953824913cf186804ad7",
+   "ADC_divisor": 32768,
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "Tampere",
+   "emitter": "drone-controller",
+   "format": "ci16_le",
+   "metadata": {
+    "name": "DJI_phantom_4_pro_plus_5G_1of2.bin",
+    "sample_rate": 200000000.0,
+    "annotations": [
+     {
+      "core:sample_start": 83362139
+     }
+    ]
+   },
+   "path": "$RFPU_DATA\\datasets\\tampere-drone-rf-4264467\\DJI_phantom_4_pro_plus_5G_1of2.bin",
+   "sha256": "7570a13894b9b46b499be15b7867e5dfa0123f73aa1f761221226ec2c7f27546",
+   "ADC_divisor": 32768,
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "Tampere",
+   "emitter": "drone-controller",
+   "format": "ci16_le",
+   "metadata": {
+    "name": "DJI_phantom_4_pro_plus_5G_2of2.bin",
+    "sample_rate": 200000000.0,
+    "annotations": [
+     {
+      "core:sample_start": 21148871
+     }
+    ]
+   },
+   "path": "$RFPU_DATA\\datasets\\tampere-drone-rf-4264467\\DJI_phantom_4_pro_plus_5G_2of2.bin",
+   "sha256": "380d6af25d4ab7895a0140b150a37432bae3df1e9b74bcd794a75e819b1ea90e",
+   "ADC_divisor": 32768,
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "Tampere",
+   "emitter": "drone-controller",
+   "format": "ci16_le",
+   "metadata": {
+    "name": "Parrot_disco_2G.bin",
+    "sample_rate": 120000000.0,
+    "annotations": [
+     {
+      "core:sample_start": 93890761
+     }
+    ]
+   },
+   "path": "$RFPU_DATA\\datasets\\tampere-drone-rf-4264467\\Parrot_disco_2G.bin",
+   "sha256": "1b9de69f003f7b7b033f69a3e13c92e14c91dc2c6d12742639f81df87e1c59a3",
+   "ADC_divisor": 32768,
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "Tampere",
+   "emitter": "drone-controller",
+   "format": "ci16_le",
+   "metadata": {
+    "name": "Parrot_mambo_control_2G.bin",
+    "sample_rate": 120000000.0,
+    "annotations": [
+     {
+      "core:sample_start": 38681370
+     }
+    ]
+   },
+   "path": "$RFPU_DATA\\datasets\\tampere-drone-rf-4264467\\Parrot_mambo_control_2G.bin",
+   "sha256": "9908229bd7ce5b5dd8d47cceda02bf34ed03e1ece57b52ec5ccceed73283daa5",
+   "ADC_divisor": 32768,
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "Tampere",
+   "emitter": "drone-controller",
+   "format": "ci16_le",
+   "metadata": {
+    "name": "Parrot_mambo_video_2G.bin",
+    "sample_rate": 120000000.0,
+    "annotations": [
+     {
+      "core:sample_start": 45264201
+     }
+    ]
+   },
+   "path": "$RFPU_DATA\\datasets\\tampere-drone-rf-4264467\\Parrot_mambo_video_2G.bin",
+   "sha256": "574cc4048d0915aa9469e9727b7d8ac904702f7319c7649eb7c267dbe109925b",
+   "ADC_divisor": 32768,
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "Tampere",
+   "emitter": "drone-controller",
+   "format": "ci16_le",
+   "metadata": {
+    "name": "Yuneec_typhoon_h_2G_1of2.bin",
+    "sample_rate": 120000000.0,
+    "annotations": [
+     {
+      "core:sample_start": 28216039
+     }
+    ]
+   },
+   "path": "$RFPU_DATA\\datasets\\tampere-drone-rf-4264467\\Yuneec_typhoon_h_2G_1of2.bin",
+   "sha256": "63cd6b779a2d575aac2546773b5be5aca33fd2b0cf1da14d9e10152e2f80bdd0",
+   "ADC_divisor": 32768,
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "Tampere",
+   "emitter": "drone-controller",
+   "format": "ci16_le",
+   "metadata": {
+    "name": "Yuneec_typhoon_h_2G_2of2.bin",
+    "sample_rate": 120000000.0,
+    "annotations": [
+     {
+      "core:sample_start": 95359230
+     }
+    ]
+   },
+   "path": "$RFPU_DATA\\datasets\\tampere-drone-rf-4264467\\Yuneec_typhoon_h_2G_2of2.bin",
+   "sha256": "1a5620e6b0f449665d2d4954235a30102de32f3ef6036ab597ab5b15a5ee4fd1",
+   "ADC_divisor": 32768,
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "Tampere",
+   "emitter": "drone-controller",
+   "format": "ci16_le",
+   "metadata": {
+    "name": "Yuneec_typhoon_h_5G.bin",
+    "sample_rate": 200000000.0,
+    "annotations": [
+     {
+      "core:sample_start": 15994039
+     }
+    ]
+   },
+   "path": "$RFPU_DATA\\datasets\\tampere-drone-rf-4264467\\Yuneec_typhoon_h_5G.bin",
+   "sha256": "cab85c7792c36afc7b10d1162e6796991552c63798cb200ad1d7213e0b554421",
+   "ADC_divisor": 32768,
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "CAMRAS-Dwingeloo",
+   "emitter": "radio-astronomy (Venus radar echo)",
+   "format": "ci16_le",
+   "metadata": {
+    "name": "dwingeloo_venus_2026_10_17_08_57_07_1299.650MHz_0.25Msps_ci16_le.sigmf-data",
+    "sample_rate": 250000
+   },
+   "path": "$RFPU_DATA\\datasets\\camras-eve2026\\dwingeloo_venus_2026_10_17_08_57_07_1299.650MHz_0.25Msps_ci16_le.sigmf-data",
+   "sha256": "571956b444f1814dc8172b45c077f75b6671c892bf37fb21676dcd86019171d9",
+   "ADC_divisor": 32768,
+   "in_14_capture_screen": false
+  },
+  {
+   "dataset": "CAMRAS-Dwingeloo",
+   "emitter": "radio-astronomy (Venus radar echo)",
+   "format": "ci16_le",
+   "metadata": {
+    "name": "dwingeloo_venus_2026_10_24_09_15_44_1299.650MHz_0.25Msps_ci16_le.sigmf-data",
+    "sample_rate": 250000
+   },
+   "path": "$RFPU_DATA\\datasets\\camras-eve2026\\dwingeloo_venus_2026_10_24_09_15_44_1299.650MHz_0.25Msps_ci16_le.sigmf-data",
+   "sha256": "88ebd41a6e47322d2fbfb862d78d5c63aafd2b7f06782cf1a861d03f492675a2",
+   "ADC_divisor": 32768,
+   "in_14_capture_screen": false
+  }
+ ]
+}

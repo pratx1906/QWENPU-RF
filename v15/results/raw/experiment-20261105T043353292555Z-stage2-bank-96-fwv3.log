@@ -1,0 +1,528 @@
+
+Loading weights:   0%|          | 0/580 [00:00<?, ?it/s]
+Loading weights:   2%|▏         | 9/580 [00:00<00:08, 69.34it/s]
+Loading weights:   3%|▎         | 16/580 [00:00<00:08, 65.86it/s]
+Loading weights:   6%|▌         | 33/580 [00:00<00:05, 101.06it/s]
+Loading weights:   8%|▊         | 44/580 [00:00<00:07, 69.70it/s] 
+Loading weights:   9%|▉         | 52/580 [00:00<00:08, 64.14it/s]
+Loading weights:  10%|█         | 59/580 [00:00<00:09, 57.28it/s]
+Loading weights:  11%|█▏        | 66/580 [00:01<00:14, 34.99it/s]
+Loading weights:  13%|█▎        | 77/580 [00:01<00:14, 35.82it/s]
+Loading weights:  14%|█▍        | 82/580 [00:01<00:14, 35.43it/s]
+Loading weights:  15%|█▌        | 88/580 [00:01<00:13, 37.22it/s]
+Loading weights:  17%|█▋        | 98/580 [00:02<00:09, 48.64it/s]
+Loading weights:  18%|█▊        | 104/580 [00:02<00:14, 32.29it/s]
+Loading weights:  20%|█▉        | 114/580 [00:02<00:10, 42.46it/s]
+Loading weights:  21%|██        | 121/580 [00:02<00:10, 44.04it/s]
+Loading weights:  22%|██▏       | 127/580 [00:02<00:10, 43.80it/s]
+Loading weights:  25%|██▍       | 143/580 [00:02<00:08, 53.56it/s]
+Loading weights:  26%|██▋       | 153/580 [00:03<00:07, 58.95it/s]
+Loading weights:  28%|██▊       | 160/580 [00:03<00:07, 53.78it/s]
+Loading weights:  29%|██▊       | 166/580 [00:03<00:08, 47.33it/s]
+Loading weights:  29%|██▉       | 171/580 [00:03<00:10, 37.78it/s]
+Loading weights:  30%|███       | 176/580 [00:04<00:14, 27.08it/s]
+Loading weights:  31%|███       | 180/580 [00:04<00:14, 27.70it/s]
+Loading weights:  32%|███▏      | 184/580 [00:04<00:16, 24.54it/s]
+Loading weights:  32%|███▏      | 187/580 [00:04<00:17, 22.04it/s]
+Loading weights:  34%|███▍      | 196/580 [00:04<00:12, 31.36it/s]
+Loading weights:  35%|███▍      | 201/580 [00:05<00:16, 23.59it/s]
+Loading weights:  38%|███▊      | 221/580 [00:05<00:07, 47.71it/s]
+Loading weights:  39%|███▉      | 228/580 [00:05<00:06, 51.34it/s]
+Loading weights:  41%|████      | 235/580 [00:05<00:09, 37.91it/s]
+Loading weights:  42%|████▏     | 244/580 [00:05<00:08, 40.25it/s]
+Loading weights:  43%|████▎     | 250/580 [00:06<00:08, 40.54it/s]
+Loading weights:  44%|████▍     | 255/580 [00:06<00:08, 36.33it/s]
+Loading weights:  45%|████▍     | 260/580 [00:06<00:09, 35.00it/s]
+Loading weights:  46%|████▌     | 264/580 [00:06<00:10, 29.09it/s]
+Loading weights:  47%|████▋     | 273/580 [00:06<00:07, 39.57it/s]
+Loading weights:  48%|████▊     | 278/580 [00:06<00:07, 40.16it/s]
+Loading weights:  49%|████▉     | 283/580 [00:07<00:09, 32.95it/s]
+Loading weights:  49%|████▉     | 287/580 [00:07<00:08, 33.65it/s]
+Loading weights:  50%|█████     | 291/580 [00:07<00:12, 23.37it/s]
+Loading weights:  51%|█████     | 295/580 [00:07<00:14, 19.86it/s]
+Loading weights:  51%|█████▏    | 298/580 [00:07<00:14, 19.28it/s]
+Loading weights:  54%|█████▍    | 314/580 [00:08<00:06, 39.20it/s]
+Loading weights:  55%|█████▌    | 319/580 [00:08<00:08, 32.22it/s]
+Loading weights:  56%|█████▌    | 323/580 [00:08<00:10, 24.75it/s]
+Loading weights:  57%|█████▋    | 332/580 [00:08<00:07, 34.53it/s]
+Loading weights:  58%|█████▊    | 337/580 [00:09<00:10, 22.69it/s]
+Loading weights:  61%|██████    | 351/580 [00:09<00:06, 36.52it/s]
+Loading weights:  62%|██████▏   | 357/580 [00:09<00:07, 31.21it/s]
+Loading weights:  62%|██████▏   | 362/580 [00:09<00:08, 26.14it/s]
+Loading weights:  64%|██████▍   | 372/580 [00:10<00:05, 35.84it/s]
+Loading weights:  65%|██████▌   | 378/580 [00:10<00:08, 22.57it/s]
+Loading weights: 100%|██████████| 580/580 [00:10<00:00, 54.38it/s]
+[transformers] The tokenizer you are loading from '$RFPU_DATA\checkpoints\rfpu-v15\qwen3.5-4b-rv1' with an incorrect regex pattern: https://huggingface.co/mistralai/Mistral-Small-3.1-24B-Instruct-2503/discussions/84#69121093e8b480e709447d5e. This will lead to incorrect tokenization. You should set the `fix_mistral_regex=True` flag when loading this tokenizer to fix this issue.
+[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.
+[transformers] `causal_conv1d_update` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[transformers] `fused_recurrent_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.
+================================================================================ 
+Q0: Capture 0: what are its mean power and noise floor in dBFS?
+---
+<tool_call>
+<function=rf_levels>
+<parameter=capture>
+0
+</parameter>
+</function>
+</tool_call>
+<tool_response>
+capture=0 IDLab WiFi fs=10MS/s fc=5240MHz
+samples=1024 (Q15)
+mean_power_dbfs=-16.3
+peak_power_dbfs=-10.9 at_sample=168
+noise_floor_dbfs=-17.6 (quietest 64-sample window)
+loudest_window_dbfs=-15.0
+active_windows=0/16 (power > 4x quietest)
+</tool_response>
+<think>
+
+</think>
+
+For capture 0, the mean power is **-16.3 dBFS** and the noise floor is **-17.6 dBFS**.<|im_end|>
+[305 text + 27513 chip tokens, 26s, lock error: None]
+================================================================================ 
+Q1: What is the peak power of capture 0 in dBFS, and at which sample index does it occur?
+---
+<tool_call>
+<function=rf_levels>
+<parameter=capture>
+0
+</parameter>
+</function>
+</tool_call>
+<tool_response>
+capture=0 IDLab WiFi fs=10MS/s fc=5240MHz
+samples=1024 (Q15)
+mean_power_dbfs=-16.3
+peak_power_dbfs=-10.9 at_sample=168
+noise_floor_dbfs=-17.6 (quietest 64-sample window)
+loudest_window_dbfs=-15.0
+active_windows=0/16 (power > 4x quietest)
+</tool_response>
+<think>
+
+</think>
+
+The peak power of capture 0 is **-10.9 dBFS**, and it occurs at **sample index 168**.<|im_end|>
+[303 text + 27513 chip tokens, 25s, lock error: None]
+================================================================================ 
+Q2: How many 64-sample windows of capture 0 are active, and what is its loudest window power in dBFS?
+---
+<tool_call>
+<function=rf_levels>
+<parameter=capture>
+0
+</parameter>
+</function>
+</tool_call>
+<tool_response>
+capture=0 IDLab WiFi fs=10MS/s fc=5240MHz
+samples=1024 (Q15)
+mean_power_dbfs=-16.3
+peak_power_dbfs=-10.9 at_sample=168
+noise_floor_dbfs=-17.6 (quietest 64-sample window)
+loudest_window_dbfs=-15.0
+active_windows=0/16 (power > 4x quietest)
+</tool_response>
+<think>
+
+</think>
+
+Based on the analysis of capture 0:
+*   **Active 64-sample windows:** 0
+*   **Loudest window power:** -15.0 dBFS<|im_end|>
+[313 text + 27513 chip tokens, 26s, lock error: None]
+  96500 tokens (285 text, 96214 chip) 28s
+================================================================================ 
+Q3: What is the dominant spectral bin of capture 0, and its frequency in cycles per sample?
+---
+<tool_call>
+<function=rf_analyze>
+<parameter=capture>
+0
+</parameter>
+</function>
+</tool_call>
+<tool_response>
+capture=0 IDLab WiFi fs=10MS/s fc=5240MHz
+samples=1024 (Q15)
+mean_power_dbfs=-16.3
+peak_power_dbfs=-10.9 at_sample=168
+noise_floor_dbfs=-17.6 (quietest 64-sample window)
+loudest_window_dbfs=-15.0
+active_windows=0/16 (power > 4x quietest)
+dominant_dft16_bin=0 freq_cycles_per_sample=0.0000 power_share_percent=10 freq_hz=0 (averaged 16-point DFT, 8 frames)
+cfo_cycles_per_sample=0.0088 cfo_hz=88726 (phase of the lag-1 autocorrelation)
+</tool_response>
+<think>
+
+</think>
+
+The dominant spectral bin of capture 0 is **0**, and its frequency is **0.0000 cycles per sample**.
+[500 text + 97676 chip tokens, 46s, lock error: None]
+  96500 tokens (285 text, 96214 chip) 28s
+================================================================================ 
+Q4: Estimate the carrier frequency offset of capture 0 in cycles per sample.
+---
+<tool_call>
+<function=rf_analyze>
+<parameter=capture>
+0
+</parameter>
+</function>
+</tool_call>
+<tool_response>
+capture=0 IDLab WiFi fs=10MS/s fc=5240MHz
+samples=1024 (Q15)
+mean_power_dbfs=-16.3
+peak_power_dbfs=-10.9 at_sample=168
+noise_floor_dbfs=-17.6 (quietest 64-sample window)
+loudest_window_dbfs=-15.0
+active_windows=0/16 (power > 4x quietest)
+dominant_dft16_bin=0 freq_cycles_per_sample=0.0000 power_share_percent=10 freq_hz=0 (averaged 16-point DFT, 8 frames)
+cfo_cycles_per_sample=0.0088 cfo_hz=88726 (phase of the lag-1 autocorrelation)
+</tool_response>
+<think>
+
+</think>
+
+The carrier frequency offset (CFO) for capture 0 is **0.0088 cycles per sample**.
+
+This corresponds
+[500 text + 97676 chip tokens, 45s, lock error: None]
+  96500 tokens (285 text, 96214 chip) 41s
+================================================================================ 
+Q5: For capture 0, which spectral bin dominates and what percentage of the power does it hold?
+---
+<tool_call>
+<function=rf_analyze>
+<parameter=capture>
+0
+</parameter>
+</function>
+</tool_call>
+<tool_response>
+capture=0 IDLab WiFi fs=10MS/s fc=5240MHz
+samples=1024 (Q15)
+mean_power_dbfs=-16.3
+peak_power_dbfs=-10.9 at_sample=168
+noise_floor_dbfs=-17.6 (quietest 64-sample window)
+loudest_window_dbfs=-15.0
+active_windows=0/16 (power > 4x quietest)
+dominant_dft16_bin=0 freq_cycles_per_sample=0.0000 power_share_percent=10 freq_hz=0 (averaged 16-point DFT, 8 frames)
+cfo_cycles_per_sample=0.0088 cfo_hz=88726 (phase of the lag-1 autocorrelation)
+</tool_response>
+<think>
+
+</think>
+
+For capture 0, the dominant spectral bin is bin 0, which corresponds to a frequency of 0 Hz. This bin holds
+[500 text + 97676 chip tokens, 67s, lock error: None]
+================================================================================ 
+Q6: Capture 1: what are its mean power and noise floor in dBFS?
+---
+<tool_call>
+<function=rf_levels>
+<parameter=capture>
+1
+</parameter>
+</function>
+</tool_call>
+<tool_response>
+capture=1 IDLab WiFi fs=1MS/s fc=2412MHz
+samples=1024 (Q15)
+mean_power_dbfs=-13.3
+peak_power_dbfs=-12.0 at_sample=25
+noise_floor_dbfs=-14.2 (quietest 64-sample window)
+loudest_window_dbfs=-12.7
+active_windows=0/16 (power > 4x quietest)
+</tool_response>
+<think>
+
+</think>
+
+The mean power is -13.3 dBFS and the noise floor is -14.2 dBFS.<|im_end|>
+[297 text + 27674 chip tokens, 38s, lock error: None]
+================================================================================ 
+Q7: What is the peak power of capture 1 in dBFS, and at which sample index does it occur?
+---
+<tool_call>
+<function=rf_levels>
+<parameter=capture>
+1
+</parameter>
+</function>
+</tool_call>
+<tool_response>
+capture=1 IDLab WiFi fs=1MS/s fc=2412MHz
+samples=1024 (Q15)
+mean_power_dbfs=-13.3
+peak_power_dbfs=-12.0 at_sample=25
+noise_floor_dbfs=-14.2 (quietest 64-sample window)
+loudest_window_dbfs=-12.7
+active_windows=0/16 (power > 4x quietest)
+</tool_response>
+<think>
+
+</think>
+
+The peak power of capture 1 is **-12.0 dBFS**, and it occurs at **sample index 25**.<|im_end|>
+[300 text + 27674 chip tokens, 38s, lock error: None]
+================================================================================ 
+Q8: How many 64-sample windows of capture 1 are active, and what is its loudest window power in dBFS?
+---
+<tool_call>
+<function=rf_levels>
+<parameter=capture>
+1
+</parameter>
+</function>
+</tool_call>
+<tool_response>
+capture=1 IDLab WiFi fs=1MS/s fc=2412MHz
+samples=1024 (Q15)
+mean_power_dbfs=-13.3
+peak_power_dbfs=-12.0 at_sample=25
+noise_floor_dbfs=-14.2 (quietest 64-sample window)
+loudest_window_dbfs=-12.7
+active_windows=0/16 (power > 4x quietest)
+</tool_response>
+<think>
+
+</think>
+
+Based on the analysis of capture 1:
+*   **Active 64-sample windows:** 0 out of 16
+*   **Loudest window power:** -12.7 dBFS<|im_end|>
+[316 text + 27674 chip tokens, 39s, lock error: None]
+  62000 tokens (144 text, 61855 chip) 22s
+  96000 tokens (296 text, 95703 chip) 43s
+================================================================================ 
+Q9: What is the dominant spectral bin of capture 1, and its frequency in cycles per sample?
+---
+<tool_call>
+<function=rf_analyze>
+<parameter=capture>
+1
+</parameter>
+</function>
+</tool_call>
+<tool_response>
+capture=1 IDLab WiFi fs=1MS/s fc=2412MHz
+samples=1024 (Q15)
+mean_power_dbfs=-13.3
+peak_power_dbfs=-12.0 at_sample=25
+noise_floor_dbfs=-14.2 (quietest 64-sample window)
+loudest_window_dbfs=-12.7
+active_windows=0/16 (power > 4x quietest)
+dominant_dft16_bin=0 freq_cycles_per_sample=0.0000 power_share_percent=19 freq_hz=0 (averaged 16-point DFT, 8 frames)
+cfo_cycles_per_sample=-0.0005 cfo_hz=-406 (phase of the lag-1 autocorrelation)
+</tool_response>
+<think>
+
+</think>
+
+The dominant spectral bin of capture 1 is **0**, and its frequency is **0.0000 cycles per sample**.
+
+This
+[500 text + 97056 chip tokens, 68s, lock error: None]
+  62000 tokens (144 text, 61855 chip) 22s
+  96000 tokens (296 text, 95703 chip) 43s
+================================================================================ 
+Q10: Estimate the carrier frequency offset of capture 1 in cycles per sample.
+---
+<tool_call>
+<function=rf_analyze>
+<parameter=capture>
+1
+</parameter>
+</function>
+</tool_call>
+<tool_response>
+capture=1 IDLab WiFi fs=1MS/s fc=2412MHz
+samples=1024 (Q15)
+mean_power_dbfs=-13.3
+peak_power_dbfs=-12.0 at_sample=25
+noise_floor_dbfs=-14.2 (quietest 64-sample window)
+loudest_window_dbfs=-12.7
+active_windows=0/16 (power > 4x quietest)
+dominant_dft16_bin=0 freq_cycles_per_sample=0.0000 power_share_percent=19 freq_hz=0 (averaged 16-point DFT, 8 frames)
+cfo_cycles_per_sample=-0.0005 cfo_hz=-406 (phase of the lag-1 autocorrelation)
+</tool_response>
+<think>
+
+</think>
+
+The carrier frequency offset (CFO) for capture 1 is **-0.0005 cycles per sample**.
+
+This corresponds to a
+[500 text + 97056 chip tokens, 68s, lock error: None]
+  62000 tokens (144 text, 61855 chip) 22s
+  96000 tokens (296 text, 95703 chip) 43s
+================================================================================ 
+Q11: For capture 1, which spectral bin dominates and what percentage of the power does it hold?
+---
+<tool_call>
+<function=rf_analyze>
+<parameter=capture>
+1
+</parameter>
+</function>
+</tool_call>
+<tool_response>
+capture=1 IDLab WiFi fs=1MS/s fc=2412MHz
+samples=1024 (Q15)
+mean_power_dbfs=-13.3
+peak_power_dbfs=-12.0 at_sample=25
+noise_floor_dbfs=-14.2 (quietest 64-sample window)
+loudest_window_dbfs=-12.7
+active_windows=0/16 (power > 4x quietest)
+dominant_dft16_bin=0 freq_cycles_per_sample=0.0000 power_share_percent=19 freq_hz=0 (averaged 16-point DFT, 8 frames)
+cfo_cycles_per_sample=-0.0005 cfo_hz=-406 (phase of the lag-1 autocorrelation)
+</tool_response>
+<think>
+
+</think>
+
+For capture 1, the dominant spectral bin is bin 0, which corresponds to a frequency of 0 Hz. This bin holds 1
+[500 text + 97056 chip tokens, 68s, lock error: None]
+================================================================================ 
+Q12: Capture 2: what are its mean power and noise floor in dBFS?
+---
+<tool_call>
+<function=rf_levels>
+<parameter=capture>
+2
+</parameter>
+</function>
+</tool_call>
+<tool_response>
+capture=2 IDLab LTE fs=1MS/s fc=806MHz
+samples=1024 (Q15)
+mean_power_dbfs=-11.9
+peak_power_dbfs=-5.8 at_sample=46
+noise_floor_dbfs=-13.0 (quietest 64-sample window)
+loudest_window_dbfs=-9.9
+active_windows=0/16 (power > 4x quietest)
+</tool_response>
+<think>
+
+</think>
+
+For capture 2, the mean power is **-11.9 dBFS** and the noise floor is **-13.0 dBFS**.<|im_end|>
+[299 text + 28099 chip tokens, 38s, lock error: None]
+================================================================================ 
+Q13: What is the peak power of capture 2 in dBFS, and at which sample index does it occur?
+---
+<tool_call>
+<function=rf_levels>
+<parameter=capture>
+2
+</parameter>
+</function>
+</tool_call>
+<tool_response>
+capture=2 IDLab LTE fs=1MS/s fc=806MHz
+samples=1024 (Q15)
+mean_power_dbfs=-11.9
+peak_power_dbfs=-5.8 at_sample=46
+noise_floor_dbfs=-13.0 (quietest 64-sample window)
+loudest_window_dbfs=-9.9
+active_windows=0/16 (power > 4x quietest)
+</tool_response>
+<think>
+
+</think>
+
+The peak power of capture 2 is **-5.8 dBFS**, and it occurs at **sample index 46**.<|im_end|>
+[295 text + 28099 chip tokens, 38s, lock error: None]
+================================================================================ 
+Q14: How many 64-sample windows of capture 2 are active, and what is its loudest window power in dBFS?
+---
+<tool_call>
+<function=rf_levels>
+<parameter=capture>
+2
+</parameter>
+</function>
+</tool_call>
+<tool_response>
+capture=2 IDLab LTE fs=1MS/s fc=806MHz
+samples=1024 (Q15)
+mean_power_dbfs=-11.9
+peak_power_dbfs=-5.8 at_sample=46
+noise_floor_dbfs=-13.0 (quietest 64-sample window)
+loudest_window_dbfs=-9.9
+active_windows=0/16 (power > 4x quietest)
+</tool_response>
+<think>
+
+</think>
+
+Based on the analysis of capture 2:
+*   **Active windows:** 0 out of 16 windows are active (defined as having power greater than 4x the quietest window).
+*   **Loudest window power:** -9.9 dBFS.<|im_end|>
+[326 text + 28099 chip tokens, 40s, lock error: None]
+  98500 tokens (377 text, 98122 chip) 54s
+================================================================================ 
+Q15: What is the dominant spectral bin of capture 2, and its frequency in cycles per sample?
+---
+<tool_call>
+<function=rf_analyze>
+<parameter=capture>
+2
+</parameter>
+</function>
+</tool_call>
+<tool_response>
+capture=2 IDLab LTE fs=1MS/s fc=806MHz
+samples=1024 (Q15)
+mean_power_dbfs=-11.9
+peak_power_dbfs=-5.8 at_sample=46
+noise_floor_dbfs=-13.0 (quietest 64-sample window)
+loudest_window_dbfs=-9.9
+active_windows=0/16 (power > 4x quietest)
+dominant_dft16_bin=0 freq_cycles_per_sample=0.0000 power_share_percent=13 freq_hz=0 (averaged 16-point DFT, 8 frames)
+cfo_cycles_per_sample=0.0175 cfo_hz=17594 (phase of the lag-1 autocorrelation)
+</tool_response>
+<think>
+
+</think>
+
+The dominant spectral bin of capture 2 is **0**, and its frequency is **0.0000 cycles per sample**.
+
+This result is based on
+[500 text + 99049 chip tokens, 68s, lock error: None]
+  98500 tokens (377 text, 98122 chip) 53s
+================================================================================ 
+Q16: Estimate the carrier frequency offset of capture 2 in cycles per sample.
+---
+<tool_call>
+<function=rf_analyze>
+<parameter=capture>
+2
+</parameter>
+</function>
+</tool_call>
+<tool_response>
+capture=2 IDLab LTE fs=1MS/s fc=806MHz
+samples=1024 (Q15)
+mean_power_dbfs=-11.9
+peak_power_dbfs=-5.8 at_sample=46
+noise_floor_dbfs=-13.0 (quietest 64-sample window)
+loudest_window_dbfs=-9.9
+active_windows=0/16 (power > 4x quietest)
+dominant_dft16_bin=0 freq_cycles_per_sample=0.0000 power_share_percent=13 freq_hz=0 (averaged 16-point DFT, 8 frames)
+cfo_cycles_per_sample=0.0175 cfo_hz=17594 (phase of the lag-1 autocorrelation)
+</tool_response>
+<think>
+
+</think>
+
+The carrier frequency offset (CFO) for capture 2 is **0.0175 cycles per sample**.
+
+This corresponds to approximately 17,
+[500 text + 99049 chip tokens, 68s, lock error: None]
+  98500 tokens (377 text, 98122 chip) 42s

@@ -1,0 +1,15 @@
+Traceback (most recent call last):
+  File "v15\scripts\classifier_screen.py", line 201, in <module>
+    main()
+  File "v15\scripts\classifier_screen.py", line 153, in main
+    res = ten_msps()
+          ^^^^^^^^^^
+  File "v15\scripts\classifier_screen.py", line 117, in ten_msps
+    model, kern = train(np.array([r[3] for r in fit]), np.array([r[2] for r in fit]), integer=True)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "v15\scripts\classifier_screen.py", line 48, in train
+    return fl, TechClassifier(q(A, 4096), q(a, 256), q(B, 4096), q(b, 256), frames=FRAMES)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "v15\rfpu_v15\cpu\classify.py", line 45, in __init__
+    raise ValueError("17 features, 1..16 hidden, 2..8 classes, 8/16/32/64 frames")
+ValueError: 17 features, 1..16 hidden, 2..8 classes, 8/16/32/64 frames

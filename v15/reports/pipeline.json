@@ -1,0 +1,215 @@
+{
+  "status": "PASS",
+  "backend": "QwenPU RV32 CPU in weights, chipformer fusedexec.FreeRun3",
+  "input_format": "Q15 synthetic",
+  "stages": {
+    "dc_block": {
+      "kernel": "dc_blocker",
+      "alpha_q15": 32440
+    },
+    "lowpass": {
+      "kernel": "lowpass16",
+      "taps": 16,
+      "accumulator_bits": 32
+    },
+    "energy": {
+      "kernel": "energy_detector",
+      "window": 64,
+      "memory_windows": 8,
+      "alpha_q8": 1024
+    },
+    "cfar": {
+      "kernel": "cfar16_t2g1",
+      "n": 16,
+      "hop": 16,
+      "train": 2,
+      "guard": 1,
+      "scale_q8": 1024,
+      "window": [
+        32767,
+        32767,
+        32767,
+        32767,
+        32767,
+        32767,
+        32767,
+        32767,
+        32767,
+        32767,
+        32767,
+        32767,
+        32767,
+        32767,
+        32767,
+        32767
+      ],
+      "max_block": 2048,
+      "compare_bits": 64
+    },
+    "classifier": {
+      "kernel": "spectral_mlp",
+      "features": 4,
+      "hidden": 8,
+      "classes": 3,
+      "fshift": 16
+    },
+    "cfo": {
+      "kernel": "cfo_lag1_w64",
+      "lag": 1,
+      "window": 64,
+      "shift": 9,
+      "cordic_iterations": 16
+    },
+    "peak": {
+      "kernel": "peak_tracker"
+    },
+    "fm": {
+      "kernel": "fm_demod",
+      "product_shift": 3,
+      "cordic_iterations": 16
+    }
+  },
+  "streams": 4,
+  "samples_per_stream": 2048,
+  "tokens": 8325198,
+  "neural_seconds": 432.69474290011567,
+  "wall_seconds": 471.76758030001656,
+  "tokens_per_sample": 1016.259521484375,
+  "neural_ms_per_sample": 52.819182482924276,
+  "results": [
+    {
+      "stream": "synthetic-0",
+      "all_stages_exact": true,
+      "burst_start_samples": [
+        575,
+        1599
+      ],
+      "burst_end_samples": [
+        1023,
+        1919
+      ],
+      "noise_floor_last": 11533,
+      "cfar_frames_with_detection": 102,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 2,
+      "class_histogram": {
+        "noise": 329,
+        "tone": 131,
+        "wideband": 52
+      },
+      "cfo_median_rad_per_sample": 0.06423208955863738,
+      "peak_index": 1716
+    },
+    {
+      "stream": "synthetic-1",
+      "all_stages_exact": true,
+      "burst_start_samples": [
+        575,
+        1599
+      ],
+      "burst_end_samples": [
+        1023,
+        1919
+      ],
+      "noise_floor_last": 8528,
+      "cfar_frames_with_detection": 93,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 2,
+      "class_histogram": {
+        "noise": 328,
+        "tone": 133,
+        "wideband": 51
+      },
+      "cfo_median_rad_per_sample": 0.027918989863706303,
+      "peak_index": 1631
+    },
+    {
+      "stream": "synthetic-2",
+      "all_stages_exact": true,
+      "burst_start_samples": [
+        575,
+        1599
+      ],
+      "burst_end_samples": [
+        1023,
+        1983
+      ],
+      "noise_floor_last": 11768,
+      "cfar_frames_with_detection": 103,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 2,
+      "class_histogram": {
+        "noise": 339,
+        "tone": 131,
+        "wideband": 42
+      },
+      "cfo_median_rad_per_sample": 0.07625021320172673,
+      "peak_index": 1607
+    },
+    {
+      "stream": "synthetic-3",
+      "all_stages_exact": true,
+      "burst_start_samples": [
+        575,
+        1599
+      ],
+      "burst_end_samples": [
+        1023,
+        1983
+      ],
+      "noise_floor_last": 14016,
+      "cfar_frames_with_detection": 104,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 2,
+      "class_histogram": {
+        "noise": 331,
+        "tone": 134,
+        "wideband": 47
+      },
+      "cfo_median_rad_per_sample": 0.0753404449290836,
+      "peak_index": 1576
+    }
+  ],
+  "ground_truth": {
+    "synthetic-0": {
+      "tone_burst": [
+        512,
+        1024
+      ],
+      "wideband_burst": [
+        1536,
+        1792
+      ]
+    },
+    "synthetic-1": {
+      "tone_burst": [
+        512,
+        1024
+      ],
+      "wideband_burst": [
+        1536,
+        1792
+      ]
+    },
+    "synthetic-2": {
+      "tone_burst": [
+        512,
+        1024
+      ],
+      "wideband_burst": [
+        1536,
+        1792
+      ]
+    },
+    "synthetic-3": {
+      "tone_burst": [
+        512,
+        1024
+      ],
+      "wideband_burst": [
+        1536,
+        1792
+      ]
+    }
+  }
+}

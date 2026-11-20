@@ -1,0 +1,51 @@
+{
+  "checkpoint": "$RFPU_DATA\\checkpoints\\rfpu-v15\\qwen3.5-4b-vx-vfir",
+  "chipformer": "upstream\\QwenPU-rf\\chipformer\\__init__.py",
+  "preflight": {
+    "chip_only_admitted": true,
+    "chip_tensor_bytes": 6164699008,
+    "embedding_bytes": 6908116992,
+    "cache_estimate_bytes": 2147483648,
+    "temporary_allowance_bytes": 2147483648,
+    "chip_only_peak_estimate_bytes": 17367783296
+  },
+  "loading_seconds": 44.24393779999809,
+  "programs": [
+    {
+      "program": "VXFir 16 taps, 16 real IQ samples",
+      "trace_tokens": 3215,
+      "exact_trace": true,
+      "outputs_equal_reference": true,
+      "seconds": 100.75754570000572
+    },
+    {
+      "program": "vfir_program seed 0",
+      "trace_tokens": 1360,
+      "exact_trace": true,
+      "mode": "free_running",
+      "seconds": 27.62606430001324
+    },
+    {
+      "program": "vfir_program seed 1",
+      "trace_tokens": 1407,
+      "exact_trace": true,
+      "mode": "free_running",
+      "seconds": 44.269343399995705
+    },
+    {
+      "program": "vfir_program seed 2",
+      "trace_tokens": 1360,
+      "exact_trace": true,
+      "mode": "free_running",
+      "seconds": 42.60615880001569
+    },
+    {
+      "program": "vfir_program seed 3",
+      "trace_tokens": 1211,
+      "exact_trace": true,
+      "mode": "free_running",
+      "seconds": 38.6324596000195
+    }
+  ],
+  "all_exact": true
+}

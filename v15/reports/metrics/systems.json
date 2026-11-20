@@ -1,0 +1,106 @@
+{
+  "rows": [
+    {
+      "kernel": "fir16",
+      "batch": 1,
+      "tokens_per_s": 7436.3996274750425,
+      "samples_per_s": 23.308538232751623,
+      "ms_per_sample": 42.902733325201226,
+      "peak_gpu_bytes": 58438656,
+      "mean_gpu_power_w": 118.67552045944005,
+      "joules_per_sample": 5.091504206500819
+    },
+    {
+      "kernel": "fir16",
+      "batch": 4,
+      "tokens_per_s": 21181.227885750053,
+      "samples_per_s": 66.39011950992501,
+      "ms_per_sample": 15.062482299802227,
+      "peak_gpu_bytes": 135607296,
+      "mean_gpu_power_w": 153.83563492063493,
+      "joules_per_sample": 2.317146528070901
+    },
+    {
+      "kernel": "fir16",
+      "batch": 8,
+      "tokens_per_s": 26572.364812172735,
+      "samples_per_s": 83.28801734522312,
+      "ms_per_sample": 12.006529052733583,
+      "peak_gpu_bytes": 238512128,
+      "mean_gpu_power_w": 163.65024509803922,
+      "joules_per_sample": 1.9648714222565795
+    },
+    {
+      "kernel": "fir16",
+      "batch": 16,
+      "tokens_per_s": 30028.235531285238,
+      "samples_per_s": 94.1200461251545,
+      "ms_per_sample": 10.624729174805836,
+      "peak_gpu_bytes": 446394368,
+      "mean_gpu_power_w": 162.9678904109589,
+      "joules_per_sample": 1.731489699805875
+    },
+    {
+      "kernel": "fir16",
+      "batch": 32,
+      "tokens_per_s": 33320.41988381664,
+      "samples_per_s": 104.439018839683,
+      "ms_per_sample": 9.574965478515551,
+      "peak_gpu_bytes": 856998912,
+      "mean_gpu_power_w": 164.06111782477342,
+      "joules_per_sample": 1.570879539538878
+    },
+    {
+      "kernel": "fft64_power",
+      "batch": 1,
+      "tokens_per_s": 7403.493954077285,
+      "samples_per_s": 36.76754293586692,
+      "ms_per_sample": 27.1979011962884,
+      "peak_gpu_bytes": 58438656,
+      "mean_gpu_power_w": 120.07632054176072,
+      "joules_per_sample": 3.265823902108663
+    },
+    {
+      "kernel": "fft64_power",
+      "batch": 4,
+      "tokens_per_s": 21170.174875050172,
+      "samples_per_s": 105.13621251079,
+      "ms_per_sample": 9.51147065429403,
+      "peak_gpu_bytes": 135607296,
+      "mean_gpu_power_w": 151.59080495356037,
+      "joules_per_sample": 1.4418514927765995
+    },
+    {
+      "kernel": "fft64_power",
+      "batch": 8,
+      "tokens_per_s": 26602.609342791893,
+      "samples_per_s": 132.1149969574197,
+      "ms_per_sample": 7.569163403321255,
+      "peak_gpu_bytes": 238512128,
+      "mean_gpu_power_w": 161.16708812260538,
+      "joules_per_sample": 1.2199000252374763
+    },
+    {
+      "kernel": "fft64_power",
+      "batch": 16,
+      "tokens_per_s": 30066.103059898793,
+      "samples_per_s": 149.31554506912602,
+      "ms_per_sample": 6.697226330567574,
+      "peak_gpu_bytes": 446394368,
+      "mean_gpu_power_w": 160.512905982906,
+      "joules_per_sample": 1.0749912603446357
+    },
+    {
+      "kernel": "fft64_power",
+      "batch": 32,
+      "tokens_per_s": 33391.475302428975,
+      "samples_per_s": 165.83014850682233,
+      "ms_per_sample": 6.030266564941655,
+      "peak_gpu_bytes": 856998912,
+      "mean_gpu_power_w": 161.04460093896714,
+      "joules_per_sample": 0.971141872506625
+    }
+  ],
+  "gpu": "NVIDIA GeForce RTX 5090 Laptop GPU, 610.88",
+  "group": "systems"
+}

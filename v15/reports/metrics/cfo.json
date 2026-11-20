@@ -1,0 +1,69 @@
+{
+  "window": 64,
+  "windows_per_snr": 100,
+  "rows": [
+    {
+      "snr_db": -6,
+      "rmse_rad_per_sample": 0.6059466568805388,
+      "crb_rad_per_sample": 0.009546818920475174,
+      "rmse_over_crb": 63.47105375393242
+    },
+    {
+      "snr_db": -2,
+      "rmse_rad_per_sample": 0.15878364238357734,
+      "crb_rad_per_sample": 0.006023635514296281,
+      "rmse_over_crb": 26.360101305387072
+    },
+    {
+      "snr_db": 2,
+      "rmse_rad_per_sample": 0.059891860120707255,
+      "crb_rad_per_sample": 0.0038006570682169644,
+      "rmse_over_crb": 15.758291012770812
+    },
+    {
+      "snr_db": 6,
+      "rmse_rad_per_sample": 0.025508776684849317,
+      "crb_rad_per_sample": 0.002398052491042053,
+      "rmse_over_crb": 10.63728870829041
+    },
+    {
+      "snr_db": 10,
+      "rmse_rad_per_sample": 0.010372590737079582,
+      "crb_rad_per_sample": 0.001513068831672006,
+      "rmse_over_crb": 6.855333029111058
+    },
+    {
+      "snr_db": 14,
+      "rmse_rad_per_sample": 0.005165373315660162,
+      "crb_rad_per_sample": 0.0009546818920475175,
+      "rmse_over_crb": 5.41057011627394
+    },
+    {
+      "snr_db": 18,
+      "rmse_rad_per_sample": 0.002439906738695023,
+      "crb_rad_per_sample": 0.0006023635514296282,
+      "rmse_over_crb": 4.050555072437958
+    },
+    {
+      "snr_db": 22,
+      "rmse_rad_per_sample": 0.0012350204087048502,
+      "crb_rad_per_sample": 0.0003800657068216964,
+      "rmse_over_crb": 3.2494918287490915
+    }
+  ],
+  "neural": {
+    "kernel_config": {
+      "kernel": "cfo_lag1_w64",
+      "lag": 1,
+      "window": 64,
+      "shift": 9,
+      "cordic_iterations": 16
+    },
+    "samples": 51200,
+    "tokens": 2469935,
+    "neural_seconds": 85.67874199994549,
+    "ms_per_sample": 1.6734129296864353
+  },
+  "note": "lag-1 phase estimator is not CRB-efficient at low SNR; ratio shows the gap",
+  "group": "cfo"
+}

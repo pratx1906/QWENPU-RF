@@ -1,0 +1,139 @@
+{
+  "fft_n": 64,
+  "train": 8,
+  "guard": 2,
+  "scale_q8": 1024,
+  "frames_per_case": 60,
+  "rows": [
+    {
+      "snr_db": "noise only",
+      "pfa_per_bin": 0.03828125
+    },
+    {
+      "per_sample_snr_db": -6,
+      "pd": 0.9333333333333333,
+      "pfa_other_bins": 0.03333333333333333,
+      "peak_bin_correct": 0.8833333333333333
+    },
+    {
+      "per_sample_snr_db": -3,
+      "pd": 1.0,
+      "pfa_other_bins": 0.04708994708994709,
+      "peak_bin_correct": 1.0
+    },
+    {
+      "per_sample_snr_db": 0,
+      "pd": 1.0,
+      "pfa_other_bins": 0.059788359788359786,
+      "peak_bin_correct": 1.0
+    },
+    {
+      "per_sample_snr_db": 3,
+      "pd": 1.0,
+      "pfa_other_bins": 0.054497354497354496,
+      "peak_bin_correct": 1.0
+    },
+    {
+      "per_sample_snr_db": 6,
+      "pd": 1.0,
+      "pfa_other_bins": 0.05343915343915344,
+      "peak_bin_correct": 1.0
+    },
+    {
+      "per_sample_snr_db": 9,
+      "pd": 1.0,
+      "pfa_other_bins": 0.056084656084656084,
+      "peak_bin_correct": 1.0
+    },
+    {
+      "per_sample_snr_db": 12,
+      "pd": 1.0,
+      "pfa_other_bins": 0.05634920634920635,
+      "peak_bin_correct": 1.0
+    }
+  ],
+  "neural": {
+    "kernel_config": {
+      "kernel": "cfar64_t8g2",
+      "n": 64,
+      "hop": 64,
+      "train": 8,
+      "guard": 2,
+      "scale_q8": 1024,
+      "window": [
+        0,
+        79,
+        315,
+        705,
+        1247,
+        1935,
+        2761,
+        3719,
+        4799,
+        5990,
+        7282,
+        8661,
+        10114,
+        11628,
+        13188,
+        14778,
+        16384,
+        17990,
+        19580,
+        21140,
+        22654,
+        24107,
+        25486,
+        26778,
+        27969,
+        29049,
+        30007,
+        30833,
+        31521,
+        32063,
+        32453,
+        32689,
+        32767,
+        32689,
+        32453,
+        32063,
+        31521,
+        30833,
+        30007,
+        29049,
+        27969,
+        26778,
+        25486,
+        24107,
+        22654,
+        21140,
+        19580,
+        17990,
+        16384,
+        14778,
+        13188,
+        11628,
+        10114,
+        8661,
+        7282,
+        5990,
+        4799,
+        3719,
+        2761,
+        1935,
+        1247,
+        705,
+        315,
+        79
+      ],
+      "max_block": 2048,
+      "compare_bits": 64
+    },
+    "samples": 30720,
+    "tokens": 8967211,
+    "neural_seconds": 318.47420650003187,
+    "ms_per_sample": 10.366998909506245
+  },
+  "note": "SNR is per input sample (tone power / noise power); FFT processing gain applies on top",
+  "group": "cfar"
+}

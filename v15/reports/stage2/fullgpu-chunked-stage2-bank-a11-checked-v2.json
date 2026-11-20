@@ -1,0 +1,2486 @@
+{
+  "protocol": "PROTOCOL.md Amendment 11 / 12 (checker v2)",
+  "gates": {
+    "questions": 96,
+    "expected": 96,
+    "P11.1_all_exact": true,
+    "P11.2_tool_answered_rate": 1.0,
+    "P11.3_fields_quoted_rate": 1.0,
+    "P11.4_numbers_supported_rate": 0.9870550161812298,
+    "numbers": 309,
+    "unsupported": 4,
+    "tool_choice": {
+      "level": {
+        "rf_levels": 48,
+        "rf_analyze": 0
+      },
+      "spectral": {
+        "rf_levels": 0,
+        "rf_analyze": 48
+      }
+    },
+    "seconds_median": 37.30006730000605,
+    "checker": "v2",
+    "hz_claims": 6,
+    "cfo_attributed_to_bin": 2,
+    "pass": {
+      "P11.1": true,
+      "P11.2": true,
+      "P11.3": true,
+      "P11.4": true
+    }
+  },
+  "rows": [
+    {
+      "capture": 0,
+      "question": "Capture 0: what are its mean power and noise floor in dBFS?",
+      "tools_called": [
+        "rf_levels"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 25.819688700023107,
+      "fields": {
+        "mean_power_dbfs": {
+          "report": "-16.3",
+          "quoted": true
+        },
+        "noise_floor_dbfs": {
+          "report": "-17.6",
+          "quoted": true
+        }
+      },
+      "numbers": 3,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "For capture 0, the mean power is **-16.3 dBFS** and the noise floor is **-17.6 dBFS**."
+    },
+    {
+      "capture": 0,
+      "question": "What is the peak power of capture 0 in dBFS, and at which sample index does it occur?",
+      "tools_called": [
+        "rf_levels"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 25.480601400020532,
+      "fields": {
+        "peak_power_dbfs": {
+          "report": "-10.9",
+          "quoted": true
+        },
+        "at_sample": {
+          "report": "168",
+          "quoted": true
+        }
+      },
+      "numbers": 3,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "The peak power of capture 0 is **-10.9 dBFS**, and it occurs at **sample index 168**."
+    },
+    {
+      "capture": 0,
+      "question": "How many 64-sample windows of capture 0 are active, and what is its loudest window power in dBFS?",
+      "tools_called": [
+        "rf_levels"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 26.616951400006656,
+      "fields": {
+        "active_windows": {
+          "report": "0",
+          "quoted": true
+        },
+        "loudest_window_dbfs": {
+          "report": "-15.0",
+          "quoted": true
+        }
+      },
+      "numbers": 4,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "Based on the analysis of capture 0:\n*   **Active 64-sample windows:** 0\n*   **Loudest window power:** -15.0 dBFS"
+    },
+    {
+      "capture": 0,
+      "question": "What is the dominant spectral bin of capture 0, and its frequency in cycles per sample?",
+      "tools_called": [
+        "rf_analyze"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 43.215178599988576,
+      "fields": {
+        "dominant_dft16_bin": {
+          "report": "0",
+          "quoted": true
+        },
+        "freq_cycles_per_sample": {
+          "report": "0.0000",
+          "quoted": true
+        }
+      },
+      "numbers": 6,
+      "unsupported": [
+        "88"
+      ],
+      "hz_claims": [
+        "88"
+      ],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "The dominant spectral bin of capture 0 is **0**, and its frequency is **0.0000 cycles per sample**.\n\nThis indicates that the signal is centered at DC (direct current) in the digital domain, which is expected for a WiFi capture that has been downconverted to baseband. The carrier frequency offset (CFO) is 0.0088 cycles per sample, which would correspond to approximately 88 kHz at the 10 MS/s sample rate."
+    },
+    {
+      "capture": 0,
+      "question": "Estimate the carrier frequency offset of capture 0 in cycles per sample.",
+      "tools_called": [
+        "rf_analyze"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 38.16784199999529,
+      "fields": {
+        "cfo_cycles_per_sample": {
+          "report": "0.0088",
+          "quoted": true
+        }
+      },
+      "numbers": 2,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "The carrier frequency offset (CFO) for capture 0 is **0.0088 cycles per sample**."
+    },
+    {
+      "capture": 0,
+      "question": "For capture 0, which spectral bin dominates and what percentage of the power does it hold?",
+      "tools_called": [
+        "rf_analyze"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 39.6857228000008,
+      "fields": {
+        "power_share_percent": {
+          "report": "10",
+          "quoted": true
+        },
+        "dominant_dft16_bin": {
+          "report": "0",
+          "quoted": true
+        }
+      },
+      "numbers": 4,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "For capture 0, the dominant spectral bin is bin 0, which corresponds to a frequency of 0 cycles per sample (DC). This bin holds 10% of the total power."
+    },
+    {
+      "capture": 1,
+      "question": "Capture 1: what are its mean power and noise floor in dBFS?",
+      "tools_called": [
+        "rf_levels"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 25.190643900015857,
+      "fields": {
+        "mean_power_dbfs": {
+          "report": "-13.3",
+          "quoted": true
+        },
+        "noise_floor_dbfs": {
+          "report": "-14.2",
+          "quoted": true
+        }
+      },
+      "numbers": 2,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "The mean power is -13.3 dBFS and the noise floor is -14.2 dBFS."
+    },
+    {
+      "capture": 1,
+      "question": "What is the peak power of capture 1 in dBFS, and at which sample index does it occur?",
+      "tools_called": [
+        "rf_levels"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 25.8036217999761,
+      "fields": {
+        "peak_power_dbfs": {
+          "report": "-12.0",
+          "quoted": true
+        },
+        "at_sample": {
+          "report": "25",
+          "quoted": true
+        }
+      },
+      "numbers": 3,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "The peak power of capture 1 is **-12.0 dBFS**, and it occurs at **sample index 25**."
+    },
+    {
+      "capture": 1,
+      "question": "How many 64-sample windows of capture 1 are active, and what is its loudest window power in dBFS?",
+      "tools_called": [
+        "rf_levels"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 27.21912700001849,
+      "fields": {
+        "active_windows": {
+          "report": "0",
+          "quoted": true
+        },
+        "loudest_window_dbfs": {
+          "report": "-12.7",
+          "quoted": true
+        }
+      },
+      "numbers": 5,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "Based on the analysis of capture 1:\n*   **Active 64-sample windows:** 0 out of 16\n*   **Loudest window power:** -12.7 dBFS"
+    },
+    {
+      "capture": 1,
+      "question": "What is the dominant spectral bin of capture 1, and its frequency in cycles per sample?",
+      "tools_called": [
+        "rf_analyze"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 42.615775899990695,
+      "fields": {
+        "dominant_dft16_bin": {
+          "report": "0",
+          "quoted": true
+        },
+        "freq_cycles_per_sample": {
+          "report": "0.0000",
+          "quoted": true
+        }
+      },
+      "numbers": 4,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "The dominant spectral bin of capture 1 is **0**, and its frequency is **0.0 cycles per sample**.\n\nThis indicates that the signal is centered at DC (direct current) in the digital domain, which is expected for a WiFi capture that has been downconverted to baseband. The carrier frequency offset (CFO) is -0.0005 cycles per sample, which is a small residual offset."
+    },
+    {
+      "capture": 1,
+      "question": "Estimate the carrier frequency offset of capture 1 in cycles per sample.",
+      "tools_called": [
+        "rf_analyze"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 39.992635500006145,
+      "fields": {
+        "cfo_cycles_per_sample": {
+          "report": "-0.0005",
+          "quoted": true
+        }
+      },
+      "numbers": 2,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "The carrier frequency offset (CFO) for capture 1 is **-0.0005 cycles per sample**."
+    },
+    {
+      "capture": 1,
+      "question": "For capture 1, which spectral bin dominates and what percentage of the power does it hold?",
+      "tools_called": [
+        "rf_analyze"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 40.61642469998333,
+      "fields": {
+        "power_share_percent": {
+          "report": "19",
+          "quoted": true
+        },
+        "dominant_dft16_bin": {
+          "report": "0",
+          "quoted": true
+        }
+      },
+      "numbers": 5,
+      "unsupported": [],
+      "hz_claims": [
+        "0"
+      ],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "The dominant spectral bin for capture 1 is bin 0, which corresponds to a frequency of 0 cycles per sample (0 Hz). This bin holds 19% of the total power."
+    },
+    {
+      "capture": 2,
+      "question": "Capture 2: what are its mean power and noise floor in dBFS?",
+      "tools_called": [
+        "rf_levels"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 23.934516200009966,
+      "fields": {
+        "mean_power_dbfs": {
+          "report": "-11.9",
+          "quoted": true
+        },
+        "noise_floor_dbfs": {
+          "report": "-13.0",
+          "quoted": true
+        }
+      },
+      "numbers": 3,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "For capture 2, the mean power is **-11.9 dBFS** and the noise floor is **-13.0 dBFS**."
+    },
+    {
+      "capture": 2,
+      "question": "What is the peak power of capture 2 in dBFS, and at which sample index does it occur?",
+      "tools_called": [
+        "rf_levels"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 23.600677000009455,
+      "fields": {
+        "peak_power_dbfs": {
+          "report": "-5.8",
+          "quoted": true
+        },
+        "at_sample": {
+          "report": "46",
+          "quoted": true
+        }
+      },
+      "numbers": 3,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "The peak power of capture 2 is **-5.8 dBFS**, and it occurs at **sample index 46**."
+    },
+    {
+      "capture": 2,
+      "question": "How many 64-sample windows of capture 2 are active, and what is its loudest window power in dBFS?",
+      "tools_called": [
+        "rf_levels"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 25.101754299976164,
+      "fields": {
+        "active_windows": {
+          "report": "0",
+          "quoted": true
+        },
+        "loudest_window_dbfs": {
+          "report": "-9.9",
+          "quoted": true
+        }
+      },
+      "numbers": 5,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "Based on the analysis of capture 2:\n*   **Active windows:** 0 out of 16 windows are active (defined as having power greater than 4x the quietest window).\n*   **Loudest window power:** -9.9 dBFS."
+    },
+    {
+      "capture": 2,
+      "question": "What is the dominant spectral bin of capture 2, and its frequency in cycles per sample?",
+      "tools_called": [
+        "rf_analyze"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 35.61581039999146,
+      "fields": {
+        "dominant_dft16_bin": {
+          "report": "0",
+          "quoted": true
+        },
+        "freq_cycles_per_sample": {
+          "report": "0.0000",
+          "quoted": true
+        }
+      },
+      "numbers": 3,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "The dominant spectral bin of capture 2 is **0**, and its frequency is **0.0 cycles per sample**."
+    },
+    {
+      "capture": 2,
+      "question": "Estimate the carrier frequency offset of capture 2 in cycles per sample.",
+      "tools_called": [
+        "rf_analyze"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 34.31338449998293,
+      "fields": {
+        "cfo_cycles_per_sample": {
+          "report": "0.0175",
+          "quoted": true
+        }
+      },
+      "numbers": 2,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "The carrier frequency offset for capture 2 is **0.0175 cycles per sample**."
+    },
+    {
+      "capture": 2,
+      "question": "For capture 2, which spectral bin dominates and what percentage of the power does it hold?",
+      "tools_called": [
+        "rf_analyze"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 35.8961011999927,
+      "fields": {
+        "power_share_percent": {
+          "report": "13",
+          "quoted": true
+        },
+        "dominant_dft16_bin": {
+          "report": "0",
+          "quoted": true
+        }
+      },
+      "numbers": 4,
+      "unsupported": [],
+      "hz_claims": [
+        "0"
+      ],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "The dominant spectral bin for capture 2 is bin 0, which corresponds to a frequency of 0 Hz (relative to the carrier). This bin holds 13% of the total power."
+    },
+    {
+      "capture": 3,
+      "question": "Capture 3: what are its mean power and noise floor in dBFS?",
+      "tools_called": [
+        "rf_levels"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 24.4393648999976,
+      "fields": {
+        "mean_power_dbfs": {
+          "report": "-13.2",
+          "quoted": true
+        },
+        "noise_floor_dbfs": {
+          "report": "-13.5",
+          "quoted": true
+        }
+      },
+      "numbers": 2,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "The mean power is -13.2 dBFS and the noise floor is -13.5 dBFS."
+    },
+    {
+      "capture": 3,
+      "question": "What is the peak power of capture 3 in dBFS, and at which sample index does it occur?",
+      "tools_called": [
+        "rf_levels"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 27.26642410000204,
+      "fields": {
+        "peak_power_dbfs": {
+          "report": "-12.0",
+          "quoted": true
+        },
+        "at_sample": {
+          "report": "19",
+          "quoted": true
+        }
+      },
+      "numbers": 3,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "The peak power of capture 3 is **-12.0 dBFS**, and it occurs at **sample index 19**."
+    },
+    {
+      "capture": 3,
+      "question": "How many 64-sample windows of capture 3 are active, and what is its loudest window power in dBFS?",
+      "tools_called": [
+        "rf_levels"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 25.29608620001818,
+      "fields": {
+        "active_windows": {
+          "report": "0",
+          "quoted": true
+        },
+        "loudest_window_dbfs": {
+          "report": "-12.5",
+          "quoted": true
+        }
+      },
+      "numbers": 5,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "Based on the analysis of capture 3:\n*   **Active windows:** 0 out of 16 windows are active (defined as having power greater than 4x the quietest window).\n*   **Loudest window power:** -12.5 dBFS."
+    },
+    {
+      "capture": 3,
+      "question": "What is the dominant spectral bin of capture 3, and its frequency in cycles per sample?",
+      "tools_called": [
+        "rf_analyze"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 34.78189040001598,
+      "fields": {
+        "dominant_dft16_bin": {
+          "report": "8",
+          "quoted": true
+        },
+        "freq_cycles_per_sample": {
+          "report": "-0.5000",
+          "quoted": true
+        }
+      },
+      "numbers": 3,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "The dominant spectral bin for capture 3 is **8**, and its frequency is **-0.5 cycles per sample**."
+    },
+    {
+      "capture": 3,
+      "question": "Estimate the carrier frequency offset of capture 3 in cycles per sample.",
+      "tools_called": [
+        "rf_analyze"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 35.321237800002564,
+      "fields": {
+        "cfo_cycles_per_sample": {
+          "report": "0.4947",
+          "quoted": true
+        }
+      },
+      "numbers": 2,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "The carrier frequency offset (CFO) for capture 3 is **0.4947 cycles per sample**."
+    },
+    {
+      "capture": 3,
+      "question": "For capture 3, which spectral bin dominates and what percentage of the power does it hold?",
+      "tools_called": [
+        "rf_analyze"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 35.20944530001725,
+      "fields": {
+        "power_share_percent": {
+          "report": "12",
+          "quoted": true
+        },
+        "dominant_dft16_bin": {
+          "report": "8",
+          "quoted": true
+        }
+      },
+      "numbers": 3,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "The dominant spectral bin for capture 3 is bin 8, which holds 12% of the power."
+    },
+    {
+      "capture": 4,
+      "question": "Capture 4: what are its mean power and noise floor in dBFS?",
+      "tools_called": [
+        "rf_levels"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 24.05460239999229,
+      "fields": {
+        "mean_power_dbfs": {
+          "report": "-14.7",
+          "quoted": true
+        },
+        "noise_floor_dbfs": {
+          "report": "-15.1",
+          "quoted": true
+        }
+      },
+      "numbers": 3,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "For capture 4, the mean power is **-14.7 dBFS** and the noise floor is **-15.1 dBFS**."
+    },
+    {
+      "capture": 4,
+      "question": "What is the peak power of capture 4 in dBFS, and at which sample index does it occur?",
+      "tools_called": [
+        "rf_levels"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 38.095884900016245,
+      "fields": {
+        "peak_power_dbfs": {
+          "report": "-10.9",
+          "quoted": true
+        },
+        "at_sample": {
+          "report": "176",
+          "quoted": true
+        }
+      },
+      "numbers": 3,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "The peak power of capture 4 is **-10.9 dBFS**, and it occurs at **sample index 176**."
+    },
+    {
+      "capture": 4,
+      "question": "How many 64-sample windows of capture 4 are active, and what is its loudest window power in dBFS?",
+      "tools_called": [
+        "rf_levels"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 40.689749100012705,
+      "fields": {
+        "active_windows": {
+          "report": "0",
+          "quoted": true
+        },
+        "loudest_window_dbfs": {
+          "report": "-14.2",
+          "quoted": true
+        }
+      },
+      "numbers": 5,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "Based on the analysis of capture 4:\n*   **Active windows:** 0 out of 16 windows are active (defined as having power greater than 4x the quietest window).\n*   **Loudest window power:** -14.2 dBFS."
+    },
+    {
+      "capture": 4,
+      "question": "What is the dominant spectral bin of capture 4, and its frequency in cycles per sample?",
+      "tools_called": [
+        "rf_analyze"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 59.927786099986406,
+      "fields": {
+        "dominant_dft16_bin": {
+          "report": "0",
+          "quoted": true
+        },
+        "freq_cycles_per_sample": {
+          "report": "0.0000",
+          "quoted": true
+        }
+      },
+      "numbers": 3,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "The dominant spectral bin of capture 4 is **0**, and its frequency is **0.0 cycles per sample**.\n\nThis indicates that the signal is centered at DC (direct current) in the digital domain, which is expected for a baseband signal like DVB-T after downconversion."
+    },
+    {
+      "capture": 4,
+      "question": "Estimate the carrier frequency offset of capture 4 in cycles per sample.",
+      "tools_called": [
+        "rf_analyze"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 56.92083770001773,
+      "fields": {
+        "cfo_cycles_per_sample": {
+          "report": "0.0377",
+          "quoted": true
+        }
+      },
+      "numbers": 2,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "The carrier frequency offset for capture 4 is **0.0377 cycles per sample**."
+    },
+    {
+      "capture": 4,
+      "question": "For capture 4, which spectral bin dominates and what percentage of the power does it hold?",
+      "tools_called": [
+        "rf_analyze"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 58.36772560002282,
+      "fields": {
+        "power_share_percent": {
+          "report": "14",
+          "quoted": true
+        },
+        "dominant_dft16_bin": {
+          "report": "0",
+          "quoted": true
+        }
+      },
+      "numbers": 4,
+      "unsupported": [],
+      "hz_claims": [
+        "0"
+      ],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "The dominant spectral bin for capture 4 is bin 0, which corresponds to a frequency of 0 Hz (relative to the carrier). This bin holds 14% of the total power."
+    },
+    {
+      "capture": 5,
+      "question": "Capture 5: what are its mean power and noise floor in dBFS?",
+      "tools_called": [
+        "rf_levels"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 23.50664509998751,
+      "fields": {
+        "mean_power_dbfs": {
+          "report": "-12.9",
+          "quoted": true
+        },
+        "noise_floor_dbfs": {
+          "report": "-13.1",
+          "quoted": true
+        }
+      },
+      "numbers": 3,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "For capture 5, the mean power is **-12.9 dBFS** and the noise floor is **-13.1 dBFS**."
+    },
+    {
+      "capture": 5,
+      "question": "What is the peak power of capture 5 in dBFS, and at which sample index does it occur?",
+      "tools_called": [
+        "rf_levels"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 23.324471900006756,
+      "fields": {
+        "peak_power_dbfs": {
+          "report": "-11.8",
+          "quoted": true
+        },
+        "at_sample": {
+          "report": "52",
+          "quoted": true
+        }
+      },
+      "numbers": 3,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "The peak power of capture 5 is **-11.8 dBFS**, and it occurs at **sample index 52**."
+    },
+    {
+      "capture": 5,
+      "question": "How many 64-sample windows of capture 5 are active, and what is its loudest window power in dBFS?",
+      "tools_called": [
+        "rf_levels"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 25.123888699978124,
+      "fields": {
+        "active_windows": {
+          "report": "0",
+          "quoted": true
+        },
+        "loudest_window_dbfs": {
+          "report": "-12.7",
+          "quoted": true
+        }
+      },
+      "numbers": 5,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "Based on the analysis of capture 5:\n*   **Active windows:** 0 out of 16 windows are active (defined as having power greater than 4x the quietest window).\n*   **Loudest window power:** -12.7 dBFS."
+    },
+    {
+      "capture": 5,
+      "question": "What is the dominant spectral bin of capture 5, and its frequency in cycles per sample?",
+      "tools_called": [
+        "rf_analyze"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 35.260250699997414,
+      "fields": {
+        "dominant_dft16_bin": {
+          "report": "7",
+          "quoted": true
+        },
+        "freq_cycles_per_sample": {
+          "report": "0.4375",
+          "quoted": true
+        }
+      },
+      "numbers": 3,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "The dominant spectral bin for capture 5 is **7**, and its frequency is **0.4375 cycles per sample**."
+    },
+    {
+      "capture": 5,
+      "question": "Estimate the carrier frequency offset of capture 5 in cycles per sample.",
+      "tools_called": [
+        "rf_analyze"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 56.353482600010466,
+      "fields": {
+        "cfo_cycles_per_sample": {
+          "report": "-0.5000",
+          "quoted": true
+        }
+      },
+      "numbers": 2,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "The carrier frequency offset (CFO) for capture 5 is **-0.5 cycles per sample**."
+    },
+    {
+      "capture": 5,
+      "question": "For capture 5, which spectral bin dominates and what percentage of the power does it hold?",
+      "tools_called": [
+        "rf_analyze"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 56.4176512999984,
+      "fields": {
+        "power_share_percent": {
+          "report": "9",
+          "quoted": true
+        },
+        "dominant_dft16_bin": {
+          "report": "7",
+          "quoted": true
+        }
+      },
+      "numbers": 3,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "The dominant spectral bin for capture 5 is bin 7, which holds 9% of the power."
+    },
+    {
+      "capture": 6,
+      "question": "Capture 6: what are its mean power and noise floor in dBFS?",
+      "tools_called": [
+        "rf_levels"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 37.348487699986435,
+      "fields": {
+        "mean_power_dbfs": {
+          "report": "-14.6",
+          "quoted": true
+        },
+        "noise_floor_dbfs": {
+          "report": "-15.4",
+          "quoted": true
+        }
+      },
+      "numbers": 2,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "The mean power is -14.6 dBFS and the noise floor is -15.4 dBFS."
+    },
+    {
+      "capture": 6,
+      "question": "What is the peak power of capture 6 in dBFS, and at which sample index does it occur?",
+      "tools_called": [
+        "rf_levels"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 23.00325080001494,
+      "fields": {
+        "peak_power_dbfs": {
+          "report": "-5.5",
+          "quoted": true
+        },
+        "at_sample": {
+          "report": "309",
+          "quoted": true
+        }
+      },
+      "numbers": 3,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "The peak power of capture 6 is **-5.5 dBFS**, and it occurs at **sample index 309**."
+    },
+    {
+      "capture": 6,
+      "question": "How many 64-sample windows of capture 6 are active, and what is its loudest window power in dBFS?",
+      "tools_called": [
+        "rf_levels"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 29.87702069999068,
+      "fields": {
+        "active_windows": {
+          "report": "0",
+          "quoted": true
+        },
+        "loudest_window_dbfs": {
+          "report": "-13.6",
+          "quoted": true
+        }
+      },
+      "numbers": 4,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "Based on the analysis of capture 6 (NTU-RFSR LoRa):\n\n*   **Active 64-sample windows:** 0\n*   **Loudest window power:** -13.6 dBFS"
+    },
+    {
+      "capture": 6,
+      "question": "What is the dominant spectral bin of capture 6, and its frequency in cycles per sample?",
+      "tools_called": [
+        "rf_analyze"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 43.345813299994916,
+      "fields": {
+        "dominant_dft16_bin": {
+          "report": "5",
+          "quoted": true
+        },
+        "freq_cycles_per_sample": {
+          "report": "0.3125",
+          "quoted": true
+        }
+      },
+      "numbers": 3,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "The dominant spectral bin for capture 6 is **5**, and its frequency is **0.3125 cycles per sample**."
+    },
+    {
+      "capture": 6,
+      "question": "Estimate the carrier frequency offset of capture 6 in cycles per sample.",
+      "tools_called": [
+        "rf_analyze"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 41.87388289999217,
+      "fields": {
+        "cfo_cycles_per_sample": {
+          "report": "-0.0174",
+          "quoted": true
+        }
+      },
+      "numbers": 2,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "The carrier frequency offset (CFO) for capture 6 is **-0.0174 cycles per sample**."
+    },
+    {
+      "capture": 6,
+      "question": "For capture 6, which spectral bin dominates and what percentage of the power does it hold?",
+      "tools_called": [
+        "rf_analyze"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 55.72424390001106,
+      "fields": {
+        "power_share_percent": {
+          "report": "9",
+          "quoted": true
+        },
+        "dominant_dft16_bin": {
+          "report": "5",
+          "quoted": true
+        }
+      },
+      "numbers": 3,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "The dominant spectral bin for capture 6 is bin 5, which holds 9% of the power."
+    },
+    {
+      "capture": 7,
+      "question": "Capture 7: what are its mean power and noise floor in dBFS?",
+      "tools_called": [
+        "rf_levels"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 37.30006730000605,
+      "fields": {
+        "mean_power_dbfs": {
+          "report": "-14.5",
+          "quoted": true
+        },
+        "noise_floor_dbfs": {
+          "report": "-15.0",
+          "quoted": true
+        }
+      },
+      "numbers": 2,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "The mean power is -14.5 dBFS and the noise floor is -15.0 dBFS."
+    },
+    {
+      "capture": 7,
+      "question": "What is the peak power of capture 7 in dBFS, and at which sample index does it occur?",
+      "tools_called": [
+        "rf_levels"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 37.41472309999517,
+      "fields": {
+        "peak_power_dbfs": {
+          "report": "-6.7",
+          "quoted": true
+        },
+        "at_sample": {
+          "report": "71",
+          "quoted": true
+        }
+      },
+      "numbers": 3,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "The peak power of capture 7 is **-6.7 dBFS**, and it occurs at **sample index 71**."
+    },
+    {
+      "capture": 7,
+      "question": "How many 64-sample windows of capture 7 are active, and what is its loudest window power in dBFS?",
+      "tools_called": [
+        "rf_levels"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 39.118527100014035,
+      "fields": {
+        "active_windows": {
+          "report": "0",
+          "quoted": true
+        },
+        "loudest_window_dbfs": {
+          "report": "-13.2",
+          "quoted": true
+        }
+      },
+      "numbers": 5,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "Based on the analysis of capture 7:\n*   **Active windows:** 0 out of 16 windows are active (defined as having power greater than 4x the quietest window).\n*   **Loudest window power:** -13.2 dBFS."
+    },
+    {
+      "capture": 7,
+      "question": "What is the dominant spectral bin of capture 7, and its frequency in cycles per sample?",
+      "tools_called": [
+        "rf_analyze"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 56.21646120000514,
+      "fields": {
+        "dominant_dft16_bin": {
+          "report": "5",
+          "quoted": true
+        },
+        "freq_cycles_per_sample": {
+          "report": "0.3125",
+          "quoted": true
+        }
+      },
+      "numbers": 3,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "The dominant spectral bin for capture 7 is **5**, and its frequency is **0.3125 cycles per sample**."
+    },
+    {
+      "capture": 7,
+      "question": "Estimate the carrier frequency offset of capture 7 in cycles per sample.",
+      "tools_called": [
+        "rf_analyze"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 55.903166000003694,
+      "fields": {
+        "cfo_cycles_per_sample": {
+          "report": "-0.0087",
+          "quoted": true
+        }
+      },
+      "numbers": 2,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "The carrier frequency offset (CFO) for capture 7 is **-0.0087 cycles per sample**."
+    },
+    {
+      "capture": 7,
+      "question": "For capture 7, which spectral bin dominates and what percentage of the power does it hold?",
+      "tools_called": [
+        "rf_analyze"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 55.93813680001767,
+      "fields": {
+        "power_share_percent": {
+          "report": "10",
+          "quoted": true
+        },
+        "dominant_dft16_bin": {
+          "report": "5",
+          "quoted": true
+        }
+      },
+      "numbers": 3,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "The dominant spectral bin for capture 7 is bin 5, which holds 10% of the power."
+    },
+    {
+      "capture": 8,
+      "question": "Capture 8: what are its mean power and noise floor in dBFS?",
+      "tools_called": [
+        "rf_levels"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 23.509505900001386,
+      "fields": {
+        "mean_power_dbfs": {
+          "report": "-14.1",
+          "quoted": true
+        },
+        "noise_floor_dbfs": {
+          "report": "-14.9",
+          "quoted": true
+        }
+      },
+      "numbers": 3,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "For capture 8 (EPFL-LoRaIQ LoRa), the mean power is **-14.1 dBFS** and the noise floor is **-14.9 dBFS**."
+    },
+    {
+      "capture": 8,
+      "question": "What is the peak power of capture 8 in dBFS, and at which sample index does it occur?",
+      "tools_called": [
+        "rf_levels"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 23.439186800009338,
+      "fields": {
+        "peak_power_dbfs": {
+          "report": "-10.4",
+          "quoted": true
+        },
+        "at_sample": {
+          "report": "41",
+          "quoted": true
+        }
+      },
+      "numbers": 3,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "The peak power of capture 8 is **-10.4 dBFS**, and it occurs at **sample index 41**."
+    },
+    {
+      "capture": 8,
+      "question": "How many 64-sample windows of capture 8 are active, and what is its loudest window power in dBFS?",
+      "tools_called": [
+        "rf_levels"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 24.788410699984524,
+      "fields": {
+        "active_windows": {
+          "report": "0",
+          "quoted": true
+        },
+        "loudest_window_dbfs": {
+          "report": "-13.3",
+          "quoted": true
+        }
+      },
+      "numbers": 4,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "Based on the analysis of capture 8 (EPFL-LoRaIQ LoRa), there are **0 active windows** (where power is greater than 4x the quietest window). The loudest window has a power of **-13.3 dBFS**."
+    },
+    {
+      "capture": 8,
+      "question": "What is the dominant spectral bin of capture 8, and its frequency in cycles per sample?",
+      "tools_called": [
+        "rf_analyze"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 35.25298799999291,
+      "fields": {
+        "dominant_dft16_bin": {
+          "report": "1",
+          "quoted": true
+        },
+        "freq_cycles_per_sample": {
+          "report": "0.0625",
+          "quoted": true
+        }
+      },
+      "numbers": 3,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "The dominant spectral bin for capture 8 is **1**, and its frequency is **0.0625 cycles per sample**."
+    },
+    {
+      "capture": 8,
+      "question": "Estimate the carrier frequency offset of capture 8 in cycles per sample.",
+      "tools_called": [
+        "rf_analyze"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 35.40292160000536,
+      "fields": {
+        "cfo_cycles_per_sample": {
+          "report": "0.0038",
+          "quoted": true
+        }
+      },
+      "numbers": 2,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "The carrier frequency offset (CFO) for capture 8 is **0.0038 cycles per sample**."
+    },
+    {
+      "capture": 8,
+      "question": "For capture 8, which spectral bin dominates and what percentage of the power does it hold?",
+      "tools_called": [
+        "rf_analyze"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 35.016927799995756,
+      "fields": {
+        "power_share_percent": {
+          "report": "23",
+          "quoted": true
+        },
+        "dominant_dft16_bin": {
+          "report": "1",
+          "quoted": true
+        }
+      },
+      "numbers": 3,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "For capture 8, the dominant spectral bin is bin 1, which holds 23% of the power."
+    },
+    {
+      "capture": 9,
+      "question": "Capture 9: what are its mean power and noise floor in dBFS?",
+      "tools_called": [
+        "rf_levels"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 23.157651499990607,
+      "fields": {
+        "mean_power_dbfs": {
+          "report": "-14.2",
+          "quoted": true
+        },
+        "noise_floor_dbfs": {
+          "report": "-14.5",
+          "quoted": true
+        }
+      },
+      "numbers": 2,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "The mean power is -14.2 dBFS and the noise floor is -14.5 dBFS."
+    },
+    {
+      "capture": 9,
+      "question": "What is the peak power of capture 9 in dBFS, and at which sample index does it occur?",
+      "tools_called": [
+        "rf_levels"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 23.18167300001369,
+      "fields": {
+        "peak_power_dbfs": {
+          "report": "-7.6",
+          "quoted": true
+        },
+        "at_sample": {
+          "report": "840",
+          "quoted": true
+        }
+      },
+      "numbers": 3,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "The peak power of capture 9 is **-7.6 dBFS**, and it occurs at **sample index 840**."
+    },
+    {
+      "capture": 9,
+      "question": "How many 64-sample windows of capture 9 are active, and what is its loudest window power in dBFS?",
+      "tools_called": [
+        "rf_levels"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 35.54141449998133,
+      "fields": {
+        "active_windows": {
+          "report": "0",
+          "quoted": true
+        },
+        "loudest_window_dbfs": {
+          "report": "-13.6",
+          "quoted": true
+        }
+      },
+      "numbers": 5,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "Based on the analysis of capture 9:\n*   **Active windows:** 0 out of 16 windows are active (defined as having power greater than 4x the quietest window).\n*   **Loudest window power:** -13.6 dBFS."
+    },
+    {
+      "capture": 9,
+      "question": "What is the dominant spectral bin of capture 9, and its frequency in cycles per sample?",
+      "tools_called": [
+        "rf_analyze"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 56.98227010000846,
+      "fields": {
+        "dominant_dft16_bin": {
+          "report": "5",
+          "quoted": true
+        },
+        "freq_cycles_per_sample": {
+          "report": "0.3125",
+          "quoted": true
+        }
+      },
+      "numbers": 3,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "The dominant spectral bin for capture 9 is **5**, and its frequency is **0.3125 cycles per sample**."
+    },
+    {
+      "capture": 9,
+      "question": "Estimate the carrier frequency offset of capture 9 in cycles per sample.",
+      "tools_called": [
+        "rf_analyze"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 56.21833340000012,
+      "fields": {
+        "cfo_cycles_per_sample": {
+          "report": "0.0666",
+          "quoted": true
+        }
+      },
+      "numbers": 2,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "The carrier frequency offset (CFO) for capture 9 is **0.0666 cycles per sample**."
+    },
+    {
+      "capture": 9,
+      "question": "For capture 9, which spectral bin dominates and what percentage of the power does it hold?",
+      "tools_called": [
+        "rf_analyze"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 42.93937819998246,
+      "fields": {
+        "power_share_percent": {
+          "report": "11",
+          "quoted": true
+        },
+        "dominant_dft16_bin": {
+          "report": "5",
+          "quoted": true
+        }
+      },
+      "numbers": 3,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "The dominant spectral bin for capture 9 is bin 5, which holds 11% of the power."
+    },
+    {
+      "capture": 10,
+      "question": "Capture 10: what are its mean power and noise floor in dBFS?",
+      "tools_called": [
+        "rf_levels"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 24.282657800009474,
+      "fields": {
+        "mean_power_dbfs": {
+          "report": "-14.5",
+          "quoted": true
+        },
+        "noise_floor_dbfs": {
+          "report": "-15.3",
+          "quoted": true
+        }
+      },
+      "numbers": 2,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "The mean power is -14.5 dBFS and the noise floor is -15.3 dBFS."
+    },
+    {
+      "capture": 10,
+      "question": "What is the peak power of capture 10 in dBFS, and at which sample index does it occur?",
+      "tools_called": [
+        "rf_levels"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 23.76199679999263,
+      "fields": {
+        "peak_power_dbfs": {
+          "report": "-7.3",
+          "quoted": true
+        },
+        "at_sample": {
+          "report": "1006",
+          "quoted": true
+        }
+      },
+      "numbers": 3,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "The peak power of capture 10 is **-7.3 dBFS**, and it occurs at **sample index 1006**."
+    },
+    {
+      "capture": 10,
+      "question": "How many 64-sample windows of capture 10 are active, and what is its loudest window power in dBFS?",
+      "tools_called": [
+        "rf_levels"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 25.321340099995723,
+      "fields": {
+        "active_windows": {
+          "report": "0",
+          "quoted": true
+        },
+        "loudest_window_dbfs": {
+          "report": "-14.0",
+          "quoted": true
+        }
+      },
+      "numbers": 4,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "Based on the analysis of capture 10 (EPFL-LoRaIQ LoRa), there are **0 active windows** (where power is greater than 4x the quietest window). The loudest window has a power of **-14.0 dBFS**."
+    },
+    {
+      "capture": 10,
+      "question": "What is the dominant spectral bin of capture 10, and its frequency in cycles per sample?",
+      "tools_called": [
+        "rf_analyze"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 35.922219300002325,
+      "fields": {
+        "dominant_dft16_bin": {
+          "report": "1",
+          "quoted": true
+        },
+        "freq_cycles_per_sample": {
+          "report": "0.0625",
+          "quoted": true
+        }
+      },
+      "numbers": 3,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "The dominant spectral bin for capture 10 is **1**, and its frequency is **0.0625 cycles per sample**."
+    },
+    {
+      "capture": 10,
+      "question": "Estimate the carrier frequency offset of capture 10 in cycles per sample.",
+      "tools_called": [
+        "rf_analyze"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 56.9523438999895,
+      "fields": {
+        "cfo_cycles_per_sample": {
+          "report": "0.0700",
+          "quoted": true
+        }
+      },
+      "numbers": 2,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "The carrier frequency offset (CFO) for capture 10 is **0.0700 cycles per sample**."
+    },
+    {
+      "capture": 10,
+      "question": "For capture 10, which spectral bin dominates and what percentage of the power does it hold?",
+      "tools_called": [
+        "rf_analyze"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 56.88104510001722,
+      "fields": {
+        "power_share_percent": {
+          "report": "11",
+          "quoted": true
+        },
+        "dominant_dft16_bin": {
+          "report": "1",
+          "quoted": true
+        }
+      },
+      "numbers": 3,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "For capture 10, the dominant spectral bin is bin 1, which holds 11% of the power."
+    },
+    {
+      "capture": 11,
+      "question": "Capture 11: what are its mean power and noise floor in dBFS?",
+      "tools_called": [
+        "rf_levels"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 37.928632399998605,
+      "fields": {
+        "mean_power_dbfs": {
+          "report": "-12.0",
+          "quoted": true
+        },
+        "noise_floor_dbfs": {
+          "report": "-12.3",
+          "quoted": true
+        }
+      },
+      "numbers": 2,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "The mean power is -12.0 dBFS and the noise floor is -12.3 dBFS."
+    },
+    {
+      "capture": 11,
+      "question": "What is the peak power of capture 11 in dBFS, and at which sample index does it occur?",
+      "tools_called": [
+        "rf_levels"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 37.86087039997801,
+      "fields": {
+        "peak_power_dbfs": {
+          "report": "-11.6",
+          "quoted": true
+        },
+        "at_sample": {
+          "report": "798",
+          "quoted": true
+        }
+      },
+      "numbers": 3,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "The peak power of capture 11 is **-11.6 dBFS**, and it occurs at **sample index 798**."
+    },
+    {
+      "capture": 11,
+      "question": "How many 64-sample windows of capture 11 are active, and what is its loudest window power in dBFS?",
+      "tools_called": [
+        "rf_levels"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 39.716328700014856,
+      "fields": {
+        "active_windows": {
+          "report": "0",
+          "quoted": true
+        },
+        "loudest_window_dbfs": {
+          "report": "-11.8",
+          "quoted": true
+        }
+      },
+      "numbers": 5,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "Based on the analysis of capture 11:\n*   **Active windows:** 0 out of 16 (0 active windows)\n*   **Loudest window power:** -11.8 dBFS"
+    },
+    {
+      "capture": 11,
+      "question": "What is the dominant spectral bin of capture 11, and its frequency in cycles per sample?",
+      "tools_called": [
+        "rf_analyze"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 35.29419090002193,
+      "fields": {
+        "dominant_dft16_bin": {
+          "report": "13",
+          "quoted": true
+        },
+        "freq_cycles_per_sample": {
+          "report": "-0.1875",
+          "quoted": true
+        }
+      },
+      "numbers": 3,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "The dominant spectral bin for capture 11 is **13**, and its frequency is **-0.1875 cycles per sample**."
+    },
+    {
+      "capture": 11,
+      "question": "Estimate the carrier frequency offset of capture 11 in cycles per sample.",
+      "tools_called": [
+        "rf_analyze"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 35.64958789999946,
+      "fields": {
+        "cfo_cycles_per_sample": {
+          "report": "0.0215",
+          "quoted": true
+        }
+      },
+      "numbers": 2,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "The carrier frequency offset (CFO) for capture 11 is **0.0215 cycles per sample**."
+    },
+    {
+      "capture": 11,
+      "question": "For capture 11, which spectral bin dominates and what percentage of the power does it hold?",
+      "tools_called": [
+        "rf_analyze"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 35.66893039998831,
+      "fields": {
+        "power_share_percent": {
+          "report": "45",
+          "quoted": true
+        },
+        "dominant_dft16_bin": {
+          "report": "13",
+          "quoted": true
+        }
+      },
+      "numbers": 3,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "The dominant spectral bin for capture 11 is bin 13, which holds 45% of the power."
+    },
+    {
+      "capture": 12,
+      "question": "Capture 12: what are its mean power and noise floor in dBFS?",
+      "tools_called": [
+        "rf_levels"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 25.37773490001564,
+      "fields": {
+        "mean_power_dbfs": {
+          "report": "-14.1",
+          "quoted": true
+        },
+        "noise_floor_dbfs": {
+          "report": "-16.7",
+          "quoted": true
+        }
+      },
+      "numbers": 2,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "The mean power is -14.1 dBFS and the noise floor is -16.7 dBFS."
+    },
+    {
+      "capture": 12,
+      "question": "What is the peak power of capture 12 in dBFS, and at which sample index does it occur?",
+      "tools_called": [
+        "rf_levels"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 25.41200630000094,
+      "fields": {
+        "peak_power_dbfs": {
+          "report": "-6.9",
+          "quoted": true
+        },
+        "at_sample": {
+          "report": "477",
+          "quoted": true
+        }
+      },
+      "numbers": 3,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "The peak power of capture 12 is **-6.9 dBFS**, and it occurs at **sample index 477**."
+    },
+    {
+      "capture": 12,
+      "question": "How many 64-sample windows of capture 12 are active, and what is its loudest window power in dBFS?",
+      "tools_called": [
+        "rf_levels"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 28.83360100002028,
+      "fields": {
+        "active_windows": {
+          "report": "0",
+          "quoted": true
+        },
+        "loudest_window_dbfs": {
+          "report": "-12.3",
+          "quoted": true
+        }
+      },
+      "numbers": 6,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "Based on the analysis of capture 12 (Tampere drone-controller):\n\n*   **Active 64-sample windows:** 0\n*   **Loudest window power:** -12.3 dBFS\n\nThe analysis indicates that there are no active windows (defined as windows with power greater than 4x the quietest window), and the loudest window detected has a power of -12.3 dBFS."
+    },
+    {
+      "capture": 12,
+      "question": "What is the dominant spectral bin of capture 12, and its frequency in cycles per sample?",
+      "tools_called": [
+        "rf_analyze"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 38.21473660002812,
+      "fields": {
+        "dominant_dft16_bin": {
+          "report": "13",
+          "quoted": true
+        },
+        "freq_cycles_per_sample": {
+          "report": "-0.1875",
+          "quoted": true
+        }
+      },
+      "numbers": 3,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "The dominant spectral bin for capture 12 is **13**, and its frequency is **-0.1875 cycles per sample**."
+    },
+    {
+      "capture": 12,
+      "question": "Estimate the carrier frequency offset of capture 12 in cycles per sample.",
+      "tools_called": [
+        "rf_analyze"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 69.42203449999215,
+      "fields": {
+        "cfo_cycles_per_sample": {
+          "report": "-0.1950",
+          "quoted": true
+        }
+      },
+      "numbers": 7,
+      "unsupported": [
+        "120000000",
+        "-23.4"
+      ],
+      "hz_claims": [
+        "-23.4"
+      ],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": true,
+      "answer": "The carrier frequency offset (CFO) for capture 12 is **-0.1950 cycles per sample**.\n\nThis value is derived from the dominant spectral bin analysis of the 16-point spectrum. To convert this to Hertz, you would multiply it by the sample rate (120 MS/s):\n-0.1950 cycles/sample * 120,000,000 samples/s \u2248 -23.4 MHz.\n\nThis indicates"
+    },
+    {
+      "capture": 12,
+      "question": "For capture 12, which spectral bin dominates and what percentage of the power does it hold?",
+      "tools_called": [
+        "rf_analyze"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 60.038939899997786,
+      "fields": {
+        "power_share_percent": {
+          "report": "60",
+          "quoted": true
+        },
+        "dominant_dft16_bin": {
+          "report": "13",
+          "quoted": true
+        }
+      },
+      "numbers": 3,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "The dominant spectral bin for capture 12 is bin 13, which holds 60% of the power."
+    },
+    {
+      "capture": 13,
+      "question": "Capture 13: what are its mean power and noise floor in dBFS?",
+      "tools_called": [
+        "rf_levels"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 46.79525620001368,
+      "fields": {
+        "mean_power_dbfs": {
+          "report": "-14.1",
+          "quoted": true
+        },
+        "noise_floor_dbfs": {
+          "report": "-18.2",
+          "quoted": true
+        }
+      },
+      "numbers": 2,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "The mean power is -14.1 dBFS and the noise floor is -18.2 dBFS."
+    },
+    {
+      "capture": 13,
+      "question": "What is the peak power of capture 13 in dBFS, and at which sample index does it occur?",
+      "tools_called": [
+        "rf_levels"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 47.07771889999276,
+      "fields": {
+        "peak_power_dbfs": {
+          "report": "-7.0",
+          "quoted": true
+        },
+        "at_sample": {
+          "report": "340",
+          "quoted": true
+        }
+      },
+      "numbers": 3,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "The peak power of capture 13 is **-7.0 dBFS**, and it occurs at **sample index 340**."
+    },
+    {
+      "capture": 13,
+      "question": "How many 64-sample windows of capture 13 are active, and what is its loudest window power in dBFS?",
+      "tools_called": [
+        "rf_levels"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 47.37928260001354,
+      "fields": {
+        "active_windows": {
+          "report": "3",
+          "quoted": true
+        },
+        "loudest_window_dbfs": {
+          "report": "-10.8",
+          "quoted": true
+        }
+      },
+      "numbers": 4,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "Based on the analysis of capture 13 (Tampere drone-controller), there are **3 active 64-sample windows**.\n\nThe loudest window power is **-10.8 dBFS**."
+    },
+    {
+      "capture": 13,
+      "question": "What is the dominant spectral bin of capture 13, and its frequency in cycles per sample?",
+      "tools_called": [
+        "rf_analyze"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 50.66009049999411,
+      "fields": {
+        "dominant_dft16_bin": {
+          "report": "6",
+          "quoted": true
+        },
+        "freq_cycles_per_sample": {
+          "report": "0.3750",
+          "quoted": true
+        }
+      },
+      "numbers": 3,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "The dominant spectral bin for capture 13 is **6**, and its frequency is **0.375 cycles per sample**."
+    },
+    {
+      "capture": 13,
+      "question": "Estimate the carrier frequency offset of capture 13 in cycles per sample.",
+      "tools_called": [
+        "rf_analyze"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 41.52696499999729,
+      "fields": {
+        "cfo_cycles_per_sample": {
+          "report": "0.3509",
+          "quoted": true
+        }
+      },
+      "numbers": 2,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "The carrier frequency offset (CFO) for capture 13 is **0.3509 cycles per sample**."
+    },
+    {
+      "capture": 13,
+      "question": "For capture 13, which spectral bin dominates and what percentage of the power does it hold?",
+      "tools_called": [
+        "rf_analyze"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 41.02033259999007,
+      "fields": {
+        "power_share_percent": {
+          "report": "52",
+          "quoted": true
+        },
+        "dominant_dft16_bin": {
+          "report": "6",
+          "quoted": true
+        }
+      },
+      "numbers": 3,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "For capture 13, the dominant spectral bin is bin 6, which holds 52% of the power."
+    },
+    {
+      "capture": 14,
+      "question": "Capture 14: what are its mean power and noise floor in dBFS?",
+      "tools_called": [
+        "rf_levels"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 27.742176100000506,
+      "fields": {
+        "mean_power_dbfs": {
+          "report": "-15.5",
+          "quoted": true
+        },
+        "noise_floor_dbfs": {
+          "report": "-48.9",
+          "quoted": true
+        }
+      },
+      "numbers": 2,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "The mean power is -15.5 dBFS and the noise floor is -48.9 dBFS."
+    },
+    {
+      "capture": 14,
+      "question": "What is the peak power of capture 14 in dBFS, and at which sample index does it occur?",
+      "tools_called": [
+        "rf_levels"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 48.56030660000397,
+      "fields": {
+        "peak_power_dbfs": {
+          "report": "-10.2",
+          "quoted": true
+        },
+        "at_sample": {
+          "report": "535",
+          "quoted": true
+        }
+      },
+      "numbers": 3,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "The peak power of capture 14 is **-10.2 dBFS**, and it occurs at **sample index 535**."
+    },
+    {
+      "capture": 14,
+      "question": "How many 64-sample windows of capture 14 are active, and what is its loudest window power in dBFS?",
+      "tools_called": [
+        "rf_levels"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 48.539300800010096,
+      "fields": {
+        "active_windows": {
+          "report": "5",
+          "quoted": true
+        },
+        "loudest_window_dbfs": {
+          "report": "-10.4",
+          "quoted": true
+        }
+      },
+      "numbers": 4,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "Based on the analysis of capture 14 (synthetic test signal A), there are **5 active 64-sample windows**.\n\nThe loudest window has a power of **-10.4 dBFS**."
+    },
+    {
+      "capture": 14,
+      "question": "What is the dominant spectral bin of capture 14, and its frequency in cycles per sample?",
+      "tools_called": [
+        "rf_analyze"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 63.60238389999722,
+      "fields": {
+        "dominant_dft16_bin": {
+          "report": "3",
+          "quoted": true
+        },
+        "freq_cycles_per_sample": {
+          "report": "0.1875",
+          "quoted": true
+        }
+      },
+      "numbers": 3,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "The dominant spectral bin of capture 14 is **3**, and its frequency is **0.1875 cycles per sample**."
+    },
+    {
+      "capture": 14,
+      "question": "Estimate the carrier frequency offset of capture 14 in cycles per sample.",
+      "tools_called": [
+        "rf_analyze"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 63.36075590000837,
+      "fields": {
+        "cfo_cycles_per_sample": {
+          "report": "0.1899",
+          "quoted": true
+        }
+      },
+      "numbers": 2,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "The carrier frequency offset (CFO) for capture 14 is **0.1899 cycles per sample**."
+    },
+    {
+      "capture": 14,
+      "question": "For capture 14, which spectral bin dominates and what percentage of the power does it hold?",
+      "tools_called": [
+        "rf_analyze"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 63.55527240000083,
+      "fields": {
+        "power_share_percent": {
+          "report": "99",
+          "quoted": true
+        },
+        "dominant_dft16_bin": {
+          "report": "3",
+          "quoted": true
+        }
+      },
+      "numbers": 3,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "For capture 14, the dominant spectral bin is bin 3, which holds 99% of the power."
+    },
+    {
+      "capture": 15,
+      "question": "Capture 15: what are its mean power and noise floor in dBFS?",
+      "tools_called": [
+        "rf_levels"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 40.814252799988026,
+      "fields": {
+        "mean_power_dbfs": {
+          "report": "-8.0",
+          "quoted": true
+        },
+        "noise_floor_dbfs": {
+          "report": "-8.0",
+          "quoted": true
+        }
+      },
+      "numbers": 5,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "For capture 15 (synthetic test signal B), the mean power is **-8.0 dBFS** and the noise floor is **-8.0 dBFS**.\n\nThe signal appears to be a quiet test signal with no active windows detected (0/16 windows are active)."
+    },
+    {
+      "capture": 15,
+      "question": "What is the peak power of capture 15 in dBFS, and at which sample index does it occur?",
+      "tools_called": [
+        "rf_levels"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 23.681299899995793,
+      "fields": {
+        "peak_power_dbfs": {
+          "report": "-7.8",
+          "quoted": true
+        },
+        "at_sample": {
+          "report": "62",
+          "quoted": true
+        }
+      },
+      "numbers": 3,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "The peak power of capture 15 is **-7.8 dBFS**, and it occurs at **sample index 62**."
+    },
+    {
+      "capture": 15,
+      "question": "How many 64-sample windows of capture 15 are active, and what is its loudest window power in dBFS?",
+      "tools_called": [
+        "rf_levels"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 24.88005130001693,
+      "fields": {
+        "active_windows": {
+          "report": "0",
+          "quoted": true
+        },
+        "loudest_window_dbfs": {
+          "report": "-7.9",
+          "quoted": true
+        }
+      },
+      "numbers": 5,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "Based on the analysis of capture 15 (synthetic test signal B), there are **0 active 64-sample windows** (where power is greater than 4x the quietest window). The loudest window has a power of **-7.9 dBFS**."
+    },
+    {
+      "capture": 15,
+      "question": "What is the dominant spectral bin of capture 15, and its frequency in cycles per sample?",
+      "tools_called": [
+        "rf_analyze"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 36.28088249999564,
+      "fields": {
+        "dominant_dft16_bin": {
+          "report": "15",
+          "quoted": true
+        },
+        "freq_cycles_per_sample": {
+          "report": "-0.0625",
+          "quoted": true
+        }
+      },
+      "numbers": 3,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "The dominant spectral bin for capture 15 is **15**, and its frequency is **-0.0625 cycles per sample**."
+    },
+    {
+      "capture": 15,
+      "question": "Estimate the carrier frequency offset of capture 15 in cycles per sample.",
+      "tools_called": [
+        "rf_analyze"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 39.485913200012874,
+      "fields": {
+        "cfo_cycles_per_sample": {
+          "report": "-0.0626",
+          "quoted": true
+        }
+      },
+      "numbers": 6,
+      "unsupported": [
+        "-62.6"
+      ],
+      "hz_claims": [
+        "-62.6"
+      ],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": true,
+      "answer": "The carrier frequency offset (CFO) for capture 15 is **-0.0626 cycles per sample**.\n\nThis value is derived from the dominant spectral bin analysis of the 16-point spectrum, which identified a frequency offset of -0.0626 cycles per sample. Given that the sample rate for this capture is 1 MS/s, this corresponds to a frequency offset of approximately -62.6 Hz."
+    },
+    {
+      "capture": 15,
+      "question": "For capture 15, which spectral bin dominates and what percentage of the power does it hold?",
+      "tools_called": [
+        "rf_analyze"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 57.55010140000377,
+      "fields": {
+        "power_share_percent": {
+          "report": "99",
+          "quoted": true
+        },
+        "dominant_dft16_bin": {
+          "report": "15",
+          "quoted": true
+        }
+      },
+      "numbers": 3,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "For capture 15, the dominant spectral bin is bin 15, which holds 99% of the power."
+    }
+  ]
+}

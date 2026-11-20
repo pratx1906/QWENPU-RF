@@ -1,0 +1,3454 @@
+{
+ "model": "$RFPU_DATA/checkpoints/rfpu-v15/qwen3.5-4b-rv1",
+ "peak_gpu_bytes": 20499706368,
+ "load_seconds": 38.91371849999996,
+ "checkpoint_verification": "v15/reports/stage2-checkpoint.json",
+ "summary_of": {
+  "file": "fullgpu-chunked-stage2-heldout.json",
+  "bytes": 47413273,
+  "sha256": "5c3a127acfd1c62c55129200ca2a3fd6be0ba1669da49626ba76f09ec6ad1145",
+  "note": "Identical to the full transcript except each run's raw token list is replaced by its length and SHA-256."
+ },
+ "runs": [
+  {
+   "question": "How loud is capture 0 overall? Just give me the average level in dBFS.",
+   "capture": 0,
+   "prompt_tokens": 807,
+   "answer": "<tool_call>\n<function=rf_levels>\n<parameter=capture>\n0\n</parameter>\n</function>\n</tool_call>\n<tool_response>\ncapture=0 IDLab WiFi fs=10MS/s fc=5240MHz\nsamples=1024 (Q15)\nmean_power_dbfs=-16.3\npeak_power_dbfs=-10.9 at_sample=168\nnoise_floor_dbfs=-17.6 (quietest 64-sample window)\nloudest_window_dbfs=-15.0\nactive_windows=0/16 (power > 4x quietest)\n</tool_response>\n<think>\n\n</think>\n\nThe average level of capture 0 is -16.3 dBFS.<|im_end|>",
+   "text_tokens": 291,
+   "chip_tokens": 27513,
+   "seconds": 24.681382000038866,
+   "chip_seconds": 7.78,
+   "text_seconds": 15.32,
+   "reference_lock_error": null,
+   "head_mismatch": 0,
+   "chip_path": "saved HF chip layers on GPU, chunked verification C=1024",
+   "chunks": 272,
+   "all_circuit_tokens_equal_reference": true,
+   "tool_calls": 1,
+   "tool_responses": 1,
+   "tools_called": [
+    "rf_levels"
+   ],
+   "report_check": {
+    "report": "capture=0 IDLab WiFi fs=10MS/s fc=5240MHz\nsamples=1024 (Q15)\nmean_power_dbfs=-16.3\npeak_power_dbfs=-10.9 at_sample=168\nnoise_floor_dbfs=-17.6 (quietest 64-sample window)\nloudest_window_dbfs=-15.0\nactive_windows=0/16 (power > 4x quietest)",
+    "fields": {
+     "mean_power_dbfs": {
+      "firmware": -16.3,
+      "host_model": -16.266831546939486
+     },
+     "peak_power_dbfs": {
+      "firmware": -10.9,
+      "host_model": -10.895706207841318
+     },
+     "at_sample": {
+      "firmware": 168.0,
+      "host_model": 168
+     },
+     "noise_floor_dbfs": {
+      "firmware": -17.6,
+      "host_model": -17.561564645447504
+     },
+     "loudest_window_dbfs": {
+      "firmware": -15.0,
+      "host_model": -15.01073620511898
+     },
+     "active_windows": {
+      "firmware": 0.0,
+      "host_model": 0
+     },
+     "dominant_dft16_bin": {
+      "firmware": null,
+      "host_model": 0
+     },
+     "freq_cycles_per_sample": {
+      "firmware": null,
+      "host_model": 0.0
+     },
+     "power_share_percent": {
+      "firmware": null,
+      "host_model": 9.879521765380458
+     },
+     "cfo_cycles_per_sample": {
+      "firmware": null,
+      "host_model": 0.008876308040370134
+     },
+     "freq_hz": {
+      "firmware": null,
+      "host_model": 0
+     },
+     "cfo_hz": {
+      "firmware": null,
+      "host_model": 88763.08040370134
+     }
+    }
+   },
+   "asked_fields_quoted": {
+    "mean_power_dbfs": {
+     "report": "-16.3",
+     "in_answer": true
+    }
+   },
+   "tokens_omitted": {
+    "json_bytes": 193563,
+    "sha256": "1a1883941df25f2bc27cdeae954eaccef55055161959c5b6a7648e5e371080cd"
+   }
+  },
+  {
+   "question": "Where in frequency does most of capture 0's energy sit? Answer in Hz.",
+   "capture": 0,
+   "prompt_tokens": 806,
+   "answer": "<tool_call>\n<function=rf_analyze>\n<parameter=capture>\n0\n</parameter>\n</function>\n</tool_call>\n<tool_response>\ncapture=0 IDLab WiFi fs=10MS/s fc=5240MHz\nsamples=1024 (Q15)\nmean_power_dbfs=-16.3\npeak_power_dbfs=-10.9 at_sample=168\nnoise_floor_dbfs=-17.6 (quietest 64-sample window)\nloudest_window_dbfs=-15.0\nactive_windows=0/16 (power > 4x quietest)\ndominant_dft16_bin=0 freq_cycles_per_sample=0.0000 power_share_percent=10 freq_hz=0 (averaged 16-point DFT, 8 frames)\ncfo_cycles_per_sample=0.0088 cfo_hz=88726 (phase of the lag-1 autocorrelation)\n</tool_response>\n<think>\n\n</think>\n\nBased on the analysis of capture 0, the dominant spectral bin is at 0 Hz (cycles per sample).\n\nHowever, the capture has a carrier frequency offset (CFO) of 88,726 Hz. This means the signal is centered around the carrier frequency of 5,240 MHz plus the offset.\n\nThe dominant energy sits at:\n5,240,000,000 Hz + 88,726 Hz = **5,240,088,726 Hz**\n\n(Note: The dominant bin is at 0 Hz relative to the carrier, but the carrier itself is offset by 88,726 Hz from the nominal 5,240 MHz center frequency).<|im_end|>",
+   "text_tokens": 634,
+   "chip_tokens": 97676,
+   "seconds": 52.04772319999756,
+   "chip_seconds": 16.78,
+   "text_seconds": 34.24,
+   "reference_lock_error": null,
+   "head_mismatch": 0,
+   "chip_path": "saved HF chip layers on GPU, chunked verification C=1024",
+   "chunks": 808,
+   "all_circuit_tokens_equal_reference": true,
+   "tool_calls": 1,
+   "tool_responses": 1,
+   "tools_called": [
+    "rf_analyze"
+   ],
+   "report_check": {
+    "report": "capture=0 IDLab WiFi fs=10MS/s fc=5240MHz\nsamples=1024 (Q15)\nmean_power_dbfs=-16.3\npeak_power_dbfs=-10.9 at_sample=168\nnoise_floor_dbfs=-17.6 (quietest 64-sample window)\nloudest_window_dbfs=-15.0\nactive_windows=0/16 (power > 4x quietest)\ndominant_dft16_bin=0 freq_cycles_per_sample=0.0000 power_share_percent=10 freq_hz=0 (averaged 16-point DFT, 8 frames)\ncfo_cycles_per_sample=0.0088 cfo_hz=88726 (phase of the lag-1 autocorrelation)",
+    "fields": {
+     "mean_power_dbfs": {
+      "firmware": -16.3,
+      "host_model": -16.266831546939486
+     },
+     "peak_power_dbfs": {
+      "firmware": -10.9,
+      "host_model": -10.895706207841318
+     },
+     "at_sample": {
+      "firmware": 168.0,
+      "host_model": 168
+     },
+     "noise_floor_dbfs": {
+      "firmware": -17.6,
+      "host_model": -17.561564645447504
+     },
+     "loudest_window_dbfs": {
+      "firmware": -15.0,
+      "host_model": -15.01073620511898
+     },
+     "active_windows": {
+      "firmware": 0.0,
+      "host_model": 0
+     },
+     "dominant_dft16_bin": {
+      "firmware": 0.0,
+      "host_model": 0
+     },
+     "freq_cycles_per_sample": {
+      "firmware": 0.0,
+      "host_model": 0.0
+     },
+     "power_share_percent": {
+      "firmware": 10.0,
+      "host_model": 9.879521765380458
+     },
+     "cfo_cycles_per_sample": {
+      "firmware": 0.0088,
+      "host_model": 0.008876308040370134
+     },
+     "freq_hz": {
+      "firmware": 0.0,
+      "host_model": 0
+     },
+     "cfo_hz": {
+      "firmware": 88726.0,
+      "host_model": 88763.08040370134
+     }
+    }
+   },
+   "asked_fields_quoted": {
+    "freq_hz": {
+     "report": "0",
+     "in_answer": true
+    }
+   },
+   "tokens_omitted": {
+    "json_bytes": 685901,
+    "sha256": "66d701a1f818a061368a166d5ca4bdbbfa891d0d995db848a35c0d31e686c71f"
+   }
+  },
+  {
+   "question": "I need the strongest single sample of capture 1: its power in dBFS and its index.",
+   "capture": 1,
+   "prompt_tokens": 809,
+   "answer": "<tool_call>\n<function=rf_levels>\n<parameter=capture>\n1\n</parameter>\n</function>\n</tool_call>\n<tool_response>\ncapture=1 IDLab WiFi fs=1MS/s fc=2412MHz\nsamples=1024 (Q15)\nmean_power_dbfs=-13.3\npeak_power_dbfs=-12.0 at_sample=25\nnoise_floor_dbfs=-14.2 (quietest 64-sample window)\nloudest_window_dbfs=-12.7\nactive_windows=0/16 (power > 4x quietest)\n</tool_response>\n<think>\n\n</think>\n\nThe strongest single sample in capture 1 is at index **25** with a power of **-12.0 dBFS**.<|im_end|>",
+   "text_tokens": 300,
+   "chip_tokens": 27674,
+   "seconds": 24.994050199980848,
+   "chip_seconds": 8.4,
+   "text_seconds": 15.82,
+   "reference_lock_error": null,
+   "head_mismatch": 0,
+   "chip_path": "saved HF chip layers on GPU, chunked verification C=1024",
+   "chunks": 1079,
+   "all_circuit_tokens_equal_reference": true,
+   "tool_calls": 1,
+   "tool_responses": 1,
+   "tools_called": [
+    "rf_levels"
+   ],
+   "report_check": {
+    "report": "capture=1 IDLab WiFi fs=1MS/s fc=2412MHz\nsamples=1024 (Q15)\nmean_power_dbfs=-13.3\npeak_power_dbfs=-12.0 at_sample=25\nnoise_floor_dbfs=-14.2 (quietest 64-sample window)\nloudest_window_dbfs=-12.7\nactive_windows=0/16 (power > 4x quietest)",
+    "fields": {
+     "mean_power_dbfs": {
+      "firmware": -13.3,
+      "host_model": -13.323116600287019
+     },
+     "peak_power_dbfs": {
+      "firmware": -12.0,
+      "host_model": -11.980143254031816
+     },
+     "at_sample": {
+      "firmware": 25.0,
+      "host_model": 25
+     },
+     "noise_floor_dbfs": {
+      "firmware": -14.2,
+      "host_model": -14.167425014140136
+     },
+     "loudest_window_dbfs": {
+      "firmware": -12.7,
+      "host_model": -12.727862463767334
+     },
+     "active_windows": {
+      "firmware": 0.0,
+      "host_model": 0
+     },
+     "dominant_dft16_bin": {
+      "firmware": null,
+      "host_model": 0
+     },
+     "freq_cycles_per_sample": {
+      "firmware": null,
+      "host_model": 0.0
+     },
+     "power_share_percent": {
+      "firmware": null,
+      "host_model": 19.306889999547522
+     },
+     "cfo_cycles_per_sample": {
+      "firmware": null,
+      "host_model": -0.00040222636316558874
+     },
+     "freq_hz": {
+      "firmware": null,
+      "host_model": 0
+     },
+     "cfo_hz": {
+      "firmware": null,
+      "host_model": -402.22636316558874
+     }
+    }
+   },
+   "asked_fields_quoted": {
+    "peak_power_dbfs": {
+     "report": "-12.0",
+     "in_answer": true
+    },
+    "at_sample": {
+     "report": "25",
+     "in_answer": true
+    }
+   },
+   "tokens_omitted": {
+    "json_bytes": 194738,
+    "sha256": "5e93e474ea682b0d6d89a436c3d5abe13fcd4db4c0a424c56f5e12a81a035354"
+   }
+  },
+  {
+   "question": "Is capture 1 offset from its tuned centre? Give the offset in Hz.",
+   "capture": 1,
+   "prompt_tokens": 805,
+   "answer": "<tool_call>\n<function=rf_analyze>\n<parameter=capture>\n1\n</parameter>\n</function>\n</tool_call>\n<tool_response>\ncapture=1 IDLab WiFi fs=1MS/s fc=2412MHz\nsamples=1024 (Q15)\nmean_power_dbfs=-13.3\npeak_power_dbfs=-12.0 at_sample=25\nnoise_floor_dbfs=-14.2 (quietest 64-sample window)\nloudest_window_dbfs=-12.7\nactive_windows=0/16 (power > 4x quietest)\ndominant_dft16_bin=0 freq_cycles_per_sample=0.0000 power_share_percent=19 freq_hz=0 (averaged 16-point DFT, 8 frames)\ncfo_cycles_per_sample=-0.0005 cfo_hz=-406 (phase of the lag-1 autocorrelation)\n</tool_response>\n<think>\n\n</think>\n\nYes, capture 1 is offset from its tuned centre. The carrier frequency offset (CFO) is **-406 Hz**.<|im_end|>",
+   "text_tokens": 498,
+   "chip_tokens": 97056,
+   "seconds": 43.77156219998142,
+   "chip_seconds": 17.11,
+   "text_seconds": 25.42,
+   "reference_lock_error": null,
+   "head_mismatch": 0,
+   "chip_path": "saved HF chip layers on GPU, chunked verification C=1024",
+   "chunks": 1612,
+   "all_circuit_tokens_equal_reference": true,
+   "tool_calls": 1,
+   "tool_responses": 1,
+   "tools_called": [
+    "rf_analyze"
+   ],
+   "report_check": {
+    "report": "capture=1 IDLab WiFi fs=1MS/s fc=2412MHz\nsamples=1024 (Q15)\nmean_power_dbfs=-13.3\npeak_power_dbfs=-12.0 at_sample=25\nnoise_floor_dbfs=-14.2 (quietest 64-sample window)\nloudest_window_dbfs=-12.7\nactive_windows=0/16 (power > 4x quietest)\ndominant_dft16_bin=0 freq_cycles_per_sample=0.0000 power_share_percent=19 freq_hz=0 (averaged 16-point DFT, 8 frames)\ncfo_cycles_per_sample=-0.0005 cfo_hz=-406 (phase of the lag-1 autocorrelation)",
+    "fields": {
+     "mean_power_dbfs": {
+      "firmware": -13.3,
+      "host_model": -13.323116600287019
+     },
+     "peak_power_dbfs": {
+      "firmware": -12.0,
+      "host_model": -11.980143254031816
+     },
+     "at_sample": {
+      "firmware": 25.0,
+      "host_model": 25
+     },
+     "noise_floor_dbfs": {
+      "firmware": -14.2,
+      "host_model": -14.167425014140136
+     },
+     "loudest_window_dbfs": {
+      "firmware": -12.7,
+      "host_model": -12.727862463767334
+     },
+     "active_windows": {
+      "firmware": 0.0,
+      "host_model": 0
+     },
+     "dominant_dft16_bin": {
+      "firmware": 0.0,
+      "host_model": 0
+     },
+     "freq_cycles_per_sample": {
+      "firmware": 0.0,
+      "host_model": 0.0
+     },
+     "power_share_percent": {
+      "firmware": 19.0,
+      "host_model": 19.306889999547522
+     },
+     "cfo_cycles_per_sample": {
+      "firmware": -0.0005,
+      "host_model": -0.00040222636316558874
+     },
+     "freq_hz": {
+      "firmware": 0.0,
+      "host_model": 0
+     },
+     "cfo_hz": {
+      "firmware": -406.0,
+      "host_model": -402.22636316558874
+     }
+    }
+   },
+   "asked_fields_quoted": {
+    "cfo_hz": {
+     "report": "-406",
+     "in_answer": true
+    }
+   },
+   "tokens_omitted": {
+    "json_bytes": 681024,
+    "sha256": "7a02379412068a654f2516a3adf36531dc271a95a5eb5c2b8b49360a3021c5b6"
+   }
+  },
+  {
+   "question": "Give me the gap between the average power and the quietest stretch of capture 2, with both numbers in dBFS.",
+   "capture": 2,
+   "prompt_tokens": 814,
+   "answer": "<tool_call>\n<function=rf_levels>\n<parameter=capture>\n2\n</parameter>\n</function>\n</tool_call>\n<tool_response>\ncapture=2 IDLab LTE fs=1MS/s fc=806MHz\nsamples=1024 (Q15)\nmean_power_dbfs=-11.9\npeak_power_dbfs=-5.8 at_sample=46\nnoise_floor_dbfs=-13.0 (quietest 64-sample window)\nloudest_window_dbfs=-9.9\nactive_windows=0/16 (power > 4x quietest)\n</tool_response>\n<think>\n\n</think>\n\nThe average power is -11.9 dBFS and the quietest stretch (noise floor) is -13.0 dBFS.\n\nThe gap between them is:\n-11.9 dBFS - (-13.0 dBFS) = **1.1 dBFS**<|im_end|>",
+   "text_tokens": 330,
+   "chip_tokens": 28099,
+   "seconds": 26.10967440000968,
+   "chip_seconds": 8.01,
+   "text_seconds": 17.29,
+   "reference_lock_error": null,
+   "head_mismatch": 0,
+   "chip_path": "saved HF chip layers on GPU, chunked verification C=1024",
+   "chunks": 1879,
+   "all_circuit_tokens_equal_reference": true,
+   "tool_calls": 1,
+   "tool_responses": 1,
+   "tools_called": [
+    "rf_levels"
+   ],
+   "report_check": {
+    "report": "capture=2 IDLab LTE fs=1MS/s fc=806MHz\nsamples=1024 (Q15)\nmean_power_dbfs=-11.9\npeak_power_dbfs=-5.8 at_sample=46\nnoise_floor_dbfs=-13.0 (quietest 64-sample window)\nloudest_window_dbfs=-9.9\nactive_windows=0/16 (power > 4x quietest)",
+    "fields": {
+     "mean_power_dbfs": {
+      "firmware": -11.9,
+      "host_model": -11.880443645293187
+     },
+     "peak_power_dbfs": {
+      "firmware": -5.8,
+      "host_model": -5.8355571348380195
+     },
+     "at_sample": {
+      "firmware": 46.0,
+      "host_model": 46
+     },
+     "noise_floor_dbfs": {
+      "firmware": -13.0,
+      "host_model": -13.035581413975667
+     },
+     "loudest_window_dbfs": {
+      "firmware": -9.9,
+      "host_model": -9.923453696763174
+     },
+     "active_windows": {
+      "firmware": 0.0,
+      "host_model": 0
+     },
+     "dominant_dft16_bin": {
+      "firmware": null,
+      "host_model": 0
+     },
+     "freq_cycles_per_sample": {
+      "firmware": null,
+      "host_model": 0.0
+     },
+     "power_share_percent": {
+      "firmware": null,
+      "host_model": 12.96731951089161
+     },
+     "cfo_cycles_per_sample": {
+      "firmware": null,
+      "host_model": 0.017591702621580534
+     },
+     "freq_hz": {
+      "firmware": null,
+      "host_model": 0
+     },
+     "cfo_hz": {
+      "firmware": null,
+      "host_model": 17591.702621580534
+     }
+    }
+   },
+   "asked_fields_quoted": {
+    "mean_power_dbfs": {
+     "report": "-11.9",
+     "in_answer": true
+    },
+    "noise_floor_dbfs": {
+     "report": "-13.0",
+     "in_answer": true
+    }
+   },
+   "tokens_omitted": {
+    "json_bytes": 197830,
+    "sha256": "a2ef4ecd36616c7c6e3e2df7a30bc10dd736a622dceeb2111c77eb6b2cc80290"
+   }
+  },
+  {
+   "question": "Which DFT bin wins in capture 2, and how much of the power is in it?",
+   "capture": 2,
+   "prompt_tokens": 809,
+   "answer": "<tool_call>\n<function=rf_analyze>\n<parameter=capture>\n2\n</parameter>\n</function>\n</tool_call>\n<tool_response>\ncapture=2 IDLab LTE fs=1MS/s fc=806MHz\nsamples=1024 (Q15)\nmean_power_dbfs=-11.9\npeak_power_dbfs=-5.8 at_sample=46\nnoise_floor_dbfs=-13.0 (quietest 64-sample window)\nloudest_window_dbfs=-9.9\nactive_windows=0/16 (power > 4x quietest)\ndominant_dft16_bin=0 freq_cycles_per_sample=0.0000 power_share_percent=13 freq_hz=0 (averaged 16-point DFT, 8 frames)\ncfo_cycles_per_sample=0.0175 cfo_hz=17594 (phase of the lag-1 autocorrelation)\n</tool_response>\n<think>\n\n</think>\n\nThe dominant DFT bin in capture 2 is bin 0, which corresponds to a frequency of 0 Hz (or 0 cycles per sample). This bin contains 13% of the total power.<|im_end|>",
+   "text_tokens": 510,
+   "chip_tokens": 99049,
+   "seconds": 45.94306319998577,
+   "chip_seconds": 17.86,
+   "text_seconds": 27.09,
+   "reference_lock_error": null,
+   "head_mismatch": 0,
+   "chip_path": "saved HF chip layers on GPU, chunked verification C=1024",
+   "chunks": 2411,
+   "all_circuit_tokens_equal_reference": true,
+   "tool_calls": 1,
+   "tool_responses": 1,
+   "tools_called": [
+    "rf_analyze"
+   ],
+   "report_check": {
+    "report": "capture=2 IDLab LTE fs=1MS/s fc=806MHz\nsamples=1024 (Q15)\nmean_power_dbfs=-11.9\npeak_power_dbfs=-5.8 at_sample=46\nnoise_floor_dbfs=-13.0 (quietest 64-sample window)\nloudest_window_dbfs=-9.9\nactive_windows=0/16 (power > 4x quietest)\ndominant_dft16_bin=0 freq_cycles_per_sample=0.0000 power_share_percent=13 freq_hz=0 (averaged 16-point DFT, 8 frames)\ncfo_cycles_per_sample=0.0175 cfo_hz=17594 (phase of the lag-1 autocorrelation)",
+    "fields": {
+     "mean_power_dbfs": {
+      "firmware": -11.9,
+      "host_model": -11.880443645293187
+     },
+     "peak_power_dbfs": {
+      "firmware": -5.8,
+      "host_model": -5.8355571348380195
+     },
+     "at_sample": {
+      "firmware": 46.0,
+      "host_model": 46
+     },
+     "noise_floor_dbfs": {
+      "firmware": -13.0,
+      "host_model": -13.035581413975667
+     },
+     "loudest_window_dbfs": {
+      "firmware": -9.9,
+      "host_model": -9.923453696763174
+     },
+     "active_windows": {
+      "firmware": 0.0,
+      "host_model": 0
+     },
+     "dominant_dft16_bin": {
+      "firmware": 0.0,
+      "host_model": 0
+     },
+     "freq_cycles_per_sample": {
+      "firmware": 0.0,
+      "host_model": 0.0
+     },
+     "power_share_percent": {
+      "firmware": 13.0,
+      "host_model": 12.96731951089161
+     },
+     "cfo_cycles_per_sample": {
+      "firmware": 0.0175,
+      "host_model": 0.017591702621580534
+     },
+     "freq_hz": {
+      "firmware": 0.0,
+      "host_model": 0
+     },
+     "cfo_hz": {
+      "firmware": 17594.0,
+      "host_model": 17591.702621580534
+     }
+    }
+   },
+   "asked_fields_quoted": {
+    "dominant_dft16_bin": {
+     "report": "0",
+     "in_answer": true
+    },
+    "power_share_percent": {
+     "report": "13",
+     "in_answer": true
+    }
+   },
+   "tokens_omitted": {
+    "json_bytes": 695024,
+    "sha256": "5e16a98bfde28a8e3970ffde6a81c82efa818abb18616d1c3ba8cd693cd2b49c"
+   }
+  },
+  {
+   "question": "Out of the 16 windows in capture 3, how many show activity?",
+   "capture": 3,
+   "prompt_tokens": 806,
+   "answer": "<tool_call>\n<function=rf_levels>\n<parameter=capture>\n3\n</parameter>\n</function>\n</tool_call>\n<tool_response>\ncapture=3 IDLab LTE fs=10MS/s fc=806MHz\nsamples=1024 (Q15)\nmean_power_dbfs=-13.2\npeak_power_dbfs=-12.0 at_sample=19\nnoise_floor_dbfs=-13.5 (quietest 64-sample window)\nloudest_window_dbfs=-12.5\nactive_windows=0/16 (power > 4x quietest)\n</tool_response>\n<think>\n\n</think>\n\nBased on the analysis of capture 3, **0 out of 16 windows** show activity.\n\nThe tool indicates that there are no active windows (power > 4x quietest), meaning the capture is essentially empty or contains only noise.<|im_end|>",
+   "text_tokens": 323,
+   "chip_tokens": 27798,
+   "seconds": 26.864403999992646,
+   "chip_seconds": 8.23,
+   "text_seconds": 17.69,
+   "reference_lock_error": null,
+   "head_mismatch": 0,
+   "chip_path": "saved HF chip layers on GPU, chunked verification C=1024",
+   "chunks": 2681,
+   "all_circuit_tokens_equal_reference": true,
+   "tool_calls": 1,
+   "tool_responses": 1,
+   "tools_called": [
+    "rf_levels"
+   ],
+   "report_check": {
+    "report": "capture=3 IDLab LTE fs=10MS/s fc=806MHz\nsamples=1024 (Q15)\nmean_power_dbfs=-13.2\npeak_power_dbfs=-12.0 at_sample=19\nnoise_floor_dbfs=-13.5 (quietest 64-sample window)\nloudest_window_dbfs=-12.5\nactive_windows=0/16 (power > 4x quietest)",
+    "fields": {
+     "mean_power_dbfs": {
+      "firmware": -13.2,
+      "host_model": -13.150015136378773
+     },
+     "peak_power_dbfs": {
+      "firmware": -12.0,
+      "host_model": -11.949666685107612
+     },
+     "at_sample": {
+      "firmware": 19.0,
+      "host_model": 19
+     },
+     "noise_floor_dbfs": {
+      "firmware": -13.5,
+      "host_model": -13.545198792625168
+     },
+     "loudest_window_dbfs": {
+      "firmware": -12.5,
+      "host_model": -12.541622299645374
+     },
+     "active_windows": {
+      "firmware": 0.0,
+      "host_model": 0
+     },
+     "dominant_dft16_bin": {
+      "firmware": null,
+      "host_model": 8
+     },
+     "freq_cycles_per_sample": {
+      "firmware": null,
+      "host_model": -0.5
+     },
+     "power_share_percent": {
+      "firmware": null,
+      "host_model": 12.096817237908247
+     },
+     "cfo_cycles_per_sample": {
+      "firmware": null,
+      "host_model": 0.4947492957270787
+     },
+     "freq_hz": {
+      "firmware": null,
+      "host_model": -5000000
+     },
+     "cfo_hz": {
+      "firmware": null,
+      "host_model": 4947492.957270787
+     }
+    }
+   },
+   "asked_fields_quoted": {
+    "active_windows": {
+     "report": "0",
+     "in_answer": true
+    }
+   },
+   "tokens_omitted": {
+    "json_bytes": 195710,
+    "sha256": "571585d4f20f1778183722dcc98dc6e4839b43007bd16ba5d6359982d1d48234"
+   }
+  },
+  {
+   "question": "Tell me the dominant tone of capture 3 in hertz and in cycles per sample.",
+   "capture": 3,
+   "prompt_tokens": 807,
+   "answer": "<tool_call>\n<function=rf_analyze>\n<parameter=capture>\n3\n</parameter>\n</function>\n</tool_call>\n<tool_response>\ncapture=3 IDLab LTE fs=10MS/s fc=806MHz\nsamples=1024 (Q15)\nmean_power_dbfs=-13.2\npeak_power_dbfs=-12.0 at_sample=19\nnoise_floor_dbfs=-13.5 (quietest 64-sample window)\nloudest_window_dbfs=-12.5\nactive_windows=0/16 (power > 4x quietest)\ndominant_dft16_bin=8 freq_cycles_per_sample=-0.5000 power_share_percent=12 freq_hz=-5000000 (averaged 16-point DFT, 8 frames)\ncfo_cycles_per_sample=0.4947 cfo_hz=4947600 (phase of the lag-1 autocorrelation)\n</tool_response>\n<think>\n\n</think>\n\nThe dominant tone of capture 3 is:\n*   **In cycles per sample:** -0.5000\n*   **In Hertz:** -5,000,000 Hz<|im_end|>",
+   "text_tokens": 524,
+   "chip_tokens": 97912,
+   "seconds": 49.74450710002566,
+   "chip_seconds": 18.25,
+   "text_seconds": 30.27,
+   "reference_lock_error": null,
+   "head_mismatch": 0,
+   "chip_path": "saved HF chip layers on GPU, chunked verification C=1024",
+   "chunks": 3224,
+   "all_circuit_tokens_equal_reference": true,
+   "tool_calls": 1,
+   "tool_responses": 1,
+   "tools_called": [
+    "rf_analyze"
+   ],
+   "report_check": {
+    "report": "capture=3 IDLab LTE fs=10MS/s fc=806MHz\nsamples=1024 (Q15)\nmean_power_dbfs=-13.2\npeak_power_dbfs=-12.0 at_sample=19\nnoise_floor_dbfs=-13.5 (quietest 64-sample window)\nloudest_window_dbfs=-12.5\nactive_windows=0/16 (power > 4x quietest)\ndominant_dft16_bin=8 freq_cycles_per_sample=-0.5000 power_share_percent=12 freq_hz=-5000000 (averaged 16-point DFT, 8 frames)\ncfo_cycles_per_sample=0.4947 cfo_hz=4947600 (phase of the lag-1 autocorrelation)",
+    "fields": {
+     "mean_power_dbfs": {
+      "firmware": -13.2,
+      "host_model": -13.150015136378773
+     },
+     "peak_power_dbfs": {
+      "firmware": -12.0,
+      "host_model": -11.949666685107612
+     },
+     "at_sample": {
+      "firmware": 19.0,
+      "host_model": 19
+     },
+     "noise_floor_dbfs": {
+      "firmware": -13.5,
+      "host_model": -13.545198792625168
+     },
+     "loudest_window_dbfs": {
+      "firmware": -12.5,
+      "host_model": -12.541622299645374
+     },
+     "active_windows": {
+      "firmware": 0.0,
+      "host_model": 0
+     },
+     "dominant_dft16_bin": {
+      "firmware": 8.0,
+      "host_model": 8
+     },
+     "freq_cycles_per_sample": {
+      "firmware": -0.5,
+      "host_model": -0.5
+     },
+     "power_share_percent": {
+      "firmware": 12.0,
+      "host_model": 12.096817237908247
+     },
+     "cfo_cycles_per_sample": {
+      "firmware": 0.4947,
+      "host_model": 0.4947492957270787
+     },
+     "freq_hz": {
+      "firmware": -5000000.0,
+      "host_model": -5000000
+     },
+     "cfo_hz": {
+      "firmware": 4947600.0,
+      "host_model": 4947492.957270787
+     }
+    }
+   },
+   "asked_fields_quoted": {
+    "freq_hz": {
+     "report": "-5000000",
+     "in_answer": false
+    },
+    "freq_cycles_per_sample": {
+     "report": "-0.5000",
+     "in_answer": true
+    }
+   },
+   "tokens_omitted": {
+    "json_bytes": 687095,
+    "sha256": "497efba36baee713a041636b7dd86a0dc5f201630333dd1824f916a40c69dbad"
+   }
+  },
+  {
+   "question": "What's the background noise level in capture 4, in dBFS?",
+   "capture": 4,
+   "prompt_tokens": 804,
+   "answer": "<tool_call>\n<function=rf_levels>\n<parameter=capture>\n4\n</parameter>\n</function>\n</tool_call>\n<tool_response>\ncapture=4 IDLab DVB-T fs=1MS/s fc=482MHz\nsamples=1024 (Q15)\nmean_power_dbfs=-14.7\npeak_power_dbfs=-10.9 at_sample=176\nnoise_floor_dbfs=-15.1 (quietest 64-sample window)\nloudest_window_dbfs=-14.2\nactive_windows=0/16 (power > 4x quietest)\n</tool_response>\n<think>\n\n</think>\n\nThe background noise level in capture 4 is -15.1 dBFS.<|im_end|>",
+   "text_tokens": 291,
+   "chip_tokens": 27837,
+   "seconds": 25.360661200014874,
+   "chip_seconds": 8.45,
+   "text_seconds": 16.02,
+   "reference_lock_error": null,
+   "head_mismatch": 0,
+   "chip_path": "saved HF chip layers on GPU, chunked verification C=1024",
+   "chunks": 3496,
+   "all_circuit_tokens_equal_reference": true,
+   "tool_calls": 1,
+   "tool_responses": 1,
+   "tools_called": [
+    "rf_levels"
+   ],
+   "report_check": {
+    "report": "capture=4 IDLab DVB-T fs=1MS/s fc=482MHz\nsamples=1024 (Q15)\nmean_power_dbfs=-14.7\npeak_power_dbfs=-10.9 at_sample=176\nnoise_floor_dbfs=-15.1 (quietest 64-sample window)\nloudest_window_dbfs=-14.2\nactive_windows=0/16 (power > 4x quietest)",
+    "fields": {
+     "mean_power_dbfs": {
+      "firmware": -14.7,
+      "host_model": -14.68333220422972
+     },
+     "peak_power_dbfs": {
+      "firmware": -10.9,
+      "host_model": -10.926537313510284
+     },
+     "at_sample": {
+      "firmware": 176.0,
+      "host_model": 176
+     },
+     "noise_floor_dbfs": {
+      "firmware": -15.1,
+      "host_model": -15.08015422389986
+     },
+     "loudest_window_dbfs": {
+      "firmware": -14.2,
+      "host_model": -14.220552922909542
+     },
+     "active_windows": {
+      "firmware": 0.0,
+      "host_model": 0
+     },
+     "dominant_dft16_bin": {
+      "firmware": null,
+      "host_model": 0
+     },
+     "freq_cycles_per_sample": {
+      "firmware": null,
+      "host_model": 0.0
+     },
+     "power_share_percent": {
+      "firmware": null,
+      "host_model": 14.039140970346834
+     },
+     "cfo_cycles_per_sample": {
+      "firmware": null,
+      "host_model": 0.03773171885415832
+     },
+     "freq_hz": {
+      "firmware": null,
+      "host_model": 0
+     },
+     "cfo_hz": {
+      "firmware": null,
+      "host_model": 37731.71885415832
+     }
+    }
+   },
+   "asked_fields_quoted": {
+    "noise_floor_dbfs": {
+     "report": "-15.1",
+     "in_answer": true
+    }
+   },
+   "tokens_omitted": {
+    "json_bytes": 195834,
+    "sha256": "01e60f4747b0af8bd4329e4e1cc4c1e242a05b5283ecde39cc2e2f39b92eb4ed"
+   }
+  },
+  {
+   "question": "Measure the frequency error of capture 4 in cycles per sample and in Hz.",
+   "capture": 4,
+   "prompt_tokens": 805,
+   "answer": "<tool_call>\n<function=rf_analyze>\n<parameter=capture>\n4\n</parameter>\n</function>\n</tool_call>\n<tool_response>\ncapture=4 IDLab DVB-T fs=1MS/s fc=482MHz\nsamples=1024 (Q15)\nmean_power_dbfs=-14.7\npeak_power_dbfs=-10.9 at_sample=176\nnoise_floor_dbfs=-15.1 (quietest 64-sample window)\nloudest_window_dbfs=-14.2\nactive_windows=0/16 (power > 4x quietest)\ndominant_dft16_bin=0 freq_cycles_per_sample=0.0000 power_share_percent=14 freq_hz=0 (averaged 16-point DFT, 8 frames)\ncfo_cycles_per_sample=0.0377 cfo_hz=37735 (phase of the lag-1 autocorrelation)\n</tool_response>\n<think>\n\n</think>\n\nThe frequency error for capture 4 is:\n- **0.0377 cycles per sample**\n- **37,735 Hz** (calculated as 0.0377 cycles/sample × 1,000,000 samples/second)<|im_end|>",
+   "text_tokens": 533,
+   "chip_tokens": 99590,
+   "seconds": 49.0533962000045,
+   "chip_seconds": 18.3,
+   "text_seconds": 29.49,
+   "reference_lock_error": null,
+   "head_mismatch": 0,
+   "chip_path": "saved HF chip layers on GPU, chunked verification C=1024",
+   "chunks": 4033,
+   "all_circuit_tokens_equal_reference": true,
+   "tool_calls": 1,
+   "tool_responses": 1,
+   "tools_called": [
+    "rf_analyze"
+   ],
+   "report_check": {
+    "report": "capture=4 IDLab DVB-T fs=1MS/s fc=482MHz\nsamples=1024 (Q15)\nmean_power_dbfs=-14.7\npeak_power_dbfs=-10.9 at_sample=176\nnoise_floor_dbfs=-15.1 (quietest 64-sample window)\nloudest_window_dbfs=-14.2\nactive_windows=0/16 (power > 4x quietest)\ndominant_dft16_bin=0 freq_cycles_per_sample=0.0000 power_share_percent=14 freq_hz=0 (averaged 16-point DFT, 8 frames)\ncfo_cycles_per_sample=0.0377 cfo_hz=37735 (phase of the lag-1 autocorrelation)",
+    "fields": {
+     "mean_power_dbfs": {
+      "firmware": -14.7,
+      "host_model": -14.68333220422972
+     },
+     "peak_power_dbfs": {
+      "firmware": -10.9,
+      "host_model": -10.926537313510284
+     },
+     "at_sample": {
+      "firmware": 176.0,
+      "host_model": 176
+     },
+     "noise_floor_dbfs": {
+      "firmware": -15.1,
+      "host_model": -15.08015422389986
+     },
+     "loudest_window_dbfs": {
+      "firmware": -14.2,
+      "host_model": -14.220552922909542
+     },
+     "active_windows": {
+      "firmware": 0.0,
+      "host_model": 0
+     },
+     "dominant_dft16_bin": {
+      "firmware": 0.0,
+      "host_model": 0
+     },
+     "freq_cycles_per_sample": {
+      "firmware": 0.0,
+      "host_model": 0.0
+     },
+     "power_share_percent": {
+      "firmware": 14.0,
+      "host_model": 14.039140970346834
+     },
+     "cfo_cycles_per_sample": {
+      "firmware": 0.0377,
+      "host_model": 0.03773171885415832
+     },
+     "freq_hz": {
+      "firmware": 0.0,
+      "host_model": 0
+     },
+     "cfo_hz": {
+      "firmware": 37735.0,
+      "host_model": 37731.71885415832
+     }
+    }
+   },
+   "asked_fields_quoted": {
+    "cfo_cycles_per_sample": {
+     "report": "0.0377",
+     "in_answer": true
+    },
+    "cfo_hz": {
+     "report": "37735",
+     "in_answer": false
+    }
+   },
+   "tokens_omitted": {
+    "json_bytes": 698877,
+    "sha256": "d50893240f696fcbc20f96df01b3a5c55fe552b8f3472fcf7c45fa06ab1427a5"
+   }
+  },
+  {
+   "question": "What's the loudest 64-sample chunk of capture 5, in dBFS?",
+   "capture": 5,
+   "prompt_tokens": 808,
+   "answer": "<tool_call>\n<function=rf_levels>\n<parameter=capture>\n5\n</parameter>\n</function>\n</tool_call>\n<tool_response>\ncapture=5 IDLab DVB-T fs=1MS/s fc=482MHz\nsamples=1024 (Q15)\nmean_power_dbfs=-12.9\npeak_power_dbfs=-11.8 at_sample=52\nnoise_floor_dbfs=-13.1 (quietest 64-sample window)\nloudest_window_dbfs=-12.7\nactive_windows=0/16 (power > 4x quietest)\n</tool_response>\n<think>\n\n</think>\n\nThe loudest 64-sample chunk of capture 5 is **-12.7 dBFS**.<|im_end|>",
+   "text_tokens": 294,
+   "chip_tokens": 28136,
+   "seconds": 25.20900759997312,
+   "chip_seconds": 8.63,
+   "text_seconds": 15.78,
+   "reference_lock_error": null,
+   "head_mismatch": 0,
+   "chip_path": "saved HF chip layers on GPU, chunked verification C=1024",
+   "chunks": 4304,
+   "all_circuit_tokens_equal_reference": true,
+   "tool_calls": 1,
+   "tool_responses": 1,
+   "tools_called": [
+    "rf_levels"
+   ],
+   "report_check": {
+    "report": "capture=5 IDLab DVB-T fs=1MS/s fc=482MHz\nsamples=1024 (Q15)\nmean_power_dbfs=-12.9\npeak_power_dbfs=-11.8 at_sample=52\nnoise_floor_dbfs=-13.1 (quietest 64-sample window)\nloudest_window_dbfs=-12.7\nactive_windows=0/16 (power > 4x quietest)",
+    "fields": {
+     "mean_power_dbfs": {
+      "firmware": -12.9,
+      "host_model": -12.863187359698049
+     },
+     "peak_power_dbfs": {
+      "firmware": -11.8,
+      "host_model": -11.825686910275328
+     },
+     "at_sample": {
+      "firmware": 52.0,
+      "host_model": 52
+     },
+     "noise_floor_dbfs": {
+      "firmware": -13.1,
+      "host_model": -13.141868845709194
+     },
+     "loudest_window_dbfs": {
+      "firmware": -12.7,
+      "host_model": -12.658928402572121
+     },
+     "active_windows": {
+      "firmware": 0.0,
+      "host_model": 0
+     },
+     "dominant_dft16_bin": {
+      "firmware": null,
+      "host_model": 7
+     },
+     "freq_cycles_per_sample": {
+      "firmware": null,
+      "host_model": 0.4375
+     },
+     "power_share_percent": {
+      "firmware": null,
+      "host_model": 9.396866945811938
+     },
+     "cfo_cycles_per_sample": {
+      "firmware": null,
+      "host_model": -0.4999748421707351
+     },
+     "freq_hz": {
+      "firmware": null,
+      "host_model": 437500
+     },
+     "cfo_hz": {
+      "firmware": null,
+      "host_model": -499974.8421707351
+     }
+    }
+   },
+   "asked_fields_quoted": {
+    "loudest_window_dbfs": {
+     "report": "-12.7",
+     "in_answer": true
+    }
+   },
+   "tokens_omitted": {
+    "json_bytes": 197948,
+    "sha256": "749c602bc175ced785453e37d0475ba8d429be4760c167d54c18037b76acf63e"
+   }
+  },
+  {
+   "question": "Capture 5 - what fraction of the spectrum's power lands in the biggest bin?",
+   "capture": 5,
+   "prompt_tokens": 806,
+   "answer": "<tool_call>\n<function=rf_analyze>\n<parameter=capture>\n5\n</parameter>\n</function>\n</tool_call>\n<tool_response>\ncapture=5 IDLab DVB-T fs=1MS/s fc=482MHz\nsamples=1024 (Q15)\nmean_power_dbfs=-12.9\npeak_power_dbfs=-11.8 at_sample=52\nnoise_floor_dbfs=-13.1 (quietest 64-sample window)\nloudest_window_dbfs=-12.7\nactive_windows=0/16 (power > 4x quietest)\ndominant_dft16_bin=7 freq_cycles_per_sample=0.4375 power_share_percent=9 freq_hz=437500 (averaged 16-point DFT, 8 frames)\ncfo_cycles_per_sample=-0.5000 cfo_hz=-499974 (phase of the lag-1 autocorrelation)\n</tool_response>\n<think>\n\n</think>\n\nBased on the analysis of capture 5, the dominant spectral bin (bin 7) accounts for **9%** of the spectrum's power.<|im_end|>",
+   "text_tokens": 507,
+   "chip_tokens": 99294,
+   "seconds": 46.05226160003804,
+   "chip_seconds": 18.64,
+   "text_seconds": 26.47,
+   "reference_lock_error": null,
+   "head_mismatch": 0,
+   "chip_path": "saved HF chip layers on GPU, chunked verification C=1024",
+   "chunks": 4847,
+   "all_circuit_tokens_equal_reference": true,
+   "tool_calls": 1,
+   "tool_responses": 1,
+   "tools_called": [
+    "rf_analyze"
+   ],
+   "report_check": {
+    "report": "capture=5 IDLab DVB-T fs=1MS/s fc=482MHz\nsamples=1024 (Q15)\nmean_power_dbfs=-12.9\npeak_power_dbfs=-11.8 at_sample=52\nnoise_floor_dbfs=-13.1 (quietest 64-sample window)\nloudest_window_dbfs=-12.7\nactive_windows=0/16 (power > 4x quietest)\ndominant_dft16_bin=7 freq_cycles_per_sample=0.4375 power_share_percent=9 freq_hz=437500 (averaged 16-point DFT, 8 frames)\ncfo_cycles_per_sample=-0.5000 cfo_hz=-499974 (phase of the lag-1 autocorrelation)",
+    "fields": {
+     "mean_power_dbfs": {
+      "firmware": -12.9,
+      "host_model": -12.863187359698049
+     },
+     "peak_power_dbfs": {
+      "firmware": -11.8,
+      "host_model": -11.825686910275328
+     },
+     "at_sample": {
+      "firmware": 52.0,
+      "host_model": 52
+     },
+     "noise_floor_dbfs": {
+      "firmware": -13.1,
+      "host_model": -13.141868845709194
+     },
+     "loudest_window_dbfs": {
+      "firmware": -12.7,
+      "host_model": -12.658928402572121
+     },
+     "active_windows": {
+      "firmware": 0.0,
+      "host_model": 0
+     },
+     "dominant_dft16_bin": {
+      "firmware": 7.0,
+      "host_model": 7
+     },
+     "freq_cycles_per_sample": {
+      "firmware": 0.4375,
+      "host_model": 0.4375
+     },
+     "power_share_percent": {
+      "firmware": 9.0,
+      "host_model": 9.396866945811938
+     },
+     "cfo_cycles_per_sample": {
+      "firmware": -0.5,
+      "host_model": -0.4999748421707351
+     },
+     "freq_hz": {
+      "firmware": 437500.0,
+      "host_model": 437500
+     },
+     "cfo_hz": {
+      "firmware": -499974.0,
+      "host_model": -499974.8421707351
+     }
+    }
+   },
+   "asked_fields_quoted": {
+    "power_share_percent": {
+     "report": "9",
+     "in_answer": true
+    }
+   },
+   "tokens_omitted": {
+    "json_bytes": 696717,
+    "sha256": "cc00445326a37af75024efdcfed5253ee6d2e3a99c3988c58b4efa732bb99a51"
+   }
+  },
+  {
+   "question": "Check capture 6: how far above its noise floor does its peak sample reach? Give both values in dBFS.",
+   "capture": 6,
+   "prompt_tokens": 813,
+   "answer": "<tool_call>\n<function=rf_levels>\n<parameter=capture>\n6\n</parameter>\n</function>\n</tool_call>\n<tool_response>\ncapture=6 NTU-RFSR LoRa fs=unknown\nsamples=1024 (Q15)\nmean_power_dbfs=-14.6\npeak_power_dbfs=-5.5 at_sample=309\nnoise_floor_dbfs=-15.4 (quietest 64-sample window)\nloudest_window_dbfs=-13.6\nactive_windows=0/16 (power > 4x quietest)\n</tool_response>\n<think>\n\n</think>\n\nThe peak sample reaches **-5.5 dBFS**, and the noise floor is **-15.4 dBFS**.\n\nThe difference between the peak and the noise floor is:\n-5.5 dBFS - (-15.4 dBFS) = **9.9 dB**\n\nSo the peak sample is **9.9 dB** above the noise floor.<|im_end|>",
+   "text_tokens": 343,
+   "chip_tokens": 28282,
+   "seconds": 38.53431509999791,
+   "chip_seconds": 12.07,
+   "text_seconds": 25.65,
+   "reference_lock_error": null,
+   "head_mismatch": 0,
+   "chip_path": "saved HF chip layers on GPU, chunked verification C=1024",
+   "chunks": 5112,
+   "all_circuit_tokens_equal_reference": true,
+   "tool_calls": 1,
+   "tool_responses": 1,
+   "tools_called": [
+    "rf_levels"
+   ],
+   "report_check": {
+    "report": "capture=6 NTU-RFSR LoRa fs=unknown\nsamples=1024 (Q15)\nmean_power_dbfs=-14.6\npeak_power_dbfs=-5.5 at_sample=309\nnoise_floor_dbfs=-15.4 (quietest 64-sample window)\nloudest_window_dbfs=-13.6\nactive_windows=0/16 (power > 4x quietest)",
+    "fields": {
+     "mean_power_dbfs": {
+      "firmware": -14.6,
+      "host_model": -14.623479090716653
+     },
+     "peak_power_dbfs": {
+      "firmware": -5.5,
+      "host_model": -5.522978588576585
+     },
+     "at_sample": {
+      "firmware": 309.0,
+      "host_model": 309
+     },
+     "noise_floor_dbfs": {
+      "firmware": -15.4,
+      "host_model": -15.418893972211645
+     },
+     "loudest_window_dbfs": {
+      "firmware": -13.6,
+      "host_model": -13.593331461352744
+     },
+     "active_windows": {
+      "firmware": 0.0,
+      "host_model": 0
+     },
+     "dominant_dft16_bin": {
+      "firmware": null,
+      "host_model": 5
+     },
+     "freq_cycles_per_sample": {
+      "firmware": null,
+      "host_model": 0.3125
+     },
+     "power_share_percent": {
+      "firmware": null,
+      "host_model": 9.668775110904674
+     },
+     "cfo_cycles_per_sample": {
+      "firmware": null,
+      "host_model": -0.017318758545777534
+     }
+    }
+   },
+   "asked_fields_quoted": {
+    "peak_power_dbfs": {
+     "report": "-5.5",
+     "in_answer": true
+    },
+    "noise_floor_dbfs": {
+     "report": "-15.4",
+     "in_answer": true
+    }
+   },
+   "tokens_omitted": {
+    "json_bytes": 199188,
+    "sha256": "0ad026523c72f1f52601c2ccd68c4a0633cdfbd71115be87bbd820c73a826d64"
+   }
+  },
+  {
+   "question": "Work out the carrier offset of capture 6 as a fraction of the sample rate.",
+   "capture": 6,
+   "prompt_tokens": 806,
+   "answer": "<tool_call>\n<function=rf_analyze>\n<parameter=capture>\n6\n</parameter>\n</function>\n</tool_call>\n<tool_response>\ncapture=6 NTU-RFSR LoRa fs=unknown\nsamples=1024 (Q15)\nmean_power_dbfs=-14.6\npeak_power_dbfs=-5.5 at_sample=309\nnoise_floor_dbfs=-15.4 (quietest 64-sample window)\nloudest_window_dbfs=-13.6\nactive_windows=0/16 (power > 4x quietest)\ndominant_dft16_bin=5 freq_cycles_per_sample=0.3125 power_share_percent=9 (averaged 16-point DFT, 8 frames)\ncfo_cycles_per_sample=-0.0174 (phase of the lag-1 autocorrelation)\n</tool_response>\n<think>\n\n</think>\n\nThe carrier frequency offset (CFO) for capture 6 is **-0.0174 cycles per sample**.\n\nThis means the carrier is offset by approximately **1.74%** of the sample rate.<|im_end|>",
+   "text_tokens": 486,
+   "chip_tokens": 99138,
+   "seconds": 61.322394700022414,
+   "chip_seconds": 24.28,
+   "text_seconds": 35.68,
+   "reference_lock_error": null,
+   "head_mismatch": 0,
+   "chip_path": "saved HF chip layers on GPU, chunked verification C=1024",
+   "chunks": 5619,
+   "all_circuit_tokens_equal_reference": true,
+   "tool_calls": 1,
+   "tool_responses": 1,
+   "tools_called": [
+    "rf_analyze"
+   ],
+   "report_check": {
+    "report": "capture=6 NTU-RFSR LoRa fs=unknown\nsamples=1024 (Q15)\nmean_power_dbfs=-14.6\npeak_power_dbfs=-5.5 at_sample=309\nnoise_floor_dbfs=-15.4 (quietest 64-sample window)\nloudest_window_dbfs=-13.6\nactive_windows=0/16 (power > 4x quietest)\ndominant_dft16_bin=5 freq_cycles_per_sample=0.3125 power_share_percent=9 (averaged 16-point DFT, 8 frames)\ncfo_cycles_per_sample=-0.0174 (phase of the lag-1 autocorrelation)",
+    "fields": {
+     "mean_power_dbfs": {
+      "firmware": -14.6,
+      "host_model": -14.623479090716653
+     },
+     "peak_power_dbfs": {
+      "firmware": -5.5,
+      "host_model": -5.522978588576585
+     },
+     "at_sample": {
+      "firmware": 309.0,
+      "host_model": 309
+     },
+     "noise_floor_dbfs": {
+      "firmware": -15.4,
+      "host_model": -15.418893972211645
+     },
+     "loudest_window_dbfs": {
+      "firmware": -13.6,
+      "host_model": -13.593331461352744
+     },
+     "active_windows": {
+      "firmware": 0.0,
+      "host_model": 0
+     },
+     "dominant_dft16_bin": {
+      "firmware": 5.0,
+      "host_model": 5
+     },
+     "freq_cycles_per_sample": {
+      "firmware": 0.3125,
+      "host_model": 0.3125
+     },
+     "power_share_percent": {
+      "firmware": 9.0,
+      "host_model": 9.668775110904674
+     },
+     "cfo_cycles_per_sample": {
+      "firmware": -0.0174,
+      "host_model": -0.017318758545777534
+     }
+    }
+   },
+   "asked_fields_quoted": {
+    "cfo_cycles_per_sample": {
+     "report": "-0.0174",
+     "in_answer": true
+    }
+   },
+   "tokens_omitted": {
+    "json_bytes": 695577,
+    "sha256": "26604d7721273c757061ba208f23ee578318860e6c0b839e7baef1dca4d27efd"
+   }
+  },
+  {
+   "question": "What is capture 7's average power level, in dBFS?",
+   "capture": 7,
+   "prompt_tokens": 803,
+   "answer": "<tool_call>\n<function=rf_levels>\n<parameter=capture>\n7\n</parameter>\n</function>\n</tool_call>\n<tool_response>\ncapture=7 NTU-RFSR LoRa fs=unknown\nsamples=1024 (Q15)\nmean_power_dbfs=-14.5\npeak_power_dbfs=-6.7 at_sample=71\nnoise_floor_dbfs=-15.0 (quietest 64-sample window)\nloudest_window_dbfs=-13.2\nactive_windows=0/16 (power > 4x quietest)\n</tool_response>\n<think>\n\n</think>\n\nCapture 7 has an average power level of -14.5 dBFS.<|im_end|>",
+   "text_tokens": 283,
+   "chip_tokens": 28249,
+   "seconds": 23.508163599995896,
+   "chip_seconds": 7.72,
+   "text_seconds": 14.86,
+   "reference_lock_error": null,
+   "head_mismatch": 0,
+   "chip_path": "saved HF chip layers on GPU, chunked verification C=1024",
+   "chunks": 5883,
+   "all_circuit_tokens_equal_reference": true,
+   "tool_calls": 1,
+   "tool_responses": 1,
+   "tools_called": [
+    "rf_levels"
+   ],
+   "report_check": {
+    "report": "capture=7 NTU-RFSR LoRa fs=unknown\nsamples=1024 (Q15)\nmean_power_dbfs=-14.5\npeak_power_dbfs=-6.7 at_sample=71\nnoise_floor_dbfs=-15.0 (quietest 64-sample window)\nloudest_window_dbfs=-13.2\nactive_windows=0/16 (power > 4x quietest)",
+    "fields": {
+     "mean_power_dbfs": {
+      "firmware": -14.5,
+      "host_model": -14.477044948805261
+     },
+     "peak_power_dbfs": {
+      "firmware": -6.7,
+      "host_model": -6.654389300619062
+     },
+     "at_sample": {
+      "firmware": 71.0,
+      "host_model": 71
+     },
+     "noise_floor_dbfs": {
+      "firmware": -15.0,
+      "host_model": -15.03476443314998
+     },
+     "loudest_window_dbfs": {
+      "firmware": -13.2,
+      "host_model": -13.173643036579305
+     },
+     "active_windows": {
+      "firmware": 0.0,
+      "host_model": 0
+     },
+     "dominant_dft16_bin": {
+      "firmware": null,
+      "host_model": 5
+     },
+     "freq_cycles_per_sample": {
+      "firmware": null,
+      "host_model": 0.3125
+     },
+     "power_share_percent": {
+      "firmware": null,
+      "host_model": 10.697970448566904
+     },
+     "cfo_cycles_per_sample": {
+      "firmware": null,
+      "host_model": -0.008683335634293283
+     }
+    }
+   },
+   "asked_fields_quoted": {
+    "mean_power_dbfs": {
+     "report": "-14.5",
+     "in_answer": true
+    }
+   },
+   "tokens_omitted": {
+    "json_bytes": 198692,
+    "sha256": "dba1545626beea66ed50056a64b0f3502849e82666cd2f8014b8fa251b3aaf2a"
+   }
+  },
+  {
+   "question": "In capture 7, which of the 16 frequency bins is strongest?",
+   "capture": 7,
+   "prompt_tokens": 805,
+   "answer": "<tool_call>\n<function=rf_analyze>\n<parameter=capture>\n7\n</parameter>\n</function>\n</tool_call>\n<tool_response>\ncapture=7 NTU-RFSR LoRa fs=unknown\nsamples=1024 (Q15)\nmean_power_dbfs=-14.5\npeak_power_dbfs=-6.7 at_sample=71\nnoise_floor_dbfs=-15.0 (quietest 64-sample window)\nloudest_window_dbfs=-13.2\nactive_windows=0/16 (power > 4x quietest)\ndominant_dft16_bin=5 freq_cycles_per_sample=0.3125 power_share_percent=10 (averaged 16-point DFT, 8 frames)\ncfo_cycles_per_sample=-0.0087 (phase of the lag-1 autocorrelation)\n</tool_response>\n<think>\n\n</think>\n\nThe strongest frequency bin in capture 7 is bin 5.<|im_end|>",
+   "text_tokens": 455,
+   "chip_tokens": 99483,
+   "seconds": 41.440214600006584,
+   "chip_seconds": 16.12,
+   "text_seconds": 24.13,
+   "reference_lock_error": null,
+   "head_mismatch": 0,
+   "chip_path": "saved HF chip layers on GPU, chunked verification C=1024",
+   "chunks": 6390,
+   "all_circuit_tokens_equal_reference": true,
+   "tool_calls": 1,
+   "tool_responses": 1,
+   "tools_called": [
+    "rf_analyze"
+   ],
+   "report_check": {
+    "report": "capture=7 NTU-RFSR LoRa fs=unknown\nsamples=1024 (Q15)\nmean_power_dbfs=-14.5\npeak_power_dbfs=-6.7 at_sample=71\nnoise_floor_dbfs=-15.0 (quietest 64-sample window)\nloudest_window_dbfs=-13.2\nactive_windows=0/16 (power > 4x quietest)\ndominant_dft16_bin=5 freq_cycles_per_sample=0.3125 power_share_percent=10 (averaged 16-point DFT, 8 frames)\ncfo_cycles_per_sample=-0.0087 (phase of the lag-1 autocorrelation)",
+    "fields": {
+     "mean_power_dbfs": {
+      "firmware": -14.5,
+      "host_model": -14.477044948805261
+     },
+     "peak_power_dbfs": {
+      "firmware": -6.7,
+      "host_model": -6.654389300619062
+     },
+     "at_sample": {
+      "firmware": 71.0,
+      "host_model": 71
+     },
+     "noise_floor_dbfs": {
+      "firmware": -15.0,
+      "host_model": -15.03476443314998
+     },
+     "loudest_window_dbfs": {
+      "firmware": -13.2,
+      "host_model": -13.173643036579305
+     },
+     "active_windows": {
+      "firmware": 0.0,
+      "host_model": 0
+     },
+     "dominant_dft16_bin": {
+      "firmware": 5.0,
+      "host_model": 5
+     },
+     "freq_cycles_per_sample": {
+      "firmware": 0.3125,
+      "host_model": 0.3125
+     },
+     "power_share_percent": {
+      "firmware": 10.0,
+      "host_model": 10.697970448566904
+     },
+     "cfo_cycles_per_sample": {
+      "firmware": -0.0087,
+      "host_model": -0.008683335634293283
+     }
+    }
+   },
+   "asked_fields_quoted": {
+    "dominant_dft16_bin": {
+     "report": "5",
+     "in_answer": true
+    }
+   },
+   "tokens_omitted": {
+    "json_bytes": 697858,
+    "sha256": "927c137db602ca2eca712d90f812ca06dfc68b657238d4d7dd25f26d1f76d76c"
+   }
+  },
+  {
+   "question": "Give me the active window count and the noise floor for capture 8.",
+   "capture": 8,
+   "prompt_tokens": 804,
+   "answer": "<tool_call>\n<function=rf_levels>\n<parameter=capture>\n8\n</parameter>\n</function>\n</tool_call>\n<tool_response>\ncapture=8 EPFL-LoRaIQ LoRa fs=unknown\nsamples=1024 (Q15)\nmean_power_dbfs=-14.1\npeak_power_dbfs=-10.4 at_sample=41\nnoise_floor_dbfs=-14.9 (quietest 64-sample window)\nloudest_window_dbfs=-13.3\nactive_windows=0/16 (power > 4x quietest)\n</tool_response>\n<think>\n\n</think>\n\nFor capture 8 (EPFL-LoRaIQ LoRa), the active window count is 0 and the noise floor is -14.9 dBFS.<|im_end|>",
+   "text_tokens": 304,
+   "chip_tokens": 28332,
+   "seconds": 24.521567499963567,
+   "chip_seconds": 7.68,
+   "text_seconds": 16.03,
+   "reference_lock_error": null,
+   "head_mismatch": 0,
+   "chip_path": "saved HF chip layers on GPU, chunked verification C=1024",
+   "chunks": 6658,
+   "all_circuit_tokens_equal_reference": true,
+   "tool_calls": 1,
+   "tool_responses": 1,
+   "tools_called": [
+    "rf_levels"
+   ],
+   "report_check": {
+    "report": "capture=8 EPFL-LoRaIQ LoRa fs=unknown\nsamples=1024 (Q15)\nmean_power_dbfs=-14.1\npeak_power_dbfs=-10.4 at_sample=41\nnoise_floor_dbfs=-14.9 (quietest 64-sample window)\nloudest_window_dbfs=-13.3\nactive_windows=0/16 (power > 4x quietest)",
+    "fields": {
+     "mean_power_dbfs": {
+      "firmware": -14.1,
+      "host_model": -14.12255486501583
+     },
+     "peak_power_dbfs": {
+      "firmware": -10.4,
+      "host_model": -10.430978287691632
+     },
+     "at_sample": {
+      "firmware": 41.0,
+      "host_model": 41
+     },
+     "noise_floor_dbfs": {
+      "firmware": -14.9,
+      "host_model": -14.869855309701663
+     },
+     "loudest_window_dbfs": {
+      "firmware": -13.3,
+      "host_model": -13.32760570247082
+     },
+     "active_windows": {
+      "firmware": 0.0,
+      "host_model": 0
+     },
+     "dominant_dft16_bin": {
+      "firmware": null,
+      "host_model": 1
+     },
+     "freq_cycles_per_sample": {
+      "firmware": null,
+      "host_model": 0.0625
+     },
+     "power_share_percent": {
+      "firmware": null,
+      "host_model": 23.996320816067314
+     },
+     "cfo_cycles_per_sample": {
+      "firmware": null,
+      "host_model": 0.003879775057348481
+     }
+    }
+   },
+   "asked_fields_quoted": {
+    "active_windows": {
+     "report": "0",
+     "in_answer": true
+    },
+    "noise_floor_dbfs": {
+     "report": "-14.9",
+     "in_answer": true
+    }
+   },
+   "tokens_omitted": {
+    "json_bytes": 199365,
+    "sha256": "a9e55a2a712e638d463d6e4c7be0c61f1b6efe124db845ee7bded75cab0353cd"
+   }
+  },
+  {
+   "question": "What normalised frequency carries the most energy in capture 8?",
+   "capture": 8,
+   "prompt_tokens": 802,
+   "answer": "<tool_call>\n<function=rf_analyze>\n<parameter=capture>\n8\n</parameter>\n</function>\n</tool_call>\n<tool_response>\ncapture=8 EPFL-LoRaIQ LoRa fs=unknown\nsamples=1024 (Q15)\nmean_power_dbfs=-14.1\npeak_power_dbfs=-10.4 at_sample=41\nnoise_floor_dbfs=-14.9 (quietest 64-sample window)\nloudest_window_dbfs=-13.3\nactive_windows=0/16 (power > 4x quietest)\ndominant_dft16_bin=1 freq_cycles_per_sample=0.0625 power_share_percent=23 (averaged 16-point DFT, 8 frames)\ncfo_cycles_per_sample=0.0038 (phase of the lag-1 autocorrelation)\n</tool_response>\n<think>\n\n</think>\n\nThe dominant spectral bin for capture 8 is bin 1, which corresponds to a frequency of 0.0625 cycles per sample.\n\nTo convert this to a normalized frequency (where the sampling rate is 1 Hz), the value is simply **0.0625**.\n\nIf you need the frequency in Hz, you would multiply this by the capture's sample rate. However, the sample rate for capture 8 is listed as \"unknown\" in the tool output.<|im_end|>",
+   "text_tokens": 545,
+   "chip_tokens": 100573,
+   "seconds": 62.615744600014295,
+   "chip_seconds": 22.03,
+   "text_seconds": 39.41,
+   "reference_lock_error": null,
+   "head_mismatch": 0,
+   "chip_path": "saved HF chip layers on GPU, chunked verification C=1024",
+   "chunks": 7169,
+   "all_circuit_tokens_equal_reference": true,
+   "tool_calls": 1,
+   "tool_responses": 1,
+   "tools_called": [
+    "rf_analyze"
+   ],
+   "report_check": {
+    "report": "capture=8 EPFL-LoRaIQ LoRa fs=unknown\nsamples=1024 (Q15)\nmean_power_dbfs=-14.1\npeak_power_dbfs=-10.4 at_sample=41\nnoise_floor_dbfs=-14.9 (quietest 64-sample window)\nloudest_window_dbfs=-13.3\nactive_windows=0/16 (power > 4x quietest)\ndominant_dft16_bin=1 freq_cycles_per_sample=0.0625 power_share_percent=23 (averaged 16-point DFT, 8 frames)\ncfo_cycles_per_sample=0.0038 (phase of the lag-1 autocorrelation)",
+    "fields": {
+     "mean_power_dbfs": {
+      "firmware": -14.1,
+      "host_model": -14.12255486501583
+     },
+     "peak_power_dbfs": {
+      "firmware": -10.4,
+      "host_model": -10.430978287691632
+     },
+     "at_sample": {
+      "firmware": 41.0,
+      "host_model": 41
+     },
+     "noise_floor_dbfs": {
+      "firmware": -14.9,
+      "host_model": -14.869855309701663
+     },
+     "loudest_window_dbfs": {
+      "firmware": -13.3,
+      "host_model": -13.32760570247082
+     },
+     "active_windows": {
+      "firmware": 0.0,
+      "host_model": 0
+     },
+     "dominant_dft16_bin": {
+      "firmware": 1.0,
+      "host_model": 1
+     },
+     "freq_cycles_per_sample": {
+      "firmware": 0.0625,
+      "host_model": 0.0625
+     },
+     "power_share_percent": {
+      "firmware": 23.0,
+      "host_model": 23.996320816067314
+     },
+     "cfo_cycles_per_sample": {
+      "firmware": 0.0038,
+      "host_model": 0.003879775057348481
+     }
+    }
+   },
+   "asked_fields_quoted": {
+    "freq_cycles_per_sample": {
+     "report": "0.0625",
+     "in_answer": true
+    }
+   },
+   "tokens_omitted": {
+    "json_bytes": 705871,
+    "sha256": "f745c7d83f3194a3246938b3c818e5f56fc212cacb7a6dec8f360c916227b360"
+   }
+  },
+  {
+   "question": "How hot does capture 9 peak, and at which sample?",
+   "capture": 9,
+   "prompt_tokens": 802,
+   "answer": "<tool_call>\n<function=rf_levels>\n<parameter=capture>\n9\n</parameter>\n</function>\n</tool_call>\n<tool_response>\ncapture=9 EPFL-LoRaIQ LoRa fs=unknown\nsamples=1024 (Q15)\nmean_power_dbfs=-14.2\npeak_power_dbfs=-7.6 at_sample=840\nnoise_floor_dbfs=-14.5 (quietest 64-sample window)\nloudest_window_dbfs=-13.6\nactive_windows=0/16 (power > 4x quietest)\n</tool_response>\n<think>\n\n</think>\n\nCapture 9 peaks at -7.6 dBFS at sample 840.<|im_end|>",
+   "text_tokens": 288,
+   "chip_tokens": 28355,
+   "seconds": 35.45595259999391,
+   "chip_seconds": 12.26,
+   "text_seconds": 22.08,
+   "reference_lock_error": null,
+   "head_mismatch": 0,
+   "chip_path": "saved HF chip layers on GPU, chunked verification C=1024",
+   "chunks": 7437,
+   "all_circuit_tokens_equal_reference": true,
+   "tool_calls": 1,
+   "tool_responses": 1,
+   "tools_called": [
+    "rf_levels"
+   ],
+   "report_check": {
+    "report": "capture=9 EPFL-LoRaIQ LoRa fs=unknown\nsamples=1024 (Q15)\nmean_power_dbfs=-14.2\npeak_power_dbfs=-7.6 at_sample=840\nnoise_floor_dbfs=-14.5 (quietest 64-sample window)\nloudest_window_dbfs=-13.6\nactive_windows=0/16 (power > 4x quietest)",
+    "fields": {
+     "mean_power_dbfs": {
+      "firmware": -14.2,
+      "host_model": -14.145105386566287
+     },
+     "peak_power_dbfs": {
+      "firmware": -7.6,
+      "host_model": -7.598243513403144
+     },
+     "at_sample": {
+      "firmware": 840.0,
+      "host_model": 840
+     },
+     "noise_floor_dbfs": {
+      "firmware": -14.5,
+      "host_model": -14.528834651978745
+     },
+     "loudest_window_dbfs": {
+      "firmware": -13.6,
+      "host_model": -13.608060743698614
+     },
+     "active_windows": {
+      "firmware": 0.0,
+      "host_model": 0
+     },
+     "dominant_dft16_bin": {
+      "firmware": null,
+      "host_model": 5
+     },
+     "freq_cycles_per_sample": {
+      "firmware": null,
+      "host_model": 0.3125
+     },
+     "power_share_percent": {
+      "firmware": null,
+      "host_model": 11.012531644194345
+     },
+     "cfo_cycles_per_sample": {
+      "firmware": null,
+      "host_model": 0.066664053281911
+     }
+    }
+   },
+   "asked_fields_quoted": {
+    "peak_power_dbfs": {
+     "report": "-7.6",
+     "in_answer": true
+    },
+    "at_sample": {
+     "report": "840",
+     "in_answer": true
+    }
+   },
+   "tokens_omitted": {
+    "json_bytes": 199448,
+    "sha256": "6b7a8950d233bffd3f1d4e4a615a1985159303c93f58d73f5e7c5feab9b4db0b"
+   }
+  },
+  {
+   "question": "Estimate the frequency offset of capture 9 (in cycles per sample).",
+   "capture": 9,
+   "prompt_tokens": 804,
+   "answer": "<tool_call>\n<function=rf_analyze>\n<parameter=capture>\n9\n</parameter>\n</function>\n</tool_call>\n<tool_response>\ncapture=9 EPFL-LoRaIQ LoRa fs=unknown\nsamples=1024 (Q15)\nmean_power_dbfs=-14.2\npeak_power_dbfs=-7.6 at_sample=840\nnoise_floor_dbfs=-14.5 (quietest 64-sample window)\nloudest_window_dbfs=-13.6\nactive_windows=0/16 (power > 4x quietest)\ndominant_dft16_bin=5 freq_cycles_per_sample=0.3125 power_share_percent=11 (averaged 16-point DFT, 8 frames)\ncfo_cycles_per_sample=0.0666 (phase of the lag-1 autocorrelation)\n</tool_response>\n<think>\n\n</think>\n\nThe frequency offset of capture 9 is **0.0666 cycles per sample**.<|im_end|>",
+   "text_tokens": 464,
+   "chip_tokens": 100874,
+   "seconds": 45.61964450002415,
+   "chip_seconds": 17.52,
+   "text_seconds": 26.69,
+   "reference_lock_error": null,
+   "head_mismatch": 0,
+   "chip_path": "saved HF chip layers on GPU, chunked verification C=1024",
+   "chunks": 7949,
+   "all_circuit_tokens_equal_reference": true,
+   "tool_calls": 1,
+   "tool_responses": 1,
+   "tools_called": [
+    "rf_analyze"
+   ],
+   "report_check": {
+    "report": "capture=9 EPFL-LoRaIQ LoRa fs=unknown\nsamples=1024 (Q15)\nmean_power_dbfs=-14.2\npeak_power_dbfs=-7.6 at_sample=840\nnoise_floor_dbfs=-14.5 (quietest 64-sample window)\nloudest_window_dbfs=-13.6\nactive_windows=0/16 (power > 4x quietest)\ndominant_dft16_bin=5 freq_cycles_per_sample=0.3125 power_share_percent=11 (averaged 16-point DFT, 8 frames)\ncfo_cycles_per_sample=0.0666 (phase of the lag-1 autocorrelation)",
+    "fields": {
+     "mean_power_dbfs": {
+      "firmware": -14.2,
+      "host_model": -14.145105386566287
+     },
+     "peak_power_dbfs": {
+      "firmware": -7.6,
+      "host_model": -7.598243513403144
+     },
+     "at_sample": {
+      "firmware": 840.0,
+      "host_model": 840
+     },
+     "noise_floor_dbfs": {
+      "firmware": -14.5,
+      "host_model": -14.528834651978745
+     },
+     "loudest_window_dbfs": {
+      "firmware": -13.6,
+      "host_model": -13.608060743698614
+     },
+     "active_windows": {
+      "firmware": 0.0,
+      "host_model": 0
+     },
+     "dominant_dft16_bin": {
+      "firmware": 5.0,
+      "host_model": 5
+     },
+     "freq_cycles_per_sample": {
+      "firmware": 0.3125,
+      "host_model": 0.3125
+     },
+     "power_share_percent": {
+      "firmware": 11.0,
+      "host_model": 11.012531644194345
+     },
+     "cfo_cycles_per_sample": {
+      "firmware": 0.0666,
+      "host_model": 0.066664053281911
+     }
+    }
+   },
+   "asked_fields_quoted": {
+    "cfo_cycles_per_sample": {
+     "report": "0.0666",
+     "in_answer": true
+    }
+   },
+   "tokens_omitted": {
+    "json_bytes": 707628,
+    "sha256": "70fcd4f517124e178f370357564b7dddcab3008def4b2ef6d21e2c3d58192e83"
+   }
+  },
+  {
+   "question": "Quick level check on capture 10: average and loudest-window power in dBFS, please.",
+   "capture": 10,
+   "prompt_tokens": 810,
+   "answer": "<tool_call>\n<function=rf_levels>\n<parameter=capture>\n10\n</parameter>\n</function>\n</tool_call>\n<tool_response>\ncapture=10 EPFL-LoRaIQ LoRa fs=unknown\nsamples=1024 (Q15)\nmean_power_dbfs=-14.5\npeak_power_dbfs=-7.3 at_sample=1006\nnoise_floor_dbfs=-15.3 (quietest 64-sample window)\nloudest_window_dbfs=-14.0\nactive_windows=0/16 (power > 4x quietest)\n</tool_response>\n<think>\n\n</think>\n\nFor capture 10 (EPFL-LoRaIQ LoRa), the level check shows:\n- **Mean power**: -14.5 dBFS\n- **Peak power**: -7.3 dBFS (at sample 1006)\n- **Loudest window power**: -14.0 dBFS\n- **Noise floor**: -15.3 dBFS (quietest 64-sample window)\n- **Active windows**: 0/16 (power > 4x quietest)\n\nThe signal appears to be very quiet with no active windows detected.<|im_end|>",
+   "text_tokens": 398,
+   "chip_tokens": 28330,
+   "seconds": 30.1909421000164,
+   "chip_seconds": 8.62,
+   "text_seconds": 20.78,
+   "reference_lock_error": null,
+   "head_mismatch": 0,
+   "chip_path": "saved HF chip layers on GPU, chunked verification C=1024",
+   "chunks": 8219,
+   "all_circuit_tokens_equal_reference": true,
+   "tool_calls": 1,
+   "tool_responses": 1,
+   "tools_called": [
+    "rf_levels"
+   ],
+   "report_check": {
+    "report": "capture=10 EPFL-LoRaIQ LoRa fs=unknown\nsamples=1024 (Q15)\nmean_power_dbfs=-14.5\npeak_power_dbfs=-7.3 at_sample=1006\nnoise_floor_dbfs=-15.3 (quietest 64-sample window)\nloudest_window_dbfs=-14.0\nactive_windows=0/16 (power > 4x quietest)",
+    "fields": {
+     "mean_power_dbfs": {
+      "firmware": -14.5,
+      "host_model": -14.46792185265306
+     },
+     "peak_power_dbfs": {
+      "firmware": -7.3,
+      "host_model": -7.248263105556433
+     },
+     "at_sample": {
+      "firmware": 1006.0,
+      "host_model": 1006
+     },
+     "noise_floor_dbfs": {
+      "firmware": -15.3,
+      "host_model": -15.29386972718642
+     },
+     "loudest_window_dbfs": {
+      "firmware": -14.0,
+      "host_model": -13.952799850817375
+     },
+     "active_windows": {
+      "firmware": 0.0,
+      "host_model": 0
+     },
+     "dominant_dft16_bin": {
+      "firmware": null,
+      "host_model": 1
+     },
+     "freq_cycles_per_sample": {
+      "firmware": null,
+      "host_model": 0.0625
+     },
+     "power_share_percent": {
+      "firmware": null,
+      "host_model": 11.415246615974961
+     },
+     "cfo_cycles_per_sample": {
+      "firmware": null,
+      "host_model": 0.07007655029141245
+     }
+    }
+   },
+   "asked_fields_quoted": {
+    "mean_power_dbfs": {
+     "report": "-14.5",
+     "in_answer": true
+    },
+    "loudest_window_dbfs": {
+     "report": "-14.0",
+     "in_answer": true
+    }
+   },
+   "tokens_omitted": {
+    "json_bytes": 199747,
+    "sha256": "689267ac2ef1daa98a91e6f635a6b134162b051457c33db754ddddc00d3a8866"
+   }
+  },
+  {
+   "question": "For capture 10, report the dominant bin and the share of power it holds.",
+   "capture": 10,
+   "prompt_tokens": 807,
+   "answer": "<tool_call>\n<function=rf_analyze>\n<parameter=capture>\n10\n</parameter>\n</function>\n</tool_call>\n<tool_response>\ncapture=10 EPFL-LoRaIQ LoRa fs=unknown\nsamples=1024 (Q15)\nmean_power_dbfs=-14.5\npeak_power_dbfs=-7.3 at_sample=1006\nnoise_floor_dbfs=-15.3 (quietest 64-sample window)\nloudest_window_dbfs=-14.0\nactive_windows=0/16 (power > 4x quietest)\ndominant_dft16_bin=1 freq_cycles_per_sample=0.0625 power_share_percent=11 (averaged 16-point DFT, 8 frames)\ncfo_cycles_per_sample=0.0700 (phase of the lag-1 autocorrelation)\n</tool_response>\n<think>\n\n</think>\n\nFor capture 10, the dominant spectral bin is **1**, and it holds **11%** of the power.<|im_end|>",
+   "text_tokens": 473,
+   "chip_tokens": 100115,
+   "seconds": 42.768432200013194,
+   "chip_seconds": 16.34,
+   "text_seconds": 25.32,
+   "reference_lock_error": null,
+   "head_mismatch": 0,
+   "chip_path": "saved HF chip layers on GPU, chunked verification C=1024",
+   "chunks": 8732,
+   "all_circuit_tokens_equal_reference": true,
+   "tool_calls": 1,
+   "tool_responses": 1,
+   "tools_called": [
+    "rf_analyze"
+   ],
+   "report_check": {
+    "report": "capture=10 EPFL-LoRaIQ LoRa fs=unknown\nsamples=1024 (Q15)\nmean_power_dbfs=-14.5\npeak_power_dbfs=-7.3 at_sample=1006\nnoise_floor_dbfs=-15.3 (quietest 64-sample window)\nloudest_window_dbfs=-14.0\nactive_windows=0/16 (power > 4x quietest)\ndominant_dft16_bin=1 freq_cycles_per_sample=0.0625 power_share_percent=11 (averaged 16-point DFT, 8 frames)\ncfo_cycles_per_sample=0.0700 (phase of the lag-1 autocorrelation)",
+    "fields": {
+     "mean_power_dbfs": {
+      "firmware": -14.5,
+      "host_model": -14.46792185265306
+     },
+     "peak_power_dbfs": {
+      "firmware": -7.3,
+      "host_model": -7.248263105556433
+     },
+     "at_sample": {
+      "firmware": 1006.0,
+      "host_model": 1006
+     },
+     "noise_floor_dbfs": {
+      "firmware": -15.3,
+      "host_model": -15.29386972718642
+     },
+     "loudest_window_dbfs": {
+      "firmware": -14.0,
+      "host_model": -13.952799850817375
+     },
+     "active_windows": {
+      "firmware": 0.0,
+      "host_model": 0
+     },
+     "dominant_dft16_bin": {
+      "firmware": 1.0,
+      "host_model": 1
+     },
+     "freq_cycles_per_sample": {
+      "firmware": 0.0625,
+      "host_model": 0.0625
+     },
+     "power_share_percent": {
+      "firmware": 11.0,
+      "host_model": 11.415246615974961
+     },
+     "cfo_cycles_per_sample": {
+      "firmware": 0.07,
+      "host_model": 0.07007655029141245
+     }
+    }
+   },
+   "asked_fields_quoted": {
+    "dominant_dft16_bin": {
+     "report": "1",
+     "in_answer": true
+    },
+    "power_share_percent": {
+     "report": "11",
+     "in_answer": true
+    }
+   },
+   "tokens_omitted": {
+    "json_bytes": 702353,
+    "sha256": "cff02a8514aa50fbfe0148747f889f8b6e9cb2dee8078ecbde4b9a40df565981"
+   }
+  },
+  {
+   "question": "What is the quietest-window power of capture 11, in dBFS?",
+   "capture": 11,
+   "prompt_tokens": 806,
+   "answer": "<tool_call>\n<function=rf_levels>\n<parameter=capture>\n11\n</parameter>\n</function>\n</tool_call>\n<tool_response>\ncapture=11 EPFL-LoRaIQ LoRa fs=unknown\nsamples=1024 (Q15)\nmean_power_dbfs=-12.0\npeak_power_dbfs=-11.6 at_sample=798\nnoise_floor_dbfs=-12.3 (quietest 64-sample window)\nloudest_window_dbfs=-11.8\nactive_windows=0/16 (power > 4x quietest)\n</tool_response>\n<think>\n\n</think>\n\nThe quietest-window power of capture 11 is **-12.3 dBFS**.<|im_end|>",
+   "text_tokens": 292,
+   "chip_tokens": 28387,
+   "seconds": 24.569661499990616,
+   "chip_seconds": 7.97,
+   "text_seconds": 15.65,
+   "reference_lock_error": null,
+   "head_mismatch": 0,
+   "chip_path": "saved HF chip layers on GPU, chunked verification C=1024",
+   "chunks": 9002,
+   "all_circuit_tokens_equal_reference": true,
+   "tool_calls": 1,
+   "tool_responses": 1,
+   "tools_called": [
+    "rf_levels"
+   ],
+   "report_check": {
+    "report": "capture=11 EPFL-LoRaIQ LoRa fs=unknown\nsamples=1024 (Q15)\nmean_power_dbfs=-12.0\npeak_power_dbfs=-11.6 at_sample=798\nnoise_floor_dbfs=-12.3 (quietest 64-sample window)\nloudest_window_dbfs=-11.8\nactive_windows=0/16 (power > 4x quietest)",
+    "fields": {
+     "mean_power_dbfs": {
+      "firmware": -12.0,
+      "host_model": -12.028135220126865
+     },
+     "peak_power_dbfs": {
+      "firmware": -11.6,
+      "host_model": -11.577383059762685
+     },
+     "at_sample": {
+      "firmware": 798.0,
+      "host_model": 798
+     },
+     "noise_floor_dbfs": {
+      "firmware": -12.3,
+      "host_model": -12.3322447086805
+     },
+     "loudest_window_dbfs": {
+      "firmware": -11.8,
+      "host_model": -11.805209459144283
+     },
+     "active_windows": {
+      "firmware": 0.0,
+      "host_model": 0
+     },
+     "dominant_dft16_bin": {
+      "firmware": null,
+      "host_model": 13
+     },
+     "freq_cycles_per_sample": {
+      "firmware": null,
+      "host_model": -0.1875
+     },
+     "power_share_percent": {
+      "firmware": null,
+      "host_model": 45.608904062825154
+     },
+     "cfo_cycles_per_sample": {
+      "firmware": null,
+      "host_model": 0.021537745594310063
+     }
+    }
+   },
+   "asked_fields_quoted": {
+    "noise_floor_dbfs": {
+     "report": "-12.3",
+     "in_answer": true
+    }
+   },
+   "tokens_omitted": {
+    "json_bytes": 199695,
+    "sha256": "c1a4a0d02796e1025735ba49989560bac44b71d0dc75abd11d3eb751d94cc4ac"
+   }
+  },
+  {
+   "question": "Is capture 11 frequency-shifted? Give its offset in cycles per sample.",
+   "capture": 11,
+   "prompt_tokens": 806,
+   "answer": "<tool_call>\n<function=rf_analyze>\n<parameter=capture>\n11\n</parameter>\n</function>\n</tool_call>\n<tool_response>\ncapture=11 EPFL-LoRaIQ LoRa fs=unknown\nsamples=1024 (Q15)\nmean_power_dbfs=-12.0\npeak_power_dbfs=-11.6 at_sample=798\nnoise_floor_dbfs=-12.3 (quietest 64-sample window)\nloudest_window_dbfs=-11.8\nactive_windows=0/16 (power > 4x quietest)\ndominant_dft16_bin=13 freq_cycles_per_sample=-0.1875 power_share_percent=45 (averaged 16-point DFT, 8 frames)\ncfo_cycles_per_sample=0.0215 (phase of the lag-1 autocorrelation)\n</tool_response>\n<think>\n\n</think>\n\nYes, capture 11 is frequency-shifted. Its carrier frequency offset is **0.0215 cycles per sample**.<|im_end|>",
+   "text_tokens": 477,
+   "chip_tokens": 100437,
+   "seconds": 43.32999200001359,
+   "chip_seconds": 16.61,
+   "text_seconds": 25.71,
+   "reference_lock_error": null,
+   "head_mismatch": 0,
+   "chip_path": "saved HF chip layers on GPU, chunked verification C=1024",
+   "chunks": 9517,
+   "all_circuit_tokens_equal_reference": true,
+   "tool_calls": 1,
+   "tool_responses": 1,
+   "tools_called": [
+    "rf_analyze"
+   ],
+   "report_check": {
+    "report": "capture=11 EPFL-LoRaIQ LoRa fs=unknown\nsamples=1024 (Q15)\nmean_power_dbfs=-12.0\npeak_power_dbfs=-11.6 at_sample=798\nnoise_floor_dbfs=-12.3 (quietest 64-sample window)\nloudest_window_dbfs=-11.8\nactive_windows=0/16 (power > 4x quietest)\ndominant_dft16_bin=13 freq_cycles_per_sample=-0.1875 power_share_percent=45 (averaged 16-point DFT, 8 frames)\ncfo_cycles_per_sample=0.0215 (phase of the lag-1 autocorrelation)",
+    "fields": {
+     "mean_power_dbfs": {
+      "firmware": -12.0,
+      "host_model": -12.028135220126865
+     },
+     "peak_power_dbfs": {
+      "firmware": -11.6,
+      "host_model": -11.577383059762685
+     },
+     "at_sample": {
+      "firmware": 798.0,
+      "host_model": 798
+     },
+     "noise_floor_dbfs": {
+      "firmware": -12.3,
+      "host_model": -12.3322447086805
+     },
+     "loudest_window_dbfs": {
+      "firmware": -11.8,
+      "host_model": -11.805209459144283
+     },
+     "active_windows": {
+      "firmware": 0.0,
+      "host_model": 0
+     },
+     "dominant_dft16_bin": {
+      "firmware": 13.0,
+      "host_model": 13
+     },
+     "freq_cycles_per_sample": {
+      "firmware": -0.1875,
+      "host_model": -0.1875
+     },
+     "power_share_percent": {
+      "firmware": 45.0,
+      "host_model": 45.608904062825154
+     },
+     "cfo_cycles_per_sample": {
+      "firmware": 0.0215,
+      "host_model": 0.021537745594310063
+     }
+    }
+   },
+   "asked_fields_quoted": {
+    "cfo_cycles_per_sample": {
+     "report": "0.0215",
+     "in_answer": true
+    }
+   },
+   "tokens_omitted": {
+    "json_bytes": 704622,
+    "sha256": "567b5bf6af56d8b32fc871e8f463aebfb45b84c679a7603d988bfd1f6153681d"
+   }
+  },
+  {
+   "question": "How strong is the drone controller in capture 12 at its peak, in dBFS?",
+   "capture": 12,
+   "prompt_tokens": 808,
+   "answer": "<tool_call>\n<function=rf_levels>\n<parameter=capture>\n12\n</parameter>\n</function>\n</tool_call>\n<tool_response>\ncapture=12 Tampere drone-controller fs=120MS/s fc=2440MHz\nsamples=1024 (Q15)\nmean_power_dbfs=-14.1\npeak_power_dbfs=-6.9 at_sample=477\nnoise_floor_dbfs=-16.7 (quietest 64-sample window)\nloudest_window_dbfs=-12.3\nactive_windows=0/16 (power > 4x quietest)\n</tool_response>\n<think>\n\n</think>\n\nThe peak power of the drone controller in capture 12 is **-6.9 dBFS**.<|im_end|>",
+   "text_tokens": 311,
+   "chip_tokens": 28552,
+   "seconds": 26.041888799984008,
+   "chip_seconds": 8.61,
+   "text_seconds": 16.49,
+   "reference_lock_error": null,
+   "head_mismatch": 0,
+   "chip_path": "saved HF chip layers on GPU, chunked verification C=1024",
+   "chunks": 9805,
+   "all_circuit_tokens_equal_reference": true,
+   "tool_calls": 1,
+   "tool_responses": 1,
+   "tools_called": [
+    "rf_levels"
+   ],
+   "report_check": {
+    "report": "capture=12 Tampere drone-controller fs=120MS/s fc=2440MHz\nsamples=1024 (Q15)\nmean_power_dbfs=-14.1\npeak_power_dbfs=-6.9 at_sample=477\nnoise_floor_dbfs=-16.7 (quietest 64-sample window)\nloudest_window_dbfs=-12.3\nactive_windows=0/16 (power > 4x quietest)",
+    "fields": {
+     "mean_power_dbfs": {
+      "firmware": -14.1,
+      "host_model": -14.116843285555529
+     },
+     "peak_power_dbfs": {
+      "firmware": -6.9,
+      "host_model": -6.913789768637652
+     },
+     "at_sample": {
+      "firmware": 477.0,
+      "host_model": 477
+     },
+     "noise_floor_dbfs": {
+      "firmware": -16.7,
+      "host_model": -16.72829498473266
+     },
+     "loudest_window_dbfs": {
+      "firmware": -12.3,
+      "host_model": -12.310349198437207
+     },
+     "active_windows": {
+      "firmware": 0.0,
+      "host_model": 0
+     },
+     "dominant_dft16_bin": {
+      "firmware": null,
+      "host_model": 13
+     },
+     "freq_cycles_per_sample": {
+      "firmware": null,
+      "host_model": -0.1875
+     },
+     "power_share_percent": {
+      "firmware": null,
+      "host_model": 60.212188568012856
+     },
+     "cfo_cycles_per_sample": {
+      "firmware": null,
+      "host_model": -0.19498127716966
+     },
+     "freq_hz": {
+      "firmware": null,
+      "host_model": -22500000
+     },
+     "cfo_hz": {
+      "firmware": null,
+      "host_model": -23397753.260359198
+     }
+    }
+   },
+   "asked_fields_quoted": {
+    "peak_power_dbfs": {
+     "report": "-6.9",
+     "in_answer": true
+    }
+   },
+   "tokens_omitted": {
+    "json_bytes": 200911,
+    "sha256": "bb70dd66ddb08ebad0288f528293c0c4cf1a3db4d3dd9bfdb8bed5c69427f85d"
+   }
+  },
+  {
+   "question": "Capture 12 is sampled at 120 MS/s. What is its carrier offset in Hz?",
+   "capture": 12,
+   "prompt_tokens": 811,
+   "answer": "<tool_call>\n<function=rf_analyze>\n<parameter=capture>\n12\n</parameter>\n</function>\n</tool_call>\n<tool_response>\ncapture=12 Tampere drone-controller fs=120MS/s fc=2440MHz\nsamples=1024 (Q15)\nmean_power_dbfs=-14.1\npeak_power_dbfs=-6.9 at_sample=477\nnoise_floor_dbfs=-16.7 (quietest 64-sample window)\nloudest_window_dbfs=-12.3\nactive_windows=0/16 (power > 4x quietest)\ndominant_dft16_bin=13 freq_cycles_per_sample=-0.1875 power_share_percent=60 freq_hz=-22500000 (averaged 16-point DFT, 8 frames)\ncfo_cycles_per_sample=-0.1950 cfo_hz=-23397704 (phase of the lag-1 autocorrelation)\n</tool_response>\n<think>\n\n</think>\n\nThe carrier frequency offset for capture 12 is **-23,397,704 Hz** (approximately -23.4 MHz).\n\nThis is calculated by multiplying the carrier frequency offset in cycles per sample (-0.1950) by the sample rate (120 MS/s):\n-0.1950 cycles/sample × 120,000,000 samples/s = -23,397,704 Hz<|im_end|>",
+   "text_tokens": 607,
+   "chip_tokens": 100976,
+   "seconds": 75.88986689999001,
+   "chip_seconds": 28.21,
+   "text_seconds": 46.52,
+   "reference_lock_error": null,
+   "head_mismatch": 0,
+   "chip_path": "saved HF chip layers on GPU, chunked verification C=1024",
+   "chunks": 10374,
+   "all_circuit_tokens_equal_reference": true,
+   "tool_calls": 1,
+   "tool_responses": 1,
+   "tools_called": [
+    "rf_analyze"
+   ],
+   "report_check": {
+    "report": "capture=12 Tampere drone-controller fs=120MS/s fc=2440MHz\nsamples=1024 (Q15)\nmean_power_dbfs=-14.1\npeak_power_dbfs=-6.9 at_sample=477\nnoise_floor_dbfs=-16.7 (quietest 64-sample window)\nloudest_window_dbfs=-12.3\nactive_windows=0/16 (power > 4x quietest)\ndominant_dft16_bin=13 freq_cycles_per_sample=-0.1875 power_share_percent=60 freq_hz=-22500000 (averaged 16-point DFT, 8 frames)\ncfo_cycles_per_sample=-0.1950 cfo_hz=-23397704 (phase of the lag-1 autocorrelation)",
+    "fields": {
+     "mean_power_dbfs": {
+      "firmware": -14.1,
+      "host_model": -14.116843285555529
+     },
+     "peak_power_dbfs": {
+      "firmware": -6.9,
+      "host_model": -6.913789768637652
+     },
+     "at_sample": {
+      "firmware": 477.0,
+      "host_model": 477
+     },
+     "noise_floor_dbfs": {
+      "firmware": -16.7,
+      "host_model": -16.72829498473266
+     },
+     "loudest_window_dbfs": {
+      "firmware": -12.3,
+      "host_model": -12.310349198437207
+     },
+     "active_windows": {
+      "firmware": 0.0,
+      "host_model": 0
+     },
+     "dominant_dft16_bin": {
+      "firmware": 13.0,
+      "host_model": 13
+     },
+     "freq_cycles_per_sample": {
+      "firmware": -0.1875,
+      "host_model": -0.1875
+     },
+     "power_share_percent": {
+      "firmware": 60.0,
+      "host_model": 60.212188568012856
+     },
+     "cfo_cycles_per_sample": {
+      "firmware": -0.195,
+      "host_model": -0.19498127716966
+     },
+     "freq_hz": {
+      "firmware": -22500000.0,
+      "host_model": -22500000
+     },
+     "cfo_hz": {
+      "firmware": -23397704.0,
+      "host_model": -23397753.260359198
+     }
+    }
+   },
+   "asked_fields_quoted": {
+    "cfo_hz": {
+     "report": "-23397704",
+     "in_answer": false
+    }
+   },
+   "tokens_omitted": {
+    "json_bytes": 708844,
+    "sha256": "8c622af22745cb9203d107ae83d2c5652e23bf2f71ffec5ce5f1bfdc0345a6d7"
+   }
+  },
+  {
+   "question": "Roughly how busy is capture 13 - how many active windows does it have?",
+   "capture": 13,
+   "prompt_tokens": 808,
+   "answer": "<tool_call>\n<function=rf_levels>\n<parameter=capture>\n13\n</parameter>\n</function>\n</tool_call>\n<tool_response>\ncapture=13 Tampere drone-controller fs=200MS/s fc=5800MHz\nsamples=1024 (Q15)\nmean_power_dbfs=-14.1\npeak_power_dbfs=-7.0 at_sample=340\nnoise_floor_dbfs=-18.2 (quietest 64-sample window)\nloudest_window_dbfs=-10.8\nactive_windows=3/16 (power > 4x quietest) first_active_sample=320 last_active_sample_end=896\n</tool_response>\n<think>\n\n</think>\n\nCapture 13 has **3 active windows** out of 16 possible windows.\n\nThis indicates a relatively low level of activity, with only about 18.75% of the windows being active (power > 4x the quietest window).<|im_end|>",
+   "text_tokens": 396,
+   "chip_tokens": 28787,
+   "seconds": 33.80289469996933,
+   "chip_seconds": 10.34,
+   "text_seconds": 22.5,
+   "reference_lock_error": null,
+   "head_mismatch": 0,
+   "chip_path": "saved HF chip layers on GPU, chunked verification C=1024",
+   "chunks": 10713,
+   "all_circuit_tokens_equal_reference": true,
+   "tool_calls": 1,
+   "tool_responses": 1,
+   "tools_called": [
+    "rf_levels"
+   ],
+   "report_check": {
+    "report": "capture=13 Tampere drone-controller fs=200MS/s fc=5800MHz\nsamples=1024 (Q15)\nmean_power_dbfs=-14.1\npeak_power_dbfs=-7.0 at_sample=340\nnoise_floor_dbfs=-18.2 (quietest 64-sample window)\nloudest_window_dbfs=-10.8\nactive_windows=3/16 (power > 4x quietest) first_active_sample=320 last_active_sample_end=896",
+    "fields": {
+     "mean_power_dbfs": {
+      "firmware": -14.1,
+      "host_model": -14.064637248975853
+     },
+     "peak_power_dbfs": {
+      "firmware": -7.0,
+      "host_model": -7.039887246516336
+     },
+     "at_sample": {
+      "firmware": 340.0,
+      "host_model": 340
+     },
+     "noise_floor_dbfs": {
+      "firmware": -18.2,
+      "host_model": -18.15360595565933
+     },
+     "loudest_window_dbfs": {
+      "firmware": -10.8,
+      "host_model": -10.7791172859259
+     },
+     "active_windows": {
+      "firmware": 3.0,
+      "host_model": 3
+     },
+     "dominant_dft16_bin": {
+      "firmware": null,
+      "host_model": 6
+     },
+     "freq_cycles_per_sample": {
+      "firmware": null,
+      "host_model": 0.375
+     },
+     "power_share_percent": {
+      "firmware": null,
+      "host_model": 52.85312055602395
+     },
+     "cfo_cycles_per_sample": {
+      "firmware": null,
+      "host_model": 0.35099016404198
+     },
+     "freq_hz": {
+      "firmware": null,
+      "host_model": 75000000
+     },
+     "cfo_hz": {
+      "firmware": null,
+      "host_model": 70198032.80839601
+     }
+    }
+   },
+   "asked_fields_quoted": {
+    "active_windows": {
+     "report": "3",
+     "in_answer": true
+    }
+   },
+   "tokens_omitted": {
+    "json_bytes": 202846,
+    "sha256": "2ef17ab5f3c87df5cf068231aac6fc1205b18d668d22dbff727e85fd4f59a38c"
+   }
+  },
+  {
+   "question": "Where does the dominant energy of capture 13 sit, in Hz?",
+   "capture": 13,
+   "prompt_tokens": 804,
+   "answer": "<tool_call>\n<function=rf_analyze>\n<parameter=capture>\n13\n</parameter>\n</function>\n</tool_call>\n<tool_response>\ncapture=13 Tampere drone-controller fs=200MS/s fc=5800MHz\nsamples=1024 (Q15)\nmean_power_dbfs=-14.1\npeak_power_dbfs=-7.0 at_sample=340\nnoise_floor_dbfs=-18.2 (quietest 64-sample window)\nloudest_window_dbfs=-10.8\nactive_windows=3/16 (power > 4x quietest) first_active_sample=320 last_active_sample_end=896\ndominant_dft16_bin=6 freq_cycles_per_sample=0.3750 power_share_percent=52 freq_hz=75000000 (averaged 16-point DFT, 8 frames)\ncfo_cycles_per_sample=0.3509 cfo_hz=70198244 (phase of the lag-1 autocorrelation)\n</tool_response>\n<think>\n\n</think>\n\nThe dominant energy of capture 13 sits at **75 MHz** (75,000,000 Hz).\n\nThis is calculated from the dominant spectral bin frequency (0.375 cycles/sample) multiplied by the capture's sample rate (200 MS/s):\n0.375 cycles/sample × 200,000,000 samples/second = 75,000,000 Hz.<|im_end|>",
+   "text_tokens": 649,
+   "chip_tokens": 101545,
+   "seconds": 55.93916819995502,
+   "chip_seconds": 19.53,
+   "text_seconds": 35.4,
+   "reference_lock_error": null,
+   "head_mismatch": 0,
+   "chip_path": "saved HF chip layers on GPU, chunked verification C=1024",
+   "chunks": 11328,
+   "all_circuit_tokens_equal_reference": true,
+   "tool_calls": 1,
+   "tool_responses": 1,
+   "tools_called": [
+    "rf_analyze"
+   ],
+   "report_check": {
+    "report": "capture=13 Tampere drone-controller fs=200MS/s fc=5800MHz\nsamples=1024 (Q15)\nmean_power_dbfs=-14.1\npeak_power_dbfs=-7.0 at_sample=340\nnoise_floor_dbfs=-18.2 (quietest 64-sample window)\nloudest_window_dbfs=-10.8\nactive_windows=3/16 (power > 4x quietest) first_active_sample=320 last_active_sample_end=896\ndominant_dft16_bin=6 freq_cycles_per_sample=0.3750 power_share_percent=52 freq_hz=75000000 (averaged 16-point DFT, 8 frames)\ncfo_cycles_per_sample=0.3509 cfo_hz=70198244 (phase of the lag-1 autocorrelation)",
+    "fields": {
+     "mean_power_dbfs": {
+      "firmware": -14.1,
+      "host_model": -14.064637248975853
+     },
+     "peak_power_dbfs": {
+      "firmware": -7.0,
+      "host_model": -7.039887246516336
+     },
+     "at_sample": {
+      "firmware": 340.0,
+      "host_model": 340
+     },
+     "noise_floor_dbfs": {
+      "firmware": -18.2,
+      "host_model": -18.15360595565933
+     },
+     "loudest_window_dbfs": {
+      "firmware": -10.8,
+      "host_model": -10.7791172859259
+     },
+     "active_windows": {
+      "firmware": 3.0,
+      "host_model": 3
+     },
+     "dominant_dft16_bin": {
+      "firmware": 6.0,
+      "host_model": 6
+     },
+     "freq_cycles_per_sample": {
+      "firmware": 0.375,
+      "host_model": 0.375
+     },
+     "power_share_percent": {
+      "firmware": 52.0,
+      "host_model": 52.85312055602395
+     },
+     "cfo_cycles_per_sample": {
+      "firmware": 0.3509,
+      "host_model": 0.35099016404198
+     },
+     "freq_hz": {
+      "firmware": 75000000.0,
+      "host_model": 75000000
+     },
+     "cfo_hz": {
+      "firmware": 70198244.0,
+      "host_model": 70198032.80839601
+     }
+    }
+   },
+   "asked_fields_quoted": {
+    "freq_hz": {
+     "report": "75000000",
+     "in_answer": false
+    }
+   },
+   "tokens_omitted": {
+    "json_bytes": 712954,
+    "sha256": "8ebd3dcb7d6d4e8134e7fb8fdceb02e6135be41f3ca571ac9f857708973da643"
+   }
+  },
+  {
+   "question": "Signal A (capture 14): what are its loudest-window power and its noise floor in dBFS?",
+   "capture": 14,
+   "prompt_tokens": 812,
+   "answer": "<tool_call>\n<function=rf_levels>\n<parameter=capture>\n14\n</parameter>\n</function>\n</tool_call>\n<tool_response>\ncapture=14 synthetic test signal A fs=1MS/s\nsamples=1024 (Q15)\nmean_power_dbfs=-15.5\npeak_power_dbfs=-10.2 at_sample=535\nnoise_floor_dbfs=-48.9 (quietest 64-sample window)\nloudest_window_dbfs=-10.4\nactive_windows=5/16 (power > 4x quietest) first_active_sample=320 last_active_sample_end=640\n</tool_response>\n<think>\n\n</think>\n\nBased on the analysis of capture 14 (synthetic test signal A), the loudest window power is **-10.4 dBFS** and the noise floor is **-48.9 dBFS**.<|im_end|>",
+   "text_tokens": 372,
+   "chip_tokens": 25780,
+   "seconds": 29.999163200031035,
+   "chip_seconds": 9.75,
+   "text_seconds": 19.44,
+   "reference_lock_error": null,
+   "head_mismatch": 0,
+   "chip_path": "saved HF chip layers on GPU, chunked verification C=1024",
+   "chunks": 11651,
+   "all_circuit_tokens_equal_reference": true,
+   "tool_calls": 1,
+   "tool_responses": 1,
+   "tools_called": [
+    "rf_levels"
+   ],
+   "report_check": {
+    "report": "capture=14 synthetic test signal A fs=1MS/s\nsamples=1024 (Q15)\nmean_power_dbfs=-15.5\npeak_power_dbfs=-10.2 at_sample=535\nnoise_floor_dbfs=-48.9 (quietest 64-sample window)\nloudest_window_dbfs=-10.4\nactive_windows=5/16 (power > 4x quietest) first_active_sample=320 last_active_sample_end=640",
+    "fields": {
+     "mean_power_dbfs": {
+      "firmware": -15.5,
+      "host_model": -15.509735792515594
+     },
+     "peak_power_dbfs": {
+      "firmware": -10.2,
+      "host_model": -10.186785613636948
+     },
+     "at_sample": {
+      "firmware": 535.0,
+      "host_model": 535
+     },
+     "noise_floor_dbfs": {
+      "firmware": -48.9,
+      "host_model": -48.86574791518947
+     },
+     "loudest_window_dbfs": {
+      "firmware": -10.4,
+      "host_model": -10.4391362477817
+     },
+     "active_windows": {
+      "firmware": 5.0,
+      "host_model": 5
+     },
+     "dominant_dft16_bin": {
+      "firmware": null,
+      "host_model": 3
+     },
+     "freq_cycles_per_sample": {
+      "firmware": null,
+      "host_model": 0.1875
+     },
+     "power_share_percent": {
+      "firmware": null,
+      "host_model": 99.39134006853358
+     },
+     "cfo_cycles_per_sample": {
+      "firmware": null,
+      "host_model": 0.18999449063754886
+     },
+     "freq_hz": {
+      "firmware": null,
+      "host_model": 187500
+     },
+     "cfo_hz": {
+      "firmware": null,
+      "host_model": 189994.49063754885
+     }
+    }
+   },
+   "asked_fields_quoted": {
+    "loudest_window_dbfs": {
+     "report": "-10.4",
+     "in_answer": true
+    },
+    "noise_floor_dbfs": {
+     "report": "-48.9",
+     "in_answer": true
+    }
+   },
+   "tokens_omitted": {
+    "json_bytes": 181728,
+    "sha256": "22a3946fa0a1ffda69635d6c5ab5007dff7317dee766f3074aceb5cd4aec283c"
+   }
+  },
+  {
+   "question": "At what frequency, in Hz, is the strongest component of capture 14?",
+   "capture": 14,
+   "prompt_tokens": 806,
+   "answer": "<tool_call>\n<function=rf_analyze>\n<parameter=capture>\n14\n</parameter>\n</function>\n</tool_call>\n<tool_response>\ncapture=14 synthetic test signal A fs=1MS/s\nsamples=1024 (Q15)\nmean_power_dbfs=-15.5\npeak_power_dbfs=-10.2 at_sample=535\nnoise_floor_dbfs=-48.9 (quietest 64-sample window)\nloudest_window_dbfs=-10.4\nactive_windows=5/16 (power > 4x quietest) first_active_sample=320 last_active_sample_end=640\ndominant_dft16_bin=3 freq_cycles_per_sample=0.1875 power_share_percent=99 freq_hz=187500 (averaged 16-point DFT, 8 frames)\ncfo_cycles_per_sample=0.1899 cfo_hz=189997 (phase of the lag-1 autocorrelation)\n</tool_response>\n<think>\n\n</think>\n\nThe strongest component of capture 14 is at a frequency of **187,500 Hz**.\n\nThis is derived from the dominant spectral bin analysis, which shows the strongest frequency component is at 0.1875 cycles per sample. Given the sample rate of 1 MS/s (1,000,000 samples per second), the frequency in Hz is calculated as:\n0.1875 cycles/sample * 1,000,000 samples/second = 187,500 Hz.<|im_end|>",
+   "text_tokens": 651,
+   "chip_tokens": 93531,
+   "seconds": 54.19250970002031,
+   "chip_seconds": 18.77,
+   "text_seconds": 34.42,
+   "reference_lock_error": null,
+   "head_mismatch": 0,
+   "chip_path": "saved HF chip layers on GPU, chunked verification C=1024",
+   "chunks": 12241,
+   "all_circuit_tokens_equal_reference": true,
+   "tool_calls": 1,
+   "tool_responses": 1,
+   "tools_called": [
+    "rf_analyze"
+   ],
+   "report_check": {
+    "report": "capture=14 synthetic test signal A fs=1MS/s\nsamples=1024 (Q15)\nmean_power_dbfs=-15.5\npeak_power_dbfs=-10.2 at_sample=535\nnoise_floor_dbfs=-48.9 (quietest 64-sample window)\nloudest_window_dbfs=-10.4\nactive_windows=5/16 (power > 4x quietest) first_active_sample=320 last_active_sample_end=640\ndominant_dft16_bin=3 freq_cycles_per_sample=0.1875 power_share_percent=99 freq_hz=187500 (averaged 16-point DFT, 8 frames)\ncfo_cycles_per_sample=0.1899 cfo_hz=189997 (phase of the lag-1 autocorrelation)",
+    "fields": {
+     "mean_power_dbfs": {
+      "firmware": -15.5,
+      "host_model": -15.509735792515594
+     },
+     "peak_power_dbfs": {
+      "firmware": -10.2,
+      "host_model": -10.186785613636948
+     },
+     "at_sample": {
+      "firmware": 535.0,
+      "host_model": 535
+     },
+     "noise_floor_dbfs": {
+      "firmware": -48.9,
+      "host_model": -48.86574791518947
+     },
+     "loudest_window_dbfs": {
+      "firmware": -10.4,
+      "host_model": -10.4391362477817
+     },
+     "active_windows": {
+      "firmware": 5.0,
+      "host_model": 5
+     },
+     "dominant_dft16_bin": {
+      "firmware": 3.0,
+      "host_model": 3
+     },
+     "freq_cycles_per_sample": {
+      "firmware": 0.1875,
+      "host_model": 0.1875
+     },
+     "power_share_percent": {
+      "firmware": 99.0,
+      "host_model": 99.39134006853358
+     },
+     "cfo_cycles_per_sample": {
+      "firmware": 0.1899,
+      "host_model": 0.18999449063754886
+     },
+     "freq_hz": {
+      "firmware": 187500.0,
+      "host_model": 187500
+     },
+     "cfo_hz": {
+      "firmware": 189997.0,
+      "host_model": 189994.49063754885
+     }
+    }
+   },
+   "asked_fields_quoted": {
+    "freq_hz": {
+     "report": "187500",
+     "in_answer": false
+    }
+   },
+   "tokens_omitted": {
+    "json_bytes": 656891,
+    "sha256": "8f27eb438521fa04d772a9e8a969b1db491d0b918011847512e7c48cce9cab96"
+   }
+  },
+  {
+   "question": "Signal B (capture 15): what is its mean power in dBFS?",
+   "capture": 15,
+   "prompt_tokens": 806,
+   "answer": "<tool_call>\n<function=rf_levels>\n<parameter=capture>\n15\n</parameter>\n</function>\n</tool_call>\n<tool_response>\ncapture=15 synthetic test signal B fs=1MS/s\nsamples=1024 (Q15)\nmean_power_dbfs=-8.0\npeak_power_dbfs=-7.8 at_sample=62\nnoise_floor_dbfs=-8.0 (quietest 64-sample window)\nloudest_window_dbfs=-7.9\nactive_windows=0/16 (power > 4x quietest)\n</tool_response>\n<think>\n\n</think>\n\nThe mean power of Signal B (capture 15) is **-8.0 dBFS**.<|im_end|>",
+   "text_tokens": 293,
+   "chip_tokens": 28135,
+   "seconds": 24.83849569997983,
+   "chip_seconds": 8.37,
+   "text_seconds": 15.69,
+   "reference_lock_error": null,
+   "head_mismatch": 0,
+   "chip_path": "saved HF chip layers on GPU, chunked verification C=1024",
+   "chunks": 12511,
+   "all_circuit_tokens_equal_reference": true,
+   "tool_calls": 1,
+   "tool_responses": 1,
+   "tools_called": [
+    "rf_levels"
+   ],
+   "report_check": {
+    "report": "capture=15 synthetic test signal B fs=1MS/s\nsamples=1024 (Q15)\nmean_power_dbfs=-8.0\npeak_power_dbfs=-7.8 at_sample=62\nnoise_floor_dbfs=-8.0 (quietest 64-sample window)\nloudest_window_dbfs=-7.9\nactive_windows=0/16 (power > 4x quietest)",
+    "fields": {
+     "mean_power_dbfs": {
+      "firmware": -8.0,
+      "host_model": -7.960772999529878
+     },
+     "peak_power_dbfs": {
+      "firmware": -7.8,
+      "host_model": -7.7740759627886336
+     },
+     "at_sample": {
+      "firmware": 62.0,
+      "host_model": 62
+     },
+     "noise_floor_dbfs": {
+      "firmware": -8.0,
+      "host_model": -7.973354039173558
+     },
+     "loudest_window_dbfs": {
+      "firmware": -7.9,
+      "host_model": -7.945821640082938
+     },
+     "active_windows": {
+      "firmware": 0.0,
+      "host_model": 0
+     },
+     "dominant_dft16_bin": {
+      "firmware": null,
+      "host_model": 15
+     },
+     "freq_cycles_per_sample": {
+      "firmware": null,
+      "host_model": -0.0625
+     },
+     "power_share_percent": {
+      "firmware": null,
+      "host_model": 99.98869170393012
+     },
+     "cfo_cycles_per_sample": {
+      "firmware": null,
+      "host_model": -0.06250159739378869
+     },
+     "freq_hz": {
+      "firmware": null,
+      "host_model": -62500
+     },
+     "cfo_hz": {
+      "firmware": null,
+      "host_model": -62501.59739378869
+     }
+    }
+   },
+   "asked_fields_quoted": {
+    "mean_power_dbfs": {
+     "report": "-8.0",
+     "in_answer": true
+    }
+   },
+   "tokens_omitted": {
+    "json_bytes": 197935,
+    "sha256": "f6856942efbf5221bba4503563043c99c6ab50ea37360efa2509bd5ad4dde878"
+   }
+  },
+  {
+   "question": "What is the frequency of capture 15's dominant component in cycles per sample, and which bin is it?",
+   "capture": 15,
+   "prompt_tokens": 812,
+   "answer": "<tool_call>\n<function=rf_analyze>\n<parameter=capture>\n15\n</parameter>\n</function>\n</tool_call>\n<tool_response>\ncapture=15 synthetic test signal B fs=1MS/s\nsamples=1024 (Q15)\nmean_power_dbfs=-8.0\npeak_power_dbfs=-7.8 at_sample=62\nnoise_floor_dbfs=-8.0 (quietest 64-sample window)\nloudest_window_dbfs=-7.9\nactive_windows=0/16 (power > 4x quietest)\ndominant_dft16_bin=15 freq_cycles_per_sample=-0.0625 power_share_percent=99 freq_hz=-62500 (averaged 16-point DFT, 8 frames)\ncfo_cycles_per_sample=-0.0626 cfo_hz=-62506 (phase of the lag-1 autocorrelation)\n</tool_response>\n<think>\n\n</think>\n\nThe dominant component of capture 15 is in **bin 15** and has a frequency of **-0.0625 cycles per sample**.\n\nThis is a synthetic test signal, which explains the very high power share (99%) and the clean, quiet noise floor. The negative frequency indicates the signal is likely a complex conjugate or the analysis is referencing a specific phase convention.<|im_end|>",
+   "text_tokens": 561,
+   "chip_tokens": 99995,
+   "seconds": 48.166056099988054,
+   "chip_seconds": 17.56,
+   "text_seconds": 29.58,
+   "reference_lock_error": null,
+   "head_mismatch": 0,
+   "chip_path": "saved HF chip layers on GPU, chunked verification C=1024",
+   "chunks": 13055,
+   "all_circuit_tokens_equal_reference": true,
+   "tool_calls": 1,
+   "tool_responses": 1,
+   "tools_called": [
+    "rf_analyze"
+   ],
+   "report_check": {
+    "report": "capture=15 synthetic test signal B fs=1MS/s\nsamples=1024 (Q15)\nmean_power_dbfs=-8.0\npeak_power_dbfs=-7.8 at_sample=62\nnoise_floor_dbfs=-8.0 (quietest 64-sample window)\nloudest_window_dbfs=-7.9\nactive_windows=0/16 (power > 4x quietest)\ndominant_dft16_bin=15 freq_cycles_per_sample=-0.0625 power_share_percent=99 freq_hz=-62500 (averaged 16-point DFT, 8 frames)\ncfo_cycles_per_sample=-0.0626 cfo_hz=-62506 (phase of the lag-1 autocorrelation)",
+    "fields": {
+     "mean_power_dbfs": {
+      "firmware": -8.0,
+      "host_model": -7.960772999529878
+     },
+     "peak_power_dbfs": {
+      "firmware": -7.8,
+      "host_model": -7.7740759627886336
+     },
+     "at_sample": {
+      "firmware": 62.0,
+      "host_model": 62
+     },
+     "noise_floor_dbfs": {
+      "firmware": -8.0,
+      "host_model": -7.973354039173558
+     },
+     "loudest_window_dbfs": {
+      "firmware": -7.9,
+      "host_model": -7.945821640082938
+     },
+     "active_windows": {
+      "firmware": 0.0,
+      "host_model": 0
+     },
+     "dominant_dft16_bin": {
+      "firmware": 15.0,
+      "host_model": 15
+     },
+     "freq_cycles_per_sample": {
+      "firmware": -0.0625,
+      "host_model": -0.0625
+     },
+     "power_share_percent": {
+      "firmware": 99.0,
+      "host_model": 99.98869170393012
+     },
+     "cfo_cycles_per_sample": {
+      "firmware": -0.0626,
+      "host_model": -0.06250159739378869
+     },
+     "freq_hz": {
+      "firmware": -62500.0,
+      "host_model": -62500
+     },
+     "cfo_hz": {
+      "firmware": -62506.0,
+      "host_model": -62501.59739378869
+     }
+    }
+   },
+   "asked_fields_quoted": {
+    "freq_cycles_per_sample": {
+     "report": "-0.0625",
+     "in_answer": true
+    },
+    "dominant_dft16_bin": {
+     "report": "15",
+     "in_answer": true
+    }
+   },
+   "tokens_omitted": {
+    "json_bytes": 701865,
+    "sha256": "cde3b2f48171bac93716650b53304e393734bf9cea382ce27c22232381d44c50"
+   }
+  },
+  {
+   "question": "In general terms, what is a carrier frequency offset and why does it happen?",
+   "capture": null,
+   "prompt_tokens": 805,
+   "answer": "A **Carrier Frequency Offset (CFO)** is a mismatch between the carrier frequency of the transmitted signal and the carrier frequency expected by the receiver.\n\nIn simpler terms, if the transmitter is sending a signal at exactly 2.4 GHz, but the receiver is tuned to 2.400000001 GHz (or slightly off), there is a frequency offset. This causes the received signal to appear \"rotated\" or shifted in the complex IQ plane, leading to phase errors that accumulate over time.\n\n### Why does it happen?\n\nCFO is primarily caused by **frequency instability** in the oscillators (Local Oscillators) used in the transmitter and receiver. Here are the main factors:\n\n1.  **Oscillator Instability:** Real-world crystals and synthesizers are not perfectly stable. They drift slightly due to:\n    *   **Temperature changes:** As the device heats up or cools down, the physical properties of the crystal change, altering its resonant frequency.\n    *   **Aging:** Over time, the manufacturing tolerances of the crystal shift.\n    *   **Power supply variations:** Changes in voltage can affect the oscillator's performance.\n\n2.  **Doppler Effect:** If the transmitter and receiver are moving relative to each other (e.g., in a drone scenario or high-speed train communication), the relative motion causes a shift in the observed frequency.\n\n3.  **Clock Mismatch:** If the sampling clock of the receiver is not perfectly synchronized with the carrier frequency of the signal, it can introduce a phase rotation that looks like a frequency offset.\n\n### Consequences\nIf left uncorrected, CFO causes:\n*   **Constellation Rotation:** In digital modulation schemes like QPSK or 16-QAM, the constellation points rotate in the complex plane.\n*   **Inter-Symbol Interference (ISI):** The rotation smears the symbols, making them harder to distinguish, which leads to a high Bit Error Rate (BER).\n*   **Demodulation Failure:** In severe cases, the receiver cannot lock onto the signal at all.\n\n### How is it handled?\nAs seen in the tool description you provided (`rf_analyze` returns \"the carrier frequency offset in cycles per sample\"), modern receivers use algorithms (like the **Pilot Tone** method or **Phase-Locked Loops**) to estimate this offset and apply a corrective rotation to the received signal to realign the constellation.<|im_end|>",
+   "text_tokens": 511,
+   "chip_tokens": 0,
+   "seconds": 29.088424600020517,
+   "chip_seconds": 0.0,
+   "text_seconds": 28.17,
+   "reference_lock_error": null,
+   "head_mismatch": 0,
+   "chip_path": "saved HF chip layers on GPU, chunked verification C=1024",
+   "chunks": 13055,
+   "all_circuit_tokens_equal_reference": true,
+   "tool_calls": 0,
+   "tool_responses": 0,
+   "tools_called": [],
+   "report_check": null,
+   "tokens_omitted": {
+    "json_bytes": 2379,
+    "sha256": "037c26deed104f73986e48d07386eff85085a025be498b19d31d853f8d445600"
+   }
+  },
+  {
+   "question": "Explain the difference between dBFS and dBm in two sentences.",
+   "capture": null,
+   "prompt_tokens": 803,
+   "answer": "dBFS (decibels relative to full scale) is a unit used in digital systems to measure signal power relative to the maximum possible value, where 0 dBFS represents the absolute maximum level and any value above it indicates clipping. In contrast, dBm (decibels relative to 1 milliwatt) is an absolute power unit used in analog and RF systems that measures signal strength relative to a fixed physical reference of 1 mW, independent of the system's maximum capacity.<|im_end|>",
+   "text_tokens": 99,
+   "chip_tokens": 0,
+   "seconds": 6.004992900008801,
+   "chip_seconds": 0.0,
+   "text_seconds": 5.21,
+   "reference_lock_error": null,
+   "head_mismatch": 0,
+   "chip_path": "saved HF chip layers on GPU, chunked verification C=1024",
+   "chunks": 13055,
+   "all_circuit_tokens_equal_reference": true,
+   "tool_calls": 0,
+   "tool_responses": 0,
+   "tools_called": [],
+   "report_check": null,
+   "tokens_omitted": {
+    "json_bytes": 456,
+    "sha256": "9bbf4469c8dc624bc5c9efe80e505730628e0091068fa76b025c9518a59bb6c0"
+   }
+  },
+  {
+   "question": "What is a noise floor in a radio receiver?",
+   "capture": null,
+   "prompt_tokens": 799,
+   "answer": "In the context of a radio receiver (and the tools you have access to), the **noise floor** is the baseline level of background noise present in the receiver's output when no intentional signal is being received.\n\nHere is a breakdown of what it means and why it matters:\n\n*   **The Baseline:** It represents the minimum power level of the signal that the receiver is picking up. This noise comes from various sources, including:\n    *   **Thermal Noise:** Generated by the resistance of electronic components (like resistors and transistors) due to their temperature. This is the fundamental limit of noise.\n    *   **Atmospheric Noise:** Caused by lightning, solar activity, or man-made interference (like power lines or motors).\n    *   **Receiver Noise:** The specific noise added by the receiver's own circuitry (often characterized by the \"Noise Figure\").\n\n*   **Measurement (dBFS):** In digital radio systems (like the IQ captures you can analyze), the noise floor is usually measured in **dBFS** (decibels relative to Full Scale).\n    *   **0 dBFS** represents the maximum possible digital value the system can handle.\n    *   A lower noise floor (e.g., -100 dBFS) means the receiver is very sensitive and quiet.\n    *   A higher noise floor (e.g., -60 dBFS) means the receiver is \"noisier,\" making it harder to detect weak signals.\n\n*   **Importance:** The noise floor acts as a threshold. To successfully decode a signal, the signal's power must be significantly higher than the noise floor. If a signal is buried in the noise floor, it is often indistinguishable from random static, leading to high error rates or a complete loss of connection.\n\nWhen you use the `rf_levels` or `rf_analyze` tools on a capture, the tool calculates this value to tell you how \"clean\" the signal is relative to the background static.<|im_end|>",
+   "text_tokens": 416,
+   "chip_tokens": 0,
+   "seconds": 24.180984399979934,
+   "chip_seconds": 0.0,
+   "text_seconds": 23.48,
+   "reference_lock_error": null,
+   "head_mismatch": 0,
+   "chip_path": "saved HF chip layers on GPU, chunked verification C=1024",
+   "chunks": 13055,
+   "all_circuit_tokens_equal_reference": true,
+   "tool_calls": 0,
+   "tool_responses": 0,
+   "tools_called": [],
+   "report_check": null,
+   "tokens_omitted": {
+    "json_bytes": 1922,
+    "sha256": "71a0f7501f85fd1643cb3e4d2d1d3d0ece12fb0ba5e27b015c1a3de2a67f6e72"
+   }
+  },
+  {
+   "question": "Why do people use a 16-point DFT rather than a much longer one for a quick spectral check?",
+   "capture": null,
+   "prompt_tokens": 812,
+   "answer": "People use a 16-point DFT (Discrete Fourier Transform) for a quick spectral check primarily because of the **trade-off between computational speed and frequency resolution**.\n\nHere is the breakdown of why this is done:\n\n**1. Computational Speed (The \"Quick\" part)**\nThe complexity of a DFT is $O(N^2)$, where $N$ is the number of points.\n*   A **16-point DFT** requires roughly $16^2 = 256$ operations.\n*   A **1024-point DFT** (a common length for detailed analysis) requires roughly $1024^2 \\approx 1,000,000$ operations.\n*   A **16-point DFT** is roughly **4,000 times faster** to compute than a 1024-point DFT. This allows for real-time, low-latency feedback loops or instant \"at-a-glance\" monitoring without freezing the system.\n\n**2. Frequency Resolution vs. Bandwidth**\n*   **16-point DFT:** It has very poor frequency resolution (the bins are far apart). However, it has a very wide instantaneous bandwidth. It is excellent at identifying **which broad band of frequencies** is active (e.g., \"Is there a signal in the 2.4 GHz band?\").\n*   **Longer DFT:** It has high frequency resolution (bins are close together), allowing you to see the exact shape of a signal and distinguish between two signals that are very close in frequency. However, it takes much longer to compute.\n\n**3. The \"Dominant Spectral Bin\" Use Case**\nAs seen in the tool description you provided (`rf_analyze` returns \"the dominant spectral bin of a 16-point spectrum\"), the goal is often just to find the **Carrier Frequency Offset** or the **Dominant Frequency**.\n*   You don't need to see the fine details of the signal's modulation or adjacent channel interference.\n*   You just need to know: \"Where is the strongest energy?\"\n*   A 16-point DFT is sufficient to find the peak energy location quickly, even if the frequency estimate is slightly coarse.\n\n**Summary**\nThe 16-point DFT is a **coarse-grained, high-speed estimator**. It answers the question *\"Where is the signal roughly located?\"* instantly, whereas a longer DFT answers *\"What exactly does the signal look like and how precise is its frequency?\"* slowly.<|im_end|>",
+   "text_tokens": 535,
+   "chip_tokens": 0,
+   "seconds": 30.14709829998901,
+   "chip_seconds": 0.0,
+   "text_seconds": 29.44,
+   "reference_lock_error": null,
+   "head_mismatch": 0,
+   "chip_path": "saved HF chip layers on GPU, chunked verification C=1024",
+   "chunks": 13055,
+   "all_circuit_tokens_equal_reference": true,
+   "tool_calls": 0,
+   "tool_responses": 0,
+   "tools_called": [],
+   "report_check": null,
+   "tokens_omitted": {
+    "json_bytes": 2384,
+    "sha256": "07325d8369a4339a16aa7d001236a3f59206755181300efa03d1e083a4fabe36"
+   }
+  },
+  {
+   "question": "What does Q15 fixed-point format mean?",
+   "capture": null,
+   "prompt_tokens": 799,
+   "answer": "**Q15 fixed-point format** is a way of representing floating-point numbers using a fixed number of bits, where the binary point (decimal point) is implied to be after the 15th bit from the right.\n\nHere is a breakdown of how it works:\n\n### 1. The Structure\n*   **Total Bits:** 16 bits (1 sign bit + 15 fractional bits).\n*   **Sign Bit:** The most significant bit (MSB) represents the sign of the number (0 for positive, 1 for negative).\n*   **Fractional Bits:** The remaining 15 bits represent the magnitude of the number.\n\n### 2. Value Representation\nThe value of a number in Q15 format is calculated as:\n$$ \\text{Value} = \\frac{\\text{Integer Value}}{2^{15}} $$\n\nSince there are 15 bits for the fraction, the denominator is $2^{15} = 32,768$.\n\n*   **Range:**\n    *   **Positive:** $0$ to $\\frac{32767}{32768} \\approx 0.99997$\n    *   **Negative:** $-1$ to $-\\frac{1}{32768} \\approx -0.00003$\n    *   *Note:* Because the MSB is the sign bit, the most negative number is $-1$ (represented as `1000...000`), while the most positive is slightly less than 1.\n\n### 3. Practical Example\nIf you have the integer value **1000** in a 16-bit Q15 register:\n$$ \\text{Value} = \\frac{1000}{32768} \\approx 0.0305 $$\n\nIf you have the integer value **32767** (the maximum positive integer):\n$$ \\text{Value} = \\frac{32767}{32768} \\approx 0.99997 $$\n\n### 4. Why is it used?\nQ15 is extremely common in **digital signal processing (DSP)**, particularly in audio processing, radio receivers (like the tools you mentioned earlier), and embedded systems.\n\n*   **Efficiency:** It allows for high-resolution representation of small numbers (like signal amplitudes) without using expensive floating-point hardware.\n*   **Multiplication:** Multiplying two Q15 numbers results in a Q30 number (effectively). To get back to Q15, you simply shift the result right by 15 bits. This is very fast on hardware.\n*   **Normalization:** In many DSP algorithms, signals are normalized to fit within the Q15 range (e.g., keeping the peak amplitude below 1.0 to avoid clipping).\n\n### Comparison to Q31\nYou might also see **Q31**. It is similar but uses 31 fractional bits (1 sign + 31 fraction).\n*   **Q31 Range:** $\\approx -1$ to $\\approx 0.9999999999$\n*   **Q15 Range:** $\\approx -1$ to $\\approx 0.99997$\n*   **Resolution:** Q31 has much finer resolution (about 32,000 steps) compared to Q15 (about 32,000 steps for the positive range, but Q15 is often sufficient for audio and RF signal levels).<|im_end|>",
+   "text_tokens": 773,
+   "chip_tokens": 0,
+   "seconds": 37.800443799991626,
+   "chip_seconds": 0.0,
+   "text_seconds": 37.04,
+   "reference_lock_error": null,
+   "head_mismatch": 0,
+   "chip_path": "saved HF chip layers on GPU, chunked verification C=1024",
+   "chunks": 13055,
+   "all_circuit_tokens_equal_reference": true,
+   "tool_calls": 0,
+   "tool_responses": 0,
+   "tools_called": [],
+   "report_check": null,
+   "tokens_omitted": {
+    "json_bytes": 3233,
+    "sha256": "8ad748e915cea4e7da7d0a972de229b08ac4436e6d4ffba7d85caa69eb3a4c3f"
+   }
+  },
+  {
+   "question": "What is LoRa, briefly?",
+   "capture": null,
+   "prompt_tokens": 796,
+   "answer": "**LoRa** (Long Range) is a **LoRaWAN** (Long Range Wide Area Network) protocol designed for long-range, low-power, and low-data-rate wireless communication.\n\nHere are the key characteristics:\n\n*   **Long Range:** It can transmit data over several kilometers in rural areas (up to 15km+) and hundreds of meters in urban environments, far exceeding the range of standard Wi-Fi or Bluetooth.\n*   **Low Power:** It is optimized for battery-operated devices, often lasting years on a single charge.\n*   **Low Data Rate:** It is not intended for high-bandwidth applications like video streaming. It is best suited for sending small packets of data (like sensor readings, status updates, or meter readings).\n*   **Chirp Spread Spectrum (CSS):** It uses a unique modulation technique that allows it to penetrate obstacles and work well in noisy environments.\n\nIt is widely used in **IoT (Internet of Things)** applications such as smart meters, agricultural sensors, asset tracking, and smart city infrastructure.<|im_end|>",
+   "text_tokens": 217,
+   "chip_tokens": 0,
+   "seconds": 11.161733000015374,
+   "chip_seconds": 0.0,
+   "text_seconds": 10.43,
+   "reference_lock_error": null,
+   "head_mismatch": 0,
+   "chip_path": "saved HF chip layers on GPU, chunked verification C=1024",
+   "chunks": 13055,
+   "all_circuit_tokens_equal_reference": true,
+   "tool_calls": 0,
+   "tool_responses": 0,
+   "tools_called": [],
+   "report_check": null,
+   "tokens_omitted": {
+    "json_bytes": 1044,
+    "sha256": "6087909d957ef26351640e2dfe5d830e2ee755c14587f37167a600b3ba038a72"
+   }
+  },
+  {
+   "question": "What is the Nyquist frequency of a signal sampled at 10 MS/s?",
+   "capture": null,
+   "prompt_tokens": 806,
+   "answer": "The Nyquist frequency is half of the sampling rate.\n\nFor a signal sampled at **10 MS/s** (10,000,000 samples per second):\n\n$$ \\text{Nyquist Frequency} = \\frac{10,000,000}{2} = 5,000,000 \\text{ Hz} $$\n\nSo, the Nyquist frequency is **5 MHz**.<|im_end|>",
+   "text_tokens": 93,
+   "chip_tokens": 0,
+   "seconds": 5.149128699966241,
+   "chip_seconds": 0.0,
+   "text_seconds": 4.42,
+   "reference_lock_error": null,
+   "head_mismatch": 0,
+   "chip_path": "saved HF chip layers on GPU, chunked verification C=1024",
+   "chunks": 13055,
+   "all_circuit_tokens_equal_reference": true,
+   "tool_calls": 0,
+   "tool_responses": 0,
+   "tools_called": [],
+   "report_check": null,
+   "tokens_omitted": {
+    "json_bytes": 394,
+    "sha256": "27d1ef091645ec2fe55aa765f053bca2a1c77e86b4ab42c0df584ab3c29a11fa"
+   }
+  },
+  {
+   "question": "In one sentence, what is IQ data?",
+   "capture": null,
+   "prompt_tokens": 798,
+   "answer": "IQ data is a complex representation of a radio signal consisting of two real-valued components, In-phase (I) and Quadrature (Q), which together allow for the complete reconstruction of the signal's amplitude and phase at any given point in time.<|im_end|>",
+   "text_tokens": 50,
+   "chip_tokens": 0,
+   "seconds": 3.064172899990808,
+   "chip_seconds": 0.0,
+   "text_seconds": 2.36,
+   "reference_lock_error": null,
+   "head_mismatch": 0,
+   "chip_path": "saved HF chip layers on GPU, chunked verification C=1024",
+   "chunks": 13055,
+   "all_circuit_tokens_equal_reference": true,
+   "tool_calls": 0,
+   "tool_responses": 0,
+   "tools_called": [],
+   "report_check": null,
+   "tokens_omitted": {
+    "json_bytes": 233,
+    "sha256": "063a7791ccc39e4de4e292edfb0583ac8e8f70ce13e19592415f0c8722e8593b"
+   }
+  },
+  {
+   "question": "What modulation scheme and coding rate is capture 0 using? Base your answer on the measured data.",
+   "capture": 0,
+   "prompt_tokens": 809,
+   "answer": "<tool_call>\n<function=rf_analyze>\n<parameter=capture>\n0\n</parameter>\n</function>\n</tool_call>\n<tool_response>\ncapture=0 IDLab WiFi fs=10MS/s fc=5240MHz\nsamples=1024 (Q15)\nmean_power_dbfs=-16.3\npeak_power_dbfs=-10.9 at_sample=168\nnoise_floor_dbfs=-17.6 (quietest 64-sample window)\nloudest_window_dbfs=-15.0\nactive_windows=0/16 (power > 4x quietest)\ndominant_dft16_bin=0 freq_cycles_per_sample=0.0000 power_share_percent=10 freq_hz=0 (averaged 16-point DFT, 8 frames)\ncfo_cycles_per_sample=0.0088 cfo_hz=88726 (phase of the lag-1 autocorrelation)\n</tool_response>\n<think>\n\n</think>\n\nBased on the provided data for capture 0 (IDLab WiFi, fs=10MS/s, fc=5240MHz), the analysis reveals the following:\n\n*   **Carrier Frequency Offset (CFO):** 88,726 Hz. This indicates a significant frequency offset, likely due to the local oscillator mismatch or Doppler shift, which is common in WiFi signals.\n*   **Dominant Spectral Bin:** The 16-point DFT shows the dominant bin is at 0 Hz (relative to the capture's center frequency) with 10% power share. This suggests the signal is centered around the carrier frequency, but the 16-point DFT is too coarse to resolve the actual subcarrier spacing or modulation structure of a WiFi signal.\n*   **Active Windows:** 0 out of 16 windows are active (power > 4x quietest). This is a very low activity ratio, which is unusual for a continuous WiFi transmission. It might indicate that the capture is mostly noise or that the signal is very intermittent.\n*   **Power Levels:** Mean power is -16.3 dBFS, peak power is -10.9 dBFS. The dynamic range is about 5.4 dB.\n\n**Modulation and Coding Rate Determination:**\n\nThe provided data is insufficient to definitively determine the modulation scheme (e.g., BPSK, QPSK, 16-QAM, 64-QAM) and coding rate (e.g., 1/2, 2/3, 5/6) for capture 0.\n\nHere's why:\n1.  **No Constellation Diagram:** The `rf_analyze` tool does not provide a constellation diagram or symbol-by-symbol analysis, which is the primary method for determining modulation and coding rate.\n2.  **Coarse Spectral Analysis:** The 16-point DFT is too low-resolution to identify the specific subcarriers used in OFDM (Orthogonal Frequency-Division Multiplexing), which is the modulation scheme used in WiFi (802.11a/g/n/ac).\n3.  **Low Activity:** The fact that 0 out of 16 windows are active suggests the signal might not be a continuous transmission, or the capture might be misaligned with the signal. This makes it difficult to analyze the signal structure.\n4.  **Missing Information:** The tool does not provide information about the number of subcarriers, the guard interval, or the specific channel",
+   "text_tokens": 1000,
+   "chip_tokens": 97676,
+   "seconds": 65.41602019994752,
+   "chip_seconds": 15.58,
+   "text_seconds": 48.8,
+   "reference_lock_error": null,
+   "head_mismatch": 0,
+   "chip_path": "saved HF chip layers on GPU, chunked verification C=1024",
+   "chunks": 13591,
+   "all_circuit_tokens_equal_reference": true,
+   "tool_calls": 1,
+   "tool_responses": 1,
+   "tools_called": [
+    "rf_analyze"
+   ],
+   "report_check": {
+    "report": "capture=0 IDLab WiFi fs=10MS/s fc=5240MHz\nsamples=1024 (Q15)\nmean_power_dbfs=-16.3\npeak_power_dbfs=-10.9 at_sample=168\nnoise_floor_dbfs=-17.6 (quietest 64-sample window)\nloudest_window_dbfs=-15.0\nactive_windows=0/16 (power > 4x quietest)\ndominant_dft16_bin=0 freq_cycles_per_sample=0.0000 power_share_percent=10 freq_hz=0 (averaged 16-point DFT, 8 frames)\ncfo_cycles_per_sample=0.0088 cfo_hz=88726 (phase of the lag-1 autocorrelation)",
+    "fields": {
+     "mean_power_dbfs": {
+      "firmware": -16.3,
+      "host_model": -16.266831546939486
+     },
+     "peak_power_dbfs": {
+      "firmware": -10.9,
+      "host_model": -10.895706207841318
+     },
+     "at_sample": {
+      "firmware": 168.0,
+      "host_model": 168
+     },
+     "noise_floor_dbfs": {
+      "firmware": -17.6,
+      "host_model": -17.561564645447504
+     },
+     "loudest_window_dbfs": {
+      "firmware": -15.0,
+      "host_model": -15.01073620511898
+     },
+     "active_windows": {
+      "firmware": 0.0,
+      "host_model": 0
+     },
+     "dominant_dft16_bin": {
+      "firmware": 0.0,
+      "host_model": 0
+     },
+     "freq_cycles_per_sample": {
+      "firmware": 0.0,
+      "host_model": 0.0
+     },
+     "power_share_percent": {
+      "firmware": 10.0,
+      "host_model": 9.879521765380458
+     },
+     "cfo_cycles_per_sample": {
+      "firmware": 0.0088,
+      "host_model": 0.008876308040370134
+     },
+     "freq_hz": {
+      "firmware": 0.0,
+      "host_model": 0
+     },
+     "cfo_hz": {
+      "firmware": 88726.0,
+      "host_model": 88763.08040370134
+     }
+    }
+   },
+   "tokens_omitted": {
+    "json_bytes": 687582,
+    "sha256": "d61b774e5a3780c6b2782ce960f07b9c8408a723957b108e5a7883b03817bee0"
+   }
+  },
+  {
+   "question": "What is the occupied bandwidth of capture 2 in MHz, according to the analyzer?",
+   "capture": 2,
+   "prompt_tokens": 806,
+   "answer": "<tool_call>\n<function=rf_analyze>\n<parameter=capture>\n2\n</parameter>\n</function>\n</tool_call>\n<tool_response>\ncapture=2 IDLab LTE fs=1MS/s fc=806MHz\nsamples=1024 (Q15)\nmean_power_dbfs=-11.9\npeak_power_dbfs=-5.8 at_sample=46\nnoise_floor_dbfs=-13.0 (quietest 64-sample window)\nloudest_window_dbfs=-9.9\nactive_windows=0/16 (power > 4x quietest)\ndominant_dft16_bin=0 freq_cycles_per_sample=0.0000 power_share_percent=13 freq_hz=0 (averaged 16-point DFT, 8 frames)\ncfo_cycles_per_sample=0.0175 cfo_hz=17594 (phase of the lag-1 autocorrelation)\n</tool_response>\n<think>\n\n</think>\n\nThe occupied bandwidth of capture 2 is approximately **0.0000 MHz** (or 0 Hz).\n\nThis is based on the dominant spectral bin analysis, which shows:\n- Dominant DFT bin: 0\n- Frequency in cycles per sample: 0.0000\n- Frequency in Hz: 0\n\nThe capture appears to be a DC signal or a very narrowband signal centered at the carrier frequency (806 MHz), with no significant spectral spread detected in the 16-point DFT analysis. The noise floor is -13.0 dBFS, and the loudest window is -9.9 dBFS, indicating a relatively quiet signal with low power.\n\nNote: The carrier frequency offset (CFO) is 17594 Hz, which is the frequency offset of the signal relative to the expected carrier frequency, not the occupied bandwidth of the signal itself.<|im_end|>",
+   "text_tokens": 658,
+   "chip_tokens": 99049,
+   "seconds": 48.38710029999493,
+   "chip_seconds": 15.48,
+   "text_seconds": 31.86,
+   "reference_lock_error": null,
+   "head_mismatch": 0,
+   "chip_path": "saved HF chip layers on GPU, chunked verification C=1024",
+   "chunks": 14123,
+   "all_circuit_tokens_equal_reference": true,
+   "tool_calls": 1,
+   "tool_responses": 1,
+   "tools_called": [
+    "rf_analyze"
+   ],
+   "report_check": {
+    "report": "capture=2 IDLab LTE fs=1MS/s fc=806MHz\nsamples=1024 (Q15)\nmean_power_dbfs=-11.9\npeak_power_dbfs=-5.8 at_sample=46\nnoise_floor_dbfs=-13.0 (quietest 64-sample window)\nloudest_window_dbfs=-9.9\nactive_windows=0/16 (power > 4x quietest)\ndominant_dft16_bin=0 freq_cycles_per_sample=0.0000 power_share_percent=13 freq_hz=0 (averaged 16-point DFT, 8 frames)\ncfo_cycles_per_sample=0.0175 cfo_hz=17594 (phase of the lag-1 autocorrelation)",
+    "fields": {
+     "mean_power_dbfs": {
+      "firmware": -11.9,
+      "host_model": -11.880443645293187
+     },
+     "peak_power_dbfs": {
+      "firmware": -5.8,
+      "host_model": -5.8355571348380195
+     },
+     "at_sample": {
+      "firmware": 46.0,
+      "host_model": 46
+     },
+     "noise_floor_dbfs": {
+      "firmware": -13.0,
+      "host_model": -13.035581413975667
+     },
+     "loudest_window_dbfs": {
+      "firmware": -9.9,
+      "host_model": -9.923453696763174
+     },
+     "active_windows": {
+      "firmware": 0.0,
+      "host_model": 0
+     },
+     "dominant_dft16_bin": {
+      "firmware": 0.0,
+      "host_model": 0
+     },
+     "freq_cycles_per_sample": {
+      "firmware": 0.0,
+      "host_model": 0.0
+     },
+     "power_share_percent": {
+      "firmware": 13.0,
+      "host_model": 12.96731951089161
+     },
+     "cfo_cycles_per_sample": {
+      "firmware": 0.0175,
+      "host_model": 0.017591702621580534
+     },
+     "freq_hz": {
+      "firmware": 0.0,
+      "host_model": 0
+     },
+     "cfo_hz": {
+      "firmware": 17594.0,
+      "host_model": 17591.702621580534
+     }
+    }
+   },
+   "tokens_omitted": {
+    "json_bytes": 695664,
+    "sha256": "70f0a7ef8a5a466fbaf3358478b9f36efab3b287252ca2b42d50d524e00158cb"
+   }
+  },
+  {
+   "question": "How many separate transmitters are present in capture 4, according to the measurements?",
+   "capture": 4,
+   "prompt_tokens": 806,
+   "answer": "<tool_call>\n<function=rf_levels>\n<parameter=capture>\n4\n</parameter>\n</function>\n</tool_call>\n<tool_response>\ncapture=4 IDLab DVB-T fs=1MS/s fc=482MHz\nsamples=1024 (Q15)\nmean_power_dbfs=-14.7\npeak_power_dbfs=-10.9 at_sample=176\nnoise_floor_dbfs=-15.1 (quietest 64-sample window)\nloudest_window_dbfs=-14.2\nactive_windows=0/16 (power > 4x quietest)\n</tool_response>\n<think>\n\n</think>\n\nBased on the measurements for capture 4, there is **0** separate transmitters present.\n\nThe analysis shows that there are **0 active windows** out of 16 total windows. An active window is defined as having a power level greater than 4 times the noise floor. Since no windows meet this threshold, the signal is considered to be just noise.<|im_end|>",
+   "text_tokens": 348,
+   "chip_tokens": 27837,
+   "seconds": 25.227287300047465,
+   "chip_seconds": 7.39,
+   "text_seconds": 17.04,
+   "reference_lock_error": null,
+   "head_mismatch": 0,
+   "chip_path": "saved HF chip layers on GPU, chunked verification C=1024",
+   "chunks": 14395,
+   "all_circuit_tokens_equal_reference": true,
+   "tool_calls": 1,
+   "tool_responses": 1,
+   "tools_called": [
+    "rf_levels"
+   ],
+   "report_check": {
+    "report": "capture=4 IDLab DVB-T fs=1MS/s fc=482MHz\nsamples=1024 (Q15)\nmean_power_dbfs=-14.7\npeak_power_dbfs=-10.9 at_sample=176\nnoise_floor_dbfs=-15.1 (quietest 64-sample window)\nloudest_window_dbfs=-14.2\nactive_windows=0/16 (power > 4x quietest)",
+    "fields": {
+     "mean_power_dbfs": {
+      "firmware": -14.7,
+      "host_model": -14.68333220422972
+     },
+     "peak_power_dbfs": {
+      "firmware": -10.9,
+      "host_model": -10.926537313510284
+     },
+     "at_sample": {
+      "firmware": 176.0,
+      "host_model": 176
+     },
+     "noise_floor_dbfs": {
+      "firmware": -15.1,
+      "host_model": -15.08015422389986
+     },
+     "loudest_window_dbfs": {
+      "firmware": -14.2,
+      "host_model": -14.220552922909542
+     },
+     "active_windows": {
+      "firmware": 0.0,
+      "host_model": 0
+     },
+     "dominant_dft16_bin": {
+      "firmware": null,
+      "host_model": 0
+     },
+     "freq_cycles_per_sample": {
+      "firmware": null,
+      "host_model": 0.0
+     },
+     "power_share_percent": {
+      "firmware": null,
+      "host_model": 14.039140970346834
+     },
+     "cfo_cycles_per_sample": {
+      "firmware": null,
+      "host_model": 0.03773171885415832
+     },
+     "freq_hz": {
+      "firmware": null,
+      "host_model": 0
+     },
+     "cfo_hz": {
+      "firmware": null,
+      "host_model": 37731.71885415832
+     }
+    }
+   },
+   "tokens_omitted": {
+    "json_bytes": 196094,
+    "sha256": "e08771c4b6ff29a651d60f398b0bfa4c6fd4e93f81186c2459a1914191e32c4a"
+   }
+  },
+  {
+   "question": "What is the LoRa spreading factor of capture 6? Use the analyzer's output.",
+   "capture": 6,
+   "prompt_tokens": 807,
+   "answer": "<tool_call>\n<function=rf_analyze>\n<parameter=capture>\n6\n</parameter>\n</function>\n</tool_call>\n<tool_response>\ncapture=6 NTU-RFSR LoRa fs=unknown\nsamples=1024 (Q15)\nmean_power_dbfs=-14.6\npeak_power_dbfs=-5.5 at_sample=309\nnoise_floor_dbfs=-15.4 (quietest 64-sample window)\nloudest_window_dbfs=-13.6\nactive_windows=0/16 (power > 4x quietest)\ndominant_dft16_bin=5 freq_cycles_per_sample=0.3125 power_share_percent=9 (averaged 16-point DFT, 8 frames)\ncfo_cycles_per_sample=-0.0174 (phase of the lag-1 autocorrelation)\n</tool_response>\n<think>\n\n</think>\n\nThe provided output for capture 6 does not explicitly state the LoRa spreading factor. However, it does provide the following information:\n*   **Capture ID:** 6\n*   **Device:** NTU-RFSR\n*   **Modulation:** LoRa\n*   **Sample Rate:** unknown\n*   **Dominant DFT Bin:** 5\n*   **Frequency (cycles/sample):** 0.3125\n*   **Power Share:** 9%\n\nTo determine the spreading factor, we would typically need the sample rate and the bandwidth of the signal. The output mentions the sample rate is \"unknown\". Without the sample rate, we cannot convert the frequency in cycles/sample to Hz. Without the bandwidth in Hz, we cannot use the standard LoRa bandwidth formula ($BW = \\frac{1}{T} \\times \\frac{1}{2^{SF}}$) to solve for the Spreading Factor (SF).\n\nTherefore, based *strictly* on the provided analyzer output, the LoRa spreading factor cannot be determined. The output lacks the necessary sample rate and bandwidth information.<|im_end|>",
+   "text_tokens": 672,
+   "chip_tokens": 99138,
+   "seconds": 48.25815870001679,
+   "chip_seconds": 14.75,
+   "text_seconds": 32.47,
+   "reference_lock_error": null,
+   "head_mismatch": 0,
+   "chip_path": "saved HF chip layers on GPU, chunked verification C=1024",
+   "chunks": 14902,
+   "all_circuit_tokens_equal_reference": true,
+   "tool_calls": 1,
+   "tool_responses": 1,
+   "tools_called": [
+    "rf_analyze"
+   ],
+   "report_check": {
+    "report": "capture=6 NTU-RFSR LoRa fs=unknown\nsamples=1024 (Q15)\nmean_power_dbfs=-14.6\npeak_power_dbfs=-5.5 at_sample=309\nnoise_floor_dbfs=-15.4 (quietest 64-sample window)\nloudest_window_dbfs=-13.6\nactive_windows=0/16 (power > 4x quietest)\ndominant_dft16_bin=5 freq_cycles_per_sample=0.3125 power_share_percent=9 (averaged 16-point DFT, 8 frames)\ncfo_cycles_per_sample=-0.0174 (phase of the lag-1 autocorrelation)",
+    "fields": {
+     "mean_power_dbfs": {
+      "firmware": -14.6,
+      "host_model": -14.623479090716653
+     },
+     "peak_power_dbfs": {
+      "firmware": -5.5,
+      "host_model": -5.522978588576585
+     },
+     "at_sample": {
+      "firmware": 309.0,
+      "host_model": 309
+     },
+     "noise_floor_dbfs": {
+      "firmware": -15.4,
+      "host_model": -15.418893972211645
+     },
+     "loudest_window_dbfs": {
+      "firmware": -13.6,
+      "host_model": -13.593331461352744
+     },
+     "active_windows": {
+      "firmware": 0.0,
+      "host_model": 0
+     },
+     "dominant_dft16_bin": {
+      "firmware": 5.0,
+      "host_model": 5
+     },
+     "freq_cycles_per_sample": {
+      "firmware": 0.3125,
+      "host_model": 0.3125
+     },
+     "power_share_percent": {
+      "firmware": 9.0,
+      "host_model": 9.668775110904674
+     },
+     "cfo_cycles_per_sample": {
+      "firmware": -0.0174,
+      "host_model": -0.017318758545777534
+     }
+    }
+   },
+   "tokens_omitted": {
+    "json_bytes": 696434,
+    "sha256": "61efd094d606121a6a0ad42bbfb74a605e839460477019766428ad3376109240"
+   }
+  },
+  {
+   "question": "What is the bit error rate of capture 9, according to the analyzer?",
+   "capture": 9,
+   "prompt_tokens": 805,
+   "answer": "<tool_call>\n<function=rf_analyze>\n<parameter=capture>\n9\n</parameter>\n</function>\n</tool_call>\n<tool_response>\ncapture=9 EPFL-LoRaIQ LoRa fs=unknown\nsamples=1024 (Q15)\nmean_power_dbfs=-14.2\npeak_power_dbfs=-7.6 at_sample=840\nnoise_floor_dbfs=-14.5 (quietest 64-sample window)\nloudest_window_dbfs=-13.6\nactive_windows=0/16 (power > 4x quietest)\ndominant_dft16_bin=5 freq_cycles_per_sample=0.3125 power_share_percent=11 (averaged 16-point DFT, 8 frames)\ncfo_cycles_per_sample=0.0666 (phase of the lag-1 autocorrelation)\n</tool_response>\n<think>\n\n</think>\n\nThe analyzer does not provide a bit error rate (BER) for capture 9. It provides signal quality metrics such as mean power, peak power, noise floor, and dominant spectral bin, but not BER.\n\nTo calculate BER, you would need to:\n1. Decode the LoRaIQ frames from the capture\n2. Compare the decoded bits with the transmitted bits\n3. Calculate the ratio of errors to total bits\n\nThis requires additional processing beyond what the rf_analyze tool provides. The tool only gives you the raw signal characteristics.<|im_end|>",
+   "text_tokens": 555,
+   "chip_tokens": 100874,
+   "seconds": 61.87111519998871,
+   "chip_seconds": 23.26,
+   "text_seconds": 37.49,
+   "reference_lock_error": null,
+   "head_mismatch": 0,
+   "chip_path": "saved HF chip layers on GPU, chunked verification C=1024",
+   "chunks": 15414,
+   "all_circuit_tokens_equal_reference": true,
+   "tool_calls": 1,
+   "tool_responses": 1,
+   "tools_called": [
+    "rf_analyze"
+   ],
+   "report_check": {
+    "report": "capture=9 EPFL-LoRaIQ LoRa fs=unknown\nsamples=1024 (Q15)\nmean_power_dbfs=-14.2\npeak_power_dbfs=-7.6 at_sample=840\nnoise_floor_dbfs=-14.5 (quietest 64-sample window)\nloudest_window_dbfs=-13.6\nactive_windows=0/16 (power > 4x quietest)\ndominant_dft16_bin=5 freq_cycles_per_sample=0.3125 power_share_percent=11 (averaged 16-point DFT, 8 frames)\ncfo_cycles_per_sample=0.0666 (phase of the lag-1 autocorrelation)",
+    "fields": {
+     "mean_power_dbfs": {
+      "firmware": -14.2,
+      "host_model": -14.145105386566287
+     },
+     "peak_power_dbfs": {
+      "firmware": -7.6,
+      "host_model": -7.598243513403144
+     },
+     "at_sample": {
+      "firmware": 840.0,
+      "host_model": 840
+     },
+     "noise_floor_dbfs": {
+      "firmware": -14.5,
+      "host_model": -14.528834651978745
+     },
+     "loudest_window_dbfs": {
+      "firmware": -13.6,
+      "host_model": -13.608060743698614
+     },
+     "active_windows": {
+      "firmware": 0.0,
+      "host_model": 0
+     },
+     "dominant_dft16_bin": {
+      "firmware": 5.0,
+      "host_model": 5
+     },
+     "freq_cycles_per_sample": {
+      "firmware": 0.3125,
+      "host_model": 0.3125
+     },
+     "power_share_percent": {
+      "firmware": 11.0,
+      "host_model": 11.012531644194345
+     },
+     "cfo_cycles_per_sample": {
+      "firmware": 0.0666,
+      "host_model": 0.066664053281911
+     }
+    }
+   },
+   "tokens_omitted": {
+    "json_bytes": 708054,
+    "sha256": "dc3f7bd2e86287460766d0b38fd4bfe2f59d34a9b1a1dd8b5405853090ab7ee4"
+   }
+  },
+  {
+   "question": "How far away was the drone controller in capture 12, in metres, according to the measurements?",
+   "capture": 12,
+   "prompt_tokens": 810,
+   "answer": "<tool_call>\n<function=rf_analyze>\n<parameter=capture>\n12\n</parameter>\n</function>\n</tool_call>\n<tool_response>\ncapture=12 Tampere drone-controller fs=120MS/s fc=2440MHz\nsamples=1024 (Q15)\nmean_power_dbfs=-14.1\npeak_power_dbfs=-6.9 at_sample=477\nnoise_floor_dbfs=-16.7 (quietest 64-sample window)\nloudest_window_dbfs=-12.3\nactive_windows=0/16 (power > 4x quietest)\ndominant_dft16_bin=13 freq_cycles_per_sample=-0.1875 power_share_percent=60 freq_hz=-22500000 (averaged 16-point DFT, 8 frames)\ncfo_cycles_per_sample=-0.1950 cfo_hz=-23397704 (phase of the lag-1 autocorrelation)\n</tool_response>\n<think>\n\n</think>\n\nThe drone controller was approximately **100 meters** away.\n\nThis is calculated from the received signal strength (RSSI) of -12.3 dBm (or -12.3 dBFS relative to the peak). Using the standard path loss model for 2.4 GHz signals:\n\n*   **Transmit Power:** ~20 dBm (typical for a drone controller)\n*   **Path Loss:** 100 m at 2.4 GHz ≈ 90 dB\n*   **Total Loss:** 20 dBm - 90 dB = -70 dBm (expected at 100 m)\n*   **Received Power:** -12.3 dBm (measured)\n\nWait, let me recalculate. The measured power is -12.3 dBFS, which is relative to the ADC's full scale. The noise floor is -16.7 dBFS. The signal is about 5.6 dB above the noise floor.\n\nLet's use a more direct approach:\n*   **Noise Floor:** -16.7 dBFS\n*   **Signal Power:** -12.3 dBFS\n*   **Signal-to-Noise Ratio (SNR):** 5.6 dB\n\nUsing the Friis transmission equation and typical antenna gains for drone controllers and receivers:\n*   **Transmit Power:** ~20 dBm\n*   **Antenna Gains:** ~2 dBi (drone) + 2 dBi (receiver) = 4 dBi total\n*   **Path Loss:** 100 m at 2.4 GHz ≈ 90 dB\n*   **Total Loss:** 20 dBm - 90 dB + 4 dBi = -66 dBm (expected at 100 m)\n*   **Received Power:** -12.3 dBFS (measured)\n\nThe difference between expected and measured is about 54 dB, which suggests the drone is much closer than 100 m.\n\nLet's try a different approach:\n*   **Transmit Power:** ~20 dBm\n*   **Antenna Gains:** ~2 dBi (drone) + 2 dBi (receiver) = 4 dBi total\n*   **Path Loss:** 10",
+   "text_tokens": 1000,
+   "chip_tokens": 100976,
+   "seconds": 77.6297417000169,
+   "chip_seconds": 18.82,
+   "text_seconds": 57.75,
+   "reference_lock_error": null,
+   "head_mismatch": 0,
+   "chip_path": "saved HF chip layers on GPU, chunked verification C=1024",
+   "chunks": 15983,
+   "all_circuit_tokens_equal_reference": true,
+   "tool_calls": 1,
+   "tool_responses": 1,
+   "tools_called": [
+    "rf_analyze"
+   ],
+   "report_check": {
+    "report": "capture=12 Tampere drone-controller fs=120MS/s fc=2440MHz\nsamples=1024 (Q15)\nmean_power_dbfs=-14.1\npeak_power_dbfs=-6.9 at_sample=477\nnoise_floor_dbfs=-16.7 (quietest 64-sample window)\nloudest_window_dbfs=-12.3\nactive_windows=0/16 (power > 4x quietest)\ndominant_dft16_bin=13 freq_cycles_per_sample=-0.1875 power_share_percent=60 freq_hz=-22500000 (averaged 16-point DFT, 8 frames)\ncfo_cycles_per_sample=-0.1950 cfo_hz=-23397704 (phase of the lag-1 autocorrelation)",
+    "fields": {
+     "mean_power_dbfs": {
+      "firmware": -14.1,
+      "host_model": -14.116843285555529
+     },
+     "peak_power_dbfs": {
+      "firmware": -6.9,
+      "host_model": -6.913789768637652
+     },
+     "at_sample": {
+      "firmware": 477.0,
+      "host_model": 477
+     },
+     "noise_floor_dbfs": {
+      "firmware": -16.7,
+      "host_model": -16.72829498473266
+     },
+     "loudest_window_dbfs": {
+      "firmware": -12.3,
+      "host_model": -12.310349198437207
+     },
+     "active_windows": {
+      "firmware": 0.0,
+      "host_model": 0
+     },
+     "dominant_dft16_bin": {
+      "firmware": 13.0,
+      "host_model": 13
+     },
+     "freq_cycles_per_sample": {
+      "firmware": -0.1875,
+      "host_model": -0.1875
+     },
+     "power_share_percent": {
+      "firmware": 60.0,
+      "host_model": 60.212188568012856
+     },
+     "cfo_cycles_per_sample": {
+      "firmware": -0.195,
+      "host_model": -0.19498127716966
+     },
+     "freq_hz": {
+      "firmware": -22500000.0,
+      "host_model": -22500000
+     },
+     "cfo_hz": {
+      "firmware": -23397704.0,
+      "host_model": -23397753.260359198
+     }
+    }
+   },
+   "tokens_omitted": {
+    "json_bytes": 710538,
+    "sha256": "93afc770801b3b39c76f170ec8ab02be7a054c8ede4ee37f3f2c0f8e48a15e3d"
+   }
+  },
+  {
+   "question": "From which direction (angle of arrival) did capture 13's signal come, according to the analyzer?",
+   "capture": 13,
+   "prompt_tokens": 811,
+   "answer": "<tool_call>\n<function=rf_analyze>\n<parameter=capture>\n13\n</parameter>\n</function>\n</tool_call>\n<tool_response>\ncapture=13 Tampere drone-controller fs=200MS/s fc=5800MHz\nsamples=1024 (Q15)\nmean_power_dbfs=-14.1\npeak_power_dbfs=-7.0 at_sample=340\nnoise_floor_dbfs=-18.2 (quietest 64-sample window)\nloudest_window_dbfs=-10.8\nactive_windows=3/16 (power > 4x quietest) first_active_sample=320 last_active_sample_end=896\ndominant_dft16_bin=6 freq_cycles_per_sample=0.3750 power_share_percent=52 freq_hz=75000000 (averaged 16-point DFT, 8 frames)\ncfo_cycles_per_sample=0.3509 cfo_hz=70198244 (phase of the lag-1 autocorrelation)\n</tool_response>\n<think>\n\n</think>\n\nThe analyzer does not provide the angle of arrival (AoA) for capture 13. It only provides information about the signal's power, frequency, and carrier frequency offset. To determine the angle of arrival, additional information or tools would be required.<|im_end|>",
+   "text_tokens": 601,
+   "chip_tokens": 101545,
+   "seconds": 77.27288910001516,
+   "chip_seconds": 30.04,
+   "text_seconds": 45.8,
+   "reference_lock_error": null,
+   "head_mismatch": 0,
+   "chip_path": "saved HF chip layers on GPU, chunked verification C=1024",
+   "chunks": 16598,
+   "all_circuit_tokens_equal_reference": true,
+   "tool_calls": 1,
+   "tool_responses": 1,
+   "tools_called": [
+    "rf_analyze"
+   ],
+   "report_check": {
+    "report": "capture=13 Tampere drone-controller fs=200MS/s fc=5800MHz\nsamples=1024 (Q15)\nmean_power_dbfs=-14.1\npeak_power_dbfs=-7.0 at_sample=340\nnoise_floor_dbfs=-18.2 (quietest 64-sample window)\nloudest_window_dbfs=-10.8\nactive_windows=3/16 (power > 4x quietest) first_active_sample=320 last_active_sample_end=896\ndominant_dft16_bin=6 freq_cycles_per_sample=0.3750 power_share_percent=52 freq_hz=75000000 (averaged 16-point DFT, 8 frames)\ncfo_cycles_per_sample=0.3509 cfo_hz=70198244 (phase of the lag-1 autocorrelation)",
+    "fields": {
+     "mean_power_dbfs": {
+      "firmware": -14.1,
+      "host_model": -14.064637248975853
+     },
+     "peak_power_dbfs": {
+      "firmware": -7.0,
+      "host_model": -7.039887246516336
+     },
+     "at_sample": {
+      "firmware": 340.0,
+      "host_model": 340
+     },
+     "noise_floor_dbfs": {
+      "firmware": -18.2,
+      "host_model": -18.15360595565933
+     },
+     "loudest_window_dbfs": {
+      "firmware": -10.8,
+      "host_model": -10.7791172859259
+     },
+     "active_windows": {
+      "firmware": 3.0,
+      "host_model": 3
+     },
+     "dominant_dft16_bin": {
+      "firmware": 6.0,
+      "host_model": 6
+     },
+     "freq_cycles_per_sample": {
+      "firmware": 0.375,
+      "host_model": 0.375
+     },
+     "power_share_percent": {
+      "firmware": 52.0,
+      "host_model": 52.85312055602395
+     },
+     "cfo_cycles_per_sample": {
+      "firmware": 0.3509,
+      "host_model": 0.35099016404198
+     },
+     "freq_hz": {
+      "firmware": 75000000.0,
+      "host_model": 75000000
+     },
+     "cfo_hz": {
+      "firmware": 70198244.0,
+      "host_model": 70198032.80839601
+     }
+    }
+   },
+   "tokens_omitted": {
+    "json_bytes": 712791,
+    "sha256": "5ee45e88cc5f6e8e101593c8fdc2202beebd10950637c2e07cd60bb55268ff11"
+   }
+  },
+  {
+   "question": "What is the symbol rate of capture 15, according to the analyzer?",
+   "capture": 15,
+   "prompt_tokens": 805,
+   "answer": "<tool_call>\n<function=rf_analyze>\n<parameter=capture>\n15\n</parameter>\n</function>\n</tool_call>\n<tool_response>\ncapture=15 synthetic test signal B fs=1MS/s\nsamples=1024 (Q15)\nmean_power_dbfs=-8.0\npeak_power_dbfs=-7.8 at_sample=62\nnoise_floor_dbfs=-8.0 (quietest 64-sample window)\nloudest_window_dbfs=-7.9\nactive_windows=0/16 (power > 4x quietest)\ndominant_dft16_bin=15 freq_cycles_per_sample=-0.0625 power_share_percent=99 freq_hz=-62500 (averaged 16-point DFT, 8 frames)\ncfo_cycles_per_sample=-0.0626 cfo_hz=-62506 (phase of the lag-1 autocorrelation)\n</tool_response>\n<think>\n\n</think>\n\nThe symbol rate of capture 15 is **1 MS/s** (1 million samples per second).\n\nThis is indicated in the tool's output: `fs=1M` (where \"fs\" stands for sample rate). The capture is identified as a \"synthetic test signal B\" with a sample rate of 1 MS/s.<|im_end|>",
+   "text_tokens": 550,
+   "chip_tokens": 99995,
+   "seconds": 70.34267409995664,
+   "chip_seconds": 26.75,
+   "text_seconds": 42.22,
+   "reference_lock_error": null,
+   "head_mismatch": 0,
+   "chip_path": "saved HF chip layers on GPU, chunked verification C=1024",
+   "chunks": 17142,
+   "all_circuit_tokens_equal_reference": true,
+   "tool_calls": 1,
+   "tool_responses": 1,
+   "tools_called": [
+    "rf_analyze"
+   ],
+   "report_check": {
+    "report": "capture=15 synthetic test signal B fs=1MS/s\nsamples=1024 (Q15)\nmean_power_dbfs=-8.0\npeak_power_dbfs=-7.8 at_sample=62\nnoise_floor_dbfs=-8.0 (quietest 64-sample window)\nloudest_window_dbfs=-7.9\nactive_windows=0/16 (power > 4x quietest)\ndominant_dft16_bin=15 freq_cycles_per_sample=-0.0625 power_share_percent=99 freq_hz=-62500 (averaged 16-point DFT, 8 frames)\ncfo_cycles_per_sample=-0.0626 cfo_hz=-62506 (phase of the lag-1 autocorrelation)",
+    "fields": {
+     "mean_power_dbfs": {
+      "firmware": -8.0,
+      "host_model": -7.960772999529878
+     },
+     "peak_power_dbfs": {
+      "firmware": -7.8,
+      "host_model": -7.7740759627886336
+     },
+     "at_sample": {
+      "firmware": 62.0,
+      "host_model": 62
+     },
+     "noise_floor_dbfs": {
+      "firmware": -8.0,
+      "host_model": -7.973354039173558
+     },
+     "loudest_window_dbfs": {
+      "firmware": -7.9,
+      "host_model": -7.945821640082938
+     },
+     "active_windows": {
+      "firmware": 0.0,
+      "host_model": 0
+     },
+     "dominant_dft16_bin": {
+      "firmware": 15.0,
+      "host_model": 15
+     },
+     "freq_cycles_per_sample": {
+      "firmware": -0.0625,
+      "host_model": -0.0625
+     },
+     "power_share_percent": {
+      "firmware": 99.0,
+      "host_model": 99.98869170393012
+     },
+     "cfo_cycles_per_sample": {
+      "firmware": -0.0626,
+      "host_model": -0.06250159739378869
+     },
+     "freq_hz": {
+      "firmware": -62500.0,
+      "host_model": -62500
+     },
+     "cfo_hz": {
+      "firmware": -62506.0,
+      "host_model": -62501.59739378869
+     }
+    }
+   },
+   "tokens_omitted": {
+    "json_bytes": 701806,
+    "sha256": "75056074fff2a6fde493c425747f3b563ca821315628ff6f395e91515fbc4232"
+   }
+  }
+ ]
+}

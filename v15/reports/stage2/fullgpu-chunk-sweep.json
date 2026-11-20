@@ -1,0 +1,57 @@
+{
+  "protocol": "PROTOCOL.md Amendment 8 P8.5",
+  "question": "Capture 14 is a stored IQ recording. Use the RF analyzer: is there a burst in it, roughly which samples does it occupy, how far above the noise floor is it, and what is its frequency in cycles per sample?",
+  "capture": 14,
+  "rows": [
+    {
+      "chunk": 0,
+      "seconds": 277.81544629999553,
+      "chip_seconds": 227.84,
+      "text_seconds": 41.07,
+      "chip_tokens": 92913,
+      "lock_error": null,
+      "head_mismatch": 0,
+      "identical_to_first": true
+    },
+    {
+      "chunk": 64,
+      "seconds": 110.34416509998846,
+      "chip_seconds": 68.29,
+      "text_seconds": 40.71,
+      "chip_tokens": 92913,
+      "lock_error": null,
+      "head_mismatch": 0,
+      "identical_to_first": true
+    },
+    {
+      "chunk": 256,
+      "seconds": 58.05338340002345,
+      "chip_seconds": 25.83,
+      "text_seconds": 30.96,
+      "chip_tokens": 92913,
+      "lock_error": null,
+      "head_mismatch": 0,
+      "identical_to_first": true
+    },
+    {
+      "chunk": 1024,
+      "seconds": 47.55293689999962,
+      "chip_seconds": 17.25,
+      "text_seconds": 29.2,
+      "chip_tokens": 92913,
+      "lock_error": null,
+      "head_mismatch": 0,
+      "identical_to_first": true
+    },
+    {
+      "chunk": 4096,
+      "seconds": 46.05497599998489,
+      "chip_seconds": 16.07,
+      "text_seconds": 28.88,
+      "chip_tokens": 92913,
+      "lock_error": null,
+      "head_mismatch": 0,
+      "identical_to_first": true
+    }
+  ]
+}

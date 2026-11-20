@@ -1,0 +1,9 @@
+{
+  "analysis": "Secondary headroom run (Amendment 1): the single remaining failure",
+  "capture": "IDLab DVB-T, selection index 4",
+  "FIR_nmse": 3.4e-08, "spectral_power_nmse": 2.7e-08, "matched_peak_displacement_samples": 850,
+  "float_top_two": {"indices": [1254, 404], "power": [0.40778677, 0.40773067], "relative_gap": 1.38e-04},
+  "fixed_point_top_two": {"indices": [404, 3269], "power": [0.40770012, 0.40765527]},
+  "diagnosis": "Near-tie of the global matched-filter maximum on a noise-like OFDM record: the two largest float peaks differ by 1.4e-4 relative, below one Q2.13 output step (~2.4e-4 relative in power). Neural arithmetic is exact (every token verified); FIR/spectral NMSE ~3e-8. The argmax criterion is unchanged; a global argmax on arbitrary records is diagnostic, not burst-detection evidence.",
+  "control": "IDLab DVB-T index 5: top-two relative gap 1.0e-2, same peak in fixed and float."
+}

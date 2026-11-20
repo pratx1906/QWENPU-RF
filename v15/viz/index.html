@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RFPU Inside</title>
+<style>
+:root{--bg:#eef2f7;--card:#fff;--line:#e2e8f0;--ink:#0f172a;--mut:#64748b;--ok:#16a34a;--bad:#dc2626;--amber:#f59e0b}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:13px Inter,system-ui,Segoe UI,sans-serif}
+header{display:flex;align-items:center;gap:10px;padding:10px 16px;background:var(--card);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
+header h1{font-size:15px;margin:0 8px 0 0;font-weight:700;letter-spacing:-.01em}
+header .q{color:var(--mut);flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+button,select{font:inherit;padding:5px 11px;border-radius:8px;border:1px solid #cbd5e1;background:#fff;cursor:pointer;font-weight:600;color:#334155}
+button.pri{background:#4f46e5;border-color:#4f46e5;color:#fff}
+button:hover{filter:brightness(.97)}
+main{display:grid;grid-template-columns:1fr 330px;gap:12px;padding:12px 16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:0 4px 6px -1px rgb(0 0 0/.06)}
+#stage{position:relative;padding:8px;overflow:hidden}
+#net{display:block;cursor:crosshair}
+#tip{position:absolute;pointer-events:none;background:#0f172a;color:#fff;font:11px ui-monospace,Consolas,monospace;padding:5px 8px;border-radius:6px;display:none;white-space:nowrap;z-index:3}
+aside{display:flex;flex-direction:column;gap:12px;min-width:0}
+.sec{padding:10px 12px}
+.lbl{font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#6366f1;margin-bottom:6px}
+.mono{font:11.5px ui-monospace,Consolas,monospace}
+.big{font:600 15px ui-monospace,Consolas,monospace;word-break:break-all}
+.row{display:flex;justify-content:space-between;gap:8px}
+.k{color:var(--mut)}
+.pill{display:inline-block;padding:1px 8px;border-radius:999px;font-size:11px;font-weight:700}
+#chat{max-height:170px;overflow:auto;white-space:pre-wrap;font:11.5px ui-monospace,Consolas,monospace;color:#334155;background:#f8fafc;border-radius:8px;padding:6px}
+#chat .cur{background:#fde68a}
+#chips{font:11px ui-monospace,Consolas,monospace;color:#4338ca;line-height:1.5}
+#pins{display:flex;flex-direction:column;gap:8px;max-height:420px;overflow:auto}
+.pin{border:1px solid var(--line);border-radius:10px;padding:6px 8px}
+.pin .nm{font:600 11px ui-monospace,Consolas,monospace;word-break:break-all}
+.pin canvas{width:100%;height:42px;display:block;margin-top:4px}
+.pin .x{float:right;cursor:pointer;color:var(--mut)}
+#tl{display:block;width:100%;height:58px;cursor:pointer}
+.legend{display:flex;gap:14px;font-size:11px;color:var(--mut);padding:2px 10px 8px}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:4px;vertical-align:-1px}
+body.poster{--bg:#05070d;--card:#0a101c;--line:#1a2436;--ink:#eef3fb;--mut:#8fa0bb;background:#05070d}
+body.poster header,body.poster aside,body.poster .legend{display:none}
+body.poster main{grid-template-columns:1fr;padding:14px 22px}
+body.poster .card{box-shadow:none;border-color:#1a2436}
+#cap{display:none}
+body.poster #cap{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;padding:16px 22px 4px;color:#eef3fb;font:800 30px Inter,system-ui,Segoe UI,sans-serif;letter-spacing:-.01em}
+#cap .t{font:800 34px ui-monospace,Consolas,monospace;color:#fff}
+#cap .s{font:600 17px Inter,system-ui,sans-serif;color:#8fa0bb;margin-top:6px}
+#cap .ok{color:#3ef0a8}
+#cap .cpu{color:#22d3ee}#cap .qw{color:#ff8a3d}
+</style>
+</head>
+<body>
+<header>
+  <h1>RFPU · inside the weights</h1>
+  <span class="q" id="q"></span>
+  <button id="bPrevT" title="previous text token">◀ text</button>
+  <button id="bBack" title="step back (←)">◀</button>
+  <button class="pri" id="bPlay">▶ Play</button>
+  <button id="bFwd" title="step (→)">▶</button>
+  <button id="bNextT" title="next text token">text ▶</button>
+  <select id="speed" title="tokens per second">
+    <option value="2">2 tok/s</option><option value="8">8 tok/s</option><option value="30" selected>30 tok/s</option>
+    <option value="120">120 tok/s</option><option value="400">400 tok/s</option><option value="2000">max</option>
+  </select>
+</header>
+<div id="cap"><div><div id="capT"></div><div class="s" id="capS"></div></div><div style="text-align:right"><div id="capV"></div><div class="s" id="capV2"></div></div></div>
+<main>
+  <section>
+    <div class="card" id="stage"><canvas id="net"></canvas><div id="tip"></div></div>
+    <div class="card" style="margin-top:12px;padding:6px 8px 0">
+      <canvas id="tl"></canvas>
+      <div class="legend">
+        <span><i style="background:#60a5fa"></i>prompt</span><span><i style="background:#818cf8"></i>CPU tokens (chip layers only)</span>
+        <span><i style="background:#ec4899"></i>Qwen text tokens</span><span><i style="background:#dc2626"></i>verification mismatch</span>
+        <span style="flex:1"></span><span id="tlinfo" class="mono"></span>
+      </div>
+    </div>
+  </section>
+  <aside>
+    <div class="card sec">
+      <div class="lbl">Current token</div>
+      <div class="row"><span class="k mono" id="pos"></span><span id="owner" class="pill"></span></div>
+      <div class="big" id="tok" style="margin:6px 0"></div>
+      <div class="mono k" id="route"></div>
+    </div>
+    <div class="card sec">
+      <div class="lbl">Verification</div>
+      <div class="mono" id="ver"></div>
+    </div>
+    <div class="card sec">
+      <div class="lbl">Conversation so far</div>
+      <div id="chat"></div>
+      <div class="lbl" style="margin-top:8px">Last CPU tokens</div>
+      <div id="chips"></div>
+    </div>
+    <div class="card sec">
+      <div class="lbl">Pinned neurons / heads (click the grid)</div>
+      <div id="pins"><div class="k">Click any neuron or head to pin its live trace.</div></div>
+    </div>
+  </aside>
+</main>
+<script>
+"use strict";
+const $=id=>document.getElementById(id);
+let META,TOK,GRAPH,L,NC,FR=null,T=0,playing=false,dirty=true;
+const cache=new Map(),inflight=new Map();
+const net=$("net"),ctx=net.getContext("2d"),tl=$("tl"),tctx=tl.getContext("2d");
+const POSTER=/poster/.test(location.hash);if(POSTER)document.body.classList.add("poster");
+const TH=POSTER?{cpuT:"#22d3ee",qT:"#ff8a3d",cpuS:"#22d3ee",qS:"#ff8a3d",off:"#4b5a74",sub:"#8fa0bb",axis:"#8fa0bb",sep:"#1a2436",attn:"#ffd166",
+  headBase:"#18233a",hot:"#ffffff",arcA:.42,arcW:1.4,dot:"#ffffff",dotR:3,qdot:"rgba(255,138,61,.95)",hand:"#eef3fb",
+  tF:"800 22px Inter,system-ui",sF:"14px Inter,system-ui",stF:"700 15px Inter,system-ui",lF:"800 15px Inter,system-ui",nF:"600 12px Inter,system-ui",
+  qF:"800 13px Inter,system-ui",aF:"700 11px Inter,system-ui",hF:"700 12px Inter,system-ui",hdF:"700 15px Inter,system-ui",tlP:"#3b82f6",tlC:"#14b8a6",tlQ:"#ff8a3d",tlS:"rgba(238,243,251,.5)"}
+ :{cpuT:"#3730a3",qT:"#9d174d",cpuS:"#4338ca",qS:"#be185d",off:"#94a3b8",sub:"#64748b",axis:"#475569",sep:"#e2e8f0",attn:"#b45309",
+  headBase:"#e0e7ff",hot:"#f59e0b",arcA:.18,arcW:.6,dot:"#f59e0b",dotR:1.7,qdot:"rgba(219,39,119,.85)",hand:null,
+  tF:"700 13px Inter,system-ui",sF:"11px Inter,system-ui",stF:"600 11px Inter,system-ui",lF:"700 11px Inter,system-ui",nF:"10px Inter,system-ui",
+  qF:"700 10px Inter,system-ui",aF:"9px Inter,system-ui",hF:"600 9px Inter,system-ui",hdF:"600 11px Inter,system-ui",tlP:"#60a5fa",tlC:"#818cf8",tlQ:"#ec4899",tlS:"rgba(15,23,42,.45)"};
+const CPU_NAMES=["PC anchor","PC word","ROM fetch","ROM / decode","regfile + ALU1","digits + ALU2","RAM","RAM / branch","DROM","DIV / rd","output / exit"];
+// geometry
+let G={};
+function hex(c){return [parseInt(c.slice(1,3),16),parseInt(c.slice(3,5),16),parseInt(c.slice(5,7),16)]}
+function mix(a,b,t){return [a[0]+(b[0]-a[0])*t,a[1]+(b[1]-a[1])*t,a[2]+(b[2]-a[2])*t]}
+const RAMP_CPU=(POSTER?["#00e5c0","#22d3ee","#5b8cff"]:["#2563eb","#4f46e5","#7c3aed"]).map(hex),RAMP_Q=(POSTER?["#ffd166","#ff8a3d","#ff4d6d","#ff3fa4"]:["#9333ea","#c026d3","#db2777","#e11d48"]).map(hex);
+function ramp(st,t){const n=st.length-1,i=Math.min(n-1,Math.floor(t*n));return mix(st[i],st[i+1],t*n-i)}
+function layerColor(i){return i<NC?ramp(RAMP_CPU,i/(NC-1)):ramp(RAMP_Q,(i-NC)/(L-NC-1))}
+
+async function boot(){
+  [META,TOK,GRAPH]=await Promise.all(["/meta","/tokens","/graph"].map(u=>fetch(u).then(r=>r.json())));
+  L=META.n_layers;NC=META.n_chip_layers;
+  $("q").textContent=`“${META.question}”  ·  ${META.n_tokens.toLocaleString()} tokens (${META.chip_tokens.toLocaleString()} CPU, ${META.text_tokens} text)`;
+  // prefix sums for verification and text reconstruction
+  const po=META.overview.pred_ok;META.cumOk=new Int32Array(po.length+1);META.cumBad=new Int32Array(po.length+1);META.cumOwn=new Int32Array(po.length+1);
+  for(let i=0;i<po.length;i++){META.cumOk[i+1]=META.cumOk[i]+(po[i]===1);META.cumBad[i+1]=META.cumBad[i]+(po[i]===-1);META.cumOwn[i+1]=META.cumOwn[i]+(po[i]===1||po[i]===-1)}
+  META.textIdx=[];TOK.forEach((t,i)=>{if(!t.chip)META.textIdx.push(i)});
+  buildGraph();layout();window.addEventListener("resize",()=>{layout();drawTimeline();dirty=true});
+  drawTimeline();seek(parseInt((location.hash.match(/t=(\d+)/)||[])[1]||0));requestAnimationFrame(loop);
+}
+function buildGraph(){
+  // node name -> (layer, kind, index) on screen; edges indexed by reader
+  G.nodePos=new Map();
+  META.layers.forEach((ly,i)=>{if(!ly.chip)return;
+    ly.unit_names.forEach((n,u)=>{const b=n.indexOf("[");if(b>0){const k=n.slice(0,b);if(!G.nodePos.has(k))G.nodePos.set(k,{l:i,kind:"mlp",u})}});
+    ly.head_names.forEach((n,h)=>{const k=n.replace(/\.v\d+$/,"");if(!G.nodePos.has(k))G.nodePos.set(k,{l:i,kind:"head",u:h})});
+  });
+  G.nodes=GRAPH.nodes.map(n=>G.nodePos.get(n.name)||null);
+  G.edges=GRAPH.edges.filter(([a,b])=>G.nodes[a]&&G.nodes[b]);
+  G.byName=new Map(GRAPH.nodes.map((n,i)=>[n.name,i]));
+  G.ins=new Map();G.outs=new Map();
+  for(const [a,b] of G.edges){(G.ins.get(b)||G.ins.set(b,[]).get(b)).push(a);(G.outs.get(a)||G.outs.set(a,[]).get(a)).push(b)}
+}
+function fitCells(cw,maxU,budget){
+  for(let sz=8;sz>=1;sz--){const cells=Math.floor(cw/sz),rows=Math.ceil(maxU/cells);if(rows*sz<=budget)return{sw:sz,sh:sz,cells}}
+  const cells=Math.floor(cw),rows=Math.ceil(maxU/cells);return{sw:1,sh:budget/rows,cells}}
+function layout(){
+  const w=$("stage").clientWidth-16,dpr=window.devicePixelRatio||1,pad=56;
+  G.W=w;G.dpr=dpr;G.Lg=[];G.sec=[];let y=0;
+  for(const [a,b,title,sub,budget,gap] of [[0,NC,"CPU · 11 compiled layers","RV32 processor in the weights: every MLP neuron and head has a compiled job name",300,10],
+                                            [NC,L,"Qwen · 32 language layers","Qwen3.5-4B's own layers: run only on text tokens (prompt, Qwen's words, the tool report)",300,4]]){
+    const n=b-a,cw=Math.floor((w-pad-gap*(n-1))/n),maxU=Math.max(1,...META.layers.slice(a,b).map(l=>l.units)),f=fitCells(cw,maxU,budget);
+    const maxH=Math.max(...META.layers.slice(a,b).map(l=>l.heads)),hcols=8,pitch=Math.min(cw/hcols,POSTER?17:12),headH=Math.ceil(maxH/hcols)*pitch;
+    const TOP=POSTER?84:64,sec={a,b,title,sub,y0:y,top:y+TOP,headH,gridTop:y+TOP+headH+10};
+    sec.y1=sec.gridTop+Math.ceil(Math.ceil(maxU/f.cells)*f.sh)+18;
+    for(let i=a;i<b;i++)G.Lg[i]={x:pad+(i-a)*(cw+gap),cw,sw:f.sw,sh:f.sh,cells:f.cells,hcols,pitch,top:sec.top,headH,gridTop:sec.gridTop};
+    G.sec.push(sec);y=sec.y1+40;
+  }
+  G.H=y-20;net.width=Math.ceil(G.W*dpr);net.height=Math.ceil(G.H*dpr);net.style.width=G.W+"px";net.style.height=G.H+"px";
+  ctx.setTransform(dpr,0,0,dpr,0,0);
+  G.img=ctx.createImageData(net.width,net.height);
+  tl.width=tl.clientWidth*dpr;tl.height=58*dpr;tctx.setTransform(dpr,0,0,dpr,0,0);
+}
+// position of a neuron / head on screen
+function unitXY(l,u){const g=G.Lg[l],r=Math.floor(u/g.cells),c=u%g.cells;return [g.x+(c+.5)*g.sw,g.gridTop+(r+.5)*g.sh]}
+function headXY(l,h){const g=G.Lg[l];return [g.x+g.pitch*(h%g.hcols+.5),g.top+g.pitch*(Math.floor(h/g.hcols)+.5),Math.max(1.3,g.pitch*.36)]}
+
+// ---- data
+const B=32;
+function parse(buf,off,len){const b=new Int8Array(buf,off,len),p=new Uint8Array(buf,off,L),mo=new Int32Array(L),ho=new Int32Array(L);let o=L;
+  for(let i=0;i<L;i++){if(p[i]){mo[i]=o;o+=META.layers[i].units;ho[i]=o;o+=META.layers[i].heads}else{mo[i]=ho[i]=-1}}return{b,p,mo,ho}}
+function fetchFrame(t){
+  if(cache.has(t))return Promise.resolve(cache.get(t));
+  const t0=Math.floor(t/B)*B;
+  if(!inflight.has(t0))inflight.set(t0,fetch(`/frames?t=${t0}&n=${B}`).then(r=>r.arrayBuffer()).then(buf=>{
+    const dv=new DataView(buf);let o=0,k=t0;while(o<buf.byteLength){const n=dv.getUint32(o,true);cache.set(k++,parse(buf,o+4,n));o+=4+n}
+    inflight.delete(t0);while(cache.size>6000)cache.delete(cache.keys().next().value)}));
+  return inflight.get(t0).then(()=>cache.get(t));
+}
+function seek(t){T=Math.max(0,Math.min(META.n_tokens-1,t));const want=T;fetchFrame(T).then(f=>{if(want===T){FR=f;dirty=true;updateSide()}});
+  fetchFrame(T+B);}
+// ---- playback
+let acc=0,last=performance.now();
+function loop(now){
+  const dt=(now-last)/1000;last=now;
+  if(playing){acc+=dt*+$("speed").value;let steps=Math.floor(acc);
+    if(steps>0){const tgt=Math.min(META.n_tokens-1,T+steps);
+      if(cache.has(tgt)){acc-=steps;T=tgt;FR=cache.get(T);dirty=true;updateSide();
+        for(let k=1;k<=Math.max(2,Math.ceil(+$("speed").value/B));k++)if(T+k*B<META.n_tokens)fetchFrame(T+k*B);
+        if(T>=META.n_tokens-1)setPlay(false)}
+      else{fetchFrame(tgt);acc=Math.min(acc,steps+1)}}}
+  draw(now/1000);requestAnimationFrame(loop);
+}
+function setPlay(v){playing=v;$("bPlay").textContent=v?"❚❚ Pause":"▶ Play"}
+
+// ---- drawing
+const BG=hex(POSTER?"#0d1526":"#f1f5f9"),NEG=hex(POSTER?"#a78bfa":"#f59e0b"),OFF=hex(POSTER?"#0f1828":"#e5e7eb");
+function draw(time){
+  if(!FR)return;
+  if(dirty){paintGrid();dirty=false}
+  ctx.putImageData(G.img,0,0);
+  for(const [k,sec] of G.sec.entries()){
+    const live=FR.p[sec.a];
+    ctx.textAlign="left";ctx.fillStyle=live?(k?TH.qT:TH.cpuT):TH.off;ctx.font=TH.tF;
+    ctx.fillText(sec.title,8,sec.y0+(POSTER?24:16));const tw=ctx.measureText(sec.title).width;
+    ctx.font=TH.sF;ctx.fillStyle=TH.sub;ctx.fillText(sec.sub,8+tw+14,sec.y0+(POSTER?24:16));
+    ctx.textAlign="right";ctx.font=TH.stF;
+    ctx.fillStyle=live?(k?TH.qS:TH.cpuS):TH.off;
+    ctx.fillText(live?"● running on this token":(k?"○ skipped on this CPU token":"○ idle"),G.W-6,sec.y0+(POSTER?24:16));
+    ctx.textAlign="left";ctx.fillStyle=TH.axis;ctx.font=TH.hF;
+    ctx.fillText("heads",4,sec.top+10);ctx.fillText("MLP",4,sec.gridTop+10);ctx.fillText("neurons",4,sec.gridTop+21);
+    if(k===1){ctx.strokeStyle=TH.sep;ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(0,sec.y0-8);ctx.lineTo(G.W,sec.y0-8);ctx.stroke()}
+  }
+  for(let i=0;i<L;i++){const g=G.Lg[i],on=FR.p[i],ly=META.layers[i],col=layerColor(i),cpu=i<NC;
+    ctx.textAlign="center";ctx.fillStyle=on?`rgb(${col.map(Math.round)})`:TH.off;
+    if(cpu){ctx.font=TH.lF;ctx.fillText(`C${i+1}`,g.x+g.cw/2,g.top-(POSTER?34:28));
+      ctx.font=TH.nF;ctx.fillText(CPU_NAMES[i]||"",g.x+g.cw/2,g.top-(POSTER?16:15))}
+    else{ctx.font=TH.qF;ctx.fillText(`Q${i-NC+1}`,g.x+g.cw/2,g.top-(POSTER?32:26));
+      if(ly.type==="full_attention"){ctx.font=TH.aF;ctx.fillStyle=on?TH.attn:TH.off;ctx.fillText("◆ attn",g.x+g.cw/2,g.top-(POSTER?16:14))}}
+    const o=FR.ho[i],n=ly.heads;
+    for(let h=0;h<n;h++){const [hx,hy,r]=headXY(i,h),v=on?(FR.b[o+h]&255)/255:0;
+      ctx.beginPath();ctx.arc(hx,hy,r,0,7);
+      const c=on?mix(hex(TH.headBase),col,Math.min(1,Math.pow(v,.55))):OFF;ctx.fillStyle=`rgb(${c.map(Math.round)})`;ctx.fill();
+      if(on&&v>.6){ctx.lineWidth=POSTER?1.6:1;ctx.strokeStyle=TH.hot;ctx.stroke()}}
+  }
+  const q=G.sec[1];ctx.textAlign="center";ctx.font=TH.hdF;
+  ctx.fillStyle=FR.p[NC]?TH.qS:TH.off;
+  ctx.fillText(FR.p[NC]?"↓ text token: its residual after C11 continues into Qwen's layers":"CPU trace token: stops after C11 (the circuit predicts the next token; Qwen is not run)",G.W/2,q.y0-16);
+  drawFlows(time);
+  drawPlayhead();
+}
+function paintGrid(){
+  const d=G.img.data,W=G.img.width,dpr=G.dpr;d.fill(0);
+  for(let i=0;i<L;i++){const g=G.Lg[i],on=FR.p[i],o=FR.mo[i],U=META.layers[i].units,col=layerColor(i);
+    const pw=Math.max(1,Math.round(g.sw*dpr)-(g.sw>=3?1:0)),ph=Math.max(1,Math.round(g.sh*dpr)-(g.sh>=3?1:0));
+    for(let u=0;u<U;u++){const r=Math.floor(u/g.cells),c=u%g.cells;
+      let v=on?FR.b[o+u]/127:0,rgb;
+      if(!on)rgb=OFF;else if(v>=0)rgb=mix(BG,col,Math.min(1,Math.pow(v,POSTER?.33:.5)));else rgb=mix(BG,NEG,Math.min(1,Math.pow(-v,POSTER?.33:.5)));
+      const px=Math.floor((g.x+c*g.sw)*dpr),py=Math.floor((g.gridTop+r*g.sh)*dpr);
+      for(let yy=0;yy<ph;yy++){let k=((py+yy)*W+px)*4;for(let xx=0;xx<pw;xx++,k+=4){d[k]=rgb[0];d[k+1]=rgb[1];d[k+2]=rgb[2];d[k+3]=255}}}}
+  G.active=[];
+  for(let n=0;n<G.nodes.length;n++){const p=G.nodes[n];if(!p||!FR.p[p.l])continue;
+    const v=p.kind==="head"?(FR.b[FR.ho[p.l]+p.u]&255)/255:Math.abs(FR.b[FR.mo[p.l]+p.u])/127;
+    if(v>.08)G.active[n]=v}
+  G.live=[];for(const [a,b] of G.edges)if(G.active[a]&&G.active[b])G.live.push([a,b]);
+  if(G.live.length>700){G.live.sort(()=>Math.random()-.5);G.live.length=700}
+}
+function nodeXY(n){const p=G.nodes[n];if(p.kind==="head"){const [x,y]=headXY(p.l,p.u);return [x,y]}return unitXY(p.l,p.u)}
+function drawFlows(time){
+  if(!G.live)return;
+  // real dataflow of the compiled CPU: writer node -> reader node through a residual dim, both active now
+  ctx.lineWidth=TH.arcW;
+  for(let k=0;k<G.live.length;k++){const [a,b]=G.live[k],[x1,y1]=nodeXY(a),[x2,y2]=nodeXY(b),cx=(x1+x2)/2,cy=Math.min(y1,y2)-18-Math.abs(x2-x1)*.12;
+    const col=layerColor(G.nodes[a].l);ctx.strokeStyle=`rgba(${col.map(Math.round)},${TH.arcA})`;
+    ctx.beginPath();ctx.moveTo(x1,y1);ctx.quadraticCurveTo(cx,cy,x2,y2);ctx.stroke();
+    const s=((time*1.6+k*0.137)%1),q=1-s,px=q*q*x1+2*q*s*cx+s*s*x2,py=q*q*y1+2*q*s*cy+s*s*y2;
+    ctx.beginPath();ctx.arc(px,py,TH.dotR,0,7);ctx.fillStyle=TH.dot;if(POSTER){ctx.shadowColor="#22d3ee";ctx.shadowBlur=10}ctx.fill();ctx.shadowBlur=0}
+  // residual stream through Qwen's layers on text tokens: one band, brightness = residual norm change
+  if(FR.p[NC]){const y=G.sec[1].top-6;
+    for(let i=NC;i<L-1;i++){const a=G.Lg[i],b=G.Lg[i+1],x1=a.x+a.cw/2,x2=b.x+b.cw/2;
+      for(let j=0;j<2;j++){const s=(time*1.2+j*.5+i*.09)%1;ctx.beginPath();ctx.arc(x1+(x2-x1)*s,y,POSTER?3:1.6,0,7);ctx.fillStyle=TH.qdot;ctx.fill()}}}
+  // pinned highlight
+  for(const p of PINS){let x,y;if(p.kind==="head")[x,y]=headXY(p.l,p.u);else[x,y]=unitXY(p.l,p.u);
+    ctx.beginPath();ctx.arc(x,y,5,0,7);ctx.strokeStyle="#0f172a";ctx.lineWidth=1.5;ctx.stroke()}
+}
+function drawPlayhead(){
+  const w=tl.clientWidth;tctx.clearRect(0,0,w,58);tctx.drawImage(TLIMG,0,0,w,58);
+  const x=T/META.n_tokens*w;tctx.fillStyle=POSTER?"#ffffff":"#0f172a";tctx.fillRect(x-1,0,2,46);
+  tctx.beginPath();tctx.moveTo(x-5,0);tctx.lineTo(x+5,0);tctx.lineTo(x,6);tctx.fill();
+}
+let TLIMG=document.createElement("canvas");
+function drawTimeline(){
+  const w=tl.clientWidth,n=META.n_tokens,po=META.overview.pred_ok,res=META.overview.chip_resid,dpr=window.devicePixelRatio||1;
+  TLIMG.width=w*dpr;TLIMG.height=58*dpr;const c=TLIMG.getContext("2d");c.setTransform(dpr,0,0,dpr,0,0);
+  for(let x=0;x<w;x++){const a=Math.floor(x/w*n),b=Math.max(a+1,Math.floor((x+1)/w*n));let txt=0,bad=0;
+    for(let t=a;t<b;t++){if(!TOK[t].chip)txt++;if(po[t]===-1)bad++}
+    c.fillStyle=a<META.prompt_tokens?TH.tlP:txt?TH.tlQ:TH.tlC;c.fillRect(x,14,1,20);
+    if(bad){c.fillStyle="#dc2626";c.fillRect(x,8,1,32)}}
+  // residual norm sparkline (last CPU layer)
+  let mx=0;for(const v of res)mx=Math.max(mx,v);c.strokeStyle=TH.tlS;c.lineWidth=1;c.beginPath();
+  for(let x=0;x<w;x++){const t=Math.floor(x/w*n),y=46-res[t]/mx*10;x?c.lineTo(x,y):c.moveTo(x,y)}c.stroke();
+  c.fillStyle=TH.sub;c.font="10px Inter,system-ui";c.fillText("residual norm after the CPU layers",4,56);
+}
+// ---- side panel
+function esc(s){return s.replace(/[&<>]/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[m]))}
+function updateSide(){
+  const t=TOK[T],po=META.overview.pred_ok[T];
+  $("pos").textContent=`token ${T.toLocaleString()} / ${(META.n_tokens-1).toLocaleString()}${T<META.prompt_tokens?"  (prompt)":""}`;
+  $("tok").textContent=t.s;
+  const ow=$("owner");if(po===0){ow.textContent="next: Qwen predicts";ow.style.background="#fce7f3";ow.style.color="#be185d"}
+  else{ow.textContent="next: circuit predicts";ow.style.background="#e0e7ff";ow.style.color="#4338ca"}
+  $("route").textContent=t.chip?"input is a CPU trace token → 11 chip layers":"input is a text token → 11 chip layers + 32 Qwen layers";
+  const ok=META.cumOk[T+1],bad=META.cumBad[T+1],own=META.cumOwn[T+1],v=META.verify;
+  const nxt=T+1<TOK.length?TOK[T+1].s:"(end)";
+  $("ver").innerHTML=(po===2?`<span style="color:#b45309;font-weight:700">circuit fired inside the prompt (prompt is given, not predicted: unchecked)</span>`:po===0?`<span class="k">this position: Qwen's turn (circuit silent)</span>`:
+    po===1?`<span style="color:var(--ok);font-weight:700">✓ circuit predicted next token = emitted</span>`:`<span style="color:var(--bad);font-weight:700">✗ mismatch</span>`)+
+    `<br><span class="k">next →</span> ${esc(nxt)}<br>circuit-owned so far: <b>${ok.toLocaleString()}</b> / ${own.toLocaleString()} equal, ${bad} wrong`+
+    `<br><span class="k">whole run: ${v.circuit_equal_emitted.toLocaleString()} / ${v.circuit_owned.toLocaleString()} equal; reference lock: ${META.lock_error?"<b style='color:var(--bad)'>ERROR</b>":"<b style='color:var(--ok)'>clean (every CPU token = RV32 reference)</b>"}</span>`;
+  // conversation text up to T
+  let s="",k=0;const ti=META.textIdx;const show=[];
+  for(const i of ti){if(i>T)break;show.push(i)}
+  const tail=show.slice(-260);s=tail.map(i=>i===T?`<span class="cur">${esc(TOK[i].s)}</span>`:esc(TOK[i].s)).join("");
+  $("chat").innerHTML=s;$("chat").scrollTop=1e9;
+  const ch=[];for(let i=T;i>=0&&ch.length<10;i--)if(TOK[i].chip)ch.push(TOK[i].s);
+  $("chips").innerHTML=ch.map((x,j)=>`<div style="opacity:${1-j*.08}">${esc(x)}</div>`).join("");
+  $("tlinfo").textContent=`${(T/META.n_tokens*100).toFixed(1)}%`;
+  if(POSTER){const cpu=!!t.chip;
+    $("capT").innerHTML=(T<META.prompt_tokens?`<span class="qw">prompt</span> `:cpu?`<span class="cpu">CPU instruction</span> `:`<span class="qw">Qwen text</span> `)+`<span class="t">“${esc(t.s.replace(/\n/g,"⏎"))}”</span>`;
+    $("capS").textContent=cpu?"runs only through the 11 compiled CPU layers":"runs through the CPU layers, then all 32 Qwen layers";
+    $("capV").innerHTML=po===1?`<span class="ok">✓ circuit = reference</span>`:po===0?`<span class="qw">Qwen is speaking</span>`:po===2?`<span class="qw">prompt (given)</span>`:`<span style="color:#ff4d6d">✗ mismatch</span>`;
+    $("capV2").textContent=`token ${T.toLocaleString()} of ${(META.n_tokens-1).toLocaleString()} · CPU tokens checked so far: ${ok.toLocaleString()} / ${own.toLocaleString()} exact`}
+  PINS.forEach(drawPin);
+}
+// ---- hover + pin
+const PINS=[];
+function hit(mx,my){
+  for(let i=0;i<L;i++){const g=G.Lg[i];if(mx<g.x||mx>=g.x+g.cw||my<g.top||my>g.gridTop+Math.ceil(META.layers[i].units/g.cells)*g.sh+2)continue;
+    if(my<g.top+g.headH){let best=-1,bd=1e9;for(let h=0;h<META.layers[i].heads;h++){const [hx,hy]=headXY(i,h),d=(hx-mx)**2+(hy-my)**2;if(d<bd){bd=d;best=h}}
+      return best>=0?{l:i,kind:"head",u:best}:null}
+    if(my>=g.gridTop){const r=Math.floor((my-g.gridTop)/g.sh),c=Math.floor((mx-g.x)/g.sw),u=r*g.cells+c;if(c<g.cells&&u>=0&&u<META.layers[i].units)return{l:i,kind:"mlp",u}}}
+  return null}
+function label(p){const ly=META.layers[p.l];
+  if(p.kind==="head")return ly.chip?ly.head_names[p.u]:`Qwen L${p.l-NC+1} ${ly.type==="full_attention"?"attn":"DeltaNet"} value head ${p.u}`;
+  return ly.chip?ly.unit_names[p.u]:`Qwen L${p.l-NC+1} MLP neuron ${p.u}`}
+function val(p){if(!FR||!FR.p[p.l])return null;const ly=META.layers[p.l];
+  return p.kind==="head"?(FR.b[FR.ho[p.l]+p.u]&255)/255*ly.head_scale:FR.b[FR.mo[p.l]+p.u]/127*ly.mlp_scale}
+net.addEventListener("mousemove",e=>{const r=net.getBoundingClientRect(),p=hit(e.clientX-r.left,e.clientY-r.top),tip=$("tip");
+  if(!p){tip.style.display="none";return}const v=val(p);
+  tip.innerHTML=`${esc(label(p))}<br>${p.kind==="head"?"output norm":"activation"} ≈ ${v===null?"— (layer not run for this token)":v.toPrecision(4)}`;
+  tip.style.display="block";tip.style.left=Math.min(e.clientX-r.left+14,r.width-260)+"px";tip.style.top=(e.clientY-r.top+14)+"px"});
+net.addEventListener("mouseleave",()=>$("tip").style.display="none");
+net.addEventListener("click",e=>{const r=net.getBoundingClientRect(),p=hit(e.clientX-r.left,e.clientY-r.top);if(!p)return;
+  if(PINS.length===0)$("pins").innerHTML="";
+  const el=document.createElement("div");el.className="pin";p.el=el;p.series=null;p.t0=-1;PINS.unshift(p);
+  const nm=label(p),ni=G.byName.get(nm.replace(/\[\d+\]$/,"").replace(/\.v\d+$/,""));
+  let io="";if(ni!==undefined){const ins=(G.ins.get(ni)||[]).slice(0,6).map(a=>GRAPH.nodes[a].name),outs=(G.outs.get(ni)||[]).slice(0,6).map(b=>GRAPH.nodes[b].name);
+    io=`<div class="mono k" style="font-size:10px;margin-top:3px">reads ← ${esc(ins.join(", ")||"token / constants")}<br>feeds → ${esc(outs.join(", ")||"output")}</div>`}
+  el.innerHTML=`<span class="x">✕</span><div class="nm">${esc(nm)}</div><div class="mono k v"></div>${io}<canvas></canvas>`;
+  el.querySelector(".x").onclick=()=>{PINS.splice(PINS.indexOf(p),1);el.remove();dirty=true};
+  $("pins").prepend(el);drawPin(p);dirty=true});
+function drawPin(p){
+  const W=200,t0=Math.max(0,T-W),t1=Math.min(META.n_tokens,t0+2*W);
+  if(!p.series||T<p.t0+20||T>p.t1-20){if(!p.loading){p.loading=true;
+    fetch(`/series?l=${p.l}&kind=${p.kind}&u=${p.u}&t0=${t0}&t1=${t1}`).then(r=>r.arrayBuffer()).then(b=>{p.series=new Float32Array(b);p.t0=t0;p.t1=t1;p.loading=false;drawPin(p)})}
+    if(!p.series)return}
+  const v=val(p);p.el.querySelector(".v").textContent=v===null?"not run on this token":`now ${v.toPrecision(4)}`;
+  const cv=p.el.querySelector("canvas"),dpr=window.devicePixelRatio||1,w=cv.clientWidth,h=42;cv.width=w*dpr;cv.height=h*dpr;
+  const c=cv.getContext("2d");c.setTransform(dpr,0,0,dpr,0,0);const s=p.series;let mn=0,mx=1e-9;for(const x of s)if(!isNaN(x)){mn=Math.min(mn,x);mx=Math.max(mx,x)}
+  const col=layerColor(p.l);c.strokeStyle=`rgb(${col.map(Math.round)})`;c.lineWidth=1.2;c.beginPath();let pen=false;
+  for(let i=0;i<s.length;i++){if(isNaN(s[i])){pen=false;continue}const x=i/s.length*w,y=h-3-(s[i]-mn)/(mx-mn)*(h-6);pen?c.lineTo(x,y):c.moveTo(x,y);pen=true}c.stroke();
+  const x=(T-p.t0)/s.length*w;c.fillStyle="#f59e0b";c.fillRect(x-1,0,2,h);
+  c.fillStyle="#94a3b8";c.font="9px Inter";c.fillText(`${p.t0}…${p.t1}  [${mn.toPrecision(3)}, ${mx.toPrecision(3)}]`,2,9);
+}
+// ---- controls
+$("bPlay").onclick=()=>setPlay(!playing);
+$("bFwd").onclick=()=>{setPlay(false);seek(T+1)};$("bBack").onclick=()=>{setPlay(false);seek(T-1)};
+$("bNextT").onclick=()=>{setPlay(false);const n=META.textIdx.find(i=>i>T);if(n!==undefined)seek(n)};
+$("bPrevT").onclick=()=>{setPlay(false);let p;for(const i of META.textIdx){if(i>=T)break;p=i}if(p!==undefined)seek(p)};
+window.addEventListener("keydown",e=>{if(e.key===" "){e.preventDefault();setPlay(!playing)}else if(e.key==="ArrowRight")seek(T+1);else if(e.key==="ArrowLeft")seek(T-1)});
+let drag=false;const tlSeek=e=>{const r=tl.getBoundingClientRect();seek(Math.floor((e.clientX-r.left)/r.width*META.n_tokens))};
+tl.addEventListener("mousedown",e=>{drag=true;tlSeek(e)});window.addEventListener("mousemove",e=>{if(drag)tlSeek(e)});window.addEventListener("mouseup",()=>drag=false);
+boot();
+</script>
+</body>
+</html>

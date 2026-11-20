@@ -1,0 +1,67 @@
+{
+  "repo": "divagr1925/QwenPU",
+  "revision": "0ea39d75484037792279a31db78e912c0b187aca",
+  "files": {
+    "model-00001-of-00011.safetensors": {
+      "bytes": 6579159184,
+      "sha256": "637a1acb0041934f4030d3deee820eb7fda79c437846fba9f3073f720dc32da6",
+      "status": "verified"
+    },
+    "model-00002-of-00011.safetensors": {
+      "bytes": 2163772928,
+      "sha256": "624bf55adb7d20c62205337be2b688b9e4411c87ec13031124f7e29d12c2c8c3",
+      "status": "verified"
+    },
+    "model-00003-of-00011.safetensors": {
+      "bytes": 2236464352,
+      "sha256": "b2709ad3b081e9ad062c8308b674f5332731209a362a91d1f73f49aa766a0c34",
+      "status": "verified"
+    },
+    "model-00004-of-00011.safetensors": {
+      "bytes": 2236464040,
+      "sha256": "a68884b37a20d0e2345525809a1a6f62776694e55eb7d468d8f417cb7feddf67",
+      "status": "verified"
+    },
+    "model-00005-of-00011.safetensors": {
+      "bytes": 2236464360,
+      "sha256": "87385c65f89faf9ed9877e84b049ff6cf844c46c8a6c7c921d364e4b2760b84f",
+      "status": "fetched"
+    },
+    "model-00006-of-00011.safetensors": {
+      "bytes": 2236464040,
+      "sha256": "3d1cd3020bdc2bc3c5235fd23711ea7c73ce938e63902c2087334f59992aeaff",
+      "status": "verified"
+    },
+    "model-00007-of-00011.safetensors": {
+      "bytes": 2236464352,
+      "sha256": "0c228e2a3a45df9d6fcd8552e4dbc469e9e32354ca3c79642667537e49fb1033",
+      "status": "fetched"
+    },
+    "model-00008-of-00011.safetensors": {
+      "bytes": 2236464056,
+      "sha256": "466e3bdfa85ef1283f85b5e7f6951bb8d7e792b950b77675f3b422608c9862db",
+      "status": "verified"
+    },
+    "model-00009-of-00011.safetensors": {
+      "bytes": 2162341520,
+      "sha256": "e21a6208fbb1b095072719f7c50989dc08c89ffba0b0504caa09fe84ceab7d69",
+      "status": "verified"
+    },
+    "model-00010-of-00011.safetensors": {
+      "bytes": 2216213688,
+      "sha256": "1a95c3bebb1761acb2f512dc1feab35f40bf6280809a362d4d814f46a1d06614",
+      "status": "verified"
+    },
+    "model-00011-of-00011.safetensors": {
+      "bytes": 188764624,
+      "sha256": "58577b0ffa682ec3d01fb33349c30bcec264b593c0af25ebdd0be1885c7f7b1e",
+      "status": "verified"
+    },
+    "tokenizer.json": {
+      "bytes": 95461633,
+      "sha256": "a5d021e93282fb4fca8634ba78f022ec609eeae592d2b07422d2d92bc8a9bb7d",
+      "status": "verified"
+    }
+  },
+  "all_verified": true
+}

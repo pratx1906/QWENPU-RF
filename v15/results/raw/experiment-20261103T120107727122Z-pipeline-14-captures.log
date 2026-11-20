@@ -1,0 +1,15 @@
+IDLab:WiFi:wf10Msps_g76_gentbrugge_f5240MHz_r1.bin           exact=True bursts=[] classes={'noise': 324, 'wideband': 188} peak=766
+IDLab:WiFi:wf_g30_igent_f2412MHz_r1.bin                      exact=True bursts=[] classes={'noise': 224, 'tone': 2, 'wideband': 286} peak=1294
+IDLab:LTE:lte_g30_gentbrugge_f806MHz_r1.bin                  exact=True bursts=[] classes={'noise': 160, 'tone': 6, 'wideband': 346} peak=382
+IDLab:LTE:lte10Msps_g0_igent_f806MHz_r1.bin                  exact=True bursts=[] classes={'noise': 239, 'wideband': 273} peak=1095
+IDLab:DVB-T:dvbt_g30_gentbrugge_f482MHz_r1.bin               exact=True bursts=[] classes={'noise': 242, 'wideband': 270} peak=1261
+IDLab:DVB-T:dvbt_g30_igent_f482MHz_r1.bin                    exact=True bursts=[] classes={'noise': 229, 'tone': 3, 'wideband': 280} peak=215
+NTU-RFSR:LoRa:exp6_000000_rxg40_0_fulltrim.cfile             exact=True bursts=[] classes={'noise': 214, 'tone': 1, 'wideband': 297} peak=953
+NTU-RFSR:LoRa:exp7_000000_rxg40_0_fulltrim.cfile             exact=True bursts=[] classes={'noise': 201, 'tone': 2, 'wideband': 309} peak=1758
+EPFL-LoRaIQ:LoRa:310.sigmf-data                              exact=True bursts=[] classes={'noise': 105, 'wideband': 407} peak=887
+EPFL-LoRaIQ:LoRa:11.sigmf-data                               exact=True bursts=[] classes={'noise': 190, 'wideband': 322} peak=30
+EPFL-LoRaIQ:LoRa:1335.sigmf-data                             exact=True bursts=[] classes={'noise': 216, 'wideband': 296} peak=1137
+EPFL-LoRaIQ:LoRa:1298.sigmf-data                             exact=True bursts=[] classes={'noise': 88, 'tone': 13, 'wideband': 411} peak=1960
+Tampere:drone-controller:DJI_inspire_2_2G.bin                exact=True bursts=[1663, 1855] classes={'noise': 134, 'tone': 12, 'wideband': 366} peak=485
+Tampere:drone-controller:DJI_inspire_2_5G_1of2.bin           exact=True bursts=[] classes={'noise': 512} peak=7
+PASS: 14 streams, 31,117,539 tokens, 65.6 ms/sample neural

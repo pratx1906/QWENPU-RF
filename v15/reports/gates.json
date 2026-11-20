@@ -1,0 +1,460 @@
+{
+ "stage": "Stage 1: DSP-AI system working (design section 0)",
+ "V15-S1.1_pipeline_in_weights_16bit": {
+  "status": "passed",
+  "evidence": [
+   "pipeline.json",
+   "pipeline-synthetic.json",
+   "capability-campaign.json"
+  ],
+  "scope": "IQ -> DC block -> 16-tap FIR -> energy/noise/burst, FFT16+CFAR, spectral MLP, CFO, CPU peak search, FM. All on QwenPU's RV32 CPU in weights, Q15/Q2.13. Host copies verified words between stages only."
+ },
+ "V15-S1.2_bit_exact": {
+  "status": "passed",
+  "evidence": [
+   "capability-campaign.json",
+   "vx-neural.json",
+   "pipeline.json",
+   "real-iq-q15.json",
+   "final-tests.xml"
+  ],
+  "scope": "Every token of every neural run equals the RV32(+VX) reference trace, which includes a load of every output. Outputs equal independent integer references. 25 CPU kernels and 4 VX kernels."
+ },
+ "V15-S1.3_real_iq_screen": {
+  "status": "passed_amendment_2_bfp_14_of_14",
+  "evidence": [
+   "real-iq-q15.json",
+   "real-iq-q13-headroom.json",
+   "peak-tie-diagnosis.json",
+   "../research/NUMERICAL_FAILURE_ANALYSIS.md",
+   "real-iq-bfp.json"
+  ],
+  "reason": "Primary Q15 with unchanged v1.4 preprocessing and criteria: 8/14 (v1.4: 0/14). All 6 failures are input clipping from the inherited gain rule. Pre-declared secondary Q2.13 headroom diagnostic: 13/14; the remaining failure is an argmax near-tie (1.4e-4 relative gap). Criteria not relaxed. Pre-declared Amendment 2 (block-floating-point front end computed on the in-weights CPU: BlockMax + AutoScale): 14/14, 57,344 neural samples, criteria unchanged. Primary result stays 8/14 and is reported alongside."
+ },
+ "V15-S1.4_one_checkpoint_runtime_parameters": {
+  "status": "passed",
+  "evidence": [
+   "qwen-checkpoint-final.json",
+   "capability-campaign.json"
+  ],
+  "scope": "All kernels are programs on the same unchanged published weights. Taps, windows, tables, thresholds and MLP weights are RAM or WROM data."
+ },
+ "V15-S1.5_one_command": {
+  "status": "passed",
+  "evidence": [
+   "pipeline.json",
+   "pipeline-synthetic.json"
+  ],
+  "scope": "v15/scripts/pipeline_run.py prints PASS/FAIL and exits nonzero on failure."
+ },
+ "V15-S1.6_actual_published_checkpoint": {
+  "status": "passed",
+  "evidence": [
+   "qwen-checkpoint-final.json"
+  ],
+  "scope": "14 representative kernels, including both VX kernels, on QwenPU-published chip layers (stock HF Qwen3_5DecoderLayer, SHA-verified shards), free-running and token-exact. Chip-only: Qwen's language layers are not loaded (Stage 2)."
+ },
+ "not_in_stage_1": [
+  "ablations A2-A7",
+  "general precision-selection pass",
+  "paper and release",
+  "VBFLY instruction (designed, not built)"
+ ],
+ "V15-S2_qwen_calls_in_weights_rf": {
+  "status": "passed",
+  "evidence": [
+   "STAGE2.md",
+   "stage2/stage2-chat.json",
+   "stage2-checkpoint.json",
+   "../tests/test_stage2_firmware.py"
+  ],
+  "scope": "Published QwenPU merged checkpoint (SHA-verified). Qwen issues <tool_call> rf_analyze; RF firmware runs on the in-weights RV32 CPU (executor for chip tokens); report echoed as Qwen tokens; 3/3 runs, ~780k computer tokens, every circuit token equal to the RV32 reference. Not a single-GPU full forward: chip layers' role played by the executor; lm_head head-check unavailable."
+ },
+ "V15-S2b_full_model_one_gpu": {
+  "status": "passed",
+  "evidence": [
+   "STAGE2.md",
+   "stage2/fullgpu-stage2-chat.json"
+  ],
+  "scope": "Qwen3.5-4B + plain RV32 CPU merged (19 GB) fully on the 24 GB GPU; chip tokens through saved HF chip layers; 3/3 runs, ~779k chip tokens, 0 lock errors, 0 head mismatches."
+ },
+ "V15-S2c_real_data_classifier": {
+  "status": "passed_modest_accuracy",
+  "evidence": [
+   "../configs/tech-classifier.json"
+  ],
+  "scope": "IDLab WiFi/LTE/DVB-T, recording-level split: 67.0% window / 70.3% recording accuracy (chance 39.6%); 101 held-out windows run in weights, token-exact, equal to the integer model (69.3% on that subset). Two configurations tried (16 vs 64 frames); both reported."
+ },
+ "V15-ARCH_new_VX_RF_instruction_VFIR": {
+  "status": "passed",
+  "evidence": [
+   "../research/VX_RF_INSTRUCTIONS.md",
+   "vfir-checkpoint.json",
+   "vfir-neural.json",
+   "../tests/test_vfir.py"
+  ],
+  "scope": "New compiled VX instruction (complex Q15 FIR tap block) on QwenPU branch rfpu-vfir: no new layers/heads; oracle, circuit (every token), GPU executor and saved merged checkpoint (5/5 token-exact) verified; 1.8-5.9x faster than scalar on real IQ (4-16 taps). Packed I/O: 2.6/3.5/6.7x (4/8/16 taps). VBFLY not implemented."
+ },
+ "V15-ARCH_new_VX_RF_instruction_VPOW": {
+  "status": "passed",
+  "evidence": [
+   "../research/VX_RF_INSTRUCTIONS.md",
+   "vpow-executor.json",
+   "upstream/QwenPU-rf tests/test_rv_vpow_ref.py, test_rv_vx.py::test_vpow"
+  ],
+  "scope": "VPOW (custom-2 funct7=1, funct3=1): sum(ar^2+ai^2) mod 2^32 over a VM register. Oracle tests, circuit teacher-forced every token, fused executor free-running 8/8 programs token-exact. 8.8x vs scalar when data is already in VM; ~1x when it must first be loaded from RAM. Not merged into a saved checkpoint."
+ },
+ "V15-S3a_timing_study_amendment_3": {
+  "status": "passed",
+  "evidence": [
+   "timing-study.json",
+   "../research/PROTOCOL.md"
+  ],
+  "scope": "Pre-declared: VFIR packed 16-tap vs scalar FIR16, 8 independent processes, A-B-B-A. Geometric-mean speedup 6.73x, 95% t-CI [6.727, 6.738], exact sign-flip p=0.0078 (minimum possible with 8 units). Tokens/sample 633.7 vs 94.9."
+ },
+ "V15-SPEC_speculative_verification": {
+  "status": "passed_exploratory",
+  "evidence": [
+   "speculative-verify.json"
+  ],
+  "scope": "Exploratory (not pre-declared). Published checkpoint saved chip layers, lowpass16 FIR on 32 real samples (~10k tokens): reference machine drafts the trace, layers verify C tokens per parallel forward. 0 mismatches at C=64/256/1024; 30/60/74x faster than free-running on the same HF layers (35.6 tok/s -> 2,638 tok/s). Audit mode: host also computes the trace. Baseline is the HF path, not the fused executor (~5x faster than HF), and both use reference PyTorch kernels (no flash-linear-attention)."
+ },
+ "V15-P4_error_budget_precision": {
+  "status": "passed",
+  "evidence": [
+   "ERROR_BUDGET.md",
+   "error-budget.json",
+   "../research/PROTOCOL.md"
+  ],
+  "scope": "Pre-declared Amendment 4, all neural. Block-floating-point FFT64 power: 74.6-76.3 dB arithmetic SQNR at every level -60..0 dBFS (fixed scaling 7.5-66.5 dB), 266 vs 201 tokens/sample. Taylor-interpolated NCO: 85.8 dB (table only 49.0), 72 vs 53 tokens/sample. 34-row error budget across 11 kernels."
+ },
+ "V15-P5.1_fft_stage_rewrite": {
+  "status": "passed",
+  "evidence": [
+   "fft-opt-neural.json"
+  ],
+  "scope": "Bit-identical FFT program (no-multiply W0/-j stages, twiddle-outer loops), neural-exact. Tokens/sample: FFT16 151.8->125.1, FFT64 201.3->165.5, FFT64 block 267.9->230.2, FFT256 251.3->205.6, Welch64x4 412.0->342.9 (17-19% fewer); CFAR uses the same subroutine."
+ },
+ "V15-P5.2_am_envelope_trim": {
+  "status": "passed",
+  "evidence": [
+   "am-trim-neural.json"
+  ],
+  "scope": "Magnitude-only CORDIC: 16 iterations bit-identical at 256 tokens/sample (was 450 with angle accumulation); k=10 (fixed by analysis before measurement) 121.6 dB arithmetic SQNR (target >= 90) at 185 tokens/sample: 2.4x fewer tokens."
+ },
+ "V15-P5.3_chunked_verification_large": {
+  "status": "passed",
+  "evidence": [
+   "speculative-fir64.json",
+   "speculative-fir64-fla.json",
+   "speculative-fir64-batched.json",
+   "speculative-fir64-fla-batched.json",
+   "speculative-fir64-fla-gpucmp.json",
+   "speculative-mutation.json"
+  ],
+  "scope": "Published checkpoint saved chip layers, FIR64 x 48 real samples, 107,023-token trace: 0 mismatches at every chunk size (256..16384) in every configuration, including flash-linear-attention kernels. Fused executor batch 1: 4,363 tok/s. Chunked, per-position decode: 2.7-3.4k tok/s (torch kernels), 1.5-2.3k (FLA) -- the per-position host sync dominated. Batched decode: 4.4-6.0k (torch), 12.7k (FLA). GPU-side code compare (FLA): 11.5-13.0k tok/s = 3.0x the executor, ~360x the HF free-running path (35.6 tok/s). Mutation test: one altered drafted token (position 50000) is detected (2 mismatches, first at 49999). Audit mode: the host drafts the trace; the model's layers verify every position."
+ },
+ "V15-S2d_chunked_verification_in_chat": {
+  "status": "passed",
+  "evidence": [
+   "STAGE2.md",
+   "stage2/fullgpu-chunked-nofla-stage2-chat.json",
+   "stage2/fullgpu-sequential-newfw-stage2-chat.json",
+   "stage2/fullgpu-chunked-fla-stage2-chat.json",
+   "../rfpu_v15/stage2/chunked_chat.py"
+  ],
+  "scope": "Qwen calls rf_analyze fully on one GPU (19 GB merge); the computer's tokens are verified C=1024 at a time against the reference lock (ChunkedRvChat, subclass; upstream unmodified). Same firmware, same environment: all 3 questions token-identical to the one-token-at-a-time run (93,449 / 100,884 / 100,984 tokens incl. Qwen's answers); 0 lock errors, 0 head mismatches. Chip time 223-247 s -> 16 s per question (~15x); whole question 255-288 s -> 47-54 s (~5.4x). With flash-linear-attention: chip 11-28 s, Qwen's free-text wording changes (its float layers), every circuit token still exact. Audit mode: the reference drafts, the layers verify."
+ },
+ "V15-S2e_rf_levels_compute_only_what_is_asked": {
+  "status": "passed",
+  "evidence": [
+   "STAGE2.md",
+   "stage2/fullgpu-chunked-stage2-levels.json",
+   "../tests/test_stage2_firmware.py"
+  ],
+  "scope": "Second tool rf_levels(capture) on the same firmware (selected from the call text on the CPU): power, peak, noise floor, windows only; skips the CFO accumulation and DFT16. Identical level numbers to rf_analyze, ~28k vs ~93k tokens (3.3x). Both tools offered: Qwen chose rf_levels for 2/2 level questions and rf_analyze for 1/1 frequency question; 27-31 s per level question (was ~270 s), 0 lock errors, 0 head mismatches."
+ },
+ "V15-P6.1_vbfly_block_fft": {
+  "status": "passed",
+  "evidence": [
+   "amendment6.json",
+   "../research/PROTOCOL.md",
+   "upstream/QwenPU-rf commits 15bb774, 824c694, b72623e"
+  ],
+  "scope": "New VX instruction VBFLY (custom-2 funct7=1 funct3=2): constant-geometry radix-2 butterflies, twiddles from a 32-pair RoPE table at i & mask, tracked mode for block floating point (VGET 3 = stage max bit length). 13 layers, 137 heads (+1.4% FFN units). Circuit tests every token; 96 VX regression tests pass. VXFFT64 (CPU window/normalize, 6 VBFLY stages, VPOW bins), neural on the fused executor: 69.5-71.5 dB arithmetic SQNR at every level -60..0 dBFS (target >= 68), 127-133 tokens / 19-21 ms per sample vs the CPU block FFT's 74.6-75.2 dB at 229-233 tokens / 34-38 ms (same circuit): 1.8x faster, ~5 dB less precise."
+ },
+ "V15-P6.2_iir_wide": {
+  "status": "passed",
+  "evidence": [
+   "amendment6.json"
+  ],
+  "scope": "IIRBiquad(wide=True): int32 state/output, no saturation. +12 dB DC-gain filter: 82.3 dB at -12 dBFS and 88.2 dB at -6 dBFS (int16 saturating: 35.1 / 14.8 dB); 130-134 vs 172-176 tokens/sample. Neural-exact."
+ },
+ "V15-P6.3_vfir_precision": {
+  "status": "failed",
+  "evidence": [
+   "amendment6.json"
+  ],
+  "scope": "VFIR 16 taps (per-tap rounding), -12 dBFS: 69.2 dB arithmetic SQNR, below the pre-declared 70 dB target (scalar exact-accumulation FIR16: 81.3 dB). The per-tap rounding contract costs ~12 dB; VFIR is the fast path, kernels.FIR the precise one. Recorded as a failure."
+ },
+ "V15-P6.5_energy": {
+  "status": "documented",
+  "scope": "Exact scalar energy (16 tokens/sample, exact) is the precision path; VX int8 energy (35 dB, 15 tokens/sample) is a low-precision showcase only."
+ },
+ "V15-P6.4_classifier_lag_features": {
+  "status": "no_improvement",
+  "evidence": [
+   "classifier-screen.json",
+   "../research/PROTOCOL.md"
+  ],
+  "scope": "Exploratory, pre-declared method. OFDM cyclic-prefix lag correlations (L = 64, 67, 128, 224, 448) added to the 17 features. Leave-one-location-out CV on the calibration recordings (only 2 locations: merelbeke, rabot) chose baseline+lags (recording accuracy 52% vs 48%). Held-out, evaluated once (host float): 67.2% windows / 70.3% recordings = no improvement over the recorded 70.3%; DVB-T still mostly predicted LTE (399/640). Not implemented in weights. Limitation: training data cover 2 locations, held-out 4; cross-location generalization, not arithmetic, limits accuracy."
+ },
+ "V15-P6.4c_classifier_10msps": {
+  "status": "passed_indicative",
+  "evidence": [
+   "classifier-10msps.json",
+   "../research/PROTOCOL.md"
+  ],
+  "scope": "26 IDLab recordings at 10 MS/s (LTE 12, WiFi 9, DVB-T 5), same 17 in-weights features, leave-one-recording-out: 84.6% recordings / 70.9% windows (float and the exact integer in-weights model alike), above the 1 MS/s six-location 74.4%. Final model neural on one window per recording: 26/26 token-exact, outputs equal the integer model. Small sample: indicative. DVB-T windows 36/80. First run keyed recordings by file name (two share one): rerun keyed by path; a second run failed out of memory during the concurrent 27 GB merge (ledger)."
+ },
+ "V15-ARCH_VPOW_VBFLY_saved_checkpoint": {
+  "status": "passed",
+  "evidence": [
+   "vx-rf-checkpoint.json",
+   "$RFPU_DATA/checkpoints/rfpu-v15/qwen3.5-4b-vx-rf/rfpu-provenance.json"
+  ],
+  "scope": "Merged checkpoint qwen3.5-4b-vx-rf (Qwen3.5-4B + VX + VFIR + VPOW + VBFLY, branch b72623e), shards SHA-verified, circuit matches metadata. Saved HF chip layers, free-running, every token checked: VXFFT64 one real-IQ frame (8,696 tokens, outputs = independent model), VXFir16 on 16 real samples (2,816), vbfly_program seeds 0/1 (3,744 / 3,962), vpow_program seed 0 (2,075): 5/5 exact."
+ },
+ "V15-S2f_real_recordings": {
+  "status": "passed",
+  "evidence": [
+   "stage2/fullgpu-chunked-stage2-real.json",
+   "../research/PROTOCOL.md"
+  ],
+  "scope": "Amendment 7: 6 questions on 6 real captures (IDLab WiFi 1 MS/s, LTE 1 and 10 MS/s, DVB-T; EPFL LoRa; Tampere drone 5.8 GHz), both tools offered, fully on one GPU, chunked verification. 6/6: 0 lock errors, 0 head mismatches, every report field equals the host model within firmware tolerances, every asked number quoted exactly in Qwen's answer. Qwen chose rf_levels for the 4 level questions (27.7-28.8k chip tokens) and rf_analyze for spectral/CFO (97-101k); 29-42 s per question."
+ },
+ "V15-P8.1_vfir_guard": {
+  "status": "passed",
+  "evidence": [
+   "amendment8.json",
+   "upstream/QwenPU-rf commit 2037c86"
+  ],
+  "scope": "VFIR guard bit (circuit change, 13 layers; 106 VX tests pass): taps x4, chained rounding constant, rd = sat16(y >> 2). 16 taps at -12 dBFS: 77.9 dB (target >= 75) at 110.5 tokens/sample; per-tap VFIR 69.2 dB at 110.3 (P6.3, still recorded as failed); exact scalar FIR16 81.3 dB at 624.8."
+ },
+ "V15-P8.6_vbfly_fixed_vs_block": {
+  "status": "measured",
+  "evidence": [
+   "amendment8.json"
+  ],
+  "scope": "Ablation, neural: VXFFT64 untracked fixed scaling 6.6-64.1 dB over -60..0 dBFS at 103 tokens/sample (-12 dBFS) vs tracked block floating point 69.5-71.5 dB at 129 tokens/sample."
+ },
+ "V15-P8.3a_regress_real_iq_bfp": {
+  "status": "passed",
+  "evidence": [
+   "real-iq-bfp.json",
+   "real-iq-bfp-20261103.json"
+  ],
+  "scope": "Rerun on today's code: 14/14, 57,344 neural samples (same as 2026-11-03)."
+ },
+ "V15-P8.2_classifier_bandwidth": {
+  "status": "passed_indicative",
+  "evidence": [
+   "classifier-10msps-bandwidth.json",
+   "classifier-10msps-bandwidth-screen.json"
+  ],
+  "scope": "10 MS/s IDLab (26 recordings), 17 features + 64 occupied-bandwidth features (FFT64 power shape), leave-one-recording-out: 96.2% recordings / 78.8% windows for the exact integer in-weights model (was 84.6% / 70.9%); DVB-T windows 62/80 (was 36/80). Final model, two stages in weights per window (FFT64 power, host copy of verified words, 81-feature classifier): 26/26 token-exact, outputs equal references, predictions equal the integer model. Small sample (5 DVB-T recordings): indicative."
+ },
+ "V15-P8.4_regress_stage2_robust": {
+  "status": "passed",
+  "evidence": [
+   "stage2/fullgpu-chunked-stage2-robust.json",
+   "stage2/stage2-robust.json"
+  ],
+  "scope": "Robust suite, full GPU, chunked: 0 lock errors, 0 head mismatches; same decisions as the recorded run (no tool for index 20 and the no-tool question; firmware error reported for -1; 2.2 dB comparison); repeated question token-identical. No label leak in the answer (the 2026-11-03 run had one)."
+ },
+ "V15-P8.5_chunk_size_ablation": {
+  "status": "passed",
+  "evidence": [
+   "stage2/fullgpu-chunk-sweep.json"
+  ],
+  "scope": "One question (capture 14), C = 0 (unchunked RvChat), 64, 256, 1024, 4096: all 92,913 chip tokens and the whole answer token-identical; 0 lock errors, 0 head mismatches. Seconds per question 277.8 / 110.3 / 58.1 / 47.6 / 46.1 (chip 227.8 / 68.3 / 25.8 / 17.3 / 16.1)."
+ },
+ "V15-P8.3_stage1_regression": {
+  "status": "passed",
+  "evidence": [
+   "real-iq-bfp.json",
+   "pipeline.json",
+   "pipeline-synthetic.json",
+   "*-20261103.json copies"
+  ],
+  "scope": "Today's code: real-IQ BFP gate 14/14 (57,344 samples); 14-capture pipeline PASS with every stream's outputs identical to 2026-11-03 (30.35M vs 31.12M tokens after the FFT rewrite); synthetic pipeline PASS, outputs identical. Neural fuzz regression parked (FUTURE.md)."
+ },
+ "amendment9_expanded_screen": {
+  "gate": "Amendment 9 expanded real-IQ screen",
+  "result": "132/133 pass (99.2%, Wilson 95% [95.9, 99.9])",
+  "pass": null,
+  "note": "single failure: Tampere DJI_matrice_210_5G_1of2 matched-peak displacement 2 (>1) from a 0.024% near-tie; NMSE ~1e-8; every sample neural",
+  "report": "v15/reports/real-iq-expanded.json",
+  "date": "2026-11-04",
+  "kind": "descriptive (Amendment 9 declares a rate, not an all-pass gate); per-recording criteria unchanged"
+ },
+ "amendment10a_pipeline_expanded": {
+  "gate": "Amendment 10a full 8-stage pipeline on 133 expanded recordings",
+  "pass": true,
+  "result": "133/133 streams all stages token-exact, outputs equal references",
+  "tokens": 288607956,
+  "ms_per_sample": 38.86,
+  "report": "v15/reports/pipeline-expanded.json",
+  "date": "2026-11-05"
+ },
+ "amendment10b_kernel_battery": {
+  "gate": "Amendment 10b 10-kernel battery on 133 recordings",
+  "pass": true,
+  "result": "10/10 kernels 133/133 exact; FFT64 block min 72.7 dB (>=65)",
+  "report": "v15/reports/kernel-battery.json",
+  "date": "2026-11-05",
+  "caveat": "IIR min 55.9 / VFIR min 65.4 dB on wideband Tampere DJI 5G: diagnosed as a constant rounding floor (~0.95 / 0.35 LSB^2) vs heavily attenuated filter output (-12..-17 dB); no saturation; corr(SQNR, log out power)=0.99 (v15/reports/battery-tail-diag.json)"
+ },
+ "amendment11_stage2_bank": {
+  "gate": "Amendment 11 Stage 2 96-question bank + answer checker",
+  "pass": true,
+  "result": "P11.1 96/96 exact; P11.2 100%; P11.3 96.6% fields quoted verbatim; P11.4 99.0% numbers supported (308/311); tool choice 96/96",
+  "notes": "misses are trailing-zero formatting; 3 unsupported = Qwen Hz conversions, one wrong (-62.6 Hz should be kHz) and flagged; CFO-method explanation wrong in 2 answers (not caught by number check); run crashed at Q78 on console encoding and was resumed",
+  "report": "v15/reports/stage2/fullgpu-chunked-stage2-bank-a11-checked.json",
+  "date": "2026-11-05"
+ },
+ "amendment12_P12.5_iir_out_frac": {
+  "pass": true,
+  "result": "133/133 exact; SQNR min 80.0 dB (>=70), median 102.6",
+  "report": "v15/reports/a12-battery.json",
+  "date": "2026-11-05"
+ },
+ "amendment12_P12.6_vfir_adaptive_scale": {
+  "pass": false,
+  "result": "all passes exact, 0 saturation, min 68.3 dB (<70; expected FAIL declared in 12a), median 76.7",
+  "report": "v15/reports/a12-battery.json",
+  "date": "2026-11-05"
+ },
+ "amendment12_P12.3_firmware_v3": {
+  "pass": true,
+  "result": "16/16 captures: freq_hz exact, cfo_hz within fs*2^-12, notes present, no Hz for fs unknown (reference machine; neural via P12.4 lock)",
+  "report": "v15/reports/firmware-v3-check.json",
+  "date": "2026-11-05"
+ },
+ "amendment12_P12.1_P12.2_checker_v2_encoding": {
+  "pass": true,
+  "result": "unit tests pass (test_answer_checker 4, test_textio 2)",
+  "date": "2026-11-05"
+ },
+ "amendment12_P12.4_bank_fwv3": {
+  "pass": true,
+  "result": "96/96 exact; fields 100%; numbers supported 98.8% (330/334, checker v2); tool 96/96; wrong Hz 1->0 (22/22 correct); CFO misattribution 2->0",
+  "note": "Amendment 12b: rerun with --max-new 1000 after the 500 limit truncated 8/17 answers",
+  "report": "v15/reports/stage2/fullgpu-chunked-stage2-bank-checked-v2.json",
+  "date": "2026-11-05"
+ },
+ "amendment13_P13.1_fuzz_regression": {
+  "pass": true,
+  "result": "40/40 token-exact on today's code (seed 15151), 10.66M tokens; 12.5% fewer tokens than 2026-11-03, all in Amendment 5 shortened kernels",
+  "report": "v15/reports/neural-fuzz-a13.json",
+  "date": "2026-11-06"
+ },
+ "amendment13_P13.2_heldout_exact": {
+  "pass": true,
+  "result": "40/40 questions that ran the computer: 0 lock errors, 0 head mismatches",
+  "report": "v15/reports/stage2/fullgpu-chunked-stage2-heldout-checked.json",
+  "date": "2026-11-06"
+ },
+ "amendment13_P13.3_heldout_answerable": {
+  "pass": false,
+  "result": "tool 32/32 (right tool 32/32); fields 44/44; numbers supported 89.3% (117/131) < 95%",
+  "note": "all 14 unsupported numbers are Qwen's own derivations (differences, percentages, rescalings), all arithmetically correct on manual reading; one wrong unit (1.1 dBFS for a dB difference)",
+  "report": "v15/reports/stage2/fullgpu-chunked-stage2-heldout-checked.json",
+  "date": "2026-11-06"
+ },
+ "amendment13_P13.4_heldout_notool": {
+  "pass": true,
+  "result": "8/8 answered without a tool",
+  "report": "v15/reports/stage2/fullgpu-chunked-stage2-heldout-checked.json",
+  "date": "2026-11-06"
+ },
+ "amendment13_P13.5_heldout_unanswerable": {
+  "pass": false,
+  "result": "declined 4/8 (< 7); 45 unsupported numbers in these answers (mostly list numbering and a fabricated path-loss calculation)",
+  "note": "wrong answers: bandwidth '0 MHz' from the dominant bin; '0 transmitters' from 0 active windows; symbol rate = sample rate; drone distance '~100 m' treating dBFS as dBm",
+  "report": "v15/reports/stage2/fullgpu-chunked-stage2-heldout-checked.json",
+  "date": "2026-11-06"
+ },
+ "amendment14_P14.1_firmware_v4": {
+  "pass": true,
+  "result": "17/17 firmware tests on the RV32 reference; not_measured line in both reports; +655 / +801 tokens per call",
+  "date": "2026-11-06"
+ },
+ "amendment14_P14.2_exact": {
+  "pass": true,
+  "result": "34/34 questions that ran the computer: 0 lock errors, 0 head mismatches",
+  "report": "v15/reports/stage2/fullgpu-chunked-stage2-a14-checked-v3.json",
+  "date": "2026-11-06"
+ },
+ "amendment14_P14.3_unanswerable": {
+  "pass": false,
+  "result": "declined 16/16 (listed 8/8, unlisted 8/8; A13 was 4/8) but 5 unsupported numbers in one answer",
+  "note": "RSSI-in-dBm answer declines, then gives a hypothetical worked example (-14.1 dBFS + -100 dBm = -114.1 dBm) and calls -100/-120 dBm a typical ADC reference",
+  "report": "v15/reports/stage2/fullgpu-chunked-stage2-a14-checked-v3.json",
+  "date": "2026-11-06"
+ },
+ "amendment14_P14.4_answerable": {
+  "pass": false,
+  "result": "tool 16/16; fields 91.3% (21/23); numbers supported (v3) 93.3% (70/75) < 95%",
+  "note": "2 real errors: active_windows=0/16 read as '16 active out of 64' -> 25%; freq_hz=-22500000 given as 22.5 MHz (sign dropped). 3 checker artefacts: the constants 100 and 1,000,000 in shown conversion formulas",
+  "report": "v15/reports/stage2/fullgpu-chunked-stage2-a14-checked-v3.json",
+  "date": "2026-11-06"
+ },
+ "amendment14_P14.5_notool": {
+  "pass": true,
+  "result": "4/4 without a tool",
+  "report": "v15/reports/stage2/fullgpu-chunked-stage2-a14-checked-v3.json",
+  "date": "2026-11-06"
+ },
+ "amendment14_a13_rerun_fwv4": {
+  "pass": null,
+  "result": "descriptive (seen set): exact 40/40, tool 32/32, fields 100%, numbers (v3) 115/115 (v2 89.6%), no-tool 8/8, declined 8/8 with 0 unsupported numbers (A13 under v3: 4/8)",
+  "note": "manual: transmitter-count answer quotes not_measured but still concludes '0 active transmitters detected' (hedge)",
+  "report": "v15/reports/stage2/fullgpu-chunked-stage2-heldout-fwv4-checked-v3.json",
+  "date": "2026-11-06"
+ },
+ "amendment15_P15.1_exact": {
+  "pass": true,
+  "value": "250/250 features exact, 250/250 MLP exact (106.1M tokens)",
+  "threshold": "250/250",
+  "source": "reports/modclass-neural.json"
+ },
+ "amendment15_P15.2_accuracy": {
+  "pass": true,
+  "value": 0.864,
+  "threshold": ">=0.80",
+  "source": "reports/modclass-neural.json"
+ },
+ "amendment15_P15.3_classes": {
+  "pass": true,
+  "value": "21/25 classes >=7/10 (below: 32QAM 5, 64QAM 5, 128QAM 5, 256QAM 6)",
+  "threshold": ">=20/25",
+  "source": "reports/modclass-neural.json"
+ },
+ "amendment15b_P15.4_exact": {
+  "pass": true,
+  "value": "10/10 lock_error None, 0 head mismatches, printed = host model 10/10 (446-469k chip tokens/call)",
+  "threshold": "10/10",
+  "source": "reports/stage2/fullgpu-chunked-stage2-modulation.json"
+ },
+ "amendment15b_P15.5_qwen": {
+  "pass": true,
+  "value": "10/10 called rf_modulation and named the printed class",
+  "threshold": ">=9/10",
+  "source": "reports/stage2/fullgpu-chunked-stage2-modulation.json"
+ },
+ "amendment15b_truth_descriptive": {
+  "value": "8/10 (32QAM->64QAM, 64QAM->16QAM)",
+  "source": "reports/stage2/fullgpu-chunked-stage2-modulation.json"
+ }
+}

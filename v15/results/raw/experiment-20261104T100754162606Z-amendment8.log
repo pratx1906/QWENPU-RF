@@ -1,0 +1,76 @@
+{'kernel': 'VFIR16 guard (taps x4, one final rounding)', 'level_dbfs': -12, 'sqnr_db': 77.86775971371117, 'tokens_per_sample': 110.4873046875, 'ms_per_sample': 15.71710136718707}
+{'kernel': 'VFIR16 per-tap rounding', 'level_dbfs': -12, 'sqnr_db': 69.23017451144779, 'tokens_per_sample': 110.3076171875, 'ms_per_sample': 15.79006064453381}
+{'kernel': 'scalar FIR16 exact accumulation', 'level_dbfs': -12, 'sqnr_db': 81.33768204046632, 'tokens_per_sample': 624.8173828125, 'ms_per_sample': 90.08946157226205}
+{'kernel': 'VBFLY FFT64 block', 'level_dbfs': -60, 'sqnr_db': 70.25221595729548, 'tokens_per_sample': 127.1728515625, 'ms_per_sample': 18.356399121088884}
+{'kernel': 'VBFLY FFT64 fixed', 'level_dbfs': -60, 'sqnr_db': 6.577970047889848, 'tokens_per_sample': 99.56298828125, 'ms_per_sample': 14.368415771485843}
+{'kernel': 'VBFLY FFT64 block', 'level_dbfs': -54, 'sqnr_db': 70.21598336343712, 'tokens_per_sample': 127.6962890625, 'ms_per_sample': 18.406530224609696}
+{'kernel': 'VBFLY FFT64 fixed', 'level_dbfs': -54, 'sqnr_db': 12.633498326097643, 'tokens_per_sample': 100.0068359375, 'ms_per_sample': 14.421690576170931}
+{'kernel': 'VBFLY FFT64 block', 'level_dbfs': -48, 'sqnr_db': 70.12750741995659, 'tokens_per_sample': 128.01953125, 'ms_per_sample': 18.454377392572496}
+{'kernel': 'VBFLY FFT64 fixed', 'level_dbfs': -48, 'sqnr_db': 18.329701776372602, 'tokens_per_sample': 100.30078125, 'ms_per_sample': 14.461240332039438}
+{'kernel': 'VBFLY FFT64 block', 'level_dbfs': -42, 'sqnr_db': 70.25350113337124, 'tokens_per_sample': 128.30224609375, 'ms_per_sample': 18.48059687499415}
+{'kernel': 'VBFLY FFT64 fixed', 'level_dbfs': -42, 'sqnr_db': 24.04715987006763, 'tokens_per_sample': 100.55078125, 'ms_per_sample': 14.490247119141486}
+{'kernel': 'VBFLY FFT64 block', 'level_dbfs': -36, 'sqnr_db': 69.92778740870226, 'tokens_per_sample': 128.50341796875, 'ms_per_sample': 18.509485009758464}
+{'kernel': 'VBFLY FFT64 fixed', 'level_dbfs': -36, 'sqnr_db': 29.54231261354943, 'tokens_per_sample': 100.71728515625, 'ms_per_sample': 14.520002929700127}
+{'kernel': 'VBFLY FFT64 block', 'level_dbfs': -30, 'sqnr_db': 69.70069586271691, 'tokens_per_sample': 128.625, 'ms_per_sample': 18.521282568357833}
+{'kernel': 'VBFLY FFT64 fixed', 'level_dbfs': -30, 'sqnr_db': 35.79683717309476, 'tokens_per_sample': 100.8310546875, 'ms_per_sample': 14.529037988282312}
+{'kernel': 'VBFLY FFT64 block', 'level_dbfs': -24, 'sqnr_db': 69.5182213156535, 'tokens_per_sample': 128.708984375, 'ms_per_sample': 18.51341386719696}
+{'kernel': 'VBFLY FFT64 fixed', 'level_dbfs': -24, 'sqnr_db': 42.01679739759177, 'tokens_per_sample': 101.046875, 'ms_per_sample': 14.559149365226176}
+{'kernel': 'VBFLY FFT64 block', 'level_dbfs': -18, 'sqnr_db': 69.8195797214517, 'tokens_per_sample': 128.78466796875, 'ms_per_sample': 18.52943427735454}
+{'kernel': 'VBFLY FFT64 fixed', 'level_dbfs': -18, 'sqnr_db': 47.618029225861235, 'tokens_per_sample': 102.021484375, 'ms_per_sample': 14.71426386719088}
+{'kernel': 'VBFLY FFT64 block', 'level_dbfs': -12, 'sqnr_db': 69.63411495724631, 'tokens_per_sample': 129.2041015625, 'ms_per_sample': 18.655896826174967}
+{'kernel': 'VBFLY FFT64 fixed', 'level_dbfs': -12, 'sqnr_db': 53.78681566786757, 'tokens_per_sample': 103.033203125, 'ms_per_sample': 14.89555214844529}
+{'kernel': 'VBFLY FFT64 block', 'level_dbfs': -6, 'sqnr_db': 70.68393026496057, 'tokens_per_sample': 130.89794921875, 'ms_per_sample': 18.88908032226766}
+{'kernel': 'VBFLY FFT64 fixed', 'level_dbfs': -6, 'sqnr_db': 59.570414050214836, 'tokens_per_sample': 104.92529296875, 'ms_per_sample': 15.159363720712804}
+{'kernel': 'VBFLY FFT64 block', 'level_dbfs': 0, 'sqnr_db': 71.5467431993388, 'tokens_per_sample': 133.18359375, 'ms_per_sample': 19.219943408202766}
+{'kernel': 'VBFLY FFT64 fixed', 'level_dbfs': 0, 'sqnr_db': 64.07839781022986, 'tokens_per_sample': 107.2392578125, 'ms_per_sample': 15.49184252930047}
+{
+ "P8.1": {
+  "target": ">= 75 dB at -12 dBFS",
+  "value_db": 77.86775971371117,
+  "per_tap_db": 69.23017451144779,
+  "exact_fir_db": 81.33768204046632,
+  "passed": true
+ },
+ "P8.6": {
+  "block_db": [
+   70.25221595729548,
+   70.21598336343712,
+   70.12750741995659,
+   70.25350113337124,
+   69.92778740870226,
+   69.70069586271691,
+   69.5182213156535,
+   69.8195797214517,
+   69.63411495724631,
+   70.68393026496057,
+   71.5467431993388
+  ],
+  "fixed_db": [
+   6.577970047889848,
+   12.633498326097643,
+   18.329701776372602,
+   24.04715987006763,
+   29.54231261354943,
+   35.79683717309476,
+   42.01679739759177,
+   47.618029225861235,
+   53.78681566786757,
+   59.570414050214836,
+   64.07839781022986
+  ],
+  "levels": [
+   -60,
+   -54,
+   -48,
+   -42,
+   -36,
+   -30,
+   -24,
+   -18,
+   -12,
+   -6,
+   0
+  ],
+  "passed": true
+ }
+}

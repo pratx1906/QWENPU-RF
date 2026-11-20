@@ -1,0 +1,576 @@
+{
+  "protocol": "PROTOCOL.md Amendment 8",
+  "chipformer": "upstream\\QwenPU-rf\\chipformer\\__init__.py",
+  "gates": {
+    "P8.1": {
+      "target": ">= 75 dB at -12 dBFS",
+      "value_db": 77.86775971371117,
+      "per_tap_db": 69.23017451144779,
+      "exact_fir_db": 81.33768204046632,
+      "passed": true
+    },
+    "P8.6": {
+      "block_db": [
+        70.25221595729548,
+        70.21598336343712,
+        70.12750741995659,
+        70.25350113337124,
+        69.92778740870226,
+        69.70069586271691,
+        69.5182213156535,
+        69.8195797214517,
+        69.63411495724631,
+        70.68393026496057,
+        71.5467431993388
+      ],
+      "fixed_db": [
+        6.577970047889848,
+        12.633498326097643,
+        18.329701776372602,
+        24.04715987006763,
+        29.54231261354943,
+        35.79683717309476,
+        42.01679739759177,
+        47.618029225861235,
+        53.78681566786757,
+        59.570414050214836,
+        64.07839781022986
+      ],
+      "levels": [
+        -60,
+        -54,
+        -48,
+        -42,
+        -36,
+        -30,
+        -24,
+        -18,
+        -12,
+        -6,
+        0
+      ],
+      "passed": true
+    }
+  },
+  "rows": [
+    {
+      "kernel": "VFIR16 guard (taps x4, one final rounding)",
+      "level_dbfs": -12,
+      "sqnr_db": 77.86775971371117,
+      "enob_bits": 12.642485002277603,
+      "nmse": 1.6338945668575044e-08,
+      "kernel_config": {
+        "kernel": "vx_fir16_guard",
+        "taps": 16,
+        "instruction": "VFIR (custom-2 funct7=1)",
+        "vx": true,
+        "packed_io": false,
+        "guard": true
+      },
+      "samples": 2048,
+      "tokens": 226278,
+      "neural_seconds": 32.18862359999912,
+      "ms_per_sample": 15.71710136718707,
+      "tokens_per_sample": 110.4873046875
+    },
+    {
+      "kernel": "VFIR16 per-tap rounding",
+      "level_dbfs": -12,
+      "sqnr_db": 69.23017451144779,
+      "enob_bits": 11.207670184625877,
+      "nmse": 1.1939401277076828e-07,
+      "kernel_config": {
+        "kernel": "vx_fir16",
+        "taps": 16,
+        "instruction": "VFIR (custom-2 funct7=1)",
+        "vx": true,
+        "packed_io": false,
+        "guard": false
+      },
+      "samples": 2048,
+      "tokens": 225910,
+      "neural_seconds": 32.33804420000524,
+      "ms_per_sample": 15.79006064453381,
+      "tokens_per_sample": 110.3076171875
+    },
+    {
+      "kernel": "scalar FIR16 exact accumulation",
+      "level_dbfs": -12,
+      "sqnr_db": 81.33768204046632,
+      "enob_bits": 13.218884059878127,
+      "nmse": 7.3490600481376346e-09,
+      "kernel_config": {
+        "kernel": "fir16",
+        "taps": 16,
+        "accumulator_bits": 64
+      },
+      "samples": 2048,
+      "tokens": 1279626,
+      "neural_seconds": 184.50321729999268,
+      "ms_per_sample": 90.08946157226205,
+      "tokens_per_sample": 624.8173828125
+    },
+    {
+      "kernel": "VBFLY FFT64 block",
+      "level_dbfs": -60,
+      "sqnr_db": 70.25221595729548,
+      "enob_bits": 11.37744451117865,
+      "nmse": 9.435792986812673e-08,
+      "kernel_config": {
+        "kernel": "vx_fft64_bfp",
+        "n": 64,
+        "hop": 64,
+        "window": "hann",
+        "scaling": "block",
+        "instruction": "VBFLY (custom-2 funct7=1 funct3=2) + VPOW",
+        "vx": true
+      },
+      "samples": 2048,
+      "tokens": 260450,
+      "neural_seconds": 37.593905399990035,
+      "ms_per_sample": 18.356399121088884,
+      "tokens_per_sample": 127.1728515625
+    },
+    {
+      "kernel": "VBFLY FFT64 fixed",
+      "level_dbfs": -60,
+      "sqnr_db": 6.577970047889848,
+      "enob_bits": 0.8003272504800413,
+      "nmse": 0.21988874228297772,
+      "kernel_config": {
+        "kernel": "vx_fft64_fixed",
+        "n": 64,
+        "hop": 64,
+        "window": "hann",
+        "scaling": "fixed",
+        "instruction": "VBFLY (custom-2 funct7=1 funct3=2) + VPOW",
+        "vx": true
+      },
+      "samples": 2048,
+      "tokens": 203905,
+      "neural_seconds": 29.426515500003006,
+      "ms_per_sample": 14.368415771485843,
+      "tokens_per_sample": 99.56298828125
+    },
+    {
+      "kernel": "VBFLY FFT64 block",
+      "level_dbfs": -54,
+      "sqnr_db": 70.21598336343712,
+      "enob_bits": 11.37142580787992,
+      "nmse": 9.514843812056745e-08,
+      "kernel_config": {
+        "kernel": "vx_fft64_bfp",
+        "n": 64,
+        "hop": 64,
+        "window": "hann",
+        "scaling": "block",
+        "instruction": "VBFLY (custom-2 funct7=1 funct3=2) + VPOW",
+        "vx": true
+      },
+      "samples": 2048,
+      "tokens": 261522,
+      "neural_seconds": 37.69657390000066,
+      "ms_per_sample": 18.406530224609696,
+      "tokens_per_sample": 127.6962890625
+    },
+    {
+      "kernel": "VBFLY FFT64 fixed",
+      "level_dbfs": -54,
+      "sqnr_db": 12.633498326097643,
+      "enob_bits": 1.8062289578235289,
+      "nmse": 0.05453184195855794,
+      "kernel_config": {
+        "kernel": "vx_fft64_fixed",
+        "n": 64,
+        "hop": 64,
+        "window": "hann",
+        "scaling": "fixed",
+        "instruction": "VBFLY (custom-2 funct7=1 funct3=2) + VPOW",
+        "vx": true
+      },
+      "samples": 2048,
+      "tokens": 204814,
+      "neural_seconds": 29.535622299998067,
+      "ms_per_sample": 14.421690576170931,
+      "tokens_per_sample": 100.0068359375
+    },
+    {
+      "kernel": "VBFLY FFT64 block",
+      "level_dbfs": -48,
+      "sqnr_db": 70.12750741995659,
+      "enob_bits": 11.356728807301758,
+      "nmse": 9.710671394428931e-08,
+      "kernel_config": {
+        "kernel": "vx_fft64_bfp",
+        "n": 64,
+        "hop": 64,
+        "window": "hann",
+        "scaling": "block",
+        "instruction": "VBFLY (custom-2 funct7=1 funct3=2) + VPOW",
+        "vx": true
+      },
+      "samples": 2048,
+      "tokens": 262184,
+      "neural_seconds": 37.79456489998847,
+      "ms_per_sample": 18.454377392572496,
+      "tokens_per_sample": 128.01953125
+    },
+    {
+      "kernel": "VBFLY FFT64 fixed",
+      "level_dbfs": -48,
+      "sqnr_db": 18.329701776372602,
+      "enob_bits": 2.7524421555436214,
+      "nmse": 0.014690271501122629,
+      "kernel_config": {
+        "kernel": "vx_fft64_fixed",
+        "n": 64,
+        "hop": 64,
+        "window": "hann",
+        "scaling": "fixed",
+        "instruction": "VBFLY (custom-2 funct7=1 funct3=2) + VPOW",
+        "vx": true
+      },
+      "samples": 2048,
+      "tokens": 205416,
+      "neural_seconds": 29.61662020001677,
+      "ms_per_sample": 14.461240332039438,
+      "tokens_per_sample": 100.30078125
+    },
+    {
+      "kernel": "VBFLY FFT64 block",
+      "level_dbfs": -42,
+      "sqnr_db": 70.25350113337124,
+      "enob_bits": 11.37765799557662,
+      "nmse": 9.433001134323577e-08,
+      "kernel_config": {
+        "kernel": "vx_fft64_bfp",
+        "n": 64,
+        "hop": 64,
+        "window": "hann",
+        "scaling": "block",
+        "instruction": "VBFLY (custom-2 funct7=1 funct3=2) + VPOW",
+        "vx": true
+      },
+      "samples": 2048,
+      "tokens": 262763,
+      "neural_seconds": 37.848262399988016,
+      "ms_per_sample": 18.48059687499415,
+      "tokens_per_sample": 128.30224609375
+    },
+    {
+      "kernel": "VBFLY FFT64 fixed",
+      "level_dbfs": -42,
+      "sqnr_db": 24.04715987006763,
+      "enob_bits": 3.702186024928178,
+      "nmse": 0.00393807527243492,
+      "kernel_config": {
+        "kernel": "vx_fft64_fixed",
+        "n": 64,
+        "hop": 64,
+        "window": "hann",
+        "scaling": "fixed",
+        "instruction": "VBFLY (custom-2 funct7=1 funct3=2) + VPOW",
+        "vx": true
+      },
+      "samples": 2048,
+      "tokens": 205928,
+      "neural_seconds": 29.676026100001764,
+      "ms_per_sample": 14.490247119141486,
+      "tokens_per_sample": 100.55078125
+    },
+    {
+      "kernel": "VBFLY FFT64 block",
+      "level_dbfs": -36,
+      "sqnr_db": 69.92778740870226,
+      "enob_bits": 11.323552725698049,
+      "nmse": 1.0167665709431821e-07,
+      "kernel_config": {
+        "kernel": "vx_fft64_bfp",
+        "n": 64,
+        "hop": 64,
+        "window": "hann",
+        "scaling": "block",
+        "instruction": "VBFLY (custom-2 funct7=1 funct3=2) + VPOW",
+        "vx": true
+      },
+      "samples": 2048,
+      "tokens": 263175,
+      "neural_seconds": 37.907425299985334,
+      "ms_per_sample": 18.509485009758464,
+      "tokens_per_sample": 128.50341796875
+    },
+    {
+      "kernel": "VBFLY FFT64 fixed",
+      "level_dbfs": -36,
+      "sqnr_db": 29.54231261354943,
+      "enob_bits": 4.615002095273992,
+      "nmse": 0.001111139888896469,
+      "kernel_config": {
+        "kernel": "vx_fft64_fixed",
+        "n": 64,
+        "hop": 64,
+        "window": "hann",
+        "scaling": "fixed",
+        "instruction": "VBFLY (custom-2 funct7=1 funct3=2) + VPOW",
+        "vx": true
+      },
+      "samples": 2048,
+      "tokens": 206269,
+      "neural_seconds": 29.73696600002586,
+      "ms_per_sample": 14.520002929700127,
+      "tokens_per_sample": 100.71728515625
+    },
+    {
+      "kernel": "VBFLY FFT64 block",
+      "level_dbfs": -30,
+      "sqnr_db": 69.70069586271691,
+      "enob_bits": 11.285829877527727,
+      "nmse": 1.0713476312620717e-07,
+      "kernel_config": {
+        "kernel": "vx_fft64_bfp",
+        "n": 64,
+        "hop": 64,
+        "window": "hann",
+        "scaling": "block",
+        "instruction": "VBFLY (custom-2 funct7=1 funct3=2) + VPOW",
+        "vx": true
+      },
+      "samples": 2048,
+      "tokens": 263424,
+      "neural_seconds": 37.93158669999684,
+      "ms_per_sample": 18.521282568357833,
+      "tokens_per_sample": 128.625
+    },
+    {
+      "kernel": "VBFLY FFT64 fixed",
+      "level_dbfs": -30,
+      "sqnr_db": 35.79683717309476,
+      "enob_bits": 5.653959663304778,
+      "nmse": 0.000263218422908351,
+      "kernel_config": {
+        "kernel": "vx_fft64_fixed",
+        "n": 64,
+        "hop": 64,
+        "window": "hann",
+        "scaling": "fixed",
+        "instruction": "VBFLY (custom-2 funct7=1 funct3=2) + VPOW",
+        "vx": true
+      },
+      "samples": 2048,
+      "tokens": 206502,
+      "neural_seconds": 29.755469800002174,
+      "ms_per_sample": 14.529037988282312,
+      "tokens_per_sample": 100.8310546875
+    },
+    {
+      "kernel": "VBFLY FFT64 block",
+      "level_dbfs": -24,
+      "sqnr_db": 69.5182213156535,
+      "enob_bits": 11.255518490972342,
+      "nmse": 1.1173207608544544e-07,
+      "kernel_config": {
+        "kernel": "vx_fft64_bfp",
+        "n": 64,
+        "hop": 64,
+        "window": "hann",
+        "scaling": "block",
+        "instruction": "VBFLY (custom-2 funct7=1 funct3=2) + VPOW",
+        "vx": true
+      },
+      "samples": 2048,
+      "tokens": 263596,
+      "neural_seconds": 37.91547160001937,
+      "ms_per_sample": 18.51341386719696,
+      "tokens_per_sample": 128.708984375
+    },
+    {
+      "kernel": "VBFLY FFT64 fixed",
+      "level_dbfs": -24,
+      "sqnr_db": 42.01679739759177,
+      "enob_bits": 6.687175647440495,
+      "nmse": 6.285216764736229e-05,
+      "kernel_config": {
+        "kernel": "vx_fft64_fixed",
+        "n": 64,
+        "hop": 64,
+        "window": "hann",
+        "scaling": "fixed",
+        "instruction": "VBFLY (custom-2 funct7=1 funct3=2) + VPOW",
+        "vx": true
+      },
+      "samples": 2048,
+      "tokens": 206944,
+      "neural_seconds": 29.81713789998321,
+      "ms_per_sample": 14.559149365226176,
+      "tokens_per_sample": 101.046875
+    },
+    {
+      "kernel": "VBFLY FFT64 block",
+      "level_dbfs": -18,
+      "sqnr_db": 69.8195797214517,
+      "enob_bits": 11.30557802681922,
+      "nmse": 1.04241830215852e-07,
+      "kernel_config": {
+        "kernel": "vx_fft64_bfp",
+        "n": 64,
+        "hop": 64,
+        "window": "hann",
+        "scaling": "block",
+        "instruction": "VBFLY (custom-2 funct7=1 funct3=2) + VPOW",
+        "vx": true
+      },
+      "samples": 2048,
+      "tokens": 263751,
+      "neural_seconds": 37.9482814000221,
+      "ms_per_sample": 18.52943427735454,
+      "tokens_per_sample": 128.78466796875
+    },
+    {
+      "kernel": "VBFLY FFT64 fixed",
+      "level_dbfs": -18,
+      "sqnr_db": 47.618029225861235,
+      "enob_bits": 7.617612828216153,
+      "nmse": 1.7306015064143014e-05,
+      "kernel_config": {
+        "kernel": "vx_fft64_fixed",
+        "n": 64,
+        "hop": 64,
+        "window": "hann",
+        "scaling": "fixed",
+        "instruction": "VBFLY (custom-2 funct7=1 funct3=2) + VPOW",
+        "vx": true
+      },
+      "samples": 2048,
+      "tokens": 208940,
+      "neural_seconds": 30.134812400006922,
+      "ms_per_sample": 14.71426386719088,
+      "tokens_per_sample": 102.021484375
+    },
+    {
+      "kernel": "VBFLY FFT64 block",
+      "level_dbfs": -12,
+      "sqnr_db": 69.63411495724631,
+      "enob_bits": 11.274769926452876,
+      "nmse": 1.0878988164465073e-07,
+      "kernel_config": {
+        "kernel": "vx_fft64_bfp",
+        "n": 64,
+        "hop": 64,
+        "window": "hann",
+        "scaling": "block",
+        "instruction": "VBFLY (custom-2 funct7=1 funct3=2) + VPOW",
+        "vx": true
+      },
+      "samples": 2048,
+      "tokens": 264610,
+      "neural_seconds": 38.20727670000633,
+      "ms_per_sample": 18.655896826174967,
+      "tokens_per_sample": 129.2041015625
+    },
+    {
+      "kernel": "VBFLY FFT64 fixed",
+      "level_dbfs": -12,
+      "sqnr_db": 53.78681566786757,
+      "enob_bits": 8.64232818403116,
+      "nmse": 4.181368403909003e-06,
+      "kernel_config": {
+        "kernel": "vx_fft64_fixed",
+        "n": 64,
+        "hop": 64,
+        "window": "hann",
+        "scaling": "fixed",
+        "instruction": "VBFLY (custom-2 funct7=1 funct3=2) + VPOW",
+        "vx": true
+      },
+      "samples": 2048,
+      "tokens": 211012,
+      "neural_seconds": 30.506090800015954,
+      "ms_per_sample": 14.89555214844529,
+      "tokens_per_sample": 103.033203125
+    },
+    {
+      "kernel": "VBFLY FFT64 block",
+      "level_dbfs": -6,
+      "sqnr_db": 70.68393026496057,
+      "enob_bits": 11.449157851322353,
+      "nmse": 8.542932472550519e-08,
+      "kernel_config": {
+        "kernel": "vx_fft64_bfp",
+        "n": 64,
+        "hop": 64,
+        "window": "hann",
+        "scaling": "block",
+        "instruction": "VBFLY (custom-2 funct7=1 funct3=2) + VPOW",
+        "vx": true
+      },
+      "samples": 2048,
+      "tokens": 268079,
+      "neural_seconds": 38.68483650000417,
+      "ms_per_sample": 18.88908032226766,
+      "tokens_per_sample": 130.89794921875
+    },
+    {
+      "kernel": "VBFLY FFT64 fixed",
+      "level_dbfs": -6,
+      "sqnr_db": 59.570414050214836,
+      "enob_bits": 9.603058812328047,
+      "nmse": 1.1039733636260264e-06,
+      "kernel_config": {
+        "kernel": "vx_fft64_fixed",
+        "n": 64,
+        "hop": 64,
+        "window": "hann",
+        "scaling": "fixed",
+        "instruction": "VBFLY (custom-2 funct7=1 funct3=2) + VPOW",
+        "vx": true
+      },
+      "samples": 2048,
+      "tokens": 214887,
+      "neural_seconds": 31.046376900019823,
+      "ms_per_sample": 15.159363720712804,
+      "tokens_per_sample": 104.92529296875
+    },
+    {
+      "kernel": "VBFLY FFT64 block",
+      "level_dbfs": 0,
+      "sqnr_db": 71.5467431993388,
+      "enob_bits": 11.59248225902638,
+      "nmse": 7.003670085903086e-08,
+      "kernel_config": {
+        "kernel": "vx_fft64_bfp",
+        "n": 64,
+        "hop": 64,
+        "window": "hann",
+        "scaling": "block",
+        "instruction": "VBFLY (custom-2 funct7=1 funct3=2) + VPOW",
+        "vx": true
+      },
+      "samples": 2048,
+      "tokens": 272760,
+      "neural_seconds": 39.362444099999266,
+      "ms_per_sample": 19.219943408202766,
+      "tokens_per_sample": 133.18359375
+    },
+    {
+      "kernel": "VBFLY FFT64 fixed",
+      "level_dbfs": 0,
+      "sqnr_db": 64.07839781022986,
+      "enob_bits": 10.35189332395845,
+      "nmse": 3.9098511056687037e-07,
+      "kernel_config": {
+        "kernel": "vx_fft64_fixed",
+        "n": 64,
+        "hop": 64,
+        "window": "hann",
+        "scaling": "fixed",
+        "instruction": "VBFLY (custom-2 funct7=1 funct3=2) + VPOW",
+        "vx": true
+      },
+      "samples": 2048,
+      "tokens": 219626,
+      "neural_seconds": 31.727293500007363,
+      "ms_per_sample": 15.49184252930047,
+      "tokens_per_sample": 107.2392578125
+    }
+  ]
+}

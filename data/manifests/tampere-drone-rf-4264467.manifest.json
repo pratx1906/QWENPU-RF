@@ -1,0 +1,482 @@
+{
+  "status": "complete_publisher_checksums_verified",
+  "official_doi": "10.5281/zenodo.4264467",
+  "license": "CC-BY-4.0",
+  "attribution": "Vuorenmaa, Marin, Heino, Turunen and Riihonen; Tampere University; dataset v1.0.1",
+  "planned_bytes": 8560211493,
+  "files": [
+    {
+      "name": "Yuneec_typhoon_h_5G.bin",
+      "path": "$RFPU_DATA\\datasets\\tampere-drone-rf-4264467\\Yuneec_typhoon_h_5G.bin",
+      "bytes": 400000000,
+      "publisher_checksum": "md5:75a8c5f6f042c7877b284cbdd23622d4",
+      "sha256": "cab85c7792c36afc7b10d1162e6796991552c63798cb200ad1d7213e0b554421",
+      "source_url": "https://zenodo.org/api/records/4264467/files/Yuneec_typhoon_h_5G.bin/content",
+      "datatype": "ci16_le",
+      "sample_rate": 200000000,
+      "center_frequency_hz": 5700000000,
+      "sample_count": 100000000,
+      "duration_seconds": 0.5,
+      "band": "5G",
+      "recording_group": "Yuneec_typhoon_h_5G.bin",
+      "labels": {
+        "drone_model_from_filename": "Yuneec_typhoon_h"
+      },
+      "receiver_model": null,
+      "session_id": null,
+      "measured_snr_db": null,
+      "conditions": "OTA in isolated anechoic chamber; drones on turntable, controller nearby, antenna opposite. Not airborne field conditions."
+    },
+    {
+      "name": "DJI_matrice_100_2G.bin",
+      "path": "$RFPU_DATA\\datasets\\tampere-drone-rf-4264467\\DJI_matrice_100_2G.bin",
+      "bytes": 480000000,
+      "publisher_checksum": "md5:3ce47fcb11ff2631961190b5a7b47824",
+      "sha256": "5a821fe296699fb0c03e81257236efca5d0d297fbb0ea73fc2e749d7bbc6f673",
+      "source_url": "https://zenodo.org/api/records/4264467/files/DJI_matrice_100_2G.bin/content",
+      "datatype": "ci16_le",
+      "sample_rate": 120000000,
+      "center_frequency_hz": 2440000000,
+      "sample_count": 120000000,
+      "duration_seconds": 1.0,
+      "band": "2G",
+      "recording_group": "DJI_matrice_100_2G.bin",
+      "labels": {
+        "drone_model_from_filename": "DJI_matrice_100"
+      },
+      "receiver_model": null,
+      "session_id": null,
+      "measured_snr_db": null,
+      "conditions": "OTA in isolated anechoic chamber; drones on turntable, controller nearby, antenna opposite. Not airborne field conditions."
+    },
+    {
+      "name": "DJI_matrice_210_2G.bin",
+      "path": "$RFPU_DATA\\datasets\\tampere-drone-rf-4264467\\DJI_matrice_210_2G.bin",
+      "bytes": 480000000,
+      "publisher_checksum": "md5:064dc1c4b9cb7a33c67b42faa3687906",
+      "sha256": "fe0fbf771ea402ce4241d7e8022ff33ea3eb56206c25538739aac9221b7a4124",
+      "source_url": "https://zenodo.org/api/records/4264467/files/DJI_matrice_210_2G.bin/content",
+      "datatype": "ci16_le",
+      "sample_rate": 120000000,
+      "center_frequency_hz": 2440000000,
+      "sample_count": 120000000,
+      "duration_seconds": 1.0,
+      "band": "2G",
+      "recording_group": "DJI_matrice_210_2G.bin",
+      "labels": {
+        "drone_model_from_filename": "DJI_matrice_210"
+      },
+      "receiver_model": null,
+      "session_id": null,
+      "measured_snr_db": null,
+      "conditions": "OTA in isolated anechoic chamber; drones on turntable, controller nearby, antenna opposite. Not airborne field conditions."
+    },
+    {
+      "name": "Yuneec_typhoon_h_2G_2of2.bin",
+      "path": "$RFPU_DATA\\datasets\\tampere-drone-rf-4264467\\Yuneec_typhoon_h_2G_2of2.bin",
+      "bytes": 480000000,
+      "publisher_checksum": "md5:29d0b85ac7afa84af7e25c26110a1145",
+      "sha256": "1a5620e6b0f449665d2d4954235a30102de32f3ef6036ab597ab5b15a5ee4fd1",
+      "source_url": "https://zenodo.org/api/records/4264467/files/Yuneec_typhoon_h_2G_2of2.bin/content",
+      "datatype": "ci16_le",
+      "sample_rate": 120000000,
+      "center_frequency_hz": 2440000000,
+      "sample_count": 120000000,
+      "duration_seconds": 1.0,
+      "band": "2G",
+      "recording_group": "Yuneec_typhoon_h_2G.bin",
+      "labels": {
+        "drone_model_from_filename": "Yuneec_typhoon_h"
+      },
+      "receiver_model": null,
+      "session_id": null,
+      "measured_snr_db": null,
+      "conditions": "OTA in isolated anechoic chamber; drones on turntable, controller nearby, antenna opposite. Not airborne field conditions."
+    },
+    {
+      "name": "Yuneec_typhoon_h_2G_1of2.bin",
+      "path": "$RFPU_DATA\\datasets\\tampere-drone-rf-4264467\\Yuneec_typhoon_h_2G_1of2.bin",
+      "bytes": 480000000,
+      "publisher_checksum": "md5:e9bc9b4f5a45557e51c416419f028a45",
+      "sha256": "63cd6b779a2d575aac2546773b5be5aca33fd2b0cf1da14d9e10152e2f80bdd0",
+      "source_url": "https://zenodo.org/api/records/4264467/files/Yuneec_typhoon_h_2G_1of2.bin/content",
+      "datatype": "ci16_le",
+      "sample_rate": 120000000,
+      "center_frequency_hz": 2440000000,
+      "sample_count": 120000000,
+      "duration_seconds": 1.0,
+      "band": "2G",
+      "recording_group": "Yuneec_typhoon_h_2G.bin",
+      "labels": {
+        "drone_model_from_filename": "Yuneec_typhoon_h"
+      },
+      "receiver_model": null,
+      "session_id": null,
+      "measured_snr_db": null,
+      "conditions": "OTA in isolated anechoic chamber; drones on turntable, controller nearby, antenna opposite. Not airborne field conditions."
+    },
+    {
+      "name": "Parrot_mambo_video_2G.bin",
+      "path": "$RFPU_DATA\\datasets\\tampere-drone-rf-4264467\\Parrot_mambo_video_2G.bin",
+      "bytes": 480000000,
+      "publisher_checksum": "md5:21d4aaa5b027e0c1ced824988bb8e3ce",
+      "sha256": "574cc4048d0915aa9469e9727b7d8ac904702f7319c7649eb7c267dbe109925b",
+      "source_url": "https://zenodo.org/api/records/4264467/files/Parrot_mambo_video_2G.bin/content",
+      "datatype": "ci16_le",
+      "sample_rate": 120000000,
+      "center_frequency_hz": 2440000000,
+      "sample_count": 120000000,
+      "duration_seconds": 1.0,
+      "band": "2G",
+      "recording_group": "Parrot_mambo_video_2G.bin",
+      "labels": {
+        "drone_model_from_filename": "Parrot_mambo_video"
+      },
+      "receiver_model": null,
+      "session_id": null,
+      "measured_snr_db": null,
+      "conditions": "OTA in isolated anechoic chamber; drones on turntable, controller nearby, antenna opposite. Not airborne field conditions."
+    },
+    {
+      "name": "load_bin.py",
+      "path": "$RFPU_DATA\\datasets\\tampere-drone-rf-4264467\\load_bin.py",
+      "bytes": 641,
+      "publisher_checksum": "md5:ad0066ba5022943d62572493a86d889d",
+      "sha256": "cc90bdfcede3d12114129af6ba0904d3567f4bcad455f21fc11abecd2e8a3964",
+      "source_url": "https://zenodo.org/api/records/4264467/files/load_bin.py/content"
+    },
+    {
+      "name": "load_bin.m",
+      "path": "$RFPU_DATA\\datasets\\tampere-drone-rf-4264467\\load_bin.m",
+      "bytes": 1012,
+      "publisher_checksum": "md5:7be757ed0e2211cd1c55e561a2cbb9e0",
+      "sha256": "f086a2c999cc4c3b2d59ff240a07cffcc0f1a9d7fa86a9869a80f02da7279eca",
+      "source_url": "https://zenodo.org/api/records/4264467/files/load_bin.m/content"
+    },
+    {
+      "name": "example_spectrogram_Python.png",
+      "path": "$RFPU_DATA\\datasets\\tampere-drone-rf-4264467\\example_spectrogram_Python.png",
+      "bytes": 144570,
+      "publisher_checksum": "md5:524308d528ee7fc591a1787c4043db90",
+      "sha256": "552bc3422b975bd169e35615175ae9f296b42cff5e721178552c174068c02b97",
+      "source_url": "https://zenodo.org/api/records/4264467/files/example_spectrogram_Python.png/content"
+    },
+    {
+      "name": "example.py",
+      "path": "$RFPU_DATA\\datasets\\tampere-drone-rf-4264467\\example.py",
+      "bytes": 1009,
+      "publisher_checksum": "md5:14259ce71abfa799fffd6b792735a669",
+      "sha256": "ce9ec13bc8bd50e78ab1b961c4fac964eca5e72f9b18b876d7f1fa482f0bb0cb",
+      "source_url": "https://zenodo.org/api/records/4264467/files/example.py/content"
+    },
+    {
+      "name": "example.m",
+      "path": "$RFPU_DATA\\datasets\\tampere-drone-rf-4264467\\example.m",
+      "bytes": 834,
+      "publisher_checksum": "md5:937a41f1bf74947fbe9057bc32116932",
+      "sha256": "3dc983b4a9f5327fb0253fe8c91aab8e604499f85321c6e3c6757c3bc638d9f9",
+      "source_url": "https://zenodo.org/api/records/4264467/files/example.m/content"
+    },
+    {
+      "name": "Parrot_disco_2G.bin",
+      "path": "$RFPU_DATA\\datasets\\tampere-drone-rf-4264467\\Parrot_disco_2G.bin",
+      "bytes": 480000000,
+      "publisher_checksum": "md5:da80ff6e9843e0ac2f0d41d5d2528a83",
+      "sha256": "1b9de69f003f7b7b033f69a3e13c92e14c91dc2c6d12742639f81df87e1c59a3",
+      "source_url": "https://zenodo.org/api/records/4264467/files/Parrot_disco_2G.bin/content",
+      "datatype": "ci16_le",
+      "sample_rate": 120000000,
+      "center_frequency_hz": 2440000000,
+      "sample_count": 120000000,
+      "duration_seconds": 1.0,
+      "band": "2G",
+      "recording_group": "Parrot_disco_2G.bin",
+      "labels": {
+        "drone_model_from_filename": "Parrot_disco"
+      },
+      "receiver_model": null,
+      "session_id": null,
+      "measured_snr_db": null,
+      "conditions": "OTA in isolated anechoic chamber; drones on turntable, controller nearby, antenna opposite. Not airborne field conditions."
+    },
+    {
+      "name": "DJI_phantom_4_pro_plus_5G_2of2.bin",
+      "path": "$RFPU_DATA\\datasets\\tampere-drone-rf-4264467\\DJI_phantom_4_pro_plus_5G_2of2.bin",
+      "bytes": 400000000,
+      "publisher_checksum": "md5:609480608b5e3140a89b8f6523ab1209",
+      "sha256": "380d6af25d4ab7895a0140b150a37432bae3df1e9b74bcd794a75e819b1ea90e",
+      "source_url": "https://zenodo.org/api/records/4264467/files/DJI_phantom_4_pro_plus_5G_2of2.bin/content",
+      "datatype": "ci16_le",
+      "sample_rate": 200000000,
+      "center_frequency_hz": 5800000000,
+      "sample_count": 100000000,
+      "duration_seconds": 0.5,
+      "band": "5G",
+      "recording_group": "DJI_phantom_4_pro_plus_5G.bin",
+      "labels": {
+        "drone_model_from_filename": "DJI_phantom_4_pro_plus"
+      },
+      "receiver_model": null,
+      "session_id": null,
+      "measured_snr_db": null,
+      "conditions": "OTA in isolated anechoic chamber; drones on turntable, controller nearby, antenna opposite. Not airborne field conditions."
+    },
+    {
+      "name": "Parrot_mambo_control_2G.bin",
+      "path": "$RFPU_DATA\\datasets\\tampere-drone-rf-4264467\\Parrot_mambo_control_2G.bin",
+      "bytes": 480000000,
+      "publisher_checksum": "md5:235009c8257190ab341715fa5bc28c8c",
+      "sha256": "9908229bd7ce5b5dd8d47cceda02bf34ed03e1ece57b52ec5ccceed73283daa5",
+      "source_url": "https://zenodo.org/api/records/4264467/files/Parrot_mambo_control_2G.bin/content",
+      "datatype": "ci16_le",
+      "sample_rate": 120000000,
+      "center_frequency_hz": 2440000000,
+      "sample_count": 120000000,
+      "duration_seconds": 1.0,
+      "band": "2G",
+      "recording_group": "Parrot_mambo_control_2G.bin",
+      "labels": {
+        "drone_model_from_filename": "Parrot_mambo_control"
+      },
+      "receiver_model": null,
+      "session_id": null,
+      "measured_snr_db": null,
+      "conditions": "OTA in isolated anechoic chamber; drones on turntable, controller nearby, antenna opposite. Not airborne field conditions."
+    },
+    {
+      "name": "DJI_inspire_2_5G_2of2.bin",
+      "path": "$RFPU_DATA\\datasets\\tampere-drone-rf-4264467\\DJI_inspire_2_5G_2of2.bin",
+      "bytes": 400000000,
+      "publisher_checksum": "md5:c70d16b1923a571b8af558aca67ff603",
+      "sha256": "0694bdb1869495b3072ba5b433172483017f80396b386c340eaf54d3144c7614",
+      "source_url": "https://zenodo.org/api/records/4264467/files/DJI_inspire_2_5G_2of2.bin/content",
+      "datatype": "ci16_le",
+      "sample_rate": 200000000,
+      "center_frequency_hz": 5800000000,
+      "sample_count": 100000000,
+      "duration_seconds": 0.5,
+      "band": "5G",
+      "recording_group": "DJI_inspire_2_5G.bin",
+      "labels": {
+        "drone_model_from_filename": "DJI_inspire_2"
+      },
+      "receiver_model": null,
+      "session_id": null,
+      "measured_snr_db": null,
+      "conditions": "OTA in isolated anechoic chamber; drones on turntable, controller nearby, antenna opposite. Not airborne field conditions."
+    },
+    {
+      "name": "DJI_phantom_4_pro_plus_5G_1of2.bin",
+      "path": "$RFPU_DATA\\datasets\\tampere-drone-rf-4264467\\DJI_phantom_4_pro_plus_5G_1of2.bin",
+      "bytes": 400000000,
+      "publisher_checksum": "md5:d6b8cddbb87344385b1f8118a295ee5b",
+      "sha256": "7570a13894b9b46b499be15b7867e5dfa0123f73aa1f761221226ec2c7f27546",
+      "source_url": "https://zenodo.org/api/records/4264467/files/DJI_phantom_4_pro_plus_5G_1of2.bin/content",
+      "datatype": "ci16_le",
+      "sample_rate": 200000000,
+      "center_frequency_hz": 5800000000,
+      "sample_count": 100000000,
+      "duration_seconds": 0.5,
+      "band": "5G",
+      "recording_group": "DJI_phantom_4_pro_plus_5G.bin",
+      "labels": {
+        "drone_model_from_filename": "DJI_phantom_4_pro_plus"
+      },
+      "receiver_model": null,
+      "session_id": null,
+      "measured_snr_db": null,
+      "conditions": "OTA in isolated anechoic chamber; drones on turntable, controller nearby, antenna opposite. Not airborne field conditions."
+    },
+    {
+      "name": "DJI_phantom_4_pro_plus_2G.bin",
+      "path": "$RFPU_DATA\\datasets\\tampere-drone-rf-4264467\\DJI_phantom_4_pro_plus_2G.bin",
+      "bytes": 480000000,
+      "publisher_checksum": "md5:be8aaf95af313b612964958594d85bae",
+      "sha256": "e4efbe61fd832254a805a7ca0a14a5ef4c3f29e8d69a953824913cf186804ad7",
+      "source_url": "https://zenodo.org/api/records/4264467/files/DJI_phantom_4_pro_plus_2G.bin/content",
+      "datatype": "ci16_le",
+      "sample_rate": 120000000,
+      "center_frequency_hz": 2440000000,
+      "sample_count": 120000000,
+      "duration_seconds": 1.0,
+      "band": "2G",
+      "recording_group": "DJI_phantom_4_pro_plus_2G.bin",
+      "labels": {
+        "drone_model_from_filename": "DJI_phantom_4_pro_plus"
+      },
+      "receiver_model": null,
+      "session_id": null,
+      "measured_snr_db": null,
+      "conditions": "OTA in isolated anechoic chamber; drones on turntable, controller nearby, antenna opposite. Not airborne field conditions."
+    },
+    {
+      "name": "DJI_inspire_2_5G_1of2.bin",
+      "path": "$RFPU_DATA\\datasets\\tampere-drone-rf-4264467\\DJI_inspire_2_5G_1of2.bin",
+      "bytes": 400000000,
+      "publisher_checksum": "md5:6806bffcb38d5af875dd5a35057289cd",
+      "sha256": "4bd20ac4734ac90580462e411d81f588f9e1d4a437b08ba232e593d8f233faa0",
+      "source_url": "https://zenodo.org/api/records/4264467/files/DJI_inspire_2_5G_1of2.bin/content",
+      "datatype": "ci16_le",
+      "sample_rate": 200000000,
+      "center_frequency_hz": 5800000000,
+      "sample_count": 100000000,
+      "duration_seconds": 0.5,
+      "band": "5G",
+      "recording_group": "DJI_inspire_2_5G.bin",
+      "labels": {
+        "drone_model_from_filename": "DJI_inspire_2"
+      },
+      "receiver_model": null,
+      "session_id": null,
+      "measured_snr_db": null,
+      "conditions": "OTA in isolated anechoic chamber; drones on turntable, controller nearby, antenna opposite. Not airborne field conditions."
+    },
+    {
+      "name": "DJI_inspire_2_2G.bin",
+      "path": "$RFPU_DATA\\datasets\\tampere-drone-rf-4264467\\DJI_inspire_2_2G.bin",
+      "bytes": 480000000,
+      "publisher_checksum": "md5:d586a4e636b5cfe6a835d92244d9925e",
+      "sha256": "0d824095f9a821f0832a435bd6e659d5a860578af3fdd8ddeb16e6e3310d5c62",
+      "source_url": "https://zenodo.org/api/records/4264467/files/DJI_inspire_2_2G.bin/content",
+      "datatype": "ci16_le",
+      "sample_rate": 120000000,
+      "center_frequency_hz": 2440000000,
+      "sample_count": 120000000,
+      "duration_seconds": 1.0,
+      "band": "2G",
+      "recording_group": "DJI_inspire_2_2G.bin",
+      "labels": {
+        "drone_model_from_filename": "DJI_inspire_2"
+      },
+      "receiver_model": null,
+      "session_id": null,
+      "measured_snr_db": null,
+      "conditions": "OTA in isolated anechoic chamber; drones on turntable, controller nearby, antenna opposite. Not airborne field conditions."
+    },
+    {
+      "name": "DJI_phantom_4_2G.bin",
+      "path": "$RFPU_DATA\\datasets\\tampere-drone-rf-4264467\\DJI_phantom_4_2G.bin",
+      "bytes": 480000000,
+      "publisher_checksum": "md5:2afe41e9da4624eb9ed71f901cfa3d78",
+      "sha256": "1fefcb2a1109fc17733092df4a6a566ef0b5c04e4b4fc94fef159c7da2119639",
+      "source_url": "https://zenodo.org/api/records/4264467/files/DJI_phantom_4_2G.bin/content",
+      "datatype": "ci16_le",
+      "sample_rate": 120000000,
+      "center_frequency_hz": 2440000000,
+      "sample_count": 120000000,
+      "duration_seconds": 1.0,
+      "band": "2G",
+      "recording_group": "DJI_phantom_4_2G.bin",
+      "labels": {
+        "drone_model_from_filename": "DJI_phantom_4"
+      },
+      "receiver_model": null,
+      "session_id": null,
+      "measured_snr_db": null,
+      "conditions": "OTA in isolated anechoic chamber; drones on turntable, controller nearby, antenna opposite. Not airborne field conditions."
+    },
+    {
+      "name": "DJI_mavic_pro_2G.bin",
+      "path": "$RFPU_DATA\\datasets\\tampere-drone-rf-4264467\\DJI_mavic_pro_2G.bin",
+      "bytes": 480000000,
+      "publisher_checksum": "md5:607de5f2fc6327a3e7b11b7185e0fcc8",
+      "sha256": "4ce1bf9a27cadbf8ce5d727515df5258d36bdfe37d69d3e734785f3558b359ae",
+      "source_url": "https://zenodo.org/api/records/4264467/files/DJI_mavic_pro_2G.bin/content",
+      "datatype": "ci16_le",
+      "sample_rate": 120000000,
+      "center_frequency_hz": 2440000000,
+      "sample_count": 120000000,
+      "duration_seconds": 1.0,
+      "band": "2G",
+      "recording_group": "DJI_mavic_pro_2G.bin",
+      "labels": {
+        "drone_model_from_filename": "DJI_mavic_pro"
+      },
+      "receiver_model": null,
+      "session_id": null,
+      "measured_snr_db": null,
+      "conditions": "OTA in isolated anechoic chamber; drones on turntable, controller nearby, antenna opposite. Not airborne field conditions."
+    },
+    {
+      "name": "DJI_mavic_mini_2G.bin",
+      "path": "$RFPU_DATA\\datasets\\tampere-drone-rf-4264467\\DJI_mavic_mini_2G.bin",
+      "bytes": 480000000,
+      "publisher_checksum": "md5:5d958277d2fbafe9ee4dcdce3b4636e1",
+      "sha256": "c32a8c575884726c25f403504a9421731836aa216c20b123bcac26149a0fe696",
+      "source_url": "https://zenodo.org/api/records/4264467/files/DJI_mavic_mini_2G.bin/content",
+      "datatype": "ci16_le",
+      "sample_rate": 120000000,
+      "center_frequency_hz": 2440000000,
+      "sample_count": 120000000,
+      "duration_seconds": 1.0,
+      "band": "2G",
+      "recording_group": "DJI_mavic_mini_2G.bin",
+      "labels": {
+        "drone_model_from_filename": "DJI_mavic_mini"
+      },
+      "receiver_model": null,
+      "session_id": null,
+      "measured_snr_db": null,
+      "conditions": "OTA in isolated anechoic chamber; drones on turntable, controller nearby, antenna opposite. Not airborne field conditions."
+    },
+    {
+      "name": "example_spectrogram_Matlab.jpg",
+      "path": "$RFPU_DATA\\datasets\\tampere-drone-rf-4264467\\example_spectrogram_Matlab.jpg",
+      "bytes": 63427,
+      "publisher_checksum": "md5:b137bf32fb185dd222d047002807c31e",
+      "sha256": "ca9d8d8a30281e3ca4211cf74051270b028b24559daf550ba8cf958f85b43e68",
+      "source_url": "https://zenodo.org/api/records/4264467/files/example_spectrogram_Matlab.jpg/content"
+    },
+    {
+      "name": "DJI_matrice_210_5G_2of2.bin",
+      "path": "$RFPU_DATA\\datasets\\tampere-drone-rf-4264467\\DJI_matrice_210_5G_2of2.bin",
+      "bytes": 400000000,
+      "publisher_checksum": "md5:8a95594363d81a64a9355a748f2b2675",
+      "sha256": "cf1fda9cf256a9054cd2ff5704b1a626e8bf34033efd11f738e74159002fd9b2",
+      "source_url": "https://zenodo.org/api/records/4264467/files/DJI_matrice_210_5G_2of2.bin/content",
+      "datatype": "ci16_le",
+      "sample_rate": 200000000,
+      "center_frequency_hz": 5800000000,
+      "sample_count": 100000000,
+      "duration_seconds": 0.5,
+      "band": "5G",
+      "recording_group": "DJI_matrice_210_5G.bin",
+      "labels": {
+        "drone_model_from_filename": "DJI_matrice_210"
+      },
+      "receiver_model": null,
+      "session_id": null,
+      "measured_snr_db": null,
+      "conditions": "OTA in isolated anechoic chamber; drones on turntable, controller nearby, antenna opposite. Not airborne field conditions."
+    },
+    {
+      "name": "DJI_matrice_210_5G_1of2.bin",
+      "path": "$RFPU_DATA\\datasets\\tampere-drone-rf-4264467\\DJI_matrice_210_5G_1of2.bin",
+      "bytes": 400000000,
+      "publisher_checksum": "md5:d1814a61cc44bde770f47d0d933ca364",
+      "sha256": "decd49c9d6b6a26ef29475dc1692e1cc2dca5ee190b1e146b4efbfd6ec0080b0",
+      "source_url": "https://zenodo.org/api/records/4264467/files/DJI_matrice_210_5G_1of2.bin/content",
+      "datatype": "ci16_le",
+      "sample_rate": 200000000,
+      "center_frequency_hz": 5800000000,
+      "sample_count": 100000000,
+      "duration_seconds": 0.5,
+      "band": "5G",
+      "recording_group": "DJI_matrice_210_5G.bin",
+      "labels": {
+        "drone_model_from_filename": "DJI_matrice_210"
+      },
+      "receiver_model": null,
+      "session_id": null,
+      "measured_snr_db": null,
+      "conditions": "OTA in isolated anechoic chamber; drones on turntable, controller nearby, antenna opposite. Not airborne field conditions."
+    }
+  ],
+  "conditions": "OTA in isolated anechoic chamber; drones on turntable, controller nearby, antenna opposite. Not airborne field conditions.",
+  "unknown": [
+    "Receiver model, per-file timestamps, measured SNR, weather, session independence and sample-level signal/noise labels not supplied in the inspected record."
+  ],
+  "observed_at": "2026-11-02T07:03:31.321287+05:30",
+  "received_bytes": 8560211493,
+  "errors": []
+}

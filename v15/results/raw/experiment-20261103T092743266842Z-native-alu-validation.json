@@ -1,0 +1,24 @@
+{
+  "name": "native-alu-validation",
+  "status": "passed",
+  "command": [
+    ".venv\\Scripts\\python.exe",
+    "v15/scripts/native_test.py"
+  ],
+  "started_utc": "20261103T092743266842Z",
+  "log": "experiment-20261103T092743266842Z-native-alu-validation.log",
+  "source_sha256": {
+    "v15/results.md": "469d8a5f9a1862eaaed06890218520536a7c575ca2f45366cad2288b8b17ee8f",
+    "v15/rfpu_v15/neural.py": "1947a2739682654ff0d16dff0fa1a8c0fe58da126a4c959c9b2f5a87097fe8f8",
+    "v15/rfpu_v15/runtime.py": "2f68648bc1c221190b1a1b430282a83abd56b7adbddda6d098ad3968e7a46f29",
+    "v15/rfpu_v15/__init__.py": "82587ae6ae805a344b15c4ec007bf5aca35df24599a9195b6ee637a80d8a9f38",
+    "v15/scripts/bootstrap.py": "bc075630441cc50caf95a4a91c1d71fcdd7996fbe1393a963972b6229425cec7",
+    "v15/scripts/construct.py": "b5eee1f0989d4626795da65cb3753480d7a5ed10cab7cb1933372ac104b6f341",
+    "v15/scripts/native_test.py": "c1650accebbd797ee651db71da199a9a47590cb433baaf0b6ec6b9209beb7e44",
+    "v15/scripts/run.py": "bbd4567279551e49cef3b7ead0bee4536c3715d9d1ee3e33bc058537276e3846"
+  },
+  "source_archive": "experiment-20261103T092743266842Z-native-alu-validation.source.zip",
+  "source_archive_sha256": "bdc5e8f28e6e600fc437b04725db81d37b390f09e7652d645d4c3af75b4f8f2d",
+  "exit_code": 0,
+  "seconds": 13.658448500005761
+}

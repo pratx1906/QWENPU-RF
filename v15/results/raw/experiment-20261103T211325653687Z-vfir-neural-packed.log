@@ -1,0 +1,3 @@
+{"taps": 4, "token_gain": 2.58, "time_gain": 2.63} {'scalar_rv32': 8.64, 'vfir': 3.29}
+{"taps": 8, "token_gain": 3.38, "time_gain": 3.48} {'scalar_rv32': 16.46, 'vfir': 4.73}
+{"taps": 16, "token_gain": 6.69, "time_gain": 6.61} {'scalar_rv32': 52.99, 'vfir': 8.02}

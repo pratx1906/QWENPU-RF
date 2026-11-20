@@ -1,0 +1,110 @@
+{
+  "window": 64,
+  "noise_dbfs": -30,
+  "h0_windows": 1000,
+  "h1_windows_per_snr": 200,
+  "rows": [
+    {
+      "snr_db": -14,
+      "pd_at_pfa_0.1": 0.195,
+      "pd_theory_at_pfa_0.1": 0.16957740613071517,
+      "pd_at_pfa_0.01": 0.01,
+      "pd_theory_at_pfa_0.01": 0.02342716156419263,
+      "auc": 0.6069375
+    },
+    {
+      "snr_db": -12,
+      "pd_at_pfa_0.1": 0.175,
+      "pd_theory_at_pfa_0.1": 0.21971943939764849,
+      "pd_at_pfa_0.01": 0.04,
+      "pd_theory_at_pfa_0.01": 0.03606169648533337,
+      "auc": 0.661585
+    },
+    {
+      "snr_db": -10,
+      "pd_at_pfa_0.1": 0.24,
+      "pd_theory_at_pfa_0.1": 0.3107177517321539,
+      "pd_at_pfa_0.01": 0.06,
+      "pd_theory_at_pfa_0.01": 0.06554919370027273,
+      "auc": 0.678775
+    },
+    {
+      "snr_db": -8,
+      "pd_at_pfa_0.1": 0.375,
+      "pd_theory_at_pfa_0.1": 0.47080691757946136,
+      "pd_at_pfa_0.01": 0.14,
+      "pd_theory_at_pfa_0.01": 0.14076542348015986,
+      "auc": 0.772605
+    },
+    {
+      "snr_db": -6,
+      "pd_at_pfa_0.1": 0.685,
+      "pd_theory_at_pfa_0.1": 0.7081894500867255,
+      "pd_at_pfa_0.01": 0.315,
+      "pd_theory_at_pfa_0.01": 0.3299572507343751,
+      "auc": 0.9006349999999999
+    },
+    {
+      "snr_db": -4,
+      "pd_at_pfa_0.1": 0.91,
+      "pd_theory_at_pfa_0.1": 0.925952447600532,
+      "pd_at_pfa_0.01": 0.7,
+      "pd_theory_at_pfa_0.01": 0.6831267294806861,
+      "auc": 0.9667000000000001
+    },
+    {
+      "snr_db": -2,
+      "pd_at_pfa_0.1": 0.995,
+      "pd_theory_at_pfa_0.1": 0.9966886177510818,
+      "pd_at_pfa_0.01": 0.97,
+      "pd_theory_at_pfa_0.01": 0.9612725114430101,
+      "auc": 0.99685
+    },
+    {
+      "snr_db": 0,
+      "pd_at_pfa_0.1": 1.0,
+      "pd_theory_at_pfa_0.1": 0.999996062084278,
+      "pd_at_pfa_0.01": 0.99,
+      "pd_theory_at_pfa_0.01": 0.9997999549005537,
+      "auc": 0.9988450000000001
+    },
+    {
+      "snr_db": 2,
+      "pd_at_pfa_0.1": 1.0,
+      "pd_theory_at_pfa_0.1": 0.9999999999961193,
+      "pd_at_pfa_0.01": 1.0,
+      "pd_theory_at_pfa_0.01": 0.9999999985329807,
+      "auc": 0.9990000000000001
+    },
+    {
+      "snr_db": 4,
+      "pd_at_pfa_0.1": 1.0,
+      "pd_theory_at_pfa_0.1": 1.0,
+      "pd_at_pfa_0.01": 1.0,
+      "pd_theory_at_pfa_0.01": 1.0,
+      "auc": 0.9990000000000001
+    },
+    {
+      "snr_db": 6,
+      "pd_at_pfa_0.1": 1.0,
+      "pd_theory_at_pfa_0.1": 1.0,
+      "pd_at_pfa_0.01": 1.0,
+      "pd_theory_at_pfa_0.01": 1.0,
+      "auc": 0.9990000000000001
+    }
+  ],
+  "neural": {
+    "kernel_config": {
+      "kernel": "energy_detector",
+      "window": 64,
+      "memory_windows": 8,
+      "alpha_q8": 1024
+    },
+    "samples": 204800,
+    "tokens": 3549180,
+    "neural_seconds": 586.8662103000097,
+    "ms_per_sample": 2.865557667480516
+  },
+  "scope": "mean power statistic computed in weights; ROC threshold sweep on host",
+  "group": "roc_energy"
+}

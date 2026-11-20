@@ -1,0 +1,16 @@
+energy_W64 {"workload": "energy_W64", "vx": {"kernel": {"kernel": "vx_energy", "window": 64, "shift": 7, "vx": true, "contract": "E = sum vq(x; shift, 16384)^2 over I and Q"}, "tokens_per_sample": 15.19482421875, "ms_per_sample": 2.12154570312606, "exact": true}, "scalar": {"kernel": {"kernel": "scalar_energy"}, "tokens_per_sample": 16.4287109375, "ms_per_sample": 2.3035616699260686, "exact": true}, "token_ratio_scalar_over_vx": 1.0812044088820334}
+Traceback (most recent call last):
+  File "v15\scripts\vx_neural.py", line 51, in <module>
+    main()
+  File "v15\scripts\vx_neural.py", line 39, in main
+    r = runner.run(k, real, block=256)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "v15\rfpu_v15\cpu\runner.py", line 142, in run
+    return self.run_many(kernel, [samples], block, neural, check_reference)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "v15\rfpu_v15\cpu\runner.py", line 124, in run_many
+    rams, tok, a, b = self.execute(prog, word_sets, neural, kernel.name)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "v15\rfpu_v15\cpu\runner.py", line 94, in execute
+    raise AssertionError(f"{name}: neural token mismatch, row {first + row}, step {bad}")
+AssertionError: vx_spectral_mlp: neural token mismatch, row 0, step 212

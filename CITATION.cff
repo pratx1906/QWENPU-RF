@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+message: "If you use QwenPU-RF, please cite it as below, together with QwenPU and Qwenputer."
+title: "QwenPU-RF: exact radio signal processing and inference inside the weights of a language model"
+authors:
+  - family-names: Dixit
+    given-names: Pratyush
+version: 0.1.0
+date-released: 2026-11-20
+license: MIT
+repository-code: "https://github.com/pratx1906/QWENPU-RF"
+type: software
+keywords:
+  - radio frequency
+  - digital signal processing
+  - compiled transformer
+  - in-weights computer
+  - RISC-V
+  - Qwen
+references:
+  - type: software
+    title: "QwenPU: a vector unit compiled into Qwen3.5-4B's weights"
+    authors:
+      - family-names: Agrawal
+        given-names: Divyansh
+    repository-code: "https://github.com/divagr18/QwenPU"
+    year: 2026
+  - type: software
+    title: "Qwenputer: a computer compiled into the weights of a pretrained language model"
+    authors:
+      - family-names: Agrawal
+        given-names: Divyansh
+    repository-code: "https://github.com/divagr18/qwenputer"
+    year: 2026

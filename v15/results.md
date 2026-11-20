@@ -1,0 +1,111 @@
+# RFPU-VX v1.5 results
+
+Updated 2026-11-20T21:57:00.865930+05:30
+
+Research in progress; gate status requires measured evidence.
+
+[Gate ledger](reports/gates.json) · [Protocol](research/PROTOCOL.md) · [Paper draft](paper/PAPER_DRAFT.md)
+
+| Experiment | Status | Full log | Record |
+|---|---|---|---|
+| construct-bitwise-precision-checkpoint | passed | [log](results/raw/experiment-20261103T052354906176Z-construct-bitwise-precision-checkpoint.log) | [record](results/raw/experiment-20261103T052354906176Z-construct-bitwise-precision-checkpoint.json) |
+| native-alu-validation | failed | [log](results/raw/experiment-20261103T092737137892Z-native-alu-validation.log) | [record](results/raw/experiment-20261103T092737137892Z-native-alu-validation.json) |
+| native-alu-validation | passed | [log](results/raw/experiment-20261103T092743266842Z-native-alu-validation.log) | [record](results/raw/experiment-20261103T092743266842Z-native-alu-validation.json) |
+| real-iq-q15-gate | passed | [log](results/raw/experiment-20261103T105101784904Z-real-iq-q15-gate.log) | [record](results/raw/experiment-20261103T105101784904Z-real-iq-q15-gate.json) |
+| real-iq-q13-headroom | passed | [log](results/raw/experiment-20261103T105918216957Z-real-iq-q13-headroom.log) | [record](results/raw/experiment-20261103T105918216957Z-real-iq-q13-headroom.json) |
+| capability-campaign | passed | [log](results/raw/experiment-20261103T110732967023Z-capability-campaign.log) | [record](results/raw/experiment-20261103T110732967023Z-capability-campaign.json) |
+| vx-neural | failed | [log](results/raw/experiment-20261103T115927179348Z-vx-neural.log) | [record](results/raw/experiment-20261103T115927179348Z-vx-neural.json) |
+| vx-neural | failed | [log](results/raw/experiment-20261103T115944266442Z-vx-neural.log) | [record](results/raw/experiment-20261103T115944266442Z-vx-neural.json) |
+| pipeline-14-captures | passed | [log](results/raw/experiment-20261103T120107727122Z-pipeline-14-captures.log) | [record](results/raw/experiment-20261103T120107727122Z-pipeline-14-captures.json) |
+| vx-neural | passed | [log](results/raw/experiment-20261103T120749303762Z-vx-neural.log) | [record](results/raw/experiment-20261103T120749303762Z-vx-neural.json) |
+| pipeline-14-captures | passed | [log](results/raw/experiment-20261103T121353107832Z-pipeline-14-captures.log) | [record](results/raw/experiment-20261103T121353107832Z-pipeline-14-captures.json) |
+| pipeline-synthetic | passed | [log](results/raw/experiment-20261103T123426179190Z-pipeline-synthetic.log) | [record](results/raw/experiment-20261103T123426179190Z-pipeline-synthetic.json) |
+| qwen-checkpoint-final | failed | [log](results/raw/experiment-20261103T125024314619Z-qwen-checkpoint-final.log) | [record](results/raw/experiment-20261103T125024314619Z-qwen-checkpoint-final.json) |
+| pipeline-synthetic | passed | [log](results/raw/experiment-20261103T125222954058Z-pipeline-synthetic.log) | [record](results/raw/experiment-20261103T125222954058Z-pipeline-synthetic.json) |
+| final-tests | passed | [log](results/raw/experiment-20261103T125240709700Z-final-tests.log) | [record](results/raw/experiment-20261103T125240709700Z-final-tests.json) |
+| qwen-checkpoint-final | failed | [log](results/raw/experiment-20261103T130051895558Z-qwen-checkpoint-final.log) | [record](results/raw/experiment-20261103T130051895558Z-qwen-checkpoint-final.json) |
+| qwen-checkpoint-final | passed | [log](results/raw/experiment-20261103T130214889728Z-qwen-checkpoint-final.log) | [record](results/raw/experiment-20261103T130214889728Z-qwen-checkpoint-final.json) |
+| final-tests | passed | [log](results/raw/experiment-20261103T130947677075Z-final-tests.log) | [record](results/raw/experiment-20261103T130947677075Z-final-tests.json) |
+| vx-neural-clean | passed | [log](results/raw/experiment-20261103T131114896404Z-vx-neural-clean.log) | [record](results/raw/experiment-20261103T131114896404Z-vx-neural-clean.json) |
+| pipeline-14-captures-clean | passed | [log](results/raw/experiment-20261103T131417677608Z-pipeline-14-captures-clean.log) | [record](results/raw/experiment-20261103T131417677608Z-pipeline-14-captures-clean.json) |
+| pipeline-synthetic-clean | passed | [log](results/raw/experiment-20261103T133423435769Z-pipeline-synthetic-clean.log) | [record](results/raw/experiment-20261103T133423435769Z-pipeline-synthetic-clean.json) |
+| metrics-precision-range-filter-spectral | failed | [log](results/raw/experiment-20261103T142343040508Z-metrics-precision-range-filter-spectral.log) | [record](results/raw/experiment-20261103T142343040508Z-metrics-precision-range-filter-spectral.json) |
+| metrics-filter-spectral | passed | [log](results/raw/experiment-20261103T144807276486Z-metrics-filter-spectral.log) | [record](results/raw/experiment-20261103T144807276486Z-metrics-filter-spectral.json) |
+| metrics-precision-rerun | passed | [log](results/raw/experiment-20261103T145158367623Z-metrics-precision-rerun.log) | [record](results/raw/experiment-20261103T145158367623Z-metrics-precision-rerun.json) |
+| metrics-detection-sync-demod-ai | passed | [log](results/raw/experiment-20261103T150543804714Z-metrics-detection-sync-demod-ai.log) | [record](results/raw/experiment-20261103T150543804714Z-metrics-detection-sync-demod-ai.json) |
+| metrics-cfo-demod-fix | passed | [log](results/raw/experiment-20261103T155010585437Z-metrics-cfo-demod-fix.log) | [record](results/raw/experiment-20261103T155010585437Z-metrics-cfo-demod-fix.json) |
+| metrics-systems-baselines | passed | [log](results/raw/experiment-20261103T155650749212Z-metrics-systems-baselines.log) | [record](results/raw/experiment-20261103T155650749212Z-metrics-systems-baselines.json) |
+| stage2-fetch-checkpoint | passed | [log](results/raw/experiment-20261103T162910695920Z-stage2-fetch-checkpoint.log) | [record](results/raw/experiment-20261103T162910695920Z-stage2-fetch-checkpoint.json) |
+| stage2-qwen-rf-chat | failed | [log](results/raw/experiment-20261103T163612320318Z-stage2-qwen-rf-chat.log) | [record](results/raw/experiment-20261103T163612320318Z-stage2-qwen-rf-chat.json) |
+| stage2-qwen-rf-chat | passed | [log](results/raw/experiment-20261103T163653193473Z-stage2-qwen-rf-chat.log) | [record](results/raw/experiment-20261103T163653193473Z-stage2-qwen-rf-chat.json) |
+| stage2-qwen-rf-chat-full | failed | [log](results/raw/experiment-20261103T164902004152Z-stage2-qwen-rf-chat-full.log) | [record](results/raw/experiment-20261103T164902004152Z-stage2-qwen-rf-chat-full.json) |
+| stage2-qwen-rf-chat-final | passed | [log](results/raw/experiment-20261103T165809256128Z-stage2-qwen-rf-chat-final.log) | [record](results/raw/experiment-20261103T165809256128Z-stage2-qwen-rf-chat-final.json) |
+| neural-fuzz | passed | [log](results/raw/experiment-20261103T175430339802Z-neural-fuzz.log) | [record](results/raw/experiment-20261103T175430339802Z-neural-fuzz.json) |
+| stage2-robust | passed | [log](results/raw/experiment-20261103T181315313072Z-stage2-robust.log) | [record](results/raw/experiment-20261103T181315313072Z-stage2-robust.json) |
+| merge-qwen2b-rv1 | failed | [log](results/raw/experiment-20261103T181332137743Z-merge-qwen2b-rv1.log) | [record](results/raw/experiment-20261103T181332137743Z-merge-qwen2b-rv1.json) |
+| tech-classifier-neural | passed | [log](results/raw/experiment-20261103T183024802076Z-tech-classifier-neural.log) | [record](results/raw/experiment-20261103T183024802076Z-tech-classifier-neural.json) |
+| merge-qwen4b-rv1 | passed | [log](results/raw/experiment-20261103T184040260175Z-merge-qwen4b-rv1.log) | [record](results/raw/experiment-20261103T184040260175Z-merge-qwen4b-rv1.json) |
+| stage2-fullgpu-demo | passed | [log](results/raw/experiment-20261103T185847032136Z-stage2-fullgpu-demo.log) | [record](results/raw/experiment-20261103T185847032136Z-stage2-fullgpu-demo.json) |
+| merge-qwen4b-vx-vfir | passed | [log](results/raw/experiment-20261103T193927883598Z-merge-qwen4b-vx-vfir.log) | [record](results/raw/experiment-20261103T193927883598Z-merge-qwen4b-vx-vfir.json) |
+| vfir-checkpoint | failed | [log](results/raw/experiment-20261103T194157721581Z-vfir-checkpoint.log) | [record](results/raw/experiment-20261103T194157721581Z-vfir-checkpoint.json) |
+| vfir-checkpoint | failed | [log](results/raw/experiment-20261103T194337988217Z-vfir-checkpoint.log) | [record](results/raw/experiment-20261103T194337988217Z-vfir-checkpoint.json) |
+| vfir-checkpoint | passed | [log](results/raw/experiment-20261103T194350332149Z-vfir-checkpoint.log) | [record](results/raw/experiment-20261103T194350332149Z-vfir-checkpoint.json) |
+| vfir-neural | passed | [log](results/raw/experiment-20261103T194916880994Z-vfir-neural.log) | [record](results/raw/experiment-20261103T194916880994Z-vfir-neural.json) |
+| real-iq-bfp-gate | passed | [log](results/raw/experiment-20261103T203756210935Z-real-iq-bfp-gate.log) | [record](results/raw/experiment-20261103T203756210935Z-real-iq-bfp-gate.json) |
+| vfir-neural-packed | passed | [log](results/raw/experiment-20261103T211325653687Z-vfir-neural-packed.log) | [record](results/raw/experiment-20261103T211325653687Z-vfir-neural-packed.json) |
+| stage2-demo-fastfw | passed | [log](results/raw/experiment-20261103T212532361569Z-stage2-demo-fastfw.log) | [record](results/raw/experiment-20261103T212532361569Z-stage2-demo-fastfw.json) |
+| stage2-fullgpu-fastfw | passed | [log](results/raw/experiment-20261103T213349318205Z-stage2-fullgpu-fastfw.log) | [record](results/raw/experiment-20261103T213349318205Z-stage2-fullgpu-fastfw.json) |
+| timing-study | passed | [log](results/raw/experiment-20261103T214901182805Z-timing-study.log) | [record](results/raw/experiment-20261103T214901182805Z-timing-study.json) |
+| speculative-verify | passed | [log](results/raw/experiment-20261103T231606132571Z-speculative-verify.log) | [record](results/raw/experiment-20261103T231606132571Z-speculative-verify.json) |
+| vpow-executor | passed | [log](results/raw/experiment-20261103T232441548353Z-vpow-executor.log) | [record](results/raw/experiment-20261103T232441548353Z-vpow-executor.json) |
+| error-budget | passed | [log](results/raw/experiment-20261104T045037646077Z-error-budget.log) | [record](results/raw/experiment-20261104T045037646077Z-error-budget.json) |
+| fft-opt-neural | passed | [log](results/raw/experiment-20261104T053254528773Z-fft-opt-neural.log) | [record](results/raw/experiment-20261104T053254528773Z-fft-opt-neural.json) |
+| speculative-fir64 | passed | [log](results/raw/experiment-20261104T053623744254Z-speculative-fir64.log) | [record](results/raw/experiment-20261104T053623744254Z-speculative-fir64.json) |
+| speculative-fir64-fla | passed | [log](results/raw/experiment-20261104T053948948398Z-speculative-fir64-fla.log) | [record](results/raw/experiment-20261104T053948948398Z-speculative-fir64-fla.json) |
+| speculative-fir64-batched | passed | [log](results/raw/experiment-20261104T054418530420Z-speculative-fir64-batched.log) | [record](results/raw/experiment-20261104T054418530420Z-speculative-fir64-batched.json) |
+| speculative-fir64-fla-batched | passed | [log](results/raw/experiment-20261104T054619635291Z-speculative-fir64-fla-batched.log) | [record](results/raw/experiment-20261104T054619635291Z-speculative-fir64-fla-batched.json) |
+| am-trim-neural | passed | [log](results/raw/experiment-20261104T054805435216Z-am-trim-neural.log) | [record](results/raw/experiment-20261104T054805435216Z-am-trim-neural.json) |
+| speculative-fir64-fla-gpucmp | passed | [log](results/raw/experiment-20261104T054917905507Z-speculative-fir64-fla-gpucmp.log) | [record](results/raw/experiment-20261104T054917905507Z-speculative-fir64-fla-gpucmp.json) |
+| speculative-mutation | passed | [log](results/raw/experiment-20261104T055039195257Z-speculative-mutation.log) | [record](results/raw/experiment-20261104T055039195257Z-speculative-mutation.json) |
+| stage2-fullgpu-chunked | passed | [log](results/raw/experiment-20261104T060003896264Z-stage2-fullgpu-chunked.log) | [record](results/raw/experiment-20261104T060003896264Z-stage2-fullgpu-chunked.json) |
+| stage2-fullgpu-chunked-nofla | passed | [log](results/raw/experiment-20261104T060432793500Z-stage2-fullgpu-chunked-nofla.log) | [record](results/raw/experiment-20261104T060432793500Z-stage2-fullgpu-chunked-nofla.json) |
+| stage2-fullgpu-sequential-newfw | passed | [log](results/raw/experiment-20261104T060820354669Z-stage2-fullgpu-sequential-newfw.log) | [record](results/raw/experiment-20261104T060820354669Z-stage2-fullgpu-sequential-newfw.json) |
+| stage2-levels-chunked | passed | [log](results/raw/experiment-20261104T062251140547Z-stage2-levels-chunked.log) | [record](results/raw/experiment-20261104T062251140547Z-stage2-levels-chunked.json) |
+| amendment6 | passed | [log](results/raw/experiment-20261104T075923036338Z-amendment6.log) | [record](results/raw/experiment-20261104T075923036338Z-amendment6.json) |
+| classifier-screen | passed | [log](results/raw/experiment-20261104T084832134034Z-classifier-screen.log) | [record](results/raw/experiment-20261104T084832134034Z-classifier-screen.json) |
+| classifier-lolo6 | passed | [log](results/raw/experiment-20261104T085418172660Z-classifier-lolo6.log) | [record](results/raw/experiment-20261104T085418172660Z-classifier-lolo6.json) |
+| classifier-10msps | passed | [log](results/raw/experiment-20261104T085620606951Z-classifier-10msps.log) | [record](results/raw/experiment-20261104T085620606951Z-classifier-10msps.json) |
+| merge-qwen4b-vx-rf | passed | [log](results/raw/experiment-20261104T085639458144Z-merge-qwen4b-vx-rf.log) | [record](results/raw/experiment-20261104T085639458144Z-merge-qwen4b-vx-rf.json) |
+| classifier-10msps-fixed | failed | [log](results/raw/experiment-20261104T085728745010Z-classifier-10msps-fixed.log) | [record](results/raw/experiment-20261104T085728745010Z-classifier-10msps-fixed.json) |
+| classifier-10msps-fixed | passed | [log](results/raw/experiment-20261104T085859344674Z-classifier-10msps-fixed.log) | [record](results/raw/experiment-20261104T085859344674Z-classifier-10msps-fixed.json) |
+| vx-rf-checkpoint | passed | [log](results/raw/experiment-20261104T090808601950Z-vx-rf-checkpoint.log) | [record](results/raw/experiment-20261104T090808601950Z-vx-rf-checkpoint.json) |
+| stage2-real-chunked | passed | [log](results/raw/experiment-20261104T091734223226Z-stage2-real-chunked.log) | [record](results/raw/experiment-20261104T091734223226Z-stage2-real-chunked.json) |
+| regress-real-iq-bfp | passed | [log](results/raw/experiment-20261104T093221102934Z-regress-real-iq-bfp.log) | [record](results/raw/experiment-20261104T093221102934Z-regress-real-iq-bfp.json) |
+| classifier-10msps-bandwidth | failed | [log](results/raw/experiment-20261104T093649812836Z-classifier-10msps-bandwidth.log) | [record](results/raw/experiment-20261104T093649812836Z-classifier-10msps-bandwidth.json) |
+| classifier-10msps-bandwidth | passed | [log](results/raw/experiment-20261104T093730927881Z-classifier-10msps-bandwidth.log) | [record](results/raw/experiment-20261104T093730927881Z-classifier-10msps-bandwidth.json) |
+| amendment8 | passed | [log](results/raw/experiment-20261104T100754162606Z-amendment8.log) | [record](results/raw/experiment-20261104T100754162606Z-amendment8.json) |
+| classifier-10msps-bandwidth-neural | passed | [log](results/raw/experiment-20261104T102533605081Z-classifier-10msps-bandwidth-neural.log) | [record](results/raw/experiment-20261104T102533605081Z-classifier-10msps-bandwidth-neural.json) |
+| classifier-10msps-bandwidth-neural | passed | [log](results/raw/experiment-20261104T102625112476Z-classifier-10msps-bandwidth-neural.log) | [record](results/raw/experiment-20261104T102625112476Z-classifier-10msps-bandwidth-neural.json) |
+| regress-stage2-robust-chunked | passed | [log](results/raw/experiment-20261104T110320176173Z-regress-stage2-robust-chunked.log) | [record](results/raw/experiment-20261104T110320176173Z-regress-stage2-robust-chunked.json) |
+| stage2-chunk-sweep | passed | [log](results/raw/experiment-20261104T110710857582Z-stage2-chunk-sweep.log) | [record](results/raw/experiment-20261104T110710857582Z-stage2-chunk-sweep.json) |
+| regress-pipeline-14 | passed | [log](results/raw/experiment-20261104T111657913191Z-regress-pipeline-14.log) | [record](results/raw/experiment-20261104T111657913191Z-regress-pipeline-14.json) |
+| regress-pipeline-synthetic | passed | [log](results/raw/experiment-20261104T113709472364Z-regress-pipeline-synthetic.log) | [record](results/raw/experiment-20261104T113709472364Z-regress-pipeline-synthetic.json) |
+| real-iq-expanded-133 | passed | [log](results/raw/experiment-20261104T114537629890Z-real-iq-expanded-133.log) | [record](results/raw/experiment-20261104T114537629890Z-real-iq-expanded-133.json) |
+| pipeline-expanded-133 | passed | [log](results/raw/experiment-20261104T171411457108Z-pipeline-expanded-133.log) | [record](results/raw/experiment-20261104T171411457108Z-pipeline-expanded-133.json) |
+| kernel-battery-133 | passed | [log](results/raw/experiment-20261104T202634874064Z-kernel-battery-133.log) | [record](results/raw/experiment-20261104T202634874064Z-kernel-battery-133.json) |
+| stage2-bank-96 | failed | [log](results/raw/experiment-20261105T013427785752Z-stage2-bank-96.log) | [record](results/raw/experiment-20261105T013427785752Z-stage2-bank-96.json) |
+| stage2-bank-96-resume | passed | [log](results/raw/experiment-20261105T022332072500Z-stage2-bank-96-resume.log) | [record](results/raw/experiment-20261105T022332072500Z-stage2-bank-96-resume.json) |
+| a12-battery | passed | [log](results/raw/experiment-20261105T041509745603Z-a12-battery.log) | [record](results/raw/experiment-20261105T041509745603Z-a12-battery.json) |
+| stage2-bank-96-fwv3 | running | [log](results/raw/experiment-20261105T043353292555Z-stage2-bank-96-fwv3.log) | [record](results/raw/experiment-20261105T043353292555Z-stage2-bank-96-fwv3.json) |
+| stage2-bank-96-fwv3-max1000 | passed | [log](results/raw/experiment-20261105T044855248218Z-stage2-bank-96-fwv3-max1000.log) | [record](results/raw/experiment-20261105T044855248218Z-stage2-bank-96-fwv3-max1000.json) |
+| a13-neural-fuzz | passed | [log](results/raw/experiment-20261105T183425567751Z-a13-neural-fuzz.log) | [record](results/raw/experiment-20261105T183425567751Z-a13-neural-fuzz.json) |
+| a13-stage2-heldout | passed | [log](results/raw/experiment-20261105T184702139586Z-a13-stage2-heldout.log) | [record](results/raw/experiment-20261105T184702139586Z-a13-stage2-heldout.json) |
+| a14-stage2-new | passed | [log](results/raw/experiment-20261105T195145042747Z-a14-stage2-new.log) | [record](results/raw/experiment-20261105T195145042747Z-a14-stage2-new.json) |
+| a14-stage2-a13-rerun-fwv4 | passed | [log](results/raw/experiment-20261105T203905940022Z-a14-stage2-a13-rerun-fwv4.log) | [record](results/raw/experiment-20261105T203905940022Z-a14-stage2-a13-rerun-fwv4.json) |
+| modclass-neural | passed | [log](results/raw/experiment-20261106T041604230154Z-modclass-neural.log) | [record](results/raw/experiment-20261106T041604230154Z-modclass-neural.json) |
+| stage2-modulation | failed | [log](results/raw/experiment-20261106T053654702412Z-stage2-modulation.log) | [record](results/raw/experiment-20261106T053654702412Z-stage2-modulation.json) |
+| stage2-modulation | passed | [log](results/raw/experiment-20261106T053818610709Z-stage2-modulation.log) | [record](results/raw/experiment-20261106T053818610709Z-stage2-modulation.json) |
+| viz-record-levels-q0 | failed | [log](results/raw/experiment-20261112T085251429066Z-viz-record-levels-q0.log) | [record](results/raw/experiment-20261112T085251429066Z-viz-record-levels-q0.json) |
+| viz-record-levels-q0 | failed | [log](results/raw/experiment-20261112T085559627300Z-viz-record-levels-q0.log) | [record](results/raw/experiment-20261112T085559627300Z-viz-record-levels-q0.json) |
+| viz-record-levels-q0 | passed | [log](results/raw/experiment-20261112T085846462062Z-viz-record-levels-q0.log) | [record](results/raw/experiment-20261112T085846462062Z-viz-record-levels-q0.json) |
+| viz-record-levels-q0-rv1check | passed | [log](results/raw/experiment-20261120T162429064938Z-viz-record-levels-q0-rv1check.log) | [record](results/raw/experiment-20261120T162429064938Z-viz-record-levels-q0-rv1check.json) |

@@ -1,0 +1,51 @@
+{
+  "protocol": "PROTOCOL.md Amendment 6, P6.4 (host float screening)",
+  "lags": [
+    64,
+    67,
+    128,
+    224,
+    448
+  ],
+  "cv_leave_one_location_out_calibration": {
+    "baseline": {
+      "window_accuracy": 0.4305555555555556,
+      "recording_accuracy": 0.47619047619047616
+    },
+    "baseline+lags": {
+      "window_accuracy": 0.4623015873015873,
+      "recording_accuracy": 0.5238095238095238
+    }
+  },
+  "cv_locations": [
+    "merelbeke",
+    "rabot"
+  ],
+  "chosen": "baseline+lags",
+  "held_out_once": {
+    "window_accuracy": 0.6720297029702971,
+    "recording_accuracy": 0.7029702970297029,
+    "confusion_rows_true_cols_pred": [
+      [
+        297,
+        9,
+        30
+      ],
+      [
+        9,
+        611,
+        20
+      ],
+      [
+        63,
+        399,
+        178
+      ]
+    ]
+  },
+  "recorded_in_weights_baseline": {
+    "window_accuracy": 0.67,
+    "recording_accuracy": 0.703
+  },
+  "improves_over_recorded": false
+}

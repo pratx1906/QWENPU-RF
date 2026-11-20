@@ -1,0 +1,131 @@
+{
+  "protocol": "PROTOCOL.md Amendment 6, P6.4b (host float, leave-one-location-out over 6 locations)",
+  "locations": [
+    "gentbrugge",
+    "igent",
+    "merelbeke",
+    "rabot",
+    "reep",
+    "uz"
+  ],
+  "variants": {
+    "baseline, H=8": {
+      "window_accuracy": 0.7008384146341463,
+      "recording_accuracy": 0.7439024390243902,
+      "recording_accuracy_by_location": {
+        "gentbrugge": 0.6666666666666666,
+        "igent": 0.8095238095238095,
+        "merelbeke": 0.696969696969697,
+        "rabot": 0.8,
+        "reep": 0.9333333333333333,
+        "uz": 0.5
+      },
+      "confusion_rows_true_cols_pred": [
+        [
+          645,
+          14,
+          45
+        ],
+        [
+          9,
+          808,
+          143
+        ],
+        [
+          172,
+          402,
+          386
+        ]
+      ]
+    },
+    "baseline, H=16": {
+      "window_accuracy": 0.6932164634146342,
+      "recording_accuracy": 0.7317073170731707,
+      "recording_accuracy_by_location": {
+        "gentbrugge": 0.6666666666666666,
+        "igent": 0.6666666666666666,
+        "merelbeke": 0.7272727272727273,
+        "rabot": 0.8,
+        "reep": 0.9333333333333333,
+        "uz": 0.5
+      },
+      "confusion_rows_true_cols_pred": [
+        [
+          647,
+          14,
+          43
+        ],
+        [
+          10,
+          806,
+          144
+        ],
+        [
+          167,
+          427,
+          366
+        ]
+      ]
+    },
+    "baseline+lags, H=8": {
+      "window_accuracy": 0.7046493902439024,
+      "recording_accuracy": 0.7378048780487805,
+      "recording_accuracy_by_location": {
+        "gentbrugge": 0.6666666666666666,
+        "igent": 0.8571428571428571,
+        "merelbeke": 0.6363636363636364,
+        "rabot": 0.8,
+        "reep": 0.9333333333333333,
+        "uz": 0.5
+      },
+      "confusion_rows_true_cols_pred": [
+        [
+          651,
+          15,
+          38
+        ],
+        [
+          7,
+          818,
+          135
+        ],
+        [
+          171,
+          409,
+          380
+        ]
+      ]
+    },
+    "baseline+lags, H=16": {
+      "window_accuracy": 0.6871189024390244,
+      "recording_accuracy": 0.725609756097561,
+      "recording_accuracy_by_location": {
+        "gentbrugge": 0.6666666666666666,
+        "igent": 0.6666666666666666,
+        "merelbeke": 0.696969696969697,
+        "rabot": 0.8,
+        "reep": 0.9333333333333333,
+        "uz": 0.5
+      },
+      "confusion_rows_true_cols_pred": [
+        [
+          648,
+          14,
+          42
+        ],
+        [
+          9,
+          805,
+          146
+        ],
+        [
+          180,
+          430,
+          350
+        ]
+      ]
+    }
+  },
+  "primary": "baseline+lags, H=8",
+  "primary_beats_baseline": false
+}

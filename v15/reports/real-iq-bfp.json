@@ -1,0 +1,1243 @@
+{
+  "status": "completed",
+  "criteria": {
+    "FIR_NMSE_max": 0.01,
+    "spectral_power_NMSE_max": 0.01,
+    "matched_peak_displacement_max": 1
+  },
+  "protocol": "v15/research/PROTOCOL.md",
+  "input_fractional_bits": 24,
+  "analysis": "BFP front end in weights (Amendment 2)",
+  "backend": "QwenPU RV32 CPU compiled into weights; chipformer fusedexec.FreeRun3, free-running",
+  "kernels": [
+    {
+      "kernel": "gate_fir",
+      "taps": 2,
+      "accumulator_bits": 32
+    },
+    {
+      "kernel": "gate_matched",
+      "taps": 2,
+      "accumulator_bits": 32
+    },
+    {
+      "kernel": "fft4_power",
+      "window": [
+        0,
+        24576,
+        24576,
+        0
+      ],
+      "hop": 2
+    }
+  ],
+  "recordings": [
+    {
+      "dataset": "IDLab",
+      "emitter": "WiFi",
+      "file": "wf10Msps_g76_gentbrugge_f5240MHz_r1.bin",
+      "sha256": "cba35634e1ede245749c4e622c4c78b0a5ce48c4589a426c76bcc500812e2d3f",
+      "sample_rate": 10000000.0,
+      "center_frequency_hz": 5240000000.0,
+      "preprocessing": {
+        "source_sample_start": 512,
+        "gain": 0.7602654865887819,
+        "samples": 4096,
+        "component_clipping_count": 0,
+        "input_quantization": {
+          "nmse": 2.6927317750785602e-15,
+          "rmse": 2.415891465379909e-08,
+          "max_absolute_error": 4.090745639845116e-08,
+          "reference_energy": 887.8133924142533
+        },
+        "block_max": 12655878,
+        "cpu_shift": 9,
+        "block_exponent": 15,
+        "q15_quantization": {
+          "nmse": 7.088951813311094e-10,
+          "rmse": 1.2395723610151209e-05,
+          "max_absolute_error": 2.1111625009909203e-05,
+          "reference_energy": 887.8133924142533
+        }
+      },
+      "FIR": {
+        "nmse": 3.264406143793579e-09,
+        "rmse": 1.5056737799496697e-05,
+        "max_absolute_error": 3.328150571416587e-05,
+        "reference_energy": 284.4575967730799
+      },
+      "spectral_power": {
+        "nmse": 2.2674728256313947e-09,
+        "rmse": 1.5910028859857062e-05,
+        "max_absolute_error": 0.00011445681812283226,
+        "reference_energy": 914.0662585180835
+      },
+      "matched_peak_displacement_samples": 0,
+      "screen_pass": true,
+      "neural_samples_executed": 4096,
+      "cpu_only_samples": 0,
+      "execution": {
+        "fir": {
+          "tokens": 251434,
+          "chunks": 16,
+          "neural_seconds": 8.379972599999746,
+          "reference_trace_seconds": 0.560861699981615,
+          "block": 256,
+          "batch": 16,
+          "streams": 1,
+          "tokens_per_sample": 61.38525390625,
+          "vx_build": false,
+          "stateful": false,
+          "proof_mode": true
+        },
+        "matched": {
+          "tokens": 251434,
+          "chunks": 16,
+          "neural_seconds": 8.386708899983205,
+          "reference_trace_seconds": 0.5580603000125848,
+          "block": 256,
+          "batch": 16,
+          "streams": 1,
+          "tokens_per_sample": 61.38525390625,
+          "vx_build": false,
+          "stateful": false,
+          "proof_mode": true
+        },
+        "spectral": {
+          "tokens": 385614,
+          "chunks": 16,
+          "neural_seconds": 12.913783399999375,
+          "reference_trace_seconds": 0.8622322999872267,
+          "block": 256,
+          "batch": 16,
+          "streams": 1,
+          "tokens_per_sample": 94.14404296875,
+          "vx_build": false,
+          "stateful": false,
+          "proof_mode": true
+        }
+      }
+    },
+    {
+      "dataset": "IDLab",
+      "emitter": "WiFi",
+      "file": "wf_g30_igent_f2412MHz_r1.bin",
+      "sha256": "8902213640047858e335abfc62f504a92bed8a39e9f70372493abe735e3e279f",
+      "sample_rate": 1000000.0,
+      "center_frequency_hz": 2412000000.0,
+      "preprocessing": {
+        "source_sample_start": 512,
+        "gain": 1.3426573426573427,
+        "samples": 4096,
+        "component_clipping_count": 0,
+        "input_quantization": {
+          "nmse": 8.055325343611113e-16,
+          "rmse": 1.8711300808002014e-08,
+          "max_absolute_error": 3.0473190133106005e-08,
+          "reference_energy": 1780.2656965662877
+        },
+        "block_max": 12670904,
+        "cpu_shift": 9,
+        "block_exponent": 15,
+        "q15_quantization": {
+          "nmse": 2.024152259689784e-10,
+          "rmse": 9.379593708604735e-06,
+          "max_absolute_error": 2.0824669429248023e-05,
+          "reference_energy": 1780.2656965662877
+        }
+      },
+      "FIR": {
+        "nmse": 1.5834674368055502e-09,
+        "rmse": 1.484930661042015e-05,
+        "max_absolute_error": 3.1991521152201756e-05,
+        "reference_energy": 570.3785182453146
+      },
+      "spectral_power": {
+        "nmse": 9.47958401309471e-10,
+        "rmse": 1.8764087561171623e-05,
+        "max_absolute_error": 0.00010188531406196688,
+        "reference_energy": 3041.1893144897485
+      },
+      "matched_peak_displacement_samples": 0,
+      "screen_pass": true,
+      "neural_samples_executed": 4096,
+      "cpu_only_samples": 0,
+      "execution": {
+        "fir": {
+          "tokens": 259949,
+          "chunks": 16,
+          "neural_seconds": 8.863467300019693,
+          "reference_trace_seconds": 0.5724148000008427,
+          "block": 256,
+          "batch": 16,
+          "streams": 1,
+          "tokens_per_sample": 63.464111328125,
+          "vx_build": false,
+          "stateful": false,
+          "proof_mode": true
+        },
+        "matched": {
+          "tokens": 259949,
+          "chunks": 16,
+          "neural_seconds": 8.890762100025313,
+          "reference_trace_seconds": 0.7096808000060264,
+          "block": 256,
+          "batch": 16,
+          "streams": 1,
+          "tokens_per_sample": 63.464111328125,
+          "vx_build": false,
+          "stateful": false,
+          "proof_mode": true
+        },
+        "spectral": {
+          "tokens": 410263,
+          "chunks": 16,
+          "neural_seconds": 14.088240999990376,
+          "reference_trace_seconds": 1.0372716000129003,
+          "block": 256,
+          "batch": 16,
+          "streams": 1,
+          "tokens_per_sample": 100.161865234375,
+          "vx_build": false,
+          "stateful": false,
+          "proof_mode": true
+        }
+      }
+    },
+    {
+      "dataset": "IDLab",
+      "emitter": "LTE",
+      "file": "lte_g30_gentbrugge_f806MHz_r1.bin",
+      "sha256": "8c503863b69da8ddb451f67f983319072dbff2d78afb79970bcab19d7fc10889",
+      "sample_rate": 1000000.0,
+      "center_frequency_hz": 806000000.0,
+      "preprocessing": {
+        "source_sample_start": 512,
+        "gain": 1.3617021276595744,
+        "samples": 4096,
+        "component_clipping_count": 0,
+        "input_quantization": {
+          "nmse": 7.6999582173999765e-16,
+          "rmse": 2.3094994702159407e-08,
+          "max_absolute_error": 4.125010702886543e-08,
+          "reference_energy": 2837.3134274186996
+        },
+        "block_max": 22667787,
+        "cpu_shift": 10,
+        "block_exponent": 14,
+        "q15_quantization": {
+          "nmse": 9.137082088360652e-10,
+          "rmse": 2.5158077232131333e-05,
+          "max_absolute_error": 4.224010962252268e-05,
+          "reference_energy": 2837.3134274186996
+        }
+      },
+      "FIR": {
+        "nmse": 3.971039864501269e-09,
+        "rmse": 2.9893855009340736e-05,
+        "max_absolute_error": 6.892481772416826e-05,
+        "reference_energy": 921.7635885406371
+      },
+      "spectral_power": {
+        "nmse": 2.786928824874064e-09,
+        "rmse": 5.718830663003557e-05,
+        "max_absolute_error": 0.0003852005702249528,
+        "reference_energy": 9608.73974847833
+      },
+      "matched_peak_displacement_samples": 0,
+      "screen_pass": true,
+      "neural_samples_executed": 4096,
+      "cpu_only_samples": 0,
+      "execution": {
+        "fir": {
+          "tokens": 251263,
+          "chunks": 16,
+          "neural_seconds": 8.51139850000618,
+          "reference_trace_seconds": 0.588971599994693,
+          "block": 256,
+          "batch": 16,
+          "streams": 1,
+          "tokens_per_sample": 61.343505859375,
+          "vx_build": false,
+          "stateful": false,
+          "proof_mode": true
+        },
+        "matched": {
+          "tokens": 251263,
+          "chunks": 16,
+          "neural_seconds": 8.628803400002653,
+          "reference_trace_seconds": 0.5899669000064023,
+          "block": 256,
+          "batch": 16,
+          "streams": 1,
+          "tokens_per_sample": 61.343505859375,
+          "vx_build": false,
+          "stateful": false,
+          "proof_mode": true
+        },
+        "spectral": {
+          "tokens": 383283,
+          "chunks": 16,
+          "neural_seconds": 13.45441770000616,
+          "reference_trace_seconds": 0.9656735000025947,
+          "block": 256,
+          "batch": 16,
+          "streams": 1,
+          "tokens_per_sample": 93.574951171875,
+          "vx_build": false,
+          "stateful": false,
+          "proof_mode": true
+        }
+      }
+    },
+    {
+      "dataset": "IDLab",
+      "emitter": "LTE",
+      "file": "lte10Msps_g0_igent_f806MHz_r1.bin",
+      "sha256": "8de0064243ee7ad9a48cc1d15f088f9476800ffc67f49a229608b11174e00077",
+      "sample_rate": 10000000.0,
+      "center_frequency_hz": 806000000.0,
+      "preprocessing": {
+        "source_sample_start": 512,
+        "gain": 1.3473684210526315,
+        "samples": 4096,
+        "component_clipping_count": 0,
+        "input_quantization": {
+          "nmse": 1.5471717208960509e-15,
+          "rmse": 2.5949654601932674e-08,
+          "max_absolute_error": 3.773381821142079e-08,
+          "reference_energy": 1782.725975201467
+        },
+        "block_max": 12715364,
+        "cpu_shift": 9,
+        "block_exponent": 15,
+        "q15_quantization": {
+          "nmse": 3.6599373429540894e-10,
+          "rmse": 1.2621156369674135e-05,
+          "max_absolute_error": 2.0448486922855367e-05,
+          "reference_energy": 1782.725975201467
+        }
+      },
+      "FIR": {
+        "nmse": 1.4836977008187697e-09,
+        "rmse": 1.4127696624415647e-05,
+        "max_absolute_error": 2.833090378332026e-05,
+        "reference_energy": 551.0071634797706
+      },
+      "spectral_power": {
+        "nmse": 1.0205791213640291e-09,
+        "rmse": 1.947457397907995e-05,
+        "max_absolute_error": 0.00010008811744310897,
+        "reference_energy": 3042.7557122040544
+      },
+      "matched_peak_displacement_samples": 0,
+      "screen_pass": true,
+      "neural_samples_executed": 4096,
+      "cpu_only_samples": 0,
+      "execution": {
+        "fir": {
+          "tokens": 259784,
+          "chunks": 16,
+          "neural_seconds": 8.769398900010856,
+          "reference_trace_seconds": 0.5665710000030231,
+          "block": 256,
+          "batch": 16,
+          "streams": 1,
+          "tokens_per_sample": 63.423828125,
+          "vx_build": false,
+          "stateful": false,
+          "proof_mode": true
+        },
+        "matched": {
+          "tokens": 259784,
+          "chunks": 16,
+          "neural_seconds": 8.77149719998124,
+          "reference_trace_seconds": 0.7428369999979623,
+          "block": 256,
+          "batch": 16,
+          "streams": 1,
+          "tokens_per_sample": 63.423828125,
+          "vx_build": false,
+          "stateful": false,
+          "proof_mode": true
+        },
+        "spectral": {
+          "tokens": 409597,
+          "chunks": 16,
+          "neural_seconds": 13.863110100006452,
+          "reference_trace_seconds": 1.1925464000087231,
+          "block": 256,
+          "batch": 16,
+          "streams": 1,
+          "tokens_per_sample": 99.999267578125,
+          "vx_build": false,
+          "stateful": false,
+          "proof_mode": true
+        }
+      }
+    },
+    {
+      "dataset": "IDLab",
+      "emitter": "DVB-T",
+      "file": "dvbt_g30_gentbrugge_f482MHz_r1.bin",
+      "sha256": "3e28773e0a1cdf1ee66bbd3934afd6bbc87af573d37c1261ca9a7d3cda56ac13",
+      "sample_rate": 1000000.0,
+      "center_frequency_hz": 482000000.0,
+      "preprocessing": {
+        "source_sample_start": 512,
+        "gain": 0.7575902366544697,
+        "samples": 4096,
+        "component_clipping_count": 0,
+        "input_quantization": {
+          "nmse": 1.9122571176634076e-15,
+          "rmse": 2.4446986250468042e-08,
+          "max_absolute_error": 4.042318666413987e-08,
+          "reference_energy": 1280.1601925998536
+        },
+        "block_max": 12611344,
+        "cpu_shift": 9,
+        "block_exponent": 15,
+        "q15_quantization": {
+          "nmse": 5.059759492761722e-10,
+          "rmse": 1.257526431634916e-05,
+          "max_absolute_error": 2.130796133839933e-05,
+          "reference_energy": 1280.1601925998536
+        }
+      },
+      "FIR": {
+        "nmse": 2.063607287110578e-09,
+        "rmse": 1.4745165509591857e-05,
+        "max_absolute_error": 3.378004087583642e-05,
+        "reference_energy": 431.5510708604189
+      },
+      "spectral_power": {
+        "nmse": 1.7145260795016251e-09,
+        "rmse": 1.9353968404391748e-05,
+        "max_absolute_error": 0.00013551664885635972,
+        "reference_energy": 1788.8494588316382
+      },
+      "matched_peak_displacement_samples": 0,
+      "screen_pass": true,
+      "neural_samples_executed": 4096,
+      "cpu_only_samples": 0,
+      "execution": {
+        "fir": {
+          "tokens": 253527,
+          "chunks": 16,
+          "neural_seconds": 8.549665600003209,
+          "reference_trace_seconds": 0.6679904999909922,
+          "block": 256,
+          "batch": 16,
+          "streams": 1,
+          "tokens_per_sample": 61.896240234375,
+          "vx_build": false,
+          "stateful": false,
+          "proof_mode": true
+        },
+        "matched": {
+          "tokens": 253527,
+          "chunks": 16,
+          "neural_seconds": 8.544532699976116,
+          "reference_trace_seconds": 0.5190183999948204,
+          "block": 256,
+          "batch": 16,
+          "streams": 1,
+          "tokens_per_sample": 61.896240234375,
+          "vx_build": false,
+          "stateful": false,
+          "proof_mode": true
+        },
+        "spectral": {
+          "tokens": 395070,
+          "chunks": 16,
+          "neural_seconds": 13.333007900015218,
+          "reference_trace_seconds": 1.0579953000124078,
+          "block": 256,
+          "batch": 16,
+          "streams": 1,
+          "tokens_per_sample": 96.45263671875,
+          "vx_build": false,
+          "stateful": false,
+          "proof_mode": true
+        }
+      }
+    },
+    {
+      "dataset": "IDLab",
+      "emitter": "DVB-T",
+      "file": "dvbt_g30_igent_f482MHz_r1.bin",
+      "sha256": "78d751434c1b20eab5a3f49f16e7d5de130dfbc0b5c9a2bc9e7ccafa401acdde",
+      "sample_rate": 1000000.0,
+      "center_frequency_hz": 482000000.0,
+      "preprocessing": {
+        "source_sample_start": 512,
+        "gain": 1.3667304355563465,
+        "samples": 4096,
+        "component_clipping_count": 0,
+        "input_quantization": {
+          "nmse": 1.3348379770277066e-15,
+          "rmse": 2.4985077496763588e-08,
+          "max_absolute_error": 4.00110857180306e-08,
+          "reference_energy": 1915.5469258767625
+        },
+        "block_max": 12898087,
+        "cpu_shift": 9,
+        "block_exponent": 15,
+        "q15_quantization": {
+          "nmse": 3.136960162376112e-10,
+          "rmse": 1.2112141211909725e-05,
+          "max_absolute_error": 2.0580191331065652e-05,
+          "reference_energy": 1915.5469258767625
+        }
+      },
+      "FIR": {
+        "nmse": 1.4980321621480513e-09,
+        "rmse": 1.4486855557907404e-05,
+        "max_absolute_error": 3.401673208587369e-05,
+        "reference_energy": 573.8350484076443
+      },
+      "spectral_power": {
+        "nmse": 1.2279298174737074e-09,
+        "rmse": 2.2707732172433452e-05,
+        "max_absolute_error": 0.0001185789910931323,
+        "reference_energy": 3438.3637160013595
+      },
+      "matched_peak_displacement_samples": 0,
+      "screen_pass": true,
+      "neural_samples_executed": 4096,
+      "cpu_only_samples": 0,
+      "execution": {
+        "fir": {
+          "tokens": 261879,
+          "chunks": 16,
+          "neural_seconds": 8.827320799988229,
+          "reference_trace_seconds": 0.6249440000101458,
+          "block": 256,
+          "batch": 16,
+          "streams": 1,
+          "tokens_per_sample": 63.935302734375,
+          "vx_build": false,
+          "stateful": false,
+          "proof_mode": true
+        },
+        "matched": {
+          "tokens": 261879,
+          "chunks": 16,
+          "neural_seconds": 8.82287579998956,
+          "reference_trace_seconds": 0.6542117999924812,
+          "block": 256,
+          "batch": 16,
+          "streams": 1,
+          "tokens_per_sample": 63.935302734375,
+          "vx_build": false,
+          "stateful": false,
+          "proof_mode": true
+        },
+        "spectral": {
+          "tokens": 413266,
+          "chunks": 16,
+          "neural_seconds": 13.95976420000079,
+          "reference_trace_seconds": 0.9576442000106908,
+          "block": 256,
+          "batch": 16,
+          "streams": 1,
+          "tokens_per_sample": 100.89501953125,
+          "vx_build": false,
+          "stateful": false,
+          "proof_mode": true
+        }
+      }
+    },
+    {
+      "dataset": "NTU-RFSR",
+      "emitter": "LoRa",
+      "file": "exp6_000000_rxg40_0_fulltrim.cfile",
+      "sha256": "34a551d7dbdf820c31c749049cfe5f2f9b89e7a8032ff5ec771beefe8e4bca5c",
+      "sample_rate": null,
+      "center_frequency_hz": null,
+      "preprocessing": {
+        "source_sample_start": 512,
+        "gain": 138.06323788049488,
+        "samples": 4096,
+        "component_clipping_count": 0,
+        "input_quantization": {
+          "nmse": 1.7710816785573859e-15,
+          "rmse": 2.4205230433057987e-08,
+          "max_absolute_error": 4.1566323020139807e-08,
+          "reference_energy": 1355.0015765139442
+        },
+        "block_max": 26650325,
+        "cpu_shift": 10,
+        "block_exponent": 14,
+        "q15_quantization": {
+          "nmse": 1.8783593642796895e-09,
+          "rmse": 2.4927531195225546e-05,
+          "max_absolute_error": 4.268455855313968e-05,
+          "reference_energy": 1355.0015765139442
+        }
+      },
+      "FIR": {
+        "nmse": 7.89015434229768e-09,
+        "rmse": 2.9880161072150394e-05,
+        "max_absolute_error": 6.716815556543353e-05,
+        "reference_energy": 463.4899459004283
+      },
+      "spectral_power": {
+        "nmse": 5.600454495395296e-09,
+        "rmse": 3.913319179684804e-05,
+        "max_absolute_error": 0.0002446740702235495,
+        "reference_energy": 2238.953654854289
+      },
+      "matched_peak_displacement_samples": 0,
+      "screen_pass": true,
+      "neural_samples_executed": 4096,
+      "cpu_only_samples": 0,
+      "execution": {
+        "fir": {
+          "tokens": 250222,
+          "chunks": 16,
+          "neural_seconds": 8.419897399988258,
+          "reference_trace_seconds": 0.5703584000002593,
+          "block": 256,
+          "batch": 16,
+          "streams": 1,
+          "tokens_per_sample": 61.08935546875,
+          "vx_build": false,
+          "stateful": false,
+          "proof_mode": true
+        },
+        "matched": {
+          "tokens": 250222,
+          "chunks": 16,
+          "neural_seconds": 8.408952900004806,
+          "reference_trace_seconds": 0.7359792000206653,
+          "block": 256,
+          "batch": 16,
+          "streams": 1,
+          "tokens_per_sample": 61.08935546875,
+          "vx_build": false,
+          "stateful": false,
+          "proof_mode": true
+        },
+        "spectral": {
+          "tokens": 379568,
+          "chunks": 16,
+          "neural_seconds": 12.776809400005732,
+          "reference_trace_seconds": 1.0265200000139885,
+          "block": 256,
+          "batch": 16,
+          "streams": 1,
+          "tokens_per_sample": 92.66796875,
+          "vx_build": false,
+          "stateful": false,
+          "proof_mode": true
+        }
+      }
+    },
+    {
+      "dataset": "NTU-RFSR",
+      "emitter": "LoRa",
+      "file": "exp7_000000_rxg40_0_fulltrim.cfile",
+      "sha256": "aa22b71e148b653ba65a10e09fc9d122b9998d38f62bfb220f28bb21f46e1e83",
+      "sample_rate": null,
+      "center_frequency_hz": null,
+      "preprocessing": {
+        "source_sample_start": 512,
+        "gain": 100.36861812830239,
+        "samples": 4096,
+        "component_clipping_count": 0,
+        "input_quantization": {
+          "nmse": 1.823039297137853e-15,
+          "rmse": 2.4405478725277e-08,
+          "max_absolute_error": 4.160811289178743e-08,
+          "reference_energy": 1338.2540906736501
+        },
+        "block_max": 28007706,
+        "cpu_shift": 10,
+        "block_exponent": 14,
+        "q15_quantization": {
+          "nmse": 1.885621618889625e-09,
+          "rmse": 2.482084658174651e-05,
+          "max_absolute_error": 4.281055258803496e-05,
+          "reference_energy": 1338.2540906736501
+        }
+      },
+      "FIR": {
+        "nmse": 7.95226744005858e-09,
+        "rmse": 2.9902861021189317e-05,
+        "max_absolute_error": 7.063406112422558e-05,
+        "reference_energy": 460.56873740145727
+      },
+      "spectral_power": {
+        "nmse": 5.373246634074914e-09,
+        "rmse": 3.8288148698342685e-05,
+        "max_absolute_error": 0.00021232314761165938,
+        "reference_energy": 2233.931204279832
+      },
+      "matched_peak_displacement_samples": 0,
+      "screen_pass": true,
+      "neural_samples_executed": 4096,
+      "cpu_only_samples": 0,
+      "execution": {
+        "fir": {
+          "tokens": 250244,
+          "chunks": 16,
+          "neural_seconds": 8.412579900003038,
+          "reference_trace_seconds": 0.6213725999987219,
+          "block": 256,
+          "batch": 16,
+          "streams": 1,
+          "tokens_per_sample": 61.0947265625,
+          "vx_build": false,
+          "stateful": false,
+          "proof_mode": true
+        },
+        "matched": {
+          "tokens": 250244,
+          "chunks": 16,
+          "neural_seconds": 8.417807100020582,
+          "reference_trace_seconds": 0.562497600010829,
+          "block": 256,
+          "batch": 16,
+          "streams": 1,
+          "tokens_per_sample": 61.0947265625,
+          "vx_build": false,
+          "stateful": false,
+          "proof_mode": true
+        },
+        "spectral": {
+          "tokens": 379549,
+          "chunks": 16,
+          "neural_seconds": 12.763959700008854,
+          "reference_trace_seconds": 0.9587989000137895,
+          "block": 256,
+          "batch": 16,
+          "streams": 1,
+          "tokens_per_sample": 92.663330078125,
+          "vx_build": false,
+          "stateful": false,
+          "proof_mode": true
+        }
+      }
+    },
+    {
+      "dataset": "EPFL-LoRaIQ",
+      "emitter": "LoRa",
+      "file": "310.sigmf-data",
+      "sha256": "ed68b88795dc0f373db1d72bc8dc93baa077b1a5a3bc09c95b63183473392169",
+      "sample_rate": null,
+      "center_frequency_hz": null,
+      "preprocessing": {
+        "source_sample_start": 35096,
+        "gain": 273.4504738859579,
+        "samples": 4096,
+        "component_clipping_count": 0,
+        "input_quantization": {
+          "nmse": 1.491639358370299e-15,
+          "rmse": 2.4573978576307217e-08,
+          "max_absolute_error": 4.185674008034376e-08,
+          "reference_energy": 1658.238768647311
+        },
+        "block_max": 16405418,
+        "cpu_shift": 9,
+        "block_exponent": 15,
+        "q15_quantization": {
+          "nmse": 3.830100874428039e-10,
+          "rmse": 1.245227388658187e-05,
+          "max_absolute_error": 2.153658300055864e-05,
+          "reference_energy": 1658.238768647311
+        }
+      },
+      "FIR": {
+        "nmse": 1.2124394515450328e-09,
+        "rmse": 1.4866405461564976e-05,
+        "max_absolute_error": 3.504013226326477e-05,
+        "reference_energy": 746.6410015992017
+      },
+      "spectral_power": {
+        "nmse": 1.4930111376113087e-09,
+        "rmse": 2.241673636615047e-05,
+        "max_absolute_error": 0.00010904136774625428,
+        "reference_energy": 2755.8752536093357
+      },
+      "matched_peak_displacement_samples": 0,
+      "screen_pass": true,
+      "neural_samples_executed": 4096,
+      "cpu_only_samples": 0,
+      "execution": {
+        "fir": {
+          "tokens": 256827,
+          "chunks": 16,
+          "neural_seconds": 8.723804000008386,
+          "reference_trace_seconds": 0.63057719997596,
+          "block": 256,
+          "batch": 16,
+          "streams": 1,
+          "tokens_per_sample": 62.701904296875,
+          "vx_build": false,
+          "stateful": false,
+          "proof_mode": true
+        },
+        "matched": {
+          "tokens": 256827,
+          "chunks": 16,
+          "neural_seconds": 8.725174399995012,
+          "reference_trace_seconds": 0.568438199989032,
+          "block": 256,
+          "batch": 16,
+          "streams": 1,
+          "tokens_per_sample": 62.701904296875,
+          "vx_build": false,
+          "stateful": false,
+          "proof_mode": true
+        },
+        "spectral": {
+          "tokens": 403974,
+          "chunks": 16,
+          "neural_seconds": 13.903721400012728,
+          "reference_trace_seconds": 1.0663408000255004,
+          "block": 256,
+          "batch": 16,
+          "streams": 1,
+          "tokens_per_sample": 98.62646484375,
+          "vx_build": false,
+          "stateful": false,
+          "proof_mode": true
+        }
+      }
+    },
+    {
+      "dataset": "EPFL-LoRaIQ",
+      "emitter": "LoRa",
+      "file": "11.sigmf-data",
+      "sha256": "182467afa344350025cfba21ba557d29d3e5ef5111136764f7bcb0880e43e38a",
+      "sample_rate": null,
+      "center_frequency_hz": null,
+      "preprocessing": {
+        "source_sample_start": 22181,
+        "gain": 345.00082126082776,
+        "samples": 4096,
+        "component_clipping_count": 0,
+        "input_quantization": {
+          "nmse": 1.6969911109374653e-15,
+          "rmse": 2.4125718466805846e-08,
+          "max_absolute_error": 4.167325780384613e-08,
+          "reference_energy": 1404.8853755215457
+        },
+        "block_max": 20324338,
+        "cpu_shift": 10,
+        "block_exponent": 14,
+        "q15_quantization": {
+          "nmse": 1.7829920484502836e-09,
+          "rmse": 2.4729490859076973e-05,
+          "max_absolute_error": 4.289859681443912e-05,
+          "reference_energy": 1404.8853755215457
+        }
+      },
+      "FIR": {
+        "nmse": 7.68155914287936e-09,
+        "rmse": 2.9884126819078256e-05,
+        "max_absolute_error": 7.217604082799324e-05,
+        "reference_energy": 476.202543565234
+      },
+      "spectral_power": {
+        "nmse": 6.3658699454726e-09,
+        "rmse": 4.040237210377665e-05,
+        "max_absolute_error": 0.00022292594721728953,
+        "reference_energy": 2099.5866396335923
+      },
+      "matched_peak_displacement_samples": 0,
+      "screen_pass": true,
+      "neural_samples_executed": 4096,
+      "cpu_only_samples": 0,
+      "execution": {
+        "fir": {
+          "tokens": 250218,
+          "chunks": 16,
+          "neural_seconds": 8.40826559998095,
+          "reference_trace_seconds": 0.7017230000055861,
+          "block": 256,
+          "batch": 16,
+          "streams": 1,
+          "tokens_per_sample": 61.08837890625,
+          "vx_build": false,
+          "stateful": false,
+          "proof_mode": true
+        },
+        "matched": {
+          "tokens": 250218,
+          "chunks": 16,
+          "neural_seconds": 8.418073000008008,
+          "reference_trace_seconds": 0.6725631000008434,
+          "block": 256,
+          "batch": 16,
+          "streams": 1,
+          "tokens_per_sample": 61.08837890625,
+          "vx_build": false,
+          "stateful": false,
+          "proof_mode": true
+        },
+        "spectral": {
+          "tokens": 379267,
+          "chunks": 16,
+          "neural_seconds": 12.75977440000861,
+          "reference_trace_seconds": 0.985327900008997,
+          "block": 256,
+          "batch": 16,
+          "streams": 1,
+          "tokens_per_sample": 92.594482421875,
+          "vx_build": false,
+          "stateful": false,
+          "proof_mode": true
+        }
+      }
+    },
+    {
+      "dataset": "EPFL-LoRaIQ",
+      "emitter": "LoRa",
+      "file": "1335.sigmf-data",
+      "sha256": "49e4bf80a0819e79da52791a699315bbb3417098b3f3167f222ffb2cff2d8afc",
+      "sample_rate": null,
+      "center_frequency_hz": null,
+      "preprocessing": {
+        "source_sample_start": 6534,
+        "gain": 1466.9221716551774,
+        "samples": 4096,
+        "component_clipping_count": 0,
+        "input_quantization": {
+          "nmse": 1.6531378028140091e-15,
+          "rmse": 2.4230549188825305e-08,
+          "max_absolute_error": 4.190984059690957e-08,
+          "reference_energy": 1454.7132884009998
+        },
+        "block_max": 27612819,
+        "cpu_shift": 10,
+        "block_exponent": 14,
+        "q15_quantization": {
+          "nmse": 1.7089956660856191e-09,
+          "rmse": 2.4636511354438952e-05,
+          "max_absolute_error": 4.260454518600588e-05,
+          "reference_energy": 1454.7132884009998
+        }
+      },
+      "FIR": {
+        "nmse": 7.356776925023977e-09,
+        "rmse": 2.9806982671513143e-05,
+        "max_absolute_error": 6.720490291404559e-05,
+        "reference_energy": 494.6618196720363
+      },
+      "spectral_power": {
+        "nmse": 5.3359466014426e-09,
+        "rmse": 4.133781618769479e-05,
+        "max_absolute_error": 0.00027989513781356834,
+        "reference_energy": 2622.1734682325905
+      },
+      "matched_peak_displacement_samples": 0,
+      "screen_pass": true,
+      "neural_samples_executed": 4096,
+      "cpu_only_samples": 0,
+      "execution": {
+        "fir": {
+          "tokens": 250366,
+          "chunks": 16,
+          "neural_seconds": 8.424597500008531,
+          "reference_trace_seconds": 0.5985651999944821,
+          "block": 256,
+          "batch": 16,
+          "streams": 1,
+          "tokens_per_sample": 61.12451171875,
+          "vx_build": false,
+          "stateful": false,
+          "proof_mode": true
+        },
+        "matched": {
+          "tokens": 250366,
+          "chunks": 16,
+          "neural_seconds": 8.421352200006368,
+          "reference_trace_seconds": 0.6192397999984678,
+          "block": 256,
+          "batch": 16,
+          "streams": 1,
+          "tokens_per_sample": 61.12451171875,
+          "vx_build": false,
+          "stateful": false,
+          "proof_mode": true
+        },
+        "spectral": {
+          "tokens": 379686,
+          "chunks": 16,
+          "neural_seconds": 12.801592500007246,
+          "reference_trace_seconds": 1.1444977000064682,
+          "block": 256,
+          "batch": 16,
+          "streams": 1,
+          "tokens_per_sample": 92.69677734375,
+          "vx_build": false,
+          "stateful": false,
+          "proof_mode": true
+        }
+      }
+    },
+    {
+      "dataset": "EPFL-LoRaIQ",
+      "emitter": "LoRa",
+      "file": "1298.sigmf-data",
+      "sha256": "f23c494ef47cfbba1802fe78ad2962584dfb3e043d8dd52c3d99a16d1f63f636",
+      "sample_rate": null,
+      "center_frequency_hz": null,
+      "preprocessing": {
+        "source_sample_start": 5388,
+        "gain": 31.453260003070156,
+        "samples": 4096,
+        "component_clipping_count": 0,
+        "input_quantization": {
+          "nmse": 1.0357832959975488e-15,
+          "rmse": 2.4371823175196107e-08,
+          "max_absolute_error": 4.2102847690483124e-08,
+          "reference_energy": 2348.913814658228
+        },
+        "block_max": 13502533,
+        "cpu_shift": 9,
+        "block_exponent": 15,
+        "q15_quantization": {
+          "nmse": 2.733429644441691e-10,
+          "rmse": 1.2520091912392702e-05,
+          "max_absolute_error": 2.1461015217327107e-05,
+          "reference_energy": 2348.913814658228
+        }
+      },
+      "FIR": {
+        "nmse": 8.260550926053452e-10,
+        "rmse": 1.4954180854568983e-05,
+        "max_absolute_error": 3.3288991414702426e-05,
+        "reference_energy": 1108.858659340337
+      },
+      "spectral_power": {
+        "nmse": 1.145317142582775e-09,
+        "rmse": 2.676751011384486e-05,
+        "max_absolute_error": 0.00012311505922846244,
+        "reference_energy": 5122.335541660606
+      },
+      "matched_peak_displacement_samples": 0,
+      "screen_pass": true,
+      "neural_samples_executed": 4096,
+      "cpu_only_samples": 0,
+      "execution": {
+        "fir": {
+          "tokens": 265343,
+          "chunks": 16,
+          "neural_seconds": 8.981322199979331,
+          "reference_trace_seconds": 0.5592892999993637,
+          "block": 256,
+          "batch": 16,
+          "streams": 1,
+          "tokens_per_sample": 64.781005859375,
+          "vx_build": false,
+          "stateful": false,
+          "proof_mode": true
+        },
+        "matched": {
+          "tokens": 265343,
+          "chunks": 16,
+          "neural_seconds": 8.980779600009555,
+          "reference_trace_seconds": 0.5302999999839813,
+          "block": 256,
+          "batch": 16,
+          "streams": 1,
+          "tokens_per_sample": 64.781005859375,
+          "vx_build": false,
+          "stateful": false,
+          "proof_mode": true
+        },
+        "spectral": {
+          "tokens": 421168,
+          "chunks": 16,
+          "neural_seconds": 14.186777499999152,
+          "reference_trace_seconds": 1.023904700006824,
+          "block": 256,
+          "batch": 16,
+          "streams": 1,
+          "tokens_per_sample": 102.82421875,
+          "vx_build": false,
+          "stateful": false,
+          "proof_mode": true
+        }
+      }
+    },
+    {
+      "dataset": "Tampere",
+      "emitter": "drone-controller",
+      "file": "DJI_inspire_2_2G.bin",
+      "sha256": "0d824095f9a821f0832a435bd6e659d5a860578af3fdd8ddeb16e6e3310d5c62",
+      "sample_rate": 120000000,
+      "center_frequency_hz": 2440000000,
+      "preprocessing": {
+        "source_sample_start": 512,
+        "gain": 3.340196937880981,
+        "samples": 4096,
+        "component_clipping_count": 0,
+        "input_quantization": {
+          "nmse": 1.776249906608307e-15,
+          "rmse": 2.4316422559377693e-08,
+          "max_absolute_error": 4.207554808948734e-08,
+          "reference_energy": 1363.5003173363712
+        },
+        "block_max": 28912317,
+        "cpu_shift": 10,
+        "block_exponent": 14,
+        "q15_quantization": {
+          "nmse": 1.872420197061582e-09,
+          "rmse": 2.496601954759514e-05,
+          "max_absolute_error": 4.30827208965753e-05,
+          "reference_energy": 1363.5003173363712
+        }
+      },
+      "FIR": {
+        "nmse": 6.84613894091201e-09,
+        "rmse": 2.989310133275119e-05,
+        "max_absolute_error": 6.892904885950843e-05,
+        "reference_energy": 534.6335243048377
+      },
+      "spectral_power": {
+        "nmse": 3.698185012524254e-09,
+        "rmse": 4.094863029233376e-05,
+        "max_absolute_error": 0.0003128392280435932,
+        "reference_energy": 3712.512791204131
+      },
+      "matched_peak_displacement_samples": 0,
+      "screen_pass": true,
+      "neural_samples_executed": 4096,
+      "cpu_only_samples": 0,
+      "execution": {
+        "fir": {
+          "tokens": 250463,
+          "chunks": 16,
+          "neural_seconds": 8.443902300001355,
+          "reference_trace_seconds": 0.5188202999997884,
+          "block": 256,
+          "batch": 16,
+          "streams": 1,
+          "tokens_per_sample": 61.148193359375,
+          "vx_build": false,
+          "stateful": false,
+          "proof_mode": true
+        },
+        "matched": {
+          "tokens": 250463,
+          "chunks": 16,
+          "neural_seconds": 8.447439100011252,
+          "reference_trace_seconds": 0.6542736000264995,
+          "block": 256,
+          "batch": 16,
+          "streams": 1,
+          "tokens_per_sample": 61.148193359375,
+          "vx_build": false,
+          "stateful": false,
+          "proof_mode": true
+        },
+        "spectral": {
+          "tokens": 380334,
+          "chunks": 16,
+          "neural_seconds": 12.882120800000848,
+          "reference_trace_seconds": 0.9229088999854866,
+          "block": 256,
+          "batch": 16,
+          "streams": 1,
+          "tokens_per_sample": 92.85498046875,
+          "vx_build": false,
+          "stateful": false,
+          "proof_mode": true
+        }
+      }
+    },
+    {
+      "dataset": "Tampere",
+      "emitter": "drone-controller",
+      "file": "DJI_inspire_2_5G_1of2.bin",
+      "sha256": "4bd20ac4734ac90580462e411d81f588f9e1d4a437b08ba232e593d8f233faa0",
+      "sample_rate": 200000000,
+      "center_frequency_hz": 5800000000,
+      "preprocessing": {
+        "source_sample_start": 512,
+        "gain": 13.546093427035968,
+        "samples": 4096,
+        "component_clipping_count": 0,
+        "input_quantization": {
+          "nmse": 1.894933462248478e-15,
+          "rmse": 2.4214083953303187e-08,
+          "max_absolute_error": 4.185158177229069e-08,
+          "reference_energy": 1267.3660544596569
+        },
+        "block_max": 23816850,
+        "cpu_shift": 10,
+        "block_exponent": 14,
+        "q15_quantization": {
+          "nmse": 2.0187741438385894e-09,
+          "rmse": 2.49928008263378e-05,
+          "max_absolute_error": 4.27481544590338e-05,
+          "reference_energy": 1267.3660544596569
+        }
+      },
+      "FIR": {
+        "nmse": 1.743556837067766e-08,
+        "rmse": 2.9992992109024376e-05,
+        "max_absolute_error": 6.948181641018389e-05,
+        "reference_energy": 211.33110567633162
+      },
+      "spectral_power": {
+        "nmse": 3.784419982101497e-09,
+        "rmse": 3.791274514514204e-05,
+        "max_absolute_error": 0.00027259499642262597,
+        "reference_energy": 3109.9182292508813
+      },
+      "matched_peak_displacement_samples": 0,
+      "screen_pass": true,
+      "neural_samples_executed": 4096,
+      "cpu_only_samples": 0,
+      "execution": {
+        "fir": {
+          "tokens": 250356,
+          "chunks": 16,
+          "neural_seconds": 8.441996599984122,
+          "reference_trace_seconds": 0.5873512999969535,
+          "block": 256,
+          "batch": 16,
+          "streams": 1,
+          "tokens_per_sample": 61.1220703125,
+          "vx_build": false,
+          "stateful": false,
+          "proof_mode": true
+        },
+        "matched": {
+          "tokens": 250356,
+          "chunks": 16,
+          "neural_seconds": 8.435637899994617,
+          "reference_trace_seconds": 0.6557878999738023,
+          "block": 256,
+          "batch": 16,
+          "streams": 1,
+          "tokens_per_sample": 61.1220703125,
+          "vx_build": false,
+          "stateful": false,
+          "proof_mode": true
+        },
+        "spectral": {
+          "tokens": 380049,
+          "chunks": 16,
+          "neural_seconds": 12.890509099990595,
+          "reference_trace_seconds": 0.8568629999936093,
+          "block": 256,
+          "batch": 16,
+          "streams": 1,
+          "tokens_per_sample": 92.785400390625,
+          "vx_build": false,
+          "stateful": false,
+          "proof_mode": true
+        }
+      }
+    }
+  ],
+  "screen_pass_recordings": 14,
+  "recordings_total": 14,
+  "neural_samples_total": 57344
+}

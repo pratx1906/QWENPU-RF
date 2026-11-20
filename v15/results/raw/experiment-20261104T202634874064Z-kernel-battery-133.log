@@ -1,0 +1,11 @@
+{'kernel': 'FFT64 power, block floating point', 'exact': '133/133', 'sqnr_median': 75.66991607950779, 'sqnr_min': 72.72696566661028}
+{'kernel': 'Welch PSD 64x4', 'exact_recordings': 133, 'recordings': 133, 'tokens': 11226925, 'neural_seconds': 870.400330100063}
+{'kernel': 'CA-CFAR 64', 'exact_recordings': 133, 'recordings': 133, 'tokens': 8860300, 'neural_seconds': 689.7171788999403}
+{'kernel': 'CORDIC magnitude/phase', 'exact': '133/133', 'sqnr_median': 150.42802188258267, 'sqnr_min': 142.53020120604106}
+{'kernel': 'FM discriminator', 'exact_recordings': 133, 'recordings': 133, 'tokens': 15735800, 'neural_seconds': 1233.0628658000205}
+{'kernel': 'CFO estimate lag 1 / 64', 'exact_recordings': 133, 'recordings': 133, 'tokens': 1543180, 'neural_seconds': 121.4312220000138}
+{'kernel': 'NCO, Taylor-interpolated', 'exact': '133/133', 'sqnr_median': 81.1404494646456, 'sqnr_min': 74.07420550316904}
+{'kernel': 'IIR biquad, wide', 'exact': '133/133', 'sqnr_median': 78.48110357876516, 'sqnr_min': 55.86067231435842}
+{'kernel': 'VFIR16 guard', 'exact': '133/133', 'sqnr_median': 73.38630188786377, 'sqnr_min': 65.35850689344419}
+{'kernel': 'VBFLY FFT64, block floating point', 'exact': '133/133', 'sqnr_median': 71.54114510736973, 'sqnr_min': 68.60403841176638}
+{"all_exact": true, "fft64_block_ge_65db_every_recording": true}

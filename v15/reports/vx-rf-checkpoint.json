@@ -1,0 +1,56 @@
+{
+  "checkpoint": "$RFPU_DATA\\checkpoints\\rfpu-v15\\qwen3.5-4b-vx-rf",
+  "chipformer": "upstream\\QwenPU-rf\\chipformer\\__init__.py",
+  "preflight": {
+    "chip_only_admitted": true,
+    "chip_tensor_bytes": 6164699008,
+    "embedding_bytes": 6908116992,
+    "cache_estimate_bytes": 2147483648,
+    "temporary_allowance_bytes": 2147483648,
+    "chip_only_peak_estimate_bytes": 17367783296
+  },
+  "loading_seconds": 48.30237710001529,
+  "programs": [
+    {
+      "program": "VXFFT64 (VBFLY block floating point), one 64-sample real IQ frame",
+      "trace_tokens": 8696,
+      "exact_trace": true,
+      "outputs_equal_reference": true,
+      "mode": "free_running",
+      "seconds": 191.1654397000093
+    },
+    {
+      "program": "VXFir 16 taps, 16 real IQ samples",
+      "trace_tokens": 2816,
+      "exact_trace": true,
+      "outputs_equal_reference": true,
+      "mode": "free_running",
+      "seconds": 63.943617199984146
+    },
+    {
+      "program": "vbfly_program seed 0",
+      "trace_tokens": 3744,
+      "exact_trace": true,
+      "outputs_equal_reference": null,
+      "mode": "free_running",
+      "seconds": 84.84782619998441
+    },
+    {
+      "program": "vbfly_program seed 1",
+      "trace_tokens": 3962,
+      "exact_trace": true,
+      "outputs_equal_reference": null,
+      "mode": "free_running",
+      "seconds": 85.4702224000066
+    },
+    {
+      "program": "vpow_program seed 0",
+      "trace_tokens": 2075,
+      "exact_trace": true,
+      "outputs_equal_reference": null,
+      "mode": "free_running",
+      "seconds": 44.94888449998689
+    }
+  ],
+  "all_exact": true
+}

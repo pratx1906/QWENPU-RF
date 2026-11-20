@@ -1,0 +1,77 @@
+
+Loading weights:   0%|          | 0/580 [00:00<?, ?it/s]
+Loading weights:   3%|▎         | 20/580 [00:00<00:03, 164.84it/s]
+Loading weights:   6%|▋         | 37/580 [00:00<00:12, 44.48it/s] 
+Loading weights:   8%|▊         | 46/580 [00:01<00:13, 40.03it/s]
+Loading weights:   9%|▉         | 53/580 [00:01<00:11, 44.70it/s]
+Loading weights:  10%|█         | 60/580 [00:01<00:15, 34.04it/s]
+Loading weights:  11%|█         | 65/580 [00:01<00:16, 31.76it/s]
+Loading weights:  16%|█▌        | 91/580 [00:01<00:08, 59.28it/s]
+Loading weights:  17%|█▋        | 99/580 [00:02<00:09, 51.22it/s]
+Loading weights:  18%|█▊        | 105/580 [00:02<00:10, 43.72it/s]
+Loading weights:  19%|█▉        | 110/580 [00:02<00:11, 42.38it/s]
+Loading weights:  20%|█▉        | 115/580 [00:02<00:11, 40.15it/s]
+Loading weights:  21%|██        | 123/580 [00:02<00:11, 38.09it/s]
+Loading weights:  22%|██▏       | 129/580 [00:02<00:11, 40.77it/s]
+Loading weights:  24%|██▍       | 142/580 [00:03<00:08, 49.14it/s]
+Loading weights:  26%|██▌       | 149/580 [00:03<00:09, 43.41it/s]
+Loading weights:  27%|██▋       | 156/580 [00:03<00:08, 47.91it/s]
+Loading weights:  28%|██▊       | 163/580 [00:03<00:08, 51.10it/s]
+Loading weights:  29%|██▉       | 169/580 [00:03<00:10, 40.96it/s]
+Loading weights:  31%|███       | 178/580 [00:03<00:08, 49.02it/s]
+Loading weights:  32%|███▏      | 184/580 [00:04<00:11, 34.66it/s]
+Loading weights:  33%|███▎      | 192/580 [00:04<00:09, 39.59it/s]
+Loading weights:  35%|███▍      | 201/580 [00:04<00:08, 42.12it/s]
+Loading weights:  36%|███▌      | 210/580 [00:04<00:08, 46.02it/s]
+Loading weights:  37%|███▋      | 216/580 [00:04<00:09, 39.25it/s]
+Loading weights:  38%|███▊      | 221/580 [00:05<00:10, 35.08it/s]
+Loading weights:  39%|███▉      | 226/580 [00:05<00:10, 32.41it/s]
+Loading weights:  40%|███▉      | 230/580 [00:05<00:10, 33.03it/s]
+Loading weights:  40%|████      | 234/580 [00:05<00:12, 27.49it/s]
+Loading weights:  41%|████      | 237/580 [00:05<00:12, 27.32it/s]
+Loading weights:  42%|████▏     | 244/580 [00:05<00:10, 31.07it/s]
+Loading weights:  43%|████▎     | 248/580 [00:06<00:10, 30.56it/s]
+Loading weights:  44%|████▍     | 257/580 [00:06<00:09, 35.88it/s]
+Loading weights:  46%|████▌     | 265/580 [00:06<00:07, 43.30it/s]
+Loading weights:  47%|████▋     | 270/580 [00:06<00:07, 43.97it/s]
+Loading weights:  47%|████▋     | 275/580 [00:06<00:07, 43.51it/s]
+Loading weights:  48%|████▊     | 280/580 [00:06<00:06, 44.37it/s]
+Loading weights:  49%|████▉     | 285/580 [00:07<00:10, 28.75it/s]
+Loading weights:  50%|████▉     | 289/580 [00:07<00:11, 25.24it/s]
+Loading weights:  51%|█████     | 296/580 [00:07<00:08, 32.61it/s]
+Loading weights:  52%|█████▏    | 301/580 [00:07<00:08, 31.87it/s]
+Loading weights:  53%|█████▎    | 305/580 [00:07<00:09, 29.16it/s]
+Loading weights:  54%|█████▍    | 315/580 [00:08<00:08, 31.67it/s]
+Loading weights:  55%|█████▌    | 319/580 [00:08<00:08, 30.19it/s]
+Loading weights: 100%|██████████| 580/580 [00:08<00:00, 69.99it/s]
+[transformers] The tokenizer you are loading from '$RFPU_DATA\checkpoints\rfpu-v15\qwen3.5-4b-rv1' with an incorrect regex pattern: https://huggingface.co/mistralai/Mistral-Small-3.1-24B-Instruct-2503/discussions/84#69121093e8b480e709447d5e. This will lead to incorrect tokenization. You should set the `fix_mistral_regex=True` flag when loading this tokenizer to fix this issue.
+loaded in 27s
+[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.
+[transformers] `causal_conv1d_update` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[transformers] `fused_recurrent_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.
+  26500 tokens (425 text, 26074 chip) 72s
+<tool_call>
+<function=rf_levels>
+<parameter=capture>
+14
+</parameter>
+</function>
+</tool_call>
+<tool_response>
+capture=14 synthetic test signal A fs=1MS/s
+samples=1024 (Q15)
+mean_power_dbfs=-15.5
+peak_power_dbfs=-10.2 at_sample=535
+noise_floor_dbfs=-48.9 (quietest 64-sample window)
+loudest_window_dbfs=-10.4
+active_windows=5/16 (power > 4x quietest) first_active_sample=320 last_active_sample_end=640
+not_measured=spectrum and frequency offset (use rf_analyze), modulation, coding rate, symbol rate, occupied bandwidth, number of transmitters, distance, direction of arrival, bit error rate, protocol or packet contents (this tool reports only the values above)
+</tool_response>
+<think>
+
+</think>
+
+The noise floor of capture 14 is **-48.9 dBFS**, and its loudest 64-sample window is **-10.4 dBFS**.<|im_end|>
+625 text + 26581 chip tokens, 106s, lock error None
+{"positions": 28082, "circuit_owned": 27146, "circuit_equal_emitted": 27144, "mismatch": 2}

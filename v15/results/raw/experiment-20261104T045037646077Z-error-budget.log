@@ -1,0 +1,58 @@
+{'kernel': 'lowpass16 FIR', 'level_dbfs': -12, 'sqnr_db': 79.39683736236871}
+{'kernel': 'complex FIR 16 taps (64-bit acc)', 'level_dbfs': -12, 'sqnr_db': 81.33768204046632}
+{'kernel': 'complex FIR 64 taps (64-bit acc)', 'level_dbfs': -12, 'sqnr_db': 87.28745184918864}
+{'kernel': 'decimating FIR 8 taps /4', 'level_dbfs': -12, 'sqnr_db': 79.5904011481557}
+{'kernel': 'IIR biquad (+12 dB DC gain)', 'level_dbfs': -12, 'sqnr_db': 35.14741021063661}
+{'kernel': 'IIR biquad (+12 dB DC gain)', 'level_dbfs': -24, 'sqnr_db': 70.21025077804774}
+{'kernel': 'DC blocker', 'level_dbfs': -12, 'sqnr_db': 69.16648735891894}
+{'kernel': 'NCO mixer (table only)', 'level_dbfs': -12, 'sqnr_db': 49.01044602863503}
+{'kernel': 'NCO mixer (Taylor-interpolated)', 'level_dbfs': -12, 'sqnr_db': 85.777697869239}
+{'kernel': 'CORDIC magnitude', 'level_dbfs': -12, 'sqnr_db': 155.3907392954176}
+{'kernel': 'energy W64, scalar', 'level_dbfs': -12, 'sqnr_db': inf}
+{'kernel': 'energy W64, VX int8', 'level_dbfs': -12, 'sqnr_db': 35.19218700995455}
+{'kernel': 'FFT64 power (fixed scaling)', 'level_dbfs': -60, 'sqnr_db': 7.469453664208226}
+{'kernel': 'FFT64 power (block scaling)', 'level_dbfs': -60, 'sqnr_db': 74.91008752288813}
+{'kernel': 'FFT64 power (fixed scaling)', 'level_dbfs': -54, 'sqnr_db': 13.902510595600525}
+{'kernel': 'FFT64 power (block scaling)', 'level_dbfs': -54, 'sqnr_db': 75.1735790498454}
+{'kernel': 'FFT64 power (fixed scaling)', 'level_dbfs': -48, 'sqnr_db': 20.04313758102046}
+{'kernel': 'FFT64 power (block scaling)', 'level_dbfs': -48, 'sqnr_db': 75.12292170658104}
+{'kernel': 'FFT64 power (fixed scaling)', 'level_dbfs': -42, 'sqnr_db': 25.71915556573515}
+{'kernel': 'FFT64 power (block scaling)', 'level_dbfs': -42, 'sqnr_db': 74.929879709591}
+{'kernel': 'FFT64 power (fixed scaling)', 'level_dbfs': -36, 'sqnr_db': 31.872784555646266}
+{'kernel': 'FFT64 power (block scaling)', 'level_dbfs': -36, 'sqnr_db': 75.17876436509945}
+{'kernel': 'FFT64 power (fixed scaling)', 'level_dbfs': -30, 'sqnr_db': 38.39027088010154}
+{'kernel': 'FFT64 power (block scaling)', 'level_dbfs': -30, 'sqnr_db': 74.55372566382147}
+{'kernel': 'FFT64 power (fixed scaling)', 'level_dbfs': -24, 'sqnr_db': 44.09002923678572}
+{'kernel': 'FFT64 power (block scaling)', 'level_dbfs': -24, 'sqnr_db': 74.97357393952211}
+{'kernel': 'FFT64 power (fixed scaling)', 'level_dbfs': -18, 'sqnr_db': 50.014393939911876}
+{'kernel': 'FFT64 power (block scaling)', 'level_dbfs': -18, 'sqnr_db': 74.99364480608912}
+{'kernel': 'FFT64 power (fixed scaling)', 'level_dbfs': -12, 'sqnr_db': 56.1346568170208}
+{'kernel': 'FFT64 power (block scaling)', 'level_dbfs': -12, 'sqnr_db': 74.61472500541736}
+{'kernel': 'FFT64 power (fixed scaling)', 'level_dbfs': -6, 'sqnr_db': 61.790759747083996}
+{'kernel': 'FFT64 power (block scaling)', 'level_dbfs': -6, 'sqnr_db': 75.20971417889383}
+{'kernel': 'FFT64 power (fixed scaling)', 'level_dbfs': 0, 'sqnr_db': 66.52269098387369}
+{'kernel': 'FFT64 power (block scaling)', 'level_dbfs': 0, 'sqnr_db': 76.29806099307433}
+{
+ "P4.1": {
+  "target": "block FFT64 power arithmetic SQNR >= 65 dB at every level -60..0 dBFS",
+  "min_db": 74.55372566382147,
+  "passed": true
+ },
+ "P4.2": {
+  "target": "block FFT64 power arithmetic SQNR >= 70 dB at -12 dBFS",
+  "value_db": 74.61472500541736,
+  "baseline_fixed_db": 56.1346568170208,
+  "passed": true
+ },
+ "P4.3": {
+  "target": "interpolated NCO arithmetic SQNR >= 75 dB at -12 dBFS",
+  "value_db": 85.777697869239,
+  "baseline_table_db": 49.01044602863503,
+  "passed": true
+ },
+ "P4.4": {
+  "target": "all rows neural-exact and reported",
+  "passed": true,
+  "rows": 34
+ }
+}

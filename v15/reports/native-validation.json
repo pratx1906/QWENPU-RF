@@ -1,0 +1,99 @@
+{
+  "status": "passed",
+  "rows": [
+    {
+      "opcode": 0,
+      "elements": 256,
+      "exact": true
+    },
+    {
+      "opcode": 1,
+      "elements": 256,
+      "exact": true
+    },
+    {
+      "opcode": 2,
+      "elements": 256,
+      "exact": true
+    },
+    {
+      "opcode": 4,
+      "elements": 256,
+      "exact": true
+    },
+    {
+      "opcode": 32,
+      "elements": 256,
+      "exact": true
+    },
+    {
+      "opcode": 33,
+      "elements": 256,
+      "exact": true
+    },
+    {
+      "opcode": 39,
+      "elements": 256,
+      "exact": true
+    },
+    {
+      "opcode": 46,
+      "elements": 256,
+      "exact": true
+    },
+    {
+      "opcode": 47,
+      "elements": 256,
+      "exact": true
+    },
+    {
+      "opcode": 62,
+      "elements": 256,
+      "exact": true
+    }
+  ],
+  "loading_including_transfer_seconds": 1.9629076999990502,
+  "transfer_seconds": 0.7598785000009229,
+  "capture_seconds": 0.7872156000084942,
+  "telemetry": {
+    "neural_forwards": 80,
+    "logical_ALU_elements": 2560,
+    "operations": {
+      "0": 1,
+      "1": 1,
+      "2": 1,
+      "4": 1,
+      "32": 1,
+      "33": 1,
+      "39": 1,
+      "46": 1,
+      "47": 1,
+      "62": 1
+    },
+    "cache_bytes": 526909440,
+    "peak_allocated_bytes": 2513825280,
+    "memory": {
+      "free_bytes": 20026753024,
+      "total_bytes": 25650855936,
+      "allocated_bytes": 2268439552,
+      "reserved_bytes": 2424307712,
+      "cuda_reported_free_bytes": 21763194880,
+      "nvml_reported_free_bytes": 20026753024,
+      "reserve_bytes": 0,
+      "application_cap_bytes": 25650855936,
+      "required_bytes": 0,
+      "offload_enabled": false,
+      "managed_memory_enabled": false
+    },
+    "wddm": {
+      "available": true,
+      "pid": 39828,
+      "shared_bytes": 83886080,
+      "dedicated_bytes": 2744692736,
+      "shared_growth_from_baseline_bytes": 0,
+      "allowed_growth_bytes": 33554432
+    },
+    "checkpoint_sha256": "eb6ae81676fb7a4a92a39ff5db621910ed4a93372a96de2e4380b69b95ebefcd",
+    "batch": 32
+  }
+}

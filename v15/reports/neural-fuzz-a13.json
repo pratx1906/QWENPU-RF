@@ -1,0 +1,1232 @@
+{
+  "cases": 40,
+  "all_exact": true,
+  "tokens": 10662027,
+  "seconds": 727.4086836000206,
+  "families": [
+    "am_envelope",
+    "cfar32_t1g",
+    "cfar32_t2g",
+    "cfar64_t4g",
+    "cfar8_t1g",
+    "cfo_lag11_w",
+    "cfo_lag12_w",
+    "cfo_lag14_w",
+    "cfo_lag15_w",
+    "cfo_lag1_w",
+    "cfo_lag5_w",
+    "cfo_lag7_w",
+    "dc_blocker",
+    "dft8_bin",
+    "energy_detector",
+    "fft4_power",
+    "fft64_complex",
+    "fft8_power",
+    "fir",
+    "fm_demod",
+    "iir_biquad",
+    "mag_phase",
+    "nco_mixer",
+    "peak_tracker",
+    "spectral_mlp",
+    "welch16x",
+    "welch64x",
+    "welch8x"
+  ],
+  "rows": [
+    {
+      "case": 0,
+      "kernel": {
+        "kernel": "cfo_lag5_w32",
+        "lag": 5,
+        "window": 32,
+        "shift": 8,
+        "cordic_iterations": 16
+      },
+      "block": 256,
+      "stream_lengths": [
+        1,
+        5,
+        255,
+        257,
+        1022
+      ],
+      "tokens": 116268,
+      "exact": true
+    },
+    {
+      "case": 1,
+      "kernel": {
+        "kernel": "cfo_lag11_w64",
+        "lag": 11,
+        "window": 64,
+        "shift": 9,
+        "cordic_iterations": 16
+      },
+      "block": 256,
+      "stream_lengths": [
+        1,
+        11,
+        255,
+        257,
+        887
+      ],
+      "tokens": 102154,
+      "exact": true
+    },
+    {
+      "case": 2,
+      "kernel": {
+        "kernel": "cfo_lag7_w16",
+        "lag": 7,
+        "window": 16,
+        "shift": 7,
+        "cordic_iterations": 16
+      },
+      "block": 32,
+      "stream_lengths": [
+        1,
+        7,
+        31,
+        33,
+        124
+      ],
+      "tokens": 19376,
+      "exact": true
+    },
+    {
+      "case": 3,
+      "kernel": {
+        "kernel": "fir63",
+        "taps": 63,
+        "accumulator_bits": 64
+      },
+      "block": 16,
+      "stream_lengths": [
+        1,
+        62,
+        15,
+        17,
+        50
+      ],
+      "tokens": 462432,
+      "exact": true
+    },
+    {
+      "case": 4,
+      "kernel": {
+        "kernel": "cfo_lag12_w16",
+        "lag": 12,
+        "window": 16,
+        "shift": 7,
+        "cordic_iterations": 16
+      },
+      "block": 128,
+      "stream_lengths": [
+        1,
+        12,
+        127,
+        129,
+        393
+      ],
+      "tokens": 69524,
+      "exact": true
+    },
+    {
+      "case": 5,
+      "kernel": {
+        "kernel": "cfar32_t1g0",
+        "n": 32,
+        "hop": 4,
+        "train": 1,
+        "guard": 0,
+        "scale_q8": 38915,
+        "window": [
+          19333,
+          25871,
+          13317,
+          -18608,
+          -31198,
+          15669,
+          -20293,
+          4028,
+          16380,
+          10355,
+          3583,
+          10519,
+          -13630,
+          6172,
+          12345,
+          4161,
+          -2929,
+          24608,
+          -26831,
+          31243,
+          -26601,
+          -7681,
+          3895,
+          29903,
+          -25451,
+          640,
+          22931,
+          17589,
+          -3557,
+          -24763,
+          -26817,
+          16188
+        ],
+        "max_block": 2048,
+        "compare_bits": 64
+      },
+      "block": 128,
+      "stream_lengths": [
+        1,
+        31,
+        127,
+        129,
+        405
+      ],
+      "tokens": 2173450,
+      "exact": true
+    },
+    {
+      "case": 6,
+      "kernel": {
+        "kernel": "fft8_power",
+        "n": 8,
+        "hop": 1,
+        "output": "power",
+        "scaling": "fixed",
+        "window": [
+          8032,
+          -27772,
+          20477,
+          -5065,
+          2670,
+          -25019,
+          1628,
+          2323
+        ],
+        "max_block": 256
+      },
+      "block": 16,
+      "stream_lengths": [
+        1,
+        7,
+        15,
+        17,
+        51
+      ],
+      "tokens": 120338,
+      "exact": true
+    },
+    {
+      "case": 7,
+      "kernel": {
+        "kernel": "nco_mixer",
+        "freq_word": 2644706055,
+        "table": 1024,
+        "interpolate": false
+      },
+      "block": 16,
+      "stream_lengths": [
+        1,
+        1,
+        15,
+        17,
+        63
+      ],
+      "tokens": 8191,
+      "exact": true
+    },
+    {
+      "case": 8,
+      "kernel": {
+        "kernel": "fft4_power",
+        "window": [
+          28139,
+          -20825,
+          -22644,
+          -23311
+        ],
+        "hop": 1
+      },
+      "block": 8,
+      "stream_lengths": [
+        1,
+        3,
+        7,
+        9,
+        27
+      ],
+      "tokens": 15162,
+      "exact": true
+    },
+    {
+      "case": 9,
+      "kernel": {
+        "kernel": "am_envelope",
+        "pre_shift": 13,
+        "cordic_iterations": 16,
+        "gain": 1.6467602578654548
+      },
+      "block": 8,
+      "stream_lengths": [
+        1,
+        1,
+        7,
+        9,
+        28
+      ],
+      "tokens": 16601,
+      "exact": true
+    },
+    {
+      "case": 10,
+      "kernel": {
+        "kernel": "cfo_lag14_w64",
+        "lag": 14,
+        "window": 64,
+        "shift": 9,
+        "cordic_iterations": 16
+      },
+      "block": 256,
+      "stream_lengths": [
+        1,
+        14,
+        255,
+        257,
+        927
+      ],
+      "tokens": 102779,
+      "exact": true
+    },
+    {
+      "case": 11,
+      "kernel": {
+        "kernel": "fft4_power",
+        "window": [
+          -24646,
+          4899,
+          10360,
+          15710
+        ],
+        "hop": 2
+      },
+      "block": 32,
+      "stream_lengths": [
+        1,
+        3,
+        31,
+        33,
+        113
+      ],
+      "tokens": 26924,
+      "exact": true
+    },
+    {
+      "case": 12,
+      "kernel": {
+        "kernel": "spectral_mlp",
+        "features": 4,
+        "hidden": 2,
+        "classes": 4,
+        "fshift": 13
+      },
+      "block": 32,
+      "stream_lengths": [
+        1,
+        1,
+        31,
+        33,
+        111
+      ],
+      "tokens": 35165,
+      "exact": true
+    },
+    {
+      "case": 13,
+      "kernel": {
+        "kernel": "iir_biquad",
+        "coefs_q14": [
+          19101,
+          22842,
+          -2758,
+          -20578,
+          -13132
+        ],
+        "accumulator_bits": 64,
+        "output": "sat16",
+        "output_fraction_bits": 0
+      },
+      "block": 32,
+      "stream_lengths": [
+        1,
+        1,
+        31,
+        33,
+        107
+      ],
+      "tokens": 52337,
+      "exact": true
+    },
+    {
+      "case": 14,
+      "kernel": {
+        "kernel": "dc_blocker",
+        "alpha_q15": -7964
+      },
+      "block": 8,
+      "stream_lengths": [
+        1,
+        1,
+        7,
+        9,
+        27
+      ],
+      "tokens": 6520,
+      "exact": true
+    },
+    {
+      "case": 15,
+      "kernel": {
+        "kernel": "fft64_complex",
+        "n": 64,
+        "hop": 4,
+        "output": "complex",
+        "scaling": "fixed",
+        "window": [
+          5999,
+          -17596,
+          -27261,
+          11048,
+          7960,
+          -2320,
+          1757,
+          -30699,
+          11174,
+          24124,
+          660,
+          -24316,
+          -10161,
+          -24083,
+          23790,
+          -29346,
+          23354,
+          32305,
+          25143,
+          -27824,
+          12306,
+          -30004,
+          2945,
+          5000,
+          29536,
+          -2634,
+          -2879,
+          23863,
+          -5537,
+          -17519,
+          12116,
+          -15963,
+          21056,
+          27098,
+          24209,
+          -10944,
+          8511,
+          -467,
+          19812,
+          -30633,
+          22258,
+          -6230,
+          -1247,
+          -24612,
+          32580,
+          -23562,
+          -14576,
+          -4289,
+          -812,
+          25544,
+          7460,
+          14983,
+          -12007,
+          31250,
+          31818,
+          -31448,
+          1150,
+          -29831,
+          -9823,
+          -5046,
+          -12381,
+          16968,
+          11670,
+          12
+        ],
+        "max_block": 128
+      },
+      "block": 32,
+      "stream_lengths": [
+        1,
+        63,
+        31,
+        33,
+        106
+      ],
+      "tokens": 774634,
+      "exact": true
+    },
+    {
+      "case": 16,
+      "kernel": {
+        "kernel": "welch64x1",
+        "n": 64,
+        "hop": 4,
+        "frames": 1,
+        "window": [
+          -11688,
+          4054,
+          22579,
+          -7068,
+          -32052,
+          23245,
+          10633,
+          14946,
+          31524,
+          -18952,
+          -18072,
+          -24902,
+          -21858,
+          -5076,
+          -32568,
+          11076,
+          -17265,
+          -3362,
+          31023,
+          -24147,
+          -9220,
+          -1915,
+          -18412,
+          -537,
+          -10362,
+          -7891,
+          -16037,
+          -23959,
+          -32601,
+          25826,
+          29924,
+          32241,
+          -3851,
+          -23566,
+          -1770,
+          -25000,
+          -22877,
+          -9675,
+          32268,
+          -4035,
+          -10652,
+          32153,
+          26264,
+          -16535,
+          -22429,
+          -2203,
+          -27717,
+          -6497,
+          30552,
+          2671,
+          31461,
+          2225,
+          -25470,
+          4479,
+          -2191,
+          30799,
+          29878,
+          -13503,
+          1836,
+          24414,
+          -9728,
+          -10143,
+          -7694,
+          -27248
+        ],
+        "max_block": 128
+      },
+      "block": 128,
+      "stream_lengths": [
+        1,
+        63,
+        127,
+        129,
+        429
+      ],
+      "tokens": 3513069,
+      "exact": true
+    },
+    {
+      "case": 17,
+      "kernel": {
+        "kernel": "welch8x4",
+        "n": 8,
+        "hop": 2,
+        "frames": 4,
+        "window": [
+          21951,
+          11889,
+          -26452,
+          -222,
+          25103,
+          22949,
+          7593,
+          3031
+        ],
+        "max_block": 1024
+      },
+      "block": 64,
+      "stream_lengths": [
+        1,
+        13,
+        63,
+        65,
+        220
+      ],
+      "tokens": 257335,
+      "exact": true
+    },
+    {
+      "case": 18,
+      "kernel": {
+        "kernel": "dc_blocker",
+        "alpha_q15": -27940
+      },
+      "block": 32,
+      "stream_lengths": [
+        1,
+        1,
+        31,
+        33,
+        97
+      ],
+      "tokens": 26088,
+      "exact": true
+    },
+    {
+      "case": 19,
+      "kernel": {
+        "kernel": "cfar32_t2g0",
+        "n": 32,
+        "hop": 8,
+        "train": 2,
+        "guard": 0,
+        "scale_q8": 48286,
+        "window": [
+          -4110,
+          -21768,
+          -27749,
+          -14896,
+          1605,
+          -14355,
+          4510,
+          31773,
+          -21406,
+          -22865,
+          26219,
+          -9481,
+          2861,
+          5323,
+          -18609,
+          -30332,
+          -11175,
+          23147,
+          14623,
+          12757,
+          -20636,
+          30525,
+          23065,
+          23901,
+          18341,
+          23045,
+          -13292,
+          -29344,
+          -24889,
+          -14725,
+          8543,
+          -29135
+        ],
+        "max_block": 2048,
+        "compare_bits": 64
+      },
+      "block": 64,
+      "stream_lengths": [
+        1,
+        31,
+        63,
+        65,
+        236
+      ],
+      "tokens": 562931,
+      "exact": true
+    },
+    {
+      "case": 20,
+      "kernel": {
+        "kernel": "cfo_lag15_w8",
+        "lag": 15,
+        "window": 8,
+        "shift": 6,
+        "cordic_iterations": 16
+      },
+      "block": 64,
+      "stream_lengths": [
+        1,
+        15,
+        63,
+        65,
+        254
+      ],
+      "tokens": 49203,
+      "exact": true
+    },
+    {
+      "case": 21,
+      "kernel": {
+        "kernel": "fft4_power",
+        "window": [
+          16395,
+          23663,
+          5562,
+          7115
+        ],
+        "hop": 4
+      },
+      "block": 32,
+      "stream_lengths": [
+        1,
+        3,
+        31,
+        33,
+        108
+      ],
+      "tokens": 12902,
+      "exact": true
+    },
+    {
+      "case": 22,
+      "kernel": {
+        "kernel": "am_envelope",
+        "pre_shift": 13,
+        "cordic_iterations": 16,
+        "gain": 1.6467602578654548
+      },
+      "block": 16,
+      "stream_lengths": [
+        1,
+        1,
+        15,
+        17,
+        59
+      ],
+      "tokens": 32577,
+      "exact": true
+    },
+    {
+      "case": 23,
+      "kernel": {
+        "kernel": "fm_demod",
+        "product_shift": 3,
+        "cordic_iterations": 16
+      },
+      "block": 16,
+      "stream_lengths": [
+        1,
+        1,
+        15,
+        17,
+        50
+      ],
+      "tokens": 57081,
+      "exact": true
+    },
+    {
+      "case": 24,
+      "kernel": {
+        "kernel": "welch64x4",
+        "n": 64,
+        "hop": 8,
+        "frames": 4,
+        "window": [
+          3398,
+          -19463,
+          -5069,
+          11663,
+          -10195,
+          13352,
+          24083,
+          5279,
+          -1626,
+          -24083,
+          -15953,
+          -30029,
+          775,
+          4917,
+          -5562,
+          16523,
+          -7839,
+          -10218,
+          -22859,
+          26312,
+          28998,
+          -25964,
+          15282,
+          29950,
+          -4960,
+          31759,
+          -4720,
+          29774,
+          -32689,
+          -25509,
+          -25358,
+          11894,
+          -12551,
+          24260,
+          -24763,
+          -7592,
+          28411,
+          -17034,
+          -9792,
+          -11984,
+          29809,
+          -15930,
+          1214,
+          29532,
+          -1671,
+          -9679,
+          23458,
+          -20594,
+          23539,
+          -27856,
+          32528,
+          -28896,
+          -12587,
+          11605,
+          2364,
+          -29863,
+          7704,
+          13596,
+          -13049,
+          23536,
+          6358,
+          -23810,
+          8435,
+          12927
+        ],
+        "max_block": 1024
+      },
+      "block": 64,
+      "stream_lengths": [
+        1,
+        87,
+        63,
+        65,
+        241
+      ],
+      "tokens": 836347,
+      "exact": true
+    },
+    {
+      "case": 25,
+      "kernel": {
+        "kernel": "mag_phase",
+        "pre_shift": 13,
+        "cordic_iterations": 16,
+        "gain": 1.6467602578654548
+      },
+      "block": 16,
+      "stream_lengths": [
+        1,
+        1,
+        15,
+        17,
+        56
+      ],
+      "tokens": 54565,
+      "exact": true
+    },
+    {
+      "case": 26,
+      "kernel": {
+        "kernel": "welch16x2",
+        "n": 16,
+        "hop": 8,
+        "frames": 2,
+        "window": [
+          23899,
+          19312,
+          -14831,
+          -5489,
+          -8847,
+          21782,
+          7575,
+          14170,
+          -32259,
+          10919,
+          -19717,
+          -27242,
+          13349,
+          19810,
+          24922,
+          30082
+        ],
+        "max_block": 1024
+      },
+      "block": 32,
+      "stream_lengths": [
+        1,
+        23,
+        31,
+        33,
+        124
+      ],
+      "tokens": 75510,
+      "exact": true
+    },
+    {
+      "case": 27,
+      "kernel": {
+        "kernel": "mag_phase",
+        "pre_shift": 13,
+        "cordic_iterations": 16,
+        "gain": 1.6467602578654548
+      },
+      "block": 32,
+      "stream_lengths": [
+        1,
+        1,
+        31,
+        33,
+        105
+      ],
+      "tokens": 119489,
+      "exact": true
+    },
+    {
+      "case": 28,
+      "kernel": {
+        "kernel": "cfo_lag1_w64",
+        "lag": 1,
+        "window": 64,
+        "shift": 9,
+        "cordic_iterations": 16
+      },
+      "block": 128,
+      "stream_lengths": [
+        1,
+        1,
+        127,
+        129,
+        448
+      ],
+      "tokens": 50398,
+      "exact": true
+    },
+    {
+      "case": 29,
+      "kernel": {
+        "kernel": "iir_biquad",
+        "coefs_q14": [
+          -15797,
+          -357,
+          24110,
+          1792,
+          -2081
+        ],
+        "accumulator_bits": 64,
+        "output": "sat16",
+        "output_fraction_bits": 0
+      },
+      "block": 8,
+      "stream_lengths": [
+        1,
+        1,
+        7,
+        9,
+        30
+      ],
+      "tokens": 12513,
+      "exact": true
+    },
+    {
+      "case": 30,
+      "kernel": {
+        "kernel": "mag_phase",
+        "pre_shift": 13,
+        "cordic_iterations": 16,
+        "gain": 1.6467602578654548
+      },
+      "block": 16,
+      "stream_lengths": [
+        1,
+        1,
+        15,
+        17,
+        55
+      ],
+      "tokens": 59919,
+      "exact": true
+    },
+    {
+      "case": 31,
+      "kernel": {
+        "kernel": "cfar64_t4g2",
+        "n": 64,
+        "hop": 8,
+        "train": 4,
+        "guard": 2,
+        "scale_q8": 9102,
+        "window": [
+          -16807,
+          -5668,
+          9710,
+          31611,
+          31870,
+          -30287,
+          16839,
+          17801,
+          806,
+          -16007,
+          5417,
+          4473,
+          3403,
+          -2926,
+          12195,
+          5674,
+          10991,
+          -26076,
+          589,
+          26370,
+          25958,
+          18005,
+          29664,
+          -31089,
+          -10622,
+          29448,
+          -2286,
+          487,
+          -13032,
+          -9607,
+          6219,
+          7194,
+          13135,
+          -469,
+          21917,
+          18251,
+          -28475,
+          14367,
+          32316,
+          11088,
+          -30018,
+          1008,
+          22250,
+          -17871,
+          10382,
+          3902,
+          -17501,
+          8662,
+          -26975,
+          8361,
+          -11573,
+          30199,
+          -20241,
+          11924,
+          1298,
+          -29778,
+          22651,
+          25277,
+          -9461,
+          26785,
+          18019,
+          -25861,
+          -7984,
+          20258
+        ],
+        "max_block": 2048,
+        "compare_bits": 64
+      },
+      "block": 16,
+      "stream_lengths": [
+        1,
+        63,
+        15,
+        17,
+        62
+      ],
+      "tokens": 399716,
+      "exact": true
+    },
+    {
+      "case": 32,
+      "kernel": {
+        "kernel": "cfar8_t1g2",
+        "n": 8,
+        "hop": 8,
+        "train": 1,
+        "guard": 2,
+        "scale_q8": 9690,
+        "window": [
+          17943,
+          1211,
+          -6290,
+          -11197,
+          30890,
+          13448,
+          -23379,
+          -29847
+        ],
+        "max_block": 2048,
+        "compare_bits": 64
+      },
+      "block": 32,
+      "stream_lengths": [
+        1,
+        7,
+        31,
+        33,
+        104
+      ],
+      "tokens": 58257,
+      "exact": true
+    },
+    {
+      "case": 33,
+      "kernel": {
+        "kernel": "peak_tracker"
+      },
+      "block": 16,
+      "stream_lengths": [
+        1,
+        1,
+        15,
+        17,
+        59
+      ],
+      "tokens": 3933,
+      "exact": true
+    },
+    {
+      "case": 34,
+      "kernel": {
+        "kernel": "am_envelope",
+        "pre_shift": 13,
+        "cordic_iterations": 16,
+        "gain": 1.6467602578654548
+      },
+      "block": 16,
+      "stream_lengths": [
+        1,
+        1,
+        15,
+        17,
+        50
+      ],
+      "tokens": 31002,
+      "exact": true
+    },
+    {
+      "case": 35,
+      "kernel": {
+        "kernel": "fir46",
+        "taps": 46,
+        "accumulator_bits": 64
+      },
+      "block": 8,
+      "stream_lengths": [
+        1,
+        45,
+        7,
+        9,
+        29
+      ],
+      "tokens": 185984,
+      "exact": true
+    },
+    {
+      "case": 36,
+      "kernel": {
+        "kernel": "dft8_bin2",
+        "n": 8,
+        "bin": 2,
+        "hop": 1,
+        "max_block": 1024,
+        "accumulator_bits": 64
+      },
+      "block": 32,
+      "stream_lengths": [
+        1,
+        7,
+        31,
+        33,
+        110
+      ],
+      "tokens": 107562,
+      "exact": true
+    },
+    {
+      "case": 37,
+      "kernel": {
+        "kernel": "fft4_power",
+        "window": [
+          -11851,
+          23120,
+          14085,
+          27875
+        ],
+        "hop": 1
+      },
+      "block": 8,
+      "stream_lengths": [
+        1,
+        3,
+        7,
+        9,
+        29
+      ],
+      "tokens": 14097,
+      "exact": true
+    },
+    {
+      "case": 38,
+      "kernel": {
+        "kernel": "energy_detector",
+        "window": 4,
+        "memory_windows": 12,
+        "alpha_q8": 810
+      },
+      "block": 32,
+      "stream_lengths": [
+        1,
+        1,
+        31,
+        33,
+        98
+      ],
+      "tokens": 18810,
+      "exact": true
+    },
+    {
+      "case": 39,
+      "kernel": {
+        "kernel": "energy_detector",
+        "window": 4,
+        "memory_windows": 16,
+        "alpha_q8": 3146
+      },
+      "block": 32,
+      "stream_lengths": [
+        1,
+        1,
+        31,
+        33,
+        104
+      ],
+      "tokens": 20884,
+      "exact": true
+    }
+  ]
+}

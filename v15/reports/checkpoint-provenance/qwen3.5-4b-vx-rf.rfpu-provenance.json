@@ -1,0 +1,69 @@
+{
+  "source": "chipformer.rv.merge --vx from branch rfpu-vfir (b72623e: VFIR, VPOW, VBFLY) over Qwen/Qwen3.5-4B@851bf6e",
+  "gpu_memory_preflight": {
+    "chip_only_admitted": true,
+    "chip_tensor_bytes": 6164699008,
+    "embedding_bytes": 6908116992,
+    "cache_estimate_bytes": 2147483648,
+    "temporary_allowance_bytes": 2147483648,
+    "chip_only_peak_estimate_bytes": 17367783296
+  },
+  "verified_files": [
+    {
+      "name": "model-00001-of-00011.safetensors",
+      "sha256": "3bf98f7071dec644c1dd9ca3f146abd6535d32b81eff7064818b7829ce9b5f76"
+    },
+    {
+      "name": "model-00002-of-00011.safetensors",
+      "sha256": "7ac0dbb2cc08294086344c6362f84c2805958ab41acb2515a05e97227c3ac62b"
+    },
+    {
+      "name": "model-00003-of-00011.safetensors",
+      "sha256": "12e4819ec9ee0ce8ad2585b05093755beb19508e80a4307373f73df373da63f9"
+    },
+    {
+      "name": "model-00004-of-00011.safetensors",
+      "sha256": "389c95ca691bb4d4ce2281ef29e73c20b7bc7b7c671537dbc1f704bf906bdb8e"
+    },
+    {
+      "name": "model-00005-of-00011.safetensors",
+      "sha256": "46995441763d9cd08be114b3c8e6517b694752718525a5e2a49216e9d27a4435"
+    },
+    {
+      "name": "model-00006-of-00011.safetensors",
+      "sha256": "fd0184c3ea7aef9a52d1d895e81ae5e1521f299d662592af89dcdf66bde3612d"
+    },
+    {
+      "name": "model-00007-of-00011.safetensors",
+      "sha256": "96704dbfcf55677539d18f0da335b90993beff454e1f7862f6f66d0d9501ac66"
+    },
+    {
+      "name": "model-00008-of-00011.safetensors",
+      "sha256": "ca0e6c89ca2e82d3ca4e211eb634863bc81d1e83654be88e946bfd5016ab9395"
+    },
+    {
+      "name": "model-00009-of-00011.safetensors",
+      "sha256": "08043391be7d54c1c9162eb74bf4035ed54369bb6d1694a963becbb717fa886a"
+    },
+    {
+      "name": "model-00010-of-00011.safetensors",
+      "sha256": "e9cbef28e39cfc8289a8ba4e2995371f29317bcc1ca78b56928165ca2769525d"
+    },
+    {
+      "name": "model-00011-of-00011.safetensors",
+      "sha256": "f84035e4c1937bc97199e14882a8d591002130cbb1d28a4915281b86ef2412a7"
+    },
+    {
+      "name": "config.json",
+      "sha256": "c19995e204a1da339d1d735e595516d468dbd97e66e56481fce6a06f50502ee7"
+    },
+    {
+      "name": "chipformer.json",
+      "sha256": "ad0dc9f40b8387d9948537b190a58a32979254f9d4f6177cdddcee5cde709d81"
+    },
+    {
+      "name": "tokenizer.json",
+      "sha256": "a5d021e93282fb4fca8634ba78f022ec609eeae592d2b07422d2d92bc8a9bb7d"
+    }
+  ]
+}

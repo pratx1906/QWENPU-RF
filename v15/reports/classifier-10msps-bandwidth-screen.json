@@ -1,0 +1,26 @@
+{
+  "protocol": "PROTOCOL.md Amendment 8, P8.2 (host float, 10 MS/s + FFT64 bandwidth shape, LORO)",
+  "recordings": 26,
+  "windows": 416,
+  "window_accuracy": 0.7884615384615384,
+  "recording_accuracy": 0.9615384615384616,
+  "confusion_rows_true_cols_pred": [
+    [
+      111,
+      30,
+      3
+    ],
+    [
+      32,
+      155,
+      5
+    ],
+    [
+      7,
+      11,
+      62
+    ]
+  ],
+  "baseline_recording_accuracy_P6.4c": 0.846,
+  "improves": true
+}

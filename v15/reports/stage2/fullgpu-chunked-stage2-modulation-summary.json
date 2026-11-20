@@ -1,0 +1,424 @@
+{
+ "model": "$RFPU_DATA/checkpoints/rfpu-v15/qwen3.5-4b-rv1",
+ "peak_gpu_bytes": 20499706368,
+ "load_seconds": 25.14618100000007,
+ "checkpoint_verification": "v15/reports/stage2-checkpoint.json",
+ "summary_of": {
+  "file": "fullgpu-chunked-stage2-modulation.json",
+  "bytes": 77835684,
+  "sha256": "3b26c1c2de995d0c0c924fca0e4b3388b4ca875a36f238a97698e8e843229437",
+  "note": "Identical to the full transcript except each run's raw token list is replaced by its length and SHA-256."
+ },
+ "runs": [
+  {
+   "question": "What modulation does capture 0 use?",
+   "capture": 0,
+   "prompt_tokens": 979,
+   "answer": "<tool_call>\n<function=rf_modulation>\n<parameter=capture>\n0\n</parameter>\n</function>\n</tool_call>\n<tool_response>\ncapture=0 synthetic capture 0 fs=1MS/s\nsamples=1024 (Q15)\nmodulation=OOK runner_up=64APSK score_margin=13334\nmethod=30 blind features (amplitude, carrier, x^2/x^4 symmetry, instantaneous frequency, M-th power phase, ring histogram) and a 30-32-25 integer MLP, all in weights; trained on synthetic captures with 8 samples/symbol and no frequency offset\nnot_measured=coding rate, symbol rate, occupied bandwidth, number of transmitters, distance, direction of arrival, bit error rate, protocol or packet contents, power levels and spectrum (use rf_analyze) (this tool reports only the values above)\n</tool_response>\n<think>\n\n</think>\n\nCapture 0 uses **OOK** (On-Off Keying) modulation.<|im_end|>",
+   "text_tokens": 651,
+   "chip_tokens": 446639,
+   "seconds": 84.27249000000029,
+   "chip_seconds": 45.52,
+   "text_seconds": 36.3,
+   "reference_lock_error": null,
+   "head_mismatch": 0,
+   "chip_path": "saved HF chip layers on GPU, chunked verification C=1024",
+   "chunks": 1041,
+   "all_circuit_tokens_equal_reference": true,
+   "tool_calls": 1,
+   "tool_responses": 1,
+   "tools_called": [
+    "rf_modulation"
+   ],
+   "report_check": null,
+   "modulation_check": {
+    "truth": "OOK",
+    "host_model": [
+     "OOK",
+     "64APSK",
+     13334
+    ],
+    "printed": [
+     "OOK",
+     "64APSK",
+     13334
+    ],
+    "printed_equals_host_model": true,
+    "answer_names_printed_class": true
+   },
+   "tokens_omitted": {
+    "json_bytes": 3128585,
+    "sha256": "676cbc2bdc8f3df2e5ef1473d363f1e88d87cc4011ae64491fee9b7b30696e7a"
+   }
+  },
+  {
+   "question": "Classify the modulation of capture 1.",
+   "capture": 1,
+   "prompt_tokens": 980,
+   "answer": "<tool_call>\n<function=rf_modulation>\n<parameter=capture>\n1\n</parameter>\n</function>\n</tool_call>\n<tool_response>\ncapture=1 synthetic capture 1 fs=1MS/s\nsamples=1024 (Q15)\nmodulation=8ASK runner_up=4ASK score_margin=3742\nmethod=30 blind features (amplitude, carrier, x^2/x^4 symmetry, instantaneous frequency, M-th power phase, ring histogram) and a 30-32-25 integer MLP, all in weights; trained on synthetic captures with 8 samples/symbol and no frequency offset\nnot_measured=coding rate, symbol rate, occupied bandwidth, number of transmitters, distance, direction of arrival, bit error rate, protocol or packet contents, power levels and spectrum (use rf_analyze) (this tool reports only the values above)\n</tool_response>\n<think>\n\n</think>\n\nThe modulation of capture 1 is classified as **8ASK**.\n\n*   **Class:** 8ASK\n*   **Runner-up:** 4ASK\n*   **Score margin:** 3742<|im_end|>",
+   "text_tokens": 677,
+   "chip_tokens": 464385,
+   "seconds": 120.43279979999988,
+   "chip_seconds": 64.77,
+   "text_seconds": 53.74,
+   "reference_lock_error": null,
+   "head_mismatch": 0,
+   "chip_path": "saved HF chip layers on GPU, chunked verification C=1024",
+   "chunks": 2097,
+   "all_circuit_tokens_equal_reference": true,
+   "tool_calls": 1,
+   "tool_responses": 1,
+   "tools_called": [
+    "rf_modulation"
+   ],
+   "report_check": null,
+   "modulation_check": {
+    "truth": "8ASK",
+    "host_model": [
+     "8ASK",
+     "4ASK",
+     3742
+    ],
+    "printed": [
+     "8ASK",
+     "4ASK",
+     3742
+    ],
+    "printed_equals_host_model": true,
+    "answer_names_printed_class": true
+   },
+   "tokens_omitted": {
+    "json_bytes": 3252922,
+    "sha256": "4d31d1cf371acf57eb9c5d009220ca545d7f615e7f018ea4ac45304f1c0fc5fd"
+   }
+  },
+  {
+   "question": "Which modulation scheme is in capture 2, and how confident is the classifier?",
+   "capture": 2,
+   "prompt_tokens": 987,
+   "answer": "<tool_call>\n<function=rf_modulation>\n<parameter=capture>\n2\n</parameter>\n</function>\n</tool_call>\n<tool_response>\ncapture=2 synthetic capture 2 fs=1MS/s\nsamples=1024 (Q15)\nmodulation=32PSK runner_up=16PSK score_margin=1604\nmethod=30 blind features (amplitude, carrier, x^2/x^4 symmetry, instantaneous frequency, M-th power phase, ring histogram) and a 30-32-25 integer MLP, all in weights; trained on synthetic captures with 8 samples/symbol and no frequency offset\nnot_measured=coding rate, symbol rate, occupied bandwidth, number of transmitters, distance, direction of arrival, bit error rate, protocol or packet contents, power levels and spectrum (use rf_analyze) (this tool reports only the values above)\n</tool_response>\n<think>\n\n</think>\n\nThe modulation scheme in capture 2 is **32PSK**. The classifier is very confident, with a score margin of **1604** (the runner-up was 16PSK).<|im_end|>",
+   "text_tokens": 677,
+   "chip_tokens": 448962,
+   "seconds": 85.32869730000039,
+   "chip_seconds": 44.08,
+   "text_seconds": 38.88,
+   "reference_lock_error": null,
+   "head_mismatch": 0,
+   "chip_path": "saved HF chip layers on GPU, chunked verification C=1024",
+   "chunks": 3140,
+   "all_circuit_tokens_equal_reference": true,
+   "tool_calls": 1,
+   "tool_responses": 1,
+   "tools_called": [
+    "rf_modulation"
+   ],
+   "report_check": null,
+   "modulation_check": {
+    "truth": "32PSK",
+    "host_model": [
+     "32PSK",
+     "16PSK",
+     1604
+    ],
+    "printed": [
+     "32PSK",
+     "16PSK",
+     1604
+    ],
+    "printed_equals_host_model": true,
+    "answer_names_printed_class": true
+   },
+   "tokens_omitted": {
+    "json_bytes": 3144956,
+    "sha256": "eb3dcef8feb93ebaa059eca59f16e43c27f29681d7c382b491b221faf00633bf"
+   }
+  },
+  {
+   "question": "Capture 3: what kind of modulation is this?",
+   "capture": 3,
+   "prompt_tokens": 982,
+   "answer": "<tool_call>\n<function=rf_modulation>\n<parameter=capture>\n3\n</parameter>\n</function>\n</tool_call>\n<tool_response>\ncapture=3 synthetic capture 3 fs=1MS/s\nsamples=1024 (Q15)\nmodulation=32APSK runner_up=64APSK score_margin=5840\nmethod=30 blind features (amplitude, carrier, x^2/x^4 symmetry, instantaneous frequency, M-th power phase, ring histogram) and a 30-32-25 integer MLP, all in weights; trained on synthetic captures with 8 samples/symbol and no frequency offset\nnot_measured=coding rate, symbol rate, occupied bandwidth, number of transmitters, distance, direction of arrival, bit error rate, protocol or packet contents, power levels and spectrum (use rf_analyze) (this tool reports only the values above)\n</tool_response>\n<think>\n\n</think>\n\nThe modulation is **32APSK**.<|im_end|>",
+   "text_tokens": 646,
+   "chip_tokens": 465665,
+   "seconds": 81.28794749999997,
+   "chip_seconds": 44.09,
+   "text_seconds": 35.26,
+   "reference_lock_error": null,
+   "head_mismatch": 0,
+   "chip_path": "saved HF chip layers on GPU, chunked verification C=1024",
+   "chunks": 4201,
+   "all_circuit_tokens_equal_reference": true,
+   "tool_calls": 1,
+   "tool_responses": 1,
+   "tools_called": [
+    "rf_modulation"
+   ],
+   "report_check": null,
+   "modulation_check": {
+    "truth": "32APSK",
+    "host_model": [
+     "32APSK",
+     "64APSK",
+     5840
+    ],
+    "printed": [
+     "32APSK",
+     "64APSK",
+     5840
+    ],
+    "printed_equals_host_model": true,
+    "answer_names_printed_class": true
+   },
+   "tokens_omitted": {
+    "json_bytes": 3261746,
+    "sha256": "42c06c61ad34a5530bd8e8743f072cf57093d6eac0cbd7dd57f6eb00489f0610"
+   }
+  },
+  {
+   "question": "Identify the modulation type of capture 4.",
+   "capture": 4,
+   "prompt_tokens": 981,
+   "answer": "<tool_call>\n<function=rf_modulation>\n<parameter=capture>\n4\n</parameter>\n</function>\n</tool_call>\n<tool_response>\ncapture=4 synthetic capture 4 fs=1MS/s\nsamples=1024 (Q15)\nmodulation=64QAM runner_up=32QAM score_margin=986\nmethod=30 blind features (amplitude, carrier, x^2/x^4 symmetry, instantaneous frequency, M-th power phase, ring histogram) and a 30-32-25 integer MLP, all in weights; trained on synthetic captures with 8 samples/symbol and no frequency offset\nnot_measured=coding rate, symbol rate, occupied bandwidth, number of transmitters, distance, direction of arrival, bit error rate, protocol or packet contents, power levels and spectrum (use rf_analyze) (this tool reports only the values above)\n</tool_response>\n<think>\n\n</think>\n\nThe modulation type of capture 4 is **64QAM**.<|im_end|>",
+   "text_tokens": 648,
+   "chip_tokens": 468727,
+   "seconds": 122.02937509999992,
+   "chip_seconds": 67.38,
+   "text_seconds": 52.97,
+   "reference_lock_error": null,
+   "head_mismatch": 0,
+   "chip_path": "saved HF chip layers on GPU, chunked verification C=1024",
+   "chunks": 5262,
+   "all_circuit_tokens_equal_reference": true,
+   "tool_calls": 1,
+   "tool_responses": 1,
+   "tools_called": [
+    "rf_modulation"
+   ],
+   "report_check": null,
+   "modulation_check": {
+    "truth": "32QAM",
+    "host_model": [
+     "64QAM",
+     "32QAM",
+     986
+    ],
+    "printed": [
+     "64QAM",
+     "32QAM",
+     986
+    ],
+    "printed_equals_host_model": true,
+    "answer_names_printed_class": true
+   },
+   "tokens_omitted": {
+    "json_bytes": 3283189,
+    "sha256": "2e5ab68358d618c13310a492f941f2e42e7d96dc390eb2fd68b1b9148b178237"
+   }
+  },
+  {
+   "question": "What is the modulation of capture 5, and what was the second choice?",
+   "capture": 5,
+   "prompt_tokens": 987,
+   "answer": "<tool_call>\n<function=rf_modulation>\n<parameter=capture>\n5\n</parameter>\n</function>\n</tool_call>\n<tool_response>\ncapture=5 synthetic capture 5 fs=1MS/s\nsamples=1024 (Q15)\nmodulation=16QAM runner_up=64QAM score_margin=863\nmethod=30 blind features (amplitude, carrier, x^2/x^4 symmetry, instantaneous frequency, M-th power phase, ring histogram) and a 30-32-25 integer MLP, all in weights; trained on synthetic captures with 8 samples/symbol and no frequency offset\nnot_measured=coding rate, symbol rate, occupied bandwidth, number of transmitters, distance, direction of arrival, bit error rate, protocol or packet contents, power levels and spectrum (use rf_analyze) (this tool reports only the values above)\n</tool_response>\n<think>\n\n</think>\n\nThe modulation of capture 5 is **16QAM**, and the runner-up (second choice) is **64QAM**.<|im_end|>",
+   "text_tokens": 662,
+   "chip_tokens": 459528,
+   "seconds": 118.29540300000008,
+   "chip_seconds": 65.16,
+   "text_seconds": 50.79,
+   "reference_lock_error": null,
+   "head_mismatch": 0,
+   "chip_path": "saved HF chip layers on GPU, chunked verification C=1024",
+   "chunks": 6314,
+   "all_circuit_tokens_equal_reference": true,
+   "tool_calls": 1,
+   "tool_responses": 1,
+   "tools_called": [
+    "rf_modulation"
+   ],
+   "report_check": null,
+   "modulation_check": {
+    "truth": "64QAM",
+    "host_model": [
+     "16QAM",
+     "64QAM",
+     863
+    ],
+    "printed": [
+     "16QAM",
+     "64QAM",
+     863
+    ],
+    "printed_equals_host_model": true,
+    "answer_names_printed_class": true
+   },
+   "tokens_omitted": {
+    "json_bytes": 3218856,
+    "sha256": "6c2446a59c4c337e8617b32838f8a79e2dcaccd0d093191238ac239ec4858187"
+   }
+  },
+  {
+   "question": "Tell me the modulation class of capture 6.",
+   "capture": 6,
+   "prompt_tokens": 981,
+   "answer": "<tool_call>\n<function=rf_modulation>\n<parameter=capture>\n6\n</parameter>\n</function>\n</tool_call>\n<tool_response>\ncapture=6 synthetic capture 6 fs=1MS/s\nsamples=1024 (Q15)\nmodulation=AM-SSB-SC runner_up=128QAM score_margin=13443\nmethod=30 blind features (amplitude, carrier, x^2/x^4 symmetry, instantaneous frequency, M-th power phase, ring histogram) and a 30-32-25 integer MLP, all in weights; trained on synthetic captures with 8 samples/symbol and no frequency offset\nnot_measured=coding rate, symbol rate, occupied bandwidth, number of transmitters, distance, direction of arrival, bit error rate, protocol or packet contents, power levels and spectrum (use rf_analyze) (this tool reports only the values above)\n</tool_response>\n<think>\n\n</think>\n\nThe modulation class of capture 6 is **AM-SSB-SC**.<|im_end|>",
+   "text_tokens": 657,
+   "chip_tokens": 455245,
+   "seconds": 80.5241501999999,
+   "chip_seconds": 44.09,
+   "text_seconds": 34.51,
+   "reference_lock_error": null,
+   "head_mismatch": 0,
+   "chip_path": "saved HF chip layers on GPU, chunked verification C=1024",
+   "chunks": 7369,
+   "all_circuit_tokens_equal_reference": true,
+   "tool_calls": 1,
+   "tool_responses": 1,
+   "tools_called": [
+    "rf_modulation"
+   ],
+   "report_check": null,
+   "modulation_check": {
+    "truth": "AM-SSB-SC",
+    "host_model": [
+     "AM-SSB-SC",
+     "128QAM",
+     13443
+    ],
+    "printed": [
+     "AM-SSB-SC",
+     "128QAM",
+     13443
+    ],
+    "printed_equals_host_model": true,
+    "answer_names_printed_class": true
+   },
+   "tokens_omitted": {
+    "json_bytes": 3188846,
+    "sha256": "ef74665af54aae251d58114d6fa44fed877d4b0ebae07826eaaf7b930f89d8ba"
+   }
+  },
+  {
+   "question": "Capture 7 - what modulation?",
+   "capture": 7,
+   "prompt_tokens": 978,
+   "answer": "<tool_call>\n<function=rf_modulation>\n<parameter=capture>\n7\n</parameter>\n</function>\n</tool_call>\n<tool_response>\ncapture=7 synthetic capture 7 fs=1MS/s\nsamples=1024 (Q15)\nmodulation=AM-DSB-SC runner_up=4ASK score_margin=9042\nmethod=30 blind features (amplitude, carrier, x^2/x^4 symmetry, instantaneous frequency, M-th power phase, ring histogram) and a 30-32-25 integer MLP, all in weights; trained on synthetic captures with 8 samples/symbol and no frequency offset\nnot_measured=coding rate, symbol rate, occupied bandwidth, number of transmitters, distance, direction of arrival, bit error rate, protocol or packet contents, power levels and spectrum (use rf_analyze) (this tool reports only the values above)\n</tool_response>\n<think>\n\n</think>\n\nThe modulation for capture 7 is **AM-DSB-SC** (Amplitude Modulation, Double Sideband, Suppressed Carrier).\n\nThe runner-up classification was 4ASK with a score margin of 9042.<|im_end|>",
+   "text_tokens": 687,
+   "chip_tokens": 447206,
+   "seconds": 83.49023729999954,
+   "chip_seconds": 43.89,
+   "text_seconds": 37.86,
+   "reference_lock_error": null,
+   "head_mismatch": 0,
+   "chip_path": "saved HF chip layers on GPU, chunked verification C=1024",
+   "chunks": 8413,
+   "all_circuit_tokens_equal_reference": true,
+   "tool_calls": 1,
+   "tool_responses": 1,
+   "tools_called": [
+    "rf_modulation"
+   ],
+   "report_check": null,
+   "modulation_check": {
+    "truth": "AM-DSB-SC",
+    "host_model": [
+     "AM-DSB-SC",
+     "4ASK",
+     9042
+    ],
+    "printed": [
+     "AM-DSB-SC",
+     "4ASK",
+     9042
+    ],
+    "printed_equals_host_model": true,
+    "answer_names_printed_class": true
+   },
+   "tokens_omitted": {
+    "json_bytes": 3132707,
+    "sha256": "2e654bba7cd96e2363146fb3dac918c9fbd1ee2ba40147f6d48daaf81a79b85a"
+   }
+  },
+  {
+   "question": "Determine the modulation used in capture 8.",
+   "capture": 8,
+   "prompt_tokens": 981,
+   "answer": "<tool_call>\n<function=rf_modulation>\n<parameter=capture>\n8\n</parameter>\n</function>\n</tool_call>\n<tool_response>\ncapture=8 synthetic capture 8 fs=1MS/s\nsamples=1024 (Q15)\nmodulation=FM runner_up=GMSK score_margin=7601\nmethod=30 blind features (amplitude, carrier, x^2/x^4 symmetry, instantaneous frequency, M-th power phase, ring histogram) and a 30-32-25 integer MLP, all in weights; trained on synthetic captures with 8 samples/symbol and no frequency offset\nnot_measured=coding rate, symbol rate, occupied bandwidth, number of transmitters, distance, direction of arrival, bit error rate, protocol or packet contents, power levels and spectrum (use rf_analyze) (this tool reports only the values above)\n</tool_response>\n<think>\n\n</think>\n\nThe modulation used in capture 8 is **FM**.\n\nThe tool report indicates:\n*   **Modulation:** FM\n*   **Runner-up:** GMSK\n*   **Score margin:** 7601<|im_end|>",
+   "text_tokens": 678,
+   "chip_tokens": 457855,
+   "seconds": 80.48584149999988,
+   "chip_seconds": 43.45,
+   "text_seconds": 35.31,
+   "reference_lock_error": null,
+   "head_mismatch": 0,
+   "chip_path": "saved HF chip layers on GPU, chunked verification C=1024",
+   "chunks": 9461,
+   "all_circuit_tokens_equal_reference": true,
+   "tool_calls": 1,
+   "tool_responses": 1,
+   "tools_called": [
+    "rf_modulation"
+   ],
+   "report_check": null,
+   "modulation_check": {
+    "truth": "FM",
+    "host_model": [
+     "FM",
+     "GMSK",
+     7601
+    ],
+    "printed": [
+     "FM",
+     "GMSK",
+     7601
+    ],
+    "printed_equals_host_model": true,
+    "answer_names_printed_class": true
+   },
+   "tokens_omitted": {
+    "json_bytes": 3207225,
+    "sha256": "f8267131d61531f2f4fe59c13335ccd5de6e3fdb1f116acc5a73986fa06d51e3"
+   }
+  },
+  {
+   "question": "What modulation is capture 9? Answer in one sentence.",
+   "capture": 9,
+   "prompt_tokens": 983,
+   "answer": "<tool_call>\n<function=rf_modulation>\n<parameter=capture>\n9\n</parameter>\n</function>\n</tool_call>\n<tool_response>\ncapture=9 synthetic capture 9 fs=1MS/s\nsamples=1024 (Q15)\nmodulation=GMSK runner_up=OQPSK score_margin=7374\nmethod=30 blind features (amplitude, carrier, x^2/x^4 symmetry, instantaneous frequency, M-th power phase, ring histogram) and a 30-32-25 integer MLP, all in weights; trained on synthetic captures with 8 samples/symbol and no frequency offset\nnot_measured=coding rate, symbol rate, occupied bandwidth, number of transmitters, distance, direction of arrival, bit error rate, protocol or packet contents, power levels and spectrum (use rf_analyze) (this tool reports only the values above)\n</tool_response>\n<think>\n\n</think>\n\nCapture 9 is classified as GMSK modulation.<|im_end|>",
+   "text_tokens": 645,
+   "chip_tokens": 458051,
+   "seconds": 80.26609739999913,
+   "chip_seconds": 43.64,
+   "text_seconds": 34.92,
+   "reference_lock_error": null,
+   "head_mismatch": 0,
+   "chip_path": "saved HF chip layers on GPU, chunked verification C=1024",
+   "chunks": 10512,
+   "all_circuit_tokens_equal_reference": true,
+   "tool_calls": 1,
+   "tool_responses": 1,
+   "tools_called": [
+    "rf_modulation"
+   ],
+   "report_check": null,
+   "modulation_check": {
+    "truth": "GMSK",
+    "host_model": [
+     "GMSK",
+     "OQPSK",
+     7374
+    ],
+    "printed": [
+     "GMSK",
+     "OQPSK",
+     7374
+    ],
+    "printed_equals_host_model": true,
+    "answer_names_printed_class": true
+   },
+   "tokens_omitted": {
+    "json_bytes": 3208444,
+    "sha256": "243ac78277b16de00ceae2f47c577d4ba2b06e918fb4dad44e7fd37192ea293b"
+   }
+  }
+ ]
+}

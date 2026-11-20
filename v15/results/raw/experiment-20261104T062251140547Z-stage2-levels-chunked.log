@@ -1,0 +1,135 @@
+
+Loading weights:   0%|          | 0/580 [00:00<?, ?it/s]
+Loading weights:   2%|1         | 10/580 [00:00<00:07, 73.78it/s]
+Loading weights:   5%|4         | 27/580 [00:00<00:04, 122.37it/s]
+Loading weights:   7%|6         | 40/580 [00:00<00:10, 50.76it/s] 
+Loading weights:   8%|8         | 49/580 [00:00<00:10, 52.81it/s]
+Loading weights:  10%|9         | 57/580 [00:01<00:11, 46.84it/s]
+Loading weights:  11%|#1        | 64/580 [00:01<00:11, 43.99it/s]
+Loading weights:  12%|#2        | 70/580 [00:01<00:12, 40.93it/s]
+Loading weights:  13%|#3        | 76/580 [00:01<00:13, 38.20it/s]
+Loading weights:  14%|#4        | 84/580 [00:01<00:12, 40.95it/s]
+Loading weights:  15%|#5        | 89/580 [00:01<00:12, 39.22it/s]
+Loading weights:  16%|#6        | 94/580 [00:02<00:12, 39.81it/s]
+Loading weights:  18%|#7        | 103/580 [00:02<00:09, 48.53it/s]
+Loading weights:  19%|#8        | 109/580 [00:02<00:10, 44.36it/s]
+Loading weights:  20%|#9        | 114/580 [00:02<00:11, 39.52it/s]
+Loading weights:  22%|##1       | 126/580 [00:02<00:08, 52.43it/s]
+Loading weights:  23%|##2       | 132/580 [00:02<00:10, 42.05it/s]
+Loading weights:  24%|##3       | 137/580 [00:03<00:12, 34.77it/s]
+Loading weights:  24%|##4       | 141/580 [00:03<00:12, 35.15it/s]
+Loading weights:  25%|##5       | 145/580 [00:03<00:13, 31.88it/s]
+Loading weights:  27%|##7       | 157/580 [00:03<00:09, 43.70it/s]
+Loading weights:  29%|##9       | 169/580 [00:03<00:06, 58.93it/s]
+Loading weights:  30%|###       | 176/580 [00:03<00:08, 47.62it/s]
+Loading weights:  31%|###1      | 182/580 [00:03<00:08, 49.49it/s]
+Loading weights:  34%|###3      | 197/580 [00:04<00:05, 66.09it/s]
+Loading weights:  35%|###5      | 205/580 [00:04<00:08, 46.43it/s]
+Loading weights:  36%|###6      | 211/580 [00:04<00:08, 43.85it/s]
+Loading weights:  40%|####      | 232/580 [00:04<00:05, 63.47it/s]
+Loading weights:  41%|####1     | 239/580 [00:05<00:07, 42.70it/s]
+Loading weights:  42%|####2     | 245/580 [00:05<00:07, 43.04it/s]
+Loading weights:  44%|####4     | 256/580 [00:05<00:06, 50.59it/s]
+Loading weights:  47%|####7     | 274/580 [00:05<00:04, 72.29it/s]
+Loading weights:  49%|####8     | 284/580 [00:05<00:03, 75.14it/s]
+Loading weights:  51%|#####     | 293/580 [00:05<00:03, 74.39it/s]
+Loading weights:  52%|#####2    | 304/580 [00:05<00:03, 79.64it/s]
+Loading weights:  54%|#####3    | 313/580 [00:06<00:04, 56.16it/s]
+Loading weights:  55%|#####5    | 320/580 [00:06<00:05, 49.18it/s]
+Loading weights:  57%|#####7    | 333/580 [00:06<00:04, 60.63it/s]
+Loading weights:  61%|######    | 351/580 [00:06<00:02, 82.41it/s]
+Loading weights:  64%|######3   | 369/580 [00:06<00:02, 83.86it/s]
+Loading weights:  66%|######5   | 380/580 [00:07<00:02, 85.19it/s]
+Loading weights:  67%|######7   | 390/580 [00:07<00:02, 81.38it/s]
+Loading weights:  69%|######8   | 399/580 [00:07<00:02, 77.47it/s]
+Loading weights:  70%|#######   | 408/580 [00:07<00:02, 70.22it/s]
+Loading weights: 100%|##########| 580/580 [00:07<00:00, 77.38it/s]
+[transformers] The tokenizer you are loading from '$RFPU_DATA\checkpoints\rfpu-v15\qwen3.5-4b-rv1' with an incorrect regex pattern: https://huggingface.co/mistralai/Mistral-Small-3.1-24B-Instruct-2503/discussions/84#69121093e8b480e709447d5e. This will lead to incorrect tokenization. You should set the `fix_mistral_regex=True` flag when loading this tokenizer to fix this issue.
+[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.
+[transformers] `causal_conv1d_update` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[transformers] `fused_recurrent_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.
+  1000 tokens (36 text, 963 chip) 2s
+  25000 tokens (169 text, 24830 chip) 15s
+================================================================================ 
+Q0: What is the noise floor of capture 14 in dBFS, and how loud is its loudest 64-sample window?
+---
+<tool_call>
+<function=rf_levels>
+<parameter=capture>
+14
+</parameter>
+</function>
+</tool_call>
+<tool_response>
+capture=14 synthetic test signal A fs=1MS/s
+samples=1024 (Q15)
+mean_power_dbfs=-15.5
+peak_power_dbfs=-10.2 at_sample=535
+noise_floor_dbfs=-48.9 (quietest 64-sample window)
+loudest_window_dbfs=-10.4
+active_windows=5/16 (power > 4x quietest) first_active_sample=320 last_active_sample_end=640
+</tool_response>
+<think>
+
+</think>
+
+The noise floor of capture 14 is **-48.9 dBFS**.
+The loudest 64-sample window is **-10.4 dBFS**.<|im_end|>
+[364 text + 25769 chip tokens, 31s, lock error: None]
+  1000 tokens (36 text, 963 chip) 2s
+  27500 tokens (158 text, 27341 chip) 14s
+================================================================================ 
+Q1: Is capture 12 strong or weak? Give me its mean and peak power in dBFS.
+---
+<tool_call>
+<function=rf_levels>
+<parameter=capture>
+12
+</parameter>
+</function>
+</tool_call>
+<tool_response>
+capture=12 Tampere drone-controller fs=120MS/s fc=2440MHz
+samples=1024 (Q15)
+mean_power_dbfs=-14.1
+peak_power_dbfs=-6.9 at_sample=477
+noise_floor_dbfs=-16.7 (quietest 64-sample window)
+loudest_window_dbfs=-12.3
+active_windows=0/16 (power > 4x quietest)
+</tool_response>
+<think>
+
+</think>
+
+Capture 12 is relatively weak. Its mean power is -14.1 dBFS and its peak power is -6.9 dBFS.<|im_end|>
+[322 text + 28541 chip tokens, 27s, lock error: None]
+================================================================================ 
+Q2: What is the frequency of the burst in capture 14, in cycles per sample?
+---
+<tool_call>
+<function=rf_analyze>
+<parameter=capture>
+14
+</parameter>
+</function>
+</tool_call>
+<tool_response>
+capture=14 synthetic test signal A fs=1MS/s
+samples=1024 (Q15)
+mean_power_dbfs=-15.5
+peak_power_dbfs=-10.2 at_sample=535
+noise_floor_dbfs=-48.9 (quietest 64-sample window)
+loudest_window_dbfs=-10.4
+active_windows=5/16 (power > 4x quietest) first_active_sample=320 last_active_sample_end=640
+dominant_dft16_bin=3 freq_cycles_per_sample=0.1875 power_share_percent=99
+cfo_cycles_per_sample=0.1899
+</tool_response>
+<think>
+
+</think>
+
+The frequency of the burst in capture 14 is **0.1875 cycles per sample**.
+
+This is derived from the dominant spectral bin analysis, which shows the dominant DFT bin is at index 3, corresponding to a frequency of 0.1875 cycles per sample. The carrier frequency offset (CFO) is also reported as 0.1899 cycles per sample, which is very close to the burst frequency.<|im_end|>
+[527 text + 92913 chip tokens, 48s, lock error: None]

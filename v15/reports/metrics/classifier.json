@@ -1,0 +1,108 @@
+{
+  "classes": [
+    "noise",
+    "tone",
+    "wideband"
+  ],
+  "confusion_matrix_rows_true_cols_pred": [
+    [
+      219,
+      0,
+      0
+    ],
+    [
+      2,
+      149,
+      29
+    ],
+    [
+      40,
+      25,
+      136
+    ]
+  ],
+  "rows": [
+    {
+      "noise_multiplier": 1,
+      "accuracy": 0.84,
+      "frames": 600,
+      "kernel_config": {
+        "kernel": "spectral_mlp",
+        "features": 4,
+        "hidden": 8,
+        "classes": 3,
+        "fshift": 16
+      },
+      "samples": 2400,
+      "tokens": 613313,
+      "neural_seconds": 33.33070249999582,
+      "ms_per_sample": 13.887792708331594
+    },
+    {
+      "noise_multiplier": 2,
+      "accuracy": 0.8166666666666667,
+      "frames": 300,
+      "kernel_config": {
+        "kernel": "spectral_mlp",
+        "features": 4,
+        "hidden": 8,
+        "classes": 3,
+        "fshift": 16
+      },
+      "samples": 1200,
+      "tokens": 309201,
+      "neural_seconds": 33.32540399998834,
+      "ms_per_sample": 27.77116999999028
+    },
+    {
+      "noise_multiplier": 4,
+      "accuracy": 0.8033333333333333,
+      "frames": 300,
+      "kernel_config": {
+        "kernel": "spectral_mlp",
+        "features": 4,
+        "hidden": 8,
+        "classes": 3,
+        "fshift": 16
+      },
+      "samples": 1200,
+      "tokens": 311979,
+      "neural_seconds": 33.68835229999968,
+      "ms_per_sample": 28.0736269166664
+    },
+    {
+      "noise_multiplier": 8,
+      "accuracy": 0.6533333333333333,
+      "frames": 300,
+      "kernel_config": {
+        "kernel": "spectral_mlp",
+        "features": 4,
+        "hidden": 8,
+        "classes": 3,
+        "fshift": 16
+      },
+      "samples": 1200,
+      "tokens": 312880,
+      "neural_seconds": 33.66693609999493,
+      "ms_per_sample": 28.055780083329108
+    },
+    {
+      "noise_multiplier": 16,
+      "accuracy": 0.4,
+      "frames": 300,
+      "kernel_config": {
+        "kernel": "spectral_mlp",
+        "features": 4,
+        "hidden": 8,
+        "classes": 3,
+        "fshift": 16
+      },
+      "samples": 1200,
+      "tokens": 317404,
+      "neural_seconds": 34.323463099994115,
+      "ms_per_sample": 28.602885916661762
+    }
+  ],
+  "scope": "synthetic frames only; not field classification",
+  "group": "classifier"
+}

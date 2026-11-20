@@ -1,0 +1,38 @@
+{
+  "program": "fir64 FIR, 48 real IQ samples (scalar RV32)",
+  "trace_tokens": 107023,
+  "flash_linear_attention": true,
+  "corrupted_position": null,
+  "rows": [
+    {
+      "chunk": 512,
+      "mismatches": 0,
+      "first_mismatch": null,
+      "seconds": 9.313902400026564,
+      "tokens_per_second": 11490.672266406267
+    },
+    {
+      "chunk": 1024,
+      "mismatches": 0,
+      "first_mismatch": null,
+      "seconds": 8.42509439997957,
+      "tokens_per_second": 12702.88437364684
+    },
+    {
+      "chunk": 2048,
+      "mismatches": 0,
+      "first_mismatch": null,
+      "seconds": 8.255300200020429,
+      "tokens_per_second": 12964.156046043627
+    },
+    {
+      "chunk": 4096,
+      "mismatches": 0,
+      "first_mismatch": null,
+      "seconds": 8.66290699999081,
+      "tokens_per_second": 12354.167025008295
+    }
+  ],
+  "batched_decode": false,
+  "gpu_compare": true
+}

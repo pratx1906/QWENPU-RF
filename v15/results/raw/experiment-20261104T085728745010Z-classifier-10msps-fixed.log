@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "v15\scripts\classifier_screen.py", line 179, in <module>
+    main()
+  File "v15\scripts\classifier_screen.py", line 131, in main
+    res = ten_msps()
+          ^^^^^^^^^^
+  File "v15\scripts\classifier_screen.py", line 96, in ten_msps
+    for i in items for w in windows(i)]
+                            ^^^^^^^^^^
+  File "v15\scripts\train_tech_classifier.py", line 36, in windows
+    z = (raw[:, 0].astype(float) + 1j * raw[:, 1]) / 32768
+         ^^^^^^^^^^^^^^^^^^^^^^^
+numpy._core._exceptions._ArrayMemoryError: Unable to allocate 16.8 MiB for an array with shape (2200000,) and data type float64

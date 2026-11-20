@@ -1,0 +1,117 @@
+{
+  "lowpass16_fir": {
+    "dc_gain_db": -3.265083260606729,
+    "passband_ripple_db": 1.4049750895091138,
+    "stopband_attenuation_db": 16.49939194800049,
+    "cutoff_3db_cycles_per_sample": 0.2237548828125,
+    "group_delay_samples_passband": [
+      7.499999999998181,
+      7.500000000001819
+    ],
+    "design_ideal": {
+      "dc_gain_db": -3.265348336967109,
+      "passband_ripple_db": 1.404975089509116,
+      "stopband_attenuation_db": 16.49939194800049,
+      "cutoff_3db_cycles_per_sample": 0.2237548828125,
+      "group_delay_samples_passband": [
+        7.499999999998181,
+        7.500000000001819
+      ]
+    },
+    "neural": {
+      "kernel": {
+        "kernel": "lowpass16",
+        "taps": 16,
+        "accumulator_bits": 32
+      },
+      "samples": 256,
+      "tokens": 57916,
+      "neural_seconds": 31.94579649998923,
+      "ms_per_sample": 124.78826757808292
+    },
+    "impulse_equals_quantized_taps": true
+  },
+  "tones": [
+    {
+      "freq_cycles_per_sample": 0.02,
+      "measured_gain_db": -3.2531132918899486,
+      "design_gain_db": -3.2531723782801873
+    },
+    {
+      "freq_cycles_per_sample": 0.08,
+      "measured_gain_db": -3.207410100475319,
+      "design_gain_db": -3.207328146573087
+    },
+    {
+      "freq_cycles_per_sample": 0.15,
+      "measured_gain_db": -3.334144097748746,
+      "design_gain_db": -3.334271359730245
+    },
+    {
+      "freq_cycles_per_sample": 0.2,
+      "measured_gain_db": -4.612907378314865,
+      "design_gain_db": -4.613009941938875
+    },
+    {
+      "freq_cycles_per_sample": 0.3,
+      "measured_gain_db": -19.750895100989045,
+      "design_gain_db": -19.750580320520065
+    },
+    {
+      "freq_cycles_per_sample": 0.35,
+      "measured_gain_db": -42.767724522382515,
+      "design_gain_db": -42.74974088701394
+    },
+    {
+      "freq_cycles_per_sample": 0.42,
+      "measured_gain_db": -59.98474181500845,
+      "design_gain_db": -60.019129068719124
+    }
+  ],
+  "tone_run": {
+    "kernel": {
+      "kernel": "lowpass16",
+      "taps": 16,
+      "accumulator_bits": 32
+    },
+    "samples": 3584,
+    "tokens": 1145403,
+    "neural_seconds": 45.60523659999308,
+    "ms_per_sample": 12.724675390623068
+  },
+  "iir_biquad": {
+    "dc_gain_db": 12.057354698749442,
+    "passband_ripple_db": 1.7795676094670263,
+    "stopband_attenuation_db": 25.150214367098506,
+    "cutoff_3db_cycles_per_sample": 0.0670166015625,
+    "group_delay_samples_passband": [
+      2.504819330628834,
+      3.2413089338936554
+    ],
+    "coefficients_q14": [
+      4096,
+      8192,
+      4096,
+      -16384,
+      4096
+    ],
+    "neural": {
+      "kernel": {
+        "kernel": "iir_biquad",
+        "coefs_q14": [
+          4096,
+          8192,
+          4096,
+          -16384,
+          4096
+        ],
+        "accumulator_bits": 64
+      },
+      "samples": 256,
+      "tokens": 38312,
+      "neural_seconds": 21.26861579999968,
+      "ms_per_sample": 83.08053046874875
+    }
+  },
+  "group": "filter"
+}

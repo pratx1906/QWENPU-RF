@@ -1,0 +1,87 @@
+{
+  "chipformer": "upstream\\QwenPU-rf\\chipformer\\__init__.py",
+  "samples": 7168,
+  "rows": [
+    {
+      "taps": 4,
+      "scalar_rv32": {
+        "tokens_per_sample": 104.26018415178571,
+        "ms_per_sample": 8.637176590399674,
+        "exact": true,
+        "kernel": {
+          "kernel": "fir4",
+          "taps": 4,
+          "accumulator_bits": 32
+        }
+      },
+      "vfir": {
+        "tokens_per_sample": 40.37513950892857,
+        "ms_per_sample": 3.286427483260468,
+        "exact": true,
+        "kernel": {
+          "kernel": "vx_fir4_packed",
+          "taps": 4,
+          "instruction": "VFIR (custom-2 funct7=1)",
+          "vx": true,
+          "packed_io": true
+        }
+      },
+      "token_gain": 2.5822866600554923,
+      "time_gain": 2.6281354554127336
+    },
+    {
+      "taps": 8,
+      "scalar_rv32": {
+        "tokens_per_sample": 195.32965959821428,
+        "ms_per_sample": 16.459575864960893,
+        "exact": true,
+        "kernel": {
+          "kernel": "fir8",
+          "taps": 8,
+          "accumulator_bits": 32
+        }
+      },
+      "vfir": {
+        "tokens_per_sample": 57.73423549107143,
+        "ms_per_sample": 4.733995340404006,
+        "exact": true,
+        "kernel": {
+          "kernel": "vx_fir8_packed",
+          "taps": 8,
+          "instruction": "VFIR (custom-2 funct7=1)",
+          "vx": true,
+          "packed_io": true
+        }
+      },
+      "token_gain": 3.3832553239303205,
+      "time_gain": 3.4768889028006966
+    },
+    {
+      "taps": 16,
+      "scalar_rv32": {
+        "tokens_per_sample": 633.4973493303571,
+        "ms_per_sample": 52.98569023437543,
+        "exact": true,
+        "kernel": {
+          "kernel": "fir16",
+          "taps": 16,
+          "accumulator_bits": 64
+        }
+      },
+      "vfir": {
+        "tokens_per_sample": 94.76227678571429,
+        "ms_per_sample": 8.016378027341327,
+        "exact": true,
+        "kernel": {
+          "kernel": "vx_fir16_packed",
+          "taps": 16,
+          "instruction": "VFIR (custom-2 funct7=1)",
+          "vx": true,
+          "packed_io": true
+        }
+      },
+      "token_gain": 6.685121662524879,
+      "time_gain": 6.609679590166285
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "stats": {
+    "layers": 15,
+    "dims": 2492,
+    "heads": 2,
+    "ffn_units": 33223,
+    "max_units": 3584,
+    "max_heads": 2
+  },
+  "hidden": 2560,
+  "GPU": "name, memory.total [MiB], memory.free [MiB], driver_version\nNVIDIA GeForce RTX 5090 Laptop GPU, 24463 MiB, 21774 MiB, 610.88\n"
+}

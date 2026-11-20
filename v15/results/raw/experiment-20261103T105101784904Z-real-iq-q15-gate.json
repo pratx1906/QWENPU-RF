@@ -1,0 +1,33 @@
+{
+  "name": "real-iq-q15-gate",
+  "status": "passed",
+  "command": [
+    ".venv\\Scripts\\python.exe",
+    "v15/scripts/real_iq_q15.py"
+  ],
+  "started_utc": "20261103T105101784904Z",
+  "log": "experiment-20261103T105101784904Z-real-iq-q15-gate.log",
+  "source_sha256": {
+    "v15/prompt-v15.txt": "89680a17c78bddf753fc4583b3640ef95295ab00e7e30427a6ada4907e0b7858",
+    "v15/results.md": "6d5e983613ec64f57a6424c0194385c26053a5ccc4c0799dffa95c472d8d1fdb",
+    "v15/research/PROTOCOL.md": "fb9bfbe0d06af0af937c3b1e1ccc9a431bf4fa837a5d2a99fe6ab5761b83ccd9",
+    "v15/research/V15_DESIGN.md": "2eaed782ce1272957222b840681a12062f359d08ffe0d044765b7ebcb7010823",
+    "v15/rfpu_v15/neural.py": "1947a2739682654ff0d16dff0fa1a8c0fe58da126a4c959c9b2f5a87097fe8f8",
+    "v15/rfpu_v15/runtime.py": "2f68648bc1c221190b1a1b430282a83abd56b7adbddda6d098ad3968e7a46f29",
+    "v15/rfpu_v15/__init__.py": "82587ae6ae805a344b15c4ec007bf5aca35df24599a9195b6ee637a80d8a9f38",
+    "v15/scripts/bootstrap.py": "bc075630441cc50caf95a4a91c1d71fcdd7996fbe1393a963972b6229425cec7",
+    "v15/scripts/construct.py": "b5eee1f0989d4626795da65cb3753480d7a5ed10cab7cb1933372ac104b6f341",
+    "v15/scripts/native_test.py": "c1650accebbd797ee651db71da199a9a47590cb433baaf0b6ec6b9209beb7e44",
+    "v15/scripts/real_iq_q15.py": "51d52729cd93e92970778a5cc514c5692111f63121369f66904d3f85a7291786",
+    "v15/scripts/run.py": "bbd4567279551e49cef3b7ead0bee4536c3715d9d1ee3e33bc058537276e3846",
+    "v15/tests/test_cpu_kernels.py": "0a918ab2b49916b9c25ae8ab840748e848adb5be172e51ef18e8501bdddf3cda",
+    "v15/rfpu_v15/cpu/codegen.py": "4ff2ce2a2d652d842c12606afc7a6cf48eccd55f7b66aa7dfeddf97175674569",
+    "v15/rfpu_v15/cpu/kernels.py": "1dfb8cf450887bd3186ec28a2e7f6598f595e385ca843cdc4706fb0aa74d26b8",
+    "v15/rfpu_v15/cpu/runner.py": "7c6feb02cfd57486feae3dde0328845a8bc35d16287be1659396c9ba19bbebd7",
+    "v15/rfpu_v15/cpu/__init__.py": "a6b6892dc8ac5d490ca22e09bf2b68c57befe45e070fe00c6837a5ac9f89d742"
+  },
+  "source_archive": "experiment-20261103T105101784904Z-real-iq-q15-gate.source.zip",
+  "source_archive_sha256": "27b2fc3fdc118f48e16c73231828984f3d5a196c8fbdaf63d3f94dd817ea435d",
+  "exit_code": 0,
+  "seconds": 487.05770850001136
+}

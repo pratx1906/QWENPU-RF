@@ -1,0 +1,71 @@
+features 50/250 exact True tokens 19950740 907s
+features 100/250 exact True tokens 40095317 1817s
+features 150/250 exact True tokens 60210152 2720s
+features 200/250 exact True tokens 80388101 3621s
+features 250/250 exact True tokens 100627022 4593s
+{
+ "protocol": "PROTOCOL.md Amendment 15",
+ "test": {
+  "seed": 1515,
+  "per_class": 10,
+  "snr_db": [
+   10,
+   12,
+   14,
+   16,
+   18,
+   20,
+   22,
+   24,
+   26,
+   28
+  ]
+ },
+ "captures": 250,
+ "all_features_exact": true,
+ "all_mlp_exact": true,
+ "accuracy": 0.864,
+ "accuracy_by_snr": {
+  "10": 0.68,
+  "12": 0.76,
+  "14": 0.84,
+  "16": 0.84,
+  "18": 0.96,
+  "20": 0.88,
+  "22": 1.0,
+  "24": 0.92,
+  "26": 0.88,
+  "28": 0.88
+ },
+ "correct_per_class": {
+  "OOK": 10,
+  "4ASK": 10,
+  "8ASK": 10,
+  "BPSK": 10,
+  "QPSK": 10,
+  "8PSK": 10,
+  "16PSK": 7,
+  "32PSK": 8,
+  "16APSK": 10,
+  "32APSK": 8,
+  "64APSK": 7,
+  "128APSK": 7,
+  "16QAM": 10,
+  "32QAM": 5,
+  "64QAM": 5,
+  "128QAM": 5,
+  "256QAM": 6,
+  "AM-SSB-WC": 9,
+  "AM-SSB-SC": 10,
+  "AM-DSB-WC": 10,
+  "AM-DSB-SC": 10,
+  "FM": 10,
+  "GMSK": 9,
+  "OQPSK": 10,
+  "LoRa": 10
+ },
+ "tokens_features": 100627022,
+ "tokens_mlp": 5493668,
+ "neural_seconds_features": 4369.1893526,
+ "seconds": 4825.3091625
+}

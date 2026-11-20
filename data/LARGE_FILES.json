@@ -1,0 +1,40 @@
+{
+ "note": "Too large for git; published in the Hugging Face dataset. Paths are as in this repo.",
+ "files": [
+  {
+   "path": "v15/reports/stage2/fullgpu-chunked-stage2-a14.json",
+   "bytes": 44283633,
+   "sha256": "eee54147de12b8662a813b96ae2564e83a3fe94ddfd6c5a19a82a140c1fe0558"
+  },
+  {
+   "path": "v15/reports/stage2/fullgpu-chunked-stage2-bank-a11.json",
+   "bytes": 104201332,
+   "sha256": "fce0f7ee468c3312e1fdfb1689bd245af99fef9ef22b68da8b26ba15978735d4"
+  },
+  {
+   "path": "v15/reports/stage2/fullgpu-chunked-stage2-bank.json",
+   "bytes": 104662511,
+   "sha256": "041ff31bfe49615486759516134d00d6316cd0bc84206ea58f86c8a9ef18eede"
+  },
+  {
+   "path": "v15/reports/stage2/fullgpu-chunked-stage2-heldout-fwv4.json",
+   "bytes": 46247789,
+   "sha256": "0c7bd1bc1bc6b5052166f336839a29a0e26192d13810592c398252479c3940cf"
+  },
+  {
+   "path": "v15/reports/stage2/fullgpu-chunked-stage2-heldout.json",
+   "bytes": 47413273,
+   "sha256": "5c3a127acfd1c62c55129200ca2a3fd6be0ba1669da49626ba76f09ec6ad1145"
+  },
+  {
+   "path": "v15/reports/stage2/fullgpu-chunked-stage2-modulation.json",
+   "bytes": 77835684,
+   "sha256": "3b26c1c2de995d0c0c924fca0e4b3388b4ca875a36f238a97698e8e843229437"
+  },
+  {
+   "path": "data/manifests/loraiq-20341802.archive-index.json",
+   "bytes": 43909967,
+   "sha256": "9be93550a03ba132ab2335f26324f208f1fb8388a0b99ac3a754379bbc431a0b"
+  }
+ ]
+}

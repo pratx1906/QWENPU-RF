@@ -1,0 +1,63 @@
+{
+  "protocol": "PROTOCOL.md Amendment 8, P8.2 (10 MS/s + FFT64 bandwidth shape, leave-one-recording-out)",
+  "recordings": 26,
+  "windows": 416,
+  "by_class_recordings": {
+    "WiFi": 9,
+    "LTE": 12,
+    "DVB-T": 5
+  },
+  "float": {
+    "window_accuracy": 0.7884615384615384,
+    "recording_accuracy": 0.9615384615384616,
+    "confusion_rows_true_cols_pred": [
+      [
+        111,
+        30,
+        3
+      ],
+      [
+        32,
+        155,
+        5
+      ],
+      [
+        7,
+        11,
+        62
+      ]
+    ]
+  },
+  "integer_in_weights_model": {
+    "window_accuracy": 0.7884615384615384,
+    "recording_accuracy": 0.9615384615384616,
+    "confusion_rows_true_cols_pred": [
+      [
+        111,
+        30,
+        3
+      ],
+      [
+        32,
+        155,
+        5
+      ],
+      [
+        7,
+        11,
+        62
+      ]
+    ]
+  },
+  "beats_1msps_lolo6": true,
+  "neural_final_model_one_window_per_recording": {
+    "windows": 26,
+    "stages": "FFT64 power (A) -> host copy of verified words -> classifier (B)",
+    "exact_tokens": true,
+    "outputs_equal_references": true,
+    "predictions_equal_integer_model": 26
+  },
+  "bandwidth_features": true,
+  "baseline_recording_accuracy_P6.4c": 0.846,
+  "note": "first run keyed recordings by file name (25 units: two recordings share a name); rerun keyed by path"
+}

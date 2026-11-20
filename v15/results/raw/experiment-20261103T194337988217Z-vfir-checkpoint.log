@@ -1,0 +1,4 @@
+  File "v15\scripts\vfir_checkpoint.py", line 69
+    test_rv_vx.EXIT = "
+                      ^
+SyntaxError: unterminated string literal (detected at line 69)

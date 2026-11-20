@@ -1,0 +1,1030 @@
+{
+  "protocol": "PROTOCOL.md Amendment 14",
+  "gates": {
+    "questions": 36,
+    "expected": 48,
+    "counts": {
+      "para": 16,
+      "notool": 4,
+      "unans": 16
+    },
+    "P13.2_all_exact": true,
+    "P13.3_tool_answered_rate": 1.0,
+    "P13.3_fields_quoted_rate": 0.9130434782608695,
+    "P13.3_numbers_supported_rate": 0.9333333333333333,
+    "numbers": 75,
+    "unsupported": 5,
+    "P13.4_no_tool": 4,
+    "P13.5_declines": 16,
+    "P13.5_unsupported_numbers": 5,
+    "tool_choice": {
+      "rf_levels": 6,
+      "rf_analyze": 10
+    },
+    "seconds_median_para": 92.2908114999882,
+    "checker": "v3",
+    "set": "a14",
+    "supported_by_derivation": 15,
+    "perturbed_x1.07_also_pass": 5,
+    "perturbed_x1.07_tested": 14,
+    "unans_declined_listed": "8/8",
+    "unans_declined_unlisted": "8/8",
+    "pass": {
+      "P14.2": true,
+      "P14.3": false,
+      "P14.4": false,
+      "P14.5": true
+    }
+  },
+  "rows": [
+    {
+      "capture": 1,
+      "question": "Which modulation does capture 1 use, going by the analyzer's numbers?",
+      "tools_called": [
+        "rf_analyze"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 114.20367850002367,
+      "fields": {},
+      "numbers": 14,
+      "unsupported": [],
+      "hz_claims": [
+        "0",
+        "2412",
+        "-406"
+      ],
+      "hz_in_report": true,
+      "cfo_attributed_to_bin": false,
+      "answer": "The tool does not measure modulation.\n\nHowever, based on the capture metadata provided in the tool output, capture 1 is labeled as **\"IDLab WiFi\"**. WiFi signals typically use modulation schemes such as **OFDM** (Orthogonal Frequency Division Multiplexing) with subcarriers modulated using **QPSK, 16-QAM, 64-QAM, or 256-QAM** depending on the data rate and signal-to-noise ratio.\n\nThe analyzer's numbers show:\n*   **Dominant spectral bin:** 0 Hz (DC), which is expected for a WiFi signal centered at 2412 MHz (the carrier frequency offset is -406 Hz, which is negligible compared to the bandwidth).\n*   **Active windows:** 0/16 (power > 4x quietest), indicating the signal is present but perhaps not extremely strong or the capture window is not perfectly aligned with the signal's peak.\n*   **Mean/peak power:** -13.3 dBFS / -12.0 dBFS, indicating a reasonably strong signal.\n\nWithout a detailed spectral analysis showing the specific subcarrier structure or constellation points, the exact modulation (e.g., 64-QAM vs. 16-QAM) cannot be determined from this report alone, but the signal is clearly a **WiFi** transmission.",
+      "supported_by_derivation": [
+        "256"
+      ],
+      "perturbed_tested": 1,
+      "perturbed_also_pass": 0,
+      "kind": "unans",
+      "tool_called": true,
+      "chip_tokens": 97711,
+      "declines": true
+    },
+    {
+      "capture": 3,
+      "question": "How wide is the signal in capture 3, in MHz of occupied bandwidth?",
+      "tools_called": [
+        "rf_analyze"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 101.77633899997454,
+      "fields": {},
+      "numbers": 2,
+      "unsupported": [],
+      "hz_claims": [
+        "-5"
+      ],
+      "hz_in_report": true,
+      "cfo_attributed_to_bin": false,
+      "answer": "The tool does not measure occupied bandwidth. However, the dominant spectral bin is at -5 MHz (frequency in Hz), which suggests the signal is centered around that frequency. The tool reports the dominant spectral bin of a 16-point spectrum, which is a coarse estimate of the signal's location.\n\nTo determine the occupied bandwidth, we would need to look at the spread of the signal in the frequency domain, which is not provided by the tool. The tool only gives the dominant spectral bin and its power share.\n\nTherefore, the tool does not measure the occupied bandwidth.",
+      "supported_by_derivation": [
+        "-5"
+      ],
+      "perturbed_tested": 0,
+      "perturbed_also_pass": 0,
+      "kind": "unans",
+      "tool_called": true,
+      "chip_tokens": 98567,
+      "declines": true
+    },
+    {
+      "capture": 5,
+      "question": "What symbol rate is the DVB-T signal in capture 5 running at, per the measurements?",
+      "tools_called": [
+        "rf_analyze"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 97.28072629997041,
+      "fields": {},
+      "numbers": 3,
+      "unsupported": [],
+      "hz_claims": [
+        "482"
+      ],
+      "hz_in_report": true,
+      "cfo_attributed_to_bin": false,
+      "answer": "The tool report does not provide the symbol rate for the DVB-T signal in capture 5. It only provides information about the sample rate (1MS/s) and carrier frequency (482MHz), but not the modulation or coding rate, symbol rate, or occupied bandwidth.\n\nTherefore, the symbol rate cannot be determined from the measurements provided by the tool.",
+      "supported_by_derivation": [],
+      "perturbed_tested": 0,
+      "perturbed_also_pass": 0,
+      "kind": "unans",
+      "tool_called": true,
+      "chip_tokens": 99949,
+      "declines": true
+    },
+    {
+      "capture": 7,
+      "question": "How many different LoRa devices are transmitting in capture 7, according to the analyzer?",
+      "tools_called": [
+        "rf_analyze"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 94.57977870001923,
+      "fields": {},
+      "numbers": 3,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "The analyzer reports that there are **0 active windows** (power > 4x quietest) in capture 7. This suggests that no LoRa devices are currently transmitting in this capture.\n\nThe tool does not measure the number of transmitters directly, but the \"active windows\" metric indicates that no significant signal activity was detected above the noise floor.",
+      "supported_by_derivation": [],
+      "perturbed_tested": 0,
+      "perturbed_also_pass": 0,
+      "kind": "unans",
+      "tool_called": true,
+      "chip_tokens": 100138,
+      "declines": true
+    },
+    {
+      "capture": 10,
+      "question": "What is the bit error rate of the LoRa link in capture 10, based on the measurements?",
+      "tools_called": [
+        "rf_analyze"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 94.0527269000304,
+      "fields": {},
+      "numbers": 0,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "The tool does not measure the bit error rate. The report only provides power levels, noise floor, active windows, and spectral information, but does not include modulation, coding rate, symbol rate, or bit error rate data.",
+      "supported_by_derivation": [],
+      "perturbed_tested": 0,
+      "perturbed_also_pass": 0,
+      "kind": "unans",
+      "tool_called": true,
+      "chip_tokens": 100770,
+      "declines": true
+    },
+    {
+      "capture": 11,
+      "question": "How far from the receiver was the transmitter in capture 11, in metres?",
+      "tools_called": [
+        "rf_analyze"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 93.61973589996342,
+      "fields": {},
+      "numbers": 0,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "The tool does not measure distance. The report only provides signal strength, frequency, and other RF characteristics, but not the physical distance between the transmitter and receiver.",
+      "supported_by_derivation": [],
+      "perturbed_tested": 0,
+      "perturbed_also_pass": 0,
+      "kind": "unans",
+      "tool_called": true,
+      "chip_tokens": 101092,
+      "declines": true
+    },
+    {
+      "capture": 14,
+      "question": "From which bearing, in degrees, did signal A in capture 14 arrive, per the analyzer?",
+      "tools_called": [],
+      "tool_answered": false,
+      "exact": true,
+      "seconds": 5.71246800001245,
+      "fields": {},
+      "numbers": 0,
+      "unsupported": [],
+      "answer": "The tool report for capture 14 does not contain information about the bearing from which the signal arrived. The `rf_analyze` tool provides power levels, noise floor, active windows, spectral bin information, and carrier frequency offset, but it does not measure or report signal bearing.",
+      "kind": "unans",
+      "tool_called": false,
+      "chip_tokens": 0,
+      "declines": true
+    },
+    {
+      "capture": 0,
+      "question": "What packet type or MAC address appears in capture 0, according to the analyzer?",
+      "tools_called": [
+        "rf_analyze"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 92.90907930000685,
+      "fields": {},
+      "numbers": 0,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": true,
+      "cfo_attributed_to_bin": false,
+      "answer": "The analyzer does not provide information about packet types or MAC addresses. It only reports signal characteristics such as power levels, noise floor, and dominant spectral bin. The tool explicitly states that it does not measure \"protocol or packet contents.\"",
+      "supported_by_derivation": [],
+      "perturbed_tested": 0,
+      "perturbed_also_pass": 0,
+      "kind": "unans",
+      "tool_called": true,
+      "chip_tokens": 98331,
+      "declines": true
+    },
+    {
+      "capture": 2,
+      "question": "What is the transmitter's output power in watts for capture 2, according to the measurements?",
+      "tools_called": [
+        "rf_analyze"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 101.31373649998568,
+      "fields": {},
+      "numbers": 5,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": true,
+      "cfo_attributed_to_bin": false,
+      "answer": "The tool report provides the mean power in dBFS (-11.9 dBFS) and the peak power in dBFS (-5.8 dBFS) for capture 2. However, it does not provide the absolute power in watts or the reference level (0 dBFS) in watts. Without knowing the reference level (0 dBFS) in watts, it is impossible to convert the dBFS values to watts.\n\nTherefore, the tool does not measure the transmitter's output power in watts.",
+      "supported_by_derivation": [],
+      "perturbed_tested": 0,
+      "perturbed_also_pass": 0,
+      "kind": "unans",
+      "tool_called": true,
+      "chip_tokens": 99704,
+      "declines": true
+    },
+    {
+      "capture": 4,
+      "question": "What is the receiver's antenna gain for capture 4, based on the analyzer?",
+      "tools_called": [
+        "rf_analyze"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 97.213232399954,
+      "fields": {},
+      "numbers": 0,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": true,
+      "cfo_attributed_to_bin": false,
+      "answer": "The tool does not measure antenna gain. The report only provides signal power levels, noise floor, and spectral analysis data.",
+      "supported_by_derivation": [],
+      "perturbed_tested": 0,
+      "perturbed_also_pass": 0,
+      "kind": "unans",
+      "tool_called": true,
+      "chip_tokens": 100245,
+      "declines": true
+    },
+    {
+      "capture": 6,
+      "question": "What is the temperature of the LoRa device in capture 6, according to the analyzer?",
+      "tools_called": [],
+      "tool_answered": false,
+      "exact": true,
+      "seconds": 5.211248200037517,
+      "fields": {},
+      "numbers": 0,
+      "unsupported": [],
+      "answer": "The tool does not measure temperature. The `rf_analyze` tool provides signal analysis data such as power levels, noise floor, active windows, spectral bin information, and carrier frequency offset, but it does not report the temperature of the device.",
+      "kind": "unans",
+      "tool_called": false,
+      "chip_tokens": 0,
+      "declines": true
+    },
+    {
+      "capture": 8,
+      "question": "What is the IQ imbalance (gain and phase) of capture 8, according to the analyzer?",
+      "tools_called": [
+        "rf_analyze"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 61.84952119999798,
+      "fields": {},
+      "numbers": 0,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "The tool report does not contain information about IQ imbalance (gain and phase). The `rf_analyze` tool reports mean/peak power, noise floor, loudest windows, active windows, dominant spectral bin, and carrier frequency offset, but it does not measure IQ imbalance.",
+      "supported_by_derivation": [],
+      "perturbed_tested": 0,
+      "perturbed_also_pass": 0,
+      "kind": "unans",
+      "tool_called": true,
+      "chip_tokens": 101228,
+      "declines": true
+    },
+    {
+      "capture": 9,
+      "question": "What is the signal's polarization in capture 9, according to the analyzer?",
+      "tools_called": [
+        "rf_analyze"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 60.81334550003521,
+      "fields": {},
+      "numbers": 0,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "The tool does not measure the signal's polarization. The report only provides information on power levels, noise floor, active windows, dominant spectral bin, and carrier frequency offset.",
+      "supported_by_derivation": [],
+      "perturbed_tested": 0,
+      "perturbed_also_pass": 0,
+      "kind": "unans",
+      "tool_called": true,
+      "chip_tokens": 101529,
+      "declines": true
+    },
+    {
+      "capture": 12,
+      "question": "What is the battery level of the drone controller in capture 12, according to the measurements?",
+      "tools_called": [
+        "rf_analyze"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 66.43344789999537,
+      "fields": {},
+      "numbers": 0,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": true,
+      "cfo_attributed_to_bin": false,
+      "answer": "The tool report does not contain information about the battery level of the drone controller. It only provides RF signal analysis data such as mean power, peak power, noise floor, and carrier frequency offset.",
+      "supported_by_derivation": [],
+      "perturbed_tested": 0,
+      "perturbed_also_pass": 0,
+      "kind": "unans",
+      "tool_called": true,
+      "chip_tokens": 101631,
+      "declines": true
+    },
+    {
+      "capture": 13,
+      "question": "What is the RSSI of capture 13 in dBm, according to the analyzer?",
+      "tools_called": [
+        "rf_analyze"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 76.88323869998567,
+      "fields": {},
+      "numbers": 9,
+      "unsupported": [
+        "-100",
+        "-120",
+        "-100",
+        "-100",
+        "-114.1"
+      ],
+      "hz_claims": [],
+      "hz_in_report": true,
+      "cfo_attributed_to_bin": false,
+      "answer": "The tool does not provide the RSSI in dBm. It only provides power in dBFS (decibels relative to full scale).\n\nTo convert dBFS to dBm, you need to know the reference power level of the ADC (typically -100 dBm or -120 dBm for many radio systems) and the full-scale power of the ADC. Without this information, the exact RSSI in dBm cannot be determined from the provided report.\n\nHowever, the report does provide the following power measurements:\n- Mean power: -14.1 dBFS\n- Peak power: -7.0 dBFS\n- Noise floor: -18.2 dBFS\n\nIf you have the reference power level of the ADC, you can use the mean power in dBFS to estimate the RSSI. For example, if the ADC's full-scale power is -100 dBm, then the RSSI would be approximately -14.1 dBFS + (-100 dBm) = -114.1 dBm.\n\nBut without this information, the exact RSSI in dBm cannot be determined.",
+      "supported_by_derivation": [],
+      "perturbed_tested": 0,
+      "perturbed_also_pass": 0,
+      "kind": "unans",
+      "tool_called": true,
+      "chip_tokens": 102200,
+      "declines": true
+    },
+    {
+      "capture": 15,
+      "question": "What is the phase noise of signal B (capture 15) in dBc/Hz, according to the analyzer?",
+      "tools_called": [
+        "rf_analyze"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 85.56017369998153,
+      "fields": {},
+      "numbers": 0,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": true,
+      "cfo_attributed_to_bin": false,
+      "answer": "The tool does not measure phase noise. The report only provides mean and peak power, noise floor, loudest windows, active windows, dominant spectral bin, and carrier frequency offset.",
+      "supported_by_derivation": [],
+      "perturbed_tested": 0,
+      "perturbed_also_pass": 0,
+      "kind": "unans",
+      "tool_called": true,
+      "chip_tokens": 100650,
+      "declines": true
+    },
+    {
+      "capture": 0,
+      "question": "By how many dB does capture 0's peak exceed its mean power?",
+      "tools_called": [
+        "rf_analyze"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 98.14342350000516,
+      "fields": {
+        "peak_power_dbfs": {
+          "report": "-10.9",
+          "quoted": true
+        },
+        "mean_power_dbfs": {
+          "report": "-16.3",
+          "quoted": true
+        }
+      },
+      "numbers": 7,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": true,
+      "cfo_attributed_to_bin": false,
+      "answer": "The peak power of capture 0 is -10.9 dBFS, and the mean power is -16.3 dBFS.\n\nThe difference is:\n-10.9 dBFS - (-16.3 dBFS) = 5.4 dB\n\nTherefore, the peak power exceeds the mean power by **5.4 dB**.",
+      "supported_by_derivation": [
+        "5.4",
+        "5.4"
+      ],
+      "perturbed_tested": 2,
+      "perturbed_also_pass": 0,
+      "kind": "para",
+      "tool_called": true,
+      "chip_tokens": 98331,
+      "declines": false
+    },
+    {
+      "capture": 1,
+      "question": "What is capture 1's loudest-window level relative to its noise floor, in dB?",
+      "tools_called": [
+        "rf_levels"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 73.46041080000577,
+      "fields": {
+        "loudest_window_dbfs": {
+          "report": "-12.7",
+          "quoted": true
+        },
+        "noise_floor_dbfs": {
+          "report": "-14.2",
+          "quoted": true
+        }
+      },
+      "numbers": 7,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "The loudest window level is -12.7 dBFS and the noise floor is -14.2 dBFS.\n\nThe difference is: -12.7 - (-14.2) = 1.5 dB.\n\nCapture 1's loudest-window level is 1.5 dB above its noise floor.",
+      "supported_by_derivation": [
+        "1.5",
+        "1.5"
+      ],
+      "perturbed_tested": 2,
+      "perturbed_also_pass": 2,
+      "kind": "para",
+      "tool_called": true,
+      "chip_tokens": 28475,
+      "declines": false
+    },
+    {
+      "capture": 2,
+      "question": "Give capture 2's frequency offset in kilohertz.",
+      "tools_called": [
+        "rf_analyze"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 94.53301770001417,
+      "fields": {
+        "cfo_hz": {
+          "report": "17594",
+          "quoted": true
+        }
+      },
+      "numbers": 3,
+      "unsupported": [],
+      "hz_claims": [
+        "17,594",
+        "17.6"
+      ],
+      "hz_in_report": true,
+      "cfo_attributed_to_bin": false,
+      "answer": "The frequency offset for capture 2 is 17,594 Hz, which is approximately 17.6 kHz.",
+      "supported_by_derivation": [
+        "17.6"
+      ],
+      "perturbed_tested": 1,
+      "perturbed_also_pass": 1,
+      "kind": "para",
+      "tool_called": true,
+      "chip_tokens": 99704,
+      "declines": false
+    },
+    {
+      "capture": 3,
+      "question": "What share of the 64-sample windows in capture 3 are active, as a percentage?",
+      "tools_called": [
+        "rf_analyze"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 99.7392908000038,
+      "fields": {
+        "active_windows": {
+          "report": "0",
+          "quoted": false
+        }
+      },
+      "numbers": 9,
+      "unsupported": [
+        "100",
+        "25",
+        "25"
+      ],
+      "hz_claims": [],
+      "hz_in_report": true,
+      "cfo_attributed_to_bin": false,
+      "answer": "The tool report indicates that there are 16 active windows out of a total of 64 sample windows.\n\nTo calculate the percentage:\n(16 / 64) * 100 = 25%\n\nTherefore, 25% of the 64-sample windows in capture 3 are active.",
+      "supported_by_derivation": [],
+      "perturbed_tested": 0,
+      "perturbed_also_pass": 0,
+      "kind": "para",
+      "tool_called": true,
+      "chip_tokens": 98567,
+      "declines": false
+    },
+    {
+      "capture": 4,
+      "question": "What is the dominant frequency of capture 4 in kHz?",
+      "tools_called": [
+        "rf_analyze"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 102.40250019996893,
+      "fields": {
+        "freq_hz": {
+          "report": "0",
+          "quoted": true
+        }
+      },
+      "numbers": 8,
+      "unsupported": [],
+      "hz_claims": [
+        "0",
+        "0",
+        "37735",
+        "0"
+      ],
+      "hz_in_report": true,
+      "cfo_attributed_to_bin": false,
+      "answer": "The dominant frequency of capture 4 is 0 Hz.\n\nThe tool report indicates:\n- `dominant_dft16_bin=0`\n- `freq_hz=0`\n\nThis suggests that the dominant spectral bin is at 0 Hz (DC), which is unusual for a typical DVB-T signal. The carrier frequency offset (CFO) is 37735 Hz, which might be contributing to this result if the signal is not properly centered or if there is a significant frequency offset. However, based strictly on the tool's report, the dominant frequency is 0 Hz.",
+      "supported_by_derivation": [],
+      "perturbed_tested": 0,
+      "perturbed_also_pass": 0,
+      "kind": "para",
+      "tool_called": true,
+      "chip_tokens": 100245,
+      "declines": false
+    },
+    {
+      "capture": 5,
+      "question": "Report the mean power and the peak sample index for capture 5.",
+      "tools_called": [
+        "rf_levels"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 69.6923188000219,
+      "fields": {
+        "mean_power_dbfs": {
+          "report": "-12.9",
+          "quoted": true
+        },
+        "at_sample": {
+          "report": "52",
+          "quoted": true
+        }
+      },
+      "numbers": 3,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "The mean power for capture 5 is **-12.9 dBFS**.\nThe peak sample index is **52**.",
+      "supported_by_derivation": [],
+      "perturbed_tested": 0,
+      "perturbed_also_pass": 0,
+      "kind": "para",
+      "tool_called": true,
+      "chip_tokens": 28937,
+      "declines": false
+    },
+    {
+      "capture": 6,
+      "question": "How strong is the noise floor of capture 6 compared with its loudest window? Give both in dBFS.",
+      "tools_called": [
+        "rf_levels"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 74.280494000006,
+      "fields": {
+        "noise_floor_dbfs": {
+          "report": "-15.4",
+          "quoted": true
+        },
+        "loudest_window_dbfs": {
+          "report": "-13.6",
+          "quoted": true
+        }
+      },
+      "numbers": 7,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "The noise floor of capture 6 is **-15.4 dBFS**, and its loudest window is **-13.6 dBFS**.\n\nThe difference between the loudest window and the noise floor is:\n-13.6 dBFS - (-15.4 dBFS) = **1.8 dB**\n\nSo the loudest window is 1.8 dB above the noise floor.",
+      "supported_by_derivation": [
+        "1.8",
+        "1.8"
+      ],
+      "perturbed_tested": 2,
+      "perturbed_also_pass": 2,
+      "kind": "para",
+      "tool_called": true,
+      "chip_tokens": 29083,
+      "declines": false
+    },
+    {
+      "capture": 7,
+      "question": "What is the carrier offset of capture 7, expressed in cycles per sample?",
+      "tools_called": [
+        "rf_analyze"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 90.8636507000192,
+      "fields": {
+        "cfo_cycles_per_sample": {
+          "report": "-0.0087",
+          "quoted": true
+        }
+      },
+      "numbers": 2,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "The carrier offset of capture 7 is -0.0087 cycles per sample.",
+      "supported_by_derivation": [],
+      "perturbed_tested": 0,
+      "perturbed_also_pass": 0,
+      "kind": "para",
+      "tool_called": true,
+      "chip_tokens": 100138,
+      "declines": false
+    },
+    {
+      "capture": 8,
+      "question": "Which DFT bin is strongest in capture 8, and what share of power does it carry?",
+      "tools_called": [
+        "rf_analyze"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 92.2908114999882,
+      "fields": {
+        "dominant_dft16_bin": {
+          "report": "1",
+          "quoted": true
+        },
+        "power_share_percent": {
+          "report": "23",
+          "quoted": true
+        }
+      },
+      "numbers": 3,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "The strongest DFT bin in capture 8 is bin 1, and it carries 23% of the power.",
+      "supported_by_derivation": [],
+      "perturbed_tested": 0,
+      "perturbed_also_pass": 0,
+      "kind": "para",
+      "tool_called": true,
+      "chip_tokens": 101228,
+      "declines": false
+    },
+    {
+      "capture": 9,
+      "question": "Give the dominant tone of capture 9 in cycles per sample.",
+      "tools_called": [
+        "rf_analyze"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 91.82957340002758,
+      "fields": {
+        "freq_cycles_per_sample": {
+          "report": "0.3125",
+          "quoted": true
+        }
+      },
+      "numbers": 2,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "The dominant tone of capture 9 is 0.3125 cycles per sample.",
+      "supported_by_derivation": [],
+      "perturbed_tested": 0,
+      "perturbed_also_pass": 0,
+      "kind": "para",
+      "tool_called": true,
+      "chip_tokens": 101529,
+      "declines": false
+    },
+    {
+      "capture": 10,
+      "question": "What's the peak power of capture 10 and where does it occur?",
+      "tools_called": [
+        "rf_levels"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 70.61851409997325,
+      "fields": {
+        "peak_power_dbfs": {
+          "report": "-7.3",
+          "quoted": true
+        },
+        "at_sample": {
+          "report": "1006",
+          "quoted": true
+        }
+      },
+      "numbers": 3,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "The peak power of capture 10 is **-7.3 dBFS**, and it occurs at **sample 1006**.",
+      "supported_by_derivation": [],
+      "perturbed_tested": 0,
+      "perturbed_also_pass": 0,
+      "kind": "para",
+      "tool_called": true,
+      "chip_tokens": 29131,
+      "declines": false
+    },
+    {
+      "capture": 11,
+      "question": "How many windows are active in capture 11?",
+      "tools_called": [
+        "rf_levels"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 68.53123079997022,
+      "fields": {
+        "active_windows": {
+          "report": "0",
+          "quoted": true
+        }
+      },
+      "numbers": 2,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "0 windows are active in capture 11.",
+      "supported_by_derivation": [],
+      "perturbed_tested": 0,
+      "perturbed_also_pass": 0,
+      "kind": "para",
+      "tool_called": true,
+      "chip_tokens": 29188,
+      "declines": false
+    },
+    {
+      "capture": 12,
+      "question": "Express capture 12's dominant frequency in MHz.",
+      "tools_called": [
+        "rf_analyze"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 97.96097129996633,
+      "fields": {
+        "freq_hz": {
+          "report": "-22500000",
+          "quoted": false
+        }
+      },
+      "numbers": 2,
+      "unsupported": [
+        "22.5"
+      ],
+      "hz_claims": [
+        "22.5"
+      ],
+      "hz_in_report": true,
+      "cfo_attributed_to_bin": false,
+      "answer": "The dominant frequency of capture 12 is 22.5 MHz.",
+      "supported_by_derivation": [],
+      "perturbed_tested": 0,
+      "perturbed_also_pass": 0,
+      "kind": "para",
+      "tool_called": true,
+      "chip_tokens": 101631,
+      "declines": false
+    },
+    {
+      "capture": 13,
+      "question": "What is the carrier offset of capture 13 in MHz?",
+      "tools_called": [
+        "rf_analyze"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 110.10151319997385,
+      "fields": {
+        "cfo_hz": {
+          "report": "70198244",
+          "quoted": true
+        }
+      },
+      "numbers": 7,
+      "unsupported": [
+        "1000000"
+      ],
+      "hz_claims": [
+        "70,198,244",
+        "70.2",
+        "70,198,244",
+        "70.198244",
+        "70.2"
+      ],
+      "hz_in_report": true,
+      "cfo_attributed_to_bin": false,
+      "answer": "The carrier frequency offset (CFO) for capture 13 is 70,198,244 Hz, which is approximately 70.2 MHz.\n\nTo convert this to MHz:\n70,198,244 Hz / 1,000,000 = 70.198244 MHz\n\nSo the carrier offset is approximately **70.2 MHz**.",
+      "supported_by_derivation": [
+        "70.2",
+        "70.198244",
+        "70.2"
+      ],
+      "perturbed_tested": 3,
+      "perturbed_also_pass": 0,
+      "kind": "para",
+      "tool_called": true,
+      "chip_tokens": 102200,
+      "declines": false
+    },
+    {
+      "capture": 14,
+      "question": "How far above its noise floor is signal A's loudest window, in dB?",
+      "tools_called": [
+        "rf_levels"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 80.84566710004583,
+      "fields": {
+        "loudest_window_dbfs": {
+          "report": "-10.4",
+          "quoted": true
+        },
+        "noise_floor_dbfs": {
+          "report": "-48.9",
+          "quoted": true
+        }
+      },
+      "numbers": 6,
+      "unsupported": [],
+      "hz_claims": [],
+      "hz_in_report": false,
+      "cfo_attributed_to_bin": false,
+      "answer": "The loudest window is -10.4 dBFS and the noise floor is -48.9 dBFS.\n\nDifference = -10.4 - (-48.9) = 38.5 dB.\n\nSignal A's loudest window is 38.5 dB above its noise floor.",
+      "supported_by_derivation": [
+        "38.5",
+        "38.5"
+      ],
+      "perturbed_tested": 2,
+      "perturbed_also_pass": 0,
+      "kind": "para",
+      "tool_called": true,
+      "chip_tokens": 26581,
+      "declines": false
+    },
+    {
+      "capture": 15,
+      "question": "What is signal B's frequency offset in kHz?",
+      "tools_called": [
+        "rf_analyze"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 95.7308557999786,
+      "fields": {
+        "cfo_hz": {
+          "report": "-62506",
+          "quoted": true
+        }
+      },
+      "numbers": 4,
+      "unsupported": [],
+      "hz_claims": [
+        "-62.506",
+        "-62506"
+      ],
+      "hz_in_report": true,
+      "cfo_attributed_to_bin": false,
+      "answer": "The frequency offset for signal B is **-62.506 kHz**.\n\nThis is calculated from the carrier frequency offset (CFO) of -62506 Hz reported in the analysis of capture 15 (synthetic test signal B), which has a sample rate of 1 MS/s.",
+      "supported_by_derivation": [
+        "-62.506"
+      ],
+      "perturbed_tested": 1,
+      "perturbed_also_pass": 0,
+      "kind": "para",
+      "tool_called": true,
+      "chip_tokens": 100650,
+      "declines": false
+    },
+    {
+      "capture": null,
+      "question": "What is the difference between a sample rate and a symbol rate?",
+      "tools_called": [],
+      "tool_answered": false,
+      "exact": true,
+      "seconds": 43.83501899999101,
+      "fields": {},
+      "numbers": 0,
+      "unsupported": [],
+      "answer": "The difference between a **sample rate** and a **symbol rate** lies in what they measure and the layer of the signal processing they represent:\n\n1.  **Sample Rate (Sampling Frequency):**\n    *   **Definition:** This is the number of times per second that a continuous analog signal is measured (sampled) to create a discrete digital signal.\n    *   **Unit:** Samples per second (Hz or samples/sec).\n    *   **Role:** It is a fundamental requirement of the **Analog-to-Digital Converter (ADC)**. According to the Nyquist-Shannon sampling theorem, the sample rate must be at least twice the highest frequency component present in the analog signal to avoid aliasing.\n    *   **Example:** If a radio captures a signal at 10 MS/s (10,000,000 samples per second), the ADC is taking 10 million snapshots of the voltage waveform every second.\n\n2.  **Symbol Rate (Baud Rate):**\n    *   **Definition:** This is the number of \"symbols\" transmitted per second. A symbol is a distinct state of a signal that carries information (bits).\n    *   **Unit:** Symbols per second (Baud).\n    *   **Role:** It is a parameter of the **Modulation Scheme** (e.g., QPSK, 16-QAM, BPSK). It determines how fast the data is being sent.\n    *   **Relationship to Sample Rate:** The symbol rate is generally much lower than the sample rate. The sample rate must be high enough to accurately reconstruct the waveform of the symbol transitions, but it doesn't have to be equal to the symbol rate.\n    *   **Example:** In a QPSK (Quadrature Phase Shift Keying) modulation, one symbol represents 2 bits. If the symbol rate is 1000 symbols/sec (1 kbaud), the sample rate might be 10 MS/s. The ADC samples the signal 10,000 times for every single symbol change.\n\n**Key Distinction:**\n*   **Sample Rate** is about **time resolution** (how finely we slice the time axis to capture the wave).\n*   **Symbol Rate** is about **data throughput** (how fast the information is being encoded and sent).\n\nIn the context of the captures you listed (e.g., `fs=10MS/s`), the `fs` refers to the **sample rate**. The symbol rate would depend on the specific modulation used by the device (e.g., LoRa, WiFi, LTE) and is not explicitly listed in the capture metadata provided.",
+      "kind": "notool",
+      "tool_called": false,
+      "chip_tokens": 0,
+      "declines": false
+    },
+    {
+      "capture": null,
+      "question": "Why can't dBFS be converted to dBm without calibration?",
+      "tools_called": [],
+      "tool_answered": false,
+      "exact": true,
+      "seconds": 29.63720250001643,
+      "fields": {},
+      "numbers": 0,
+      "unsupported": [],
+      "answer": "dBFS (decibels relative to full scale) and dBm (decibels relative to 1 milliwatt) cannot be converted without calibration because they reference fundamentally different power levels:\n\n1.  **Reference Point:**\n    *   **dBFS** is a relative unit. It measures the signal power relative to the maximum possible power (full scale) that the specific Analog-to-Digital Converter (ADC) or RF processor can handle before clipping. \"0 dBFS\" means the signal is at the absolute maximum limit of that specific hardware's dynamic range.\n    *   **dBm** is an absolute unit. It measures the signal power relative to a fixed physical standard: 1 milliwatt (0 dBm = 1 mW).\n\n2.  **Hardware Dependency:**\n    *   The \"full scale\" (0 dBFS) of an ADC varies significantly depending on the specific hardware model, the gain settings of the front-end amplifier, the attenuation settings, and the temperature.\n    *   Without knowing the exact gain chain (how much the signal was amplified or attenuated before reaching the ADC) and the precise full-scale voltage/current of that specific ADC, you cannot mathematically determine what physical power (in Watts or dBm) corresponds to a given dBFS value.\n\n**Analogy:**\nThink of dBFS like a volume knob on a speaker. \"0 dBFS\" is the point where the speaker distorts. If you turn the volume up to 50% (say, -6 dBFS), you don't know if that corresponds to a whisper or a shout because you don't know the total volume range of the room or the sensitivity of the speaker.\n\n**Calibration solves this** by measuring the actual voltage or current corresponding to 0 dBFS and comparing it to the known physical power of a reference signal (like a calibrated signal generator), allowing the system to calculate the conversion factor (gain) to translate dBFS into absolute dBm.",
+      "kind": "notool",
+      "tool_called": false,
+      "chip_tokens": 0,
+      "declines": true
+    },
+    {
+      "capture": null,
+      "question": "What does a CFAR detector do, in one or two sentences?",
+      "tools_called": [],
+      "tool_answered": false,
+      "exact": true,
+      "seconds": 4.839048499998171,
+      "fields": {},
+      "numbers": 0,
+      "unsupported": [],
+      "answer": "A Constant False Alarm Rate (CFAR) detector is a signal processing technique used in radar and communications to estimate the noise floor in the presence of interfering signals. It dynamically adjusts the detection threshold based on the local signal environment to maintain a constant probability of false alarms, ensuring reliable detection even when strong interferers are present.",
+      "kind": "notool",
+      "tool_called": false,
+      "chip_tokens": 0,
+      "declines": false
+    },
+    {
+      "capture": null,
+      "question": "What is the Doppler effect in radio, briefly?",
+      "tools_called": [],
+      "tool_answered": false,
+      "exact": true,
+      "seconds": 11.181671200029086,
+      "fields": {},
+      "numbers": 0,
+      "unsupported": [],
+      "answer": "The Doppler effect in radio is the change in frequency (or wavelength) of a wave for an observer moving relative to the source of the wave.\n\n*   **Approaching:** When the radio source and receiver are moving closer together, the received frequency appears **higher** (shifted toward the upper end of the spectrum).\n*   **Receding:** When they are moving apart, the received frequency appears **lower** (shifted toward the lower end).\n\nThis phenomenon is critical in radio communications, particularly for mobile devices and satellites, as it can cause signal distortion and requires compensation techniques to maintain a stable connection.",
+      "kind": "notool",
+      "tool_called": false,
+      "chip_tokens": 0,
+      "declines": false
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+
+Loading weights:   0%|          | 0/580 [00:00<?, ?it/s]
+Loading weights:   1%|          | 7/580 [00:00<00:21, 26.67it/s]
+Loading weights:   2%|▏         | 12/580 [00:00<00:23, 23.98it/s]
+Loading weights:   3%|▎         | 17/580 [00:00<00:23, 23.82it/s]
+Loading weights:   5%|▍         | 27/580 [00:00<00:15, 35.47it/s]
+Loading weights:   5%|▌         | 31/580 [00:00<00:15, 36.41it/s]
+Loading weights:   6%|▌         | 35/580 [00:01<00:17, 31.58it/s]
+Loading weights:   7%|▋         | 42/580 [00:01<00:14, 38.10it/s]
+Loading weights:   8%|▊         | 49/580 [00:01<00:12, 41.49it/s]
+Loading weights:   9%|▉         | 54/580 [00:01<00:14, 37.00it/s]
+Loading weights:  10%|█         | 58/580 [00:02<00:26, 19.94it/s]
+Loading weights:  11%|█         | 61/580 [00:02<00:30, 17.27it/s]
+Loading weights:  11%|█         | 64/580 [00:02<00:28, 18.31it/s]
+Loading weights:  12%|█▏        | 68/580 [00:02<00:24, 20.84it/s]
+Loading weights:  13%|█▎        | 73/580 [00:02<00:22, 22.87it/s]
+Loading weights:  14%|█▍        | 80/580 [00:02<00:16, 29.75it/s]
+Loading weights:  14%|█▍        | 84/580 [00:03<00:16, 29.36it/s]
+Loading weights:  15%|█▌        | 88/580 [00:03<00:17, 28.27it/s]
+Loading weights:  17%|█▋        | 96/580 [00:03<00:13, 34.72it/s]
+Loading weights:  17%|█▋        | 100/580 [00:03<00:16, 28.71it/s]
+Loading weights:  18%|█▊        | 105/580 [00:03<00:16, 28.53it/s]
+Loading weights:  21%|██        | 120/580 [00:03<00:09, 48.87it/s]
+Loading weights:  22%|██▏       | 126/580 [00:04<00:09, 49.10it/s]
+Loading weights:  23%|██▎       | 133/580 [00:04<00:09, 45.93it/s]
+Loading weights:  24%|██▍       | 139/580 [00:04<00:09, 46.65it/s]
+Loading weights:  25%|██▍       | 144/580 [00:04<00:10, 41.99it/s]
+Loading weights:  26%|██▌       | 149/580 [00:04<00:12, 34.99it/s]
+Loading weights:  26%|██▋       | 153/580 [00:04<00:12, 32.95it/s]
+Loading weights:  28%|██▊       | 161/580 [00:04<00:10, 39.67it/s]
+Loading weights:  29%|██▊       | 166/580 [00:05<00:11, 36.62it/s]
+Loading weights:  29%|██▉       | 170/580 [00:05<00:13, 29.29it/s]
+Loading weights:  31%|███▏      | 182/580 [00:05<00:10, 37.93it/s]
+Loading weights:  32%|███▏      | 186/580 [00:05<00:11, 33.69it/s]
+Loading weights:  33%|███▎      | 192/580 [00:05<00:10, 37.61it/s]
+Loading weights:  34%|███▍      | 196/580 [00:06<00:10, 37.33it/s]
+Loading weights:  35%|███▍      | 202/580 [00:06<00:08, 42.33it/s]
+Loading weights:  36%|███▌      | 207/580 [00:06<00:10, 35.29it/s]
+Loading weights:  36%|███▋      | 211/580 [00:06<00:12, 30.42it/s]
+Loading weights:  37%|███▋      | 215/580 [00:06<00:12, 29.23it/s]
+Loading weights:  38%|███▊      | 219/580 [00:06<00:13, 26.05it/s]
+Loading weights:  39%|███▉      | 227/580 [00:06<00:09, 35.82it/s]
+Loading weights:  40%|████      | 234/580 [00:07<00:08, 41.39it/s]
+Loading weights:  41%|████      | 239/580 [00:07<00:11, 29.20it/s]
+Loading weights:  44%|████▍     | 258/580 [00:07<00:05, 56.41it/s]
+Loading weights:  46%|████▌     | 266/580 [00:07<00:05, 57.66it/s]
+Loading weights:  47%|████▋     | 274/580 [00:07<00:06, 47.14it/s]
+Loading weights:  48%|████▊     | 280/580 [00:08<00:09, 33.13it/s]
+Loading weights:  49%|████▉     | 286/580 [00:08<00:08, 33.95it/s]
+Loading weights:  51%|█████     | 293/580 [00:08<00:07, 39.34it/s]
+Loading weights:  52%|█████▏    | 300/580 [00:08<00:06, 41.53it/s]
+Loading weights:  53%|█████▎    | 305/580 [00:08<00:07, 34.39it/s]
+Loading weights:  53%|█████▎    | 310/580 [00:09<00:09, 29.56it/s]
+Loading weights: 100%|██████████| 580/580 [00:09<00:00, 63.30it/s]
+[transformers] The tokenizer you are loading from '$RFPU_DATA\checkpoints\rfpu-v15\qwen3.5-4b-rv1' with an incorrect regex pattern: https://huggingface.co/mistralai/Mistral-Small-3.1-24B-Instruct-2503/discussions/84#69121093e8b480e709447d5e. This will lead to incorrect tokenization. You should set the `fix_mistral_regex=True` flag when loading this tokenizer to fix this issue.
+loaded in 30s
+[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.
+[transformers] `causal_conv1d_update` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[transformers] `fused_recurrent_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.
+  26500 tokens (425 text, 26074 chip) 78s
+<tool_call>
+<function=rf_levels>
+<parameter=capture>
+14
+</parameter>
+</function>
+</tool_call>
+<tool_response>
+capture=14 synthetic test signal A fs=1MS/s
+samples=1024 (Q15)
+mean_power_dbfs=-15.5
+peak_power_dbfs=-10.2 at_sample=535
+noise_floor_dbfs=-48.9 (quietest 64-sample window)
+loudest_window_dbfs=-10.4
+active_windows=5/16 (power > 4x quietest) first_active_sample=320 last_active_sample_end=640
+not_measured=spectrum and frequency offset (use rf_analyze), modulation, coding rate, symbol rate, occupied bandwidth, number of transmitters, distance, direction of arrival, bit error rate, protocol or packet contents (this tool reports only the values above)
+</tool_response>
+<think>
+
+</think>
+
+The noise floor of capture 14 is **-48.9 dBFS**, and its loudest 64-sample window is **-10.4 dBFS**.<|im_end|>
+625 text + 26581 chip tokens, 116s, lock error None
+Traceback (most recent call last):
+  File "v15\viz\record.py", line 240, in <module>
+    main()
+  File "v15\viz\record.py", line 220, in main
+    "mlp_absmax": float(np.abs(mlp).max()), "head_max": float(hd.max())}
+                        ^^^^^^^^^^^^^^^^^
+  File ".venv\Lib\site-packages\numpy\_core\_methods.py", line 41, in _amax
+    return umr_maximum(a, axis, None, out, keepdims, initial, where)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: zero-size array to reduction operation maximum which has no identity

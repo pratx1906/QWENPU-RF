@@ -1,0 +1,786 @@
+
+Loading weights:   0%|          | 0/608 [00:00<?, ?it/s]
+Loading weights:   1%|1         | 7/608 [00:00<00:20, 29.31it/s]
+Loading weights:   2%|2         | 14/608 [00:00<00:15, 37.89it/s]
+Loading weights:   3%|3         | 19/608 [00:00<00:21, 27.64it/s]
+Loading weights:   4%|3         | 23/608 [00:00<00:24, 23.54it/s]
+Loading weights:   4%|4         | 26/608 [00:01<00:31, 18.25it/s]
+Loading weights:   5%|4         | 30/608 [00:01<00:34, 16.71it/s]
+Loading weights:   6%|5         | 36/608 [00:01<00:24, 23.22it/s]
+Loading weights:   7%|6         | 40/608 [00:01<00:31, 18.14it/s]
+Loading weights:   7%|7         | 43/608 [00:02<00:37, 15.19it/s]
+Loading weights:   8%|7         | 46/608 [00:02<00:32, 17.12it/s]
+Loading weights:   8%|8         | 49/608 [00:02<00:30, 18.27it/s]
+Loading weights:   9%|8         | 52/608 [00:02<00:31, 17.72it/s]
+Loading weights:   9%|9         | 55/608 [00:02<00:30, 18.38it/s]
+Loading weights:  10%|9         | 58/608 [00:03<00:36, 14.99it/s]
+Loading weights:  10%|#         | 61/608 [00:03<00:32, 17.04it/s]
+Loading weights:  10%|#         | 63/608 [00:03<00:32, 16.54it/s]
+Loading weights:  11%|#         | 65/608 [00:03<00:37, 14.65it/s]
+Loading weights:  11%|#1        | 67/608 [00:03<00:35, 15.07it/s]
+Loading weights:  12%|#1        | 70/608 [00:03<00:37, 14.42it/s]
+Loading weights:  12%|#2        | 74/608 [00:03<00:27, 19.13it/s]
+Loading weights:  13%|#2        | 77/608 [00:04<00:41, 12.66it/s]
+Loading weights:  14%|#3        | 85/608 [00:04<00:27, 18.87it/s]
+Loading weights:  14%|#4        | 88/608 [00:04<00:29, 17.90it/s]
+Loading weights:  15%|#4        | 91/608 [00:04<00:27, 19.04it/s]
+Loading weights:  15%|#5        | 94/608 [00:05<00:34, 14.85it/s]
+Loading weights:  16%|#5        | 96/608 [00:05<00:33, 15.18it/s]
+Loading weights:  16%|#6        | 98/608 [00:05<00:43, 11.68it/s]
+Loading weights:  17%|#7        | 106/608 [00:05<00:29, 17.29it/s]
+Loading weights:  18%|#7        | 108/608 [00:06<00:29, 17.09it/s]
+Loading weights:  18%|#8        | 110/608 [00:06<00:29, 16.96it/s]
+Loading weights:  18%|#8        | 112/608 [00:06<00:35, 14.14it/s]
+Loading weights:  19%|#8        | 114/608 [00:06<00:39, 12.62it/s]
+Loading weights:  20%|#9        | 121/608 [00:07<00:30, 16.10it/s]
+Loading weights:  20%|##        | 123/608 [00:07<00:29, 16.32it/s]
+Loading weights:  21%|##        | 125/608 [00:07<00:29, 16.14it/s]
+Loading weights:  21%|##        | 127/608 [00:07<00:33, 14.38it/s]
+Loading weights:  23%|##2       | 137/608 [00:07<00:20, 22.57it/s]
+Loading weights:  23%|##3       | 140/608 [00:07<00:20, 22.83it/s]
+Loading weights:  24%|##3       | 143/608 [00:08<00:32, 14.30it/s]
+Loading weights:  25%|##4       | 150/608 [00:08<00:21, 21.36it/s]
+Loading weights:  25%|##5       | 153/608 [00:08<00:23, 19.18it/s]
+Loading weights:  26%|##5       | 157/608 [00:08<00:23, 19.25it/s]
+Loading weights:  26%|##6       | 160/608 [00:09<00:29, 15.14it/s]
+Loading weights:  27%|##6       | 162/608 [00:09<00:39, 11.40it/s]
+Loading weights:  27%|##6       | 164/608 [00:09<00:35, 12.43it/s]
+Loading weights:  27%|##7       | 166/608 [00:10<00:53,  8.32it/s]
+Loading weights:  29%|##8       | 175/608 [00:10<00:31, 13.54it/s]
+Loading weights:  29%|##9       | 179/608 [00:10<00:28, 15.19it/s]
+Loading weights:  30%|###       | 183/608 [00:10<00:25, 17.00it/s]
+Loading weights:  31%|###       | 187/608 [00:11<00:23, 17.87it/s]
+Loading weights:  31%|###1      | 190/608 [00:11<00:26, 16.06it/s]
+Loading weights:  32%|###2      | 195/608 [00:11<00:19, 20.95it/s]
+Loading weights:  33%|###2      | 198/608 [00:11<00:19, 20.96it/s]
+Loading weights:  33%|###3      | 201/608 [00:11<00:25, 15.67it/s]
+Loading weights:  34%|###3      | 204/608 [00:12<00:23, 17.44it/s]
+Loading weights:  34%|###4      | 209/608 [00:12<00:20, 19.04it/s]
+Loading weights:  35%|###4      | 212/608 [00:12<00:19, 20.11it/s]
+Loading weights:  35%|###5      | 215/608 [00:12<00:19, 20.50it/s]
+Loading weights:  36%|###5      | 218/608 [00:12<00:24, 16.16it/s]
+Loading weights:  36%|###6      | 220/608 [00:13<00:31, 12.50it/s]
+Loading weights:  37%|###6      | 223/608 [00:13<00:29, 12.85it/s]
+Loading weights:  37%|###7      | 225/608 [00:13<00:38,  9.95it/s]
+Loading weights:  37%|###7      | 227/608 [00:14<00:50,  7.59it/s]
+Loading weights:  40%|###9      | 242/608 [00:14<00:19, 18.45it/s]
+Loading weights:  40%|####      | 244/608 [00:14<00:21, 16.95it/s]
+Loading weights:  40%|####      | 246/608 [00:14<00:23, 15.72it/s]
+Loading weights:  41%|####      | 248/608 [00:15<00:22, 15.96it/s]
+Loading weights:  42%|####1     | 254/608 [00:15<00:15, 22.14it/s]
+Loading weights:  42%|####2     | 257/608 [00:15<00:19, 17.72it/s]
+Loading weights:  43%|####2     | 260/608 [00:15<00:26, 13.08it/s]
+Loading weights:  44%|####3     | 266/608 [00:15<00:17, 19.07it/s]
+Loading weights:  44%|####4     | 269/608 [00:16<00:21, 15.70it/s]
+Loading weights:  45%|####4     | 273/608 [00:16<00:21, 15.55it/s]
+Loading weights:  45%|####5     | 276/608 [00:16<00:19, 17.06it/s]
+Loading weights:  46%|####5     | 279/608 [00:16<00:22, 14.43it/s]
+Loading weights:  47%|####6     | 285/608 [00:17<00:16, 19.91it/s]
+Loading weights:  47%|####7     | 288/608 [00:17<00:20, 15.67it/s]
+Loading weights:  49%|####8     | 296/608 [00:17<00:12, 24.33it/s]
+Loading weights:  49%|####9     | 300/608 [00:17<00:14, 20.95it/s]
+Loading weights:  50%|####9     | 303/608 [00:18<00:19, 15.85it/s]
+Loading weights: 100%|##########| 608/608 [00:18<00:00, 33.42it/s]
+[transformers] The tokenizer you are loading from '$RFPU_DATA\checkpoints\QwenPU-published' with an incorrect regex pattern: https://huggingface.co/mistralai/Mistral-Small-3.1-24B-Instruct-2503/discussions/84#69121093e8b480e709447d5e. This will lead to incorrect tokenization. You should set the `fix_mistral_regex=True` flag when loading this tokenizer to fix this issue.
+[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.
+[transformers] `causal_conv1d_update` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[transformers] `fused_recurrent_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.
+  500 tokens (28 text, 471 chip) 2s: F0(2) NT F0(62) J(16) NT F0(0) V(195) F1(1)
+  1000 tokens (60 text, 939 chip) 4s: F0(103) NT F0(1) BYTE(103) 'g' V(833) F1(4) J(4023)
+  1500 tokens (94 text, 1405 chip) 6s: F1(0) F0(5) F0(6) F0(6) J(197) V(25492) F1(5) F0(1024)
+  2000 tokens (94 text, 1905 chip) 6s: F0(3987) J(191) F0(16) F0(16) J(197) V(25532) F1(5) F0(1024)
+  2500 tokens (94 text, 2405 chip) 7s: F0(32767) F0(24797) F0(1) F0(32766) F0(32767) F0(31204) F0(32767) F0(23233)
+  3000 tokens (94 text, 2905 chip) 7s: F0(32767) F0(32767) F0(22190) F0(32767) V(6804) F1(1) F0(1) F0(32767)
+  3500 tokens (94 text, 3405 chip) 7s: F0(88) F0(900) F0(7744) F0(8644) V(26560) F1(25) F0(0) F0(0)
+  4000 tokens (94 text, 3905 chip) 8s: F0(0) F0(0) F0(5356) F0(0) F0(22331) F0(0) F0(32767) F0(32767)
+  4500 tokens (94 text, 4405 chip) 8s: V(16416) F1(3) F0(0) F0(0) F0(0) V(1408) F1(32767) F0(32767)
+  5000 tokens (94 text, 4905 chip) 8s: F0(440) F0(0) V(4849) F1(4) F0(0) F0(0) F0(0) F0(31888)
+  5500 tokens (94 text, 5405 chip) 9s: V(5411) F1(5) F0(0) F0(0) F0(0) F0(2472) F0(0) V(7883)
+  6000 tokens (94 text, 5905 chip) 9s: F0(32664) F0(26384) F0(32767) V(31173) F1(5) F0(1) F0(32767) F0(0)
+  6500 tokens (94 text, 6405 chip) 9s: F0(1024) J(152) F0(32704) F0(32752) F0(2752) F0(0) V(459) F1(7)
+  7000 tokens (94 text, 6905 chip) 10s: J(191) F0(117) F0(53) J(197) V(25936) F1(5) F0(1024) J(152)
+  7500 tokens (94 text, 7405 chip) 10s: F0(71) F0(32649) F0(5041) F0(14161) V(19202) F1(0) V(28263) F1(74)
+  8000 tokens (94 text, 7905 chip) 10s: V(29034) F1(32764) F0(0) F0(32767) F0(118) F0(7) F0(13924) F0(49)
+  8500 tokens (94 text, 8405 chip) 11s: F0(32764) F0(3136) F0(16) F0(3152) V(2215) F1(83) F0(0) F0(0)
+  9000 tokens (94 text, 8905 chip) 11s: F0(32767) F0(32767) F0(32606) F0(32762) V(26244) F1(0) F0(36) V(26280)
+  9500 tokens (94 text, 9405 chip) 11s: F0(0) F0(32767) F0(32648) F0(32614) F0(14400) V(23716) F1(0) V(5348)
+  10000 tokens (94 text, 9905 chip) 12s: F0(177) F0(49) J(197) V(26176) F1(5) F0(1024) J(152) F0(79)
+  10500 tokens (94 text, 10405 chip) 12s: F0(0) F0(5513) F0(0) F0(10529) F0(0) F0(0) F0(0) F0(27518)
+  11000 tokens (94 text, 10905 chip) 12s: F0(32767) V(27172) F1(0) F0(1) F0(32767) F0(0) F0(3612) F0(0)
+  11500 tokens (94 text, 11405 chip) 12s: F0(32767) F0(0) F0(18573) F0(32767) F0(19466) F0(0) F0(32767) F0(32767)
+  12000 tokens (94 text, 11905 chip) 13s: F0(32767) F0(0) F0(32693) F0(32767) V(4948) F1(32767) F0(1) F0(32766)
+  12500 tokens (94 text, 12405 chip) 13s: F0(0) V(28879) F1(32766) F0(0) F0(32767) F0(32767) F0(15300) F0(0)
+  13000 tokens (94 text, 12905 chip) 13s: F1(10) F0(1) F0(32767) F0(0) F0(25046) F0(32767) V(12521) F1(32764)
+  13500 tokens (94 text, 13405 chip) 14s: F0(227) F0(3264) F0(0) V(24035) F1(12) F0(0) F0(0) F0(0)
+  14000 tokens (94 text, 13905 chip) 14s: F0(368) F0(368) J(191) F0(257) F0(1) J(197) V(26496) F1(5)
+  14500 tokens (94 text, 14405 chip) 14s: F0(101) F0(784) F0(10201) F0(10985) V(4350) F1(158) F0(0) F0(0)
+  15000 tokens (94 text, 14905 chip) 15s: F0(15) F0(32704) F0(225) F0(4096) F0(4321) V(23368) F1(164) F0(0)
+  15500 tokens (94 text, 15405 chip) 15s: F1(32766) F0(0) F0(32767) F0(97) F0(71) F0(9409) F0(5041) F0(14450)
+  16000 tokens (94 text, 15905 chip) 15s: V(8523) F1(32767) F0(0) F0(32767) F0(59) F0(152) F0(3481) V(23104)
+  16500 tokens (94 text, 16405 chip) 16s: F0(50) F0(32748) F0(2500) F0(400) F0(2900) V(26759) F1(180) F0(0)
+  17000 tokens (94 text, 16905 chip) 16s: F0(18) V(21025) F1(0) F0(324) V(21349) F1(0) V(15270) F1(185)
+  17500 tokens (94 text, 17405 chip) 16s: F0(0) F0(0) F0(0) V(4236) F1(32765) F0(32767) F0(1) V(1401)
+  18000 tokens (94 text, 17905 chip) 17s: F1(52) V(19457) F1(2888) V(4097) F1(2941) V(4039) V(8652) F2(1)
+  18500 tokens (94 text, 18405 chip) 17s: F1(181) V(10161) F1(2930) V(22997) F1(3111) V(28671) V(32247) F2(1)
+  19000 tokens (94 text, 18905 chip) 17s: V(14204) F2(2) F0(1) F0(0) F0(29028) F0(9236) V(28432) F1(426)
+  19500 tokens (94 text, 19405 chip) 18s: F0(32767) F0(1) V(20375) V(3587) F2(3) F0(1) F0(0) F0(4853)
+  20000 tokens (94 text, 19905 chip) 18s: V(5137) F1(1933) V(482) F1(3011) V(23707) F1(5301) F0(0) F0(1)
+  20500 tokens (94 text, 20405 chip) 18s: J(197) V(26964) F1(5) F0(1024) J(152) F0(9164) F0(3689) V(10448)
+  21000 tokens (94 text, 20905 chip) 19s: F0(382) F0(62) J(197) V(26996) F1(5) F0(1024) J(152) F0(24216)
+  21500 tokens (94 text, 21405 chip) 19s: F0(0) F0(1) V(6536) F1(46) V(27360) F1(274) J(191) F0(390)
+  22000 tokens (94 text, 21905 chip) 19s: F1(2879) V(17805) V(778) F2(3) F0(0) F0(1) V(32478) F1(44)
+  22500 tokens (94 text, 22405 chip) 20s: V(24698) F1(2817) V(8185) F1(24318) F0(0) F0(1) V(897) F1(44)
+  23000 tokens (94 text, 22905 chip) 20s: F0(414) F0(30) J(197) V(27124) F1(5) F0(1024) J(152) F0(27599)
+  23500 tokens (94 text, 23405 chip) 20s: V(29174) V(12309) F2(3) F0(0) F0(0) F0(0) V(28736) F1(32620)
+  24000 tokens (94 text, 23905 chip) 21s: F0(0) V(30432) F1(144) F0(0) V(27541) F1(20894) F0(0) F0(0)
+  24500 tokens (94 text, 24405 chip) 21s: V(13972) V(28008) F2(1) F0(0) F0(2) F0(2) V(12158) F1(99)
+  25000 tokens (94 text, 24905 chip) 21s: F2(2) F0(2) F0(2) F0(32118) F0(22920) V(29284) F1(12) V(22592)
+  25500 tokens (94 text, 25405 chip) 22s: F1(45) V(17211) F1(321) J(191) F0(455) F0(7) J(197) V(27288)
+  26000 tokens (94 text, 25905 chip) 22s: V(30736) F1(548) F0(0) V(30667) V(23237) F2(0) F0(0) F0(1)
+  26500 tokens (94 text, 26405 chip) 22s: F1(175) F0(0) V(27669) V(32479) F2(0) F0(0) F0(1) F0(1)
+  27000 tokens (94 text, 26905 chip) 23s: F0(1) F0(1) V(9682) F1(32597) F0(32767) V(214) V(8454) F2(1)
+  27500 tokens (94 text, 27405 chip) 23s: V(21804) V(17504) F2(1) F0(0) F0(1) F0(1) V(28920) F1(32299)
+  28000 tokens (94 text, 27905 chip) 23s: F0(0) V(1955) V(26327) F2(1) F0(0) F0(1) F0(1) V(27277)
+  28500 tokens (94 text, 28405 chip) 24s: F0(1) F0(1) V(16399) F1(31930) F0(32767) V(15316) V(1504) F2(2)
+  29000 tokens (94 text, 28905 chip) 24s: V(10161) F2(2) F0(1) F0(0) F0(1) V(6136) F1(1254) F0(0)
+  29500 tokens (94 text, 29405 chip) 24s: V(8685) V(18885) F2(0) F0(0) F0(4) F0(4) V(27213) F1(31601)
+  30000 tokens (94 text, 29905 chip) 25s: V(8694) F1(1995) F0(0) V(27724) V(8394) F2(1) F0(0) F0(4)
+  30500 tokens (94 text, 30405 chip) 25s: F2(3) F0(1) F0(0) F0(1) V(22502) F1(2408) F0(0) V(2803)
+  31000 tokens (94 text, 30905 chip) 26s: V(12064) F2(3) F0(1) F0(0) F0(1) V(15831) F1(2608) F0(0)
+  31500 tokens (94 text, 31405 chip) 26s: F0(0) F0(4) F0(4) V(25936) F1(1) F0(0) F0(0) V(26684)
+  32000 tokens (94 text, 31905 chip) 26s: F0(5) V(10915) F1(47) V(22930) F1(2215) J(191) F0(560) F0(48)
+  32500 tokens (94 text, 32405 chip) 27s: F0(0) V(7538) F1(6572) F0(0) F0(2) F0(2) V(4168) F1(196)
+  33000 tokens (94 text, 32905 chip) 27s: V(9747) F2(1) F0(0) F0(5) F0(5) V(2896) F1(30021) F0(32767)
+  33500 tokens (94 text, 33405 chip) 27s: F2(1) F0(1) F0(4) F0(5) V(30776) F1(29911) F0(32767) F0(1)
+  34000 tokens (94 text, 33905 chip) 28s: V(27472) F1(29929) F0(32767) F0(1) V(9744) V(23722) F2(2) F0(6)
+  34500 tokens (94 text, 34405 chip) 28s: F2(3) F0(1) F0(4) F0(5) V(22048) F1(29946) F0(32767) F0(1)
+  35000 tokens (94 text, 34905 chip) 28s: F0(6) F0(6) F0(23083) F0(31502) V(17209) F1(2862) V(29892) F1(48)
+  35500 tokens (94 text, 35405 chip) 29s: V(16384) F1(144) V(26176) F1(3008) V(25954) V(23382) F2(2) F0(0)
+  36000 tokens (94 text, 35905 chip) 29s: F0(23690) F0(29035) V(31332) F1(2514) V(8889) F1(425) V(7453) F1(2940)
+  36500 tokens (94 text, 36405 chip) 29s: V(15665) F1(682) V(21226) F1(3005) V(5757) F1(5351) F0(0) F0(7)
+  37000 tokens (94 text, 36905 chip) 29s: F0(102) F0(8100) F0(10404) V(18504) F1(0) V(20634) V(25867) F2(0)
+  37500 tokens (94 text, 37405 chip) 30s: F0(2500) F0(2516) V(26075) V(25872) F2(0) F0(0) F0(7) F0(39)
+  38000 tokens (94 text, 37905 chip) 30s: F0(7) F0(155) F0(5274) J(191) F0(659) F0(19) J(197) V(28104)
+  38500 tokens (94 text, 38405 chip) 30s: V(25885) F2(0) F0(0) F0(7) F0(236) F0(9299) J(191) F0(668)
+  39000 tokens (94 text, 38905 chip) 31s: F0(70) F0(17) F0(29058) F0(32767) V(7923) V(18429) F2(2) F0(1)
+  39500 tokens (94 text, 39405 chip) 31s: F0(0) V(11039) V(18428) F2(2) F0(0) F0(2) F0(2) F0(1386)
+  40000 tokens (94 text, 39905 chip) 31s: F0(0) F0(6) F0(6) F0(7446) F0(0) F0(0) V(26528) V(22096)
+  40500 tokens (94 text, 40405 chip) 31s: F0(5) F0(6) V(16290) F1(32767) F0(32767) F0(1) V(1194) V(22097)
+  41000 tokens (94 text, 40905 chip) 32s: F0(6) F0(6) F0(32732) F0(32696) F0(1296) F0(5184) F0(6480) V(5356)
+  41500 tokens (94 text, 41405 chip) 32s: F1(0) V(18153) F1(0) V(26031) V(25906) F2(0) F0(0) F0(7)
+  42000 tokens (94 text, 41905 chip) 32s: F0(28) J(197) V(28396) F1(5) F0(1024) J(152) F0(32679) F0(32703)
+  42500 tokens (94 text, 42405 chip) 33s: F0(32667) F0(143) V(16305) F1(32767) F0(32767) V(20547) V(18429) F2(2)
+  43000 tokens (94 text, 42905 chip) 33s: V(28468) F1(5) F0(1024) J(152) F0(32630) F0(32707) F0(26834) F0(32767)
+  43500 tokens (94 text, 43405 chip) 33s: F1(5) F0(1024) J(152) F0(53) F0(32689) F0(26832) F0(32767) V(10271)
+  44000 tokens (94 text, 43905 chip) 33s: J(152) F0(101) F0(32751) F0(25294) F0(32767) V(21393) V(18428) F2(2)
+  44500 tokens (94 text, 44405 chip) 34s: V(18429) F2(2) F0(0) F0(2) F0(2) V(29700) F1(0) F0(0)
+  45000 tokens (94 text, 44905 chip) 34s: F0(290) F0(0) V(1108) V(18429) F2(2) F0(0) F0(2) F0(2)
+  45500 tokens (94 text, 45405 chip) 34s: V(18428) F2(2) F0(1) F0(1) F0(2) F0(27780) F0(32767) V(20697)
+  46000 tokens (94 text, 45905 chip) 35s: F1(32767) F0(32767) V(21995) V(18427) F2(2) F0(1) F0(1) F0(2)
+  46500 tokens (94 text, 46405 chip) 35s: F0(32767) V(5244) V(18428) F2(2) F0(1) F0(1) F0(2) V(17835)
+  47000 tokens (94 text, 46905 chip) 35s: F0(1) F0(2) F0(468) F0(0) V(30271) V(22099) F2(2) F0(0)
+  47500 tokens (94 text, 47405 chip) 35s: F0(2) F0(23939) F0(32767) V(21760) V(18429) F2(2) F0(1) F0(1)
+  48000 tokens (94 text, 47905 chip) 36s: F0(2) F0(32152) F0(32767) V(8627) V(18429) F2(2) F0(1) F0(1)
+  48500 tokens (94 text, 48405 chip) 36s: F0(32767) V(22644) V(18428) F2(2) F0(1) F0(1) F0(2) F0(4070)
+  49000 tokens (94 text, 48905 chip) 36s: V(22098) F2(2) F0(1) F0(5) F0(6) F0(76) F0(0) F0(0)
+  49500 tokens (94 text, 49405 chip) 36s: F2(2) F0(0) F0(6) F0(6) F0(4712) F0(0) F0(0) V(10250)
+  50000 tokens (94 text, 49905 chip) 37s: V(22099) F2(2) F0(0) F0(6) F0(6) F0(3906) F0(0) F0(0)
+  50500 tokens (94 text, 50405 chip) 37s: V(21933) V(22098) F2(2) F0(1) F0(5) F0(6) V(5408) F1(32767)
+  51000 tokens (94 text, 50905 chip) 37s: F0(10360) F0(0) V(6743) V(22099) F2(2) F0(0) F0(6) F0(6)
+  51500 tokens (94 text, 51405 chip) 38s: F0(1) F0(1) F0(2) F0(32394) F0(32767) V(30732) V(18431) F2(2)
+  52000 tokens (94 text, 51905 chip) 38s: F0(1) F0(2) F0(30496) F0(32767) V(19065) V(18430) F2(2) F0(1)
+  52500 tokens (94 text, 52405 chip) 38s: F0(1) F0(1) F0(2) F0(4301) F0(0) V(17985) V(22099) F2(2)
+  53000 tokens (94 text, 52905 chip) 38s: F0(28815) F0(32767) V(2401) V(22099) F2(2) F0(1) F0(5) F0(6)
+  53500 tokens (94 text, 53405 chip) 39s: F0(1) V(12562) V(22099) F2(2) F0(7) F0(6) F0(32735) F0(4)
+  54000 tokens (94 text, 53905 chip) 39s: F0(2809) V(23834) F1(0) V(7441) V(26035) F2(0) F0(0) F0(7)
+  54500 tokens (94 text, 54405 chip) 39s: F1(2) V(23314) F1(2) V(830) V(26043) F2(0) F0(0) F0(7)
+  55000 tokens (94 text, 54905 chip) 39s: F0(7) F0(15) F0(872) J(191) F0(967) F0(7) J(197) V(29336)
+  55500 tokens (94 text, 55405 chip) 40s: F0(16) J(197) V(29372) F1(5) F0(1024) J(152) F0(32655) F0(33)
+  56000 tokens (94 text, 55905 chip) 40s: V(17626) V(18427) F2(2) F0(1) F0(1) F0(2) F0(26432) F0(32767)
+  56500 tokens (94 text, 56405 chip) 40s: V(18429) F2(2) F0(0) F0(2) F0(2) F0(553) F0(0) V(9012)
+  57000 tokens (94 text, 56905 chip) 41s: F0(0) F0(6) F0(6) F0(164) F0(0) F0(0) V(29065) V(22102)
+  57500 tokens (94 text, 57405 chip) 41s: F0(10758) F0(0) F0(0) V(16975) V(22103) F2(2) F0(6) F0(6)
+  58000 tokens (94 text, 57905 chip) 41s: V(10682) V(22104) F2(2) F0(7) F0(6) F0(84) F0(32628) F0(7056)
+  58500 tokens (131 text, 58368 chip) 43s: F0(115) F0(1) BYTE(115) 's' F0(61) F0(1) BYTE(61) '='
+  59000 tokens (151 text, 58848 chip) 45s: F0(16) J(376) V(19832) F1(0) F0(4958) J(383) F0(264) F0(2)
+  59500 tokens (181 text, 59318 chip) 47s: BYTE(101) 'e' F0(116) F0(1) BYTE(116) 't' F0(101) F0(1)
+  60000 tokens (251 text, 59748 chip) 50s: BYTE(40) '(' F0(112) F0(1) BYTE(112) 'p' F0(111) F0(1)
+  60500 tokens (321 text, 60178 chip) 54s: F0(15) F0(32) J(872) ST1 F0(384) F0(16) F0(32) J(872)
+  61000 tokens (321 text, 60678 chip) 55s: V(4849) F1(1) V(13524) F1(2) F0(32766) F0(2) V(2) F1(32766)
+  61500 tokens (321 text, 61178 chip) 55s: V(1020) F1(32761) V(32766) F1(1) V(13330) F1(2) F0(6) F0(2)
+  62000 tokens (321 text, 61678 chip) 55s: F1(1) V(9626) F1(32751) F0(0) V(5326) F1(32765) F0(0) F0(32764)
+  62500 tokens (321 text, 62178 chip) 55s: F0(2) V(32766) F1(1) V(19748) F1(20) F0(0) V(15626) F1(5)
+  63000 tokens (321 text, 62678 chip) 56s: F0(320) F0(392) F0(0) F0(0) F0(169) F0(0) F0(0) ST0
+  63500 tokens (321 text, 63178 chip) 56s: ST0 ST0 F0(0) F0(0) F0(32763) F0(2) V(5) F1(32763)
+  64000 tokens (321 text, 63678 chip) 56s: F1(0) V(9606) F1(32759) V(4) F1(32764) V(7267) F1(32767) F0(2)
+  64500 tokens (321 text, 64178 chip) 56s: F0(1) ST0 ST0 F0(50) F0(32749) F0(1) R(952) F0(32767)
+  65000 tokens (321 text, 64678 chip) 57s: F1(32765) V(19196) F1(32766) V(19199) F1(32763) V(19196) F1(32766) V(5625)
+  65500 tokens (321 text, 65178 chip) 57s: F1(32765) V(2) F1(32766) V(1) F1(32767) F0(32764) F0(32765) V(4)
+  66000 tokens (321 text, 65678 chip) 57s: V(32764) F1(3) V(32763) F1(4) V(3) F1(32765) V(13570) F1(3)
+  66500 tokens (321 text, 66178 chip) 57s: F1(32767) F0(0) V(6) F1(32762) F0(0) F0(1) F0(0) V(1)
+  67000 tokens (321 text, 66678 chip) 58s: V(17546) F1(3) V(681) F1(5) V(9598) F1(32767) V(31115) F1(7)
+  67500 tokens (321 text, 67178 chip) 58s: F0(2) F0(2) V(32766) F1(1) V(2) F1(32766) V(32766) F1(1)
+  68000 tokens (321 text, 67678 chip) 58s: V(2324) F1(7) V(13572) F1(1) V(32756) F1(11) V(13572) F1(1)
+  68500 tokens (321 text, 68178 chip) 58s: F1(32750) F0(32767) F0(8) V(1) F1(32767) V(1) F1(32767) V(32760)
+  69000 tokens (321 text, 68678 chip) 59s: F0(32764) F0(32760) V(5624) F1(32765) V(31116) F1(6) V(11248) F1(32762)
+  69500 tokens (321 text, 69178 chip) 59s: V(5) F1(32763) V(1) F1(32767) V(1) F1(32767) F0(0) F0(32762)
+  70000 tokens (321 text, 69678 chip) 59s: F0(0) V(5) F1(32763) V(14970) F1(32762) V(17799) F1(4) V(23070)
+  70500 tokens (321 text, 70178 chip) 59s: V(20801) F1(0) F0(0) V(26280) F1(4) V(2495) F1(32767) F0(23296)
+  71000 tokens (321 text, 70678 chip) 60s: F1(1) V(28794) F1(32765) V(31606) F1(1) V(28794) F1(32765) F0(20010)
+  71500 tokens (321 text, 71178 chip) 60s: V(4113) F1(32759) F0(32767) F0(8) V(2495) F1(32767) V(9140) F1(32765)
+  72000 tokens (321 text, 71678 chip) 60s: V(2008) F1(3) V(8087) F1(4) V(12808) F1(7) V(22718) F1(4)
+  72500 tokens (321 text, 72178 chip) 61s: F0(32466) F0(33) V(302) F1(32466) V(27491) F1(340) V(32735) F1(32)
+  73000 tokens (321 text, 72678 chip) 61s: V(2162) F1(176) V(13790) F1(32344) F0(32696) F0(298) V(14696) F1(32740)
+  73500 tokens (321 text, 73178 chip) 61s: F1(32665) V(11224) F1(32620) V(10805) F1(32521) V(14676) F1(432) V(13802)
+  74000 tokens (321 text, 73678 chip) 61s: F1(32755) F0(32466) F0(33) V(302) F1(32466) V(24989) F1(290) V(32735)
+  74500 tokens (321 text, 74178 chip) 62s: F1(74) F0(291) F0(98) V(11601) F1(111) V(32525) F1(199) V(16406)
+  75000 tokens (321 text, 74678 chip) 62s: V(19188) F1(32740) F0(193) F0(32534) V(15362) F1(136) V(3212) F1(142)
+  75500 tokens (321 text, 75178 chip) 62s: V(22536) F1(109) F0(32492) F0(126) V(492) F1(32513) V(20506) F1(268)
+  76000 tokens (321 text, 75678 chip) 62s: F1(37) V(9666) F1(237) V(17634) F1(90) V(15607) F1(13) V(27619)
+  76500 tokens (321 text, 76178 chip) 63s: V(12986) F1(32675) V(11817) F1(53) F0(90) F0(32476) V(32678) F1(89)
+  77000 tokens (321 text, 76678 chip) 63s: V(29236) F1(108) V(12284) F1(32276) V(16360) F1(32578) V(24345) F1(2096)
+  77500 tokens (321 text, 77178 chip) 63s: V(10768) F1(116) V(8390) F1(44) V(26744) F1(32758) V(18751) F1(253)
+  78000 tokens (321 text, 77678 chip) 64s: F1(32692) V(30270) F1(28) V(12986) F1(32675) V(2699) F1(32752) F0(90)
+  78500 tokens (321 text, 78178 chip) 64s: F1(194) V(18380) F1(32674) V(26238) F1(89) V(3481) F1(28) F0(32560)
+  79000 tokens (321 text, 78678 chip) 64s: V(9998) F1(22) V(27952) F1(280) R(2653) V(17945) F1(19) F0(127)
+  79500 tokens (321 text, 79178 chip) 64s: V(18220) F1(32694) V(289) F1(32479) V(20796) F1(32751) F0(32767) F0(32463)
+  80000 tokens (321 text, 79678 chip) 65s: V(3284) F1(32579) V(8076) F1(87) V(16539) F1(32608) V(20964) F1(210)
+  80500 tokens (321 text, 80178 chip) 65s: F1(32751) V(6) F1(32762) V(32014) F1(17) F0(0) F0(1) F0(0)
+  81000 tokens (321 text, 80678 chip) 65s: V(3613) F1(6) V(6) F1(32762) V(24786) F1(32763) F0(0) F0(1)
+  81500 tokens (321 text, 81178 chip) 65s: V(25283) F1(2) V(31714) F1(6) F0(0) V(2371) F1(32766) F0(0)
+  82000 tokens (321 text, 81678 chip) 66s: F0(0) V(6885) F1(21) F0(0) V(7868) F1(32752) V(25283) F1(2)
+  82500 tokens (321 text, 82178 chip) 66s: V(3) F1(32765) V(32765) F1(2) V(32765) F1(2) F0(0) F0(1)
+  83000 tokens (321 text, 82678 chip) 66s: F0(1) V(32767) F1(0) V(4) F1(32764) F0(0) V(32765) F1(2)
+  83500 tokens (321 text, 83178 chip) 66s: F1(32762) V(32764) F1(3) V(2) F1(32766) F0(4) F0(1) V(27144)
+  84000 tokens (321 text, 83678 chip) 67s: ST0 F0(32737) F0(5) F0(32767) F0(0) ST0 ST0 F0(0)
+  84500 tokens (321 text, 84178 chip) 67s: V(13572) F1(1) V(3972) F1(4) V(28794) F1(32765) V(11922) F1(6)
+  85000 tokens (321 text, 84678 chip) 67s: V(32764) F1(3) V(1) F1(32767) V(32767) F1(0) F0(32767) F0(32767)
+  85500 tokens (321 text, 85178 chip) 67s: V(24820) F1(32763) V(671) F1(15) V(5624) F1(32765) V(31118) F1(4)
+  86000 tokens (321 text, 85678 chip) 68s: F0(32767) V(2) F1(32766) V(32758) F1(9) V(1) F1(32767) R(2212)
+  86500 tokens (321 text, 86178 chip) 68s: F1(2) V(32764) F1(3) V(17546) F1(3) V(23847) F1(9) F0(32766)
+  87000 tokens (321 text, 86678 chip) 68s: F1(32767) V(16) F1(32752) F0(1) F0(32752) F0(1) F0(256) F0(257)
+  87500 tokens (321 text, 87178 chip) 68s: F0(32767) F0(32752) F0(1) F0(256) F0(257) F0(0) F0(320) F0(432)
+  88000 tokens (321 text, 87678 chip) 69s: V(16) F1(32752) F0(3) F0(32766) V(32765) F1(2) V(4) F1(32764)
+  88500 tokens (321 text, 88178 chip) 69s: F1(2) V(20862) F1(32745) F0(0) V(3977) F1(32767) F0(0) V(20862)
+  89000 tokens (321 text, 88678 chip) 69s: F0(0) V(4) F1(32764) V(4) F1(32764) F0(0) F0(0) F0(32765)
+  89500 tokens (321 text, 89178 chip) 69s: ST1 F0(0) F0(0) F0(32764) F0(0) V(4) F1(32764) V(4)
+  90000 tokens (321 text, 89678 chip) 70s: V(22406) F1(6) F0(1) F0(32765) V(3) F1(32765) V(14089) F1(1)
+  90500 tokens (321 text, 90178 chip) 70s: F1(1) V(3306) F1(32761) F0(1) F0(32765) V(3) F1(32765) V(22407)
+  91000 tokens (321 text, 90678 chip) 70s: V(3) F1(32765) V(6572) F1(32761) V(1) F1(32767) V(23604) F1(32761)
+  91500 tokens (321 text, 91178 chip) 70s: F1(32765) V(20726) F1(6) V(1) F1(32767) V(26502) F1(2) F0(1)
+  92000 tokens (342 text, 91657 chip) 72s: F0(0) F0(592) F0(51) F0(1) BYTE(51) '3' NT J(3403)
+  92500 tokens (395 text, 92104 chip) 75s: V(31965) F1(32757) V(0) F1(9672) V(1310) F1(9672) V(1310) F1(9672)
+  93000 tokens (419 text, 92580 chip) 76s: NT F0(0) F0(592) F0(48) F0(1) BYTE(48) '0' NT
+================================================================================ 
+Q0: Capture 14 is a stored IQ recording. Use the RF analyzer: is there a burst in it, roughly which samples does it occupy, how far above the noise floor is it, and what is its frequency in cycles per sample?
+---
+<tool_call>
+<function=rf_analyze>
+<parameter=capture>
+14
+</parameter>
+</function>
+</tool_call>
+<tool_response>
+capture=14 synthetic test signal A fs=1MS/s
+samples=1024 (Q15)
+mean_power_dbfs=-15.5
+peak_power_dbfs=-10.2 at_sample=535
+noise_floor_dbfs=-48.9 (quietest 64-sample window)
+loudest_window_dbfs=-10.4
+active_windows=5/16 (power > 4x quietest) first_active_sample=320 last_active_sample_end=640
+dominant_dft16_bin=3 freq_cycles_per_sample=0.1875 power_share_percent=99
+cfo_cycles_per_sample=0.1899
+</tool_response>
+<think>
+
+</think>
+
+Based on the analysis of capture 14:
+*   **Burst:** Yes, there is a burst.
+*   **Location:** It occupies samples **320 to 640** (inclusive).
+*   **Power:** The burst is roughly **38 dB** above the noise floor (-10.2 dBFS vs -48.9 dBFS).
+*   **Frequency:** The dominant frequency is **0.1875 cycles per sample**.<|im_end|>
+[535 text + 92702 chip tokens, 121s, lock error: None]
+  500 tokens (28 text, 471 chip) 2s: F0(2) NT F0(62) J(16) NT F0(0) V(195) F1(1)
+  1000 tokens (60 text, 939 chip) 5s: F0(116) NT F0(1) BYTE(116) 't' V(713) F1(4) J(4023)
+  1500 tokens (108 text, 1391 chip) 8s: J(152) F0(30021) F0(30337) V(22214) F1(32573) F0(32767) V(30074) F1(195)
+  2000 tokens (108 text, 1891 chip) 8s: F0(0) V(21131) F1(25310) F0(32767) F0(32767) F0(30709) F0(25059) V(12409)
+  2500 tokens (108 text, 2391 chip) 9s: F2(0) F0(0) F0(0) V(16444) F1(7) V(13232) F1(353) J(191)
+  3000 tokens (108 text, 2891 chip) 9s: F1(5) F0(1024) J(152) F0(7203) F0(28911) V(15740) F1(1256) F0(0)
+  3500 tokens (108 text, 3391 chip) 10s: F0(0) V(1838) F1(32708) F0(32767) V(14655) F1(11363) F0(1) F0(32767)
+  4000 tokens (108 text, 3891 chip) 10s: F0(32767) V(9892) F1(43) F0(0) F0(0) V(28113) V(26929) F2(2)
+  4500 tokens (108 text, 4391 chip) 11s: F0(9477) F0(819) V(29209) F1(2740) V(15401) F1(20) V(11842) F1(2761)
+  5000 tokens (108 text, 4891 chip) 11s: F0(0) V(30073) F1(32447) F0(32767) V(9412) V(26512) F2(1) F0(1)
+  5500 tokens (108 text, 5391 chip) 11s: F1(32573) F0(32767) V(19381) V(31936) F2(0) F0(1) F0(32767) F0(0)
+  6000 tokens (108 text, 5891 chip) 12s: F0(0) F0(0) F0(0) V(709) F1(662) F0(0) V(6084) V(2889)
+  6500 tokens (108 text, 6391 chip) 12s: F0(0) V(12625) F1(422) F0(0) V(2983) V(11292) F2(1) F0(0)
+  7000 tokens (108 text, 6891 chip) 13s: F1(8675) F0(0) F0(32767) F0(1446) F0(31562) V(26532) F1(63) V(12644)
+  7500 tokens (108 text, 7391 chip) 13s: F0(37) J(197) V(17680) F1(5) F0(1024) J(152) F0(32274) F0(670)
+  8000 tokens (108 text, 7891 chip) 13s: F2(1) F0(0) F0(0) F0(0) V(7603) F1(30492) F0(32767) V(7969)
+  8500 tokens (108 text, 8391 chip) 14s: F0(32767) V(19036) V(30229) F2(1) F0(1) F0(32767) F0(0) V(12786)
+  9000 tokens (108 text, 8891 chip) 14s: F0(31690) V(23194) F1(32765) F0(32767) V(5121) V(2900) F2(2) F0(1)
+  9500 tokens (108 text, 9391 chip) 15s: F0(5) J(197) V(17808) F1(5) F0(1024) J(152) F0(32722) F0(2043)
+  10000 tokens (108 text, 9891 chip) 15s: J(191) F0(141) F0(13) J(197) V(17840) F1(5) F0(1024) J(152)
+  10500 tokens (108 text, 10391 chip) 16s: V(27507) F1(44) V(16417) F1(452) J(191) F0(149) F0(21) J(197)
+  11000 tokens (108 text, 10891 chip) 16s: V(11521) F2(3) F0(0) F0(1) V(20442) F1(17) V(8531) F1(716)
+  11500 tokens (108 text, 11391 chip) 16s: F1(1236) V(32178) V(15051) F2(3) F0(0) F0(1) V(10408) F1(19)
+  12000 tokens (108 text, 11891 chip) 17s: V(16489) F1(1298) J(191) F0(173) F0(45) J(197) V(17968) F1(5)
+  12500 tokens (108 text, 12391 chip) 17s: F0(1191) V(1464) F1(272) F0(0) V(10552) V(4608) F2(3) F0(0)
+  13000 tokens (108 text, 12891 chip) 17s: F0(1024) J(152) F0(28339) F0(30863) V(9691) F1(32760) F0(32767) V(21050)
+  13500 tokens (108 text, 13391 chip) 18s: J(191) F0(197) F0(5) J(197) V(18064) F1(5) F0(1024) J(152)
+  14000 tokens (108 text, 13891 chip) 18s: V(1027) F1(16) V(10223) F1(121) J(191) F0(205) F0(13) J(197)
+  14500 tokens (108 text, 14391 chip) 19s: V(25024) F2(1) F0(0) F0(2) V(7081) F1(4) V(6708) F1(230)
+  15000 tokens (108 text, 14891 chip) 19s: F0(0) F0(2) V(15321) F1(16) V(15692) F1(280) J(191) F0(221)
+  15500 tokens (108 text, 15391 chip) 19s: F2(2) F0(0) F0(2) V(23749) F1(6) V(19153) F1(404) J(191)
+  16000 tokens (108 text, 15891 chip) 20s: J(197) V(18224) F1(5) F0(1024) J(152) F0(5131) F0(28065) V(21719)
+  16500 tokens (108 text, 16391 chip) 20s: F0(0) F0(0) V(12880) F1(32760) F0(32767) V(31802) F1(21558) F0(1)
+  17000 tokens (108 text, 16891 chip) 21s: F0(0) V(2101) V(2510) F2(2) F0(0) F0(32765) F0(32765) V(18791)
+  17500 tokens (108 text, 17391 chip) 21s: V(15617) V(650) F2(2) F0(32765) F0(32765) F0(29982) F0(29167) V(28548)
+  18000 tokens (108 text, 17891 chip) 22s: F1(1163) V(13001) V(1706) F2(3) F0(0) F0(2) V(5781) F1(18)
+  18500 tokens (108 text, 18391 chip) 22s: F0(22) J(197) V(18388) F1(5) F0(1024) J(152) F0(29679) F0(30942)
+  19000 tokens (108 text, 18891 chip) 22s: F0(1) F0(32767) F0(0) V(16946) F1(705) F0(0) V(31279) F1(30663)
+  19500 tokens (108 text, 19391 chip) 23s: F0(0) F0(32765) F0(32765) V(21434) F1(113) F0(0) F0(0) V(2673)
+  20000 tokens (108 text, 19891 chip) 23s: V(16639) F1(19133) F0(0) F0(2) V(7465) F1(8) V(30198) F1(442)
+  20500 tokens (108 text, 20391 chip) 24s: V(9355) F1(3774) F0(1) F0(0) F0(1) V(23488) F1(1089) F0(0)
+  21000 tokens (108 text, 20891 chip) 24s: F0(32764) F0(32765) V(27978) F1(69) F0(0) F0(0) V(9180) V(18924)
+  21500 tokens (108 text, 21391 chip) 25s: V(29082) F1(431) V(1952) F1(12574) F0(0) F0(3) V(24518) F1(6)
+  22000 tokens (108 text, 21891 chip) 25s: V(13077) F1(11314) F0(0) F0(1) F0(1) V(3108) F1(32114) F0(32767)
+  22500 tokens (108 text, 22391 chip) 25s: F1(1103) V(25379) V(25297) F2(0) F0(0) F0(3) V(7915) F1(17)
+  23000 tokens (108 text, 22891 chip) 26s: F0(24990) V(5148) F1(32482) F0(32767) V(18397) V(19660) F2(0) F0(1)
+  23500 tokens (108 text, 23391 chip) 26s: F1(29) F0(0) V(28968) V(25700) F2(0) F0(0) F0(1) F0(1)
+  24000 tokens (108 text, 23891 chip) 27s: F0(0) F0(1) F0(1) V(24658) F1(32637) F0(32767) V(1767) V(28071)
+  24500 tokens (108 text, 24391 chip) 27s: V(28414) F2(0) F0(1) F0(0) F0(1) V(3704) F1(5) F0(0)
+  25000 tokens (108 text, 24891 chip) 28s: J(152) F0(27316) F0(4693) V(24752) F1(921) F0(0) V(10918) V(30448)
+  25500 tokens (108 text, 25391 chip) 28s: J(197) V(18848) F1(5) F0(1024) J(152) F0(2171) F0(22819) V(22067)
+  26000 tokens (108 text, 25891 chip) 28s: F1(615) J(191) F0(401) F0(17) J(197) V(18880) F1(5) F0(1024)
+  26500 tokens (108 text, 26391 chip) 29s: V(25401) F1(2) V(22092) F1(643) J(191) F0(409) F0(25) J(197)
+  27000 tokens (108 text, 26891 chip) 29s: F1(4) V(20718) F1(659) J(191) F0(417) F0(33) J(197) V(18944)
+  27500 tokens (108 text, 27391 chip) 29s: F0(3) V(4077) F1(55) V(4872) F1(937) J(191) F0(425) F0(41)
+  28000 tokens (108 text, 27891 chip) 30s: J(191) F0(433) F0(49) J(197) V(19008) F1(5) F0(1024) J(152)
+  28500 tokens (108 text, 28391 chip) 30s: F0(57) J(197) V(19040) F1(5) F0(1024) J(152) F0(29650) F0(26370)
+  29000 tokens (108 text, 28891 chip) 31s: F1(6) J(191) F0(449) F0(1) J(197) V(19072) F1(5) F0(1024)
+  29500 tokens (108 text, 29391 chip) 31s: F1(95) F0(0) V(30440) V(31756) F2(1) F0(0) F0(1) F0(1)
+  30000 tokens (108 text, 29891 chip) 31s: V(6800) F1(32747) F0(32767) V(3767) F1(11946) F0(1) F0(32763) F0(32764)
+  30500 tokens (108 text, 30391 chip) 32s: V(25619) F1(1423) F0(32764) F0(32764) F0(11654) F0(32001) V(25124) F1(4144)
+  31000 tokens (108 text, 30891 chip) 32s: F0(32762) F0(32763) V(11666) F1(3978) F0(0) F0(0) V(27634) V(22973)
+  31500 tokens (108 text, 31391 chip) 32s: V(16009) V(11327) F2(2) F0(1) F0(32762) F0(32763) V(17314) F1(32762)
+  32000 tokens (108 text, 31891 chip) 33s: V(14608) F1(32284) F0(32767) V(19694) V(6936) F2(2) F0(1) F0(32762)
+  32500 tokens (108 text, 32391 chip) 33s: F1(30983) F0(32767) V(26941) V(1782) F2(2) F0(1) F0(32762) F0(32763)
+  33000 tokens (108 text, 32891 chip) 33s: F1(28740) F0(32767) V(20553) V(5051) F2(1) F0(1) F0(32762) F0(32763)
+  33500 tokens (108 text, 33391 chip) 34s: F0(1) F0(1) V(16490) F1(31384) F0(32767) V(30322) V(17691) F2(0)
+  34000 tokens (108 text, 33891 chip) 34s: F0(0) F0(0) V(20078) F1(8889) F0(32763) F0(32763) F0(2905) F0(4966)
+  34500 tokens (108 text, 34391 chip) 35s: F1(5) F0(1024) J(152) F0(28277) F0(483) V(6040) F1(343) F0(0)
+  35000 tokens (108 text, 34891 chip) 35s: F0(32762) V(10788) F1(12) F0(0) F0(0) V(3346) F1(32287) F0(32762)
+  35500 tokens (108 text, 35391 chip) 35s: F0(43) J(197) V(19496) F1(5) F0(1024) J(152) F0(29009) F0(27562)
+  36000 tokens (108 text, 35891 chip) 36s: F1(20698) F0(1) F0(32761) F0(32762) V(21793) F1(194) F0(0) F0(0)
+  36500 tokens (108 text, 36391 chip) 36s: J(191) F0(572) F0(60) J(197) V(19564) F1(5) F0(1024) J(152)
+  37000 tokens (108 text, 36891 chip) 36s: F0(0) V(24695) F1(28479) F0(0) F0(1) F0(1) V(15306) F1(199)
+  37500 tokens (108 text, 37391 chip) 37s: F0(1) F0(1) V(15862) F1(29868) F0(32767) V(22115) V(17826) F2(2)
+  38000 tokens (108 text, 37891 chip) 37s: F2(1) F0(32762) F0(32762) F0(24184) F0(29725) V(22592) F1(2248) V(19273)
+  38500 tokens (108 text, 38391 chip) 38s: F0(29) J(197) V(19696) F1(5) F0(1024) J(152) F0(2252) F0(641)
+  39000 tokens (108 text, 38891 chip) 38s: F1(11366) F0(0) F0(2) F0(2) V(1114) F1(46) F0(0) V(16999)
+  39500 tokens (108 text, 39391 chip) 38s: F1(316) F0(0) F0(0) V(5611) V(29630) F2(0) F0(32762) F0(32762)
+  40000 tokens (108 text, 39891 chip) 39s: F0(6680) V(31985) F1(107) V(25152) F1(1361) V(24369) F1(1469) V(17392)
+  40500 tokens (108 text, 40391 chip) 39s: F1(3793) V(22520) V(26303) F2(1) F0(0) F0(6) V(9189) F1(59)
+  41000 tokens (108 text, 40891 chip) 39s: F0(0) F0(6) V(6892) F1(22) V(13448) F1(243) J(191) F0(646)
+  41500 tokens (108 text, 41391 chip) 40s: F1(759) V(4984) V(21248) F2(2) F0(0) F0(6) V(28258) F1(11)
+  42000 tokens (108 text, 41891 chip) 40s: F1(284) V(11161) F1(15) V(5306) F1(300) V(4951) V(27588) F2(2)
+  42500 tokens (108 text, 42391 chip) 41s: F0(121) V(1193) F1(202) F0(14641) V(15834) F1(202) V(29661) V(28347)
+  43000 tokens (108 text, 42891 chip) 41s: F0(32761) F0(30587) F0(3315) V(5401) F1(145) V(11945) F1(335) V(17346)
+  43500 tokens (108 text, 43391 chip) 41s: V(23138) V(12836) F2(2) F0(32761) F0(32761) F0(6988) F0(22323) V(7824)
+  44000 tokens (108 text, 43891 chip) 42s: F2(1) F0(32761) F0(32761) F0(27047) F0(9390) V(27377) F1(998) V(26180)
+  44500 tokens (108 text, 44391 chip) 42s: F0(0) F0(0) V(843) V(27657) F2(0) F0(32761) F0(32761) F0(2240)
+  45000 tokens (108 text, 44891 chip) 42s: F0(32760) F0(32761) F0(10540) F0(0) F0(0) V(29207) V(26216) F2(0)
+  45500 tokens (108 text, 45391 chip) 43s: F0(30398) V(30224) F1(325) V(13572) F1(171) V(11028) F1(497) V(20236)
+  46000 tokens (108 text, 45891 chip) 43s: V(8848) F1(462) V(7505) F1(2807) V(16353) F1(3269) V(1893) V(25571)
+  46500 tokens (108 text, 46391 chip) 43s: F1(30) V(22485) F1(653) J(191) F0(734) F0(30) J(197) V(20212)
+  47000 tokens (108 text, 46891 chip) 44s: V(20244) F1(5) F0(1024) J(152) F0(31054) F0(426) V(11790) F1(18)
+  47500 tokens (108 text, 47391 chip) 44s: J(191) F0(750) F0(46) J(197) V(20276) F1(5) F0(1024) J(152)
+  48000 tokens (108 text, 47891 chip) 44s: F1(23) V(9895) F1(989) J(191) F0(758) F0(54) J(197) V(20308)
+  48500 tokens (108 text, 48391 chip) 45s: F2(3) F0(0) F0(7) V(13756) F1(14) V(4498) F1(1139) J(191)
+  49000 tokens (108 text, 48891 chip) 45s: V(3195) F1(6) V(9232) F1(51) J(191) F0(774) F0(6) J(197)
+  49500 tokens (108 text, 49391 chip) 45s: V(20404) F1(5) F0(1024) J(152) F0(4752) F0(4264) V(7840) F1(32391)
+  50000 tokens (108 text, 49891 chip) 46s: F0(22514) F0(31383) V(7736) F1(722) F0(0) V(1371) V(29651) F2(2)
+  50500 tokens (108 text, 50391 chip) 46s: F1(5) F0(1024) J(152) F0(6211) F0(2805) V(21672) F1(107) F0(0)
+  51000 tokens (108 text, 50891 chip) 47s: F0(806) F0(38) J(197) V(20500) F1(5) F0(1024) J(152) F0(30614)
+  51500 tokens (108 text, 51391 chip) 47s: F1(9) V(13375) F1(985) J(191) F0(814) F0(46) J(197) V(20532)
+  52000 tokens (108 text, 51891 chip) 47s: F2(1) F0(0) F0(8) V(9269) F1(22) V(16811) F1(1133) J(191)
+  52500 tokens (108 text, 52391 chip) 48s: F0(32767) V(18053) F1(17946) F0(1) F0(1) F0(2) V(11112) F1(32759)
+  53000 tokens (108 text, 52891 chip) 48s: F0(0) V(28294) F1(8160) F0(32760) F0(32760) F0(491) F0(8195) V(11705)
+  53500 tokens (108 text, 53391 chip) 48s: F0(1024) J(152) F0(32332) F0(3446) V(14204) F1(54) F0(0) V(19715)
+  54000 tokens (108 text, 53891 chip) 49s: F1(1578) F0(0) F0(0) V(6345) F1(18232) F0(32759) F0(32759) F0(24232)
+  54500 tokens (108 text, 54391 chip) 49s: V(30852) F1(26627) F0(0) F0(8) V(19077) F1(45) V(14436) F1(986)
+  55000 tokens (108 text, 54891 chip) 49s: F0(0) V(6031) F1(4121) F0(0) F0(3) F0(3) V(2446) F1(4)
+  55500 tokens (108 text, 55391 chip) 50s: F0(0) F0(0) V(1159) V(11889) F2(2) F0(32759) F0(32759) F0(32443)
+  56000 tokens (108 text, 55891 chip) 50s: F1(18) V(26940) F1(1231) J(191) F0(889) F0(57) J(197) V(20832)
+  56500 tokens (108 text, 56391 chip) 50s: F0(28140) V(10613) F1(32435) F0(32767) V(23516) F1(12923) F0(1) F0(2)
+  57000 tokens (108 text, 56891 chip) 51s: F1(68) F0(0) V(12645) V(18278) F2(0) F0(0) F0(3) F0(3)
+  57500 tokens (108 text, 57391 chip) 51s: V(21806) F1(32761) F0(32767) V(15907) V(18479) F2(0) F0(1) F0(2)
+  58000 tokens (108 text, 57891 chip) 51s: F0(1024) J(152) F0(733) F0(30212) V(26841) F1(46) F0(0) V(350)
+  58500 tokens (108 text, 58391 chip) 52s: J(197) V(20992) F1(5) F0(1024) J(152) F0(29633) F0(2919) V(3370)
+  59000 tokens (108 text, 58891 chip) 52s: F1(392) J(191) F0(937) F0(41) J(197) V(21024) F1(5) F0(1024)
+  59500 tokens (108 text, 59391 chip) 52s: V(13165) F1(16) V(12583) F1(473) J(191) F0(945) F0(49) J(197)
+  60000 tokens (108 text, 59891 chip) 52s: V(32565) F2(1) F0(0) F0(9) V(25) F1(24) V(31402) F1(641)
+  60500 tokens (108 text, 60391 chip) 53s: F0(9) V(18377) F1(21) V(18377) F1(21) J(191) F0(961) F0(1)
+  61000 tokens (108 text, 60891 chip) 53s: F0(3104) F0(1947) V(13504) F1(32656) F0(32767) V(471) V(1989) F2(1)
+  61500 tokens (108 text, 61391 chip) 53s: V(2488) F2(1) F0(1) F0(2) F0(3) V(16700) F1(32653) F0(32767)
+  62000 tokens (108 text, 61891 chip) 54s: F0(32758) V(32276) F1(101) F0(0) F0(0) V(29775) F1(30705) F0(32758)
+  62500 tokens (108 text, 62391 chip) 54s: F1(470) V(9657) F1(203) V(14322) F1(673) V(2872) V(30596) F2(2)
+  63000 tokens (108 text, 62891 chip) 54s: F1(380) J(191) F0(1002) F0(42) J(197) V(21284) F1(5) F0(1024)
+  63500 tokens (108 text, 63391 chip) 54s: F0(1024) J(152) F0(30060) F0(4566) V(16300) F1(408) F0(0) V(7497)
+  64000 tokens (108 text, 63891 chip) 55s: J(197) V(21348) F1(5) F0(1024) J(152) F0(27929) F0(29061) V(26508)
+  64500 tokens (124 text, 64375 chip) 56s: F1(2) V(32767) F1(1) V(22413) F1(1) V(0) F1(4) V(0)
+  65000 tokens (161 text, 64838 chip) 58s: F0(7) F0(55) F0(593) V(14135) V(0) V(0) SS1 F0(2)
+  65500 tokens (182 text, 65317 chip) 59s: V(28672) F1(0) V(30103) F1(0) V(23975) F1(31460) V(28672) F1(3)
+  66000 tokens (237 text, 65762 chip) 63s: V(12594) V(104) V(0) SS1 F0(2) QS(7) QD(112) F0(0)
+  66500 tokens (283 text, 66216 chip) 67s: F0(32703) F0(32527) ST0 ST0 F0(24225) F0(32495) F0(32501) F0(32759)
+  67000 tokens (283 text, 66716 chip) 67s: F1(166) V(32601) F1(166) F0(150) F0(47) V(2092) F1(106) V(2097)
+  67500 tokens (283 text, 67216 chip) 68s: F0(11881) V(3713) F1(1) V(15594) F1(1) F0(0) F0(320) F0(344)
+  68000 tokens (283 text, 67716 chip) 68s: F1(33) V(5559) F1(32690) V(2092) F1(106) V(22863) F1(27) F0(72)
+  68500 tokens (283 text, 68216 chip) 68s: ST1 F0(0) F0(0) F0(32763) F0(167) V(5) F1(32763) V(5)
+  69000 tokens (283 text, 68716 chip) 68s: F1(167) F0(32682) F0(32692) V(6228) F1(32707) V(29383) F1(32442) R(2447)
+  69500 tokens (283 text, 69216 chip) 69s: F0(150) F0(47) V(32721) F1(46) V(52) F1(32716) V(32618) F1(149)
+  70000 tokens (283 text, 69716 chip) 69s: V(8552) F1(32714) V(12319) F1(302) V(6228) F1(32707) V(7175) F1(371)
+  70500 tokens (283 text, 70216 chip) 69s: F0(30091) F0(32055) F0(32684) F0(32745) ST1 ST1 F0(30995) F0(1561)
+  71000 tokens (283 text, 70716 chip) 70s: V(3602) F1(32729) V(11513) F1(32704) F0(32475) F0(32733) V(10139) F1(32497)
+  71500 tokens (283 text, 71216 chip) 70s: F1(32646) V(15328) F1(61) V(28559) F1(32717) V(3206) F1(32672) V(28305)
+  72000 tokens (283 text, 71716 chip) 70s: F1(32735) V(12052) F1(106) V(10139) F1(32497) V(15647) F1(32660) F0(106)
+  72500 tokens (283 text, 72216 chip) 71s: F1(66) V(27608) F1(32572) V(13873) F1(32742) V(27608) F1(32572) V(30568)
+  73000 tokens (283 text, 72716 chip) 71s: F1(1) F0(0) F0(320) F0(392) V(169) F1(3) F0(0) V(17586)
+  73500 tokens (283 text, 73216 chip) 71s: V(12259) F1(32692) F0(32475) F0(32733) V(28857) F1(32655) V(29261) F1(443)
+  74000 tokens (283 text, 73716 chip) 71s: F1(178) F0(0) F0(0) ST0 ST0 F0(0) F0(0) F0(80)
+  74500 tokens (283 text, 74216 chip) 72s: F1(32632) V(21789) F1(32735) V(3850) F1(32291) V(19887) F1(32754) V(1636)
+  75000 tokens (283 text, 74716 chip) 72s: V(26726) F1(132) V(28603) F1(24) V(19438) F1(66) R(1204) V(1665)
+  75500 tokens (283 text, 75216 chip) 72s: F1(73) F0(32642) F0(32612) V(29700) F1(32678) V(752) F1(32690) V(22728)
+  76000 tokens (283 text, 75716 chip) 73s: V(1380) F1(32667) V(5) F1(32763) V(18233) F1(32738) F0(178) F0(72)
+  76500 tokens (283 text, 76216 chip) 73s: F0(32576) F0(65) R(2086) V(17344) F1(32694) V(24260) F1(32737) V(28603)
+  77000 tokens (283 text, 76716 chip) 73s: V(14642) F1(164) V(32503) F1(32641) F0(127) F0(32636) V(26238) F1(89)
+  77500 tokens (283 text, 77216 chip) 73s: F1(32470) F0(32763) F0(199) V(32569) F1(198) V(26758) F1(194) V(5)
+  78000 tokens (283 text, 77716 chip) 74s: V(21752) F1(32674) V(6393) F1(32206) V(21752) F1(32674) V(27482) F1(30700)
+  78500 tokens (283 text, 78216 chip) 74s: F1(32763) V(25399) F1(249) F0(178) F0(72) V(3718) F1(68) V(25732)
+  79000 tokens (283 text, 78716 chip) 74s: F1(32732) V(13676) F1(32671) F0(67) F0(32457) V(29443) F1(61) V(14382)
+  79500 tokens (283 text, 79216 chip) 74s: F0(287) V(24438) F1(49) V(15031) F1(32551) V(26981) F1(109) V(29346)
+  80000 tokens (283 text, 79716 chip) 75s: F1(61) V(11368) F1(32682) F0(32498) F0(32610) V(2788) F1(32577) R(1771)
+  80500 tokens (283 text, 80216 chip) 75s: F1(316) V(25199) F1(32560) V(36) F1(32732) F0(29510) F0(67) F0(32457)
+  81000 tokens (283 text, 80716 chip) 75s: F1(32427) F0(32539) F0(198) V(12153) F1(32680) F0(10366) V(25122) F1(75)
+  81500 tokens (283 text, 81216 chip) 75s: V(22281) F1(32480) V(1091) F1(32494) V(29443) F1(61) R(2653) V(3442)
+  82000 tokens (283 text, 81716 chip) 76s: F1(32644) V(25122) F1(75) V(31712) F1(29503) V(12153) F1(32680) V(19933)
+  82500 tokens (283 text, 82216 chip) 76s: V(32086) F1(75) F0(32498) F0(32610) V(2788) F1(32577) V(30657) F1(32401)
+  83000 tokens (283 text, 82716 chip) 76s: V(7644) F1(32498) V(15636) F1(415) F0(32684) F0(259) V(19800) F1(32708)
+  83500 tokens (283 text, 83216 chip) 77s: V(11103) F1(250) F0(32639) F0(32482) V(286) F1(32482) V(20345) F1(6)
+  84000 tokens (283 text, 83716 chip) 77s: F1(172) V(4486) F1(183) V(30791) F1(32470) V(19800) F1(32708) V(19490)
+  84500 tokens (283 text, 84216 chip) 77s: V(12159) F1(32562) V(4016) F1(6) V(7748) F1(32627) V(25616) F1(14)
+  85000 tokens (283 text, 84716 chip) 77s: V(32524) F1(32601) V(22772) F1(59) V(30681) F1(32697) V(25122) F1(75)
+  85500 tokens (283 text, 85216 chip) 78s: F1(32057) F0(32684) F0(259) V(19800) F1(32708) V(32127) F1(32588) V(4486)
+  86000 tokens (283 text, 85716 chip) 78s: F1(983) F0(203) F0(32646) V(32565) F1(202) V(14918) F1(30225) V(122)
+  86500 tokens (283 text, 86216 chip) 78s: F1(183) V(18272) F1(297) V(4486) F1(183) V(223) F1(176) V(19800)
+  87000 tokens (283 text, 86716 chip) 79s: V(2976) F1(330) V(12386) F1(32576) V(31138) F1(32425) V(12386) F1(32576)
+  87500 tokens (283 text, 87216 chip) 79s: V(32463) F1(304) V(32617) F1(150) V(32617) F1(150) F0(230) F0(32537)
+  88000 tokens (283 text, 87716 chip) 79s: F1(32669) V(17414) F1(119) F0(32494) F0(48) R(1708) V(28270) F1(32514)
+  88500 tokens (283 text, 88216 chip) 79s: F1(92) V(19289) F1(32554) V(13328) F1(364) V(19843) F1(32679) V(3564)
+  89000 tokens (283 text, 88716 chip) 80s: F1(32763) V(12048) F1(18) V(13820) F1(341) V(11312) F1(44) V(25766)
+  89500 tokens (283 text, 89216 chip) 80s: V(15974) F1(212) V(28748) F1(451) F0(32628) F0(32497) V(232) F1(32669)
+  90000 tokens (283 text, 89716 chip) 80s: V(4954) F1(32663) V(7246) F1(428) F0(32741) F0(244) V(32524) F1(243)
+  90500 tokens (283 text, 90216 chip) 81s: F1(32669) V(28826) F1(506) V(12386) F1(32576) V(31910) F1(32601) V(12386)
+  91000 tokens (283 text, 90716 chip) 81s: F0(189) R(1078) F0(32646) V(32579) F1(188) V(32513) F1(254) V(122)
+  91500 tokens (283 text, 91216 chip) 81s: F1(106) V(31082) F1(40) V(604) F1(32710) V(2209) F1(32750) F0(148)
+  92000 tokens (283 text, 91716 chip) 81s: V(2384) F1(1) F0(0) F0(320) F0(352) V(6441) F1(5) F0(0)
+  92500 tokens (283 text, 92216 chip) 82s: R(1960) F0(32646) V(20986) F1(133) V(28343) F1(32649) V(24076) F1(32681)
+  93000 tokens (283 text, 92716 chip) 82s: V(34) F1(32734) V(34) F1(32734) V(32623) F1(144) V(32623) F1(144)
+  93500 tokens (283 text, 93216 chip) 82s: F0(32446) F0(208) V(5380) F1(3) V(10496) F1(1) V(15876) F1(4)
+  94000 tokens (283 text, 93716 chip) 83s: F1(23) V(23609) F1(168) V(9150) F1(57) V(10473) F1(32725) V(10815)
+  94500 tokens (283 text, 94216 chip) 83s: F0(0) F0(0) ST0 ST0 F0(0) F0(0) F0(32734) F0(145)
+  95000 tokens (283 text, 94716 chip) 83s: V(27) F1(32741) V(206) F1(32562) V(32765) F1(2) V(180) F1(32588)
+  95500 tokens (283 text, 95216 chip) 83s: F1(9) V(10317) F1(32594) F0(32741) F0(3) V(29770) F1(32748) V(30232)
+  96000 tokens (283 text, 95716 chip) 84s: F0(21) V(32744) F1(23) V(32759) F1(8) V(32747) F1(20) V(140)
+  96500 tokens (283 text, 96216 chip) 84s: V(11) F1(32624) V(3974) F1(2) V(25742) F1(53) V(29770) F1(32748)
+  97000 tokens (283 text, 96716 chip) 84s: F0(32724) V(32733) F1(34) V(32653) F1(114) V(44) F1(32724) V(89)
+  97500 tokens (283 text, 97216 chip) 84s: F1(32694) F0(24) F0(21) V(32744) F1(23) V(31210) F1(192) V(32747)
+  98000 tokens (283 text, 97716 chip) 85s: V(125) F1(32643) F0(32722) F0(32706) V(46) F1(32722) V(31311) F1(1456)
+  98500 tokens (283 text, 98216 chip) 85s: F1(20) V(30266) F1(32385) F0(35) F0(32724) V(24518) F1(24) V(16164)
+  99000 tokens (283 text, 98716 chip) 85s: F0(16) J(3318) V(13934) F1(16) F0(0) V(7558) F1(114) F0(0)
+  99500 tokens (335 text, 99164 chip) 89s: '7' F0(1) J(4080) NT F0(10) QS(7) QD(113) F0(1)
+  100000 tokens (359 text, 99640 chip) 92s: F2(3) F0(32767) F0(32767) F0(0) F0(1) F0(4142) F0(28625) F0(28626)
+  100500 tokens (497 text, 100002 chip) 102s: ' Frequency' ' Offset' ' (' 'C' 'FO' '):**' '\n' '*'
+================================================================================ 
+Q1: Analyze capture 12 (a 2.4 GHz drone controller recording). What is the signal level relative to the noise floor, and what is the carrier frequency offset in kHz? Show the conversion.
+---
+<tool_call>
+<function=rf_analyze>
+<parameter=capture>
+12
+</parameter>
+</function>
+</tool_call>
+<tool_response>
+capture=12 Tampere drone-controller fs=120MS/s fc=2440MHz
+samples=1024 (Q15)
+mean_power_dbfs=-14.1
+peak_power_dbfs=-6.9 at_sample=477
+noise_floor_dbfs=-16.7 (quietest 64-sample window)
+loudest_window_dbfs=-12.3
+active_windows=0/16 (power > 4x quietest)
+dominant_dft16_bin=13 freq_cycles_per_sample=-0.1875 power_share_percent=60
+cfo_cycles_per_sample=-0.1950
+</tool_response>
+<think>
+
+</think>
+
+Based on the analysis of capture 12:
+
+**Signal Level Relative to Noise Floor:**
+*   **Peak Power:** -6.9 dBFS
+*   **Noise Floor:** -16.7 dBFS
+*   **Difference:** -6.9 dBFS - (-16.7 dBFS) = **9.8 dB**
+
+The signal is approximately **9.8 dB above the noise floor**.
+
+**Carrier Frequency Offset (CFO):**
+*   **CFO (cycles/sample):** -0.1950
+*   **Sample Rate:** 120 MS/s (120,000,000 samples/second)
+*   **Conversion:**
+    *   CFO in Hz = CFO (cycles/sample) × Sample Rate (samples/second)
+    *   CFO in Hz = -0.1950 × 120,000,000 = -23,400,000 Hz
+    *   CFO in kHz = -23,400,000 / 1,000 = **-23,400 kHz**
+
+The carrier frequency offset is **-23,400 kHz** (or -23.4 MHz).<|im_end|>
+[670 text + 100002 chip tokens, 163s, lock error: None]
+  500 tokens (27 text, 472 chip) 3s: NT F0(62) J(16) NT F0(0) V(195) F1(1) J(45)
+  1000 tokens (63 text, 936 chip) 6s: V(557) F1(4) J(4023) F0(110) NT F0(1) BYTE(110) 'n'
+  1500 tokens (87 text, 1412 chip) 8s: F1(32550) F0(32767) V(14157) F1(29782) F0(1) F0(32766) F0(32767) V(16540)
+  2000 tokens (87 text, 1912 chip) 8s: F1(38) V(22318) F1(301) J(191) F0(15) F0(15) J(197) V(952)
+  2500 tokens (87 text, 2412 chip) 9s: V(10667) V(19363) F2(0) F0(1) F0(32767) F0(0) V(5632) F1(781)
+  3000 tokens (87 text, 2912 chip) 9s: F0(27743) V(12232) F1(32760) F0(32767) V(17849) V(27121) F2(0) F0(1)
+  3500 tokens (87 text, 3412 chip) 9s: J(197) V(1048) F1(5) F0(1024) J(152) F0(925) F0(27834) V(23274)
+  4000 tokens (87 text, 3912 chip) 10s: V(31602) F1(33) V(17188) F1(1027) J(191) F0(47) F0(47) J(197)
+  4500 tokens (87 text, 4412 chip) 10s: V(15299) F2(2) F0(0) F0(0) V(4697) F1(33) V(1649) F1(1263)
+  5000 tokens (87 text, 4912 chip) 11s: F1(908) V(9185) F1(940) V(22659) V(24968) F2(2) F0(0) F0(0)
+  5500 tokens (87 text, 5412 chip) 11s: F0(0) F0(32767) F0(30776) F0(7189) V(3136) F1(121) V(6585) F1(1577)
+  6000 tokens (87 text, 5912 chip) 11s: F0(0) V(23370) V(30825) F2(1) F0(32767) F0(32767) F0(27768) F0(79)
+  6500 tokens (87 text, 6412 chip) 12s: V(15123) V(24040) F2(1) F0(32767) F0(32767) F0(29409) F0(26284) V(10689)
+  7000 tokens (87 text, 6912 chip) 12s: F0(31779) F0(27651) V(27849) F1(29) V(2057) F1(799) V(29906) F1(828)
+  7500 tokens (87 text, 7412 chip) 12s: V(1808) F1(26) V(13945) F1(742) V(31327) F1(11907) F0(0) F0(1)
+  8000 tokens (87 text, 7912 chip) 13s: F1(1034) V(8530) F1(1805) V(17455) V(22268) F2(0) F0(0) F0(1)
+  8500 tokens (87 text, 8412 chip) 13s: F1(1272) V(21520) F1(363) V(13620) F1(1636) V(23627) V(32333) F2(0)
+  9000 tokens (87 text, 8912 chip) 14s: V(5419) F1(1268) J(191) F0(127) F0(63) J(197) V(1400) F1(5)
+  9500 tokens (87 text, 9412 chip) 14s: J(152) F0(4206) F0(28654) V(16308) F1(984) F0(0) V(29907) F1(1477)
+  10000 tokens (87 text, 9912 chip) 14s: F1(1098) F0(0) V(17101) F1(9910) F0(0) F0(1) F0(1) V(5660)
+  10500 tokens (87 text, 10412 chip) 15s: V(23993) F1(196) V(26497) F1(819) V(17722) F1(1016) V(735) V(8362)
+  11000 tokens (87 text, 10912 chip) 15s: F1(8) V(9586) F1(609) J(191) F0(160) F0(32) J(197) V(1532)
+  11500 tokens (87 text, 11412 chip) 15s: F0(28927) V(12384) F1(1137) F0(0) V(7128) V(30961) F2(0) F0(0)
+  12000 tokens (87 text, 11912 chip) 16s: F0(0) V(23920) V(6715) F2(1) F0(0) F0(1) F0(1) V(10980)
+  12500 tokens (87 text, 12412 chip) 16s: F0(0) F0(32766) F0(32766) V(20294) F1(1205) F0(0) F0(0) V(23142)
+  13000 tokens (87 text, 12912 chip) 16s: V(13581) F1(1643) V(25219) F1(27254) F0(0) F0(1) V(22228) F1(25)
+  13500 tokens (87 text, 13412 chip) 17s: F0(7280) V(25994) F1(17) F0(0) V(13932) V(1184) F2(2) F0(0)
+  14000 tokens (87 text, 13912 chip) 17s: V(14663) V(8136) F2(2) F0(0) F0(1) F0(1) V(1284) F1(852)
+  14500 tokens (87 text, 14412 chip) 18s: F1(236) F0(0) V(23813) V(14698) F2(2) F0(0) F0(1) F0(1)
+  15000 tokens (87 text, 14912 chip) 18s: F0(29383) V(25147) F1(1191) F0(0) V(27269) V(23322) F2(2) F0(0)
+  15500 tokens (87 text, 15412 chip) 18s: F0(1024) J(152) F0(4753) F0(990) V(21285) F1(940) F0(0) V(32015)
+  16000 tokens (87 text, 15912 chip) 19s: F0(49) J(197) V(1856) F1(5) F0(1024) J(152) F0(27221) F0(626)
+  16500 tokens (87 text, 16412 chip) 19s: V(26739) F1(1047) J(191) F0(249) F0(57) J(197) V(1888) F1(5)
+  17000 tokens (87 text, 16912 chip) 19s: F0(257) F0(1) J(197) V(1920) F1(5) F0(1024) J(152) F0(27221)
+  17500 tokens (87 text, 17412 chip) 20s: V(1831) F1(29869) F0(0) F0(1) F0(1) V(12596) F1(5) F0(0)
+  18000 tokens (87 text, 17912 chip) 20s: F0(2) V(13492) F1(31944) F0(32767) V(32119) V(17919) F2(2) F0(1)
+  18500 tokens (87 text, 18412 chip) 20s: V(12793) V(15855) F2(2) F0(32767) F0(32766) F0(8399) F0(32391) V(26465)
+  19000 tokens (87 text, 18912 chip) 21s: F0(32766) F0(32766) F0(28406) F0(31571) V(21604) F1(580) V(23785) F1(43)
+  19500 tokens (87 text, 19412 chip) 21s: F0(0) V(3217) V(10060) F2(2) F0(32766) F0(32766) F0(6394) F0(1993)
+  20000 tokens (87 text, 19912 chip) 22s: F0(32766) F0(32766) F0(29317) F0(26375) V(14617) F1(363) V(8753) F1(1247)
+  20500 tokens (87 text, 20412 chip) 22s: V(23012) F1(8) V(23652) F1(878) V(13896) F1(887) V(23995) F1(32297)
+  21000 tokens (87 text, 20912 chip) 22s: F1(494) V(17984) F1(295) V(23168) F1(789) V(23241) F1(8528) F0(0)
+  21500 tokens (87 text, 21412 chip) 23s: F1(1132) V(4982) F1(16282) F0(0) F0(3) V(22986) F1(17) V(10372)
+  22000 tokens (87 text, 21912 chip) 23s: V(23652) F1(878) V(16712) F1(1065) V(655) V(26270) F2(0) F0(0)
+  22500 tokens (87 text, 22412 chip) 23s: F0(2839) F0(29200) V(31761) F1(245) V(16640) F1(388) V(15633) F1(634)
+  23000 tokens (87 text, 22912 chip) 24s: V(27419) F2(1) F0(32766) F0(32766) F0(28041) F0(30568) V(29521) F1(681)
+  23500 tokens (87 text, 23412 chip) 24s: F0(32767) F0(1) V(4762) V(25322) F2(1) F0(32767) F0(32766) F0(31323)
+  24000 tokens (87 text, 23912 chip) 24s: F0(32766) V(20824) F1(307) F0(0) F0(0) V(27889) V(22818) F2(1)
+  24500 tokens (87 text, 24412 chip) 25s: V(21715) F2(1) F0(0) F0(32766) F0(32766) V(4263) F1(574) F0(0)
+  25000 tokens (87 text, 24912 chip) 25s: F0(0) F0(2) F0(2) V(7262) F1(32401) F0(32767) V(10979) V(19156)
+  25500 tokens (87 text, 25412 chip) 25s: V(15680) F1(216) F0(0) F0(0) V(8949) V(18331) F2(1) F0(32766)
+  26000 tokens (87 text, 25912 chip) 26s: F1(99) V(32644) F1(1242) V(20317) V(30982) F2(2) F0(0) F0(3)
+  26500 tokens (87 text, 26412 chip) 26s: J(191) F0(410) F0(26) J(197) V(2532) F1(5) F0(1024) J(152)
+  27000 tokens (87 text, 26912 chip) 26s: F0(0) V(17229) F1(13787) F0(0) F0(3) F0(3) V(10128) F1(129)
+  27500 tokens (87 text, 27412 chip) 27s: V(22109) F2(0) F0(0) F0(3) F0(3) V(23694) F1(32530) F0(32767)
+  28000 tokens (87 text, 27912 chip) 27s: F1(32648) F0(32767) V(15252) V(11574) F2(1) F0(1) F0(32765) F0(32766)
+  28500 tokens (87 text, 28412 chip) 27s: F2(1) F0(0) F0(32766) F0(32766) V(7798) F1(1121) F0(0) F0(0)
+  29000 tokens (87 text, 28912 chip) 28s: F2(1) F0(1) F0(32765) F0(32766) V(24407) F1(32448) F0(32767) F0(1)
+  29500 tokens (87 text, 29412 chip) 28s: F1(32140) F0(32767) V(2487) V(9146) F2(1) F0(1) F0(32765) F0(32766)
+  30000 tokens (87 text, 29912 chip) 28s: F0(0) F0(3) F0(3) V(19860) F1(32564) F0(32767) V(27615) V(8825)
+  30500 tokens (87 text, 30412 chip) 29s: F0(0) V(2357) V(10597) F2(2) F0(0) F0(3) F0(3) V(28064)
+  31000 tokens (87 text, 30912 chip) 29s: F0(3) F0(3) V(16720) F1(310) F0(0) V(31538) V(18954) F2(2)
+  31500 tokens (87 text, 31412 chip) 30s: V(14030) V(27532) F2(2) F0(0) F0(3) F0(3) V(18127) F1(43)
+  32000 tokens (87 text, 31912 chip) 30s: F0(0) V(3136) V(3335) F2(3) F0(0) F0(3) F0(3) V(21602)
+  32500 tokens (87 text, 32412 chip) 30s: F0(26857) F0(1812) V(19579) F1(934) F0(0) V(3792) V(12033) F2(3)
+  33000 tokens (87 text, 32912 chip) 31s: F1(1006) F0(0) V(26083) F1(21143) F0(0) F0(3) F0(3) V(28803)
+  33500 tokens (87 text, 33412 chip) 31s: F0(0) F0(3) F0(3) V(12739) F1(32633) F0(32767) V(12129) V(6505)
+  34000 tokens (87 text, 33912 chip) 31s: F0(1) V(26543) V(6734) F2(1) F0(32767) F0(32766) F0(27770) F0(1356)
+  34500 tokens (87 text, 34412 chip) 32s: V(26259) F1(484) J(191) F0(539) F0(27) J(197) V(3048) F1(5)
+  35000 tokens (87 text, 34912 chip) 32s: F0(1024) J(152) F0(28227) F0(27379) V(21541) F1(515) F0(0) V(18965)
+  35500 tokens (87 text, 35412 chip) 32s: V(11046) F1(35) F0(0) V(28060) V(32436) F2(0) F0(0) F0(4)
+  36000 tokens (87 text, 35912 chip) 33s: F1(32755) F0(32767) V(15874) V(7156) F2(1) F0(1) F0(3) F0(4)
+  36500 tokens (87 text, 36412 chip) 33s: J(152) F0(4027) F0(28201) V(11195) F1(629) F0(0) V(5779) V(15056)
+  37000 tokens (87 text, 36912 chip) 33s: F0(579) F0(3) J(197) V(3208) F1(5) F0(1024) J(152) F0(8038)
+  37500 tokens (87 text, 37412 chip) 34s: F1(17) V(3680) F1(184) J(191) F0(587) F0(11) J(197) V(3240)
+  38000 tokens (87 text, 37912 chip) 34s: F2(1) F0(0) F0(5) V(5495) F1(10) V(16002) F1(341) J(191)
+  38500 tokens (87 text, 38412 chip) 34s: V(24162) F1(2482) V(6998) V(2853) F2(2) F0(0) F0(5) V(25977)
+  39000 tokens (87 text, 38912 chip) 35s: V(31585) F1(168) V(4857) F1(278) V(3674) F1(447) V(29262) V(11315)
+  39500 tokens (87 text, 39412 chip) 35s: F0(32767) F0(32766) F0(1840) F0(29294) V(10496) F1(103) V(10052) F1(368)
+  40000 tokens (87 text, 39912 chip) 35s: V(17002) F2(1) F0(32767) F0(32766) F0(7126) F0(3180) V(22244) F1(1549)
+  40500 tokens (87 text, 40412 chip) 36s: F0(0) F0(0) V(32748) V(18147) F2(1) F0(32766) F0(32766) F0(654)
+  41000 tokens (87 text, 40912 chip) 36s: F0(32766) F0(29503) F0(31755) V(10625) F1(325) V(10361) F1(31) V(20986)
+  41500 tokens (87 text, 41412 chip) 36s: V(30938) F1(146) J(191) F0(651) F0(11) J(197) V(3496) F1(5)
+  42000 tokens (87 text, 41912 chip) 37s: V(22704) F1(394) F0(0) V(21135) F1(1776) F0(0) F0(5) F0(5)
+  42500 tokens (87 text, 42412 chip) 37s: F0(1) V(31109) V(24025) F2(1) F0(32767) F0(32766) F0(27497) F0(5094)
+  43000 tokens (87 text, 42912 chip) 37s: V(16268) F1(15632) F0(0) F0(6) V(28048) F1(13) V(2206) F1(595)
+  43500 tokens (87 text, 43412 chip) 38s: V(28569) F1(1911) V(19840) V(26520) F2(0) F0(0) F0(6) V(28606)
+  44000 tokens (87 text, 43912 chip) 38s: F1(443) V(27137) F1(241) V(9489) F1(685) V(8638) V(3016) F2(1)
+  44500 tokens (87 text, 44412 chip) 38s: F0(32766) F0(108) F0(26468) F0(11664) V(7952) F1(1211) V(19616) F1(1211)
+  45000 tokens (87 text, 44912 chip) 39s: F0(0) F0(0) V(24636) V(5233) F2(2) F0(32766) F0(32766) F0(5576)
+  45500 tokens (87 text, 45412 chip) 39s: F0(32765) F0(32766) V(1905) F1(32613) F0(32767) F0(1) V(31896) V(7931)
+  46000 tokens (87 text, 45912 chip) 39s: V(1516) V(9507) F2(2) F0(1) F0(32765) F0(32766) V(12011) F1(31711)
+  46500 tokens (87 text, 46412 chip) 40s: F0(5) V(6203) F1(32277) F0(32767) V(15968) V(13868) F2(2) F0(1)
+  47000 tokens (87 text, 46912 chip) 40s: V(28517) F2(2) F0(0) F0(5) F0(5) V(24540) F1(406) F0(0)
+  47500 tokens (87 text, 47412 chip) 40s: F1(1100) F0(0) V(19585) V(6660) F2(3) F0(0) F0(5) F0(5)
+  48000 tokens (87 text, 47912 chip) 41s: V(26355) V(13638) F2(3) F0(0) F0(5) F0(5) V(27006) F1(477)
+  48500 tokens (87 text, 48412 chip) 41s: V(6960) F1(292) F0(0) F0(0) V(13738) V(28524) F2(2) F0(32766)
+  49000 tokens (87 text, 48912 chip) 41s: F1(13292) F0(0) F0(7) V(22215) F1(14) V(7521) F1(77) J(191)
+  49500 tokens (87 text, 49412 chip) 42s: F0(32602) F0(7282) V(27454) F1(32762) F0(32767) V(30665) F1(11624) F0(1)
+  50000 tokens (87 text, 49912 chip) 42s: V(25769) F1(32677) F0(32767) V(24181) V(20388) F2(0) F0(1) F0(5)
+  50500 tokens (87 text, 50412 chip) 42s: F0(1024) J(152) F0(28955) F0(8376) V(29903) F1(167) F0(0) V(8638)
+  51000 tokens (87 text, 50912 chip) 42s: F0(36) J(197) V(4108) F1(5) F0(1024) J(152) F0(3024) F0(28656)
+  51500 tokens (87 text, 51412 chip) 43s: F0(1904) V(15571) F1(452) F0(0) V(6813) V(14994) F2(1) F0(0)
+  52000 tokens (87 text, 51912 chip) 43s: F0(32767) V(28263) V(26154) F2(1) F0(1) F0(5) F0(6) V(17375)
+  52500 tokens (87 text, 52412 chip) 43s: F0(0) F0(32766) F0(32766) V(15755) F1(187) F0(0) F0(0) V(31497)
+  53000 tokens (87 text, 52912 chip) 44s: F0(32767) F0(31508) F0(6097) V(14736) F1(48) V(14497) F1(1134) V(29233)
+  53500 tokens (87 text, 53412 chip) 44s: F0(7) V(1924) F1(22) V(9265) F1(293) J(191) F0(845) F0(13)
+  54000 tokens (87 text, 53912 chip) 44s: F0(0) F0(6) F0(6) V(21875) F1(755) F0(0) V(16752) V(30865)
+  54500 tokens (87 text, 54412 chip) 45s: F1(183) F0(0) V(29222) V(19317) F2(0) F0(0) F0(32767) F0(32767)
+  55000 tokens (87 text, 54912 chip) 45s: F0(32767) V(18788) F1(32422) F0(32767) F0(1) V(20581) V(25085) F2(0)
+  55500 tokens (87 text, 55412 chip) 45s: V(3524) F1(169) V(6161) F1(715) V(9685) F1(884) V(29862) V(29104)
+  56000 tokens (87 text, 55912 chip) 46s: F1(38) V(30228) F1(1210) J(191) F0(886) F0(54) J(197) V(4436)
+  56500 tokens (87 text, 56412 chip) 46s: F0(6553) V(13522) F1(136) F0(0) V(28355) F1(12909) F0(0) F0(7)
+  57000 tokens (87 text, 56912 chip) 46s: F0(5576) F0(537) V(2888) F1(1228) F0(0) V(13138) V(23292) F2(0)
+  57500 tokens (87 text, 57412 chip) 47s: V(4532) F1(5) F0(1024) J(152) F0(2659) F0(24828) V(17270) F1(32717)
+  58000 tokens (87 text, 57912 chip) 47s: J(191) F0(918) F0(22) J(197) V(4564) F1(5) F0(1024) J(152)
+  58500 tokens (87 text, 58412 chip) 47s: V(17695) F1(39) V(30067) F1(703) J(191) F0(926) F0(30) J(197)
+  59000 tokens (87 text, 58912 chip) 48s: F0(0) F0(8) V(25810) F1(39) V(22877) F1(919) J(191) F0(934)
+  59500 tokens (87 text, 59412 chip) 48s: F1(1117) J(191) F0(942) F0(46) J(197) V(4660) F1(5) F0(1024)
+  60000 tokens (87 text, 59912 chip) 48s: J(197) V(4692) F1(5) F0(1024) J(152) F0(4209) F0(29203) V(8887)
+  60500 tokens (87 text, 60412 chip) 48s: V(4724) F1(5) F0(1024) J(152) F0(31964) F0(24737) V(19892) F1(122)
+  61000 tokens (87 text, 60912 chip) 49s: F1(41) V(28729) F1(128) J(191) F0(966) F0(6) J(197) V(4756)
+  61500 tokens (87 text, 61412 chip) 49s: F2(1) F0(0) F0(9) V(11899) F1(33) V(12503) F1(363) J(191)
+  62000 tokens (87 text, 61912 chip) 49s: V(30954) F1(30) V(32088) F1(526) J(191) F0(982) F0(22) J(197)
+  62500 tokens (87 text, 62412 chip) 50s: F0(0) V(12231) F1(24795) F0(0) F0(7) F0(7) V(28294) F1(442)
+  63000 tokens (87 text, 62912 chip) 50s: V(5140) F1(1814) V(30326) V(20531) F2(2) F0(0) F0(9) V(11344)
+  63500 tokens (87 text, 63412 chip) 50s: V(12876) F1(1143) F0(0) V(17194) F1(8572) F0(0) F0(8) F0(8)
+  64000 tokens (87 text, 63912 chip) 51s: F0(1) F0(0) F0(30140) F0(5186) V(25104) F1(210) V(24836) F1(820)
+  64500 tokens (87 text, 64412 chip) 51s: F2(0) F0(1) F0(0) F0(29685) F0(4912) V(2169) F1(290) V(10496)
+  65000 tokens (126 text, 64873 chip) 54s: BYTE(45) '-' F0(104) F0(1) F0(1) NT F0(10) F0(10)
+  65500 tokens (144 text, 65355 chip) 56s: F0(10) F0(1) BYTE(10) '\n' F0(110) F0(1) BYTE(110) 'n'
+  66000 tokens (215 text, 65784 chip) 61s: F0(28) J(4099) F0(0) NT F0(27) J(4099) F0(0) NT
+  66500 tokens (262 text, 66237 chip) 65s: F0(32) J(872) ST0 F0(408) F0(22) F0(32) J(872) ST0
+  67000 tokens (262 text, 66737 chip) 65s: V(6305) F1(278) V(1168) F1(133) V(2678) F1(24) V(3376) F1(55)
+  67500 tokens (262 text, 67237 chip) 66s: F1(30) V(15631) F1(32604) V(10064) F1(32427) V(12470) F1(32581) V(25344)
+  68000 tokens (262 text, 67737 chip) 66s: V(11847) F1(40) V(2092) F1(106) V(383) F1(32750) V(2092) F1(106)
+  68500 tokens (262 text, 68237 chip) 66s: F0(144) V(12639) F1(32678) V(19833) F1(32490) V(1168) F1(133) R(2069)
+  69000 tokens (262 text, 68737 chip) 66s: F1(32586) V(8225) F1(56) V(16522) F1(32596) V(26451) F1(135) V(22543)
+  69500 tokens (262 text, 69237 chip) 67s: F1(32678) V(7921) F1(32512) F0(32745) F0(150) V(24146) F1(32751) V(13839)
+  70000 tokens (262 text, 69737 chip) 67s: F1(32266) F0(191) F0(32736) V(32) F1(32736) R(2951) V(13909) F1(502)
+  70500 tokens (262 text, 70237 chip) 67s: V(24551) F1(597) V(24146) F1(32751) V(24383) F1(651) F0(151) F0(147)
+  71000 tokens (262 text, 70737 chip) 68s: V(29700) F1(32678) V(20616) F1(32519) V(32606) F1(168) V(10966) F1(68)
+  71500 tokens (262 text, 71237 chip) 68s: V(18802) F1(223) V(21755) F1(163) V(23951) F1(32722) V(9722) F1(125)
+  72000 tokens (262 text, 71737 chip) 68s: V(4209) F1(50) V(10225) F1(32755) V(20869) F1(32718) V(13099) F1(177)
+  72500 tokens (262 text, 72237 chip) 69s: V(28862) F1(6) V(18802) F1(223) V(3500) F1(139) F0(239) F0(32642)
+  73000 tokens (262 text, 72737 chip) 69s: V(4209) F1(50) V(11930) F1(32668) F0(51) F0(32576) V(32717) F1(50)
+  73500 tokens (262 text, 73237 chip) 69s: F1(32678) V(1284) F1(32731) V(29700) F1(32678) V(1552) F1(32559) V(32606)
+  74000 tokens (262 text, 73737 chip) 69s: F0(32717) F0(32647) V(15871) F1(32748) V(20096) F1(238) V(22877) F1(32721)
+  74500 tokens (262 text, 74237 chip) 70s: F0(32639) V(835) F1(121) V(21633) F1(31746) V(26943) F1(32648) V(2975)
+  75000 tokens (262 text, 74737 chip) 70s: V(7839) F1(32736) V(32345) F1(32492) V(8567) F1(69) V(23635) F1(523)
+  75500 tokens (262 text, 75237 chip) 70s: F1(32630) V(8146) F1(32607) V(3234) F1(256) F0(32688) F0(199) V(14176)
+  76000 tokens (262 text, 75737 chip) 71s: F1(32736) V(19048) F1(59) F0(43) F0(193) V(32575) F1(192) V(3195)
+  76500 tokens (262 text, 76237 chip) 71s: F1(140) V(22748) F1(72) V(23310) F1(140) V(27130) F1(32564) V(14176)
+  77000 tokens (262 text, 76737 chip) 71s: V(5097) F1(32575) F0(142) F0(113) V(11066) F1(54) V(14043) F1(55)
+  77500 tokens (262 text, 77237 chip) 71s: F0(32685) F0(181) V(10477) F1(32691) V(19311) F1(32558) V(7157) F1(167)
+  78000 tokens (262 text, 77737 chip) 72s: F1(32431) V(7883) F1(43) V(1492) F1(32734) V(11066) F1(54) V(30118)
+  78500 tokens (262 text, 78237 chip) 72s: V(21288) F1(31909) V(10477) F1(32691) V(24268) F1(200) F0(43) F0(193)
+  79000 tokens (262 text, 78737 chip) 72s: F0(0) V(14392) F1(124) F0(0) F0(0) ST1 ST1 F0(0)
+  79500 tokens (262 text, 79237 chip) 72s: F1(135) V(26456) F1(11) V(18220) F1(15) V(30590) F1(266) V(18220)
+  80000 tokens (262 text, 79737 chip) 73s: F0(0) F0(32634) F0(33) V(134) F1(32634) V(134) F1(32634) V(32735)
+  80500 tokens (262 text, 80237 chip) 73s: V(1790) F1(135) V(21822) F1(32751) F0(166) F0(32751) V(27556) F1(0)
+  81000 tokens (262 text, 80737 chip) 73s: V(15109) F1(42) V(12311) F1(80) V(20424) F1(32720) V(9549) F1(33)
+  81500 tokens (262 text, 81237 chip) 74s: F0(320) F0(400) V(1789) F1(15) F0(0) V(31642) F1(19) F0(0)
+  82000 tokens (262 text, 81737 chip) 74s: F1(32591) V(27309) F1(32657) F0(32637) F0(62) V(12154) F1(32675) V(5552)
+  82500 tokens (262 text, 82237 chip) 74s: ST0 F0(0) F0(0) F0(32634) F0(33) V(134) F1(32634) V(134)
+  83000 tokens (262 text, 82737 chip) 74s: V(216) F1(32552) V(2275) F1(30493) V(41) F1(32727) V(32454) F1(313)
+  83500 tokens (262 text, 83237 chip) 75s: F0(32552) F0(32727) V(8784) F1(32615) V(15334) F1(31) V(302) F1(32739)
+  84000 tokens (262 text, 83737 chip) 75s: F1(32757) V(15) F1(32753) V(32763) F1(4) R(1645) F0(32574) F0(32764)
+  84500 tokens (262 text, 84237 chip) 75s: V(8784) F1(32615) V(22413) F1(218) F0(32574) F0(32753) V(194) F1(32574)
+  85000 tokens (262 text, 84737 chip) 76s: F1(32764) V(17) F1(32751) F0(32574) F0(25) V(194) F1(32574) V(265)
+  85500 tokens (262 text, 85237 chip) 76s: F0(32764) V(27004) F1(32630) V(11582) F1(32414) R(2527) V(5624) F1(32765)
+  86000 tokens (262 text, 85737 chip) 76s: V(32752) F1(15) V(289) F1(32479) V(191) F1(32577) V(32627) F1(140)
+  86500 tokens (262 text, 86237 chip) 76s: V(5624) F1(32765) V(16798) F1(212) V(27004) F1(32630) V(10498) F1(32686)
+  87000 tokens (262 text, 86737 chip) 77s: F0(32602) V(122) F1(32646) V(877) F1(31891) V(166) F1(32602) V(344)
+  87500 tokens (262 text, 87237 chip) 77s: F1(32734) V(2072) F1(126) V(19730) F1(32638) V(27233) F1(333) V(19730)
+  88000 tokens (262 text, 87737 chip) 77s: F1(133) F0(32720) F0(32585) V(183) F1(32585) V(32512) F1(255) V(48)
+  88500 tokens (262 text, 88237 chip) 77s: F1(32638) V(26858) F1(32650) V(1952) F1(32734) V(655) F1(311) F0(32742)
+  89000 tokens (262 text, 88737 chip) 78s: F0(32742) F0(32625) V(26) F1(32742) V(32763) F1(4) V(143) F1(32625)
+  89500 tokens (262 text, 89237 chip) 78s: V(143) F1(32625) V(3484) F1(32567) F0(32742) F0(32562) V(20172) F1(32749)
+  90000 tokens (262 text, 89737 chip) 78s: F0(32562) V(206) F1(32562) V(70) F1(32698) V(26) F1(32742) V(39)
+  90500 tokens (262 text, 90237 chip) 79s: F1(32622) V(10278) F1(32486) V(11108) F1(32622) V(15496) F1(32490) V(20172)
+  91000 tokens (262 text, 90737 chip) 79s: F0(32532) F0(62) V(236) F1(32532) V(236) F1(32532) V(32706) F1(61)
+  91500 tokens (262 text, 91237 chip) 79s: V(22776) F1(261) F0(32694) F0(32611) V(22124) F1(32715) V(12138) F1(32278)
+  92000 tokens (262 text, 91737 chip) 79s: F1(61) F0(32566) F0(32707) V(61) F1(32707) V(297) F1(32471) V(202)
+  92500 tokens (262 text, 92237 chip) 80s: V(32326) F1(32656) V(11968) F1(32588) V(22124) F1(32715) V(9102) F1(89)
+  93000 tokens (262 text, 92737 chip) 80s: F1(32668) V(134) F1(32634) V(120) F1(32648) V(32765) F1(2) F0(32694)
+  93500 tokens (262 text, 93237 chip) 80s: F1(32593) V(31175) F1(73) F0(17) F0(32605) V(674) F1(12) V(22361)
+  94000 tokens (262 text, 93737 chip) 80s: V(74) F1(32694) V(32714) F1(53) F0(32671) F0(32593) V(97) F1(32671)
+  94500 tokens (262 text, 94237 chip) 81s: F1(32652) V(31957) F1(124) V(24378) F1(32652) V(11871) F1(32685) V(674)
+  95000 tokens (262 text, 94737 chip) 81s: F0(2907) F0(194) F0(90) ST1 ST1 F0(1565) F0(5459) F0(48)
+  95500 tokens (262 text, 95237 chip) 81s: F1(13) V(17408) F1(94) V(4880) F1(108) F0(0) F0(320) F0(328)
+  96000 tokens (262 text, 95737 chip) 81s: F1(32591) V(8847) F1(32480) V(22566) F1(58) V(17836) F1(663) F0(191)
+  96500 tokens (262 text, 96237 chip) 82s: F1(10) F0(0) R(1834) V(18943) F1(17) F0(0) F0(0) ST1
+  97000 tokens (262 text, 96737 chip) 82s: F0(32679) V(14975) F1(176) V(15194) F1(32446) V(25447) F1(32685) V(7795)
+  97500 tokens (262 text, 97237 chip) 82s: F0(0) F0(0) F0(32523) F0(28) V(245) F1(32523) V(245) F1(32523)
+  98000 tokens (262 text, 97737 chip) 83s: F1(32678) V(14975) F1(176) V(32304) F1(32617) F0(32678) F0(32617) F0(8100)
+  98500 tokens (262 text, 98237 chip) 83s: F0(32569) F0(32645) V(9458) F1(32627) V(9703) F1(32382) V(906) F1(32681)
+  99000 tokens (262 text, 98737 chip) 83s: F1(1) V(28928) F1(4) V(29649) F1(5) F0(0) F0(320) F0(440)
+  99500 tokens (307 text, 99192 chip) 87s: F1(8) J(4054) V(32736) F1(0) ST1 ST1 ST1 J(4064)
+  100000 tokens (336 text, 99663 chip) 89s: V(22497) F1(651) V(5591) F1(961) F0(32767) F0(30371) F0(2396) F0(2397)
+  100500 tokens (373 text, 100126 chip) 92s: F1(8) V(0) F1(1) J(5) J(0) F0(0) F0(93) HALT
+================================================================================ 
+Q2: Run the RF analyzer on capture 8 and summarize what kind of signal activity it shows.
+---
+<tool_call>
+<function=rf_analyze>
+<parameter=capture>
+8
+</parameter>
+</function>
+</tool_call>
+<tool_response>
+capture=8 EPFL-LoRaIQ LoRa fs=unknown
+samples=1024 (Q15)
+mean_power_dbfs=-14.1
+peak_power_dbfs=-10.4 at_sample=41
+noise_floor_dbfs=-14.9 (quietest 64-sample window)
+loudest_window_dbfs=-13.3
+active_windows=0/16 (power > 4x quietest)
+dominant_dft16_bin=1 freq_cycles_per_sample=0.0625 power_share_percent=23
+cfo_cycles_per_sample=0.0038
+</tool_response>
+<think>
+
+</think>
+
+The RF analyzer on capture 8 (EPFL-LoRaIQ LoRa) shows the following signal characteristics:
+- **Mean power**: -14.1 dBFS
+- **Peak power**: -10.4 dBFS (at sample 41)
+- **Noise floor**: -14.9 dBFS (quietest 64-sample window)
+- **Active windows**: 0 out of 16 (no windows exceed 4x the noise floor)
+- **Dominant spectral bin**: Bin 1 at 0.0625 cycles/sample with 23% power share
+- **Carrier frequency offset (CFO)**: 0.0038 cycles/sample
+
+The signal appears to be a **LoRa transmission** with very low activity. The mean power is close to the noise floor, and no windows are considered "active" (above 4x the noise floor), suggesting this is either a very weak signal or a quiet period in the LoRa transmission. The dominant spectral bin indicates a narrowband signal, consistent with LoRa's chirp modulation. The small CFO suggests minor frequency offset.<|im_end|>
+[613 text + 100127 chip tokens, 158s, lock error: None]

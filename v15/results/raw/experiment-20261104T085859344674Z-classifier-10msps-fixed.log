@@ -1,0 +1,60 @@
+{
+ "protocol": "PROTOCOL.md Amendment 6, P6.4c (host float, 10 MS/s, leave-one-recording-out)",
+ "recordings": 26,
+ "windows": 416,
+ "by_class_recordings": {
+  "WiFi": 9,
+  "LTE": 12,
+  "DVB-T": 5
+ },
+ "float": {
+  "window_accuracy": 0.7091346153846154,
+  "recording_accuracy": 0.8461538461538461,
+  "confusion_rows_true_cols_pred": [
+   [
+    116,
+    25,
+    3
+   ],
+   [
+    29,
+    143,
+    20
+   ],
+   [
+    6,
+    38,
+    36
+   ]
+  ]
+ },
+ "integer_in_weights_model": {
+  "window_accuracy": 0.7091346153846154,
+  "recording_accuracy": 0.8461538461538461,
+  "confusion_rows_true_cols_pred": [
+   [
+    116,
+    25,
+    3
+   ],
+   [
+    29,
+    143,
+    20
+   ],
+   [
+    6,
+    38,
+    36
+   ]
+  ]
+ },
+ "beats_1msps_lolo6": true,
+ "neural_final_model_one_window_per_recording": {
+  "windows": 26,
+  "exact_tokens": true,
+  "outputs_equal_integer_model": true,
+  "tokens": 10611636
+ },
+ "note": "first run keyed recordings by file name (25 units: two recordings share a name); rerun keyed by path"
+}

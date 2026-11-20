@@ -1,0 +1,20 @@
+# fetched by upstream/setup_upstream.py
+upstream/QwenPU/
+upstream/QwenPU-rf/
+
+# local data, checkpoints, recordings ($RFPU_DATA may also point here)
+rfpu-data/
+*.safetensors
+*.npy
+*.bin
+*.cfile
+*.sigmf-data
+
+# python / tooling
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+.hypothesis/
+*.egg-info/
+.DS_Store

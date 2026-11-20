@@ -1,0 +1,2 @@
+{'iterations': 16, 'sqnr_db': 155.3907392954176, 'enob_bits': 25.520056361365054, 'nmse': 2.8901878465246563e-16, 'tokens_per_sample': 256.05712890625, 'ms_per_sample': 16.90854501953254}
+{'iterations': 10, 'sqnr_db': 121.55814447373106, 'enob_bits': 19.90002399895865, 'nmse': 6.98530788107264e-13, 'tokens_per_sample': 184.9794921875, 'ms_per_sample': 12.142624462896379}

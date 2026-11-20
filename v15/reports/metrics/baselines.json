@@ -1,0 +1,47 @@
+{
+  "samples": 65536,
+  "rows": [
+    {
+      "kernel": "lowpass16 FIR",
+      "backend": "NumPy int64 (CPU), same contract",
+      "ns_per_sample": 47.81799312070234,
+      "bit_exact": true,
+      "neural_ns_per_sample": 21331075.537112553,
+      "neural_slowdown_x": 446088.89133570663
+    },
+    {
+      "kernel": "lowpass16 FIR",
+      "backend": "PyTorch int64 (CUDA), same contract",
+      "ns_per_sample": 17.146301267700892,
+      "bit_exact": true,
+      "neural_ns_per_sample": 21331075.537112553,
+      "neural_slowdown_x": 1244062.7983887505
+    },
+    {
+      "kernel": "lowpass16 FIR",
+      "backend": "NumPy complex128 float (not same contract)",
+      "ns_per_sample": 12.260436887956416,
+      "bit_exact": null,
+      "neural_ns_per_sample": 21331075.537112553,
+      "neural_slowdown_x": 1739829.9695230552
+    },
+    {
+      "kernel": "FFT64 power",
+      "backend": "cuFFT complex128 float (not same contract)",
+      "ns_per_sample": 1.7684935738060403,
+      "bit_exact": null,
+      "neural_ns_per_sample": 27214002.148440387,
+      "neural_slowdown_x": 15388239.20624836
+    },
+    {
+      "kernel": "FFT64 power",
+      "backend": "NumPy FFT float (not same contract)",
+      "ns_per_sample": 7.328796458594411,
+      "bit_exact": null,
+      "neural_ns_per_sample": 27214002.148440387,
+      "neural_slowdown_x": 3713297.5792398737
+    }
+  ],
+  "scope": "resident input, best of 5, excludes transfers; neural from capability-campaign (batch 16)",
+  "group": "baselines"
+}

@@ -1,0 +1,15 @@
+{
+ "run": "viz-record-levels-q0-rv1check, 2026-11-20, checkpoint qwen3.5-4b-rv1",
+ "question": "What is the noise floor of capture 14 in dBFS, and how loud is its loudest 64-sample window?",
+ "capture": 14,
+ "text_tokens": 625,
+ "chip_tokens": 26581,
+ "seconds": 101,
+ "answer": "<tool_call>\n<function=rf_levels>\n<parameter=capture>\n14\n</parameter>\n</function>\n</tool_call>\n<tool_response>\ncapture=14 synthetic test signal A fs=1MS/s\nsamples=1024 (Q15)\nmean_power_dbfs=-15.5\npeak_power_dbfs=-10.2 at_sample=535\nnoise_floor_dbfs=-48.9 (quietest 64-sample window)\nloudest_window_dbfs=-10.4\nactive_windows=5/16 (power > 4x quietest) first_active_sample=320 last_active_sample_end=640\nnot_measured=spectrum and frequency offset (use rf_analyze), modulation, coding rate, symbol rate, occupied bandwidth, number of transmitters, distance, direction of arrival, bit error rate, protocol or packet contents (this tool reports only the values above)\n</tool_response>\n<think>\n\n</think>\n\nThe noise floor of capture 14 is **-48.9 dBFS**, and its loudest 64-sample window is **-10.4 dBFS**.<|im_end|>",
+ "positions": 28082,
+ "prompt_positions_where_circuit_fired": 2,
+ "generated_positions": 27207,
+ "circuit_owned": 27144,
+ "circuit_equal_emitted": 27144,
+ "mismatch": 0
+}

@@ -1,0 +1,65 @@
+{
+  "fm": {
+    "tone_cycles_per_sample": 0.01,
+    "deviation_rad_per_sample": 0.3
+  },
+  "am": {
+    "modulation_index": 0.5
+  },
+  "rows": [
+    {
+      "input_snr_db": 10,
+      "fm_output_sinad_db": -4.017902994515637,
+      "fm_inband_sinad_db": 34.89454370100442,
+      "am_output_sinad_db": 3.8391234466865747,
+      "am_inband_sinad_db": 20.769195566895778
+    },
+    {
+      "input_snr_db": 20,
+      "fm_output_sinad_db": 6.50532498317949,
+      "fm_inband_sinad_db": 46.178457386632715,
+      "am_output_sinad_db": 13.971527286625369,
+      "am_inband_sinad_db": 32.02068818249198
+    },
+    {
+      "input_snr_db": 30,
+      "fm_output_sinad_db": 16.51583374123981,
+      "fm_inband_sinad_db": 54.889335446896155,
+      "am_output_sinad_db": 24.143663886097215,
+      "am_inband_sinad_db": 40.46931558853896
+    },
+    {
+      "input_snr_db": 40,
+      "fm_output_sinad_db": 26.487137085837603,
+      "fm_inband_sinad_db": 66.82550202454297,
+      "am_output_sinad_db": 33.70995526609345,
+      "am_inband_sinad_db": 50.78229309281543
+    }
+  ],
+  "neural": [
+    {
+      "kernel_config": {
+        "kernel": "fm_demod",
+        "product_shift": 3,
+        "cordic_iterations": 16
+      },
+      "samples": 8192,
+      "tokens": 3887722,
+      "neural_seconds": 134.65895289999025,
+      "ms_per_sample": 16.43786046142459
+    },
+    {
+      "kernel_config": {
+        "kernel": "am_envelope",
+        "pre_shift": 13,
+        "cordic_iterations": 16,
+        "gain": 1.6467602578654548
+      },
+      "samples": 8192,
+      "tokens": 3636878,
+      "neural_seconds": 126.36407260001579,
+      "ms_per_sample": 15.425301831056615
+    }
+  ],
+  "group": "demod"
+}

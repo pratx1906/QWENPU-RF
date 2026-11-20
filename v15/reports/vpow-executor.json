@@ -1,0 +1,56 @@
+{
+  "chipformer": "upstream\\QwenPU-rf\\chipformer\\__init__.py",
+  "programs": 8,
+  "rows": [
+    {
+      "seed": 0,
+      "tokens": 2074,
+      "exact": true,
+      "vc_tokens": 176
+    },
+    {
+      "seed": 1,
+      "tokens": 1922,
+      "exact": true,
+      "vc_tokens": 169
+    },
+    {
+      "seed": 2,
+      "tokens": 1982,
+      "exact": true,
+      "vc_tokens": 182
+    },
+    {
+      "seed": 3,
+      "tokens": 1916,
+      "exact": true,
+      "vc_tokens": 165
+    },
+    {
+      "seed": 4,
+      "tokens": 2106,
+      "exact": true,
+      "vc_tokens": 196
+    },
+    {
+      "seed": 5,
+      "tokens": 1980,
+      "exact": true,
+      "vc_tokens": 180
+    },
+    {
+      "seed": 6,
+      "tokens": 2095,
+      "exact": true,
+      "vc_tokens": 195
+    },
+    {
+      "seed": 7,
+      "tokens": 1920,
+      "exact": true,
+      "vc_tokens": 181
+    }
+  ],
+  "all_exact": true,
+  "seconds": 1.372969899995951
+}

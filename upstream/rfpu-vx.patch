@@ -1,0 +1,1411 @@
+diff --git a/chipformer/rv/asm.py b/chipformer/rv/asm.py
+index b92c0ca..076cd2d 100644
+--- a/chipformer/rv/asm.py
++++ b/chipformer/rv/asm.py
+@@ -90,6 +90,7 @@ class Program:
+         return self.labels.get("_start", ROM_BASE)
+ 
+ 
++VX2_ASM = {"vfir": 0, "vpow": 1, "vbfly": 2}  # custom-2, funct7 = 1 (vx.OPS2)
+ VX_ASM = {"vmat": 0, "vmatr": 1, "vq": 2, "vew": 3, "vexp": 4, "vget": 5, "vred": 6, "vput": 7}
+ 
+ 
+@@ -186,6 +187,8 @@ def assemble(src: str) -> Program:
+                 emit(enc_r(0, 0, reg(a[1]), 4, reg(a[0]), 0x0B))
+             elif op in VX_ASM:  # the vector unit (vx.py): rd, rs1, rs2
+                 emit(enc_r(0, reg(a[2]), reg(a[1]), VX_ASM[op], reg(a[0]), 0x5B))
++            elif op in VX2_ASM:
++                emit(enc_r(1, reg(a[2]), reg(a[1]), VX2_ASM[op], reg(a[0]), 0x5B))
+             elif op == "bprd":  # dD, k
+                 emit(enc_i(val(a[1]), 0, 0, val(a[0]), 0x2B))
+             elif op in I_OPS:
+diff --git a/chipformer/rv/core.py b/chipformer/rv/core.py
+index df8860f..ced5e8e 100644
+--- a/chipformer/rv/core.py
++++ b/chipformer/rv/core.py
+@@ -361,7 +361,7 @@ def build(target: Target | None = None, text=None, vx: bool = False) -> RvCore:
+     xn = c.counter("count", isJR, c.final - isJR)
+     rec_start = c.final + fam["GO"]
+     xj = c.counter("j", rec_start, one - rec_start - no_text)
+-    v_reset = rec_start + isQ
++    v_reset = rec_start + isQ + (fam["VH"] if vx else 0)  # (VX: VFIR's value record follows a VH)
+     xv = c.counter("vcnt", v_reset, one - v_reset - no_text)
+     cnt = c.thermo(xn, isJR, S.N_MAX, "n")
+     jt = c.thermo(xj, rec_start, JMAX, "j")
+@@ -374,6 +374,7 @@ def build(target: Target | None = None, text=None, vx: bool = False) -> RvCore:
+ 
+     j0, j1, j2, j3 = (jeq(v) for v in range(4))
+     v0, v1, v2 = one - vt[0], vt[0] - vt[1], vt[1] - vt[2]
++    c.vx_v = (v0, v1, v2)
+ 
+     if text:  # ------------------------------------------------ P3 bridge state
+         isGO, isHALT = fam["GO"], fam["HALT"]
+diff --git a/chipformer/rv/ref.py b/chipformer/rv/ref.py
+index 1457e01..d0a42a4 100644
+--- a/chipformer/rv/ref.py
++++ b/chipformer/rv/ref.py
+@@ -53,7 +53,9 @@ from dataclasses import dataclass, field
+ 
+ from chipformer.rv import spec as S
+ from chipformer.rv import vx as VXM
++from chipformer.rv.vx import ALL_OPS as VX_ALL
+ from chipformer.rv.vx import OPS as VX_OPS
++from chipformer.rv.vx import OPS2 as VX_OPS2
+ 
+ UOPS = ["ILLEGAL", "LUI", "AUIPC", "MISA",
+         "ADDI", "SLTI", "SLTIU", "XORI", "ORI", "ANDI", "SLLI", "SRLI", "SRAI",
+@@ -66,7 +68,7 @@ UOPS = ["ILLEGAL", "LUI", "AUIPC", "MISA",
+ CUSTOM = {"BMAC": 64, "BMSB": 65, "BLD": 66, "BGET": 67, "BPRD": 68,
+           "BSCAN": 69,
+           "VMAT": 73, "VMATR": 74, "VQ": 75, "VEW": 76, "VEXP": 77, "VGET": 78, "VRED": 79,
+-          "VPUT": 80}  # uops 64..127: custom
++          "VPUT": 80, "VFIR": 81, "VPOW": 82, "VBFLY": 83}  # uops 64..127: custom
+ CSR_STUBS = {0xC00: 0, 0xC01: 0, 0xC02: 0, 0xC80: 0, 0xC81: 0, 0xC82: 0, 0xF14: 0,
+              0x301: S.MISA}  # cycle, time, instret (+h), mhartid, misa
+ U = {n: i for i, n in enumerate(UOPS)} | CUSTOM
+@@ -145,6 +147,8 @@ def decode(w: int) -> Inst:
+         return Inst(["BMAC", "BMSB", "BLD", "BGET", "BSCAN"][f3], rd, rs1, rs2)
+     if opc == 0x5B and f7 == 0:
+         return Inst(VX_OPS[f3], rd, rs1, rs2)
++    if opc == 0x5B and f7 == 1 and f3 < len(VX_OPS2):
++        return Inst(VX_OPS2[f3], rd, rs1, rs2)
+     if opc == 0x2B and f3 == 0:
+         return Inst("BPRD", imm=w >> 20 & 0x7F, dd=rd & 7)
+     if w == 0x00000073:
+@@ -547,7 +551,7 @@ class Machine:
+             return [S.tok("NT")]
+         if op == "ILLEGAL":
+             return fault("illegal")
+-        if op in VX_OPS:
++        if op in VX_ALL:
+             return VXM.execute(self, ins)
+         if op in CUSTOM:
+             return self.digit_op(ins, a, b)
+diff --git a/chipformer/rv/vx.py b/chipformer/rv/vx.py
+index 3547927..ed2b0b3 100644
+--- a/chipformer/rv/vx.py
++++ b/chipformer/rv/vx.py
+@@ -67,6 +67,43 @@ below are the instruction's (register bits, in order); SLOTS gives their VC pack
+   f3 7  VPUT   rd: target 10; rs1, rs2: the data, streamed (VE VH VE VH)
+                target < 512: VM pair target (register target / 32) = (rs1, rs2);
+                512 + k: RoPE pair k = (cos rs1, sin rs2)
++Custom-2 with funct7 = 1 (OPS2), the RF ops:
++  f3 0  VFIR   rs1: xr 16, xi 16 (a complex int16 sample); rs2: dst 4, src 3 (v0..v7), h 3
++               (v8 + h), n 5, eoff 6, chain 1
++               one input sample through a transposed-form complex Q15 FIR of n <= 16 taps (taps
++               stored reversed in VM[8 + h] as (re, im) element pairs), state in register pairs:
++               for j < n, e = eoff + 2 j: z = (VM[src][e - 2], VM[src][e - 1]) when j > 0; at
++               j = 0, 0, or with chain the pair before the block in bank A taken as one array of
++               256 pairs (pair 32 src + eoff / 2 - 1: the previous block's last pair, also across
++               a register boundary, so 64 taps chain over two registers); (hr, hi) = VM[8 + h][e,
++               e + 1];
++               yr = zr + (hr xr - hi xi + 2^14) >> 15, yi = zi + (hr xi + hi xr + 2^14) >> 15
++               (round half up of the exact complex product, once per component);
++               VM[dst][e], VM[dst][e + 1] = yr, yi. dst differs from src and the taps' register
++               (ping-pong the state between two registers). Taps are int16, |z|, |y| < 2^23.
++               A tap's tokens: yr, yi as words (4 tokens); then rd = sat16(yr >> g) | sat16(yi >> g) << 16
++               (g = 2 with guard, rs2 bit 22: taps pre-scaled by 4, so each tap's rounding is 1/4 LSB of
++               the output; a chained pair of 2 gives the final shift round-half-up)
++               of the last tap as a value record (NT when rd = x0). Not tracked.
++  f3 1  VPOW   rs1: src 3 (v0..v7), n 6, eoff 6; rs2: unused
++               the power of n <= 32 complex int16 elements, the pairs (ar, ai) = VM[src][e, e + 1],
++               e = eoff + 2 j (eoff even, aligned to 2 n): acc_j = acc_{j-1} + ar^2 + ai^2 mod 2^32
++               (acc_{-1} = 0). An element's tokens: acc_j as VE (bits 0-15), VH (bits 16-31: bit 15 is
++               acc's bit 31, not a tracker flag; write target vsum, so vsum = acc's bits 0-30, sign-
++               extended from bit 30); then rd = acc_{n-1} as a value record (NT when rd = x0).
++  f3 2  VBFLY  rs1: a 3 (v0..v7), h 3 (v8 + h), dst 4, woff 5, rhi 1, mask 5, sc 1, n 4, keep 1,
++               track 1; rd = x0
++               n in {1, 2, 4, 8} radix-2 butterflies of a constant-geometry FFT stage: for j < n,
++               i = woff / 2 + 16 rhi + j (woff a multiple of 2 n, woff + 2 n <= 32), a = the pair i
++               of VM[a], b = the pair i of VM[8 + h] (int16 components), (c, s) = RoPE pair
++               (i & mask) (32 pairs), t = (c br - s bi, c bi + s br) (exact);
++               y0 = (a 2^15 + t + 2^(14 + sc)) >> (15 + sc), y1 = (a 2^15 - t + 2^(14 + sc)) >> (15 + sc)
++               per component; VM[dst] pairs woff + 2 j = y0, woff + 2 j + 1 = y1 (dst differs from
++               both sources). A butterfly's tokens: y0r, y0i, y1r, y1i as words (8 tokens); with
++               track (n <= 4), each y as VE VE (32 bits) then as a word, max |y| tracked in that order
++               (keep 0: the op's first word restarts the tracker; 16 tokens), so VGET 3 after a stage
++               gives the bit length of its largest output component. With natural-order input, TW[r] = W_N^brev(r) and mask = 2^s - 1 at stage
++               s, the stages give the DFT (sc = 1: DFT / N) in bit-reversed order.
+ SILU(y) (y in Q16): the Q12 table round(x / (1 + e^-x) 4096) at x = (y >> 11) / 32 for |y| < 8.0,
+ min(y >> 4, 2^23) from 8.0, 0 below -8.0. EXP(d) = round(127 e^(-d / 32)) for d < 256, else 0.
+ Streams are at most 64 tokens (software splits longer vectors into ops). Every op counts elements
+@@ -79,6 +116,8 @@ import math
+ from chipformer.rv import spec as S
+ 
+ OPS = ["VMAT", "VMATR", "VQ", "VEW", "VEXP", "VGET", "VRED", "VPUT"]
++OPS2 = ["VFIR", "VPOW", "VBFLY"]  # custom-2, funct7 = 1, by funct3
++ALL_OPS = OPS + OPS2
+ MAX_STREAM = 96
+ M32 = 0xFFFFFFFF
+ CHUNK_CELLS = 72
+@@ -100,6 +139,13 @@ FIELDS = {  # op -> [(name, register, lo bit, width)]: the instruction's operand
+              ("m", "rs1", 0, 31), ("c", "rs2", 0, 16)],
+     "VRED": [("n", "rd", 0, 7), ("mode", "rd", 7, 1), ("off", "rd", 8, 8)],
+     "VPUT": [("target", "rd", 0, 10), ("lo", "rs1", 0, 32), ("hi", "rs2", 0, 32)],
++    "VFIR": [("xr", "rs1", 0, 16), ("xi", "rs1", 16, 16), ("dst", "rs2", 0, 4), ("src", "rs2", 4, 3),
++             ("h", "rs2", 7, 3), ("n", "rs2", 10, 5), ("eoff", "rs2", 15, 6), ("chain", "rs2", 21, 1),
++             ("guard", "rs2", 22, 1)],
++    "VPOW": [("src", "rs1", 0, 3), ("n", "rs1", 3, 6), ("eoff", "rs1", 9, 6)],
++    "VBFLY": [("a", "rs1", 0, 3), ("h", "rs1", 3, 3), ("dst", "rs1", 6, 4), ("woff", "rs1", 10, 5),
++              ("rhi", "rs1", 15, 1), ("mask", "rs1", 16, 5), ("sc", "rs1", 21, 1), ("n", "rs1", 22, 4),
++              ("keep", "rs1", 26, 1), ("track", "rs1", 27, 1)],
+ }
+ 
+ 
+@@ -152,7 +198,27 @@ SLOTS = {
+                        (4, [(f["n"] >> 1, 6)])],
+     "VPUT": lambda f: [(0, [(f["target"] >> 5 & 15, 4), (f["target"] & 31, 5),
+                             (W_VM if f["target"] < 512 else W_ROPE, 3)])],
++    # slot 1 bit 11 (NEW) is 1 only in the funct7 = 1 ops: the VEW datapath cases are off there
++    "VFIR": lambda f: [(0, [(f["dst"], 4), (f["eoff"] >> 1, 5), (W_VM, 3)]),
++                       (1, [(f["src"], 3), (f["h"], 3), (f["xi"] >> 14, 2), (f["chain"], 1),
++                            (f["guard"], 1), (0, 1), (1, 1)]),
++                       (4, [(f["xr"], 12)]),
++                       (5, [(f["xr"] >> 12, 4), (f["xi"], 8)]),
++                       (6, [(f["n"], 6), (f["xi"] >> 8, 6)])],
++    # VPOW: write target vsum (no VM write, and the VM trackers' gates stay off: VH bit 15 is data);
++    # n in slot 5 bits 1-7 (VMAT's row count: its done node)
++    "VPOW": lambda f: [(0, [(0, 4), (f["eoff"] >> 1, 5), (W_SUM, 3)]),
++                       (1, [(f["src"], 3), (0, 8), (1, 1)]),
++                       (5, [(0, 1), (f["n"], 7)])],
++    # VBFLY: slot 1 bit 10 (with NEW) marks it; bit 9 = rhi; slot 6 = 2 n (the element count / 2),
++    # mask, sc
++    "VBFLY": lambda f: [(0, [(f["dst"], 4), (f["woff"], 5), (W_VM, 3)]),
++                        (1, [(f["a"], 3), (f["h"], 3), (f["keep"], 1), (f["track"], 1), (0, 1), (f["rhi"], 1),
++                             (1, 1), (1, 1)]),
++                        (6, [(2 * f["n"], 6), (f["mask"], 5), (f["sc"], 1)])],
+ }
++NEW_BIT = 11  # slot 1
++BFLY_BIT = 10  # slot 1, with NEW: VBFLY
+ 
+ 
+ def s32(v):
+@@ -219,7 +285,7 @@ class VX:
+         self.va = [0] * 384
+         self.kc = [[0] * 8 for _ in range(1024)]
+         self.vc = [[0] * 8 for _ in range(1024)]
+-        self.rope = [(0, 0)] * 4
++        self.rope = [(0, 0)] * 32
+         self.vmx = self.vsum = self.varg = 0
+         self.vbest = None  # the argmax value so far
+ 
+@@ -386,9 +452,82 @@ def execute(m, ins) -> list[int]:
+             put(target >> 5, 2 * (target & 31), lo)
+             put(target >> 5, 2 * (target & 31) + 1, hi)
+         else:
+-            check(target < 516, f"VPUT target {target}")
++            check(target < 544, f"VPUT target {target}")
+             v.rope[target - 512] = (sx(lo, 16), sx(hi, 16))
+         toks += word(lo) + word(hi)
++    elif op == "VFIR":
++        dst, src, h, n, eoff, chain = (f[x] for x in ("dst", "src", "h", "n", "eoff", "chain"))
++        xr, xi = sx(f["xr"], 16), sx(f["xi"], 16)
++        hreg = 8 + h
++        check(1 <= n <= 16 and eoff % 2 == 0 and eoff + 2 * n <= 64, f"VFIR n {n} eoff {eoff}")
++        aligned(eoff, 2 * n)
++        cp = 32 * src + (eoff >> 1) - 1  # chain: the pair before the block in bank A (v0..v7)
++        check(not chain or cp >= 0 and cp >> 5 != dst, f"VFIR chain from pair {cp} (dst {dst})")
++        check(dst not in (src, hreg), f"VFIR dst {dst} src {src} h {hreg}")
++        yr = yi = 0
++        for j in range(n):
++            e = eoff + 2 * j
++            if j:
++                zr, zi = v.vm[src][e - 2], v.vm[src][e - 1]
++            elif chain:
++                zr, zi = v.vm[cp >> 5][2 * (cp & 31)], v.vm[cp >> 5][2 * (cp & 31) + 1]
++            else:
++                zr = zi = 0
++            hr, hi = v.vm[hreg][e], v.vm[hreg][e + 1]
++            check(-(1 << 23) <= zr < 1 << 23 and -(1 << 23) <= zi < 1 << 23, f"VFIR state {zr} {zi}")
++            check(-32768 <= hr < 32768 and -32768 <= hi < 32768, f"VFIR tap {hr} {hi}")
++            yr = zr + ((hr * xr - hi * xi + (1 << 14)) >> 15)
++            yi = zi + ((hr * xi + hi * xr + (1 << 14)) >> 15)
++            check(-(1 << 23) <= yr < 1 << 23 and -(1 << 23) <= yi < 1 << 23, f"VFIR out {yr} {yi}")
++            put(dst, e, yr)
++            put(dst, e + 1, yi)
++            toks += word(yr) + word(yi)
++        g = 2 * f["guard"]  # guard: rd from y >> 2 (taps scaled by 4; round via the chained pair)
++        r = clamp16(yr >> g) & 0xFFFF | (clamp16(yi >> g) & 0xFFFF) << 16
++    elif op == "VPOW":
++        src, n, eoff = f["src"], f["n"], f["eoff"]
++        check(1 <= n <= 32 and eoff % 2 == 0 and eoff + 2 * n <= 64, f"VPOW n {n} eoff {eoff}")
++        aligned(eoff, 2 * n)
++        acc = 0
++        for j in range(n):
++            ar, ai = v.vm[src][eoff + 2 * j], v.vm[src][eoff + 2 * j + 1]
++            check(-32768 <= ar < 32768 and -32768 <= ai < 32768, f"VPOW element {ar} {ai}")
++            acc = (acc + ar * ar + ai * ai) & M32
++            toks += [ve(acc), S.tok("VH", acc >> 16)]
++        v.vsum = sx(acc, 31)
++        r = acc
++    elif op == "VBFLY":
++        ra, hreg, dst, woff, rhi, mask, sc, n, keep, track = (
++            f[x] for x in ("a", "h", "dst", "woff", "rhi", "mask", "sc", "n", "keep", "track"))
++        check(not track or n <= 4, f"VBFLY track n {n}")
++        hreg += 8
++        check(n in (1, 2, 4, 8) and woff % (2 * n) == 0 and woff + 2 * n <= 32, f"VBFLY n {n} woff {woff}")
++        check(dst not in (ra, hreg) and ins.rd == 0, f"VBFLY dst {dst} a {ra} b {hreg} rd {ins.rd}")
++        for j in range(n):
++            i = (woff >> 1) + 16 * rhi + j
++            ar, ai = v.vm[ra][2 * i], v.vm[ra][2 * i + 1]
++            br, bi = v.vm[hreg][2 * i], v.vm[hreg][2 * i + 1]
++            check(all(-32768 <= e < 32768 for e in (ar, ai, br, bi)), f"VBFLY operands {ar} {ai} {br} {bi}")
++            c, sn = v.rope[i & mask]
++            tr, ti = c * br - sn * bi, c * bi + sn * br
++            for w, sg in ((0, 1), (1, -1)):
++                yr = (ar * 32768 + sg * tr + (1 << (14 + sc))) >> (15 + sc)
++                yi = (ai * 32768 + sg * ti + (1 << (14 + sc))) >> (15 + sc)
++                put(dst, 2 * woff + 4 * j + 2 * w, yr)
++                put(dst, 2 * woff + 4 * j + 2 * w + 1, yi)
++                if track:
++                    toks += ([ve(yr), ve(yr >> 16)] + tracked(yr, first=j == 0 and w == 0 and not keep)
++                             + [ve(yi), ve(yi >> 16)] + tracked(yi))
++                else:
++                    toks += word(yr) + word(yi)
++        r = 0
++    if op in OPS2:
++        if len(toks) - n_vc > MAX_STREAM:
++            raise ValueError(f"{op}: a {len(toks) - n_vc}-token stream (max {MAX_STREAM})")
++        if ins.rd:
++            x[ins.rd] = r
++            return toks + S.value_record(r)
++        return toks + [S.tok("NT")]
+     if len(toks) - n_vc > MAX_STREAM:
+         raise ValueError(f"{op}: a {len(toks) - n_vc}-token stream (max {MAX_STREAM})")
+     return toks + [S.tok("NT")]
+diff --git a/chipformer/rv/vxcirc.py b/chipformer/rv/vxcirc.py
+index 0ee0c24..edda663 100644
+--- a/chipformer/rv/vxcirc.py
++++ b/chipformer/rv/vxcirc.py
+@@ -121,6 +121,51 @@ def build(c, one, fam, pay, uops, A, B, C, jt, jeq, nr, rec_start, case, rdw_any
+     pairw = [count_bit(c, xel, i + 1, 64, f"vx.pairw{i}", hoff[i], shift=1) for i in range(5)]
+     parw = count_bit(c, xel, 0, 64, "vx.parw", shift=1)
+     u.pair, u.parity = pair, parity
++    # bank A's query (register, pair): the same as the write's for every op but the funct7 = 1 ones
++    # (slot 1 bit 11), whose element 2 j + p reads the pair before: (reg_a, hoff | j - 1) for j >= 1
++    # and, at j = 0, (reg_a, hoff) - 1 taken as one 8-bit number (VFIR's chain: the previous
++    # block's last pair, across a register boundary too). L1 MLP nodes (count_fn), each an
++    # integer form R_i + correction that stays 0/1. VPOW (NEW with write target vsum, wt bit 0)
++    # reads one pair an element: (reg_a, hoff | vel).
++    new_op = cfg[1][11]
++    pow_b = s0[9]  # (within NEW: VPOW's wt = 1, VFIR's 4)
++    bf, rhi = cfg[1][10], cfg[1][9]  # (within NEW: VBFLY, and its read half)
++    rbits = list(hoff[0:5]) + list(reg_a)
++    one_ = lambda k: 1  # noqa: E731
++
++    def bfly_read(i, name):
++        """VBFLY's read pair, bit i: i = hoff / 2 + 16 rhi + j (j = element >> 2; hoff aligned)."""
++        if i < 3:
++            return (count_fn(c, xel, one_, 64, f"{name}h{i}", lits_=[new_op, bf, hoff[i + 1]])
++                    + count_fn(c, xel, (lambda k, i=i: k >> (i + 2) & 1), 64, f"{name}j{i}",
++                               lits_=[new_op, bf, 1 - hoff[i + 1]]))
++        return count_fn(c, xel, one_, 64, f"{name}h{i}", lits_=[new_op, bf, hoff[4] if i == 3 else rhi])
++
++    qa = []
++    for i in range(8):
++        low = [1 - b for b in rbits[:i]]  # the borrow reaches bit i
++        e = rbits[i]
++        if i < 5:
++            e = e + count_fn(c, xel, (lambda k, i=i: k >> (i + 1) & 1), 64, f"vx.qa{i}",
++                             lits_=[1 - new_op, 1 - rbits[i]])
++            e = e + count_fn(c, xel, (lambda k, i=i: ((k >> 1) - 1) >> i & 1 if k >= 2 else 0), 64,
++                             f"vx.qas{i}", lits_=[new_op, 1 - pow_b, 1 - bf, 1 - rbits[i]])
++            e = e + count_fn(c, xel, (lambda k, i=i: k >> i & 1), 64, f"vx.qap{i}",
++                             lits_=[new_op, pow_b, 1 - rbits[i]])
++            # VBFLY: replace hoff's bit by its read pair's
++            e = e - count_fn(c, xel, one_, 64, f"vx.qaz{i}", lits_=[new_op, bf, rbits[i]])
++            e = e + bfly_read(i, "vx.qaf")
++        e = e + count_fn(c, xel, lambda k: int(k < 2), 64, f"vx.qab{i}",
++                         lits_=[new_op, 1 - pow_b, 1 - bf, 1 - rbits[i]] + low)
++        e = e - count_fn(c, xel, lambda k: int(k < 2), 64, f"vx.qac{i}",
++                         lits_=[new_op, 1 - pow_b, 1 - bf, rbits[i]] + low)
++        qa.append(e)
++    u.qa = qa
++    # bank B's query pair: the write's (pair) but VBFLY's read pair
++    qb = [pair[i] - count_fn(c, xel, one_, 64, f"vx.qbz{i}", lits_=[new_op, bf, hoff[i]])
++          - count_fn(c, xel, (lambda k, i=i: k >> (i + 1) & 1), 64, f"vx.qbc{i}",
++                     lits_=[new_op, bf, 1 - hoff[i]])
++          + bfly_read(i, "vx.qbf") for i in range(5)]
+ 
+     def w_is(v):
+         return lits(wt, v)
+@@ -134,7 +179,10 @@ def build(c, one, fam, pay, uops, A, B, C, jt, jeq, nr, rec_start, case, rdw_any
+             for r in range(8):
+                 for p in range(16):
+                     row = 16 * r + p
+-                    q[row] = andpre(lits(rq, r) + lits(pair[:4], p) + lits(pair[4:5], kh))
++                    if bank == "A":
++                        q[row] = andpre(lits(qa[5:8], r) + lits(qa[:4], p) + lits(qa[4:5], kh))
++                    else:
++                        q[row] = andpre(lits(rq, r) + lits(qb[:4], p) + lits(qb[4:5], kh))
+                     keys[row] = Chan(andpre(lits(dst[:3], r) + lits(pair[:4], p)
+                                             + lits(pair[4:5], kh)), (0, 1, 0, 0))
+             vhs = []
+@@ -281,9 +329,18 @@ def build(c, one, fam, pay, uops, A, B, C, jt, jeq, nr, rec_start, case, rdw_any
+     # the earlier sums back through the lag head.
+     (lagd,) = thead(c, "vx.lag", {0: one}, {0: one},
+                     [{"data": {**{2 + i: Chan(pay["VE"][i], (0, 1, 0, 0)) for i in range(16)},
+-                               **{18 + i: Chan(pay["VE"][i], (0, 0, 1, 0)) for i in range(16)}},
++                               **{18 + i: Chan(pay["VE"][i], (0, 0, 1, 0)) for i in range(16)},
++                               **{34 + i: Chan(pay["VE"][i], (0, 0, 0, 1)) for i in range(16)},
++                               **{50 + 15 * (lg - 1) + i: Chan(pay["VH"][i],
++                                                               tuple(int(x == lg) for x in range(4)))
++                                  for lg in (1, 2, 3) for i in range(15)},
++                               **{95 + lg - 1: Chan(pay["VH"][15], tuple(int(x == lg) for x in range(4)))
++                                  for lg in (1, 2)}},
+                       "ref": one}])
+     lag0, lag1, lag2 = list(pay["VE"][0:16]), lagd[0:16], lagd[16:32]
++    lag_ve = {1: lagd[0:16], 2: lagd[16:32], 3: lagd[32:48]}  # VE payloads at lags 1-3
++    lag_vh = {0: list(pay["VH"][0:15]), 1: lagd[48:63], 2: lagd[63:78], 3: lagd[78:93]}  # VH bits 0-14
++    lag_vh16 = {0: list(pay["VH"][0:16]), 1: lagd[48:63] + lagd[93:94], 2: lagd[63:78] + lagd[94:95]}
+     s5v = cfg[5]
+     n_vm = from_bits(s5v[1:8])
+     mode_am, keep = s5v[8], s5v[9]
+@@ -358,9 +415,24 @@ def build(c, one, fam, pay, uops, A, B, C, jt, jeq, nr, rec_start, case, rdw_any
+     # ---------------------------------------------------------------- RoPE pairs, SiLU table
+     # RoPE (cos, sin) pairs: VPUT 512 + k (write target 3) at its second VH, cos from lag 3 and
+     # sin from lag 1; read by the element's pair (i mod 8) / 2
++    # VBFLY reads pair (i & mask) of 32, i its read pair (bfly_read), mask in slot 6 bits 6-10
++    bmask = cfg[6][6:11]
++    rq_ = []
++    for b in range(5):
++        e = Expr()
++        if b < 2:
++            e = e + count_fn(c, xel, (lambda k, b=b: k >> (b + 1) & 1), 64, f"vx.rq{b}", lits_=[1 - new_op])
++        if b < 3:
++            e = e + count_fn(c, xel, one_, 64, f"vx.rqh{b}", lits_=[new_op, bf, bmask[b], hoff[b + 1]])
++            e = e + count_fn(c, xel, (lambda k, b=b: k >> (b + 2) & 1), 64, f"vx.rqj{b}",
++                             lits_=[new_op, bf, bmask[b], 1 - hoff[b + 1]])
++        else:
++            e = e + count_fn(c, xel, one_, 64, f"vx.rqh{b}",
++                             lits_=[new_op, bf, bmask[b], hoff[4] if b == 3 else rhi])
++        rq_.append(e)
+     (rope,) = thead(c, "vx.rope",
+-                    {r: Chan(andpre(lits(hoff[0:2], r)), (0, 1, 0, 0)) for r in range(4)},
+-                    {r: andpre(lits(u.vel[1:3], r)) for r in range(4)},
++                    {r: Chan(andpre(lits(hoff[0:5], r)), (0, 1, 0, 0)) for r in range(32)},
++                    {r: andpre(lits(rq_, r)) for r in range(32)},
+                     [{"data": {**{2 + i: Chan(pay["VE"][i], (0, 0, 0, 1)) for i in range(16)},
+                                **{18 + i: Chan(pay["VE"][i], (0, 1, 0, 0)) for i in range(16)}},
+                       "ref": one, "beta": andpre([isVH, wt[0], wt[1], 1 - wt[2], el_eq(2)])}])
+@@ -421,9 +493,22 @@ def build(c, one, fam, pay, uops, A, B, C, jt, jeq, nr, rec_start, case, rdw_any
+     shv, abank, opb, keepw = s5[3:8], s5[8], s5[9:11], s5[11]
+     shb, sob = s1[6:11], s6[6:12]
+     lt2 = 1 - vsubt[1]
+-    vewl = [wt[2], 1 - wt[1], 1 - wt[0]]
++    # slot 1 bit 11 (new_op): the funct7 = 1 ops (VFIR), 0 in every other op's slot 1
++    vewl = [wt[2], 1 - wt[1], 1 - wt[0], 1 - new_op]
++    firn = c.and_([new_op, 1 - bf, wt[2], 1 - wt[1], 1 - wt[0]], "vx.fir.on")
++    bfn = c.and_([new_op, bf, wt[2], 1 - wt[1], 1 - wt[0]], "vx.bfly.on")
++    bsc = c.and_([new_op, bf, wt[2], 1 - wt[1], 1 - wt[0], s6[11]], "vx.bfly.sc")
++    which = count_bit(c, xel, 1, 64, "vx.bfly.which")  # the butterfly's output: 0 a + t, 1 a - t
+     cs = {"vq": [wt[1]], "add": vewl + lits(opb, 0), "gy": vewl + lits(opb, 1) + [lt2],
+-          "gt": vewl + lits(opb, 1) + [1 - lt2], "rope": vewl + lits(opb, 2)}
++          "gt": vewl + lits(opb, 1) + [1 - lt2], "rope": vewl + lits(opb, 2), "fir": [firn],
++          "bfly": [bfn]}
++    # VPOW: W1 = F1 = ar, W2 = F2 = ai (bank A's pair hoff | vel), shift 0, plus the earlier sum
++    pown = c.and_([new_op, wt[0], 1 - wt[1], 1 - wt[2]], "vx.pow.on")
++    cs["pow"] = [pown]
++    # VFIR: x = (xr, xi) from slots 4, 5, 6, 1; chain in slot 1 bit 8
++    fxr = list(s4[0:12]) + list(s5[0:4])
++    fxi = list(s5[4:12]) + list(s6[6:12]) + list(s1[6:8])
++    fchain = s1[8]
+     bank = {"A": 0, "B": 1}
+     # W1's source: (case, literal that is 1 for bank B, parity choice)
+     src1 = [("vq", srcb, None), ("add", 1 - abank, None), ("gy", abank, None),
+@@ -438,19 +523,29 @@ def build(c, one, fam, pay, uops, A, B, C, jt, jeq, nr, rec_start, case, rdw_any
+                     terms += c.t_and(cs[cn_] + lits([bb], bank[bk]) + pl + [vm_read[bk][x][i]])
+         return terms
+ 
+-    w1src = [c.node(pick(i, src1), f"vx.mac.s1.{i}") for i in range(31)]
+-    w2src = [c.node(pick(i, [("rope", abank, 1)]), f"vx.mac.s2.{i}") for i in range(31)]
+-    sham = [c.node(c.t_and([shv[b_]]) + c.t_and(cs["gt"] + [shv[b_]], -1) + c.t_and(cs["gt"] + [shb[b_]]),
+-                   f"vx.mac.sh{b_}") for b_ in range(5)]
++    # VFIR: W1, W2 = the tap pair (hr, hi) from bank B, shift 0
++    # VBFLY: W1, W2 = b = (br, bi) from bank B (its read pair), shift 0
++    w1src = [c.node(pick(i, src1) + c.t_and(cs["fir"] + [vm_read["B"][0][i]])
++                    + c.t_and(cs["bfly"] + [vm_read["B"][0][i]])
++                    + c.t_and(cs["pow"] + [vm_read["A"][0][i]]), f"vx.mac.s1.{i}")
++             for i in range(31)]
++    w2src = [c.node(pick(i, [("rope", abank, 1)]) + c.t_and(cs["fir"] + [vm_read["B"][1][i]])
++                    + c.t_and(cs["bfly"] + [vm_read["B"][1][i]])
++                    + c.t_and(cs["pow"] + [vm_read["A"][1][i]]), f"vx.mac.s2.{i}") for i in range(31)]
++    sham = [c.node(c.t_and([shv[b_], 1 - new_op]) + c.t_and(cs["gt"] + [shv[b_]], -1)
++                   + c.t_and(cs["gt"] + [shb[b_]]), f"vx.mac.sh{b_}") for b_ in range(5)]
++    shv2 = [c.and_([shv[b_], 1 - new_op], f"vx.mac.shv{b_}") for b_ in range(5)]
+ 
+     def shifted(src, amt, name):
+         return [c.node([t for s_ in range(32) for t in c.t_and(lits(amt, s_) + [src[min(i + s_, 30)]])],
+                        f"{name}{i}") for i in range(31)]
+ 
+     z1 = shifted(w1src, sham, "vx.mac.z1.")
+-    z2 = shifted(w2src, shv, "vx.mac.z2.")
++    z2 = shifted(w2src, shv2, "vx.mac.z2.")
+     # the factors, nibble by nibble (ranges in fr)
+     pn = [from_bits(pb[4 * j:4 * j + 4]) for j in range(4)]
++    xrn, xin = nib16(fxr), nib16(fxi)
++    arn, ain = nib16(vm_read["A"][0][0:16]), nib16(vm_read["A"][1][0:16])  # VPOW (int16 elements)
+     f1, f2 = [], []
+     for j in range(6):
+         terms = []
+@@ -460,14 +555,28 @@ def build(c, one, fam, pay, uops, A, B, C, jt, jeq, nr, rec_start, case, rdw_any
+             terms += c.t_and(cs["gt"] + [1 - yr["big"], 1 - yr["small"]], a=tn[j])
+             terms += c.t_and(cs["rope"] + [1 - parity], a=cn[j])
+             terms += c.t_and(cs["rope"] + [parity], a=sn_[j])
++            terms += c.t_and(cs["fir"] + [1 - parity], a=xrn[j])  # re: hr xr - hi xi
++            terms += c.t_and(cs["fir"] + [parity], a=xin[j])  # im: hr xi + hi xr
++            terms += c.t_and(cs["pow"], a=arn[j])  # ar ar + ai ai
++            # VBFLY: re c br - s bi, im s br + c bi, negated for the second output (a - t)
++            for wh in range(2):
++                sg = 1 - 2 * wh
++                terms += c.t_and(cs["bfly"] + [1 - parity] + lits([which], wh), a=sg * cn[j])
++                terms += c.t_and(cs["bfly"] + [parity] + lits([which], wh), a=sg * sn_[j])
+         terms += c.t_and(cs["gt"] + [yr["big"], 1 - yr["sat"]], a=yn[j])
+         if j == 5:
+             terms += c.t_and(cs["gt"] + [yr["sat"]], 8)
+         f1.append(c.node(terms, f"vx.mac.f1.{j}"))
+     for j in range(4):
+         f2.append(c.node(c.t_and(cs["rope"] + [1 - parity], a=-1 * sn_[j])
+-                         + c.t_and(cs["rope"] + [parity], a=cn[j]), f"vx.mac.f2.{j}"))
+-    fr1, fr2 = (-8, 15), (-15, 15)
++                         + c.t_and(cs["rope"] + [parity], a=cn[j])
++                         + c.t_and(cs["fir"] + [1 - parity], a=-1 * xin[j])
++                         + c.t_and(cs["fir"] + [parity], a=xrn[j])
++                         + c.t_and(cs["pow"], a=ain[j])
++                         + sum((c.t_and(cs["bfly"] + [1 - parity] + lits([which], wh), a=(2 * wh - 1) * sn_[j])
++                                + c.t_and(cs["bfly"] + [parity] + lits([which], wh), a=(1 - 2 * wh) * cn[j])
++                                for wh in range(2)), []), f"vx.mac.f2.{j}"))
++    fr1, fr2 = (-15, 15), (-15, 15)
+     # products: W bits (clamp16 folded in) times factor nibbles, grouped by weight 2^(4k + o)
+     cl1, cl2 = clamp_terms(z1), clamp_terms(z2)
+     cols = [[] for _ in range(10)]
+@@ -490,6 +599,26 @@ def build(c, one, fam, pay, uops, A, B, C, jt, jeq, nr, rec_start, case, rdw_any
+                 const += place_signed(c, cols, g_, lo_, hi_, 4 * k_ + o_, f"vx.mac.c{k_}.{o_}")
+     neg = c.node(c.t_and(cs["vq"] + [z1[30]]), "vx.mac.vqneg")
+     cols[3].append((4 * wt[1], 0, 4))  # VQ: + 2^14
++    cols[3].append((4 * firn, 0, 4))  # VFIR: + 2^14
++    cols[3].append((4 * bfn, 0, 4))  # VBFLY: + 2^(14 + sc)
++    cols[3].append((4 * bsc, 0, 4))
++    # VFIR: + z << 15 (z the state pair's element of the same parity, bank A's shifted read: 0 at
++    # j = 0 unless chained); rr is mod 2^40, so z's bits 0..24 suffice (|z| < 2^23)
++    za = [c.node([t for x in range(2) for t in
++                  c.t_and(cs["fir"] + [velt[1]] + lits([parity], x) + [vm_read["A"][x][i]])
++                  + c.t_and(cs["fir"] + [1 - velt[1], fchain] + lits([parity], x) + [vm_read["A"][x][i]])
++                  + c.t_and(cs["bfly"] + lits([parity], x) + [vm_read["A"][x][i]])],  # VBFLY: a << 15
++                 f"vx.fir.z{i}") for i in range(25)]
++    cols[3].append((8 * za[0], 0, 8))
++    for m_ in range(4, 10):
++        cols[m_].append((from_bits(za[4 * m_ - 15:4 * m_ - 11]), 0, 15))
++    # VPOW: + the earlier running sum (32 bits, 0 at the first element): VE lag 1 and VH lag 0
++    # at an even vsub (the token is the last VH), VE lag 2 and VH lag 1 at an odd one (a VE)
++    psum = [c.node(c.t_and(cs["pow"] + [velt[0], 1 - odd] + [(lag1 + lag_vh16[0])[b]])
++                   + c.t_and(cs["pow"] + [velt[0], odd] + [(lag2 + lag_vh16[1])[b]]), f"vx.pow.p{b}")
++            for b in range(32)]
++    for k_ in range(8):
++        cols[k_].append((from_bits(psum[4 * k_:4 * k_ + 4]), 0, 15))
+     cols[0].append((-1 * neg, -1, 0))  # VQ: -1 when negative
+     const %= 1 << 40
+     for k_ in range(10):
+@@ -504,8 +633,12 @@ def build(c, one, fam, pay, uops, A, B, C, jt, jeq, nr, rec_start, case, rdw_any
+     for b_ in range(6):
+         terms = c.t_and(cs["add"] + [sob[b_]]) + c.t_and(cs["gy"] + [sob[b_]])
+         terms += c.t_and(cs["rope"] + [sm14[b_]])
+-        if 49 >> b_ & 1:
+-            terms += c.t_and(cs["vq"])
++        if 49 >> b_ & 1:  # -15
++            terms += c.t_and(cs["vq"]) + c.t_and(cs["fir"])
++        if 48 >> b_ & 1:  # VBFLY: -15 - sc
++            terms += c.t_and(cs["bfly"])
++        if b_ == 0:
++            terms += c.t_and(cs["bfly"] + [1 - s6[11]])
+         if 56 >> b_ & 1:
+             terms += c.t_and(cs["gt"])
+         sft.append(c.node(terms, f"vx.mac.sft{b_}"))
+@@ -773,6 +906,105 @@ def build(c, one, fam, pay, uops, A, B, C, jt, jeq, nr, rec_start, case, rdw_any
+             stream("VEW", 5, gw + lit + [velt[0]] + cond, None, flag)
+             stream("VEW", 5, gw + lit + [el_eq(0), keepw] + cond, None, flag)
+     stream("VEW", 5, [done_w], "NT")
++    # VFIR: VC slots 0, 1, 4, 5, 6 (rs2: dst 4, src 3, h 3, n 5, eoff 6, chain 1; rs1 = x); per tap yr,
++    # yi as words (the MAC); then rd = sat16(yr) | sat16(yi) << 16 of the last tap, from the lags
++    vc_case("VFIR", 0, 0, [(B[0:4], 4), (B[16:21], 5), ([ZERO, ZERO, one], 3)])
++    vc_case("VFIR", 1, 1, [(B[4:7], 3), (B[7:10], 3), (A[30:32], 2), ([B[21]], 1), ([B[22]], 1), ([ZERO], 1),
++                           ([one], 1)])
++    vc_case("VFIR", 2, 4, [(A[0:12], 12)])
++    vc_case("VFIR", 3, 5, [(A[12:16], 4), (A[16:24], 8)])
++    vc_case("VFIR", 4, 6, [(list(B[10:15]) + [ZERO], 6), (A[24:30], 6)])
++    gf = [1 - done_w]
++    stream("VFIR", 5, gf + [sub_eq(0)], "VE", tsh[0:16])
++    stream("VFIR", 5, gf + [sub_eq(1)], "VH", tsh[16:31] + [ZERO])
++    # the value record after the last VH (v counts the tokens since it): at v = k the last tap's
++    # yi is (VE lag k + 1, VH lag k), yr (VE lag k + 3, VH lag k + 2)
++    v_pos = c.vx_v
++
++    def ybits(k, im):
++        lo = lag_ve.get(k + 1 if im else k + 3)
++        hi = lag_vh.get(k if im else k + 2)
++        return (list(lo) if lo is not None else None), (list(hi) if hi is not None else None)
++
++    guard = cfg[1][9]  # VFIR guard (slot 1 bit 9): rd from y >> 2
++
++    def sat_terms(k, im, b):
++        """AND-terms (gated by v = k) for bit b of sat16(y >> s), b < 16, s = 0 or 2 (guard)."""
++        lo, hi = ybits(k, im)
++        vk = v_pos[k]
++        if b == 15:
++            return c.t_and([vk, hi[14]])
++        z = lo + hi  # bits 0..30
++        terms = []
++        for s, gl in ((0, 1 - guard), (2, guard)):
++            zeros, ones = [1 - x for x in z[15 + s:31]], list(z[15 + s:31])
++            terms += (c.t_and([vk, gl, z[b + s]] + zeros) + c.t_and([vk, gl, z[b + s]] + ones)
++                      + c.t_and([vk, gl, 1 - z[30]]) + c.t_and([vk, gl] + zeros, -1))
++        return terms
++
++    rv = []
++    for i in range(32):
++        im, b = i >= 16, i % 16
++        ks = [k for k in range(3) if ybits(k, im)[1] is not None
++              and (b == 15 or ybits(k, im)[0] is not None)]
++        rv.append(c.node([t for k in ks for t in sat_terms(k, im, b)], f"vx.fir.r{i}"))
++    fk0 = c.node(c.t_and(rv[14:32]) + c.t_and([1 - b for b in rv[14:32]]), "vx.fir.fits15")
++    fk1 = c.node(c.t_and(rv[29:32]) + c.t_and([1 - b for b in rv[29:32]]), "vx.fir.fits30")
++    u.fir = (za, rv, fk0, fk1)
++    fv = [jt[4], uops["VFIR"], done_w]
++    case(fv + [v_pos[0], rdw_any, fk0], "F0", rv[0:15])
++    case(fv + [v_pos[0], rdw_any, 1 - fk0], "V", rv[0:15])
++    case(fv + [v_pos[1], rdw_any, fk1], "F1", rv[15:30])
++    case(fv + [v_pos[1], rdw_any, 1 - fk1], "V", rv[15:30])
++    case(fv + [v_pos[2], rdw_any], "F2", rv[30:32])
++    case(fv + [v_pos[0], 1 - rdw_any], "NT")
++    # VPOW: VC slots 0, 1, 5 (rs1: src 3, n 6, eoff 6); per element the running sum (VE bits 0-15,
++    # VH bits 16-31, from the MAC); then rd = the sum as a value record, read back through the lags:
++    # at v = k, VE lag k + 1 and VH lag k (16 bits)
++    vc_case("VPOW", 0, 0, [([ZERO] * 4, 4), (A[10:15], 5), ([one, ZERO, ZERO], 3)])
++    vc_case("VPOW", 1, 1, [(A[0:3], 3), ([ZERO] * 8, 8), ([one], 1)])
++    vc_case("VPOW", 2, 5, [([ZERO], 1), (list(A[3:9]) + [ZERO], 7)])
++    gp = [1 - done_m]
++    stream("VPOW", 3, gp + [sub_eq(0)], "VE", tsh[0:16])
++    stream("VPOW", 3, gp + [sub_eq(1)], "VH", tsh[16:32])
++    pv_ = [lag_ve[k + 1] + lag_vh16[k] for k in range(3)]
++    prv = [c.node([t for k in range(3) for t in c.t_and([v_pos[k], pv_[k][i]])], f"vx.pow.r{i}")
++           for i in range(32)]
++    pk0 = c.node(c.t_and(prv[14:32]) + c.t_and([1 - b for b in prv[14:32]]), "vx.pow.fits15")
++    pk1 = c.node(c.t_and(prv[29:32]) + c.t_and([1 - b for b in prv[29:32]]), "vx.pow.fits30")
++    u.pow = (psum, prv, pk0, pk1)
++    pw = [jt[2], uops["VPOW"], done_m]
++    case(pw + [v_pos[0], rdw_any, pk0], "F0", prv[0:15])
++    case(pw + [v_pos[0], rdw_any, 1 - pk0], "V", prv[0:15])
++    case(pw + [v_pos[1], rdw_any, pk1], "F1", prv[15:30])
++    case(pw + [v_pos[1], rdw_any, 1 - pk1], "V", prv[15:30])
++    case(pw + [v_pos[2], rdw_any], "F2", prv[30:32])
++    case(pw + [v_pos[0], 1 - rdw_any], "NT")
++    # VBFLY: VC slots 0, 1, 6 (rs1: a 3, h 3, dst 4, woff 5, rhi 1, mask 5, sc 1, n 4); per butterfly
++    # y0r, y0i, y1r, y1i as words (the MAC), written to VM[dst]; NT after 4 n elements (rd = x0)
++    vc_case("VBFLY", 0, 0, [(A[6:10], 4), (A[10:15], 5), ([ZERO, ZERO, one], 3)])
++    vc_case("VBFLY", 1, 1, [(A[0:3], 3), (A[3:6], 3), ([A[26]], 1), ([A[27]], 1), ([ZERO], 1), ([A[15]], 1),
++                            ([one], 1), ([one], 1)])
++    vc_case("VBFLY", 2, 6, [([ZERO] + list(A[22:26]) + [ZERO], 6), (A[16:21], 5), ([A[21]], 1)])
++    gb = [1 - done_w]
++    keepb, trk_b = cfg[1][6], cfg[1][7]
++    stream("VBFLY", 3, gb + [sub_eq(0)], "VE", tsh[0:16])
++    stream("VBFLY", 3, gb + [1 - trk_b, sub_eq(1)], "VH", tsh[16:31] + [ZERO])
++    # track (slot 1 bit 7): y as VE VE (the MAC), then as a word from the lags (predicting the word's
++    # VE, y lo is at lag 1; predicting its VH, y hi is at lag 1 and y lo at lag 2), max |y| tracked as
++    # VEW's word (keep: slot 1 bit 6)
++    stream("VBFLY", 3, gb + [trk_b, sub_eq(1)], "VE", tsh[16:32])
++    stream("VBFLY", 3, gb + [trk_b, sub_eq(2)], "VE", lag_ve[1])
++    stream("VBFLY", 3, gb + [trk_b, sub_eq(3)], "VH", list(lag_ve[1][0:15]) + [ZERO])
++    yl = list(lag_ve[2]) + list(lag_ve[1][0:15])
++    bcmp = compare(c, yl + [yl[30]], absv, "vx.bf")
++    flag = [ZERO] * 15 + [one]
++    tr3 = gb + [trk_b, sub_eq(3)]
++    stream("VBFLY", 3, tr3 + [el_eq(0), 1 - keepb], None, flag)
++    for cond in ([bcmp["o"]], [1 - bcmp["o"], bcmp["n"]]):
++        stream("VBFLY", 3, tr3 + [velt[0]] + cond, None, flag)
++        stream("VBFLY", 3, tr3 + [el_eq(0), keepb] + cond, None, flag)
++    stream("VBFLY", 3, [done_w], "NT")
+     # VMATR: VC slots 0, 2, 3, 4, 5. Scores: a word an output (signed max); p.V: raw (VE VE), then
+     # out = raw s >> 12 (a word)
+     vc_case("VMATR", 0, 0, [(C[0:4], 4), (A[11:16], 5), ([1 - C[10], ZERO, one], 3)])
+diff --git a/docs/vx.md b/docs/vx.md
+index 4a6e9f5..2665e1f 100644
+--- a/docs/vx.md
++++ b/docs/vx.md
+@@ -139,3 +139,44 @@ layers (`vxcheck`). What changed from the plan above, while building:
+ 
+ Next: the hidden size (5120, from about 2,250 live dims at L8-L9) and with it the checkpoint
+ (26.7 GB).
++
++## VFIR (custom-2, funct7 = 1, funct3 0; uop 81), 2026-11-04
++
++One complex Q15 sample through a transposed-form FIR of n <= 16 taps (`vx.py` has the exact
++contract). rs1 = x (xr | xi << 16), rs2 = dst 4, src 3 (v0..v7), h 3 (v8 + h), n 5, eoff 6, chain 1.
++Tap j (element pair eoff / 2 + j): y_j = z + rhu(h_j x / 2^15) per component, z = src's pair j - 1
++(j = 0: 0, or with chain the pair before the block in bank A seen as one 256-pair array, so
++64 taps chain over two registers). Record: VC slots 0, 1, 4, 5, 6, then yr, yi as words (4 tokens
++a tap), then rd = sat16(yr) | sat16(yi) << 16 of the last tap as a value record (NT for x0).
++Ping-pong src / dst between calls; the identity rd = sat16(sum_k rhu(g_k x[n - k] / 2^15)) with
++the taps stored reversed is checked against an independent oracle (`tests/test_rv_vfir_ref.py`).
++
++Circuit (no new heads, no new layer: 13 layers, 137 heads before and after):
++- slot 1 bit 11 (NEW) is 1 only here; the VEW MAC cases carry [1 - NEW].
++- bank A's VM query is an 8-bit (register, pair) form: the write's pair for every other op;
++  for NEW, (reg_a, hoff | j - 1) for j >= 1 and (reg_a, hoff) - 1 at j = 0 (L1 MLP nodes).
++- the RoPE multiply chain does the complex product: W1, W2 = the tap pair (bank B), F = (xr, -xi)
++  / (xi, xr) by parity from the config; z << 15 and 2^14 go into the same nibble columns, then
++  the shift by -15, so a word streams straight from the MAC.
++- the value record reads the last tap's words back through the lag head (VE lags 1-3, VH lags
++  1-3 added as columns of the existing head); core's v counter also restarts at VH (VX builds).
++
++## VPOW (custom-2, funct7 = 1, funct3 1; uop 82), 2026-11-04
++
++The power of n <= 32 complex int16 elements (`vx.py` has the exact contract). rs1 = src 3 (v0..v7,
++bank A only), n 6, eoff 6 (even, aligned to 2 n); rs2 unused. acc = sum (ar^2 + ai^2) mod 2^32 over
++the pairs (VM[src][eoff + 2 j], VM[src][eoff + 2 j + 1]). Record: VC slots 0, 1, 5, then per element
++the running sum as VE (bits 0-15) and VH (bits 16-31: bit 15 is data here), then rd = acc as a value
++record (NT for x0): 3 + 2 n + 1..3 tokens. Write target vsum, so the VM write and the vmx / vbest
++trackers stay off; vsum ends as acc's bits 0-30 sign-extended (VGET 1). Checked against an
++independent oracle in `tests/test_rv_vpow_ref.py`.
++
++Circuit (no new heads, no new layer):
++- NEW with write target vsum (wt bit 0) selects VPOW; the VFIR bank-A query terms carry [1 - wt0],
++  and VPOW adds (reg_a, hoff | vel): one pair an element.
++- the RoPE multiply chain: W1 = F1 = ar, W2 = F2 = ai (bank A's pair, F as nibbles of the read),
++  shift 0; the earlier running sum goes into the same nibble columns from the lags (VE lag 1 /
++  VH lag 0 at the VH, VE lag 2 / VH lag 1 at the VE; 0 at the first element), so both tokens of
++  an element stream straight from the MAC (bits 0-31 of its 40-bit sum).
++- the element count is VMAT's (slot 5 bits 1-7, its done node); the value record reads the last
++  sum back through the lag head, which gains VH bit 15 at lags 1 and 2 (2 columns).
+diff --git a/tests/test_rv_vbfly_ref.py b/tests/test_rv_vbfly_ref.py
+new file mode 100644
+index 0000000..80c88c8
+--- /dev/null
++++ b/tests/test_rv_vbfly_ref.py
+@@ -0,0 +1,187 @@
++"""VBFLY's reference (vx.py) against an independent oracle (no vx.py code here).
++
++A full constant-geometry FFT (N = 64, natural-order input in v0 / v8, twiddle table TW[r] =
++W_64^brev5(r) in the 32 RoPE pairs, mask 2^s - 1 at stage s, sc = 1) runs as VBFLY ops; the
++program then VPOWs every output bin (n = 1) into RAM. The bins must equal an independently written
++integer constant-geometry FFT exactly, and numpy's FFT / 64 within the rounding bound; plus random
++single ops (all n, offsets, rhi, masks, sc, int16 extremes) checked element by element.
++"""
++
++import math
++import random
++
++import numpy as np
++import pytest
++
++from chipformer.rv import ref
++from chipformer.rv import spec as S
++from chipformer.rv.asm import assemble
++
++OUT = 0x100
++N, H, L = 64, 32, 6
++
++
++def brev(i, b):
++    return int(format(i, f"0{b}b")[::-1], 2) if b else 0
++
++
++def q15(v):
++    return max(-32768, min(32767, math.floor(32768 * v + 0.5)))
++
++
++TW = [(q15(math.cos(2 * math.pi * brev(r, 5) / N)), q15(-math.sin(2 * math.pi * brev(r, 5) / N))) for r in range(32)]
++
++
++def oracle_stage(x, mask, sc, tw=TW):
++    """One constant-geometry stage on a list of N complex int pairs (independent of vx.py)."""
++    y = [None] * N
++    for i in range(H):
++        (ar, ai), (br, bi) = x[i], x[i + H]
++        c, s = tw[i & mask]
++        tr, ti = c * br - s * bi, c * bi + s * br
++        rnd = 1 << (14 + sc)
++        y[2 * i] = ((ar * 32768 + tr + rnd) >> (15 + sc), (ai * 32768 + ti + rnd) >> (15 + sc))
++        y[2 * i + 1] = ((ar * 32768 - tr + rnd) >> (15 + sc), (ai * 32768 - ti + rnd) >> (15 + sc))
++    return y
++
++
++def vput(reg, pair, a, b):
++    return [f"li t0, {reg * 32 + pair}", f"li t1, {a}", f"li t2, {b}", "vput t0, t1, t2"]
++
++
++def vbfly_word(a, h, dst, woff, rhi, mask, sc, n):
++    return a | h << 3 | dst << 6 | woff << 10 | rhi << 15 | mask << 16 | sc << 21 | n << 22
++
++
++def fft_program(x):
++    """x: N complex int16 pairs with |x| small enough not to overflow. Stage s reads (v0, v8) or
++    (v1, v9) and writes the other pair of registers: outputs 0..31 to bank A, 32..63 to bank B."""
++    lines = []
++    for r, (c, s) in enumerate(TW):
++        lines += [f"li t0, {512 + r}", f"li t1, {c}", f"li t2, {s}", "vput t0, t1, t2"]
++    for i in range(H):
++        lines += vput(0, i, *x[i]) + vput(8, i, *x[i + H])
++    src = 0
++    for s in range(L):
++        dst = 1 - src
++        for op in range(4):  # 8 butterflies each: i0 = 8 op
++            i0 = 8 * op
++            woff, rhi = (2 * i0) % 32, i0 >> 4
++            out_reg = dst if 2 * i0 < 32 else 8 + dst
++            w = vbfly_word(src, src, out_reg, woff, rhi, (1 << s) - 1, 1, 8)
++            lines += [f"li t3, {w}", "vbfly zero, t3, zero"]
++        src = dst
++    # every bin's power through VPOW n = 1 (bank A only: copy bank B's half via VPOW is not
++    # possible, so the last stage's outputs are read from both registers by their own VPOWs)
++    lines.append(f"li a0, {OUT}")
++    for k in range(N):
++        reg, pair = (src, k) if k < H else (None, k - H)
++        if reg is None:
++            continue
++        lines += [f"li t3, {reg | 1 << 3 | (2 * pair) << 9}", "vpow t4, t3, zero", "sw t4, 0(a0)", "addi a0, a0, 4"]
++    lines += ["li a0, 0", "li a7, 93", "ecall"]
++    return assemble("\n".join(lines) + "\n")
++
++
++def run(prog):
++    m = ref.Machine.from_program(prog)
++    toks = m.run(10**7)
++    assert m.halted and m.fault is None and m.exit_code == 0, m.fault
++    return m, toks
++
++
++def signal(seed, amp):
++    rng = np.random.default_rng(seed)
++    z = (rng.normal(size=N) + 1j * rng.normal(size=N)) * amp
++    z = z / max(1.0, np.max(np.abs(z)) / 30000)
++    return [(int(round(v.real)), int(round(v.imag))) for v in z]
++
++
++@pytest.mark.parametrize("seed,amp", [(0, 8000), (1, 20000), (2, 300), (3, 30000)])
++def test_fft64_exact_vs_oracle_and_numpy(seed, amp):
++    x = signal(seed, amp)
++    m, toks = run(fft_program(x))
++    want = list(x)
++    for s in range(L):
++        want = oracle_stage(want, (1 << s) - 1, 1)
++    # the VM after the last stage: bank A register holds outputs 0..31, bank B 32..63
++    src = L % 2  # stages alternate 0 -> 1 -> 0 ...
++    got = [(m.vx.vm[src][2 * i], m.vx.vm[src][2 * i + 1]) for i in range(H)] + \
++          [(m.vx.vm[8 + src][2 * i], m.vx.vm[8 + src][2 * i + 1]) for i in range(H)]
++    assert got == want
++    # powers read through VPOW (bank A half)
++    pw = [m.ram[(OUT >> 2) + k] for k in range(H)]
++    assert pw == [(re * re + im * im) % (1 << 32) for re, im in want[:H]]
++    # DFT / 64 in bit-reversed order, within the rounding bound (6 stages of <= 1 LSB each)
++    ref_fft = np.fft.fft(np.array([complex(*v) for v in x])) / N
++    out = np.array([complex(*want[brev(k, L)]) for k in range(N)])
++    assert np.max(np.abs(out - ref_fft)) < 2 * L, np.max(np.abs(out - ref_fft))
++    assert sum(1 for t in toks if S.family(t)[0] == "VC") >= 3 * 4 * L
++
++
++def test_random_single_ops():
++    rng = random.Random(7)
++    for trial in range(40):
++        n = rng.choice([1, 2, 4, 8])
++        woff = rng.randrange(0, 32 - 2 * n + 1, 2 * n)
++        rhi, mask, sc = rng.randrange(2), rng.randrange(32), rng.randrange(2)
++        a, h = rng.randrange(8), rng.randrange(8)
++        dst = rng.choice([r for r in range(16) if r not in (a, 8 + h)])
++        mem = {}
++        lines = []
++        tw = [(rng.choice([-32768, 32767, rng.randint(-32768, 32767)]), rng.randint(-32768, 32767)) for _ in range(32)]
++        for r, (c, s) in enumerate(tw):
++            lines += [f"li t0, {512 + r}", f"li t1, {c}", f"li t2, {s}", "vput t0, t1, t2"]
++        for reg in {a, 8 + h}:
++            for p in range(32):
++                v = (rng.choice([-32768, 32767, rng.randint(-32768, 32767)]), rng.randint(-32768, 32767))
++                mem[(reg, p)] = v
++                lines += vput(reg, p, *v)
++        lines += [f"li t3, {vbfly_word(a, h, dst, woff, rhi, mask, sc, n)}", "vbfly zero, t3, zero",
++                  "li a0, 0", "li a7, 93", "ecall"]
++        m, toks = run(assemble("\n".join(lines) + "\n"))
++        for j in range(n):
++            i = (woff >> 1) + 16 * rhi + j
++            (ar, ai), (br, bi) = mem[(a, i)], mem[(8 + h, i)]
++            c, s = tw[i & mask]
++            tr, ti = c * br - s * bi, c * bi + s * br
++            rnd = 1 << (14 + sc)
++            for w, sg in ((0, 1), (1, -1)):
++                e = 2 * (woff + 2 * j + w)
++                assert m.vx.vm[dst][e] == (ar * 32768 + sg * tr + rnd) >> (15 + sc), (trial, j, w)
++                assert m.vx.vm[dst][e + 1] == (ai * 32768 + sg * ti + rnd) >> (15 + sc), (trial, j, w)
++        stream = [t for t in toks if S.family(t)[0] in ("VE", "VH")]
++        assert len(stream) >= 8 * n
++
++
++def test_contract_violations_fault():
++    for bad in (vbfly_word(0, 0, 0, 0, 0, 0, 1, 8),     # dst = a
++                vbfly_word(0, 0, 1, 2, 0, 0, 1, 8),     # woff not aligned to 2 n
++                vbfly_word(0, 0, 1, 0, 0, 0, 1, 3)):    # n not a power of two
++        m = ref.Machine.from_program(assemble(f"li t3, {bad}\nvbfly zero, t3, zero\nli a0, 0\nli a7, 93\necall\n"))
++        with pytest.raises(ValueError):  # as every VX op: check() raises on operands outside the contract
++            m.run(10**5)
++
++
++def test_tracked_stage_max():
++    """track: each output streams as VE VE then a word; VGET 3 after a stage (keep 0 on its first
++    op, 1 on the rest) is the bit length of the largest |component| the stage wrote."""
++    rng = random.Random(3)
++    x = signal(5, 9000)
++    lines = []
++    for r, (c, s) in enumerate(TW):
++        lines += [f"li t0, {512 + r}", f"li t1, {c}", f"li t2, {s}", "vput t0, t1, t2"]
++    for i in range(H):
++        lines += vput(0, i, *x[i]) + vput(8, i, *x[i + H])
++    sc = rng.randrange(2)
++    for op in range(8):  # 4 butterflies each
++        i0 = 4 * op
++        w = vbfly_word(0, 0, 1 if 2 * i0 < 32 else 9, (2 * i0) % 32, i0 >> 4, 3, sc, 4) | (op > 0) << 26 | 1 << 27
++        lines += [f"li t3, {w}", "vbfly zero, t3, zero"]
++    lines += ["li t1, 3", "vget s1, t1, zero", f"li a0, {OUT}", "sw s1, 0(a0)", "li a0, 0", "li a7, 93", "ecall"]
++    m, toks = run(assemble("\n".join(lines) + "\n"))
++    want = oracle_stage(x, 3, sc)
++    assert m.ram[OUT >> 2] == max(max(abs(a), abs(b)) for a, b in want).bit_length()
++    assert [(m.vx.vm[1][2 * i], m.vx.vm[1][2 * i + 1]) for i in range(H)] == want[:H]
++    n_words = sum(1 for t in toks if S.family(t)[0] == "VH")
++    assert n_words >= 4 * H  # every output component a word
+diff --git a/tests/test_rv_vfir_ref.py b/tests/test_rv_vfir_ref.py
+new file mode 100644
+index 0000000..63dcc54
+--- /dev/null
++++ b/tests/test_rv_vfir_ref.py
+@@ -0,0 +1,180 @@
++"""VFIR's reference (vx.py) against an independent direct-form oracle (no vx.py code here).
++
++A ping-pong loop of VFIR calls over a sample stream (state register src -> dst, then back) must
++give, at every sample n, rd = sat16 of y[n] = sum_k rhu(g_k x[n - k] / 2^15) (complex, rounded
++half up once per component), with the taps stored reversed (h_j = g_{N-1-j}). The full (unsaturated)
++y[n] is checked in the state register too.
++"""
++
++import random
++
++import pytest
++
++from chipformer.rv import ref
++from chipformer.rv import spec as S
++from chipformer.rv.asm import assemble
++
++OUT = 0x100  # RAM byte address of the rd results
++
++
++def rhu15(v):
++    return (v + (1 << 14)) >> 15
++
++
++def oracle(g, xs):
++    """Direct form: y[n] = sum_k rhu(g_k x[n-k] / 2^15) per component, complex g, x."""
++    ys = []
++    for n in range(len(xs)):
++        yr = yi = 0
++        for k, (gr, gi) in enumerate(g):
++            if n - k < 0:
++                continue
++            xr, xi = xs[n - k]
++            yr += rhu15(gr * xr - gi * xi)
++            yi += rhu15(gr * xi + gi * xr)
++        ys.append((yr, yi))
++    return ys
++
++
++def sat16(v):
++    return max(-32768, min(32767, v))
++
++
++def i16(rng):
++    return rng.choice([-32768, 32767, -32767, 0, 1, -1, rng.randint(-32768, 32767),
++                       rng.randint(-32768, 32767)])
++
++
++HREG = 9  # the taps' first register (flat pair 32 HREG + p holds h_p)
++STATE = (2, 4)  # the two state areas (first registers; a 64-tap state takes two registers)
++
++
++def fir_program(g, xs, blk, rd="s1"):
++    """VPUT the reversed taps from v9, then per sample the chained blocks of blk taps (state in
++    v2.. / v4.., ping-pong), storing rd of the last block to OUT + 4 n."""
++    N = len(g)
++    h = g[::-1]
++    lines = []
++    for p in range(N):
++        lines += [f"li t0, {HREG * 32 + p}", f"li t1, {h[p][0]}", f"li t2, {h[p][1]}",
++                  "vput t0, t1, t2"]
++    for n, (xr, xi) in enumerate(xs):
++        s0, d0 = STATE if n % 2 == 0 else STATE[::-1]
++        lines.append(f"li t1, {(xr & 0xFFFF) | (xi & 0xFFFF) << 16}")
++        for b in range(N // blk):
++            last = b == N // blk - 1
++            q = blk * b  # the block's first tap
++            src, dst, hh, eoff = s0 + q // 32, d0 + q // 32, HREG - 8 + q // 32, 2 * (q % 32)
++            cfg = dst | src << 4 | hh << 7 | blk << 10 | eoff << 15 | (b > 0) << 21
++            lines += [f"li t2, {cfg}", f"vfir {rd if last else 'zero'}, t1, t2"]
++        lines.append(f"sw {rd}, {OUT + 4 * n}(zero)")
++    return assemble("\n".join(lines) + "\nli a7, 93\necall")
++
++
++def run(g, xs, blk, rd="s1"):
++    m = ref.Machine.from_program(fir_program(g, xs, blk, rd))
++    toks = m.run(10**7)
++    assert S.family(toks[-1])[0] == "HALT" and m.fault is None
++    return m, toks
++
++
++@pytest.mark.parametrize("seed", range(4))
++@pytest.mark.parametrize("N", [1, 2, 4, 8, 16])
++def test_vfir_ping_pong_equals_direct_form(N, seed):
++    rng = random.Random(1000 * N + seed)
++    g = [(i16(rng), i16(rng)) for _ in range(N)]
++    xs = [(i16(rng), i16(rng)) for _ in range(2 * N + 5)]
++    m, _ = run(g, xs, N)
++    want = oracle(g, xs)
++    for n, (yr, yi) in enumerate(want):
++        got = m.ram[(OUT >> 2) + n]
++        assert got == (sat16(yr) & 0xFFFF | (sat16(yi) & 0xFFFF) << 16), (n, got, yr, yi)
++    # the last tap's state holds the unsaturated output
++    last = STATE[1] if len(xs) % 2 else STATE[0]  # the register the last sample wrote
++    assert (m.vx.vm[last][2 * N - 2], m.vx.vm[last][2 * N - 1]) == want[-1]
++
++
++@pytest.mark.parametrize("seed", range(3))
++@pytest.mark.parametrize("N,blk", [(32, 16), (64, 16), (64, 8), (16, 4), (8, 2)])
++def test_vfir_chained_blocks(N, blk, seed):
++    rng = random.Random(77 * N + blk + seed)
++    g = [(i16(rng), i16(rng)) for _ in range(N)]
++    xs = [(i16(rng), i16(rng)) for _ in range(N + 6)]
++    m, _ = run(g, xs, blk)
++    want = oracle(g, xs)
++    for n, (yr, yi) in enumerate(want):
++        assert m.ram[(OUT >> 2) + n] == (sat16(yr) & 0xFFFF | (sat16(yi) & 0xFFFF) << 16), n
++
++
++def test_vfir_tokens_and_rd_zero():
++    """The record: 5 VC, 4 tokens a tap, then rd's value record (NT for x0)."""
++    rng = random.Random(5)
++    g = [(i16(rng), i16(rng)) for _ in range(4)]
++    xs = [(i16(rng), i16(rng)) for _ in range(3)]
++    for rd in ("s1", "zero"):
++        prog = fir_program(g, xs, 4, rd)
++        m = ref.Machine.from_program(prog)
++        recs = []
++        while not m.halted:
++            ins = ref.decode(m.rom[m.anchor + m.n])
++            r = m.record()
++            if ins.op == "VFIR":
++                recs.append([S.family(t)[0] for t in r])
++        assert len(recs) == 3
++        for fams in recs:
++            assert fams[:5] == ["VC"] * 5
++            assert fams[5:5 + 16] == ["VE", "VH"] * 8
++            tail = fams[21:]
++            if rd == "zero":
++                assert tail == ["NT"]
++            else:
++                assert tail[-1] in ("F0", "F1", "F2") and all(t == "V" for t in tail[:-1])
++
++
++@pytest.mark.parametrize("bad", ["dst_is_src", "dst_is_h", "n0", "n17", "misaligned", "chain0", "chain_into_dst"])
++def test_vfir_operand_checks(bad):
++    cfg = {"dst_is_src": 1 | 1 << 4 | 1 << 7 | 4 << 10,
++           "dst_is_h": 9 | 1 << 4 | 1 << 7 | 4 << 10,
++           "n0": 2 | 1 << 4 | 1 << 7,
++           "n17": 2 | 1 << 4 | 1 << 7 | 17 << 10,
++           "misaligned": 2 | 1 << 4 | 1 << 7 | 4 << 10 | 4 << 15,
++           "chain0": 2 | 0 << 4 | 1 << 7 | 4 << 10 | 1 << 21,
++           "chain_into_dst": 0 | 1 << 4 | 1 << 7 | 4 << 10 | 1 << 21}[bad]
++    prog = assemble(f"li t1, 5\nli t2, {cfg}\nvfir s1, t1, t2\nli a7, 93\necall")
++    with pytest.raises(ValueError):
++        ref.Machine.from_program(prog).run()
++
++
++def test_vfir_decode():
++    prog = assemble("vfir s1, t1, t2")
++    w = prog.text[0]
++    assert w & 0x7F == 0x5B and w >> 25 == 1 and w >> 12 & 7 == 0
++    ins = ref.decode(w)
++    assert (ins.op, ins.rd, ins.rs1, ins.rs2) == ("VFIR", 9, 6, 7)
++    assert ref.rom_word(w, S.ROM_BASE) & 0x7F == 81
++
++
++@pytest.mark.parametrize("seed", range(4))
++def test_vfir_guard_rd(seed):
++    """guard (rs2 bit 22): rd = sat16(y >> 2) per component, y the last tap's state (unchanged)."""
++    from chipformer.rv import vx as V
++    rng = random.Random(100 + seed)
++    taps = [(rng.randint(-24000, 24000), rng.randint(-24000, 24000)) for _ in range(8)]
++    lines = []
++    for j, (hr, hi) in enumerate(taps):
++        lines += [f"li t0, {8 * 32 + j}", f"li t1, {hr}", f"li t2, {hi}", "vput t0, t1, t2"]
++    chain_pair = (rng.choice([2, 0, -7]), rng.choice([2, 5]))
++    lines += [f"li t0, {31}", f"li t1, {chain_pair[0]}", f"li t2, {chain_pair[1]}", "vput t0, t1, t2"]
++    xr, xi = rng.randint(-32768, 32767), rng.randint(-32768, 32767)
++    for guard in (0, 1):
++        cfg = 2 | 1 << 4 | 0 << 7 | 8 << 10 | 0 << 15 | 0 << 21 | guard << 22
++        prog = assemble("\n".join(lines + [f"li t1, {(xr & 0xFFFF) | (xi & 0xFFFF) << 16}", f"li t2, {cfg}",
++                                           "vfir s1, t1, t2", f"sw s1, {OUT}(zero)", "li a0, 0", "li a7, 93", "ecall"]) + "\n")
++        m = ref.Machine.from_program(prog)
++        m.run(10**6)
++        assert m.halted and m.fault is None
++        yr, yi = m.vx.vm[2][14], m.vx.vm[2][15]
++        g = 2 * guard
++        r = m.ram[OUT >> 2]
++        got = (r & 0xFFFF) - ((r & 0x8000) << 1), (r >> 16 & 0xFFFF) - ((r >> 16 & 0x8000) << 1)
++        assert got == (sat16(yr >> g), sat16(yi >> g)), (guard, got, yr, yi)
+diff --git a/tests/test_rv_vpow_ref.py b/tests/test_rv_vpow_ref.py
+new file mode 100644
+index 0000000..09bf9ba
+--- /dev/null
++++ b/tests/test_rv_vpow_ref.py
+@@ -0,0 +1,155 @@
++"""VPOW's reference (vx.py) against an independent oracle (no vx.py code here).
++
++Random complex int16 pairs are VPUT into v0..v7 (a test-side copy is kept), then VPOW over random
++(src, n, eoff) blocks stores rd to RAM; rd must be sum (ar^2 + ai^2) mod 2^32 over the block,
++VGET 1 (vsum) its low 31 bits sign-extended, and the streamed VE / VH pairs the running sums.
++"""
++
++import random
++
++import pytest
++
++from chipformer.rv import ref
++from chipformer.rv import spec as S
++from chipformer.rv.asm import assemble
++
++OUT = 0x100  # RAM byte address of the results
++M32 = (1 << 32) - 1
++
++
++def i16(rng):
++    return rng.choice([-32768, 32767, -32767, 0, 1, -1, rng.randint(-32768, 32767),
++                       rng.randint(-32768, 32767)])
++
++
++def oracle(mem, src, n, eoff):
++    acc, run = 0, []
++    for j in range(n):
++        ar, ai = mem[src][eoff + 2 * j], mem[src][eoff + 2 * j + 1]
++        acc = (acc + ar * ar + ai * ai) % (1 << 32)
++        run.append(acc)
++    return acc, run
++
++
++def to_s31(v):
++    v &= (1 << 31) - 1
++    return v - (1 << 31) if v >> 30 else v
++
++
++def block(rng):
++    n = rng.choice([1, 2, 3, 4, 5, 7, 8, 9, 15, 16, 17, 31, 32, rng.randint(1, 32)])
++    span = 1 << (2 * n - 1).bit_length()  # elements: 2 n rounded up to a power of two
++    eoff = rng.randrange(0, 64 - 2 * n + 1, span)
++    return n, eoff
++
++
++def program(seed, n_ops=10):
++    rng = random.Random(seed)
++    mem = [[0] * 64 for _ in range(8)]
++    lines = []
++    for reg in rng.sample(range(8), 3):
++        for p in range(32):
++            a, b = i16(rng), i16(rng)
++            if rng.random() < 0.15:  # the extremes, both components
++                a, b = rng.choice([(-32768, -32768), (32767, 32767), (-32768, 32767)])
++            mem[reg][2 * p], mem[reg][2 * p + 1] = a, b
++            lines += [f"li t0, {reg * 32 + p}", f"li t1, {a}", f"li t2, {b}", "vput t0, t1, t2"]
++    want = []
++    for k in range(n_ops):
++        src = rng.randrange(8)
++        n, eoff = block(rng)
++        acc, _ = oracle(mem, src, n, eoff)
++        want.append((acc, to_s31(acc) & M32, src, n, eoff))
++        lines += [f"li t3, {src | n << 3 | eoff << 9}", "vpow s1, t3, zero",
++                  f"sw s1, {OUT + 8 * k}(zero)", "li t4, 1", "vget s2, t4, zero",
++                  f"sw s2, {OUT + 8 * k + 4}(zero)"]
++    return assemble("\n".join(lines) + "\nli a7, 93\necall"), want, mem
++
++
++@pytest.mark.parametrize("seed", range(8))
++def test_vpow_equals_oracle(seed):
++    prog, want, mem = program(seed)
++    m = ref.Machine.from_program(prog)
++    toks = m.run(10**7)
++    assert S.family(toks[-1])[0] == "HALT" and m.fault is None
++    for k, (acc, vs, src, n, eoff) in enumerate(want):
++        assert m.ram[(OUT >> 2) + 2 * k] == acc, (k, src, n, eoff)
++        assert m.ram[(OUT >> 2) + 2 * k + 1] == vs, k
++
++
++def test_vpow_full_scale_wraps():
++    """32 pairs of (-32768, -32768): 32 * 2^31 = 2^36, so acc wraps to 0 mod 2^32."""
++    lines = []
++    for p in range(32):
++        lines += [f"li t0, {3 * 32 + p}", "li t1, -32768", "li t2, -32768", "vput t0, t1, t2"]
++    lines += [f"li t3, {3 | 32 << 3}", "vpow s1, t3, zero", f"sw s1, {OUT}(zero)",
++              f"li t3, {3 | 1 << 3 | 62 << 9}", "vpow s1, t3, zero", f"sw s1, {OUT + 4}(zero)",
++              f"li t3, {3 | 3 << 3 | 56 << 9}", "vpow s1, t3, zero", f"sw s1, {OUT + 8}(zero)"]
++    m = ref.Machine.from_program(assemble("\n".join(lines) + "\nli a7, 93\necall"))
++    m.run(10**7)
++    assert m.ram[OUT >> 2] == 0
++    assert m.ram[(OUT >> 2) + 1] == 1 << 31
++    assert m.ram[(OUT >> 2) + 2] == (3 << 31) & M32
++
++
++@pytest.mark.parametrize("rd", ["s1", "zero"])
++def test_vpow_record(rd):
++    """The record: 3 VC, VE VH per element with the running sums, then rd's value record (NT for
++    x0)."""
++    prog, want, mem = program(3, n_ops=6)
++    m = ref.Machine.from_program(prog)
++    k = 0
++    while not m.halted:
++        ins = ref.decode(m.rom[m.anchor + m.n])
++        r = m.record()
++        if ins.op != "VPOW":
++            continue
++        acc, _, s, n, eoff = want[k]
++        k += 1
++        _, run = oracle(mem, s, n, eoff)
++        fams = [S.family(t) for t in r]
++        assert [f for f, _ in fams[:3]] == ["VC"] * 3
++        stream = fams[3:3 + 2 * n]
++        assert [f for f, _ in stream] == ["VE", "VH"] * n
++        for j in range(n):
++            assert stream[2 * j][1] | stream[2 * j + 1][1] << 16 == run[j]
++        assert r[3 + 2 * n:] == S.value_record(acc)
++    assert k == 6
++    # rd = x0: NT after the stream
++    lines = ["li t0, 5", "li t1, 300", "li t2, -4", "vput t0, t1, t2",
++             f"li t3, {0 | 1 << 3 | 10 << 9}", f"vpow {rd}, t3, zero", "li a7, 93", "ecall"]
++    m = ref.Machine.from_program(assemble("\n".join(lines)))
++    recs = []
++    while not m.halted:
++        ins = ref.decode(m.rom[m.anchor + m.n])
++        r = m.record()
++        if ins.op == "VPOW":
++            recs.append(r)
++    (r,) = recs
++    assert [S.family(t)[0] for t in r[:5]] == ["VC", "VC", "VC", "VE", "VH"]
++    if rd == "zero":
++        assert [S.family(t)[0] for t in r[5:]] == ["NT"]
++    else:
++        assert r[5:] == S.value_record(300 * 300 + 16)
++
++
++@pytest.mark.parametrize("bad", ["n0", "n33", "odd_eoff", "misaligned", "past_end", "not_int16"])
++def test_vpow_operand_checks(bad):
++    pre = ""
++    cfg = {"n0": 1, "n33": 1 | 33 << 3, "odd_eoff": 1 | 1 << 3 | 1 << 9,
++           "misaligned": 1 | 4 << 3 | 4 << 9, "past_end": 1 | 2 << 3 | 62 << 9,
++           "not_int16": 1 | 1 << 3}[bad]
++    if bad == "not_int16":
++        pre = "li t0, 32\nli t1, 32768\nli t2, 0\nvput t0, t1, t2\n"
++    prog = assemble(pre + f"li t3, {cfg}\nvpow s1, t3, zero\nli a7, 93\necall")
++    with pytest.raises(ValueError):
++        ref.Machine.from_program(prog).run()
++
++
++def test_vpow_decode():
++    prog = assemble("vpow s1, t3, zero")
++    w = prog.text[0]
++    assert w & 0x7F == 0x5B and w >> 25 == 1 and w >> 12 & 7 == 1
++    ins = ref.decode(w)
++    assert (ins.op, ins.rd, ins.rs1, ins.rs2) == ("VPOW", 9, 28, 0)
++    assert ref.rom_word(w, S.ROM_BASE) & 0x7F == 82
+diff --git a/tests/test_rv_vx.py b/tests/test_rv_vx.py
+index 63d9ac5..e95dd69 100644
+--- a/tests/test_rv_vx.py
++++ b/tests/test_rv_vx.py
+@@ -218,3 +218,188 @@ def attention_program(seed):
+ @pytest.mark.parametrize("seed", range(2))
+ def test_attention(circ, seed):
+     run_check(circ, attention_program(seed))
++
++
++def i16(rng):
++    return rng.choice([-32768, 32767, 0, -1, rng.randint(-32768, 32767), rng.randint(-32768, 32767)])
++
++
++def vfir(rd, xr, xi, dst, src, h, n, eoff, chain=0, guard=0):
++    cfg = dst | src << 4 | h << 7 | n << 10 | eoff << 15 | chain << 21 | guard << 22
++    return [f"li t1, {(xr & 0xFFFF) | (xi & 0xFFFF) << 16}", f"li t2, {cfg}", f"vfir {rd}, t1, t2"]
++
++
++def vfir_program(seed):
++    """VFIR (vx.py) on random taps, states and samples: single blocks (n 1..16, any aligned
++    offset), blocks chained inside a register and across a register boundary, rd = x0 or not,
++    ping-ponging the state between two register pairs; VEW / VQ after it (slot 1's NEW flag)."""
++    rng = random.Random(seed)
++    a, b = rng.sample([0, 2, 4, 6], 2)  # state areas v{a}, v{a+1} / v{b}, v{b+1}
++    h = rng.choice([0, 2, 4, 6])  # taps in v{8+h}, v{9+h}
++    lines = []
++    for p in range(16):
++        lines += vput(rng, 8 + h, p, i16(rng), i16(rng))
++    for p in range(4):
++        lines += vput(rng, 9 + h, p, i16(rng), i16(rng))
++    for reg in (a, b):
++        for p in list(range(16)) + [31]:
++            lines += vput(rng, reg, p, rng.randint(-(1 << 18), 1 << 18), rng.randint(-(1 << 18), 1 << 18))
++        for p in range(4):
++            lines += vput(rng, reg + 1, p, rng.randint(-(1 << 18), 1 << 18), rng.randint(-(1 << 18), 1 << 18))
++    rds = ["s1", "zero", "s2", "a0"]
++    for k in range(7):
++        src, dst = (a, b) if k % 2 == 0 else (b, a)
++        x = (i16(rng), i16(rng))
++        mode = rng.randrange(3)
++        if mode == 0:  # one block
++            n = rng.choice([1, 2, 3, 4, 5, 8, 16])
++            span = 1 << (2 * n - 1).bit_length()
++            eoff = rng.randrange(0, 64 - 2 * n + 1, span)
++            lines += vfir(rng.choice(rds), *x, dst, src, h, n, eoff, 0, rng.randrange(2))
++        elif mode == 1:  # two chained blocks of m inside the register
++            m = rng.choice([2, 4, 8])
++            lines += vfir("zero", *x, dst, src, h, m, 0)
++            lines += vfir(rng.choice(rds), *x, dst, src, h, m, 2 * m, 1, rng.randrange(2))
++        else:  # the last pair of v{src} chains into a block at v{src+1}, offset 0
++            n = rng.choice([1, 2, 4])
++            lines += vfir("zero", *x, dst, src, h, 1, 62)
++            lines += vfir(rng.choice(rds), *x, dst + 1, src + 1, h + 1, n, 0, 1, rng.randrange(2))
++        if rng.random() < 0.3:
++            lines += ["xor s3, s3, s1", "add s3, s3, s2"]
++    lines += vew(a, 8 + h, 0, 8, 0, 0, 0, -3, 0, rng.randrange(1 << 15))
++    lines += vq(b, 0, 16, 0, rng.randrange(4, 10), 64 * 2, rng.randrange(1 << 15))
++    return assemble("\n".join(lines) + EXIT)
++
++
++@pytest.mark.parametrize("seed", range(4))
++def test_vfir(circ, seed):
++    toks = run_check(circ, vfir_program(seed))
++    fams = [S.family(t)[0] for t in toks]
++    assert fams.count("VC") >= 5 * 7
++
++
++def vpow(rd, src, n, eoff):
++    return [f"li t3, {src | n << 3 | eoff << 9}", f"vpow {rd}, t3, zero"]
++
++
++def vpow_program(seed):
++    """VPOW (vx.py) on random complex int16 pairs in bank A (the extremes -32768 / 32767 included):
++    n 1..32 at aligned offsets, rd = x0 or not, with VGET 1 (vsum), and VFIR / VEW / VQ / VPUT
++    before and after it (the shared MAC, slot 1's NEW flag, the bank A query)."""
++    rng = random.Random(seed)
++    regs = rng.sample(range(8), 3)
++    h = rng.choice([0, 2, 4, 6])
++    lines = []
++    for reg in regs:
++        for p in range(32):
++            a, b = i16(rng), i16(rng)
++            if rng.random() < 0.1:
++                a, b = rng.choice([(-32768, -32768), (32767, 32767), (-32768, 32767)])
++            lines += vput(rng, reg, p, a, b)
++    for p in range(8):
++        lines += vput(rng, 8 + h, p, i16(rng), i16(rng))
++    rds = ["s1", "zero", "s2", "a0"]
++    fa, fb = [r for r in range(8) if r not in regs][:2]  # VFIR's state registers
++    for p in range(8):
++        lines += vput(rng, fa, p, rng.randint(-(1 << 18), 1 << 18), rng.randint(-(1 << 18), 1 << 18))
++    for k in range(8):
++        n = rng.choice([1, 2, 3, 5, 8, 16, 31, 32, rng.randint(1, 32)])
++        span = 1 << (2 * n - 1).bit_length()
++        eoff = rng.randrange(0, 64 - 2 * n + 1, span)
++        lines += vpow(rng.choice(rds), rng.choice(regs), n, eoff)
++        r = rng.random()
++        if r < 0.3:
++            lines += ["li t1, 1", "vget s3, t1, zero", "xor s2, s2, s3"]
++        elif r < 0.55:
++            src, dst = (fa, fb) if k % 2 == 0 else (fb, fa)
++            lines += vfir(rng.choice(rds), i16(rng), i16(rng), dst, src, h, rng.choice([1, 2, 4]), 0)
++        elif r < 0.7:
++            lines += vq(rng.choice(regs), 0, 16, 0, rng.randrange(0, 4), 64 * 2, rng.randrange(1 << 15))
++        elif r < 0.85:
++            lines += vput(rng, rng.choice(regs), rng.randrange(32), i16(rng), i16(rng))
++    lines += vew(regs[0], 8 + h, 0, 8, 0, 0, 0, -3, 0, rng.randrange(1 << 15))
++    lines += vpow("s1", regs[1], 4, 8)
++    for p in range(24, 32):  # small elements: short value records (F0, F1)
++        lines += vput(rng, regs[2], p, rng.randint(-90, 90), rng.randint(-90, 90))
++    lines += vpow("s2", regs[2], 1, 48) + vpow("a0", regs[2], 8, 48) + vpow("zero", regs[2], 2, 60)
++    lines += vpow("s1", regs[2], 16, 32)
++    return assemble("\n".join(lines) + EXIT)
++
++
++@pytest.mark.parametrize("seed", range(6))
++def test_vpow(circ, seed):
++    toks = run_check(circ, vpow_program(seed))
++    fams = [S.family(t)[0] for t in toks]
++    assert fams.count("VC") >= 3 * 9
++
++
++def vbfly(a, h, dst, woff, rhi, mask, sc, n, keep=0, track=0):
++    w = a | h << 3 | dst << 6 | woff << 10 | rhi << 15 | mask << 16 | sc << 21 | n << 22 | keep << 26 | track << 27
++    return [f"li t3, {w}", "vbfly zero, t3, zero"]
++
++
++def vbfly_program(seed):
++    """VBFLY (vx.py) on random int16 pairs (extremes included): n in 1, 2, 4, 8 at aligned offsets,
++    both halves (rhi), random masks into 32 random RoPE pairs, sc 0 / 1, outputs chained into a
++    second VBFLY; with VEW ROPE (the RoPE table's first 4 pairs), VFIR, VPOW, VQ, VPUT around it
++    (the shared MAC, the NEW / BFLY flags, both banks' queries)."""
++    rng = random.Random(seed)
++    ra, rb = rng.randrange(8), rng.randrange(8)
++    lines = []
++    for r in range(32):
++        c, s = rng.choice([(-32768, 32767), (32767, -32768), (i16(rng), i16(rng)), (i16(rng), i16(rng))])
++        lines += [f"li t0, {512 + r}", f"li t1, {c}", f"li t2, {s}", "vput t0, t1, t2"]
++    for reg, lim in ((ra, 32768), (8 + rb, 32768)):
++        for p in range(32):
++            lines += vput(rng, reg, p, rng.choice([i16(rng), rng.randint(-lim, lim - 1)]), i16(rng))
++    others_a = [r for r in range(8) if r != ra]
++    others_b = [r for r in range(8, 16) if r != 8 + rb]
++    fa, fb = others_a[:2]
++    for p in range(8):
++        lines += vput(rng, fa, p, rng.randint(-(1 << 18), 1 << 18), rng.randint(-(1 << 18), 1 << 18))
++    for k in range(10):
++        n = rng.choice([1, 2, 4, 8, 8])
++        woff = rng.randrange(0, 32 - 2 * n + 1, 2 * n)
++        dst = rng.choice(others_a[2:] + others_b)
++        track = int(n <= 4 and rng.random() < 0.6)
++        lines += vbfly(ra, rb, dst, woff, rng.randrange(2), rng.randrange(32), rng.randrange(2), n,
++                       rng.randrange(2), track)
++        if track and rng.random() < 0.5:
++            lines += ["li t1, 3", "vget s3, t1, zero", "xor s2, s2, s3", "li t1, 0", "vget s3, t1, zero"]
++        r = rng.random()
++        if r < 0.25:
++            src, d2 = (fa, fb) if k % 2 == 0 else (fb, fa)
++            lines += vfir(rng.choice(["s1", "zero"]), i16(rng), i16(rng), d2, src, rb, rng.choice([1, 2, 4]), 0)
++        elif r < 0.45:
++            lines += vpow(rng.choice(["s2", "zero"]), ra, rng.choice([1, 4, 8]), 0)
++        elif r < 0.6:
++            lines += vew(ra, 8 + rb, 0, 8, 2, 0, 0, 0, 0, 0)  # ROPE into VM[8 + rb] (then rb's data
++            # are RoPE outputs: refill below)
++            for p in range(4):
++                lines += vput(rng, 8 + rb, p, i16(rng), i16(rng))
++        elif r < 0.75:
++            lines += vq(ra, 0, 16, 0, rng.randrange(0, 4), 64 * 2, rng.randrange(1 << 15))
++        elif r < 0.9:
++            lines += vput(rng, rng.choice([ra, 8 + rb]), rng.randrange(32), i16(rng), i16(rng))
++    # chained: small inputs, a stage into others_a[3] / others_b[0], then a second stage from them
++    sa, sb = others_a[3], others_b[1]
++    for p in range(32):
++        lines += vput(rng, sa, p, rng.randint(-15000, 15000), rng.randint(-15000, 15000))
++        lines += vput(rng, sb, p, rng.randint(-15000, 15000), rng.randint(-15000, 15000))
++    oa, ob = others_a[4], others_b[2]
++    for op in range(4):
++        i0 = 8 * op
++        lines += vbfly(sa, sb - 8, oa if 2 * i0 < 32 else ob, (2 * i0) % 32, i0 >> 4, 0, 1, 8)
++    for op in range(8):  # tracked: 4 butterflies an op
++        i0 = 4 * op
++        lines += vbfly(oa, ob - 8, sa if 2 * i0 < 32 else sb, (2 * i0) % 32, i0 >> 4, 1, 1, 4, int(op > 0), 1)
++    lines += ["li t1, 3", "vget s3, t1, zero", "li t1, 0", "vget s1, t1, zero"]
++    lines += vpow("s1", sa, 8, 16)
++    return assemble("\n".join(lines) + EXIT)
++
++
++@pytest.mark.parametrize("seed", range(6))
++def test_vbfly(circ, seed):
++    toks = run_check(circ, vbfly_program(seed))
++    fams = [S.family(t)[0] for t in toks]
++    assert fams.count("VC") >= 3 * 10

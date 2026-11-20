@@ -1,0 +1,317 @@
+{
+  "status": "PASS",
+  "backend": "QwenPU RV32 CPU in weights, chipformer fusedexec.FreeRun3",
+  "input_format": "Q2.13",
+  "stages": {
+    "dc_block": {
+      "kernel": "dc_blocker",
+      "alpha_q15": 32440
+    },
+    "lowpass": {
+      "kernel": "lowpass16",
+      "taps": 16,
+      "accumulator_bits": 32
+    },
+    "energy": {
+      "kernel": "energy_detector",
+      "window": 64,
+      "memory_windows": 8,
+      "alpha_q8": 1024
+    },
+    "cfar": {
+      "kernel": "cfar16_t2g1",
+      "n": 16,
+      "hop": 16,
+      "train": 2,
+      "guard": 1,
+      "scale_q8": 1024,
+      "window": [
+        32767,
+        32767,
+        32767,
+        32767,
+        32767,
+        32767,
+        32767,
+        32767,
+        32767,
+        32767,
+        32767,
+        32767,
+        32767,
+        32767,
+        32767,
+        32767
+      ],
+      "max_block": 2048,
+      "compare_bits": 64
+    },
+    "classifier": {
+      "kernel": "spectral_mlp",
+      "features": 4,
+      "hidden": 8,
+      "classes": 3,
+      "fshift": 16
+    },
+    "cfo": {
+      "kernel": "cfo_lag1_w64",
+      "lag": 1,
+      "window": 64,
+      "shift": 9,
+      "cordic_iterations": 16
+    },
+    "peak": {
+      "kernel": "peak_tracker"
+    },
+    "fm": {
+      "kernel": "fm_demod",
+      "product_shift": 3,
+      "cordic_iterations": 16
+    }
+  },
+  "streams": 14,
+  "samples_per_stream": 2048,
+  "tokens": 31117539,
+  "neural_seconds": 1095.8248991999862,
+  "wall_seconds": 1202.6662394000014,
+  "tokens_per_sample": 1085.2936314174108,
+  "neural_ms_per_sample": 38.21933939732095,
+  "results": [
+    {
+      "stream": "IDLab:WiFi:wf10Msps_g76_gentbrugge_f5240MHz_r1.bin",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 2468023,
+      "cfar_frames_with_detection": 85,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 0,
+      "class_histogram": {
+        "noise": 324,
+        "wideband": 188
+      },
+      "cfo_median_rad_per_sample": -0.02431792045899696,
+      "peak_index": 766
+    },
+    {
+      "stream": "IDLab:WiFi:wf_g30_igent_f2412MHz_r1.bin",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 3195093,
+      "cfar_frames_with_detection": 72,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 0,
+      "class_histogram": {
+        "noise": 224,
+        "tone": 2,
+        "wideband": 286
+      },
+      "cfo_median_rad_per_sample": -0.0001655116256521279,
+      "peak_index": 1294
+    },
+    {
+      "stream": "IDLab:LTE:lte_g30_gentbrugge_f806MHz_r1.bin",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 5124520,
+      "cfar_frames_with_detection": 66,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 0,
+      "class_histogram": {
+        "noise": 160,
+        "tone": 6,
+        "wideband": 346
+      },
+      "cfo_median_rad_per_sample": 0.0001655116256521279,
+      "peak_index": 382
+    },
+    {
+      "stream": "IDLab:LTE:lte10Msps_g0_igent_f806MHz_r1.bin",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 3818396,
+      "cfar_frames_with_detection": 64,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 0,
+      "class_histogram": {
+        "noise": 239,
+        "wideband": 273
+      },
+      "cfo_median_rad_per_sample": 0.00028758043602233825,
+      "peak_index": 1095
+    },
+    {
+      "stream": "IDLab:DVB-T:dvbt_g30_gentbrugge_f482MHz_r1.bin",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 3543551,
+      "cfar_frames_with_detection": 85,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 2,
+      "class_histogram": {
+        "noise": 242,
+        "wideband": 270
+      },
+      "cfo_median_rad_per_sample": 0.005658669534870922,
+      "peak_index": 1261
+    },
+    {
+      "stream": "IDLab:DVB-T:dvbt_g30_igent_f482MHz_r1.bin",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 3785989,
+      "cfar_frames_with_detection": 61,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 0,
+      "class_histogram": {
+        "noise": 229,
+        "tone": 3,
+        "wideband": 280
+      },
+      "cfo_median_rad_per_sample": -0.00028758043602233825,
+      "peak_index": 215
+    },
+    {
+      "stream": "NTU-RFSR:LoRa:exp6_000000_rxg40_0_fulltrim.cfile",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 4313605,
+      "cfar_frames_with_detection": 86,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 2,
+      "class_histogram": {
+        "noise": 214,
+        "tone": 1,
+        "wideband": 297
+      },
+      "cfo_median_rad_per_sample": -0.0032782999372083146,
+      "peak_index": 953
+    },
+    {
+      "stream": "NTU-RFSR:LoRa:exp7_000000_rxg40_0_fulltrim.cfile",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 4622293,
+      "cfar_frames_with_detection": 92,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 14,
+      "class_histogram": {
+        "noise": 201,
+        "tone": 2,
+        "wideband": 309
+      },
+      "cfo_median_rad_per_sample": 0.00999212839511226,
+      "peak_index": 1758
+    },
+    {
+      "stream": "EPFL-LoRaIQ:LoRa:310.sigmf-data",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 5296903,
+      "cfar_frames_with_detection": 128,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 15,
+      "class_histogram": {
+        "noise": 105,
+        "wideband": 407
+      },
+      "cfo_median_rad_per_sample": 0.05068260082518812,
+      "peak_index": 887
+    },
+    {
+      "stream": "EPFL-LoRaIQ:LoRa:11.sigmf-data",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 4406282,
+      "cfar_frames_with_detection": 81,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 2,
+      "class_histogram": {
+        "noise": 190,
+        "wideband": 322
+      },
+      "cfo_median_rad_per_sample": 0.015345791213800614,
+      "peak_index": 30
+    },
+    {
+      "stream": "EPFL-LoRaIQ:LoRa:1335.sigmf-data",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 3763810,
+      "cfar_frames_with_detection": 92,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 13,
+      "class_histogram": {
+        "noise": 216,
+        "wideband": 296
+      },
+      "cfo_median_rad_per_sample": 0.031580825959592246,
+      "peak_index": 1137
+    },
+    {
+      "stream": "EPFL-LoRaIQ:LoRa:1298.sigmf-data",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 10004930,
+      "cfar_frames_with_detection": 128,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 13,
+      "class_histogram": {
+        "noise": 88,
+        "tone": 13,
+        "wideband": 411
+      },
+      "cfo_median_rad_per_sample": 0.1544766326975208,
+      "peak_index": 1960
+    },
+    {
+      "stream": "Tampere:drone-controller:DJI_inspire_2_2G.bin",
+      "all_stages_exact": true,
+      "burst_start_samples": [
+        1663,
+        1855
+      ],
+      "burst_end_samples": [
+        1727
+      ],
+      "noise_floor_last": 1506573,
+      "cfar_frames_with_detection": 128,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 13,
+      "class_histogram": {
+        "noise": 134,
+        "tone": 12,
+        "wideband": 366
+      },
+      "cfo_median_rad_per_sample": -1.193609299875518,
+      "peak_index": 485
+    },
+    {
+      "stream": "Tampere:drone-controller:DJI_inspire_2_5G_1of2.bin",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 14128,
+      "cfar_frames_with_detection": 110,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 5,
+      "class_histogram": {
+        "noise": 512
+      },
+      "cfo_median_rad_per_sample": 0.821221355234322,
+      "peak_index": 7
+    }
+  ],
+  "ground_truth": {}
+}

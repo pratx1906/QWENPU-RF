@@ -1,0 +1,602 @@
+{
+  "status": "frozen_before_neural_testing",
+  "captures": [
+    {
+      "dataset": "IDLab",
+      "emitter": "WiFi",
+      "format": "ci16_le",
+      "ADC_divisor": 32768,
+      "metadata": {
+        "name": "wf10Msps_g76_gentbrugge_f5240MHz_r1.bin",
+        "location": "gentbrugge",
+        "bytes": 8800000,
+        "url": "https://cloud.ilabt.imec.be/public.php/dav/files/qrJCWgzQaGPfHPr/gentbrugge/wf10Msps_g76_gentbrugge_f5240MHz_r1.bin",
+        "etag": "\"d7d2f8fbc9553d8750b093afb35de321\"",
+        "technology": "WiFi",
+        "sample_rate": 10000000.0,
+        "center_frequency_hz": 5240000000.0,
+        "receiver_gain_db": 76.0,
+        "sample_count": 2200000,
+        "decode_dtype": "<i2",
+        "original_format": "Author MATLAB fread short, native endian; decoded on little-endian test host",
+        "split": "held_out",
+        "receiver_model": null,
+        "capture_datetime": null,
+        "session_id": null,
+        "measured_snr_db": null,
+        "duration_seconds": 0.22,
+        "path": "$RFPU_DATA\\datasets\\idlab-technology\\gentbrugge\\wf10Msps_g76_gentbrugge_f5240MHz_r1.bin",
+        "sha256": "cba35634e1ede245749c4e622c4c78b0a5ce48c4589a426c76bcc500812e2d3f",
+        "checksum_kind": "computed locally; no publisher digest supplied"
+      },
+      "path": "$RFPU_DATA\\datasets\\idlab-technology\\gentbrugge\\wf10Msps_g76_gentbrugge_f5240MHz_r1.bin",
+      "sha256": "cba35634e1ede245749c4e622c4c78b0a5ce48c4589a426c76bcc500812e2d3f",
+      "license": "CC-BY-NC-SA-4.0, as stated in author repository",
+      "source": "https://idlab.ugent.be/resources/iq-samples-of-lte-wifi-and-dvb-t-in-a-real-environment"
+    },
+    {
+      "dataset": "IDLab",
+      "emitter": "WiFi",
+      "format": "ci16_le",
+      "ADC_divisor": 32768,
+      "metadata": {
+        "name": "wf_g30_igent_f2412MHz_r1.bin",
+        "location": "igent",
+        "bytes": 8800000,
+        "url": "https://cloud.ilabt.imec.be/public.php/dav/files/qrJCWgzQaGPfHPr/igent/wf_g30_igent_f2412MHz_r1.bin",
+        "etag": "\"3a522cfa583c0446594899c4efe3da3b\"",
+        "technology": "WiFi",
+        "sample_rate": 1000000.0,
+        "center_frequency_hz": 2412000000.0,
+        "receiver_gain_db": 30.0,
+        "sample_count": 2200000,
+        "decode_dtype": "<i2",
+        "original_format": "Author MATLAB fread short, native endian; decoded on little-endian test host",
+        "split": "held_out",
+        "receiver_model": null,
+        "capture_datetime": null,
+        "session_id": null,
+        "measured_snr_db": null,
+        "duration_seconds": 2.2,
+        "path": "$RFPU_DATA\\datasets\\idlab-technology\\igent\\wf_g30_igent_f2412MHz_r1.bin",
+        "sha256": "8902213640047858e335abfc62f504a92bed8a39e9f70372493abe735e3e279f",
+        "checksum_kind": "computed locally; no publisher digest supplied"
+      },
+      "path": "$RFPU_DATA\\datasets\\idlab-technology\\igent\\wf_g30_igent_f2412MHz_r1.bin",
+      "sha256": "8902213640047858e335abfc62f504a92bed8a39e9f70372493abe735e3e279f",
+      "license": "CC-BY-NC-SA-4.0, as stated in author repository",
+      "source": "https://idlab.ugent.be/resources/iq-samples-of-lte-wifi-and-dvb-t-in-a-real-environment"
+    },
+    {
+      "dataset": "IDLab",
+      "emitter": "LTE",
+      "format": "ci16_le",
+      "ADC_divisor": 32768,
+      "metadata": {
+        "name": "lte_g30_gentbrugge_f806MHz_r1.bin",
+        "location": "gentbrugge",
+        "bytes": 8800000,
+        "url": "https://cloud.ilabt.imec.be/public.php/dav/files/qrJCWgzQaGPfHPr/gentbrugge/lte_g30_gentbrugge_f806MHz_r1.bin",
+        "etag": "\"765e14086cafe146293f9c82ccc6e907\"",
+        "technology": "LTE",
+        "sample_rate": 1000000.0,
+        "center_frequency_hz": 806000000.0,
+        "receiver_gain_db": 30.0,
+        "sample_count": 2200000,
+        "decode_dtype": "<i2",
+        "original_format": "Author MATLAB fread short, native endian; decoded on little-endian test host",
+        "split": "held_out",
+        "receiver_model": null,
+        "capture_datetime": null,
+        "session_id": null,
+        "measured_snr_db": null,
+        "duration_seconds": 2.2,
+        "path": "$RFPU_DATA\\datasets\\idlab-technology\\gentbrugge\\lte_g30_gentbrugge_f806MHz_r1.bin",
+        "sha256": "8c503863b69da8ddb451f67f983319072dbff2d78afb79970bcab19d7fc10889",
+        "checksum_kind": "computed locally; no publisher digest supplied"
+      },
+      "path": "$RFPU_DATA\\datasets\\idlab-technology\\gentbrugge\\lte_g30_gentbrugge_f806MHz_r1.bin",
+      "sha256": "8c503863b69da8ddb451f67f983319072dbff2d78afb79970bcab19d7fc10889",
+      "license": "CC-BY-NC-SA-4.0, as stated in author repository",
+      "source": "https://idlab.ugent.be/resources/iq-samples-of-lte-wifi-and-dvb-t-in-a-real-environment"
+    },
+    {
+      "dataset": "IDLab",
+      "emitter": "LTE",
+      "format": "ci16_le",
+      "ADC_divisor": 32768,
+      "metadata": {
+        "name": "lte10Msps_g0_igent_f806MHz_r1.bin",
+        "location": "igent",
+        "bytes": 8800000,
+        "url": "https://cloud.ilabt.imec.be/public.php/dav/files/qrJCWgzQaGPfHPr/igent/lte10Msps_g0_igent_f806MHz_r1.bin",
+        "etag": "\"834ca32940b2a6c7de3c4be9bf02d3bc\"",
+        "technology": "LTE",
+        "sample_rate": 10000000.0,
+        "center_frequency_hz": 806000000.0,
+        "receiver_gain_db": 0.0,
+        "sample_count": 2200000,
+        "decode_dtype": "<i2",
+        "original_format": "Author MATLAB fread short, native endian; decoded on little-endian test host",
+        "split": "held_out",
+        "receiver_model": null,
+        "capture_datetime": null,
+        "session_id": null,
+        "measured_snr_db": null,
+        "duration_seconds": 0.22,
+        "path": "$RFPU_DATA\\datasets\\idlab-technology\\igent\\lte10Msps_g0_igent_f806MHz_r1.bin",
+        "sha256": "8de0064243ee7ad9a48cc1d15f088f9476800ffc67f49a229608b11174e00077",
+        "checksum_kind": "computed locally; no publisher digest supplied"
+      },
+      "path": "$RFPU_DATA\\datasets\\idlab-technology\\igent\\lte10Msps_g0_igent_f806MHz_r1.bin",
+      "sha256": "8de0064243ee7ad9a48cc1d15f088f9476800ffc67f49a229608b11174e00077",
+      "license": "CC-BY-NC-SA-4.0, as stated in author repository",
+      "source": "https://idlab.ugent.be/resources/iq-samples-of-lte-wifi-and-dvb-t-in-a-real-environment"
+    },
+    {
+      "dataset": "IDLab",
+      "emitter": "DVB-T",
+      "format": "ci16_le",
+      "ADC_divisor": 32768,
+      "metadata": {
+        "name": "dvbt_g30_gentbrugge_f482MHz_r1.bin",
+        "location": "gentbrugge",
+        "bytes": 8800000,
+        "url": "https://cloud.ilabt.imec.be/public.php/dav/files/qrJCWgzQaGPfHPr/gentbrugge/dvbt_g30_gentbrugge_f482MHz_r1.bin",
+        "etag": "\"50848a97c7564b4af6cbbb86d04e9a5d\"",
+        "technology": "DVB-T",
+        "sample_rate": 1000000.0,
+        "center_frequency_hz": 482000000.0,
+        "receiver_gain_db": 30.0,
+        "sample_count": 2200000,
+        "decode_dtype": "<i2",
+        "original_format": "Author MATLAB fread short, native endian; decoded on little-endian test host",
+        "split": "held_out",
+        "receiver_model": null,
+        "capture_datetime": null,
+        "session_id": null,
+        "measured_snr_db": null,
+        "duration_seconds": 2.2,
+        "path": "$RFPU_DATA\\datasets\\idlab-technology\\gentbrugge\\dvbt_g30_gentbrugge_f482MHz_r1.bin",
+        "sha256": "3e28773e0a1cdf1ee66bbd3934afd6bbc87af573d37c1261ca9a7d3cda56ac13",
+        "checksum_kind": "computed locally; no publisher digest supplied"
+      },
+      "path": "$RFPU_DATA\\datasets\\idlab-technology\\gentbrugge\\dvbt_g30_gentbrugge_f482MHz_r1.bin",
+      "sha256": "3e28773e0a1cdf1ee66bbd3934afd6bbc87af573d37c1261ca9a7d3cda56ac13",
+      "license": "CC-BY-NC-SA-4.0, as stated in author repository",
+      "source": "https://idlab.ugent.be/resources/iq-samples-of-lte-wifi-and-dvb-t-in-a-real-environment"
+    },
+    {
+      "dataset": "IDLab",
+      "emitter": "DVB-T",
+      "format": "ci16_le",
+      "ADC_divisor": 32768,
+      "metadata": {
+        "name": "dvbt_g30_igent_f482MHz_r1.bin",
+        "location": "igent",
+        "bytes": 3862184,
+        "url": "https://cloud.ilabt.imec.be/public.php/dav/files/qrJCWgzQaGPfHPr/igent/dvbt_g30_igent_f482MHz_r1.bin",
+        "etag": "\"ce514155f0ee3a3a2deb66591d68f8ed\"",
+        "technology": "DVB-T",
+        "sample_rate": 1000000.0,
+        "center_frequency_hz": 482000000.0,
+        "receiver_gain_db": 30.0,
+        "sample_count": 965546,
+        "decode_dtype": "<i2",
+        "original_format": "Author MATLAB fread short, native endian; decoded on little-endian test host",
+        "split": "held_out",
+        "receiver_model": null,
+        "capture_datetime": null,
+        "session_id": null,
+        "measured_snr_db": null,
+        "duration_seconds": 0.965546,
+        "path": "$RFPU_DATA\\datasets\\idlab-technology\\igent\\dvbt_g30_igent_f482MHz_r1.bin",
+        "sha256": "78d751434c1b20eab5a3f49f16e7d5de130dfbc0b5c9a2bc9e7ccafa401acdde",
+        "checksum_kind": "computed locally; no publisher digest supplied"
+      },
+      "path": "$RFPU_DATA\\datasets\\idlab-technology\\igent\\dvbt_g30_igent_f482MHz_r1.bin",
+      "sha256": "78d751434c1b20eab5a3f49f16e7d5de130dfbc0b5c9a2bc9e7ccafa401acdde",
+      "license": "CC-BY-NC-SA-4.0, as stated in author repository",
+      "source": "https://idlab.ugent.be/resources/iq-samples-of-lte-wifi-and-dvb-t-in-a-real-environment"
+    },
+    {
+      "dataset": "NTU-RFSR",
+      "emitter": "LoRa",
+      "format": "cf32_le",
+      "path": "$RFPU_DATA\\datasets\\rfsr-ota-multicondition\\exp6_000000_rxg40_0_fulltrim.cfile",
+      "sha256": "34a551d7dbdf820c31c749049cfe5f2f9b89e7a8032ff5ec771beefe8e4bca5c",
+      "metadata": {
+        "file_id": 467314,
+        "name": "exp6_000000_rxg40_0_fulltrim.cfile",
+        "bytes": 35475648,
+        "checksum": {
+          "type": "MD5",
+          "value": "e3bb8c1eab91e7df8af240b5e4e6041a"
+        },
+        "experiment": 6,
+        "receiver_gain_db": 40,
+        "packet_index": 0,
+        "metadata_index": 0,
+        "split": "held_out",
+        "url": "https://researchdata.ntu.edu.sg/api/access/datafile/467314",
+        "kind": "ota",
+        "path": "$RFPU_DATA\\datasets\\rfsr-ota-multicondition\\exp6_000000_rxg40_0_fulltrim.cfile",
+        "sha256": "34a551d7dbdf820c31c749049cfe5f2f9b89e7a8032ff5ec771beefe8e4bca5c",
+        "publisher_checksum_verified": true
+      },
+      "license": {
+        "name": "CC BY-NC 4.0",
+        "uri": "http://creativecommons.org/licenses/by-nc/4.0",
+        "iconUri": "https://licensebuttons.net/l/by-nc/4.0/88x31.png"
+      },
+      "source": "https://doi.org/10.21979/N9/C6ABM3",
+      "conditions": "OTA; source covers LoS/NLoS/overhill, exact per-experiment condition mapping unverified."
+    },
+    {
+      "dataset": "NTU-RFSR",
+      "emitter": "LoRa",
+      "format": "cf32_le",
+      "path": "$RFPU_DATA\\datasets\\rfsr-ota-multicondition\\exp7_000000_rxg40_0_fulltrim.cfile",
+      "sha256": "aa22b71e148b653ba65a10e09fc9d122b9998d38f62bfb220f28bb21f46e1e83",
+      "metadata": {
+        "file_id": 468311,
+        "name": "exp7_000000_rxg40_0_fulltrim.cfile",
+        "bytes": 35475648,
+        "checksum": {
+          "type": "MD5",
+          "value": "36d43a40990f25fae61ae93532b44418"
+        },
+        "experiment": 7,
+        "receiver_gain_db": 40,
+        "packet_index": 0,
+        "metadata_index": 0,
+        "split": "held_out",
+        "url": "https://researchdata.ntu.edu.sg/api/access/datafile/468311",
+        "kind": "ota",
+        "path": "$RFPU_DATA\\datasets\\rfsr-ota-multicondition\\exp7_000000_rxg40_0_fulltrim.cfile",
+        "sha256": "aa22b71e148b653ba65a10e09fc9d122b9998d38f62bfb220f28bb21f46e1e83",
+        "publisher_checksum_verified": true
+      },
+      "license": {
+        "name": "CC BY-NC 4.0",
+        "uri": "http://creativecommons.org/licenses/by-nc/4.0",
+        "iconUri": "https://licensebuttons.net/l/by-nc/4.0/88x31.png"
+      },
+      "source": "https://doi.org/10.21979/N9/C6ABM3",
+      "conditions": "OTA; source covers LoS/NLoS/overhill, exact per-experiment condition mapping unverified."
+    },
+    {
+      "dataset": "EPFL-LoRaIQ",
+      "emitter": "LoRa",
+      "format": "cf32_le",
+      "path": "$RFPU_DATA\\datasets\\loraiq-20341802\\sigmfs\\25_09_17-09_30\\rrh1\\310.sigmf-data",
+      "sha256": "ed68b88795dc0f373db1d72bc8dc93baa077b1a5a3bc09c95b63183473392169",
+      "metadata": {
+        "global": {
+          "core:author": "Joachim Tapparel@EPFL,TCL",
+          "core:datatype": "cf32_le",
+          "core:datetime": "2025-09-17T07:37:31,124989300+00:00",
+          "core:description": "IQ samples recording file 310 from RRH 1",
+          "core:frequency": 862.5,
+          "core:num_channels": 1,
+          "core:sample_rate": 500000,
+          "core:sha512": "c9e7a75f3b7f2d8b1a86d1d8396e65bd1216382128ee0a45987a4d547f0aa7ddb3fa050014cebb6799a41aea3f690ac0ec691f10afe6aaa661ff7cb53df5cf85",
+          "core:version": "1.2.0"
+        },
+        "captures": [
+          {
+            "core:frequency": 862.5,
+            "core:sample_start": 0
+          }
+        ],
+        "annotations": [
+          {
+            "core:comment": "transmission_idx\t24091\nrrh_idx\t1\nbandwidth\t250000\nsf\t10\ncr\t1\nfc\t862.5\npayload_base64\tSgHrcwsWdEJHQMRYvfuXORpAXQ==\ncfo\t-0.19\nsnr\t14.1188\nrx_timestamp_full\t1758094651\nrx_timestamp_frac\t0.194156300005\narea\tUAV Area 2\nlatitude\t46.519167667\nlongitude\t6.556243833\nrx_sample_rate\t500000\nsigmf_file\t./sigmfs/25_09_17-09_30/rrh1/310\nvelocity\t2.58333333333333\ntarget_velocity\t2.8\narea_type\tdrone_los\nname\tdrone_epfl_west_long\nsigmf_file_n_samples\t82432\nsigmf_file_offset\t34583.5000025\nsigmf_file_start_time_full\t1758094651.0\nsigmf_file_start_time_frac\t0.1249893",
+            "core:freq_lower_edge": -125046.38671875,
+            "core:freq_upper_edge": 124953.61328125,
+            "core:label": "Detected LoRa Frame",
+            "core:sample_count": 82432.0,
+            "core:sample_start": 34584
+          }
+        ]
+      },
+      "metadata_sha256": "bf47e09afce025c053643ad85d5ef430114fde307f522ab4c655955c54a3d6a7",
+      "conditions": {
+        "transmission_idx": "24091",
+        "rrh_idx": "1",
+        "bandwidth": "250000",
+        "sf": "10",
+        "cr": "1",
+        "fc": "862.5",
+        "payload_base64": "SgHrcwsWdEJHQMRYvfuXORpAXQ==",
+        "cfo": "-0.19",
+        "snr": "14.1188",
+        "rx_timestamp_full": "1758094651",
+        "rx_timestamp_frac": "0.194156300005",
+        "area": "UAV Area 2",
+        "latitude": "46.519167667",
+        "longitude": "6.556243833",
+        "rx_sample_rate": "500000",
+        "sigmf_file": "./sigmfs/25_09_17-09_30/rrh1/310",
+        "velocity": "2.58333333333333",
+        "target_velocity": "2.8",
+        "area_type": "drone_los",
+        "name": "drone_epfl_west_long",
+        "sigmf_file_n_samples": "82432",
+        "sigmf_file_offset": "34583.5000025",
+        "sigmf_file_start_time_full": "1758094651.0",
+        "sigmf_file_start_time_frac": "0.1249893"
+      },
+      "license": "CC-BY-4.0",
+      "source": "https://doi.org/10.5281/zenodo.20341802",
+      "frequency_interpretation": "Source 862.5 is MHz, not Hz; original metadata retained."
+    },
+    {
+      "dataset": "EPFL-LoRaIQ",
+      "emitter": "LoRa",
+      "format": "cf32_le",
+      "path": "$RFPU_DATA\\datasets\\loraiq-20341802\\sigmfs\\25_10_07-16_05\\rrh2\\11.sigmf-data",
+      "sha256": "182467afa344350025cfba21ba557d29d3e5ef5111136764f7bcb0880e43e38a",
+      "metadata": {
+        "global": {
+          "core:author": "Joachim Tapparel@EPFL,TCL",
+          "core:datatype": "cf32_le",
+          "core:datetime": "2025-10-07T14:06:51,998842420+00:00",
+          "core:description": "IQ samples recording file 11 from RRH 2",
+          "core:frequency": 862.5,
+          "core:num_channels": 1,
+          "core:sample_rate": 500000,
+          "core:sha512": "e660e5e3fffd364ced56cc9c2104da9185d49626c37550585122fe99902cf1d97142a33fe39037aec422cc008f734cbf65d1fd4a9b3a99b41a333a076c35d9c6",
+          "core:version": "1.2.0"
+        },
+        "captures": [
+          {
+            "core:frequency": 862.5,
+            "core:sample_start": 0
+          }
+        ],
+        "annotations": [
+          {
+            "core:comment": "transmission_idx\t29950\nrrh_idx\t2\nbandwidth\t250000\nsf\t10\ncr\t1\nfc\t862.5\npayload_base64\tJgBaX86zbE5HQFZC1ljTtBhAtQ==\ncfo\t1.5878\nsnr\t-17.6426\nrx_timestamp_full\t1759846012\nrx_timestamp_frac\t0.042180920001\narea\tUAV Area 3\nlatitude\tNaN\nlongitude\tNaN\nrx_sample_rate\t500000\nsigmf_file\t./sigmfs/25_10_07-16_05/rrh2/11\nvelocity\tNaN\ntarget_velocity\t2.8\narea_type\tdrone_nlos\nname\tdrone_field_bailly\nsigmf_file_n_samples\t82432\nsigmf_file_offset\t21669.2500005\nsigmf_file_start_time_full\t1759846011.0\nsigmf_file_start_time_frac\t0.99884242",
+            "core:freq_lower_edge": -124612.353515625,
+            "core:freq_upper_edge": 125387.646484375,
+            "core:label": "Detected LoRa Frame",
+            "core:sample_count": 82432.0,
+            "core:sample_start": 21669
+          }
+        ]
+      },
+      "metadata_sha256": "400f5e208817c2ca2542e9f092f33434e5d00025a847e70666a21f7b86cffd90",
+      "conditions": {
+        "transmission_idx": "29950",
+        "rrh_idx": "2",
+        "bandwidth": "250000",
+        "sf": "10",
+        "cr": "1",
+        "fc": "862.5",
+        "payload_base64": "JgBaX86zbE5HQFZC1ljTtBhAtQ==",
+        "cfo": "1.5878",
+        "snr": "-17.6426",
+        "rx_timestamp_full": "1759846012",
+        "rx_timestamp_frac": "0.042180920001",
+        "area": "UAV Area 3",
+        "latitude": "NaN",
+        "longitude": "NaN",
+        "rx_sample_rate": "500000",
+        "sigmf_file": "./sigmfs/25_10_07-16_05/rrh2/11",
+        "velocity": "NaN",
+        "target_velocity": "2.8",
+        "area_type": "drone_nlos",
+        "name": "drone_field_bailly",
+        "sigmf_file_n_samples": "82432",
+        "sigmf_file_offset": "21669.2500005",
+        "sigmf_file_start_time_full": "1759846011.0",
+        "sigmf_file_start_time_frac": "0.99884242"
+      },
+      "license": "CC-BY-4.0",
+      "source": "https://doi.org/10.5281/zenodo.20341802",
+      "frequency_interpretation": "Source 862.5 is MHz, not Hz; original metadata retained."
+    },
+    {
+      "dataset": "EPFL-LoRaIQ",
+      "emitter": "LoRa",
+      "format": "cf32_le",
+      "path": "$RFPU_DATA\\datasets\\loraiq-20341802\\sigmfs\\25_01_17-14_39\\rrh1\\1335.sigmf-data",
+      "sha256": "49e4bf80a0819e79da52791a699315bbb3417098b3f3167f222ffb2cff2d8afc",
+      "metadata": {
+        "global": {
+          "core:author": "Joachim Tapparel@EPFL,TCL",
+          "core:datatype": "cf32_le",
+          "core:datetime": "2025-01-17T14:13:46,319375899+00:00",
+          "core:description": "IQ samples recording file 1335 from RRH 1",
+          "core:frequency": 862.5,
+          "core:num_channels": 1,
+          "core:sample_rate": 250000,
+          "core:sha512": "1ca6a63d7e7d5647ca2040f7e9a86baeb61c7019fdfc8b3b7e25f623426530af2734795914a10309d86a05a00545c7d35549096336bbf2a11b4ea7012af55b2d",
+          "core:version": "1.2.0"
+        },
+        "captures": [
+          {
+            "core:frequency": 862.5,
+            "core:sample_start": 0
+          }
+        ],
+        "annotations": [
+          {
+            "core:comment": "transmission_idx\t3567\nrrh_idx\t1\nbandwidth\t125000\nsf\t7\ncr\t1\nfc\t862.5\npayload_base64\tMDAwMTc3OA==\ncfo\t7.4816\nsnr\t-9.0441\nrx_timestamp_full\t1737123226\nrx_timestamp_frac\t0.3434638977050781\narea\tPedestrian Area 2\nlatitude\t46.52180166666667\nlongitude\t6.554108333333334\nrx_sample_rate\t250000\nsigmf_file\t./sigmfs/25_01_17-14_39/rrh1/1335\nvelocity\tNaN\ntarget_velocity\t1.3\narea_type\tpedestrian_nlos\nname\troad_bailly\nsigmf_file_n_samples\t9024\nsigmf_file_offset\t6021.0\nsigmf_file_start_time_full\t1737123226.0\nsigmf_file_start_time_frac\t0.319375899",
+            "core:freq_lower_edge": -55193.75,
+            "core:freq_upper_edge": 69806.25,
+            "core:label": "Detected LoRa Frame",
+            "core:sample_count": 9024.0,
+            "core:sample_start": 6022
+          }
+        ]
+      },
+      "metadata_sha256": "112057e017a4fa90db544e514bcaedc3ee65d88bcc74244c045fd11ac66b8980",
+      "conditions": {
+        "transmission_idx": "3567",
+        "rrh_idx": "1",
+        "bandwidth": "125000",
+        "sf": "7",
+        "cr": "1",
+        "fc": "862.5",
+        "payload_base64": "MDAwMTc3OA==",
+        "cfo": "7.4816",
+        "snr": "-9.0441",
+        "rx_timestamp_full": "1737123226",
+        "rx_timestamp_frac": "0.3434638977050781",
+        "area": "Pedestrian Area 2",
+        "latitude": "46.52180166666667",
+        "longitude": "6.554108333333334",
+        "rx_sample_rate": "250000",
+        "sigmf_file": "./sigmfs/25_01_17-14_39/rrh1/1335",
+        "velocity": "NaN",
+        "target_velocity": "1.3",
+        "area_type": "pedestrian_nlos",
+        "name": "road_bailly",
+        "sigmf_file_n_samples": "9024",
+        "sigmf_file_offset": "6021.0",
+        "sigmf_file_start_time_full": "1737123226.0",
+        "sigmf_file_start_time_frac": "0.319375899"
+      },
+      "license": "CC-BY-4.0",
+      "source": "https://doi.org/10.5281/zenodo.20341802",
+      "frequency_interpretation": "Source 862.5 is MHz, not Hz; original metadata retained."
+    },
+    {
+      "dataset": "EPFL-LoRaIQ",
+      "emitter": "LoRa",
+      "format": "cf32_le",
+      "path": "$RFPU_DATA\\datasets\\loraiq-20341802\\sigmfs\\25_01_15-10_17\\rrh1\\1298.sigmf-data",
+      "sha256": "f23c494ef47cfbba1802fe78ad2962584dfb3e043d8dd52c3d99a16d1f63f636",
+      "metadata": {
+        "global": {
+          "core:author": "Joachim Tapparel@EPFL,TCL",
+          "core:datatype": "cf32_le",
+          "core:datetime": "2025-01-15T09:49:40,320657999+00:00",
+          "core:description": "IQ samples recording file 1298 from RRH 1",
+          "core:frequency": 862.5,
+          "core:num_channels": 1,
+          "core:sample_rate": 250000,
+          "core:sha512": "858cd85aec4f4642f7f020c93cc47f00fa123968101a73a7f61da22d92ea33559bf14a64d08edf3f28950d0cdd2eb20b8356f43a66d05718ff5e3267c4043dae",
+          "core:version": "1.2.0"
+        },
+        "captures": [
+          {
+            "core:frequency": 862.5,
+            "core:sample_start": 0
+          }
+        ],
+        "annotations": [
+          {
+            "core:comment": "transmission_idx\t5085\nrrh_idx\t1\nbandwidth\t125000\nsf\t7\ncr\t1\nfc\t862.5\npayload_base64\tMDAwMTUxNw==\ncfo\t7.4386\nsnr\t38.6163\nrx_timestamp_full\t1736934580\nrx_timestamp_frac\t0.340162992477417\narea\tPedestrian Area 3\nlatitude\t46.51830666666667\nlongitude\t6.566631666666667\nrx_sample_rate\t250000\nsigmf_file\t./sigmfs/25_01_15-10_17/rrh1/1298\nvelocity\tNaN\ntarget_velocity\t1.3\narea_type\tpedestrian_nlos\nname\tartlab\nsigmf_file_n_samples\t9024\nsigmf_file_offset\t4876.0\nsigmf_file_start_time_full\t1736934580.0\nsigmf_file_start_time_frac\t0.320657999",
+            "core:freq_lower_edge": -55235.7421875,
+            "core:freq_upper_edge": 69764.2578125,
+            "core:label": "Detected LoRa Frame",
+            "core:sample_count": 9024.0,
+            "core:sample_start": 4876
+          }
+        ]
+      },
+      "metadata_sha256": "f9c2ceec7789e47df9c461ecd1e4679a97c0fb7588638d9b703ebf431e526094",
+      "conditions": {
+        "transmission_idx": "5085",
+        "rrh_idx": "1",
+        "bandwidth": "125000",
+        "sf": "7",
+        "cr": "1",
+        "fc": "862.5",
+        "payload_base64": "MDAwMTUxNw==",
+        "cfo": "7.4386",
+        "snr": "38.6163",
+        "rx_timestamp_full": "1736934580",
+        "rx_timestamp_frac": "0.340162992477417",
+        "area": "Pedestrian Area 3",
+        "latitude": "46.51830666666667",
+        "longitude": "6.566631666666667",
+        "rx_sample_rate": "250000",
+        "sigmf_file": "./sigmfs/25_01_15-10_17/rrh1/1298",
+        "velocity": "NaN",
+        "target_velocity": "1.3",
+        "area_type": "pedestrian_nlos",
+        "name": "artlab",
+        "sigmf_file_n_samples": "9024",
+        "sigmf_file_offset": "4876.0",
+        "sigmf_file_start_time_full": "1736934580.0",
+        "sigmf_file_start_time_frac": "0.320657999"
+      },
+      "license": "CC-BY-4.0",
+      "source": "https://doi.org/10.5281/zenodo.20341802",
+      "frequency_interpretation": "Source 862.5 is MHz, not Hz; original metadata retained."
+    },
+    {
+      "dataset": "Tampere",
+      "emitter": "drone-controller",
+      "format": "ci16_le",
+      "ADC_divisor": 32768,
+      "path": "$RFPU_DATA\\datasets\\tampere-drone-rf-4264467\\DJI_inspire_2_2G.bin",
+      "sha256": "0d824095f9a821f0832a435bd6e659d5a860578af3fdd8ddeb16e6e3310d5c62",
+      "metadata": {
+        "name": "DJI_inspire_2_2G.bin",
+        "path": "$RFPU_DATA\\datasets\\tampere-drone-rf-4264467\\DJI_inspire_2_2G.bin",
+        "bytes": 480000000,
+        "publisher_checksum": "md5:d586a4e636b5cfe6a835d92244d9925e",
+        "sha256": "0d824095f9a821f0832a435bd6e659d5a860578af3fdd8ddeb16e6e3310d5c62",
+        "source_url": "https://zenodo.org/api/records/4264467/files/DJI_inspire_2_2G.bin/content",
+        "datatype": "ci16_le",
+        "sample_rate": 120000000,
+        "center_frequency_hz": 2440000000,
+        "sample_count": 120000000,
+        "duration_seconds": 1.0,
+        "band": "2G",
+        "recording_group": "DJI_inspire_2_2G.bin",
+        "labels": {
+          "drone_model_from_filename": "DJI_inspire_2"
+        },
+        "receiver_model": null,
+        "session_id": null,
+        "measured_snr_db": null,
+        "conditions": "OTA in isolated anechoic chamber; drones on turntable, controller nearby, antenna opposite. Not airborne field conditions."
+      },
+      "license": "CC-BY-4.0",
+      "source": "https://doi.org/10.5281/zenodo.4264467",
+      "conditions": "Anechoic chamber, not airborne."
+    },
+    {
+      "dataset": "Tampere",
+      "emitter": "drone-controller",
+      "format": "ci16_le",
+      "ADC_divisor": 32768,
+      "path": "$RFPU_DATA\\datasets\\tampere-drone-rf-4264467\\DJI_inspire_2_5G_1of2.bin",
+      "sha256": "4bd20ac4734ac90580462e411d81f588f9e1d4a437b08ba232e593d8f233faa0",
+      "metadata": {
+        "name": "DJI_inspire_2_5G_1of2.bin",
+        "path": "$RFPU_DATA\\datasets\\tampere-drone-rf-4264467\\DJI_inspire_2_5G_1of2.bin",
+        "bytes": 400000000,
+        "publisher_checksum": "md5:6806bffcb38d5af875dd5a35057289cd",
+        "sha256": "4bd20ac4734ac90580462e411d81f588f9e1d4a437b08ba232e593d8f233faa0",
+        "source_url": "https://zenodo.org/api/records/4264467/files/DJI_inspire_2_5G_1of2.bin/content",
+        "datatype": "ci16_le",
+        "sample_rate": 200000000,
+        "center_frequency_hz": 5800000000,
+        "sample_count": 100000000,
+        "duration_seconds": 0.5,
+        "band": "5G",
+        "recording_group": "DJI_inspire_2_5G.bin",
+        "labels": {
+          "drone_model_from_filename": "DJI_inspire_2"
+        },
+        "receiver_model": null,
+        "session_id": null,
+        "measured_snr_db": null,
+        "conditions": "OTA in isolated anechoic chamber; drones on turntable, controller nearby, antenna opposite. Not airborne field conditions."
+      },
+      "license": "CC-BY-4.0",
+      "source": "https://doi.org/10.5281/zenodo.4264467",
+      "conditions": "Anechoic chamber, not airborne."
+    }
+  ],
+  "rule": "Two held-out IDLab locations per technology; NTU experiments6/7 first complete file; first EPFL file in each named area; first two Tampere names. No SNR or output-error selection.",
+  "CPU_frames": "Up to 16384 distinct nonoverlapping four-sample frames per capture after independent 512-sample gain-calibration prefix.",
+  "neural_subset": "Four evenly spaced CPU frame indices per capture; FIR, XCORR, quantized DFT4. Unsupported XCORR conjugation inputs are explicit rejections."
+}

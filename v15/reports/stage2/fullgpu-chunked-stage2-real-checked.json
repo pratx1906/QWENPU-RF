@@ -1,0 +1,166 @@
+{
+  "protocol": "PROTOCOL.md Amendment 11",
+  "gates": {
+    "questions": 6,
+    "expected": 96,
+    "P11.1_all_exact": true,
+    "P11.2_tool_answered_rate": 1.0,
+    "P11.3_fields_quoted_rate": 1.0,
+    "P11.4_numbers_supported_rate": 1.0,
+    "numbers": 17,
+    "unsupported": 0,
+    "tool_choice": {
+      "level": {
+        "rf_levels": 2,
+        "rf_analyze": 1
+      },
+      "spectral": {
+        "rf_levels": 2,
+        "rf_analyze": 1
+      }
+    },
+    "seconds_median": 38.04201979999198,
+    "pass": {
+      "P11.1": true,
+      "P11.2": true,
+      "P11.3": true,
+      "P11.4": true
+    }
+  },
+  "rows": [
+    {
+      "capture": 1,
+      "question": "Capture 1: what are its mean power and noise floor in dBFS?",
+      "tools_called": [
+        "rf_levels"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 38.04201979999198,
+      "fields": {
+        "mean_power_dbfs": {
+          "report": "-13.3",
+          "quoted": true
+        },
+        "noise_floor_dbfs": {
+          "report": "-14.2",
+          "quoted": true
+        }
+      },
+      "numbers": 2,
+      "unsupported": [],
+      "answer": "The mean power is -13.3 dBFS and the noise floor is -14.2 dBFS."
+    },
+    {
+      "capture": 2,
+      "question": "For capture 2, report the peak power in dBFS and the sample index where it occurs.",
+      "tools_called": [
+        "rf_levels"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 33.38999260001583,
+      "fields": {
+        "peak_power_dbfs": {
+          "report": "-5.8",
+          "quoted": true
+        },
+        "at_sample": {
+          "report": "46",
+          "quoted": true
+        }
+      },
+      "numbers": 3,
+      "unsupported": [],
+      "answer": "For capture 2, the peak power is **-5.8 dBFS** and it occurs at sample index **46**."
+    },
+    {
+      "capture": 3,
+      "question": "What is the dominant spectral bin of capture 3 and its frequency in cycles per sample?",
+      "tools_called": [
+        "rf_analyze"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 41.68848870001966,
+      "fields": {
+        "dominant_dft16_bin": {
+          "report": "8",
+          "quoted": true
+        },
+        "freq_cycles_per_sample": {
+          "report": "-0.5000",
+          "quoted": true
+        }
+      },
+      "numbers": 3,
+      "unsupported": [],
+      "answer": "The dominant spectral bin for capture 3 is **8**, and its frequency is **-0.5000 cycles per sample**."
+    },
+    {
+      "capture": 4,
+      "question": "How many of capture 4's 64-sample windows are active, and what is its loudest window power in dBFS?",
+      "tools_called": [
+        "rf_levels"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 28.685929200000828,
+      "fields": {
+        "active_windows": {
+          "report": "0",
+          "quoted": true
+        },
+        "loudest_window_dbfs": {
+          "report": "-14.2",
+          "quoted": true
+        }
+      },
+      "numbers": 5,
+      "unsupported": [],
+      "answer": "Based on the analysis of capture 4:\n\n*   **Active Windows:** 0 out of 16 windows are active (defined as having power greater than 4x the quietest window).\n*   **Loudest Window Power:** -14.2 dBFS."
+    },
+    {
+      "capture": 9,
+      "question": "Give the carrier frequency offset of capture 9 in cycles per sample.",
+      "tools_called": [
+        "rf_analyze"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 39.83190540000214,
+      "fields": {
+        "cfo_cycles_per_sample": {
+          "report": "0.0666",
+          "quoted": true
+        }
+      },
+      "numbers": 2,
+      "unsupported": [],
+      "answer": "The carrier frequency offset of capture 9 is **0.0666 cycles per sample**."
+    },
+    {
+      "capture": 13,
+      "question": "Capture 13: what are its mean and peak power in dBFS?",
+      "tools_called": [
+        "rf_levels"
+      ],
+      "tool_answered": true,
+      "exact": true,
+      "seconds": 32.11406859999988,
+      "fields": {
+        "mean_power_dbfs": {
+          "report": "-14.1",
+          "quoted": true
+        },
+        "peak_power_dbfs": {
+          "report": "-7.0",
+          "quoted": true
+        }
+      },
+      "numbers": 2,
+      "unsupported": [],
+      "answer": "The mean power is -14.1 dBFS and the peak power is -7.0 dBFS."
+    }
+  ]
+}

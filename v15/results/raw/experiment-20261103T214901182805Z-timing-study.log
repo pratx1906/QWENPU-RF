@@ -1,0 +1,23 @@
+unit 0: A 180.01 ms  B 26.73 ms
+unit 1: A 179.83 ms  B 26.77 ms
+unit 2: A 179.52 ms  B 26.66 ms
+unit 3: A 179.78 ms  B 26.70 ms
+unit 4: A 179.85 ms  B 26.71 ms
+unit 5: A 182.38 ms  B 27.05 ms
+unit 6: A 179.68 ms  B 26.67 ms
+unit 7: A 179.70 ms  B 26.70 ms
+{
+  "protocol": "PROTOCOL.md Amendment 3",
+  "processes": 8,
+  "speedup_geometric_mean": 6.732519725271122,
+  "speedup_95ci_t": [
+    6.7266244807144355,
+    6.7384201364471865
+  ],
+  "exact_sign_flip_p_two_sided": 0.0078125,
+  "log_ratio_sd": 0.0010478455108917982,
+  "tokens_per_sample": {
+    "A_scalar": 633.6884765625,
+    "B_vfir": 94.943359375
+  }
+}

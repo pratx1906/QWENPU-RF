@@ -1,0 +1,580 @@
+
+Loading weights:   0%|          | 0/580 [00:00<?, ?it/s]
+Loading weights:   1%|          | 4/580 [00:00<00:15, 36.37it/s]
+Loading weights:   1%|▏         | 8/580 [00:00<00:29, 19.44it/s]
+Loading weights:   2%|▏         | 14/580 [00:00<00:21, 26.15it/s]
+Loading weights:   4%|▎         | 21/580 [00:00<00:19, 28.04it/s]
+Loading weights:   5%|▌         | 31/580 [00:00<00:14, 37.87it/s]
+Loading weights:   6%|▌         | 36/580 [00:01<00:16, 33.42it/s]
+Loading weights:   9%|▉         | 55/580 [00:01<00:08, 61.68it/s]
+Loading weights:  11%|█         | 63/580 [00:01<00:08, 57.89it/s]
+Loading weights:  12%|█▏        | 70/580 [00:01<00:13, 37.52it/s]
+Loading weights:  14%|█▍        | 83/580 [00:02<00:11, 43.55it/s]
+Loading weights:  16%|█▌        | 91/580 [00:02<00:10, 47.17it/s]
+Loading weights:  17%|█▋        | 97/580 [00:02<00:11, 43.90it/s]
+Loading weights:  18%|█▊        | 102/580 [00:02<00:12, 39.08it/s]
+Loading weights:  18%|█▊        | 107/580 [00:02<00:13, 36.21it/s]
+Loading weights:  20%|█▉        | 115/580 [00:02<00:13, 33.87it/s]
+Loading weights:  21%|██        | 119/580 [00:03<00:19, 23.98it/s]
+Loading weights:  21%|██▏       | 124/580 [00:03<00:17, 26.50it/s]
+Loading weights:  22%|██▏       | 128/580 [00:03<00:16, 26.85it/s]
+Loading weights:  23%|██▎       | 132/580 [00:03<00:16, 26.85it/s]
+Loading weights:  24%|██▍       | 139/580 [00:03<00:13, 33.53it/s]
+Loading weights:  25%|██▍       | 144/580 [00:04<00:17, 24.77it/s]
+Loading weights:  26%|██▌       | 148/580 [00:04<00:23, 18.73it/s]
+Loading weights:  26%|██▋       | 153/580 [00:04<00:19, 22.47it/s]
+Loading weights:  27%|██▋       | 157/580 [00:04<00:17, 24.16it/s]
+Loading weights:  28%|██▊       | 161/580 [00:05<00:23, 18.18it/s]
+Loading weights:  30%|██▉       | 173/580 [00:05<00:12, 32.14it/s]
+Loading weights:  31%|███       | 179/580 [00:05<00:11, 35.21it/s]
+Loading weights:  32%|███▏      | 184/580 [00:05<00:10, 36.61it/s]
+Loading weights:  35%|███▍      | 202/580 [00:05<00:06, 59.68it/s]
+Loading weights:  36%|███▌      | 209/580 [00:05<00:07, 47.05it/s]
+Loading weights:  38%|███▊      | 219/580 [00:06<00:07, 48.57it/s]
+Loading weights:  40%|████      | 233/580 [00:06<00:05, 63.38it/s]
+Loading weights:  46%|████▌     | 265/580 [00:06<00:02, 107.66it/s]
+Loading weights:  48%|████▊     | 278/580 [00:06<00:05, 59.64it/s] 
+Loading weights:  50%|████▉     | 288/580 [00:07<00:05, 58.13it/s]
+Loading weights:  51%|█████     | 297/580 [00:07<00:06, 42.46it/s]
+Loading weights:  52%|█████▏    | 304/580 [00:08<00:10, 25.79it/s]
+Loading weights:  53%|█████▎    | 309/580 [00:08<00:09, 27.21it/s]
+Loading weights: 100%|██████████| 580/580 [00:08<00:00, 68.97it/s]
+[transformers] The tokenizer you are loading from '$RFPU_DATA\checkpoints\rfpu-v15\qwen3.5-4b-rv1' with an incorrect regex pattern: https://huggingface.co/mistralai/Mistral-Small-3.1-24B-Instruct-2503/discussions/84#69121093e8b480e709447d5e. This will lead to incorrect tokenization. You should set the `fix_mistral_regex=True` flag when loading this tokenizer to fix this issue.
+[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.
+[transformers] `causal_conv1d_update` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[transformers] `fused_recurrent_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.
+  1500 tokens (105 text, 1394 chip) 12s
+================================================================================ 
+Q77: For capture 12, which spectral bin dominates and what percentage of the power does it hold?
+---
+<tool_call>
+<function=rf_analyze>
+<parameter=capture>
+12
+</parameter>
+</function>
+</tool_call>
+<tool_response>
+capture=12 Tampere drone-controller fs=120MS/s fc=2440MHz
+samples=1024 (Q15)
+mean_power_dbfs=-14.1
+peak_power_dbfs=-6.9 at_sample=477
+noise_floor_dbfs=-16.7 (quietest 64-sample window)
+loudest_window_dbfs=-12.3
+active_windows=0/16 (power > 4x quietest)
+dominant_dft16_bin=13 freq_cycles_per_sample=-0.1875 power_share_percent=60
+cfo_cycles_per_sample=-0.1950
+</tool_response>
+<think>
+
+</think>
+
+The dominant spectral bin for capture 12 is bin 13, which holds 60% of the power.<|im_end|>
+[423 text + 100213 chip tokens, 60s, lock error: None]
+  1000 tokens (36 text, 963 chip) 3s
+  28500 tokens (238 text, 28261 chip) 31s
+================================================================================ 
+Q78: Capture 13: what are its mean power and noise floor in dBFS?
+---
+<tool_call>
+<function=rf_levels>
+<parameter=capture>
+13
+</parameter>
+</function>
+</tool_call>
+<tool_response>
+capture=13 Tampere drone-controller fs=200MS/s fc=5800MHz
+samples=1024 (Q15)
+mean_power_dbfs=-14.1
+peak_power_dbfs=-7.0 at_sample=340
+noise_floor_dbfs=-18.2 (quietest 64-sample window)
+loudest_window_dbfs=-10.8
+active_windows=3/16 (power > 4x quietest) first_active_sample=320 last_active_sample_end=896
+</tool_response>
+<think>
+
+</think>
+
+The mean power is -14.1 dBFS and the noise floor is -18.2 dBFS.<|im_end|>
+[366 text + 28776 chip tokens, 47s, lock error: None]
+  1000 tokens (36 text, 963 chip) 3s
+  28500 tokens (238 text, 28261 chip) 31s
+================================================================================ 
+Q79: What is the peak power of capture 13 in dBFS, and at which sample index does it occur?
+---
+<tool_call>
+<function=rf_levels>
+<parameter=capture>
+13
+</parameter>
+</function>
+</tool_call>
+<tool_response>
+capture=13 Tampere drone-controller fs=200MS/s fc=5800MHz
+samples=1024 (Q15)
+mean_power_dbfs=-14.1
+peak_power_dbfs=-7.0 at_sample=340
+noise_floor_dbfs=-18.2 (quietest 64-sample window)
+loudest_window_dbfs=-10.8
+active_windows=3/16 (power > 4x quietest) first_active_sample=320 last_active_sample_end=896
+</tool_response>
+<think>
+
+</think>
+
+The peak power of capture 13 is **-7.0 dBFS**, and it occurs at **sample index 340**.<|im_end|>
+[370 text + 28776 chip tokens, 47s, lock error: None]
+  1000 tokens (36 text, 963 chip) 3s
+  28500 tokens (238 text, 28261 chip) 30s
+================================================================================ 
+Q80: How many 64-sample windows of capture 13 are active, and what is its loudest window power in dBFS?
+---
+<tool_call>
+<function=rf_levels>
+<parameter=capture>
+13
+</parameter>
+</function>
+</tool_call>
+<tool_response>
+capture=13 Tampere drone-controller fs=200MS/s fc=5800MHz
+samples=1024 (Q15)
+mean_power_dbfs=-14.1
+peak_power_dbfs=-7.0 at_sample=340
+noise_floor_dbfs=-18.2 (quietest 64-sample window)
+loudest_window_dbfs=-10.8
+active_windows=3/16 (power > 4x quietest) first_active_sample=320 last_active_sample_end=896
+</tool_response>
+<think>
+
+</think>
+
+Based on the analysis of capture 13 (Tampere drone-controller), there are **3 active 64-sample windows**.
+
+The loudest window power is **-10.8 dBFS**.<|im_end|>
+[384 text + 28776 chip tokens, 47s, lock error: None]
+  1500 tokens (105 text, 1394 chip) 12s
+  100500 tokens (407 text, 100092 chip) 45s
+  101000 tokens (423 text, 100576 chip) 46s
+================================================================================ 
+Q81: What is the dominant spectral bin of capture 13, and its frequency in cycles per sample?
+---
+<tool_call>
+<function=rf_analyze>
+<parameter=capture>
+13
+</parameter>
+</function>
+</tool_call>
+<tool_response>
+capture=13 Tampere drone-controller fs=200MS/s fc=5800MHz
+samples=1024 (Q15)
+mean_power_dbfs=-14.1
+peak_power_dbfs=-7.0 at_sample=340
+noise_floor_dbfs=-18.2 (quietest 64-sample window)
+loudest_window_dbfs=-10.8
+active_windows=3/16 (power > 4x quietest) first_active_sample=320 last_active_sample_end=896
+dominant_dft16_bin=6 freq_cycles_per_sample=0.3750 power_share_percent=52
+cfo_cycles_per_sample=0.3509
+</tool_response>
+<think>
+
+</think>
+
+The dominant spectral bin for capture 13 is **6**, and its frequency is **0.375 cycles per sample**.<|im_end|>
+[473 text + 100784 chip tokens, 51s, lock error: None]
+  1500 tokens (105 text, 1394 chip) 8s
+  100500 tokens (407 text, 100092 chip) 36s
+  101000 tokens (423 text, 100576 chip) 38s
+================================================================================ 
+Q82: Estimate the carrier frequency offset of capture 13 in cycles per sample.
+---
+<tool_call>
+<function=rf_analyze>
+<parameter=capture>
+13
+</parameter>
+</function>
+</tool_call>
+<tool_response>
+capture=13 Tampere drone-controller fs=200MS/s fc=5800MHz
+samples=1024 (Q15)
+mean_power_dbfs=-14.1
+peak_power_dbfs=-7.0 at_sample=340
+noise_floor_dbfs=-18.2 (quietest 64-sample window)
+loudest_window_dbfs=-10.8
+active_windows=3/16 (power > 4x quietest) first_active_sample=320 last_active_sample_end=896
+dominant_dft16_bin=6 freq_cycles_per_sample=0.3750 power_share_percent=52
+cfo_cycles_per_sample=0.3509
+</tool_response>
+<think>
+
+</think>
+
+The carrier frequency offset (CFO) for capture 13 is **0.3509 cycles per sample**.<|im_end|>
+[471 text + 100784 chip tokens, 42s, lock error: None]
+  1500 tokens (105 text, 1394 chip) 8s
+  100500 tokens (407 text, 100092 chip) 36s
+  101000 tokens (423 text, 100576 chip) 37s
+================================================================================ 
+Q83: For capture 13, which spectral bin dominates and what percentage of the power does it hold?
+---
+<tool_call>
+<function=rf_analyze>
+<parameter=capture>
+13
+</parameter>
+</function>
+</tool_call>
+<tool_response>
+capture=13 Tampere drone-controller fs=200MS/s fc=5800MHz
+samples=1024 (Q15)
+mean_power_dbfs=-14.1
+peak_power_dbfs=-7.0 at_sample=340
+noise_floor_dbfs=-18.2 (quietest 64-sample window)
+loudest_window_dbfs=-10.8
+active_windows=3/16 (power > 4x quietest) first_active_sample=320 last_active_sample_end=896
+dominant_dft16_bin=6 freq_cycles_per_sample=0.3750 power_share_percent=52
+cfo_cycles_per_sample=0.3509
+</tool_response>
+<think>
+
+</think>
+
+For capture 13, the dominant spectral bin is bin 6, which holds 52% of the power.<|im_end|>
+[471 text + 100784 chip tokens, 41s, lock error: None]
+  1000 tokens (36 text, 963 chip) 2s
+  25000 tokens (169 text, 24830 chip) 13s
+================================================================================ 
+Q84: Capture 14: what are its mean power and noise floor in dBFS?
+---
+<tool_call>
+<function=rf_levels>
+<parameter=capture>
+14
+</parameter>
+</function>
+</tool_call>
+<tool_response>
+capture=14 synthetic test signal A fs=1MS/s
+samples=1024 (Q15)
+mean_power_dbfs=-15.5
+peak_power_dbfs=-10.2 at_sample=535
+noise_floor_dbfs=-48.9 (quietest 64-sample window)
+loudest_window_dbfs=-10.4
+active_windows=5/16 (power > 4x quietest) first_active_sample=320 last_active_sample_end=640
+</tool_response>
+<think>
+
+</think>
+
+The mean power is -15.5 dBFS and the noise floor is -48.9 dBFS.<|im_end|>
+[353 text + 25769 chip tokens, 28s, lock error: None]
+  1000 tokens (36 text, 963 chip) 4s
+  25000 tokens (169 text, 24830 chip) 24s
+================================================================================ 
+Q85: What is the peak power of capture 14 in dBFS, and at which sample index does it occur?
+---
+<tool_call>
+<function=rf_levels>
+<parameter=capture>
+14
+</parameter>
+</function>
+</tool_call>
+<tool_response>
+capture=14 synthetic test signal A fs=1MS/s
+samples=1024 (Q15)
+mean_power_dbfs=-15.5
+peak_power_dbfs=-10.2 at_sample=535
+noise_floor_dbfs=-48.9 (quietest 64-sample window)
+loudest_window_dbfs=-10.4
+active_windows=5/16 (power > 4x quietest) first_active_sample=320 last_active_sample_end=640
+</tool_response>
+<think>
+
+</think>
+
+The peak power of capture 14 is **-10.2 dBFS**, and it occurs at **sample index 535**.<|im_end|>
+[358 text + 25769 chip tokens, 49s, lock error: None]
+  1000 tokens (36 text, 963 chip) 4s
+  25000 tokens (169 text, 24830 chip) 23s
+================================================================================ 
+Q86: How many 64-sample windows of capture 14 are active, and what is its loudest window power in dBFS?
+---
+<tool_call>
+<function=rf_levels>
+<parameter=capture>
+14
+</parameter>
+</function>
+</tool_call>
+<tool_response>
+capture=14 synthetic test signal A fs=1MS/s
+samples=1024 (Q15)
+mean_power_dbfs=-15.5
+peak_power_dbfs=-10.2 at_sample=535
+noise_floor_dbfs=-48.9 (quietest 64-sample window)
+loudest_window_dbfs=-10.4
+active_windows=5/16 (power > 4x quietest) first_active_sample=320 last_active_sample_end=640
+</tool_response>
+<think>
+
+</think>
+
+Based on the analysis of capture 14 (synthetic test signal A), there are **5 active 64-sample windows**.
+
+The loudest window has a power of **-10.4 dBFS**.<|im_end|>
+[373 text + 25769 chip tokens, 49s, lock error: None]
+================================================================================ 
+Q87: What is the dominant spectral bin of capture 14, and its frequency in cycles per sample?
+---
+<tool_call>
+<function=rf_analyze>
+<parameter=capture>
+14
+</parameter>
+</function>
+</tool_call>
+<tool_response>
+capture=14 synthetic test signal A fs=1MS/s
+samples=1024 (Q15)
+mean_power_dbfs=-15.5
+peak_power_dbfs=-10.2 at_sample=535
+noise_floor_dbfs=-48.9 (quietest 64-sample window)
+loudest_window_dbfs=-10.4
+active_windows=5/16 (power > 4x quietest) first_active_sample=320 last_active_sample_end=640
+dominant_dft16_bin=3 freq_cycles_per_sample=0.1875 power_share_percent=99
+cfo_cycles_per_sample=0.1899
+</tool_response>
+<think>
+
+</think>
+
+The dominant spectral bin of capture 14 is **3**, and its frequency is **0.1875 cycles per sample**.<|im_end|>
+[461 text + 92913 chip tokens, 64s, lock error: None]
+================================================================================ 
+Q88: Estimate the carrier frequency offset of capture 14 in cycles per sample.
+---
+<tool_call>
+<function=rf_analyze>
+<parameter=capture>
+14
+</parameter>
+</function>
+</tool_call>
+<tool_response>
+capture=14 synthetic test signal A fs=1MS/s
+samples=1024 (Q15)
+mean_power_dbfs=-15.5
+peak_power_dbfs=-10.2 at_sample=535
+noise_floor_dbfs=-48.9 (quietest 64-sample window)
+loudest_window_dbfs=-10.4
+active_windows=5/16 (power > 4x quietest) first_active_sample=320 last_active_sample_end=640
+dominant_dft16_bin=3 freq_cycles_per_sample=0.1875 power_share_percent=99
+cfo_cycles_per_sample=0.1899
+</tool_response>
+<think>
+
+</think>
+
+The carrier frequency offset (CFO) for capture 14 is **0.1899 cycles per sample**.<|im_end|>
+[458 text + 92913 chip tokens, 63s, lock error: None]
+================================================================================ 
+Q89: For capture 14, which spectral bin dominates and what percentage of the power does it hold?
+---
+<tool_call>
+<function=rf_analyze>
+<parameter=capture>
+14
+</parameter>
+</function>
+</tool_call>
+<tool_response>
+capture=14 synthetic test signal A fs=1MS/s
+samples=1024 (Q15)
+mean_power_dbfs=-15.5
+peak_power_dbfs=-10.2 at_sample=535
+noise_floor_dbfs=-48.9 (quietest 64-sample window)
+loudest_window_dbfs=-10.4
+active_windows=5/16 (power > 4x quietest) first_active_sample=320 last_active_sample_end=640
+dominant_dft16_bin=3 freq_cycles_per_sample=0.1875 power_share_percent=99
+cfo_cycles_per_sample=0.1899
+</tool_response>
+<think>
+
+</think>
+
+For capture 14, the dominant spectral bin is bin 3, which holds 99% of the power.<|im_end|>
+[458 text + 92913 chip tokens, 64s, lock error: None]
+  1000 tokens (36 text, 963 chip) 3s
+================================================================================ 
+Q90: Capture 15: what are its mean power and noise floor in dBFS?
+---
+<tool_call>
+<function=rf_levels>
+<parameter=capture>
+15
+</parameter>
+</function>
+</tool_call>
+<tool_response>
+capture=15 synthetic test signal B fs=1MS/s
+samples=1024 (Q15)
+mean_power_dbfs=-8.0
+peak_power_dbfs=-7.8 at_sample=62
+noise_floor_dbfs=-8.0 (quietest 64-sample window)
+loudest_window_dbfs=-7.9
+active_windows=0/16 (power > 4x quietest)
+</tool_response>
+<think>
+
+</think>
+
+For capture 15 (synthetic test signal B), the mean power is **-8.0 dBFS** and the noise floor is **-8.0 dBFS**.
+
+The signal appears to be a quiet test signal with no active windows detected (0/16 windows are active).<|im_end|>
+[332 text + 28124 chip tokens, 41s, lock error: None]
+  1000 tokens (36 text, 963 chip) 2s
+================================================================================ 
+Q91: What is the peak power of capture 15 in dBFS, and at which sample index does it occur?
+---
+<tool_call>
+<function=rf_levels>
+<parameter=capture>
+15
+</parameter>
+</function>
+</tool_call>
+<tool_response>
+capture=15 synthetic test signal B fs=1MS/s
+samples=1024 (Q15)
+mean_power_dbfs=-8.0
+peak_power_dbfs=-7.8 at_sample=62
+noise_floor_dbfs=-8.0 (quietest 64-sample window)
+loudest_window_dbfs=-7.9
+active_windows=0/16 (power > 4x quietest)
+</tool_response>
+<think>
+
+</think>
+
+The peak power of capture 15 is **-7.8 dBFS**, and it occurs at **sample index 62**.<|im_end|>
+[300 text + 28124 chip tokens, 24s, lock error: None]
+  1000 tokens (36 text, 963 chip) 2s
+================================================================================ 
+Q92: How many 64-sample windows of capture 15 are active, and what is its loudest window power in dBFS?
+---
+<tool_call>
+<function=rf_levels>
+<parameter=capture>
+15
+</parameter>
+</function>
+</tool_call>
+<tool_response>
+capture=15 synthetic test signal B fs=1MS/s
+samples=1024 (Q15)
+mean_power_dbfs=-8.0
+peak_power_dbfs=-7.8 at_sample=62
+noise_floor_dbfs=-8.0 (quietest 64-sample window)
+loudest_window_dbfs=-7.9
+active_windows=0/16 (power > 4x quietest)
+</tool_response>
+<think>
+
+</think>
+
+Based on the analysis of capture 15 (synthetic test signal B), there are **0 active 64-sample windows** (where power is greater than 4x the quietest window). The loudest window has a power of **-7.9 dBFS**.<|im_end|>
+[329 text + 28124 chip tokens, 25s, lock error: None]
+  66000 tokens (221 text, 65778 chip) 20s
+  99000 tokens (339 text, 98660 chip) 31s
+================================================================================ 
+Q93: What is the dominant spectral bin of capture 15, and its frequency in cycles per sample?
+---
+<tool_call>
+<function=rf_analyze>
+<parameter=capture>
+15
+</parameter>
+</function>
+</tool_call>
+<tool_response>
+capture=15 synthetic test signal B fs=1MS/s
+samples=1024 (Q15)
+mean_power_dbfs=-8.0
+peak_power_dbfs=-7.8 at_sample=62
+noise_floor_dbfs=-8.0 (quietest 64-sample window)
+loudest_window_dbfs=-7.9
+active_windows=0/16 (power > 4x quietest)
+dominant_dft16_bin=15 freq_cycles_per_sample=-0.0625 power_share_percent=99
+cfo_cycles_per_sample=-0.0626
+</tool_response>
+<think>
+
+</think>
+
+The dominant spectral bin for capture 15 is **15**, and its frequency is **-0.0625 cycles per sample**.<|im_end|>
+[409 text + 99411 chip tokens, 36s, lock error: None]
+  66000 tokens (221 text, 65778 chip) 20s
+  99000 tokens (339 text, 98660 chip) 31s
+================================================================================ 
+Q94: Estimate the carrier frequency offset of capture 15 in cycles per sample.
+---
+<tool_call>
+<function=rf_analyze>
+<parameter=capture>
+15
+</parameter>
+</function>
+</tool_call>
+<tool_response>
+capture=15 synthetic test signal B fs=1MS/s
+samples=1024 (Q15)
+mean_power_dbfs=-8.0
+peak_power_dbfs=-7.8 at_sample=62
+noise_floor_dbfs=-8.0 (quietest 64-sample window)
+loudest_window_dbfs=-7.9
+active_windows=0/16 (power > 4x quietest)
+dominant_dft16_bin=15 freq_cycles_per_sample=-0.0625 power_share_percent=99
+cfo_cycles_per_sample=-0.0626
+</tool_response>
+<think>
+
+</think>
+
+The carrier frequency offset (CFO) for capture 15 is **-0.0626 cycles per sample**.
+
+This value is derived from the dominant spectral bin analysis of the 16-point spectrum, which identified a frequency offset of -0.0626 cycles per sample. Given that the sample rate for this capture is 1 MS/s, this corresponds to a frequency offset of approximately -62.6 Hz.<|im_end|>
+[470 text + 99411 chip tokens, 39s, lock error: None]
+  66000 tokens (221 text, 65778 chip) 32s
+  99000 tokens (339 text, 98660 chip) 49s
+================================================================================ 
+Q95: For capture 15, which spectral bin dominates and what percentage of the power does it hold?
+---
+<tool_call>
+<function=rf_analyze>
+<parameter=capture>
+15
+</parameter>
+</function>
+</tool_call>
+<tool_response>
+capture=15 synthetic test signal B fs=1MS/s
+samples=1024 (Q15)
+mean_power_dbfs=-8.0
+peak_power_dbfs=-7.8 at_sample=62
+noise_floor_dbfs=-8.0 (quietest 64-sample window)
+loudest_window_dbfs=-7.9
+active_windows=0/16 (power > 4x quietest)
+dominant_dft16_bin=15 freq_cycles_per_sample=-0.0625 power_share_percent=99
+cfo_cycles_per_sample=-0.0626
+</tool_response>
+<think>
+
+</think>
+
+For capture 15, the dominant spectral bin is bin 15, which holds 99% of the power.<|im_end|>
+[406 text + 99411 chip tokens, 58s, lock error: None]

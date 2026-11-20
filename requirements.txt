@@ -1,0 +1,17 @@
+# Pins of the environment every result was measured in (Python 3.12, Windows 11, RTX 5090 Laptop, CUDA 13.0).
+# chipformer itself comes from upstream/QwenPU (see upstream/setup_upstream.py):
+#   pip install -e "upstream/QwenPU[hf]" -r requirements.txt
+# torch with CUDA 13.0:  pip install torch==2.14.1 --index-url https://download.pytorch.org/whl/cu130
+torch==2.14.1
+transformers==5.22.1
+safetensors==0.8.0
+tokenizers==0.23.3
+huggingface_hub==2.4.0
+numpy==2.5.4
+scipy==1.18.1
+matplotlib==3.11.2
+pillow==13.0.0
+pytest==9.2.0
+hypothesis==6.170.14
+triton-windows==3.8.0.post29; sys_platform == "win32"
+# optional, for the fast chunked verification (13.0k tok/s): flash-linear-attention, accelerate==1.15.0, einops==0.8.2

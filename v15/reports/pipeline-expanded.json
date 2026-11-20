@@ -1,0 +1,2299 @@
+{
+  "status": "PASS",
+  "backend": "QwenPU RV32 CPU in weights, chipformer fusedexec.FreeRun3",
+  "input_format": "Q2.13",
+  "stages": {
+    "dc_block": {
+      "kernel": "dc_blocker",
+      "alpha_q15": 32440
+    },
+    "lowpass": {
+      "kernel": "lowpass16",
+      "taps": 16,
+      "accumulator_bits": 32
+    },
+    "energy": {
+      "kernel": "energy_detector",
+      "window": 64,
+      "memory_windows": 8,
+      "alpha_q8": 1024
+    },
+    "cfar": {
+      "kernel": "cfar16_t2g1",
+      "n": 16,
+      "hop": 16,
+      "train": 2,
+      "guard": 1,
+      "scale_q8": 1024,
+      "window": [
+        32767,
+        32767,
+        32767,
+        32767,
+        32767,
+        32767,
+        32767,
+        32767,
+        32767,
+        32767,
+        32767,
+        32767,
+        32767,
+        32767,
+        32767,
+        32767
+      ],
+      "max_block": 2048,
+      "compare_bits": 64
+    },
+    "classifier": {
+      "kernel": "spectral_mlp",
+      "features": 4,
+      "hidden": 8,
+      "classes": 3,
+      "fshift": 16
+    },
+    "cfo": {
+      "kernel": "cfo_lag1_w64",
+      "lag": 1,
+      "window": 64,
+      "shift": 9,
+      "cordic_iterations": 16
+    },
+    "peak": {
+      "kernel": "peak_tracker"
+    },
+    "fm": {
+      "kernel": "fm_demod",
+      "product_shift": 3,
+      "cordic_iterations": 16
+    }
+  },
+  "streams": 133,
+  "samples_per_stream": 2048,
+  "tokens": 288607956,
+  "neural_seconds": 10584.990628899948,
+  "wall_seconds": 11519.0879555,
+  "tokens_per_sample": 1059.562808388158,
+  "neural_ms_per_sample": 38.860544778327466,
+  "results": [
+    {
+      "stream": "IDLab:DVB-T:gentbrugge/dvbt_g30_gentbrugge_f482MHz_r10.bin",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 3496922,
+      "cfar_frames_with_detection": 88,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 0,
+      "class_histogram": {
+        "noise": 263,
+        "wideband": 249
+      },
+      "cfo_median_rad_per_sample": 0.01200628570999192,
+      "peak_index": 1986
+    },
+    {
+      "stream": "IDLab:DVB-T:gentbrugge/dvbt_g30_gentbrugge_f482MHz_r5.bin",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 3521946,
+      "cfar_frames_with_detection": 92,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 15,
+      "class_histogram": {
+        "noise": 246,
+        "wideband": 266
+      },
+      "cfo_median_rad_per_sample": -0.0019355283939552082,
+      "peak_index": 396
+    },
+    {
+      "stream": "IDLab:DVB-T:igent/dvbt_g30_igent_f482MHz_r8.bin",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 5830304,
+      "cfar_frames_with_detection": 70,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 0,
+      "class_histogram": {
+        "noise": 245,
+        "tone": 2,
+        "wideband": 265
+      },
+      "cfo_median_rad_per_sample": -0.00028758043602233825,
+      "peak_index": 1065
+    },
+    {
+      "stream": "IDLab:DVB-T:igent/dvbt_g30_igent_f482MHz_r9.bin",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 4225817,
+      "cfar_frames_with_detection": 66,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 0,
+      "class_histogram": {
+        "noise": 242,
+        "wideband": 270
+      },
+      "cfo_median_rad_per_sample": 0.0006537927188052863,
+      "peak_index": 802
+    },
+    {
+      "stream": "IDLab:DVB-T:merelbeke/dvbt_g30_merelbeke_f482MHz_r10.bin",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 5107165,
+      "cfar_frames_with_detection": 64,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 0,
+      "class_histogram": {
+        "noise": 217,
+        "tone": 2,
+        "wideband": 293
+      },
+      "cfo_median_rad_per_sample": -0.00010447575754894348,
+      "peak_index": 101
+    },
+    {
+      "stream": "IDLab:DVB-T:merelbeke/dvbt_g30_merelbeke_f482MHz_r3.bin",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 4510116,
+      "cfar_frames_with_detection": 66,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 0,
+      "class_histogram": {
+        "noise": 221,
+        "tone": 1,
+        "wideband": 290
+      },
+      "cfo_median_rad_per_sample": -0.00028758043602233825,
+      "peak_index": 783
+    },
+    {
+      "stream": "IDLab:DVB-T:rabot/dvbt_g30_rabot_f482MHz_r9.bin",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 3165854,
+      "cfar_frames_with_detection": 63,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 0,
+      "class_histogram": {
+        "noise": 232,
+        "wideband": 280
+      },
+      "cfo_median_rad_per_sample": 0.00028758043602233825,
+      "peak_index": 1840
+    },
+    {
+      "stream": "IDLab:DVB-T:rabot/dvbt_g30_rabot_f482MHz_r8.bin",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 4639913,
+      "cfar_frames_with_detection": 66,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 0,
+      "class_histogram": {
+        "noise": 211,
+        "wideband": 301
+      },
+      "cfo_median_rad_per_sample": 0.00034861630412552267,
+      "peak_index": 1048
+    },
+    {
+      "stream": "IDLab:DVB-T:reep/dvbt_g30_reep_f482MHz_r6.bin",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 4323344,
+      "cfar_frames_with_detection": 55,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 0,
+      "class_histogram": {
+        "noise": 207,
+        "tone": 1,
+        "wideband": 304
+      },
+      "cfo_median_rad_per_sample": -0.0001655116256521279,
+      "peak_index": 764
+    },
+    {
+      "stream": "IDLab:DVB-T:reep/dvbt_g30_reep_f482MHz_r8.bin",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 5509658,
+      "cfar_frames_with_detection": 72,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 0,
+      "class_histogram": {
+        "noise": 186,
+        "tone": 2,
+        "wideband": 324
+      },
+      "cfo_median_rad_per_sample": 0.0002265445679191538,
+      "peak_index": 1141
+    },
+    {
+      "stream": "IDLab:DVB-T:uz/dvbt_g30_uz_f482MHz_r7.bin",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 6369257,
+      "cfar_frames_with_detection": 78,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 13,
+      "class_histogram": {
+        "noise": 192,
+        "wideband": 320
+      },
+      "cfo_median_rad_per_sample": 0.00034861630412552267,
+      "peak_index": 1268
+    },
+    {
+      "stream": "IDLab:DVB-T:uz/dvbt_g30_uz_f482MHz_r9.bin",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 5756510,
+      "cfar_frames_with_detection": 74,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 13,
+      "class_histogram": {
+        "noise": 190,
+        "tone": 2,
+        "wideband": 320
+      },
+      "cfo_median_rad_per_sample": -0.0005927568507021019,
+      "peak_index": 656
+    },
+    {
+      "stream": "IDLab:DVB-T:merelbeke/dvbt10Msps_g30_merelbeke_f482MHz_r1.bin",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 4387095,
+      "cfar_frames_with_detection": 61,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 1,
+      "class_histogram": {
+        "noise": 230,
+        "tone": 1,
+        "wideband": 281
+      },
+      "cfo_median_rad_per_sample": 0.00034861630412552267,
+      "peak_index": 1188
+    },
+    {
+      "stream": "IDLab:DVB-T:merelbeke/dvbt10Msps_g30_merelbeke_f482MHz_r2.bin",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 4761989,
+      "cfar_frames_with_detection": 62,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 0,
+      "class_histogram": {
+        "noise": 215,
+        "tone": 2,
+        "wideband": 295
+      },
+      "cfo_median_rad_per_sample": 0.00034861630412552267,
+      "peak_index": 1339
+    },
+    {
+      "stream": "IDLab:DVB-T:rabot/dvbt10Msps_g30_rabot_f482MHz_r1.bin",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 5155107,
+      "cfar_frames_with_detection": 82,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 0,
+      "class_histogram": {
+        "noise": 196,
+        "tone": 2,
+        "wideband": 314
+      },
+      "cfo_median_rad_per_sample": -0.0014472473008020497,
+      "peak_index": 1350
+    },
+    {
+      "stream": "IDLab:DVB-T:reep/dvbt10Msps_g30_reep_f482MHz_r1.bin",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 2684362,
+      "cfar_frames_with_detection": 100,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 2,
+      "class_histogram": {
+        "noise": 304,
+        "wideband": 208
+      },
+      "cfo_median_rad_per_sample": 0.005719705402974107,
+      "peak_index": 1082
+    },
+    {
+      "stream": "IDLab:DVB-T:uz/dvbt10Msps_g30_uz_f482MHz_r1.bin",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 8507101,
+      "cfar_frames_with_detection": 87,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 1,
+      "class_histogram": {
+        "noise": 140,
+        "tone": 7,
+        "wideband": 365
+      },
+      "cfo_median_rad_per_sample": 0.02578276373845643,
+      "peak_index": 724
+    },
+    {
+      "stream": "IDLab:LTE:gentbrugge/lte_g30_gentbrugge_f806MHz_r10.bin",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 5489864,
+      "cfar_frames_with_detection": 63,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 0,
+      "class_histogram": {
+        "noise": 179,
+        "tone": 7,
+        "wideband": 326
+      },
+      "cfo_median_rad_per_sample": 0.0013251784904318394,
+      "peak_index": 1369
+    },
+    {
+      "stream": "IDLab:LTE:gentbrugge/lte_g30_gentbrugge_f806MHz_r7.bin",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 5418694,
+      "cfar_frames_with_detection": 62,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 14,
+      "class_histogram": {
+        "noise": 178,
+        "tone": 13,
+        "wideband": 321
+      },
+      "cfo_median_rad_per_sample": 0.0006537927188052863,
+      "peak_index": 1026
+    },
+    {
+      "stream": "IDLab:LTE:igent/lte_g30_igent_f806MHz_r1.bin",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 5729614,
+      "cfar_frames_with_detection": 65,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 0,
+      "class_histogram": {
+        "noise": 203,
+        "tone": 2,
+        "wideband": 307
+      },
+      "cfo_median_rad_per_sample": 0.0007148256610723122,
+      "peak_index": 1299
+    },
+    {
+      "stream": "IDLab:LTE:igent/lte_g30_igent_f806MHz_r7.bin",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 5983693,
+      "cfar_frames_with_detection": 67,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 14,
+      "class_histogram": {
+        "noise": 189,
+        "tone": 1,
+        "wideband": 322
+      },
+      "cfo_median_rad_per_sample": -0.00010447575754894348,
+      "peak_index": 1502
+    },
+    {
+      "stream": "IDLab:LTE:merelbeke/lte_g30_merelbeke_f806MHz_r5.bin",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 5021153,
+      "cfar_frames_with_detection": 62,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 0,
+      "class_histogram": {
+        "noise": 253,
+        "tone": 1,
+        "wideband": 258
+      },
+      "cfo_median_rad_per_sample": 0.00047068511449573303,
+      "peak_index": 406
+    },
+    {
+      "stream": "IDLab:LTE:merelbeke/lte_g30_merelbeke_f806MHz_r3.bin",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 5327483,
+      "cfar_frames_with_detection": 62,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 0,
+      "class_histogram": {
+        "noise": 239,
+        "wideband": 273
+      },
+      "cfo_median_rad_per_sample": 0.0004096521722287071,
+      "peak_index": 1597
+    },
+    {
+      "stream": "IDLab:LTE:rabot/lte_g30_rabot_f806MHz_r6.bin",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 4834921,
+      "cfar_frames_with_detection": 62,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 0,
+      "class_histogram": {
+        "noise": 179,
+        "tone": 16,
+        "wideband": 317
+      },
+      "cfo_median_rad_per_sample": 0.00047068511449573303,
+      "peak_index": 1396
+    },
+    {
+      "stream": "IDLab:LTE:rabot/lte_g30_rabot_f806MHz_r4.bin",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 4582981,
+      "cfar_frames_with_detection": 77,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 0,
+      "class_histogram": {
+        "noise": 158,
+        "tone": 9,
+        "wideband": 345
+      },
+      "cfo_median_rad_per_sample": 0.001386214358535024,
+      "peak_index": 1759
+    },
+    {
+      "stream": "IDLab:LTE:reep/lte_g30_reep_f806MHz_r5.bin",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 4777304,
+      "cfar_frames_with_detection": 69,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 15,
+      "class_histogram": {
+        "noise": 184,
+        "tone": 1,
+        "wideband": 327
+      },
+      "cfo_median_rad_per_sample": 0.001020002075752076,
+      "peak_index": 1124
+    },
+    {
+      "stream": "IDLab:LTE:reep/lte_g30_reep_f806MHz_r9.bin",
+      "all_stages_exact": true,
+      "burst_start_samples": [
+        1663
+      ],
+      "burst_end_samples": [
+        1727
+      ],
+      "noise_floor_last": 6918548,
+      "cfar_frames_with_detection": 61,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 2,
+      "class_histogram": {
+        "noise": 177,
+        "tone": 2,
+        "wideband": 333
+      },
+      "cfo_median_rad_per_sample": -0.00028758043602233825,
+      "peak_index": 925
+    },
+    {
+      "stream": "IDLab:LTE:uz/lte_g30_uz_f806MHz_r6.bin",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 5384755,
+      "cfar_frames_with_detection": 75,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 0,
+      "class_histogram": {
+        "noise": 164,
+        "tone": 5,
+        "wideband": 343
+      },
+      "cfo_median_rad_per_sample": 0.04445919809834154,
+      "peak_index": 659
+    },
+    {
+      "stream": "IDLab:LTE:uz/lte_g30_uz_f806MHz_r8.bin",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 5829027,
+      "cfar_frames_with_detection": 70,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 2,
+      "class_histogram": {
+        "noise": 173,
+        "tone": 5,
+        "wideband": 334
+      },
+      "cfo_median_rad_per_sample": 0.0013251784904318394,
+      "peak_index": 1113
+    },
+    {
+      "stream": "IDLab:LTE:gentbrugge/lte10Msps_g30_uz_f806MHz_r1.bin",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 7503743,
+      "cfar_frames_with_detection": 79,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 0,
+      "class_histogram": {
+        "noise": 180,
+        "tone": 2,
+        "wideband": 330
+      },
+      "cfo_median_rad_per_sample": -0.0002265445679191538,
+      "peak_index": 1767
+    },
+    {
+      "stream": "IDLab:LTE:igent/lte10Msps_g40_igent_f806MHz_r1.bin",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 6294047,
+      "cfar_frames_with_detection": 70,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 1,
+      "class_histogram": {
+        "noise": 159,
+        "tone": 6,
+        "wideband": 347
+      },
+      "cfo_median_rad_per_sample": 0.0017524237154818135,
+      "peak_index": 2025
+    },
+    {
+      "stream": "IDLab:LTE:igent/lte10Msps_g20_igent_f806MHz_r1.bin",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 4723442,
+      "cfar_frames_with_detection": 62,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 0,
+      "class_histogram": {
+        "noise": 211,
+        "wideband": 301
+      },
+      "cfo_median_rad_per_sample": 0.00047068511449573303,
+      "peak_index": 1032
+    },
+    {
+      "stream": "IDLab:LTE:merelbeke/lte10Msps_g30_merelbeke_f806MHz_r1.bin",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 4195930,
+      "cfar_frames_with_detection": 71,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 0,
+      "class_histogram": {
+        "noise": 240,
+        "wideband": 272
+      },
+      "cfo_median_rad_per_sample": 4.343988944575904e-05,
+      "peak_index": 1663
+    },
+    {
+      "stream": "IDLab:LTE:merelbeke/lte10Msps_g30_merelbeke_f806MHz_r2.bin",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 7830020,
+      "cfar_frames_with_detection": 108,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 3,
+      "class_histogram": {
+        "noise": 164,
+        "wideband": 348
+      },
+      "cfo_median_rad_per_sample": -0.00034861630412552267,
+      "peak_index": 971
+    },
+    {
+      "stream": "IDLab:LTE:rabot/lte10Msps_g30_rabot_f806MHz_r1.bin",
+      "all_stages_exact": true,
+      "burst_start_samples": [
+        959
+      ],
+      "burst_end_samples": [
+        1023
+      ],
+      "noise_floor_last": 11008354,
+      "cfar_frames_with_detection": 73,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 1,
+      "class_histogram": {
+        "noise": 133,
+        "tone": 23,
+        "wideband": 356
+      },
+      "cfo_median_rad_per_sample": 0.00028758043602233825,
+      "peak_index": 768
+    },
+    {
+      "stream": "IDLab:LTE:reep/lte10Msps_g30_reep_f806MHz_r1.bin",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 9839688,
+      "cfar_frames_with_detection": 67,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 0,
+      "class_histogram": {
+        "noise": 128,
+        "tone": 6,
+        "wideband": 378
+      },
+      "cfo_median_rad_per_sample": -0.0006537927188052863,
+      "peak_index": 1852
+    },
+    {
+      "stream": "IDLab:LTE:uz/lte10Msps_g30_uz_f806MHz_r1.bin",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 2711407,
+      "cfar_frames_with_detection": 92,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 0,
+      "class_histogram": {
+        "noise": 251,
+        "wideband": 261
+      },
+      "cfo_median_rad_per_sample": 0.0008368973972786811,
+      "peak_index": 974
+    },
+    {
+      "stream": "IDLab:WiFi:gentbrugge/wf_g76_gentbrugge_f5240MHz_r9.bin",
+      "all_stages_exact": true,
+      "burst_start_samples": [
+        1471
+      ],
+      "burst_end_samples": [
+        1791
+      ],
+      "noise_floor_last": 11216720,
+      "cfar_frames_with_detection": 82,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 0,
+      "class_histogram": {
+        "noise": 210,
+        "tone": 8,
+        "wideband": 294
+      },
+      "cfo_median_rad_per_sample": 0.009931095452845234,
+      "peak_index": 1449
+    },
+    {
+      "stream": "IDLab:WiFi:gentbrugge/wf_g76_gentbrugge_f5240MHz_r4.bin",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 3648078,
+      "cfar_frames_with_detection": 75,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 0,
+      "class_histogram": {
+        "noise": 295,
+        "wideband": 217
+      },
+      "cfo_median_rad_per_sample": 0.0015082831689052342,
+      "peak_index": 1647
+    },
+    {
+      "stream": "IDLab:WiFi:igent/wf_g30_igent_f2412MHz_r1.bin",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 3195093,
+      "cfar_frames_with_detection": 72,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 0,
+      "class_histogram": {
+        "noise": 224,
+        "tone": 2,
+        "wideband": 286
+      },
+      "cfo_median_rad_per_sample": -0.0001655116256521279,
+      "peak_index": 1294
+    },
+    {
+      "stream": "IDLab:WiFi:merelbeke/wf_g30_merelbeke_f5180MHz_r2.bin",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 4974610,
+      "cfar_frames_with_detection": 72,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 0,
+      "class_histogram": {
+        "noise": 216,
+        "tone": 2,
+        "wideband": 294
+      },
+      "cfo_median_rad_per_sample": -0.00010447575754894348,
+      "peak_index": 1432
+    },
+    {
+      "stream": "IDLab:WiFi:merelbeke/wf_g30_merelbeke_f2412MHz_r5.bin",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 4390993,
+      "cfar_frames_with_detection": 72,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 0,
+      "class_histogram": {
+        "noise": 234,
+        "tone": 1,
+        "wideband": 277
+      },
+      "cfo_median_rad_per_sample": -0.00047068511449573303,
+      "peak_index": 1323
+    },
+    {
+      "stream": "IDLab:WiFi:rabot/wf_g76_rabot_f5240MHz_r5.bin",
+      "all_stages_exact": true,
+      "burst_start_samples": [
+        1279,
+        1471
+      ],
+      "burst_end_samples": [
+        1343,
+        1535
+      ],
+      "noise_floor_last": 2968351,
+      "cfar_frames_with_detection": 70,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 0,
+      "class_histogram": {
+        "noise": 283,
+        "tone": 7,
+        "wideband": 222
+      },
+      "cfo_median_rad_per_sample": -0.00010447575754894348,
+      "peak_index": 1227
+    },
+    {
+      "stream": "IDLab:WiFi:rabot/wf_g76_rabot_f5240MHz_r7.bin",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 2910940,
+      "cfar_frames_with_detection": 77,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 0,
+      "class_histogram": {
+        "noise": 211,
+        "wideband": 301
+      },
+      "cfo_median_rad_per_sample": 0.0015082831689052342,
+      "peak_index": 1703
+    },
+    {
+      "stream": "IDLab:WiFi:reep/wf_g76_reep_f5240MHz_r6.bin",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 2253163,
+      "cfar_frames_with_detection": 57,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 0,
+      "class_histogram": {
+        "noise": 321,
+        "tone": 4,
+        "wideband": 187
+      },
+      "cfo_median_rad_per_sample": 0.002484845355211551,
+      "peak_index": 143
+    },
+    {
+      "stream": "IDLab:WiFi:reep/wf_g76_reep_f5240MHz_r10.bin",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 3813493,
+      "cfar_frames_with_detection": 74,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 0,
+      "class_histogram": {
+        "noise": 202,
+        "tone": 3,
+        "wideband": 307
+      },
+      "cfo_median_rad_per_sample": -0.0013251784904318394,
+      "peak_index": 1795
+    },
+    {
+      "stream": "IDLab:WiFi:gentbrugge/wf10Msps_g76_gentbrugge_f5240MHz_r1.bin",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 2468023,
+      "cfar_frames_with_detection": 85,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 0,
+      "class_histogram": {
+        "noise": 324,
+        "wideband": 188
+      },
+      "cfo_median_rad_per_sample": -0.02431792045899696,
+      "peak_index": 766
+    },
+    {
+      "stream": "IDLab:WiFi:merelbeke/wf10Msps_g30_merelbeke_f5180MHz_r1.bin",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 3903589,
+      "cfar_frames_with_detection": 50,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 0,
+      "class_histogram": {
+        "noise": 245,
+        "tone": 3,
+        "wideband": 264
+      },
+      "cfo_median_rad_per_sample": 0.00010447575754894348,
+      "peak_index": 1501
+    },
+    {
+      "stream": "IDLab:WiFi:rabot/wf10Msps_g30_rabot_f5240MHz_r1.bin",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 3868119,
+      "cfar_frames_with_detection": 70,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 0,
+      "class_histogram": {
+        "noise": 211,
+        "tone": 2,
+        "wideband": 299
+      },
+      "cfo_median_rad_per_sample": 0.0005927568507021019,
+      "peak_index": 936
+    },
+    {
+      "stream": "IDLab:WiFi:rabot/wf10Msps_g76_rabot_f5240MHz_r1.bin",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 2168467,
+      "cfar_frames_with_detection": 89,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 14,
+      "class_histogram": {
+        "noise": 320,
+        "wideband": 192
+      },
+      "cfo_median_rad_per_sample": -0.02962797368974236,
+      "peak_index": 206
+    },
+    {
+      "stream": "IDLab:WiFi:reep/wf10Msps_g76_reep_f5240MHz_r1.bin",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 6541428,
+      "cfar_frames_with_detection": 80,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 2,
+      "class_histogram": {
+        "noise": 132,
+        "tone": 4,
+        "wideband": 376
+      },
+      "cfo_median_rad_per_sample": 0.018275477772719564,
+      "peak_index": 66
+    },
+    {
+      "stream": "IDLab:WiFi:uz/wf10Msps_g80_uz_f5240MHz_r2.bin",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 2206278,
+      "cfar_frames_with_detection": 82,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 15,
+      "class_histogram": {
+        "noise": 332,
+        "wideband": 180
+      },
+      "cfo_median_rad_per_sample": -0.024378953401263982,
+      "peak_index": 48
+    },
+    {
+      "stream": "IDLab:WiFi:uz/wf10Msps_g76_uz_f5240MHz_r1.bin",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 2134833,
+      "cfar_frames_with_detection": 76,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 14,
+      "class_histogram": {
+        "noise": 305,
+        "wideband": 207
+      },
+      "cfo_median_rad_per_sample": -0.054466742724173116,
+      "peak_index": 255
+    },
+    {
+      "stream": "EPFL-LoRaIQ:LoRa:rrh4/858.sigmf-data",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 3751630,
+      "cfar_frames_with_detection": 90,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 2,
+      "class_histogram": {
+        "noise": 235,
+        "tone": 1,
+        "wideband": 276
+      },
+      "cfo_median_rad_per_sample": 0.008161075758705996,
+      "peak_index": 29
+    },
+    {
+      "stream": "EPFL-LoRaIQ:LoRa:rrh3/999.sigmf-data",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 3968889,
+      "cfar_frames_with_detection": 95,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 2,
+      "class_histogram": {
+        "noise": 252,
+        "wideband": 260
+      },
+      "cfo_median_rad_per_sample": -0.022303795328315043,
+      "peak_index": 1127
+    },
+    {
+      "stream": "EPFL-LoRaIQ:LoRa:rrh4/530.sigmf-data",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 3276095,
+      "cfar_frames_with_detection": 89,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 1,
+      "class_histogram": {
+        "noise": 262,
+        "wideband": 250
+      },
+      "cfo_median_rad_per_sample": 0.03817261779132373,
+      "peak_index": 446
+    },
+    {
+      "stream": "EPFL-LoRaIQ:LoRa:rrh2/1.sigmf-data",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 3281507,
+      "cfar_frames_with_detection": 83,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 2,
+      "class_histogram": {
+        "noise": 230,
+        "wideband": 282
+      },
+      "cfo_median_rad_per_sample": 0.06331656324043425,
+      "peak_index": 958
+    },
+    {
+      "stream": "EPFL-LoRaIQ:LoRa:rrh2/425.sigmf-data",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 3197498,
+      "cfar_frames_with_detection": 88,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 2,
+      "class_histogram": {
+        "noise": 229,
+        "wideband": 283
+      },
+      "cfo_median_rad_per_sample": -0.005597633666767738,
+      "peak_index": 996
+    },
+    {
+      "stream": "EPFL-LoRaIQ:LoRa:rrh3/363.sigmf-data",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 3904721,
+      "cfar_frames_with_detection": 87,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 1,
+      "class_histogram": {
+        "noise": 232,
+        "wideband": 280
+      },
+      "cfo_median_rad_per_sample": -0.014979581856853824,
+      "peak_index": 932
+    },
+    {
+      "stream": "EPFL-LoRaIQ:LoRa:rrh1/2.sigmf-data",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 4271349,
+      "cfar_frames_with_detection": 93,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 14,
+      "class_histogram": {
+        "noise": 219,
+        "wideband": 293
+      },
+      "cfo_median_rad_per_sample": 0.016749601550993063,
+      "peak_index": 322
+    },
+    {
+      "stream": "EPFL-LoRaIQ:LoRa:rrh4/1.sigmf-data",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 3401979,
+      "cfar_frames_with_detection": 89,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 15,
+      "class_histogram": {
+        "noise": 216,
+        "wideband": 296
+      },
+      "cfo_median_rad_per_sample": -0.014979581856853824,
+      "peak_index": 268
+    },
+    {
+      "stream": "EPFL-LoRaIQ:LoRa:rrh2/68.sigmf-data",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 4602662,
+      "cfar_frames_with_detection": 90,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 1,
+      "class_histogram": {
+        "noise": 185,
+        "wideband": 327
+      },
+      "cfo_median_rad_per_sample": -0.0010810379438552602,
+      "peak_index": 553
+    },
+    {
+      "stream": "EPFL-LoRaIQ:LoRa:rrh1/509.sigmf-data",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 3452305,
+      "cfar_frames_with_detection": 91,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 15,
+      "class_histogram": {
+        "noise": 229,
+        "wideband": 283
+      },
+      "cfo_median_rad_per_sample": -0.011762145163415342,
+      "peak_index": 2043
+    },
+    {
+      "stream": "EPFL-LoRaIQ:LoRa:rrh2/507.sigmf-data",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 4275336,
+      "cfar_frames_with_detection": 86,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 1,
+      "class_histogram": {
+        "noise": 203,
+        "wideband": 309
+      },
+      "cfo_median_rad_per_sample": 0.016139248721633536,
+      "peak_index": 888
+    },
+    {
+      "stream": "EPFL-LoRaIQ:LoRa:rrh3/501.sigmf-data",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 4380890,
+      "cfar_frames_with_detection": 90,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 15,
+      "class_histogram": {
+        "noise": 203,
+        "wideband": 309
+      },
+      "cfo_median_rad_per_sample": 0.040980197504002405,
+      "peak_index": 725
+    },
+    {
+      "stream": "EPFL-LoRaIQ:LoRa:rrh2/728.sigmf-data",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 3532315,
+      "cfar_frames_with_detection": 83,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 15,
+      "class_histogram": {
+        "noise": 192,
+        "wideband": 320
+      },
+      "cfo_median_rad_per_sample": -0.012677671481618474,
+      "peak_index": 1699
+    },
+    {
+      "stream": "EPFL-LoRaIQ:LoRa:rrh3/728.sigmf-data",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 4166101,
+      "cfar_frames_with_detection": 76,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 0,
+      "class_histogram": {
+        "noise": 220,
+        "wideband": 292
+      },
+      "cfo_median_rad_per_sample": 0.005353493120191158,
+      "peak_index": 590
+    },
+    {
+      "stream": "EPFL-LoRaIQ:LoRa:rrh4/724.sigmf-data",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 3734566,
+      "cfar_frames_with_detection": 87,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 15,
+      "class_histogram": {
+        "noise": 211,
+        "wideband": 301
+      },
+      "cfo_median_rad_per_sample": 0.026759322998926593,
+      "peak_index": 402
+    },
+    {
+      "stream": "EPFL-LoRaIQ:LoRa:rrh2/2.sigmf-data",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 4526825,
+      "cfar_frames_with_detection": 90,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 14,
+      "class_histogram": {
+        "noise": 197,
+        "wideband": 315
+      },
+      "cfo_median_rad_per_sample": -0.011762145163415342,
+      "peak_index": 266
+    },
+    {
+      "stream": "EPFL-LoRaIQ:LoRa:rrh4/2.sigmf-data",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 2576261,
+      "cfar_frames_with_detection": 86,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 15,
+      "class_histogram": {
+        "noise": 254,
+        "wideband": 258
+      },
+      "cfo_median_rad_per_sample": -0.06026507704807168,
+      "peak_index": 1365
+    },
+    {
+      "stream": "EPFL-LoRaIQ:LoRa:rrh1/382.sigmf-data",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 3998832,
+      "cfar_frames_with_detection": 91,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 1,
+      "class_histogram": {
+        "noise": 223,
+        "wideband": 289
+      },
+      "cfo_median_rad_per_sample": 0.03689087919033765,
+      "peak_index": 976
+    },
+    {
+      "stream": "EPFL-LoRaIQ:LoRa:rrh2/392.sigmf-data",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 5106621,
+      "cfar_frames_with_detection": 91,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 14,
+      "class_histogram": {
+        "noise": 167,
+        "wideband": 345
+      },
+      "cfo_median_rad_per_sample": -0.032252211731218804,
+      "peak_index": 557
+    },
+    {
+      "stream": "EPFL-LoRaIQ:LoRa:rrh3/378.sigmf-data",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 4786740,
+      "cfar_frames_with_detection": 90,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 1,
+      "class_histogram": {
+        "noise": 201,
+        "wideband": 311
+      },
+      "cfo_median_rad_per_sample": -0.03097047313023272,
+      "peak_index": 274
+    },
+    {
+      "stream": "EPFL-LoRaIQ:LoRa:rrh4/385.sigmf-data",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 3756823,
+      "cfar_frames_with_detection": 81,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 2,
+      "class_histogram": {
+        "noise": 206,
+        "wideband": 306
+      },
+      "cfo_median_rad_per_sample": -0.005963845949550686,
+      "peak_index": 145
+    },
+    {
+      "stream": "EPFL-LoRaIQ:LoRa:rrh3/1143.sigmf-data",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 4653582,
+      "cfar_frames_with_detection": 93,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 1,
+      "class_histogram": {
+        "noise": 197,
+        "tone": 1,
+        "wideband": 314
+      },
+      "cfo_median_rad_per_sample": -0.02736967290244996,
+      "peak_index": 346
+    },
+    {
+      "stream": "EPFL-LoRaIQ:LoRa:rrh4/1143.sigmf-data",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 3471676,
+      "cfar_frames_with_detection": 88,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 15,
+      "class_histogram": {
+        "noise": 205,
+        "wideband": 307
+      },
+      "cfo_median_rad_per_sample": 0.05709125286841231,
+      "peak_index": 688
+    },
+    {
+      "stream": "EPFL-LoRaIQ:LoRa:rrh2/262.sigmf-data",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 4614521,
+      "cfar_frames_with_detection": 86,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 1,
+      "class_histogram": {
+        "noise": 210,
+        "wideband": 302
+      },
+      "cfo_median_rad_per_sample": 0.03170289476996246,
+      "peak_index": 351
+    },
+    {
+      "stream": "EPFL-LoRaIQ:LoRa:rrh1/642.sigmf-data",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 4340849,
+      "cfar_frames_with_detection": 81,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 1,
+      "class_histogram": {
+        "noise": 171,
+        "wideband": 341
+      },
+      "cfo_median_rad_per_sample": -0.038721899642546166,
+      "peak_index": 1795
+    },
+    {
+      "stream": "EPFL-LoRaIQ:LoRa:rrh2/645.sigmf-data",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 4816479,
+      "cfar_frames_with_detection": 81,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 2,
+      "class_histogram": {
+        "noise": 191,
+        "wideband": 321
+      },
+      "cfo_median_rad_per_sample": 0.01481390345854066,
+      "peak_index": 1569
+    },
+    {
+      "stream": "EPFL-LoRaIQ:LoRa:rrh3/318.sigmf-data",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 3744629,
+      "cfar_frames_with_detection": 87,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 15,
+      "class_histogram": {
+        "noise": 209,
+        "wideband": 303
+      },
+      "cfo_median_rad_per_sample": -0.024134812854687406,
+      "peak_index": 158
+    },
+    {
+      "stream": "EPFL-LoRaIQ:LoRa:rrh4/648.sigmf-data",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 4401153,
+      "cfar_frames_with_detection": 93,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 15,
+      "class_histogram": {
+        "noise": 233,
+        "wideband": 279
+      },
+      "cfo_median_rad_per_sample": 0.008344180437179391,
+      "peak_index": 534
+    },
+    {
+      "stream": "EPFL-LoRaIQ:LoRa:rrh1/977.sigmf-data",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 3622860,
+      "cfar_frames_with_detection": 96,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 15,
+      "class_histogram": {
+        "noise": 215,
+        "wideband": 297
+      },
+      "cfo_median_rad_per_sample": 0.019129968222819514,
+      "peak_index": 257
+    },
+    {
+      "stream": "EPFL-LoRaIQ:LoRa:rrh3/2.sigmf-data",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 3672948,
+      "cfar_frames_with_detection": 84,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 1,
+      "class_histogram": {
+        "noise": 222,
+        "wideband": 290
+      },
+      "cfo_median_rad_per_sample": -0.03304566923905172,
+      "peak_index": 1670
+    },
+    {
+      "stream": "EPFL-LoRaIQ:LoRa:rrh4/326.sigmf-data",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 3068135,
+      "cfar_frames_with_detection": 84,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 14,
+      "class_histogram": {
+        "noise": 259,
+        "wideband": 253
+      },
+      "cfo_median_rad_per_sample": -0.03304566923905172,
+      "peak_index": 566
+    },
+    {
+      "stream": "EPFL-LoRaIQ:LoRa:rrh4/6.sigmf-data",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 5816463,
+      "cfar_frames_with_detection": 92,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 1,
+      "class_histogram": {
+        "noise": 190,
+        "tone": 2,
+        "wideband": 320
+      },
+      "cfo_median_rad_per_sample": -0.004926247895141184,
+      "peak_index": 546
+    },
+    {
+      "stream": "NTU-RFSR:LoRa:rfsr-ota-multicondition/exp0_000000_rxg0_0_fulltrim.cfile",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 3897544,
+      "cfar_frames_with_detection": 83,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 15,
+      "class_histogram": {
+        "noise": 243,
+        "tone": 1,
+        "wideband": 268
+      },
+      "cfo_median_rad_per_sample": 0.0048041790847709745,
+      "peak_index": 802
+    },
+    {
+      "stream": "NTU-RFSR:LoRa:rfsr-ota-multicondition/exp0_000065_rxg15_0_fulltrim.cfile",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 3911277,
+      "cfar_frames_with_detection": 90,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 0,
+      "class_histogram": {
+        "noise": 217,
+        "tone": 1,
+        "wideband": 294
+      },
+      "cfo_median_rad_per_sample": 0.05757953396156546,
+      "peak_index": 941
+    },
+    {
+      "stream": "NTU-RFSR:LoRa:rfsr-ota-multicondition/exp0_000098_rxg30_0_fulltrim.cfile",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 4731313,
+      "cfar_frames_with_detection": 76,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 0,
+      "class_histogram": {
+        "noise": 195,
+        "tone": 2,
+        "wideband": 315
+      },
+      "cfo_median_rad_per_sample": -0.0038276168984646575,
+      "peak_index": 1864
+    },
+    {
+      "stream": "NTU-RFSR:LoRa:rfsr-ota-multicondition/exp1_000000_rxg0_0_fulltrim.cfile",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 3320180,
+      "cfar_frames_with_detection": 83,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 0,
+      "class_histogram": {
+        "noise": 201,
+        "wideband": 311
+      },
+      "cfo_median_rad_per_sample": -0.02114412846353533,
+      "peak_index": 52
+    },
+    {
+      "stream": "NTU-RFSR:LoRa:rfsr-ota-multicondition/exp1_000068_rxg18_0_fulltrim.cfile",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 3452036,
+      "cfar_frames_with_detection": 85,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 0,
+      "class_histogram": {
+        "noise": 207,
+        "wideband": 305
+      },
+      "cfo_median_rad_per_sample": 0.032069107052745405,
+      "peak_index": 1322
+    },
+    {
+      "stream": "NTU-RFSR:LoRa:rfsr-ota-multicondition/exp1_000098_rxg30_0_fulltrim.cfile",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 3174783,
+      "cfar_frames_with_detection": 86,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 0,
+      "class_histogram": {
+        "noise": 201,
+        "wideband": 311
+      },
+      "cfo_median_rad_per_sample": -0.022059654781738464,
+      "peak_index": 1705
+    },
+    {
+      "stream": "NTU-RFSR:LoRa:rfsr-ota-multicondition/exp10_000000_rxg0_0_fulltrim.cfile",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 3411265,
+      "cfar_frames_with_detection": 82,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 0,
+      "class_histogram": {
+        "noise": 215,
+        "tone": 1,
+        "wideband": 296
+      },
+      "cfo_median_rad_per_sample": 0.007245549440502864,
+      "peak_index": 1472
+    },
+    {
+      "stream": "NTU-RFSR:LoRa:rfsr-ota-multicondition/exp10_000067_rxg15_0_fulltrim.cfile",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 2212365,
+      "cfar_frames_with_detection": 85,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 0,
+      "class_histogram": {
+        "noise": 239,
+        "wideband": 273
+      },
+      "cfo_median_rad_per_sample": 0.006452127042703844,
+      "peak_index": 1579
+    },
+    {
+      "stream": "NTU-RFSR:LoRa:rfsr-ota-multicondition/exp10_000099_rxg30_0_fulltrim.cfile",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 4309889,
+      "cfar_frames_with_detection": 97,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 15,
+      "class_histogram": {
+        "noise": 230,
+        "wideband": 282
+      },
+      "cfo_median_rad_per_sample": -0.057823671582305884,
+      "peak_index": 1276
+    },
+    {
+      "stream": "NTU-RFSR:LoRa:rfsr-ota-multicondition/exp11_000000_rxg0_0_fulltrim.cfile",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 3280012,
+      "cfar_frames_with_detection": 73,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 0,
+      "class_histogram": {
+        "noise": 226,
+        "wideband": 286
+      },
+      "cfo_median_rad_per_sample": -0.011701109295312156,
+      "peak_index": 407
+    },
+    {
+      "stream": "NTU-RFSR:LoRa:rfsr-ota-multicondition/exp11_000064_rxg12_0_fulltrim.cfile",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 3560175,
+      "cfar_frames_with_detection": 93,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 0,
+      "class_histogram": {
+        "noise": 212,
+        "tone": 1,
+        "wideband": 299
+      },
+      "cfo_median_rad_per_sample": -0.018580654187399327,
+      "peak_index": 570
+    },
+    {
+      "stream": "NTU-RFSR:LoRa:rfsr-ota-multicondition/exp11_000099_rxg21_0_fulltrim.cfile",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 4114159,
+      "cfar_frames_with_detection": 82,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 0,
+      "class_histogram": {
+        "noise": 200,
+        "wideband": 312
+      },
+      "cfo_median_rad_per_sample": 0.011151795259891973,
+      "peak_index": 1043
+    },
+    {
+      "stream": "NTU-RFSR:LoRa:rfsr-ota-multicondition/exp12_000000_rxg0_0_fulltrim.cfile",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 3343124,
+      "cfar_frames_with_detection": 82,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 0,
+      "class_histogram": {
+        "noise": 240,
+        "wideband": 272
+      },
+      "cfo_median_rad_per_sample": 0.03579224819366112,
+      "peak_index": 672
+    },
+    {
+      "stream": "NTU-RFSR:LoRa:rfsr-ota-multicondition/exp12_001089_rxg0_0_fulltrim.cfile",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 3454320,
+      "cfar_frames_with_detection": 81,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 2,
+      "class_histogram": {
+        "noise": 269,
+        "wideband": 243
+      },
+      "cfo_median_rad_per_sample": 0.05196433650033805,
+      "peak_index": 894
+    },
+    {
+      "stream": "NTU-RFSR:LoRa:rfsr-ota-multicondition/exp12_002099_rxg0_0_fulltrim.cfile",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 2717134,
+      "cfar_frames_with_detection": 88,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 1,
+      "class_histogram": {
+        "noise": 259,
+        "wideband": 253
+      },
+      "cfo_median_rad_per_sample": 0.020716880312649198,
+      "peak_index": 1096
+    },
+    {
+      "stream": "NTU-RFSR:LoRa:rfsr-ota-multicondition/exp6_000000_rxg40_0_fulltrim.cfile",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 4313605,
+      "cfar_frames_with_detection": 86,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 2,
+      "class_histogram": {
+        "noise": 214,
+        "tone": 1,
+        "wideband": 297
+      },
+      "cfo_median_rad_per_sample": -0.0032782999372083146,
+      "peak_index": 953
+    },
+    {
+      "stream": "NTU-RFSR:LoRa:rfsr-ota-multicondition/exp6_000062_rxg55_0_fulltrim.cfile",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 3761582,
+      "cfar_frames_with_detection": 87,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 1,
+      "class_histogram": {
+        "noise": 197,
+        "wideband": 315
+      },
+      "cfo_median_rad_per_sample": 0.002912090580261525,
+      "peak_index": 1691
+    },
+    {
+      "stream": "NTU-RFSR:LoRa:rfsr-ota-multicondition/exp6_000099_rxg70_0_fulltrim.cfile",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 3651356,
+      "cfar_frames_with_detection": 90,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 1,
+      "class_histogram": {
+        "noise": 242,
+        "wideband": 270
+      },
+      "cfo_median_rad_per_sample": 0.01729891558641325,
+      "peak_index": 203
+    },
+    {
+      "stream": "NTU-RFSR:LoRa:rfsr-ota-multicondition/exp7_000000_rxg40_0_fulltrim.cfile",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 4622293,
+      "cfar_frames_with_detection": 92,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 14,
+      "class_histogram": {
+        "noise": 201,
+        "tone": 2,
+        "wideband": 309
+      },
+      "cfo_median_rad_per_sample": 0.00999212839511226,
+      "peak_index": 1758
+    },
+    {
+      "stream": "NTU-RFSR:LoRa:rfsr-ota-multicondition/exp7_000061_rxg55_0_fulltrim.cfile",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 3168333,
+      "cfar_frames_with_detection": 93,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 15,
+      "class_histogram": {
+        "noise": 236,
+        "wideband": 276
+      },
+      "cfo_median_rad_per_sample": 0.01035834067789521,
+      "peak_index": 196
+    },
+    {
+      "stream": "NTU-RFSR:LoRa:rfsr-ota-multicondition/exp7_000099_rxg70_0_fulltrim.cfile",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 4205809,
+      "cfar_frames_with_detection": 87,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 1,
+      "class_histogram": {
+        "noise": 189,
+        "tone": 2,
+        "wideband": 321
+      },
+      "cfo_median_rad_per_sample": -0.02334135827269064,
+      "peak_index": 1683
+    },
+    {
+      "stream": "NTU-RFSR:LoRa:rfsr-ota-multicondition/exp8_000001_rxg40_0_fulltrim.cfile",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 4743834,
+      "cfar_frames_with_detection": 85,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 0,
+      "class_histogram": {
+        "noise": 197,
+        "wideband": 315
+      },
+      "cfo_median_rad_per_sample": 0.01353216485755458,
+      "peak_index": 2008
+    },
+    {
+      "stream": "NTU-RFSR:LoRa:rfsr-ota-multicondition/exp8_000069_rxg55_0_fulltrim.cfile",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 2031992,
+      "cfar_frames_with_detection": 98,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 0,
+      "class_histogram": {
+        "noise": 297,
+        "wideband": 215
+      },
+      "cfo_median_rad_per_sample": 0.091631026674345,
+      "peak_index": 90
+    },
+    {
+      "stream": "NTU-RFSR:LoRa:rfsr-ota-multicondition/exp8_000099_rxg70_0_fulltrim.cfile",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 3382059,
+      "cfar_frames_with_detection": 91,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 1,
+      "class_histogram": {
+        "noise": 242,
+        "wideband": 270
+      },
+      "cfo_median_rad_per_sample": -0.012433530935041895,
+      "peak_index": 376
+    },
+    {
+      "stream": "NTU-RFSR:LoRa:rfsr-ota-multicondition/exp9_000000_rxg40_0_fulltrim.cfile",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 3913326,
+      "cfar_frames_with_detection": 84,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 1,
+      "class_histogram": {
+        "noise": 247,
+        "wideband": 265
+      },
+      "cfo_median_rad_per_sample": 0.05062156495708494,
+      "peak_index": 1305
+    },
+    {
+      "stream": "NTU-RFSR:LoRa:rfsr-ota-multicondition/exp9_000068_rxg55_0_fulltrim.cfile",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 4240003,
+      "cfar_frames_with_detection": 90,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 14,
+      "class_histogram": {
+        "noise": 218,
+        "tone": 1,
+        "wideband": 293
+      },
+      "cfo_median_rad_per_sample": -0.020594811502278987,
+      "peak_index": 1997
+    },
+    {
+      "stream": "NTU-RFSR:LoRa:rfsr-ota-multicondition/exp9_000099_rxg70_0_fulltrim.cfile",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 3293769,
+      "cfar_frames_with_detection": 84,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 1,
+      "class_histogram": {
+        "noise": 258,
+        "wideband": 254
+      },
+      "cfo_median_rad_per_sample": 0.006818336399650634,
+      "peak_index": 261
+    },
+    {
+      "stream": "Tampere:drone-controller:tampere-drone-rf-4264467/DJI_inspire_2_2G.bin",
+      "all_stages_exact": true,
+      "burst_start_samples": [
+        767
+      ],
+      "burst_end_samples": [
+        831
+      ],
+      "noise_floor_last": 3124743,
+      "cfar_frames_with_detection": 125,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 13,
+      "class_histogram": {
+        "noise": 97,
+        "tone": 11,
+        "wideband": 404
+      },
+      "cfo_median_rad_per_sample": -1.2138726492510687,
+      "peak_index": 264
+    },
+    {
+      "stream": "Tampere:drone-controller:tampere-drone-rf-4264467/DJI_inspire_2_5G_1of2.bin",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 12164,
+      "cfar_frames_with_detection": 104,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 5,
+      "class_histogram": {
+        "noise": 512
+      },
+      "cfo_median_rad_per_sample": 0.7183885453893165,
+      "peak_index": 7
+    },
+    {
+      "stream": "Tampere:drone-controller:tampere-drone-rf-4264467/DJI_inspire_2_5G_2of2.bin",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 4574235,
+      "cfar_frames_with_detection": 90,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 0,
+      "class_histogram": {
+        "noise": 180,
+        "wideband": 332
+      },
+      "cfo_median_rad_per_sample": -0.03591431700403133,
+      "peak_index": 1230
+    },
+    {
+      "stream": "Tampere:drone-controller:tampere-drone-rf-4264467/DJI_matrice_100_2G.bin",
+      "all_stages_exact": true,
+      "burst_start_samples": [
+        1023
+      ],
+      "burst_end_samples": [
+        1151
+      ],
+      "noise_floor_last": 3629234,
+      "cfar_frames_with_detection": 127,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 2,
+      "class_histogram": {
+        "noise": 376,
+        "wideband": 136
+      },
+      "cfo_median_rad_per_sample": 0.8855934694598345,
+      "peak_index": 11
+    },
+    {
+      "stream": "Tampere:drone-controller:tampere-drone-rf-4264467/DJI_matrice_210_2G.bin",
+      "all_stages_exact": true,
+      "burst_start_samples": [
+        255,
+        511,
+        959,
+        1215,
+        1663,
+        1919
+      ],
+      "burst_end_samples": [
+        447,
+        703,
+        1087,
+        1471,
+        1855
+      ],
+      "noise_floor_last": 614606,
+      "cfar_frames_with_detection": 128,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 2,
+      "class_histogram": {
+        "noise": 448,
+        "wideband": 64
+      },
+      "cfo_median_rad_per_sample": 0.7873036024923491,
+      "peak_index": 1970
+    },
+    {
+      "stream": "Tampere:drone-controller:tampere-drone-rf-4264467/DJI_matrice_210_5G_1of2.bin",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 12014,
+      "cfar_frames_with_detection": 110,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 5,
+      "class_histogram": {
+        "noise": 512
+      },
+      "cfo_median_rad_per_sample": 1.157618530772664,
+      "peak_index": 7
+    },
+    {
+      "stream": "Tampere:drone-controller:tampere-drone-rf-4264467/DJI_matrice_210_5G_2of2.bin",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 4796,
+      "cfar_frames_with_detection": 118,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 5,
+      "class_histogram": {
+        "noise": 512
+      },
+      "cfo_median_rad_per_sample": 1.004588788423934,
+      "peak_index": 7
+    },
+    {
+      "stream": "Tampere:drone-controller:tampere-drone-rf-4264467/DJI_mavic_mini_2G.bin",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 3021571,
+      "cfar_frames_with_detection": 87,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 0,
+      "class_histogram": {
+        "noise": 265,
+        "wideband": 247
+      },
+      "cfo_median_rad_per_sample": 0.030238323593265726,
+      "peak_index": 731
+    },
+    {
+      "stream": "Tampere:drone-controller:tampere-drone-rf-4264467/DJI_mavic_pro_2G.bin",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 6060189,
+      "cfar_frames_with_detection": 124,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 2,
+      "class_histogram": {
+        "noise": 283,
+        "tone": 13,
+        "wideband": 216
+      },
+      "cfo_median_rad_per_sample": 0.7157640381709135,
+      "peak_index": 1441
+    },
+    {
+      "stream": "Tampere:drone-controller:tampere-drone-rf-4264467/DJI_phantom_4_2G.bin",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 7138289,
+      "cfar_frames_with_detection": 128,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 1,
+      "class_histogram": {
+        "noise": 80,
+        "tone": 77,
+        "wideband": 355
+      },
+      "cfo_median_rad_per_sample": 0.3262865712596622,
+      "peak_index": 786
+    },
+    {
+      "stream": "Tampere:drone-controller:tampere-drone-rf-4264467/DJI_phantom_4_pro_plus_2G.bin",
+      "all_stages_exact": true,
+      "burst_start_samples": [
+        1407,
+        1663
+      ],
+      "burst_end_samples": [
+        1535,
+        1727
+      ],
+      "noise_floor_last": 499577,
+      "cfar_frames_with_detection": 128,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 12,
+      "class_histogram": {
+        "noise": 422,
+        "wideband": 90
+      },
+      "cfo_median_rad_per_sample": -1.6255682459337495,
+      "peak_index": 1638
+    },
+    {
+      "stream": "Tampere:drone-controller:tampere-drone-rf-4264467/DJI_phantom_4_pro_plus_5G_1of2.bin",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 19836,
+      "cfar_frames_with_detection": 90,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 14,
+      "class_histogram": {
+        "noise": 512
+      },
+      "cfo_median_rad_per_sample": 0.2762017333908435,
+      "peak_index": 729
+    },
+    {
+      "stream": "Tampere:drone-controller:tampere-drone-rf-4264467/DJI_phantom_4_pro_plus_5G_2of2.bin",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 25747,
+      "cfar_frames_with_detection": 90,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 14,
+      "class_histogram": {
+        "noise": 512
+      },
+      "cfo_median_rad_per_sample": 0.1640591118462405,
+      "peak_index": 7
+    },
+    {
+      "stream": "Tampere:drone-controller:tampere-drone-rf-4264467/Parrot_disco_2G.bin",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 3053706,
+      "cfar_frames_with_detection": 85,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 14,
+      "class_histogram": {
+        "noise": 244,
+        "wideband": 268
+      },
+      "cfo_median_rad_per_sample": -0.07875265453559571,
+      "peak_index": 780
+    },
+    {
+      "stream": "Tampere:drone-controller:tampere-drone-rf-4264467/Parrot_mambo_control_2G.bin",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 3373018,
+      "cfar_frames_with_detection": 88,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 2,
+      "class_histogram": {
+        "noise": 262,
+        "wideband": 250
+      },
+      "cfo_median_rad_per_sample": 0.027491744638656328,
+      "peak_index": 2039
+    },
+    {
+      "stream": "Tampere:drone-controller:tampere-drone-rf-4264467/Parrot_mambo_video_2G.bin",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 263,
+      "cfar_frames_with_detection": 112,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 13,
+      "class_histogram": {
+        "noise": 316,
+        "wideband": 196
+      },
+      "cfo_median_rad_per_sample": -1.278908878545354,
+      "peak_index": 538
+    },
+    {
+      "stream": "Tampere:drone-controller:tampere-drone-rf-4264467/Yuneec_typhoon_h_2G_1of2.bin",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 466651,
+      "cfar_frames_with_detection": 128,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 11,
+      "class_histogram": {
+        "noise": 512
+      },
+      "cfo_median_rad_per_sample": -1.8101506559948821,
+      "peak_index": 7
+    },
+    {
+      "stream": "Tampere:drone-controller:tampere-drone-rf-4264467/Yuneec_typhoon_h_2G_2of2.bin",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 2901703,
+      "cfar_frames_with_detection": 89,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 14,
+      "class_histogram": {
+        "noise": 272,
+        "wideband": 240
+      },
+      "cfo_median_rad_per_sample": -0.008710392719962339,
+      "peak_index": 969
+    },
+    {
+      "stream": "Tampere:drone-controller:tampere-drone-rf-4264467/Yuneec_typhoon_h_5G.bin",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 3104598,
+      "cfar_frames_with_detection": 83,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 14,
+      "class_histogram": {
+        "noise": 288,
+        "wideband": 224
+      },
+      "cfo_median_rad_per_sample": -0.015895108175056957,
+      "peak_index": 364
+    },
+    {
+      "stream": "CAMRAS-Dwingeloo:radio-astronomy (Venus radar echo):camras-eve2026/dwingeloo_venus_2026_10_17_08_57_07_1299.650MHz_0.25Msps_ci16_le.sigmf-data",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 2584497,
+      "cfar_frames_with_detection": 84,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 1,
+      "class_histogram": {
+        "noise": 247,
+        "wideband": 265
+      },
+      "cfo_median_rad_per_sample": 0.03847775909596959,
+      "peak_index": 606
+    },
+    {
+      "stream": "CAMRAS-Dwingeloo:radio-astronomy (Venus radar echo):camras-eve2026/dwingeloo_venus_2026_10_24_09_15_44_1299.650MHz_0.25Msps_ci16_le.sigmf-data",
+      "all_stages_exact": true,
+      "burst_start_samples": [],
+      "burst_end_samples": [],
+      "noise_floor_last": 3758608,
+      "cfar_frames_with_detection": 89,
+      "cfar_frames": 128,
+      "dominant_fft16_bin": 1,
+      "class_histogram": {
+        "noise": 222,
+        "wideband": 290
+      },
+      "cfo_median_rad_per_sample": -0.029200728464692384,
+      "peak_index": 1308
+    }
+  ],
+  "ground_truth": {}
+}

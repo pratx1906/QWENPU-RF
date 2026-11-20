@@ -1,0 +1,19 @@
+{
+  "path": "$RFPU_DATA\\checkpoints\\rfpu-v15\\bitwise-I16-W64-v1",
+  "sha256": "eb6ae81676fb7a4a92a39ff5db621910ed4a93372a96de2e4380b69b95ebefcd",
+  "config_sha256": "df0b6ad4e6ec38c60f6fb4fda313adc88ab570bc12850aa48bf481fd26c24fd7",
+  "parameter_count": 807933280,
+  "parameter_bytes": 1615866560,
+  "file_bytes": 1615889400,
+  "construction_seconds": 5.160762800005614,
+  "stats": {
+    "layers": 15,
+    "dims": 2492,
+    "heads": 2,
+    "ffn_units": 33223,
+    "max_units": 3584,
+    "max_heads": 2
+  },
+  "hidden": 2560,
+  "zero_prefix": 63
+}

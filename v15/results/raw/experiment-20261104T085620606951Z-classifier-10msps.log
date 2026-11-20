@@ -1,0 +1,30 @@
+{
+ "protocol": "PROTOCOL.md Amendment 6, P6.4c (host float, 10 MS/s, leave-one-recording-out)",
+ "recordings": 25,
+ "windows": 416,
+ "by_class_recordings": {
+  "WiFi": 9,
+  "LTE": 12,
+  "DVB-T": 5
+ },
+ "window_accuracy": 0.7067307692307693,
+ "recording_accuracy": 0.84,
+ "confusion_rows_true_cols_pred": [
+  [
+   116,
+   25,
+   3
+  ],
+  [
+   32,
+   142,
+   18
+  ],
+  [
+   6,
+   38,
+   36
+  ]
+ ],
+ "beats_1msps_lolo6": true
+}

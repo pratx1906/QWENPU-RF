@@ -1,0 +1,174 @@
+{
+  "protocol": "PROTOCOL.md Amendment 12 P12.3",
+  "pass": true,
+  "captures": [
+    {
+      "capture": 0,
+      "label": "IDLab WiFi fs=10MS/s fc=5240MHz",
+      "fs": 10000000,
+      "freq_hz_firmware": 0,
+      "cfo_hz_firmware": 88726,
+      "freq_hz_host": 0,
+      "cfo_hz_host": 88763.08040370134,
+      "freq_ok": true,
+      "cfo_ok": true,
+      "notes_ok": true
+    },
+    {
+      "capture": 1,
+      "label": "IDLab WiFi fs=1MS/s fc=2412MHz",
+      "fs": 1000000,
+      "freq_hz_firmware": 0,
+      "cfo_hz_firmware": -406,
+      "freq_hz_host": 0,
+      "cfo_hz_host": -402.22636316558874,
+      "freq_ok": true,
+      "cfo_ok": true,
+      "notes_ok": true
+    },
+    {
+      "capture": 2,
+      "label": "IDLab LTE fs=1MS/s fc=806MHz",
+      "fs": 1000000,
+      "freq_hz_firmware": 0,
+      "cfo_hz_firmware": 17594,
+      "freq_hz_host": 0,
+      "cfo_hz_host": 17591.702621580534,
+      "freq_ok": true,
+      "cfo_ok": true,
+      "notes_ok": true
+    },
+    {
+      "capture": 3,
+      "label": "IDLab LTE fs=10MS/s fc=806MHz",
+      "fs": 10000000,
+      "freq_hz_firmware": -5000000,
+      "cfo_hz_firmware": 4947600,
+      "freq_hz_host": -5000000,
+      "cfo_hz_host": 4947492.957270787,
+      "freq_ok": true,
+      "cfo_ok": true,
+      "notes_ok": true
+    },
+    {
+      "capture": 4,
+      "label": "IDLab DVB-T fs=1MS/s fc=482MHz",
+      "fs": 1000000,
+      "freq_hz_firmware": 0,
+      "cfo_hz_firmware": 37735,
+      "freq_hz_host": 0,
+      "cfo_hz_host": 37731.71885415832,
+      "freq_ok": true,
+      "cfo_ok": true,
+      "notes_ok": true
+    },
+    {
+      "capture": 5,
+      "label": "IDLab DVB-T fs=1MS/s fc=482MHz",
+      "fs": 1000000,
+      "freq_hz_firmware": 437500,
+      "cfo_hz_firmware": -499974,
+      "freq_hz_host": 437500,
+      "cfo_hz_host": -499974.8421707351,
+      "freq_ok": true,
+      "cfo_ok": true,
+      "notes_ok": true
+    },
+    {
+      "capture": 6,
+      "label": "NTU-RFSR LoRa fs=unknown",
+      "fs": 0,
+      "freq_ok": true,
+      "cfo_ok": true,
+      "notes_ok": true
+    },
+    {
+      "capture": 7,
+      "label": "NTU-RFSR LoRa fs=unknown",
+      "fs": 0,
+      "freq_ok": true,
+      "cfo_ok": true,
+      "notes_ok": true
+    },
+    {
+      "capture": 8,
+      "label": "EPFL-LoRaIQ LoRa fs=unknown",
+      "fs": 0,
+      "freq_ok": true,
+      "cfo_ok": true,
+      "notes_ok": true
+    },
+    {
+      "capture": 9,
+      "label": "EPFL-LoRaIQ LoRa fs=unknown",
+      "fs": 0,
+      "freq_ok": true,
+      "cfo_ok": true,
+      "notes_ok": true
+    },
+    {
+      "capture": 10,
+      "label": "EPFL-LoRaIQ LoRa fs=unknown",
+      "fs": 0,
+      "freq_ok": true,
+      "cfo_ok": true,
+      "notes_ok": true
+    },
+    {
+      "capture": 11,
+      "label": "EPFL-LoRaIQ LoRa fs=unknown",
+      "fs": 0,
+      "freq_ok": true,
+      "cfo_ok": true,
+      "notes_ok": true
+    },
+    {
+      "capture": 12,
+      "label": "Tampere drone-controller fs=120MS/s fc=2440MHz",
+      "fs": 120000000,
+      "freq_hz_firmware": -22500000,
+      "cfo_hz_firmware": -23397704,
+      "freq_hz_host": -22500000,
+      "cfo_hz_host": -23397753.260359198,
+      "freq_ok": true,
+      "cfo_ok": true,
+      "notes_ok": true
+    },
+    {
+      "capture": 13,
+      "label": "Tampere drone-controller fs=200MS/s fc=5800MHz",
+      "fs": 200000000,
+      "freq_hz_firmware": 75000000,
+      "cfo_hz_firmware": 70198244,
+      "freq_hz_host": 75000000,
+      "cfo_hz_host": 70198032.80839601,
+      "freq_ok": true,
+      "cfo_ok": true,
+      "notes_ok": true
+    },
+    {
+      "capture": 14,
+      "label": "synthetic test signal A fs=1MS/s",
+      "fs": 1000000,
+      "freq_hz_firmware": 187500,
+      "cfo_hz_firmware": 189997,
+      "freq_hz_host": 187500,
+      "cfo_hz_host": 189994.49063754885,
+      "freq_ok": true,
+      "cfo_ok": true,
+      "notes_ok": true
+    },
+    {
+      "capture": 15,
+      "label": "synthetic test signal B fs=1MS/s",
+      "fs": 1000000,
+      "freq_hz_firmware": -62500,
+      "cfo_hz_firmware": -62506,
+      "freq_hz_host": -62500,
+      "cfo_hz_host": -62501.59739378869,
+      "freq_ok": true,
+      "cfo_ok": true,
+      "notes_ok": true
+    }
+  ]
+}

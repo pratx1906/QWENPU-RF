@@ -1,0 +1,182 @@
+
+Loading weights:   0%|          | 0/580 [00:00<?, ?it/s]
+Loading weights:   1%|          | 3/580 [00:00<00:30, 18.97it/s]
+Loading weights:   1%|1         | 7/580 [00:00<00:26, 21.76it/s]
+Loading weights:   2%|1         | 10/580 [00:00<00:23, 23.93it/s]
+Loading weights:   3%|2         | 15/580 [00:00<00:25, 22.18it/s]
+Loading weights:   4%|4         | 25/580 [00:00<00:19, 28.96it/s]
+Loading weights:   6%|5         | 33/580 [00:01<00:14, 37.70it/s]
+Loading weights:   7%|6         | 38/580 [00:01<00:15, 35.29it/s]
+Loading weights:   8%|7         | 44/580 [00:01<00:15, 34.23it/s]
+Loading weights:   9%|8         | 51/580 [00:01<00:13, 38.30it/s]
+Loading weights:  10%|9         | 56/580 [00:01<00:16, 31.99it/s]
+Loading weights:  11%|#         | 63/580 [00:02<00:16, 31.55it/s]
+Loading weights:  15%|#5        | 88/580 [00:02<00:07, 66.69it/s]
+Loading weights:  17%|#6        | 96/580 [00:02<00:11, 43.42it/s]
+Loading weights:  18%|#7        | 103/580 [00:03<00:15, 30.52it/s]
+Loading weights:  19%|#8        | 108/580 [00:03<00:14, 32.19it/s]
+Loading weights:  19%|#9        | 113/580 [00:03<00:16, 28.18it/s]
+Loading weights:  20%|##        | 117/580 [00:03<00:19, 24.08it/s]
+Loading weights:  22%|##1       | 125/580 [00:03<00:16, 27.95it/s]
+Loading weights:  22%|##2       | 129/580 [00:03<00:15, 29.24it/s]
+Loading weights:  24%|##3       | 138/580 [00:04<00:12, 35.60it/s]
+Loading weights:  25%|##4       | 143/580 [00:04<00:13, 31.48it/s]
+Loading weights:  25%|##5       | 147/580 [00:04<00:16, 26.45it/s]
+Loading weights:  27%|##6       | 154/580 [00:04<00:15, 26.79it/s]
+Loading weights:  27%|##7       | 157/580 [00:05<00:19, 21.76it/s]
+Loading weights:  29%|##9       | 169/580 [00:05<00:12, 33.36it/s]
+Loading weights:  30%|##9       | 173/580 [00:05<00:13, 30.83it/s]
+Loading weights:  31%|###1      | 182/580 [00:05<00:10, 36.92it/s]
+Loading weights:  32%|###2      | 186/580 [00:05<00:13, 29.38it/s]
+Loading weights:  33%|###3      | 192/580 [00:06<00:12, 30.17it/s]
+Loading weights:  34%|###3      | 196/580 [00:06<00:17, 21.93it/s]
+Loading weights:  36%|###5      | 207/580 [00:06<00:11, 31.13it/s]
+Loading weights:  36%|###6      | 211/580 [00:06<00:14, 25.81it/s]
+Loading weights:  37%|###7      | 215/580 [00:07<00:26, 13.59it/s]
+Loading weights:  38%|###7      | 218/580 [00:07<00:24, 14.95it/s]
+Loading weights:  38%|###8      | 221/580 [00:07<00:23, 15.19it/s]
+Loading weights:  39%|###8      | 224/580 [00:08<00:21, 16.25it/s]
+Loading weights:  41%|####      | 235/580 [00:08<00:12, 27.61it/s]
+Loading weights:  41%|####1     | 239/580 [00:08<00:12, 26.65it/s]
+Loading weights:  42%|####1     | 243/580 [00:08<00:12, 27.73it/s]
+Loading weights:  43%|####2     | 247/580 [00:08<00:11, 28.93it/s]
+Loading weights:  43%|####3     | 251/580 [00:09<00:15, 20.60it/s]
+Loading weights:  44%|####4     | 256/580 [00:09<00:12, 25.11it/s]
+Loading weights:  45%|####4     | 260/580 [00:09<00:11, 26.90it/s]
+Loading weights:  46%|####5     | 264/580 [00:09<00:13, 23.82it/s]
+Loading weights:  46%|####6     | 267/580 [00:09<00:17, 17.83it/s]
+Loading weights:  47%|####7     | 275/580 [00:09<00:12, 25.41it/s]
+Loading weights:  48%|####8     | 279/580 [00:10<00:11, 26.44it/s]
+Loading weights:  49%|####8     | 283/580 [00:10<00:13, 22.08it/s]
+Loading weights:  50%|####9     | 288/580 [00:10<00:10, 26.60it/s]
+Loading weights:  50%|#####     | 292/580 [00:10<00:10, 27.60it/s]
+Loading weights:  51%|#####1    | 296/580 [00:10<00:10, 27.33it/s]
+Loading weights:  52%|#####1    | 300/580 [00:11<00:15, 18.23it/s]
+Loading weights:  53%|#####2    | 305/580 [00:11<00:12, 21.50it/s]
+Loading weights:  53%|#####3    | 310/580 [00:11<00:10, 24.61it/s]
+Loading weights:  54%|#####4    | 316/580 [00:11<00:09, 27.69it/s]
+Loading weights:  56%|#####5    | 322/580 [00:11<00:08, 28.78it/s]
+Loading weights:  56%|#####6    | 326/580 [00:11<00:09, 26.95it/s]
+Loading weights:  57%|#####6    | 329/580 [00:12<00:13, 18.27it/s]
+Loading weights:  57%|#####7    | 332/580 [00:12<00:14, 17.28it/s]
+Loading weights:  58%|#####7    | 335/580 [00:12<00:16, 14.83it/s]
+Loading weights:  59%|#####8    | 342/580 [00:12<00:10, 22.89it/s]
+Loading weights: 100%|##########| 580/580 [00:12<00:00, 44.75it/s]
+[transformers] The tokenizer you are loading from '$RFPU_DATA\checkpoints\rfpu-v15\qwen3.5-4b-rv1' with an incorrect regex pattern: https://huggingface.co/mistralai/Mistral-Small-3.1-24B-Instruct-2503/discussions/84#69121093e8b480e709447d5e. This will lead to incorrect tokenization. You should set the `fix_mistral_regex=True` flag when loading this tokenizer to fix this issue.
+[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[transformers] `causal_conv1d_update` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+  58500 tokens (131 text, 58368 chip) 26s
+  93000 tokens (419 text, 92580 chip) 47s
+================================================================================ 
+Q0: Capture 14 is a stored IQ recording. Use the RF analyzer: is there a burst in it, roughly which samples does it occupy, how far above the noise floor is it, and what is its frequency in cycles per sample?
+---
+<tool_call>
+<function=rf_analyze>
+<parameter=capture>
+14
+</parameter>
+</function>
+</tool_call>
+<tool_response>
+capture=14 synthetic test signal A fs=1MS/s
+samples=1024 (Q15)
+mean_power_dbfs=-15.5
+peak_power_dbfs=-10.2 at_sample=535
+noise_floor_dbfs=-48.9 (quietest 64-sample window)
+loudest_window_dbfs=-10.4
+active_windows=5/16 (power > 4x quietest) first_active_sample=320 last_active_sample_end=640
+dominant_dft16_bin=3 freq_cycles_per_sample=0.1875 power_share_percent=99
+cfo_cycles_per_sample=0.1899
+</tool_response>
+<think>
+
+</think>
+
+Based on the analysis of capture 14:
+*   **Burst:** Yes, there is a burst.
+*   **Location:** It occupies samples roughly **320 to 640**.
+*   **Power:** It is approximately **38 dB** above the noise floor (-10.2 dBFS peak vs. -48.9 dBFS noise floor).
+*   **Frequency:** The dominant frequency is **0.1875 cycles per sample**.<|im_end|>
+[536 text + 92702 chip tokens, 118s, lock error: None]
+  100500 tokens (497 text, 100002 chip) 36s
+================================================================================ 
+Q1: Analyze capture 12 (a 2.4 GHz drone controller recording). What is the signal level relative to the noise floor, and what is the carrier frequency offset in kHz? Show the conversion.
+---
+<tool_call>
+<function=rf_analyze>
+<parameter=capture>
+12
+</parameter>
+</function>
+</tool_call>
+<tool_response>
+capture=12 Tampere drone-controller fs=120MS/s fc=2440MHz
+samples=1024 (Q15)
+mean_power_dbfs=-14.1
+peak_power_dbfs=-6.9 at_sample=477
+noise_floor_dbfs=-16.7 (quietest 64-sample window)
+loudest_window_dbfs=-12.3
+active_windows=0/16 (power > 4x quietest)
+dominant_dft16_bin=13 freq_cycles_per_sample=-0.1875 power_share_percent=60
+cfo_cycles_per_sample=-0.1950
+</tool_response>
+<think>
+
+</think>
+
+Based on the analysis of capture 12:
+
+**Signal Level Relative to Noise Floor:**
+*   **Peak Power:** -6.9 dBFS
+*   **Noise Floor:** -16.7 dBFS
+*   **Difference:** -6.9 dBFS - (-16.7 dBFS) = **9.8 dB**
+
+The signal is approximately **9.8 dB above the noise floor**.
+
+**Carrier Frequency Offset (CFO):**
+*   **CFO (cycles/sample):** -0.1950 cycles/sample
+*   **Sample Rate:** 120 MS/s (120,000,000 samples/second)
+*   **CFO (Hz):** -0.1950 cycles/sample × 120,000,000 samples/second = **-23,400,000 Hz**
+*   **CFO (kHz):** -23,400,000 Hz ÷ 1,000 = **-23,400 kHz**
+
+The carrier frequency offset is **-23,400 kHz** (or -23.4 MHz).
+
+*Note: The analysis indicates that no windows were considered "active" (0/16), meaning the signal power did not exceed 4x the quietest window. This suggests the signal might be intermittent or the threshold for "active" detection was not met.*<|im_end|>
+[710 text + 100002 chip tokens, 46s, lock error: None]
+  1000 tokens (63 text, 936 chip) 4s
+  65500 tokens (144 text, 65355 chip) 12s
+================================================================================ 
+Q2: Run the RF analyzer on capture 8 and summarize what kind of signal activity it shows.
+---
+<tool_call>
+<function=rf_analyze>
+<parameter=capture>
+8
+</parameter>
+</function>
+</tool_call>
+<tool_response>
+capture=8 EPFL-LoRaIQ LoRa fs=unknown
+samples=1024 (Q15)
+mean_power_dbfs=-14.1
+peak_power_dbfs=-10.4 at_sample=41
+noise_floor_dbfs=-14.9 (quietest 64-sample window)
+loudest_window_dbfs=-13.3
+active_windows=0/16 (power > 4x quietest)
+dominant_dft16_bin=1 freq_cycles_per_sample=0.0625 power_share_percent=23
+cfo_cycles_per_sample=0.0038
+</tool_response>
+<think>
+
+</think>
+
+The RF analyzer on capture 8 (EPFL-LoRaIQ LoRa) shows the following signal characteristics:
+- **Mean power**: -14.1 dBFS
+- **Peak power**: -10.4 dBFS (at sample 41)
+- **Noise floor**: -14.9 dBFS (quietest 64-sample window)
+- **Active windows**: 0 out of 16 (no windows exceed 4x the quietest window)
+- **Dominant spectral bin**: Bin 1, frequency = 0.0625 cycles/sample, power share = 23%
+- **Carrier frequency offset (CFO)**: 0.0038 cycles/sample
+
+The signal appears to be a LoRa transmission with low activity (no active windows detected). The dominant spectral bin suggests a narrowband signal, consistent with LoRa modulation. The carrier frequency offset is small, indicating minimal frequency drift.<|im_end|>
+[575 text + 100127 chip tokens, 41s, lock error: None]

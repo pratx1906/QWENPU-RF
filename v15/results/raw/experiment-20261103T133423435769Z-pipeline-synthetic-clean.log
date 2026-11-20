@@ -1,0 +1,5 @@
+synthetic-0                                                  exact=True bursts=[575, 1599] classes={'noise': 329, 'tone': 131, 'wideband': 52} peak=1716
+synthetic-1                                                  exact=True bursts=[575, 1599] classes={'noise': 328, 'tone': 133, 'wideband': 51} peak=1631
+synthetic-2                                                  exact=True bursts=[575, 1599] classes={'noise': 339, 'tone': 131, 'wideband': 42} peak=1607
+synthetic-3                                                  exact=True bursts=[575, 1599] classes={'noise': 331, 'tone': 134, 'wideband': 47} peak=1576
+PASS: 4 streams, 8,544,260 tokens, 52.9 ms/sample neural

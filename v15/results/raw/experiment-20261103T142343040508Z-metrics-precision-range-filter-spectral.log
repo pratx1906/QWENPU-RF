@@ -1,0 +1,15 @@
+[precision] saved
+[dynamic_range] saved
+Traceback (most recent call last):
+  File "v15\scripts\dsp_metrics.py", line 590, in <module>
+    GROUPS[g]()
+  File "v15\scripts\dsp_metrics.py", line 203, in filter_response
+    "impulse_equals_quantized_taps": bool(np.allclose(h * 32767, [round(a * 32767 / 32768) for a, _ in taps], atol=1))},
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ".venv\Lib\site-packages\numpy\_core\numeric.py", line 2312, in allclose
+    res = all(isclose(a, b, rtol=rtol, atol=atol, equal_nan=equal_nan))
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ".venv\Lib\site-packages\numpy\_core\numeric.py", line 2443, in isclose
+    result = (less_equal(abs(x - y), atol + rtol * abs(y))
+                             ~~^~~
+ValueError: operands could not be broadcast together with shapes (256,) (16,) 

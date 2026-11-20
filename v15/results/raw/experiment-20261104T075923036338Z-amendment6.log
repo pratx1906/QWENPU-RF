@@ -1,0 +1,47 @@
+{'kernel': 'FFT64 power, VBFLY block floating point', 'level_dbfs': -60, 'sqnr_db': 70.25221595729548, 'tokens_per_sample': 127.1728515625, 'ms_per_sample': 18.876100439456422}
+{'kernel': 'FFT64 power, CPU block floating point', 'level_dbfs': -60, 'sqnr_db': 74.91008752288813, 'tokens_per_sample': 228.5751953125, 'ms_per_sample': 33.84811669921817}
+{'kernel': 'FFT64 power, VBFLY block floating point', 'level_dbfs': -54, 'sqnr_db': 70.21598336343712, 'tokens_per_sample': 127.6962890625, 'ms_per_sample': 19.57694296875445}
+{'kernel': 'FFT64 power, CPU block floating point', 'level_dbfs': -54, 'sqnr_db': 75.1735790498454, 'tokens_per_sample': 228.97314453125, 'ms_per_sample': 34.765743701171914}
+{'kernel': 'FFT64 power, VBFLY block floating point', 'level_dbfs': -48, 'sqnr_db': 70.12750741995659, 'tokens_per_sample': 128.01953125, 'ms_per_sample': 19.75504746094714}
+{'kernel': 'FFT64 power, CPU block floating point', 'level_dbfs': -48, 'sqnr_db': 75.12292170658104, 'tokens_per_sample': 229.228515625, 'ms_per_sample': 35.42201586914473}
+{'kernel': 'FFT64 power, VBFLY block floating point', 'level_dbfs': -42, 'sqnr_db': 70.25350113337124, 'tokens_per_sample': 128.30224609375, 'ms_per_sample': 19.737002978516216}
+{'kernel': 'FFT64 power, CPU block floating point', 'level_dbfs': -42, 'sqnr_db': 74.929879709591, 'tokens_per_sample': 229.44384765625, 'ms_per_sample': 35.704915380861735}
+{'kernel': 'FFT64 power, VBFLY block floating point', 'level_dbfs': -36, 'sqnr_db': 69.92778740870226, 'tokens_per_sample': 128.50341796875, 'ms_per_sample': 19.86444853515934}
+{'kernel': 'FFT64 power, CPU block floating point', 'level_dbfs': -36, 'sqnr_db': 75.17876436509945, 'tokens_per_sample': 229.57421875, 'ms_per_sample': 35.4929010253926}
+{'kernel': 'FFT64 power, VBFLY block floating point', 'level_dbfs': -30, 'sqnr_db': 69.70069586271691, 'tokens_per_sample': 128.625, 'ms_per_sample': 20.410839013678128}
+{'kernel': 'FFT64 power, CPU block floating point', 'level_dbfs': -30, 'sqnr_db': 74.55372566382147, 'tokens_per_sample': 229.64208984375, 'ms_per_sample': 35.3931727050707}
+{'kernel': 'FFT64 power, VBFLY block floating point', 'level_dbfs': -24, 'sqnr_db': 69.5182213156535, 'tokens_per_sample': 128.708984375, 'ms_per_sample': 20.595666064451734}
+{'kernel': 'FFT64 power, CPU block floating point', 'level_dbfs': -24, 'sqnr_db': 74.97357393952211, 'tokens_per_sample': 229.67578125, 'ms_per_sample': 36.63135375975912}
+{'kernel': 'FFT64 power, VBFLY block floating point', 'level_dbfs': -18, 'sqnr_db': 69.8195797214517, 'tokens_per_sample': 128.78466796875, 'ms_per_sample': 20.945105468754832}
+{'kernel': 'FFT64 power, CPU block floating point', 'level_dbfs': -18, 'sqnr_db': 74.99364480608912, 'tokens_per_sample': 229.68798828125, 'ms_per_sample': 35.45410717774189}
+{'kernel': 'FFT64 power, VBFLY block floating point', 'level_dbfs': -12, 'sqnr_db': 69.63411495724631, 'tokens_per_sample': 129.2041015625, 'ms_per_sample': 20.952930175781148}
+{'kernel': 'FFT64 power, CPU block floating point', 'level_dbfs': -12, 'sqnr_db': 74.61472500541736, 'tokens_per_sample': 230.16796875, 'ms_per_sample': 38.13545961914144}
+{'kernel': 'FFT64 power, VBFLY block floating point', 'level_dbfs': -6, 'sqnr_db': 70.68393026496057, 'tokens_per_sample': 130.89794921875, 'ms_per_sample': 20.890885302733864}
+{'kernel': 'FFT64 power, CPU block floating point', 'level_dbfs': -6, 'sqnr_db': 75.20971417889383, 'tokens_per_sample': 232.84765625, 'ms_per_sample': 36.81409438476635}
+{'kernel': 'FFT64 power, VBFLY block floating point', 'level_dbfs': 0, 'sqnr_db': 71.5467431993388, 'tokens_per_sample': 133.18359375, 'ms_per_sample': 20.44879160156654}
+{'kernel': 'FFT64 power, CPU block floating point', 'level_dbfs': 0, 'sqnr_db': 76.29806099307433, 'tokens_per_sample': 240.564453125, 'ms_per_sample': 35.45797211913282}
+{'kernel': 'IIR biquad (+12 dB DC gain), wide int32', 'level_dbfs': -12, 'sqnr_db': 82.32295161375933, 'tokens_per_sample': 130.02294921875, 'ms_per_sample': 150.64208525390654}
+{'kernel': 'IIR biquad (+12 dB DC gain), int16 saturating', 'level_dbfs': -12, 'sqnr_db': 35.14741021063661, 'tokens_per_sample': 172.02587890625, 'ms_per_sample': 209.15580263674372}
+{'kernel': 'IIR biquad (+12 dB DC gain), wide int32', 'level_dbfs': -6, 'sqnr_db': 88.17392925979802, 'tokens_per_sample': 134.1318359375, 'ms_per_sample': 163.13997592774854}
+{'kernel': 'IIR biquad (+12 dB DC gain), int16 saturating', 'level_dbfs': -6, 'sqnr_db': 14.773850461178853, 'tokens_per_sample': 175.8857421875, 'ms_per_sample': 205.35669301759185}
+{'kernel': 'VFIR 16 taps (per-tap rounding)', 'level_dbfs': -12, 'sqnr_db': 69.23017451144779, 'tokens_per_sample': 110.3076171875, 'ms_per_sample': 16.960161572256993}
+{
+ "P6.1": {
+  "target": ">= 68 dB at every level -60..0 dBFS",
+  "min_db": 69.5182213156535,
+  "passed": true
+ },
+ "P6.2": {
+  "target": ">= 65 dB at -12 and -6 dBFS (wide)",
+  "values_db": [
+   82.32295161375933,
+   88.17392925979802
+  ],
+  "passed": true
+ },
+ "P6.3": {
+  "target": ">= 70 dB at -12 dBFS (measurement)",
+  "value_db": 69.23017451144779,
+  "passed": false
+ }
+}

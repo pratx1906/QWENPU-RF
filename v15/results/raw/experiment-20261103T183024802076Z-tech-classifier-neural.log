@@ -1,0 +1,53 @@
+{'train': 1008, 'test': 1616} features 25s
+{
+  "classes": [
+    "WiFi",
+    "LTE",
+    "DVB-T"
+  ],
+  "hidden": 8,
+  "frames": 64,
+  "train_windows": 1008,
+  "test_windows": 1616,
+  "train_recordings": 63,
+  "test_recordings": 101,
+  "train_accuracy_integer": 0.9404761904761905,
+  "test_accuracy_float": 0.6701732673267327,
+  "test_accuracy_integer": 0.6701732673267327,
+  "test_recording_accuracy_majority": 0.7029702970297029,
+  "confusion_rows_true_cols_pred": [
+    [
+      297,
+      9,
+      30
+    ],
+    [
+      8,
+      608,
+      24
+    ],
+    [
+      64,
+      398,
+      178
+    ]
+  ],
+  "test_accuracy_by_location": {
+    "igent": 0.6071428571428571,
+    "gentbrugge": 0.6375,
+    "reep": 0.8520833333333333,
+    "uz": 0.5125
+  },
+  "chance_majority_class": 0.39603960396039606,
+  "scope": "IDLab 1 MS/s, recording-level split from the manifest; single dataset/receiver; technology labels from the publisher",
+  "neural": {
+    "windows": 101,
+    "exact_tokens": true,
+    "outputs_equal_integer_model": true,
+    "accuracy": 0.693069306930693,
+    "tokens": 41257948,
+    "neural_seconds": 1571.704176099971,
+    "ms_per_window": 15561.427486138326,
+    "wall_seconds": 1668.4219732999918
+  }
+}

@@ -1,0 +1,20 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "upstream\QwenPU\chipformer\rv\merge.py", line 248, in <module>
+    main()
+  File "upstream\QwenPU\chipformer\rv\merge.py", line 243, in main
+    meta = build_merged(args.src, args.out, not args.no_mute, args.hidden, args.ballast, args.vx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "upstream\QwenPU\chipformer\rv\merge.py", line 115, in build_merged
+    c = core.build(Target(tc0["linear_num_key_heads"], tc0["linear_num_value_heads"], inter), T, vx=vx)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "upstream\QwenPU\chipformer\rv\core.py", line 452, in build
+    c.table(f"rom{h}", q, {}, vhs, levels="byte", min_level=6 if vx else 0)
+  File "upstream\QwenPU\chipformer\rv\core.py", line 209, in table
+    outs = self.head(name, {s: sel(self, e) for s, e in queries.items()},
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "upstream\QwenPU\chipformer\q35\ir.py", line 193, in head
+    assert len(vx) < self.target.value_heads // self.target.key_heads or not vx, \
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: more value heads than the key head has

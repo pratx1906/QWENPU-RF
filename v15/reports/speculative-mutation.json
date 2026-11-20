@@ -1,0 +1,17 @@
+{
+  "program": "fir64 FIR, 48 real IQ samples (scalar RV32)",
+  "trace_tokens": 107023,
+  "flash_linear_attention": true,
+  "corrupted_position": 50000,
+  "rows": [
+    {
+      "chunk": 1024,
+      "mismatches": 2,
+      "first_mismatch": 49999,
+      "seconds": 8.403684499993687,
+      "tokens_per_second": 12735.24725970857
+    }
+  ],
+  "batched_decode": false,
+  "gpu_compare": true
+}

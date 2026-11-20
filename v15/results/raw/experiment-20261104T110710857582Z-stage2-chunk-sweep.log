@@ -1,0 +1,107 @@
+
+Loading weights:   0%|          | 0/580 [00:00<?, ?it/s]
+Loading weights:   1%|          | 4/580 [00:00<00:26, 21.62it/s]
+Loading weights:   1%|1         | 7/580 [00:00<00:26, 21.53it/s]
+Loading weights:   3%|2         | 16/580 [00:00<00:17, 31.95it/s]
+Loading weights:   4%|4         | 24/580 [00:00<00:15, 35.98it/s]
+Loading weights:   6%|5         | 33/580 [00:00<00:12, 43.81it/s]
+Loading weights:   7%|6         | 38/580 [00:01<00:13, 41.39it/s]
+Loading weights:   7%|7         | 43/580 [00:01<00:33, 15.84it/s]
+Loading weights:   8%|7         | 46/580 [00:02<00:33, 15.71it/s]
+Loading weights:   9%|8         | 50/580 [00:02<00:31, 16.78it/s]
+Loading weights:   9%|9         | 53/580 [00:02<00:29, 18.13it/s]
+Loading weights:  10%|#         | 58/580 [00:02<00:24, 21.11it/s]
+Loading weights:  11%|#1        | 64/580 [00:02<00:20, 25.26it/s]
+Loading weights:  12%|#1        | 67/580 [00:02<00:21, 24.28it/s]
+Loading weights:  13%|#2        | 73/580 [00:03<00:18, 27.95it/s]
+Loading weights:  13%|#3        | 78/580 [00:03<00:16, 31.22it/s]
+Loading weights:  14%|#4        | 82/580 [00:03<00:19, 25.78it/s]
+Loading weights:  16%|#5        | 91/580 [00:03<00:13, 35.48it/s]
+Loading weights:  16%|#6        | 95/580 [00:03<00:13, 34.93it/s]
+Loading weights:  18%|#8        | 105/580 [00:03<00:11, 40.51it/s]
+Loading weights:  19%|#8        | 110/580 [00:03<00:11, 41.42it/s]
+Loading weights:  20%|#9        | 115/580 [00:04<00:13, 33.75it/s]
+Loading weights:  23%|##2       | 131/580 [00:04<00:09, 46.56it/s]
+Loading weights:  24%|##3       | 138/580 [00:04<00:09, 48.40it/s]
+Loading weights:  25%|##5       | 145/580 [00:04<00:09, 47.47it/s]
+Loading weights:  28%|##7       | 160/580 [00:04<00:08, 48.69it/s]
+Loading weights:  28%|##8       | 165/580 [00:05<00:10, 41.48it/s]
+Loading weights:  30%|##9       | 173/580 [00:05<00:08, 46.24it/s]
+Loading weights:  31%|###       | 178/580 [00:05<00:09, 40.84it/s]
+Loading weights:  32%|###1      | 183/580 [00:05<00:12, 30.83it/s]
+Loading weights:  32%|###2      | 188/580 [00:05<00:11, 34.00it/s]
+Loading weights:  34%|###3      | 195/580 [00:05<00:09, 40.83it/s]
+Loading weights:  34%|###4      | 200/580 [00:06<00:12, 30.74it/s]
+Loading weights:  35%|###5      | 204/580 [00:06<00:12, 30.88it/s]
+Loading weights:  36%|###5      | 208/580 [00:06<00:15, 23.70it/s]
+Loading weights:  36%|###6      | 211/580 [00:06<00:15, 23.10it/s]
+Loading weights:  37%|###6      | 214/580 [00:07<00:17, 20.66it/s]
+Loading weights:  39%|###8      | 224/580 [00:07<00:10, 34.49it/s]
+Loading weights:  40%|###9      | 230/580 [00:07<00:12, 27.42it/s]
+Loading weights:  40%|####      | 234/580 [00:07<00:14, 23.35it/s]
+Loading weights:  42%|####2     | 244/580 [00:07<00:10, 31.92it/s]
+Loading weights:  43%|####2     | 248/580 [00:08<00:12, 26.96it/s]
+Loading weights:  43%|####3     | 252/580 [00:08<00:13, 24.98it/s]
+Loading weights: 100%|##########| 580/580 [00:08<00:00, 69.08it/s]
+[transformers] The tokenizer you are loading from '$RFPU_DATA\checkpoints\rfpu-v15\qwen3.5-4b-rv1' with an incorrect regex pattern: https://huggingface.co/mistralai/Mistral-Small-3.1-24B-Instruct-2503/discussions/84#69121093e8b480e709447d5e. This will lead to incorrect tokenization. You should set the `fix_mistral_regex=True` flag when loading this tokenizer to fix this issue.
+[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.
+[transformers] `causal_conv1d_update` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[transformers] `fused_recurrent_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.
+{'chunk': 0, 'seconds': 277.81544629999553, 'chip_seconds': 227.84, 'text_seconds': 41.07, 'chip_tokens': 92913, 'lock_error': None, 'head_mismatch': 0}
+{'chunk': 64, 'seconds': 110.34416509998846, 'chip_seconds': 68.29, 'text_seconds': 40.71, 'chip_tokens': 92913, 'lock_error': None, 'head_mismatch': 0}
+{'chunk': 256, 'seconds': 58.05338340002345, 'chip_seconds': 25.83, 'text_seconds': 30.96, 'chip_tokens': 92913, 'lock_error': None, 'head_mismatch': 0}
+{'chunk': 1024, 'seconds': 47.55293689999962, 'chip_seconds': 17.25, 'text_seconds': 29.2, 'chip_tokens': 92913, 'lock_error': None, 'head_mismatch': 0}
+{'chunk': 4096, 'seconds': 46.05497599998489, 'chip_seconds': 16.07, 'text_seconds': 28.88, 'chip_tokens': 92913, 'lock_error': None, 'head_mismatch': 0}
+[
+ {
+  "chunk": 0,
+  "seconds": 277.81544629999553,
+  "chip_seconds": 227.84,
+  "text_seconds": 41.07,
+  "chip_tokens": 92913,
+  "lock_error": null,
+  "head_mismatch": 0,
+  "identical_to_first": true
+ },
+ {
+  "chunk": 64,
+  "seconds": 110.34416509998846,
+  "chip_seconds": 68.29,
+  "text_seconds": 40.71,
+  "chip_tokens": 92913,
+  "lock_error": null,
+  "head_mismatch": 0,
+  "identical_to_first": true
+ },
+ {
+  "chunk": 256,
+  "seconds": 58.05338340002345,
+  "chip_seconds": 25.83,
+  "text_seconds": 30.96,
+  "chip_tokens": 92913,
+  "lock_error": null,
+  "head_mismatch": 0,
+  "identical_to_first": true
+ },
+ {
+  "chunk": 1024,
+  "seconds": 47.55293689999962,
+  "chip_seconds": 17.25,
+  "text_seconds": 29.2,
+  "chip_tokens": 92913,
+  "lock_error": null,
+  "head_mismatch": 0,
+  "identical_to_first": true
+ },
+ {
+  "chunk": 4096,
+  "seconds": 46.05497599998489,
+  "chip_seconds": 16.07,
+  "text_seconds": 28.88,
+  "chip_tokens": 92913,
+  "lock_error": null,
+  "head_mismatch": 0,
+  "identical_to_first": true
+ }
+]

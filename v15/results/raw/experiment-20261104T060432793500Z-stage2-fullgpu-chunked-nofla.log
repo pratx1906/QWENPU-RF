@@ -1,0 +1,168 @@
+
+Loading weights:   0%|          | 0/580 [00:00<?, ?it/s]
+Loading weights:   2%|2         | 13/580 [00:00<00:08, 63.43it/s]
+Loading weights:   4%|4         | 24/580 [00:00<00:07, 70.11it/s]
+Loading weights:   6%|5         | 32/580 [00:00<00:07, 70.77it/s]
+Loading weights:   7%|6         | 40/580 [00:00<00:09, 57.50it/s]
+Loading weights:   8%|7         | 46/580 [00:00<00:09, 56.35it/s]
+Loading weights:   9%|8         | 52/580 [00:00<00:11, 47.03it/s]
+Loading weights:  10%|9         | 57/580 [00:01<00:11, 46.12it/s]
+Loading weights:  11%|#1        | 65/580 [00:01<00:12, 40.19it/s]
+Loading weights:  12%|#2        | 70/580 [00:01<00:14, 34.97it/s]
+Loading weights:  13%|#2        | 74/580 [00:01<00:14, 35.32it/s]
+Loading weights:  14%|#3        | 81/580 [00:01<00:11, 42.38it/s]
+Loading weights:  15%|#4        | 86/580 [00:01<00:12, 39.80it/s]
+Loading weights:  16%|#5        | 92/580 [00:02<00:12, 37.81it/s]
+Loading weights:  17%|#6        | 96/580 [00:02<00:13, 35.96it/s]
+Loading weights:  18%|#7        | 104/580 [00:02<00:12, 38.17it/s]
+Loading weights:  19%|#9        | 113/580 [00:02<00:10, 45.62it/s]
+Loading weights:  20%|##        | 118/580 [00:02<00:11, 41.95it/s]
+Loading weights:  21%|##1       | 124/580 [00:02<00:11, 40.59it/s]
+Loading weights:  22%|##2       | 129/580 [00:02<00:10, 42.63it/s]
+Loading weights:  23%|##3       | 134/580 [00:03<00:10, 41.86it/s]
+Loading weights:  24%|##4       | 141/580 [00:03<00:09, 44.06it/s]
+Loading weights:  25%|##5       | 147/580 [00:03<00:12, 35.81it/s]
+Loading weights:  27%|##6       | 155/580 [00:03<00:10, 38.75it/s]
+Loading weights:  28%|##7       | 160/580 [00:03<00:10, 40.59it/s]
+Loading weights:  29%|##9       | 171/580 [00:03<00:08, 49.97it/s]
+Loading weights:  31%|###       | 177/580 [00:03<00:08, 48.23it/s]
+Loading weights:  32%|###1      | 184/580 [00:04<00:07, 49.98it/s]
+Loading weights:  34%|###3      | 195/580 [00:04<00:07, 51.79it/s]
+Loading weights:  36%|###5      | 206/580 [00:04<00:05, 63.07it/s]
+Loading weights:  37%|###6      | 213/580 [00:04<00:05, 64.28it/s]
+Loading weights:  38%|###7      | 220/580 [00:04<00:06, 57.71it/s]
+Loading weights:  41%|####      | 235/580 [00:04<00:05, 68.21it/s]
+Loading weights:  42%|####1     | 242/580 [00:05<00:05, 59.72it/s]
+Loading weights:  43%|####3     | 252/580 [00:05<00:05, 59.94it/s]
+Loading weights:  45%|####4     | 259/580 [00:05<00:08, 38.65it/s]
+Loading weights:  46%|####5     | 264/580 [00:05<00:07, 39.57it/s]
+Loading weights:  51%|#####1    | 297/580 [00:05<00:03, 87.52it/s]
+Loading weights:  54%|#####4    | 314/580 [00:05<00:02, 103.76it/s]
+Loading weights:  56%|#####6    | 327/580 [00:06<00:02, 93.14it/s] 
+Loading weights:  58%|#####8    | 339/580 [00:06<00:03, 67.13it/s]
+Loading weights:  60%|######    | 348/580 [00:06<00:04, 49.71it/s]
+Loading weights:  62%|######2   | 360/580 [00:06<00:03, 57.91it/s]
+Loading weights:  63%|######3   | 368/580 [00:06<00:03, 61.27it/s]
+Loading weights:  65%|######4   | 376/580 [00:07<00:03, 56.53it/s]
+Loading weights:  66%|######6   | 383/580 [00:07<00:06, 28.40it/s]
+Loading weights: 100%|##########| 580/580 [00:07<00:00, 73.98it/s]
+[transformers] The tokenizer you are loading from '$RFPU_DATA\checkpoints\rfpu-v15\qwen3.5-4b-rv1' with an incorrect regex pattern: https://huggingface.co/mistralai/Mistral-Small-3.1-24B-Instruct-2503/discussions/84#69121093e8b480e709447d5e. This will lead to incorrect tokenization. You should set the `fix_mistral_regex=True` flag when loading this tokenizer to fix this issue.
+[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.
+[transformers] `causal_conv1d_update` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[transformers] `fused_recurrent_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.
+================================================================================ 
+Q0: Capture 14 is a stored IQ recording. Use the RF analyzer: is there a burst in it, roughly which samples does it occupy, how far above the noise floor is it, and what is its frequency in cycles per sample?
+---
+<tool_call>
+<function=rf_analyze>
+<parameter=capture>
+14
+</parameter>
+</function>
+</tool_call>
+<tool_response>
+capture=14 synthetic test signal A fs=1MS/s
+samples=1024 (Q15)
+mean_power_dbfs=-15.5
+peak_power_dbfs=-10.2 at_sample=535
+noise_floor_dbfs=-48.9 (quietest 64-sample window)
+loudest_window_dbfs=-10.4
+active_windows=5/16 (power > 4x quietest) first_active_sample=320 last_active_sample_end=640
+dominant_dft16_bin=3 freq_cycles_per_sample=0.1875 power_share_percent=99
+cfo_cycles_per_sample=0.1899
+</tool_response>
+<think>
+
+</think>
+
+Based on the analysis of capture 14:
+*   **Burst:** Yes, there is a burst.
+*   **Location:** It occupies samples roughly **320 to 640**.
+*   **Power:** It is roughly **38 dB** above the noise floor (-10.2 dBFS peak vs -48.9 dBFS noise floor).
+*   **Frequency:** The dominant frequency is **0.1875 cycles per sample**.<|im_end|>
+[535 text + 92913 chip tokens, 47s, lock error: None]
+  1500 tokens (105 text, 1394 chip) 8s
+================================================================================ 
+Q1: Analyze capture 12 (a 2.4 GHz drone controller recording). What is the signal level relative to the noise floor, and what is the carrier frequency offset in kHz? Show the conversion.
+---
+<tool_call>
+<function=rf_analyze>
+<parameter=capture>
+12
+</parameter>
+</function>
+</tool_call>
+<tool_response>
+capture=12 Tampere drone-controller fs=120MS/s fc=2440MHz
+samples=1024 (Q15)
+mean_power_dbfs=-14.1
+peak_power_dbfs=-6.9 at_sample=477
+noise_floor_dbfs=-16.7 (quietest 64-sample window)
+loudest_window_dbfs=-12.3
+active_windows=0/16 (power > 4x quietest)
+dominant_dft16_bin=13 freq_cycles_per_sample=-0.1875 power_share_percent=60
+cfo_cycles_per_sample=-0.1950
+</tool_response>
+<think>
+
+</think>
+
+Based on the analysis of capture 12:
+
+**Signal Level Relative to Noise Floor:**
+*   **Peak Power:** -6.9 dBFS
+*   **Noise Floor:** -16.7 dBFS
+*   **Difference:** -6.9 dBFS - (-16.7 dBFS) = **9.8 dB**
+
+The signal is approximately **9.8 dB above the noise floor**.
+
+**Carrier Frequency Offset (CFO):**
+*   **CFO (cycles/sample):** -0.1950 cycles/sample
+*   **Sample Rate:** 120 MS/s (120,000,000 samples/second)
+*   **Conversion:**
+    *   CFO (Hz) = CFO (cycles/sample) × Sample Rate
+    *   CFO (Hz) = -0.1950 × 120,000,000 = -23,400,000 Hz
+    *   CFO (kHz) = -23,400,000 / 1,000 = **-23,400 kHz**
+
+The carrier frequency offset is **-23,400 kHz** (or -23.4 MHz).<|im_end|>
+[670 text + 100213 chip tokens, 54s, lock error: None]
+  66000 tokens (170 text, 65829 chip) 18s
+  99500 tokens (265 text, 99234 chip) 28s
+  100500 tokens (355 text, 100144 chip) 36s
+================================================================================ 
+Q2: Run the RF analyzer on capture 8 and summarize what kind of signal activity it shows.
+---
+<tool_call>
+<function=rf_analyze>
+<parameter=capture>
+8
+</parameter>
+</function>
+</tool_call>
+<tool_response>
+capture=8 EPFL-LoRaIQ LoRa fs=unknown
+samples=1024 (Q15)
+mean_power_dbfs=-14.1
+peak_power_dbfs=-10.4 at_sample=41
+noise_floor_dbfs=-14.9 (quietest 64-sample window)
+loudest_window_dbfs=-13.3
+active_windows=0/16 (power > 4x quietest)
+dominant_dft16_bin=1 freq_cycles_per_sample=0.0625 power_share_percent=23
+cfo_cycles_per_sample=0.0038
+</tool_response>
+<think>
+
+</think>
+
+The RF analyzer on capture 8 (EPFL-LoRaIQ LoRa) shows the following signal characteristics:
+- **Mean power**: -14.1 dBFS
+- **Peak power**: -10.4 dBFS (at sample 41)
+- **Noise floor**: -14.9 dBFS (quietest 64-sample window)
+- **Active windows**: 0 out of 16 (no windows exceed 4x the quietest window)
+- **Dominant spectral bin**: Bin 1, frequency = 0.0625 cycles/sample, power share = 23%
+- **Carrier frequency offset (CFO)**: 0.0038 cycles/sample
+
+**Summary**:
+The signal activity is very low. The mean power is close to the noise floor (-14.1 dBFS vs -14.9 dBFS), and there are no active windows (0/16), indicating that the signal is mostly noise with very little actual LoRa transmission activity. The dominant spectral bin shows a small peak at 0.0625 cycles/sample with 23% power share, but the overall signal is weak and mostly noise. The carrier frequency offset is small (0.0038 cycles/sample).<|im_end|>
+[645 text + 100338 chip tokens, 53s, lock error: None]

@@ -1,0 +1,6 @@
+{'kernel': 'fft64_power', 'tokens_per_sample': 165.5078125, 'ms_per_sample': 10.855396484373614, 'exact': True, 'before_reference_tokens_per_sample': 201.3}
+{'kernel': 'fft64_power_bfp', 'tokens_per_sample': 230.16796875, 'ms_per_sample': 15.235505175780872, 'exact': True, 'before_reference_tokens_per_sample': 267.9}
+{'kernel': 'fft16_power', 'tokens_per_sample': 125.125, 'ms_per_sample': 8.296566894529178, 'exact': True, 'before_reference_tokens_per_sample': 151.8}
+{'kernel': 'fft256_power', 'tokens_per_sample': 205.583984375, 'ms_per_sample': 13.682712353514148, 'exact': True, 'before_reference_tokens_per_sample': 251.3}
+{'kernel': 'welch64x4', 'tokens_per_sample': 342.921875, 'ms_per_sample': 23.3792354492266, 'exact': True, 'before_reference_tokens_per_sample': 412.0}
+{'kernel': 'cfar64_t2g1', 'tokens_per_sample': 263.25146484375, 'ms_per_sample': 18.42641508788745, 'exact': True, 'before_reference_tokens_per_sample': None}

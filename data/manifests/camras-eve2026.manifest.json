@@ -1,0 +1,70 @@
+{
+  "official_source": "https://data.camras.nl/eve2026/iq/",
+  "license": "CC-BY-SA-4.0 (official release-page statement)",
+  "attribution": "CAMRAS / Dwingeloo Radio Telescope, EVE2026 experiment",
+  "license_page_sha256": "d0b6723784b665aa8a10d1d555befe4b70cd59886eef61a1251e6478e8713153",
+  "recordings": [
+    {
+      "name": "dwingeloo_venus_2026_10_17_08_57_07_1299.650MHz_0.25Msps_ci16_le",
+      "split": "calibration",
+      "files": {
+        ".sigmf-meta": {
+          "url": "https://data.camras.nl/eve2026/iq/dwingeloo_venus_2026_10_17_08_57_07_1299.650MHz_0.25Msps_ci16_le.sigmf-meta",
+          "path": "$RFPU_DATA\\datasets\\camras-eve2026\\dwingeloo_venus_2026_10_17_08_57_07_1299.650MHz_0.25Msps_ci16_le.sigmf-meta",
+          "bytes": 2039,
+          "sha256": "46931cc2bb7374282e2d99cdf7d8f3d730ad8154f1d6e74f4baea28d4df652c3"
+        },
+        ".sigmf-data": {
+          "url": "https://data.camras.nl/eve2026/iq/dwingeloo_venus_2026_10_17_08_57_07_1299.650MHz_0.25Msps_ci16_le.sigmf-data",
+          "path": "$RFPU_DATA\\datasets\\camras-eve2026\\dwingeloo_venus_2026_10_17_08_57_07_1299.650MHz_0.25Msps_ci16_le.sigmf-data",
+          "bytes": 8000000,
+          "sha256": "571956b444f1814dc8172b45c077f75b6671c892bf37fb21676dcd86019171d9"
+        }
+      },
+      "sample_rate": 250000,
+      "datatype": "ci16_le",
+      "sample_count": 2000000,
+      "duration_seconds": 8.0,
+      "center_frequency_hz": 1299650000,
+      "capture_datetime": "2026-10-17T08:57:07.000145187",
+      "receiver_hardware_model": null,
+      "author": "Dwingeloo Radio Telescope",
+      "receiver_bandwidth_metadata_hz": 4000000,
+      "annotations": [],
+      "metadata_quality": "Exact rate/frequency/time/author available; receiver hardware model and signal/noise annotations absent."
+    },
+    {
+      "name": "dwingeloo_venus_2026_10_24_09_15_44_1299.650MHz_0.25Msps_ci16_le",
+      "split": "held_out",
+      "files": {
+        ".sigmf-meta": {
+          "url": "https://data.camras.nl/eve2026/iq/dwingeloo_venus_2026_10_24_09_15_44_1299.650MHz_0.25Msps_ci16_le.sigmf-meta",
+          "path": "$RFPU_DATA\\datasets\\camras-eve2026\\dwingeloo_venus_2026_10_24_09_15_44_1299.650MHz_0.25Msps_ci16_le.sigmf-meta",
+          "bytes": 2045,
+          "sha256": "69068631b7181809ce015d217e814c39f47be696485a0676f431fac9540b3c6f"
+        },
+        ".sigmf-data": {
+          "url": "https://data.camras.nl/eve2026/iq/dwingeloo_venus_2026_10_24_09_15_44_1299.650MHz_0.25Msps_ci16_le.sigmf-data",
+          "path": "$RFPU_DATA\\datasets\\camras-eve2026\\dwingeloo_venus_2026_10_24_09_15_44_1299.650MHz_0.25Msps_ci16_le.sigmf-data",
+          "bytes": 9000000,
+          "sha256": "88ebd41a6e47322d2fbfb862d78d5c63aafd2b7f06782cf1a861d03f492675a2"
+        }
+      },
+      "sample_rate": 250000,
+      "datatype": "ci16_le",
+      "sample_count": 2250000,
+      "duration_seconds": 9.0,
+      "center_frequency_hz": 1299650000,
+      "capture_datetime": "2026-10-24T09:15:44.000145187",
+      "receiver_hardware_model": null,
+      "author": "Dwingeloo Radio Telescope",
+      "receiver_bandwidth_metadata_hz": 4000000,
+      "annotations": [],
+      "metadata_quality": "Exact rate/frequency/time/author available; receiver hardware model and signal/noise annotations absent."
+    }
+  ],
+  "limitations": [
+    "No sample-level signal/noise labels. No UAV or operational detection claim.",
+    "Computed checksums identify downloaded bytes; no independent publisher digest supplied."
+  ]
+}

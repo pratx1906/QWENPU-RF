@@ -1,0 +1,29 @@
+{
+  "program": "fir64 FIR, 48 real IQ samples (scalar RV32)",
+  "trace_tokens": 107023,
+  "flash_linear_attention": true,
+  "rows": [
+    {
+      "chunk": 1024,
+      "mismatches": 0,
+      "first_mismatch": null,
+      "seconds": 8.453557600005297,
+      "tokens_per_second": 12660.113654390068
+    },
+    {
+      "chunk": 4096,
+      "mismatches": 0,
+      "first_mismatch": null,
+      "seconds": 8.770346100005554,
+      "tokens_per_second": 12202.825154178605
+    },
+    {
+      "chunk": 16384,
+      "mismatches": 0,
+      "first_mismatch": null,
+      "seconds": 31.182646200002637,
+      "tokens_per_second": 3432.1333511455146
+    }
+  ],
+  "batched_decode": true
+}

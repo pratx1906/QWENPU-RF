@@ -1,0 +1,38 @@
+Checking official checkpoint file model-00001-of-00011.safetensors
+Checking official checkpoint file model-00002-of-00011.safetensors
+Checking official checkpoint file model-00003-of-00011.safetensors
+Checking official checkpoint file model-00004-of-00011.safetensors
+Checking official checkpoint file model-00005-of-00011.safetensors
+Checking official checkpoint file model-00006-of-00011.safetensors
+Checking official checkpoint file model-00007-of-00011.safetensors
+Checking official checkpoint file model-00008-of-00011.safetensors
+Checking official checkpoint file model-00009-of-00011.safetensors
+Checking official checkpoint file model-00010-of-00011.safetensors
+Checking official checkpoint file model-00011-of-00011.safetensors
+Checking official checkpoint file config.json
+Checking official checkpoint file chipformer.json
+Checking official checkpoint file tokenizer.json
+[transformers] The tokenizer you are loading from '$RFPU_DATA\checkpoints\rfpu-v15\qwen3.5-4b-vx-vfir' with an incorrect regex pattern: https://huggingface.co/mistralai/Mistral-Small-3.1-24B-Instruct-2503/discussions/84#69121093e8b480e709447d5e. This will lead to incorrect tokenization. You should set the `fix_mistral_regex=True` flag when loading this tokenizer to fix this issue.
+Published embedding loaded on CUDA
+Published computational layer 1/13 loaded on CUDA
+Published computational layer 2/13 loaded on CUDA
+Published computational layer 3/13 loaded on CUDA
+Published computational layer 4/13 loaded on CUDA
+Published computational layer 5/13 loaded on CUDA
+Published computational layer 6/13 loaded on CUDA
+Published computational layer 7/13 loaded on CUDA
+Published computational layer 8/13 loaded on CUDA
+Published computational layer 9/13 loaded on CUDA
+Published computational layer 10/13 loaded on CUDA
+Published computational layer 11/13 loaded on CUDA
+Published computational layer 12/13 loaded on CUDA
+Published computational layer 13/13 loaded on CUDA
+[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.
+[transformers] `causal_conv1d_update` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[transformers] `fused_recurrent_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.
+{'program': 'VXFir 16 taps, 16 real IQ samples', 'trace_tokens': 3215, 'exact_trace': True, 'outputs_equal_reference': True, 'seconds': 100.75754570000572}
+{'program': 'vfir_program seed 0', 'trace_tokens': 1360, 'exact_trace': True, 'mode': 'free_running', 'seconds': 27.62606430001324}
+{'program': 'vfir_program seed 1', 'trace_tokens': 1407, 'exact_trace': True, 'mode': 'free_running', 'seconds': 44.269343399995705}
+{'program': 'vfir_program seed 2', 'trace_tokens': 1360, 'exact_trace': True, 'mode': 'free_running', 'seconds': 42.60615880001569}
+{'program': 'vfir_program seed 3', 'trace_tokens': 1211, 'exact_trace': True, 'mode': 'free_running', 'seconds': 38.6324596000195}

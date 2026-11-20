@@ -1,0 +1,134 @@
+IDLab:DVB-T:gentbrugge/dvbt_g30_gentbrugge_f482MHz_r10.bin   exact=True bursts=[] classes={'noise': 263, 'wideband': 249} peak=1986
+IDLab:DVB-T:gentbrugge/dvbt_g30_gentbrugge_f482MHz_r5.bin    exact=True bursts=[] classes={'noise': 246, 'wideband': 266} peak=396
+IDLab:DVB-T:igent/dvbt_g30_igent_f482MHz_r8.bin              exact=True bursts=[] classes={'noise': 245, 'tone': 2, 'wideband': 265} peak=1065
+IDLab:DVB-T:igent/dvbt_g30_igent_f482MHz_r9.bin              exact=True bursts=[] classes={'noise': 242, 'wideband': 270} peak=802
+IDLab:DVB-T:merelbeke/dvbt_g30_merelbeke_f482MHz_r10.bin     exact=True bursts=[] classes={'noise': 217, 'tone': 2, 'wideband': 293} peak=101
+IDLab:DVB-T:merelbeke/dvbt_g30_merelbeke_f482MHz_r3.bin      exact=True bursts=[] classes={'noise': 221, 'tone': 1, 'wideband': 290} peak=783
+IDLab:DVB-T:rabot/dvbt_g30_rabot_f482MHz_r9.bin              exact=True bursts=[] classes={'noise': 232, 'wideband': 280} peak=1840
+IDLab:DVB-T:rabot/dvbt_g30_rabot_f482MHz_r8.bin              exact=True bursts=[] classes={'noise': 211, 'wideband': 301} peak=1048
+IDLab:DVB-T:reep/dvbt_g30_reep_f482MHz_r6.bin                exact=True bursts=[] classes={'noise': 207, 'tone': 1, 'wideband': 304} peak=764
+IDLab:DVB-T:reep/dvbt_g30_reep_f482MHz_r8.bin                exact=True bursts=[] classes={'noise': 186, 'tone': 2, 'wideband': 324} peak=1141
+IDLab:DVB-T:uz/dvbt_g30_uz_f482MHz_r7.bin                    exact=True bursts=[] classes={'noise': 192, 'wideband': 320} peak=1268
+IDLab:DVB-T:uz/dvbt_g30_uz_f482MHz_r9.bin                    exact=True bursts=[] classes={'noise': 190, 'tone': 2, 'wideband': 320} peak=656
+IDLab:DVB-T:merelbeke/dvbt10Msps_g30_merelbeke_f482MHz_r1.bi exact=True bursts=[] classes={'noise': 230, 'tone': 1, 'wideband': 281} peak=1188
+IDLab:DVB-T:merelbeke/dvbt10Msps_g30_merelbeke_f482MHz_r2.bi exact=True bursts=[] classes={'noise': 215, 'tone': 2, 'wideband': 295} peak=1339
+IDLab:DVB-T:rabot/dvbt10Msps_g30_rabot_f482MHz_r1.bin        exact=True bursts=[] classes={'noise': 196, 'tone': 2, 'wideband': 314} peak=1350
+IDLab:DVB-T:reep/dvbt10Msps_g30_reep_f482MHz_r1.bin          exact=True bursts=[] classes={'noise': 304, 'wideband': 208} peak=1082
+IDLab:DVB-T:uz/dvbt10Msps_g30_uz_f482MHz_r1.bin              exact=True bursts=[] classes={'noise': 140, 'tone': 7, 'wideband': 365} peak=724
+IDLab:LTE:gentbrugge/lte_g30_gentbrugge_f806MHz_r10.bin      exact=True bursts=[] classes={'noise': 179, 'tone': 7, 'wideband': 326} peak=1369
+IDLab:LTE:gentbrugge/lte_g30_gentbrugge_f806MHz_r7.bin       exact=True bursts=[] classes={'noise': 178, 'tone': 13, 'wideband': 321} peak=1026
+IDLab:LTE:igent/lte_g30_igent_f806MHz_r1.bin                 exact=True bursts=[] classes={'noise': 203, 'tone': 2, 'wideband': 307} peak=1299
+IDLab:LTE:igent/lte_g30_igent_f806MHz_r7.bin                 exact=True bursts=[] classes={'noise': 189, 'tone': 1, 'wideband': 322} peak=1502
+IDLab:LTE:merelbeke/lte_g30_merelbeke_f806MHz_r5.bin         exact=True bursts=[] classes={'noise': 253, 'tone': 1, 'wideband': 258} peak=406
+IDLab:LTE:merelbeke/lte_g30_merelbeke_f806MHz_r3.bin         exact=True bursts=[] classes={'noise': 239, 'wideband': 273} peak=1597
+IDLab:LTE:rabot/lte_g30_rabot_f806MHz_r6.bin                 exact=True bursts=[] classes={'noise': 179, 'tone': 16, 'wideband': 317} peak=1396
+IDLab:LTE:rabot/lte_g30_rabot_f806MHz_r4.bin                 exact=True bursts=[] classes={'noise': 158, 'tone': 9, 'wideband': 345} peak=1759
+IDLab:LTE:reep/lte_g30_reep_f806MHz_r5.bin                   exact=True bursts=[] classes={'noise': 184, 'tone': 1, 'wideband': 327} peak=1124
+IDLab:LTE:reep/lte_g30_reep_f806MHz_r9.bin                   exact=True bursts=[1663] classes={'noise': 177, 'tone': 2, 'wideband': 333} peak=925
+IDLab:LTE:uz/lte_g30_uz_f806MHz_r6.bin                       exact=True bursts=[] classes={'noise': 164, 'tone': 5, 'wideband': 343} peak=659
+IDLab:LTE:uz/lte_g30_uz_f806MHz_r8.bin                       exact=True bursts=[] classes={'noise': 173, 'tone': 5, 'wideband': 334} peak=1113
+IDLab:LTE:gentbrugge/lte10Msps_g30_uz_f806MHz_r1.bin         exact=True bursts=[] classes={'noise': 180, 'tone': 2, 'wideband': 330} peak=1767
+IDLab:LTE:igent/lte10Msps_g40_igent_f806MHz_r1.bin           exact=True bursts=[] classes={'noise': 159, 'tone': 6, 'wideband': 347} peak=2025
+IDLab:LTE:igent/lte10Msps_g20_igent_f806MHz_r1.bin           exact=True bursts=[] classes={'noise': 211, 'wideband': 301} peak=1032
+IDLab:LTE:merelbeke/lte10Msps_g30_merelbeke_f806MHz_r1.bin   exact=True bursts=[] classes={'noise': 240, 'wideband': 272} peak=1663
+IDLab:LTE:merelbeke/lte10Msps_g30_merelbeke_f806MHz_r2.bin   exact=True bursts=[] classes={'noise': 164, 'wideband': 348} peak=971
+IDLab:LTE:rabot/lte10Msps_g30_rabot_f806MHz_r1.bin           exact=True bursts=[959] classes={'noise': 133, 'tone': 23, 'wideband': 356} peak=768
+IDLab:LTE:reep/lte10Msps_g30_reep_f806MHz_r1.bin             exact=True bursts=[] classes={'noise': 128, 'tone': 6, 'wideband': 378} peak=1852
+IDLab:LTE:uz/lte10Msps_g30_uz_f806MHz_r1.bin                 exact=True bursts=[] classes={'noise': 251, 'wideband': 261} peak=974
+IDLab:WiFi:gentbrugge/wf_g76_gentbrugge_f5240MHz_r9.bin      exact=True bursts=[1471] classes={'noise': 210, 'tone': 8, 'wideband': 294} peak=1449
+IDLab:WiFi:gentbrugge/wf_g76_gentbrugge_f5240MHz_r4.bin      exact=True bursts=[] classes={'noise': 295, 'wideband': 217} peak=1647
+IDLab:WiFi:igent/wf_g30_igent_f2412MHz_r1.bin                exact=True bursts=[] classes={'noise': 224, 'tone': 2, 'wideband': 286} peak=1294
+IDLab:WiFi:merelbeke/wf_g30_merelbeke_f5180MHz_r2.bin        exact=True bursts=[] classes={'noise': 216, 'tone': 2, 'wideband': 294} peak=1432
+IDLab:WiFi:merelbeke/wf_g30_merelbeke_f2412MHz_r5.bin        exact=True bursts=[] classes={'noise': 234, 'tone': 1, 'wideband': 277} peak=1323
+IDLab:WiFi:rabot/wf_g76_rabot_f5240MHz_r5.bin                exact=True bursts=[1279, 1471] classes={'noise': 283, 'tone': 7, 'wideband': 222} peak=1227
+IDLab:WiFi:rabot/wf_g76_rabot_f5240MHz_r7.bin                exact=True bursts=[] classes={'noise': 211, 'wideband': 301} peak=1703
+IDLab:WiFi:reep/wf_g76_reep_f5240MHz_r6.bin                  exact=True bursts=[] classes={'noise': 321, 'tone': 4, 'wideband': 187} peak=143
+IDLab:WiFi:reep/wf_g76_reep_f5240MHz_r10.bin                 exact=True bursts=[] classes={'noise': 202, 'tone': 3, 'wideband': 307} peak=1795
+IDLab:WiFi:gentbrugge/wf10Msps_g76_gentbrugge_f5240MHz_r1.bi exact=True bursts=[] classes={'noise': 324, 'wideband': 188} peak=766
+IDLab:WiFi:merelbeke/wf10Msps_g30_merelbeke_f5180MHz_r1.bin  exact=True bursts=[] classes={'noise': 245, 'tone': 3, 'wideband': 264} peak=1501
+IDLab:WiFi:rabot/wf10Msps_g30_rabot_f5240MHz_r1.bin          exact=True bursts=[] classes={'noise': 211, 'tone': 2, 'wideband': 299} peak=936
+IDLab:WiFi:rabot/wf10Msps_g76_rabot_f5240MHz_r1.bin          exact=True bursts=[] classes={'noise': 320, 'wideband': 192} peak=206
+IDLab:WiFi:reep/wf10Msps_g76_reep_f5240MHz_r1.bin            exact=True bursts=[] classes={'noise': 132, 'tone': 4, 'wideband': 376} peak=66
+IDLab:WiFi:uz/wf10Msps_g80_uz_f5240MHz_r2.bin                exact=True bursts=[] classes={'noise': 332, 'wideband': 180} peak=48
+IDLab:WiFi:uz/wf10Msps_g76_uz_f5240MHz_r1.bin                exact=True bursts=[] classes={'noise': 305, 'wideband': 207} peak=255
+EPFL-LoRaIQ:LoRa:rrh4/858.sigmf-data                         exact=True bursts=[] classes={'noise': 235, 'tone': 1, 'wideband': 276} peak=29
+EPFL-LoRaIQ:LoRa:rrh3/999.sigmf-data                         exact=True bursts=[] classes={'noise': 252, 'wideband': 260} peak=1127
+EPFL-LoRaIQ:LoRa:rrh4/530.sigmf-data                         exact=True bursts=[] classes={'noise': 262, 'wideband': 250} peak=446
+EPFL-LoRaIQ:LoRa:rrh2/1.sigmf-data                           exact=True bursts=[] classes={'noise': 230, 'wideband': 282} peak=958
+EPFL-LoRaIQ:LoRa:rrh2/425.sigmf-data                         exact=True bursts=[] classes={'noise': 229, 'wideband': 283} peak=996
+EPFL-LoRaIQ:LoRa:rrh3/363.sigmf-data                         exact=True bursts=[] classes={'noise': 232, 'wideband': 280} peak=932
+EPFL-LoRaIQ:LoRa:rrh1/2.sigmf-data                           exact=True bursts=[] classes={'noise': 219, 'wideband': 293} peak=322
+EPFL-LoRaIQ:LoRa:rrh4/1.sigmf-data                           exact=True bursts=[] classes={'noise': 216, 'wideband': 296} peak=268
+EPFL-LoRaIQ:LoRa:rrh2/68.sigmf-data                          exact=True bursts=[] classes={'noise': 185, 'wideband': 327} peak=553
+EPFL-LoRaIQ:LoRa:rrh1/509.sigmf-data                         exact=True bursts=[] classes={'noise': 229, 'wideband': 283} peak=2043
+EPFL-LoRaIQ:LoRa:rrh2/507.sigmf-data                         exact=True bursts=[] classes={'noise': 203, 'wideband': 309} peak=888
+EPFL-LoRaIQ:LoRa:rrh3/501.sigmf-data                         exact=True bursts=[] classes={'noise': 203, 'wideband': 309} peak=725
+EPFL-LoRaIQ:LoRa:rrh2/728.sigmf-data                         exact=True bursts=[] classes={'noise': 192, 'wideband': 320} peak=1699
+EPFL-LoRaIQ:LoRa:rrh3/728.sigmf-data                         exact=True bursts=[] classes={'noise': 220, 'wideband': 292} peak=590
+EPFL-LoRaIQ:LoRa:rrh4/724.sigmf-data                         exact=True bursts=[] classes={'noise': 211, 'wideband': 301} peak=402
+EPFL-LoRaIQ:LoRa:rrh2/2.sigmf-data                           exact=True bursts=[] classes={'noise': 197, 'wideband': 315} peak=266
+EPFL-LoRaIQ:LoRa:rrh4/2.sigmf-data                           exact=True bursts=[] classes={'noise': 254, 'wideband': 258} peak=1365
+EPFL-LoRaIQ:LoRa:rrh1/382.sigmf-data                         exact=True bursts=[] classes={'noise': 223, 'wideband': 289} peak=976
+EPFL-LoRaIQ:LoRa:rrh2/392.sigmf-data                         exact=True bursts=[] classes={'noise': 167, 'wideband': 345} peak=557
+EPFL-LoRaIQ:LoRa:rrh3/378.sigmf-data                         exact=True bursts=[] classes={'noise': 201, 'wideband': 311} peak=274
+EPFL-LoRaIQ:LoRa:rrh4/385.sigmf-data                         exact=True bursts=[] classes={'noise': 206, 'wideband': 306} peak=145
+EPFL-LoRaIQ:LoRa:rrh3/1143.sigmf-data                        exact=True bursts=[] classes={'noise': 197, 'tone': 1, 'wideband': 314} peak=346
+EPFL-LoRaIQ:LoRa:rrh4/1143.sigmf-data                        exact=True bursts=[] classes={'noise': 205, 'wideband': 307} peak=688
+EPFL-LoRaIQ:LoRa:rrh2/262.sigmf-data                         exact=True bursts=[] classes={'noise': 210, 'wideband': 302} peak=351
+EPFL-LoRaIQ:LoRa:rrh1/642.sigmf-data                         exact=True bursts=[] classes={'noise': 171, 'wideband': 341} peak=1795
+EPFL-LoRaIQ:LoRa:rrh2/645.sigmf-data                         exact=True bursts=[] classes={'noise': 191, 'wideband': 321} peak=1569
+EPFL-LoRaIQ:LoRa:rrh3/318.sigmf-data                         exact=True bursts=[] classes={'noise': 209, 'wideband': 303} peak=158
+EPFL-LoRaIQ:LoRa:rrh4/648.sigmf-data                         exact=True bursts=[] classes={'noise': 233, 'wideband': 279} peak=534
+EPFL-LoRaIQ:LoRa:rrh1/977.sigmf-data                         exact=True bursts=[] classes={'noise': 215, 'wideband': 297} peak=257
+EPFL-LoRaIQ:LoRa:rrh3/2.sigmf-data                           exact=True bursts=[] classes={'noise': 222, 'wideband': 290} peak=1670
+EPFL-LoRaIQ:LoRa:rrh4/326.sigmf-data                         exact=True bursts=[] classes={'noise': 259, 'wideband': 253} peak=566
+EPFL-LoRaIQ:LoRa:rrh4/6.sigmf-data                           exact=True bursts=[] classes={'noise': 190, 'tone': 2, 'wideband': 320} peak=546
+NTU-RFSR:LoRa:rfsr-ota-multicondition/exp0_000000_rxg0_0_ful exact=True bursts=[] classes={'noise': 243, 'tone': 1, 'wideband': 268} peak=802
+NTU-RFSR:LoRa:rfsr-ota-multicondition/exp0_000065_rxg15_0_fu exact=True bursts=[] classes={'noise': 217, 'tone': 1, 'wideband': 294} peak=941
+NTU-RFSR:LoRa:rfsr-ota-multicondition/exp0_000098_rxg30_0_fu exact=True bursts=[] classes={'noise': 195, 'tone': 2, 'wideband': 315} peak=1864
+NTU-RFSR:LoRa:rfsr-ota-multicondition/exp1_000000_rxg0_0_ful exact=True bursts=[] classes={'noise': 201, 'wideband': 311} peak=52
+NTU-RFSR:LoRa:rfsr-ota-multicondition/exp1_000068_rxg18_0_fu exact=True bursts=[] classes={'noise': 207, 'wideband': 305} peak=1322
+NTU-RFSR:LoRa:rfsr-ota-multicondition/exp1_000098_rxg30_0_fu exact=True bursts=[] classes={'noise': 201, 'wideband': 311} peak=1705
+NTU-RFSR:LoRa:rfsr-ota-multicondition/exp10_000000_rxg0_0_fu exact=True bursts=[] classes={'noise': 215, 'tone': 1, 'wideband': 296} peak=1472
+NTU-RFSR:LoRa:rfsr-ota-multicondition/exp10_000067_rxg15_0_f exact=True bursts=[] classes={'noise': 239, 'wideband': 273} peak=1579
+NTU-RFSR:LoRa:rfsr-ota-multicondition/exp10_000099_rxg30_0_f exact=True bursts=[] classes={'noise': 230, 'wideband': 282} peak=1276
+NTU-RFSR:LoRa:rfsr-ota-multicondition/exp11_000000_rxg0_0_fu exact=True bursts=[] classes={'noise': 226, 'wideband': 286} peak=407
+NTU-RFSR:LoRa:rfsr-ota-multicondition/exp11_000064_rxg12_0_f exact=True bursts=[] classes={'noise': 212, 'tone': 1, 'wideband': 299} peak=570
+NTU-RFSR:LoRa:rfsr-ota-multicondition/exp11_000099_rxg21_0_f exact=True bursts=[] classes={'noise': 200, 'wideband': 312} peak=1043
+NTU-RFSR:LoRa:rfsr-ota-multicondition/exp12_000000_rxg0_0_fu exact=True bursts=[] classes={'noise': 240, 'wideband': 272} peak=672
+NTU-RFSR:LoRa:rfsr-ota-multicondition/exp12_001089_rxg0_0_fu exact=True bursts=[] classes={'noise': 269, 'wideband': 243} peak=894
+NTU-RFSR:LoRa:rfsr-ota-multicondition/exp12_002099_rxg0_0_fu exact=True bursts=[] classes={'noise': 259, 'wideband': 253} peak=1096
+NTU-RFSR:LoRa:rfsr-ota-multicondition/exp6_000000_rxg40_0_fu exact=True bursts=[] classes={'noise': 214, 'tone': 1, 'wideband': 297} peak=953
+NTU-RFSR:LoRa:rfsr-ota-multicondition/exp6_000062_rxg55_0_fu exact=True bursts=[] classes={'noise': 197, 'wideband': 315} peak=1691
+NTU-RFSR:LoRa:rfsr-ota-multicondition/exp6_000099_rxg70_0_fu exact=True bursts=[] classes={'noise': 242, 'wideband': 270} peak=203
+NTU-RFSR:LoRa:rfsr-ota-multicondition/exp7_000000_rxg40_0_fu exact=True bursts=[] classes={'noise': 201, 'tone': 2, 'wideband': 309} peak=1758
+NTU-RFSR:LoRa:rfsr-ota-multicondition/exp7_000061_rxg55_0_fu exact=True bursts=[] classes={'noise': 236, 'wideband': 276} peak=196
+NTU-RFSR:LoRa:rfsr-ota-multicondition/exp7_000099_rxg70_0_fu exact=True bursts=[] classes={'noise': 189, 'tone': 2, 'wideband': 321} peak=1683
+NTU-RFSR:LoRa:rfsr-ota-multicondition/exp8_000001_rxg40_0_fu exact=True bursts=[] classes={'noise': 197, 'wideband': 315} peak=2008
+NTU-RFSR:LoRa:rfsr-ota-multicondition/exp8_000069_rxg55_0_fu exact=True bursts=[] classes={'noise': 297, 'wideband': 215} peak=90
+NTU-RFSR:LoRa:rfsr-ota-multicondition/exp8_000099_rxg70_0_fu exact=True bursts=[] classes={'noise': 242, 'wideband': 270} peak=376
+NTU-RFSR:LoRa:rfsr-ota-multicondition/exp9_000000_rxg40_0_fu exact=True bursts=[] classes={'noise': 247, 'wideband': 265} peak=1305
+NTU-RFSR:LoRa:rfsr-ota-multicondition/exp9_000068_rxg55_0_fu exact=True bursts=[] classes={'noise': 218, 'tone': 1, 'wideband': 293} peak=1997
+NTU-RFSR:LoRa:rfsr-ota-multicondition/exp9_000099_rxg70_0_fu exact=True bursts=[] classes={'noise': 258, 'wideband': 254} peak=261
+Tampere:drone-controller:tampere-drone-rf-4264467/DJI_inspir exact=True bursts=[767] classes={'noise': 97, 'tone': 11, 'wideband': 404} peak=264
+Tampere:drone-controller:tampere-drone-rf-4264467/DJI_inspir exact=True bursts=[] classes={'noise': 512} peak=7
+Tampere:drone-controller:tampere-drone-rf-4264467/DJI_inspir exact=True bursts=[] classes={'noise': 180, 'wideband': 332} peak=1230
+Tampere:drone-controller:tampere-drone-rf-4264467/DJI_matric exact=True bursts=[1023] classes={'noise': 376, 'wideband': 136} peak=11
+Tampere:drone-controller:tampere-drone-rf-4264467/DJI_matric exact=True bursts=[255, 511, 959, 1215] classes={'noise': 448, 'wideband': 64} peak=1970
+Tampere:drone-controller:tampere-drone-rf-4264467/DJI_matric exact=True bursts=[] classes={'noise': 512} peak=7
+Tampere:drone-controller:tampere-drone-rf-4264467/DJI_matric exact=True bursts=[] classes={'noise': 512} peak=7
+Tampere:drone-controller:tampere-drone-rf-4264467/DJI_mavic_ exact=True bursts=[] classes={'noise': 265, 'wideband': 247} peak=731
+Tampere:drone-controller:tampere-drone-rf-4264467/DJI_mavic_ exact=True bursts=[] classes={'noise': 283, 'tone': 13, 'wideband': 216} peak=1441
+Tampere:drone-controller:tampere-drone-rf-4264467/DJI_phanto exact=True bursts=[] classes={'noise': 80, 'tone': 77, 'wideband': 355} peak=786
+Tampere:drone-controller:tampere-drone-rf-4264467/DJI_phanto exact=True bursts=[1407, 1663] classes={'noise': 422, 'wideband': 90} peak=1638
+Tampere:drone-controller:tampere-drone-rf-4264467/DJI_phanto exact=True bursts=[] classes={'noise': 512} peak=729
+Tampere:drone-controller:tampere-drone-rf-4264467/DJI_phanto exact=True bursts=[] classes={'noise': 512} peak=7
+Tampere:drone-controller:tampere-drone-rf-4264467/Parrot_dis exact=True bursts=[] classes={'noise': 244, 'wideband': 268} peak=780
+Tampere:drone-controller:tampere-drone-rf-4264467/Parrot_mam exact=True bursts=[] classes={'noise': 262, 'wideband': 250} peak=2039
+Tampere:drone-controller:tampere-drone-rf-4264467/Parrot_mam exact=True bursts=[] classes={'noise': 316, 'wideband': 196} peak=538
+Tampere:drone-controller:tampere-drone-rf-4264467/Yuneec_typ exact=True bursts=[] classes={'noise': 512} peak=7
+Tampere:drone-controller:tampere-drone-rf-4264467/Yuneec_typ exact=True bursts=[] classes={'noise': 272, 'wideband': 240} peak=969
+Tampere:drone-controller:tampere-drone-rf-4264467/Yuneec_typ exact=True bursts=[] classes={'noise': 288, 'wideband': 224} peak=364
+CAMRAS-Dwingeloo:radio-astronomy (Venus radar echo):camras-e exact=True bursts=[] classes={'noise': 247, 'wideband': 265} peak=606
+CAMRAS-Dwingeloo:radio-astronomy (Venus radar echo):camras-e exact=True bursts=[] classes={'noise': 222, 'wideband': 290} peak=1308
+PASS: 133 streams, 288,607,956 tokens, 38.9 ms/sample neural

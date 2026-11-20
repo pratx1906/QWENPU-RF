@@ -1,0 +1,35 @@
+{
+  "program": "lowpass16 FIR, 32 real IQ samples (scalar RV32)",
+  "trace_tokens": 10030,
+  "rows": [
+    {
+      "chunk": 64,
+      "mismatches": 0,
+      "first_mismatch": null,
+      "seconds": 9.373443799995584,
+      "tokens_per_second": 1070.0442883121275,
+      "speedup_vs_free_running": 30.05241286027058
+    },
+    {
+      "chunk": 256,
+      "mismatches": 0,
+      "first_mismatch": null,
+      "seconds": 4.659655099996598,
+      "tokens_per_second": 2152.519829205239,
+      "speedup_vs_free_running": 60.45395999378076
+    },
+    {
+      "chunk": 1024,
+      "mismatches": 0,
+      "first_mismatch": null,
+      "seconds": 3.8019166000012774,
+      "tokens_per_second": 2638.1430881457604,
+      "speedup_vs_free_running": 74.09278862138012
+    }
+  ],
+  "free_running": {
+    "exact": true,
+    "seconds": 281.69460300001083,
+    "tokens_per_second": 35.60593591563253
+  }
+}

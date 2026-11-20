@@ -1,0 +1,15 @@
+IDLab        WiFi             FIR 3.26e-09 SPEC 2.27e-09 PEAK 0 PASS
+IDLab        WiFi             FIR 1.58e-09 SPEC 9.48e-10 PEAK 0 PASS
+IDLab        LTE              FIR 1.63e-02 SPEC 4.80e-02 PEAK 0 FAIL
+IDLab        LTE              FIR 1.48e-09 SPEC 1.02e-09 PEAK 0 PASS
+IDLab        DVB-T            FIR 2.06e-09 SPEC 1.71e-09 PEAK 0 PASS
+IDLab        DVB-T            FIR 1.50e-09 SPEC 1.23e-09 PEAK 0 PASS
+NTU-RFSR     LoRa             FIR 2.26e-03 SPEC 1.20e-02 PEAK 1119 FAIL
+NTU-RFSR     LoRa             FIR 2.24e-03 SPEC 1.27e-02 PEAK 2117 FAIL
+EPFL-LoRaIQ  LoRa             FIR 1.21e-09 SPEC 1.48e-09 PEAK 0 PASS
+EPFL-LoRaIQ  LoRa             FIR 1.63e-04 SPEC 7.50e-04 PEAK 0 PASS
+EPFL-LoRaIQ  LoRa             FIR 2.40e-03 SPEC 1.18e-02 PEAK 23 FAIL
+EPFL-LoRaIQ  LoRa             FIR 8.24e-10 SPEC 1.14e-09 PEAK 0 PASS
+Tampere      drone-controller FIR 3.71e-03 SPEC 3.47e-02 PEAK 3 FAIL
+Tampere      drone-controller FIR 4.07e-03 SPEC 1.38e-02 PEAK 0 FAIL
+PASS 8/14

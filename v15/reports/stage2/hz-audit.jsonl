@@ -1,0 +1,2 @@
+{"file": "v15/reports/stage2/fullgpu-chunked-stage2-bank-a11.json", "hz_claims": 6, "correct": 5, "wrong": [{"capture": 15, "claim": "-62.6 Hz", "report_hz": [-62500.0, -62600.0]}]}
+{"file": "v15/reports/stage2/fullgpu-chunked-stage2-bank.json", "hz_claims": 22, "correct": 22, "wrong": []}
